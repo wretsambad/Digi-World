@@ -1,37 +1,37 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://csa8e8wyvv0ri"]
 
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/tree_round.glb" id="m0"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/tree_tall.glb" id="m1"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/shrub_round.glb" id="m2"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/hedge_straight.glb" id="m3"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/flowerbed.glb" id="m4"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/flowerpot.glb" id="m5"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/grass_tuft.glb" id="m6"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/garden_rock.glb" id="m7"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/fence_picket.glb" id="m8"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/fence_corner.glb" id="m9"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/garden_gate.glb" id="m10"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/lawn_tile.glb" id="m11"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/lawn_verge.glb" id="m12"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/garden_path.glb" id="m13"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/stepping_stone.glb" id="m14"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/driveway.glb" id="m15"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/curb_ramp.glb" id="m16"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/streetlamp.glb" id="m17"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/mailbox.glb" id="m18"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/bench.glb" id="m19"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/litter_bin.glb" id="m20"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/recycling_bin.glb" id="m21"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/hydrant.glb" id="m22"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/street_name_sign.glb" id="m23"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/bollard.glb" id="m24"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/bicycle_rack.glb" id="m25"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/bicycle.glb" id="m26"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/compact_car.glb" id="m27"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/utility_cabinet.glb" id="m28"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/storm_drain.glb" id="m29"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/manhole_cover.glb" id="m30"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/birdbath.glb" id="m31"]
+[ext_resource type="PackedScene" uid="uid://b6vvjhc1wk51g" path="res://neighborhood_assets/models/tree_round.glb" id="m0"]
+[ext_resource type="PackedScene" uid="uid://qsg43cuwl62d" path="res://neighborhood_assets/models/tree_tall.glb" id="m1"]
+[ext_resource type="PackedScene" uid="uid://qg38d64w62vh" path="res://neighborhood_assets/models/shrub_round.glb" id="m2"]
+[ext_resource type="PackedScene" uid="uid://bpmrb1qxuossb" path="res://neighborhood_assets/models/hedge_straight.glb" id="m3"]
+[ext_resource type="PackedScene" uid="uid://s6wx2ysrd3kd" path="res://neighborhood_assets/models/flowerbed.glb" id="m4"]
+[ext_resource type="PackedScene" uid="uid://vfbgij0md6nl" path="res://neighborhood_assets/models/flowerpot.glb" id="m5"]
+[ext_resource type="PackedScene" uid="uid://ot4y67nhruw7" path="res://neighborhood_assets/models/grass_tuft.glb" id="m6"]
+[ext_resource type="PackedScene" uid="uid://ban8676ntfp0e" path="res://neighborhood_assets/models/garden_rock.glb" id="m7"]
+[ext_resource type="PackedScene" uid="uid://civt7s444mtnk" path="res://neighborhood_assets/models/fence_picket.glb" id="m8"]
+[ext_resource type="PackedScene" uid="uid://dehvixuk5db3e" path="res://neighborhood_assets/models/fence_corner.glb" id="m9"]
+[ext_resource type="PackedScene" uid="uid://dswnoe40fx5x2" path="res://neighborhood_assets/models/garden_gate.glb" id="m10"]
+[ext_resource type="PackedScene" uid="uid://dywbx8meken3e" path="res://neighborhood_assets/models/lawn_tile.glb" id="m11"]
+[ext_resource type="PackedScene" uid="uid://boqliogypqjmn" path="res://neighborhood_assets/models/lawn_verge.glb" id="m12"]
+[ext_resource type="PackedScene" uid="uid://dtt5i4g346jet" path="res://neighborhood_assets/models/garden_path.glb" id="m13"]
+[ext_resource type="PackedScene" uid="uid://drslow14q6p6c" path="res://neighborhood_assets/models/stepping_stone.glb" id="m14"]
+[ext_resource type="PackedScene" uid="uid://r7yqn5qd2otu" path="res://neighborhood_assets/models/driveway.glb" id="m15"]
+[ext_resource type="PackedScene" uid="uid://bnkbh0u3lttfq" path="res://neighborhood_assets/models/curb_ramp.glb" id="m16"]
+[ext_resource type="PackedScene" uid="uid://lo867w64v344" path="res://neighborhood_assets/models/streetlamp.glb" id="m17"]
+[ext_resource type="PackedScene" uid="uid://8glwu22bdf04" path="res://neighborhood_assets/models/mailbox.glb" id="m18"]
+[ext_resource type="PackedScene" uid="uid://cuhfl8ptgd3g" path="res://neighborhood_assets/models/bench.glb" id="m19"]
+[ext_resource type="PackedScene" uid="uid://fue5ymoj0j4j" path="res://neighborhood_assets/models/litter_bin.glb" id="m20"]
+[ext_resource type="PackedScene" uid="uid://dp3740u1pfkgq" path="res://neighborhood_assets/models/recycling_bin.glb" id="m21"]
+[ext_resource type="PackedScene" uid="uid://davtieb4635x0" path="res://neighborhood_assets/models/hydrant.glb" id="m22"]
+[ext_resource type="PackedScene" uid="uid://b01ljmg6ymnvo" path="res://neighborhood_assets/models/street_name_sign.glb" id="m23"]
+[ext_resource type="PackedScene" uid="uid://ciwqdsfwytfqe" path="res://neighborhood_assets/models/bollard.glb" id="m24"]
+[ext_resource type="PackedScene" uid="uid://cqjgvxvi2ghiy" path="res://neighborhood_assets/models/bicycle_rack.glb" id="m25"]
+[ext_resource type="PackedScene" uid="uid://crv26mf0puv53" path="res://neighborhood_assets/models/bicycle.glb" id="m26"]
+[ext_resource type="PackedScene" uid="uid://cr3nlhbbuxhic" path="res://neighborhood_assets/models/compact_car.glb" id="m27"]
+[ext_resource type="PackedScene" uid="uid://b5ag0h4hxqhm" path="res://neighborhood_assets/models/utility_cabinet.glb" id="m28"]
+[ext_resource type="PackedScene" uid="uid://cu0ylq8gh0oam" path="res://neighborhood_assets/models/storm_drain.glb" id="m29"]
+[ext_resource type="PackedScene" uid="uid://eehckl8f0trh" path="res://neighborhood_assets/models/manhole_cover.glb" id="m30"]
+[ext_resource type="PackedScene" uid="uid://c2oe1mhve64v7" path="res://neighborhood_assets/models/birdbath.glb" id="m31"]
 
 [sub_resource type="Environment" id="env"]
 background_mode = 1
@@ -42,119 +42,120 @@ ambient_light_energy = 0.3
 reflected_light_source = 2
 tonemap_mode = 2
 
-[node name="ModelCatalog" type="Node3D"]
+[node name="ModelCatalog" type="Node3D" unique_id=577826477]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=535339090]
 environment = SubResource("env")
 
-[node name="Models" type="Node3D" parent="."]
+[node name="Models" type="Node3D" parent="." unique_id=1541433685]
 
-[node name="tree_round_000" parent="Models" instance=ExtResource("m0")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 0.0, 0, 0.0)
+[node name="tree_round_000" parent="Models" unique_id=1607793681 instance=ExtResource("m0")]
 
-[node name="tree_tall_001" parent="Models" instance=ExtResource("m1")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 1.5, 0, 0.0)
+[node name="tree_tall_001" parent="Models" unique_id=360574629 instance=ExtResource("m1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
 
-[node name="shrub_round_002" parent="Models" instance=ExtResource("m2")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 3.0, 0, 0.0)
+[node name="shrub_round_002" parent="Models" unique_id=720698031 instance=ExtResource("m2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
 
-[node name="hedge_straight_003" parent="Models" instance=ExtResource("m3")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 4.5, 0, 0.0)
+[node name="hedge_straight_003" parent="Models" unique_id=1282084921 instance=ExtResource("m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
 
-[node name="flowerbed_004" parent="Models" instance=ExtResource("m4")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 6.0, 0, 0.0)
+[node name="flowerbed_004" parent="Models" unique_id=537863787 instance=ExtResource("m4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
-[node name="flowerpot_005" parent="Models" instance=ExtResource("m5")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 7.5, 0, 0.0)
+[node name="flowerpot_005" parent="Models" unique_id=1169244347 instance=ExtResource("m5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
 
-[node name="grass_tuft_006" parent="Models" instance=ExtResource("m6")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 9.0, 0, 0.0)
+[node name="grass_tuft_006" parent="Models" unique_id=2141513151 instance=ExtResource("m6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
-[node name="garden_rock_007" parent="Models" instance=ExtResource("m7")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 10.5, 0, 0.0)
+[node name="garden_rock_007" parent="Models" unique_id=102630366 instance=ExtResource("m7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
 
-[node name="fence_picket_008" parent="Models" instance=ExtResource("m8")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 0.0, 0, 1.8)
+[node name="fence_picket_008" parent="Models" unique_id=604990646 instance=ExtResource("m8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.8)
 
-[node name="fence_corner_009" parent="Models" instance=ExtResource("m9")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 1.5, 0, 1.8)
+[node name="fence_corner_009" parent="Models" unique_id=19936865 instance=ExtResource("m9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 1.8)
 
-[node name="garden_gate_010" parent="Models" instance=ExtResource("m10")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 3.0, 0, 1.8)
+[node name="garden_gate_010" parent="Models" unique_id=1344836527 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1.8)
 
-[node name="lawn_tile_011" parent="Models" instance=ExtResource("m11")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 4.5, 0, 1.8)
+[node name="lawn_tile_011" parent="Models" unique_id=2114154877 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1.8)
 
-[node name="lawn_verge_012" parent="Models" instance=ExtResource("m12")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 6.0, 0, 1.8)
+[node name="lawn_verge_012" parent="Models" unique_id=1210228537 instance=ExtResource("m12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 1.8)
 
-[node name="garden_path_013" parent="Models" instance=ExtResource("m13")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 7.5, 0, 1.8)
+[node name="garden_path_013" parent="Models" unique_id=587002073 instance=ExtResource("m13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1.8)
 
-[node name="stepping_stone_014" parent="Models" instance=ExtResource("m14")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 9.0, 0, 1.8)
+[node name="stepping_stone_014" parent="Models" unique_id=1256328273 instance=ExtResource("m14")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 1.8)
 
-[node name="driveway_015" parent="Models" instance=ExtResource("m15")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 10.5, 0, 1.8)
+[node name="driveway_015" parent="Models" unique_id=1461671604 instance=ExtResource("m15")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 1.8)
 
-[node name="curb_ramp_016" parent="Models" instance=ExtResource("m16")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 0.0, 0, 3.6)
+[node name="curb_ramp_016" parent="Models" unique_id=421781142 instance=ExtResource("m16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.6)
 
-[node name="streetlamp_017" parent="Models" instance=ExtResource("m17")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 1.5, 0, 3.6)
+[node name="streetlamp_017" parent="Models" unique_id=152524412 instance=ExtResource("m17")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3.6)
 
-[node name="mailbox_018" parent="Models" instance=ExtResource("m18")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 3.0, 0, 3.6)
+[node name="mailbox_018" parent="Models" unique_id=1565746670 instance=ExtResource("m18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3.6)
 
-[node name="bench_019" parent="Models" instance=ExtResource("m19")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 4.5, 0, 3.6)
+[node name="bench_019" parent="Models" unique_id=1792508403 instance=ExtResource("m19")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3.6)
 
-[node name="litter_bin_020" parent="Models" instance=ExtResource("m20")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 6.0, 0, 3.6)
+[node name="litter_bin_020" parent="Models" unique_id=1905558609 instance=ExtResource("m20")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 3.6)
 
-[node name="recycling_bin_021" parent="Models" instance=ExtResource("m21")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 7.5, 0, 3.6)
+[node name="recycling_bin_021" parent="Models" unique_id=1238874135 instance=ExtResource("m21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3.6)
 
-[node name="hydrant_022" parent="Models" instance=ExtResource("m22")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 9.0, 0, 3.6)
+[node name="hydrant_022" parent="Models" unique_id=1459138369 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3.6)
 
-[node name="street_name_sign_023" parent="Models" instance=ExtResource("m23")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 10.5, 0, 3.6)
+[node name="street_name_sign_023" parent="Models" unique_id=1295712259 instance=ExtResource("m23")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 3.6)
 
-[node name="bollard_024" parent="Models" instance=ExtResource("m24")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 0.0, 0, 5.4)
+[node name="bollard_024" parent="Models" unique_id=436144072 instance=ExtResource("m24")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.4)
 
-[node name="bicycle_rack_025" parent="Models" instance=ExtResource("m25")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 1.5, 0, 5.4)
+[node name="bicycle_rack_025" parent="Models" unique_id=1493030514 instance=ExtResource("m25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 5.4)
 
-[node name="bicycle_026" parent="Models" instance=ExtResource("m26")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 3.0, 0, 5.4)
+[node name="bicycle_026" parent="Models" unique_id=701252132 instance=ExtResource("m26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 5.4)
 
-[node name="compact_car_027" parent="Models" instance=ExtResource("m27")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 4.5, 0, 5.4)
+[node name="compact_car_027" parent="Models" unique_id=1019495752 instance=ExtResource("m27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 5.4)
 
-[node name="utility_cabinet_028" parent="Models" instance=ExtResource("m28")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 6.0, 0, 5.4)
+[node name="utility_cabinet_028" parent="Models" unique_id=1457304468 instance=ExtResource("m28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5.4)
 
-[node name="storm_drain_029" parent="Models" instance=ExtResource("m29")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 7.5, 0, 5.4)
+[node name="storm_drain_029" parent="Models" unique_id=1743153481 instance=ExtResource("m29")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 5.4)
 
-[node name="manhole_cover_030" parent="Models" instance=ExtResource("m30")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 9.0, 0, 5.4)
+[node name="manhole_cover_030" parent="Models" unique_id=2019083499 instance=ExtResource("m30")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5.4)
 
-[node name="birdbath_031" parent="Models" instance=ExtResource("m31")]
-transform = Transform3D(1.000000, 0, -0.000000, 0, 1, 0, 0.000000, 0, 1.000000, 10.5, 0, 5.4)
+[node name="birdbath_031" parent="Models" unique_id=815817919 instance=ExtResource("m31")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 5.4)
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-rotation_degrees = Vector3(-52, -32, 0)
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=910608994]
+transform = Transform3D(0.8480481, 0.41758206, -0.32625088, 0, 0.6156615, 0.7880107, 0.52991927, -0.668271, 0.5221106, 0, 0, 0)
 light_energy = 0.12
 shadow_enabled = true
 directional_shadow_max_distance = 60.0
 
-[node name="Camera3D" type="Camera3D" parent="."]
-position = Vector3(10, 13, 17)
-rotation_degrees = Vector3(-41.85, 18.38, 0)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1417598727]
+transform = Transform3D(0.9489861, -0.21037458, 0.23487835, 0, 0.7448941, 0.66718274, -0.31531778, -0.6331472, 0.70689416, 10, 13, 17)
 projection = 1
-size = 14.0
 current = true
+size = 14.0
 far = 150.0
+
+[node name="utility_cabinet2" parent="." unique_id=719878047 instance=ExtResource("m28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6288853, 0, 4.0745525)

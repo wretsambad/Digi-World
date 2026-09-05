@@ -1,5 +1,16 @@
 [gd_scene format=3 uid="uid://derb788hgktys"]
 
+[ext_resource type="PackedScene" uid="uid://drslow14q6p6c" path="res://neighborhood_assets/models/stepping_stone.glb" id="fill_0"]
+[ext_resource type="PackedScene" uid="uid://blwr6yq083ywc" path="res://neighborhood_assets/sightline_models/continuation_east_road.glb" id="fill_1"]
+[ext_resource type="PackedScene" uid="uid://dfrtw8a34rnfc" path="res://neighborhood_assets/sightline_models/continuation_east_sidewalk.glb" id="fill_2"]
+[ext_resource type="PackedScene" uid="uid://b4ypsltfrsolp" path="res://neighborhood_assets/sightline_models/continuation_east_curb.glb" id="fill_3"]
+[ext_resource type="PackedScene" uid="uid://bopvimawqxjvm" path="res://neighborhood_assets/sightline_models/continuation_west_road.glb" id="fill_4"]
+[ext_resource type="PackedScene" uid="uid://bwlo0wkqxyh31" path="res://neighborhood_assets/sightline_models/continuation_west_sidewalk.glb" id="fill_5"]
+[ext_resource type="PackedScene" uid="uid://c7j8w8rjc08xp" path="res://neighborhood_assets/sightline_models/continuation_west_curb.glb" id="fill_6"]
+[ext_resource type="PackedScene" uid="uid://c3kl6fyg4sj0u" path="res://neighborhood_assets/sightline_models/continuation_south_road.glb" id="fill_7"]
+[ext_resource type="PackedScene" uid="uid://o6nuhkpn3r41" path="res://neighborhood_assets/sightline_models/continuation_south_sidewalk.glb" id="fill_8"]
+[ext_resource type="PackedScene" uid="uid://cfptwc8x3bvgw" path="res://neighborhood_assets/sightline_models/continuation_south_curb.glb" id="fill_9"]
+[ext_resource type="PackedScene" uid="uid://dhd3mqhjygrqi" path="res://neighborhood_assets/sightline_models/distant_roofline.glb" id="fill_10"]
 [ext_resource type="PackedScene" uid="uid://dywbx8meken3e" path="res://neighborhood_assets/models/lawn_tile.glb" id="m0"]
 [ext_resource type="PackedScene" uid="uid://ynchy3ii2art" path="res://neighborhood_assets/expanded_models/road_straight_large.glb" id="m1"]
 [ext_resource type="PackedScene" uid="uid://dih03v322ec7h" path="res://neighborhood_assets/expanded_models/road_junction_large.glb" id="m2"]
@@ -53,6 +64,21 @@
 [ext_resource type="PackedScene" uid="uid://d3fwtdfl2oosl" path="res://neighborhood_assets/expanded_models/bedroom_bookshelf.glb" id="m50"]
 [ext_resource type="PackedScene" uid="uid://yh7u1vc685i7" path="res://neighborhood_assets/expanded_models/bedroom_rug.glb" id="m51"]
 [ext_resource type="PackedScene" uid="uid://ion7ruuqvk44" path="res://neighborhood_assets/expanded_models/bedroom_wall_art.glb" id="m52"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nr1sk"]
+size = Vector3(1, 0.19384766, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ymsu0"]
+size = Vector3(3.7559814, 0.8321533, 4.3658447)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wav6d"]
+size = Vector3(3.8110352, 1, 5.911255)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8578d"]
+size = Vector3(27.139221, 0.5883789, 3.4418335)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nq8gu"]
+size = Vector3(26.989136, 0.18218994, 3.236206)
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_material"]
 sky_top_color = Color(0.43, 0.66, 0.83, 1)
@@ -226,7 +252,7 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.7, 0, -3)
 metadata/category = "Houses"
 
 [node name="LearningHouse" parent="ExistingNeighborhood" unique_id=1677300764 instance=ExtResource("m8")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 17, 0, -27)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.980566, -0.048101425, -26.989725)
 metadata/category = "Houses"
 
 [node name="House_East_05" parent="ExistingNeighborhood" unique_id=349287274 instance=ExtResource("m3")]
@@ -613,16 +639,8 @@ metadata/category = "Sidewalks"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.675, 0, 26.6)
 metadata/category = "Sidewalks"
 
-[node name="Sidewalks_sidewalk_slab_large_133" parent="ExistingNeighborhood" unique_id=2135810400 instance=ExtResource("m10")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, 32.6)
-metadata/category = "Sidewalks"
-
 [node name="Sidewalks_curb_large_134" parent="ExistingNeighborhood" unique_id=1169514268 instance=ExtResource("m11")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.675, 0, 32.6)
-metadata/category = "Sidewalks"
-
-[node name="Sidewalks_sidewalk_slab_large_135" parent="ExistingNeighborhood" unique_id=1758658102 instance=ExtResource("m10")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, 34.6)
 metadata/category = "Sidewalks"
 
 [node name="Sidewalks_curb_large_136" parent="ExistingNeighborhood" unique_id=1073968731 instance=ExtResource("m11")]
@@ -630,7 +648,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.675, 0, 34.6)
 metadata/category = "Sidewalks"
 
 [node name="Sidewalks_sidewalk_slab_large_137" parent="ExistingNeighborhood" unique_id=242157193 instance=ExtResource("m10")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, 36.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5358022, -4.65, 0, 36.07068)
 metadata/category = "Sidewalks"
 
 [node name="Sidewalks_curb_large_138" parent="ExistingNeighborhood" unique_id=329624339 instance=ExtResource("m11")]
@@ -738,7 +756,7 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.65, 0, 53)
 metadata/category = "Driveways"
 
 [node name="Driveways_driveway_apron_large_164" parent="ExistingNeighborhood" unique_id=19168563 instance=ExtResource("m12")]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.65, 0, 29)
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1.0701872, 0, 0, -4.623589, 0, 29.294544)
 metadata/category = "Driveways"
 
 [node name="Driveways_driveway_apron_large_165" parent="ExistingNeighborhood" unique_id=435443821 instance=ExtResource("m12")]
@@ -1521,10 +1539,6 @@ metadata/category = "Sidewalks"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, 26.6)
 metadata/category = "Sidewalks"
 
-[node name="Sidewalks_sidewalk_slab_large_360" parent="ExistingNeighborhood" unique_id=643246922 instance=ExtResource("m10")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, 32.6)
-metadata/category = "Sidewalks"
-
 [node name="Sidewalks_curb_large_361" parent="ExistingNeighborhood" unique_id=727148297 instance=ExtResource("m11")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, 32.6)
 metadata/category = "Sidewalks"
@@ -1646,7 +1660,7 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 4.65, 0, 53)
 metadata/category = "Driveways"
 
 [node name="Driveways_driveway_apron_large_391" parent="ExistingNeighborhood" unique_id=1364422365 instance=ExtResource("m12")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 4.65, 0, 29)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 0.8989024, 0, 0, 4.65, 0, 29)
 metadata/category = "Driveways"
 
 [node name="Driveways_driveway_apron_large_392" parent="ExistingNeighborhood" unique_id=999322890 instance=ExtResource("m12")]
@@ -2344,6 +2358,15 @@ metadata/category = "Fences"
 [node name="Fences_fence_picket_565" parent="ExistingNeighborhood" unique_id=619278403 instance=ExtResource("m19")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.75, 0.02, -4.6)
 metadata/category = "Fences"
+
+[node name="Park_PlaceHolder" type="MeshInstance3D" parent="ExistingNeighborhood/Fences_fence_picket_565" unique_id=411564973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.561808, 0.09527904, -4.0275955)
+mesh = SubResource("BoxMesh_nr1sk")
+
+[node name="Label3D" type="Label3D" parent="ExistingNeighborhood/Fences_fence_picket_565/Park_PlaceHolder" unique_id=2057895518]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.24749768, 0)
+pixel_size = 0.01
+text = "PARK"
 
 [node name="Fences_fence_picket_566" parent="ExistingNeighborhood" unique_id=1158838895 instance=ExtResource("m19")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.75, 0.02, -1.3)
@@ -3409,22 +3432,6 @@ metadata/category = "TreeBelt"
 transform = Transform3D(-0.896606, 0, -0.848762, 0, 1.234625, 0, 0.848762, 0, -0.896606, -77.96446, 0, -83.07181)
 metadata/category = "TreeBelt"
 
-[node name="TreeBelt_tree_oak_large_832" parent="ExistingNeighborhood" unique_id=273684516 instance=ExtResource("m22")]
-transform = Transform3D(1.297253, 0, -1.191919, 0, 1.761686, 0, 1.191919, 0, 1.297253, -63.71529, 0, -74.37482)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_poplar_large_833" parent="ExistingNeighborhood" unique_id=2055667838 instance=ExtResource("m23")]
-transform = Transform3D(0.305527, 0, -1.263548, 0, 1.299962, 0, 1.263548, 0, 0.305527, -76.92911, 0, -73.83006)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_poplar_large_834" parent="ExistingNeighborhood" unique_id=1584649703 instance=ExtResource("m23")]
-transform = Transform3D(0.71335, 0, -1.119792, 0, 1.327706, 0, 1.119792, 0, 0.71335, -62.40181, 0, -63.61402)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_maple_large_835" parent="ExistingNeighborhood" unique_id=919454336 instance=ExtResource("m30")]
-transform = Transform3D(-1.573745, 0, -0.206444, 0, 1.587228, 0, 0.206444, 0, -1.573745, -77.64774, 0, -63.76344)
-metadata/category = "TreeBelt"
-
 [node name="TreeBelt_tree_maple_large_836" parent="ExistingNeighborhood" unique_id=1750913433 instance=ExtResource("m30")]
 transform = Transform3D(1.459795, 0, -0.685415, 0, 1.612699, 0, 0.685415, 0, 1.459795, -67.49307, 0, -57.13689)
 metadata/category = "TreeBelt"
@@ -3565,10 +3572,6 @@ metadata/category = "TreeBelt"
 transform = Transform3D(1.221103, 0, 0, 0, 1.221103, 0, 0, 0, 1.221103, -65.99713, 0, -105)
 metadata/category = "TreeBelt"
 
-[node name="TreeBelt_tree_oak_large_871" parent="ExistingNeighborhood" unique_id=1361943535 instance=ExtResource("m22")]
-transform = Transform3D(1.375069, 0, 0, 0, 1.375069, 0, 0, 0, 1.375069, -63.67003, 0, -113)
-metadata/category = "TreeBelt"
-
 [node name="TreeBelt_tree_oak_large_872" parent="ExistingNeighborhood" unique_id=944012625 instance=ExtResource("m22")]
 transform = Transform3D(1.307628, 0, 0, 0, 1.307628, 0, 0, 0, 1.307628, -54.31004, 0, -105)
 metadata/category = "TreeBelt"
@@ -3669,24 +3672,12 @@ metadata/category = "TreeBelt"
 transform = Transform3D(1.429229, 0, 0, 0, 1.429229, 0, 0, 0, 1.429229, 57.06653, 0, -105)
 metadata/category = "TreeBelt"
 
-[node name="TreeBelt_tree_poplar_large_897" parent="ExistingNeighborhood" unique_id=1838213724 instance=ExtResource("m23")]
-transform = Transform3D(1.689336, 0, 0, 0, 1.689336, 0, 0, 0, 1.689336, 58.11038, 0, -113)
-metadata/category = "TreeBelt"
-
 [node name="TreeBelt_tree_poplar_large_898" parent="ExistingNeighborhood" unique_id=1646201585 instance=ExtResource("m23")]
 transform = Transform3D(1.433948, 0, 0, 0, 1.433948, 0, 0, 0, 1.433948, 69.55086, 0, -105)
 metadata/category = "TreeBelt"
 
-[node name="TreeBelt_tree_oak_large_899" parent="ExistingNeighborhood" unique_id=169642067 instance=ExtResource("m22")]
-transform = Transform3D(1.677104, 0, 0, 0, 1.677104, 0, 0, 0, 1.677104, 67.5186, 0, -113)
-metadata/category = "TreeBelt"
-
 [node name="TreeBelt_tree_oak_large_900" parent="ExistingNeighborhood" unique_id=1129391272 instance=ExtResource("m22")]
 transform = Transform3D(-1.246582, 0, 0.236921, 0, 1.268897, 0, -0.236921, 0, -1.246582, 67.41555, 0, -102.8656)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_poplar_large_901" parent="ExistingNeighborhood" unique_id=1636695991 instance=ExtResource("m23")]
-transform = Transform3D(0.173548, 0, 1.655601, 0, 1.664672, 0, -1.655601, 0, 0.173548, 79.94717, 0, -101.62622)
 metadata/category = "TreeBelt"
 
 [node name="TreeBelt_tree_poplar_large_902" parent="ExistingNeighborhood" unique_id=2122820419 instance=ExtResource("m23")]
@@ -3707,18 +3698,6 @@ metadata/category = "TreeBelt"
 
 [node name="TreeBelt_tree_oak_large_906" parent="ExistingNeighborhood" unique_id=1656400942 instance=ExtResource("m22")]
 transform = Transform3D(-0.812274, 0, 1.355155, 0, 1.579947, 0, -1.355155, 0, -0.812274, 67.00838, 0, -76.36509)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_poplar_large_907" parent="ExistingNeighborhood" unique_id=2127294492 instance=ExtResource("m23")]
-transform = Transform3D(0.937739, 0, 1.273395, 0, 1.58142, 0, -1.273395, 0, 0.937739, 77.03355, 0, -75.53861)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_poplar_large_908" parent="ExistingNeighborhood" unique_id=423472670 instance=ExtResource("m23")]
-transform = Transform3D(-1.263737, 0, -0.62811, 0, 1.411224, 0, 0.62811, 0, -1.263737, 64.67821, 0, -65.94522)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_maple_large_909" parent="ExistingNeighborhood" unique_id=957819343 instance=ExtResource("m30")]
-transform = Transform3D(-1.198373, 0, -0.121602, 0, 1.204527, 0, 0.121602, 0, -1.198373, 79.49362, 0, -66.21851)
 metadata/category = "TreeBelt"
 
 [node name="TreeBelt_tree_maple_large_910" parent="ExistingNeighborhood" unique_id=1468245233 instance=ExtResource("m30")]
@@ -3921,16 +3900,8 @@ metadata/category = "TreeBelt"
 transform = Transform3D(1.444882, 0, 0, 0, 1.444882, 0, 0, 0, 1.444882, 1.36808, 0, 113)
 metadata/category = "TreeBelt"
 
-[node name="TreeBelt_tree_poplar_large_960" parent="ExistingNeighborhood" unique_id=1300845355 instance=ExtResource("m23")]
-transform = Transform3D(1.523049, 0, 0, 0, 1.523049, 0, 0, 0, 1.523049, 11.49946, 0, 105)
-metadata/category = "TreeBelt"
-
 [node name="TreeBelt_tree_oak_large_961" parent="ExistingNeighborhood" unique_id=2095454063 instance=ExtResource("m22")]
 transform = Transform3D(1.543339, 0, 0, 0, 1.543339, 0, 0, 0, 1.543339, 10.9985, 0, 113)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_oak_large_962" parent="ExistingNeighborhood" unique_id=1897369431 instance=ExtResource("m22")]
-transform = Transform3D(1.577324, 0, 0, 0, 1.577324, 0, 0, 0, 1.577324, 20.68924, 0, 105)
 metadata/category = "TreeBelt"
 
 [node name="TreeBelt_tree_poplar_large_963" parent="ExistingNeighborhood" unique_id=1463262884 instance=ExtResource("m23")]
@@ -3945,20 +3916,8 @@ metadata/category = "TreeBelt"
 transform = Transform3D(1.434529, 0, 0, 0, 1.434529, 0, 0, 0, 1.434529, 30.04542, 0, 113)
 metadata/category = "TreeBelt"
 
-[node name="TreeBelt_tree_oak_large_966" parent="ExistingNeighborhood" unique_id=1145808927 instance=ExtResource("m22")]
-transform = Transform3D(1.352205, 0, 0, 0, 1.352205, 0, 0, 0, 1.352205, 38.97543, 0, 105)
-metadata/category = "TreeBelt"
-
 [node name="TreeBelt_tree_poplar_large_967" parent="ExistingNeighborhood" unique_id=1540681734 instance=ExtResource("m23")]
 transform = Transform3D(1.235103, 0, 0, 0, 1.235103, 0, 0, 0, 1.235103, 37.66448, 0, 113)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_poplar_large_968" parent="ExistingNeighborhood" unique_id=1992519925 instance=ExtResource("m23")]
-transform = Transform3D(1.345015, 0, 0, 0, 1.345015, 0, 0, 0, 1.345015, 48.92817, 0, 105)
-metadata/category = "TreeBelt"
-
-[node name="TreeBelt_tree_oak_large_969" parent="ExistingNeighborhood" unique_id=1169387754 instance=ExtResource("m22")]
-transform = Transform3D(1.634348, 0, 0, 0, 1.634348, 0, 0, 0, 1.634348, 50.52801, 0, 113)
 metadata/category = "TreeBelt"
 
 [node name="TreeBelt_tree_oak_large_970" parent="ExistingNeighborhood" unique_id=98091537 instance=ExtResource("m22")]
@@ -3977,14 +3936,6 @@ metadata/category = "TreeBelt"
 transform = Transform3D(1.400913, 0, 0, 0, 1.400913, 0, 0, 0, 1.400913, 69.93131, 0, 113)
 metadata/category = "TreeBelt"
 
-[node name="BackdropHills_landscape_mound_974" parent="ExistingNeighborhood" unique_id=280249923 instance=ExtResource("m41")]
-transform = Transform3D(1.25, 0, 0, 0, 1.15, 0, 0, 0, 1.4, -80, -1.8, -84)
-metadata/category = "BackdropHills"
-
-[node name="BackdropHills_landscape_mound_975" parent="ExistingNeighborhood" unique_id=1018070358 instance=ExtResource("m41")]
-transform = Transform3D(1.25, 0, 0, 0, 1.15, 0, 0, 0, 1.4, -80, -1.8, -53)
-metadata/category = "BackdropHills"
-
 [node name="BackdropHills_landscape_mound_976" parent="ExistingNeighborhood" unique_id=1088029985 instance=ExtResource("m41")]
 transform = Transform3D(1.25, 0, 0, 0, 1.15, 0, 0, 0, 1.4, -80, -1.8, -21)
 metadata/category = "BackdropHills"
@@ -4001,10 +3952,6 @@ metadata/category = "BackdropHills"
 transform = Transform3D(1.25, 0, 0, 0, 1.15, 0, 0, 0, 1.4, -80, -1.8, 78)
 metadata/category = "BackdropHills"
 
-[node name="BackdropHills_landscape_mound_980" parent="ExistingNeighborhood" unique_id=770831073 instance=ExtResource("m41")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, -57, -1.8, -112)
-metadata/category = "BackdropHills"
-
 [node name="BackdropHills_landscape_mound_981" parent="ExistingNeighborhood" unique_id=1892202664 instance=ExtResource("m41")]
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, -25, -1.8, -112)
 metadata/category = "BackdropHills"
@@ -4015,18 +3962,6 @@ metadata/category = "BackdropHills"
 
 [node name="BackdropHills_landscape_mound_983" parent="ExistingNeighborhood" unique_id=1705757116 instance=ExtResource("m41")]
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 40, -1.8, -112)
-metadata/category = "BackdropHills"
-
-[node name="BackdropHills_landscape_mound_984" parent="ExistingNeighborhood" unique_id=112180677 instance=ExtResource("m41")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 66, -1.8, -112)
-metadata/category = "BackdropHills"
-
-[node name="BackdropHills_landscape_mound_985" parent="ExistingNeighborhood" unique_id=1878089672 instance=ExtResource("m41")]
-transform = Transform3D(1.25, 0, 0, 0, 1.15, 0, 0, 0, 1.4, 80, -1.8, -84)
-metadata/category = "BackdropHills"
-
-[node name="BackdropHills_landscape_mound_986" parent="ExistingNeighborhood" unique_id=383365481 instance=ExtResource("m41")]
-transform = Transform3D(1.25, 0, 0, 0, 1.15, 0, 0, 0, 1.4, 80, -1.8, -53)
 metadata/category = "BackdropHills"
 
 [node name="BackdropHills_landscape_mound_987" parent="ExistingNeighborhood" unique_id=248443196 instance=ExtResource("m41")]
@@ -4053,18 +3988,6 @@ metadata/category = "BackdropHills"
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, -25, -1.8, 112)
 metadata/category = "BackdropHills"
 
-[node name="BackdropHills_landscape_mound_993" parent="ExistingNeighborhood" unique_id=158753756 instance=ExtResource("m41")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 7, -1.8, 112)
-metadata/category = "BackdropHills"
-
-[node name="BackdropHills_landscape_mound_994" parent="ExistingNeighborhood" unique_id=522772483 instance=ExtResource("m41")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 40, -1.8, 112)
-metadata/category = "BackdropHills"
-
-[node name="BackdropHills_landscape_mound_995" parent="ExistingNeighborhood" unique_id=1995656320 instance=ExtResource("m41")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, 66, -1.8, 112)
-metadata/category = "BackdropHills"
-
 [node name="GardenTrees_tree_poplar_large_996" parent="ExistingNeighborhood" unique_id=1321065617 instance=ExtResource("m23")]
 transform = Transform3D(1.276575, 0, 0, 0, 1.276575, 0, 0, 0, 1.276575, -32.15399, 0, -90)
 metadata/category = "GardenTrees"
@@ -4074,7 +3997,7 @@ transform = Transform3D(1.160395, 0, 0, 0, 1.160395, 0, 0, 0, 1.160395, -33.1199
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_oak_large_998" parent="ExistingNeighborhood" unique_id=1333247875 instance=ExtResource("m22")]
-transform = Transform3D(1.204871, 0, 0, 0, 1.204871, 0, 0, 0, 1.204871, -32.46308, 0, -68)
+transform = Transform3D(1.204871, 0, 0, 0, 1.204871, 0, 0, 0, 1.204871, -36.825897, 0, -89.188126)
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_poplar_large_999" parent="ExistingNeighborhood" unique_id=1947408805 instance=ExtResource("m23")]
@@ -4138,7 +4061,7 @@ transform = Transform3D(1.057704, 0, 0, 0, 1.057704, 0, 0, 0, 1.057704, 31.11277
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_oak_large_1014" parent="ExistingNeighborhood" unique_id=1704650717 instance=ExtResource("m22")]
-transform = Transform3D(1.008821, 0, 0, 0, 1.008821, 0, 0, 0, 1.008821, 32.81997, 0, -68)
+transform = Transform3D(1.008821, 0, 0, 0, 1.008821, 0, 0, 0, 1.008821, 40.214054, 0, -92.64541)
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_poplar_large_1015" parent="ExistingNeighborhood" unique_id=2052766814 instance=ExtResource("m23")]
@@ -4206,7 +4129,7 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 12.23, 6.76, -27.42)
 metadata/category = "Bedroom"
 
 [node name="Bed" parent="ExistingNeighborhood" unique_id=232185643 instance=ExtResource("m44")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 15.35, 3.52, -26.4)
+transform = Transform3D(8.742278e-08, 0, 1, 0, 1, 0, -1, 0, 8.742278e-08, 13.457615, 3.52, -26.4)
 metadata/category = "Bedroom"
 
 [node name="Desk" parent="ExistingNeighborhood" unique_id=714367604 instance=ExtResource("m45")]
@@ -4218,7 +4141,7 @@ transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 16.95, 3.52, -30.9)
 metadata/category = "Bedroom"
 
 [node name="Computer_LessonAnchor" parent="ExistingNeighborhood" unique_id=1790087380 instance=ExtResource("m47")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 17.96, 4.35, -30.9)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 17.959671, 4.348543, -30.89996)
 metadata/category = "Bedroom"
 
 [node name="Phone_LessonAnchor" parent="ExistingNeighborhood" unique_id=2050189714 instance=ExtResource("m48")]
@@ -4240,6 +4163,2314 @@ metadata/category = "Bedroom"
 [node name="BedroomArtwork" parent="ExistingNeighborhood" unique_id=1541388084 instance=ExtResource("m52")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 18.7, 5.35, -29.3)
 metadata/category = "Bedroom"
+
+[node name="Fill_house_peach_000" parent="ExistingNeighborhood" unique_id=2082845399 instance=ExtResource("m6")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -20.5, 0, 9)
+metadata/category = "SightlineInfillHouses"
+
+[node name="Fill_garden_path_large_001" parent="ExistingNeighborhood" unique_id=182107924 instance=ExtResource("m15")]
+transform = Transform3D(0, 0, 1.65, 0, 1, 0, -1, 0, 0, -10.8, 0.065, 9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_garden_gate_002" parent="ExistingNeighborhood" unique_id=2093004295 instance=ExtResource("m21")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.8, 0.025, 9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_003" parent="ExistingNeighborhood" unique_id=1784681673 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, -6.85, 0.025, 10.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_004" parent="ExistingNeighborhood" unique_id=596890892 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, -6.85, 0.025, 12.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_005" parent="ExistingNeighborhood" unique_id=245010426 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, 6.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_006" parent="ExistingNeighborhood" unique_id=1982361375 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, 6.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_007" parent="ExistingNeighborhood" unique_id=26225988 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, 11.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_008" parent="ExistingNeighborhood" unique_id=939525115 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, 11.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_mailbox_009" parent="ExistingNeighborhood" unique_id=2027579957 instance=ExtResource("m16")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -7.5, 0.025, 9.95)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerpot_010" parent="ExistingNeighborhood" unique_id=593768272 instance=ExtResource("m18")]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, -15.1, 0.08, 10.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_011" parent="ExistingNeighborhood" unique_id=1910300470 instance=ExtResource("m25")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -11.6, 0.025, 6.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_012" parent="ExistingNeighborhood" unique_id=1860469776 instance=ExtResource("m23")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -27.8, 0, 7)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_013" parent="ExistingNeighborhood" unique_id=1527267651 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, 5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_014" parent="ExistingNeighborhood" unique_id=579868263 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, 9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_015" parent="ExistingNeighborhood" unique_id=2100759851 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, 13)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_house_cedar_016" parent="ExistingNeighborhood" unique_id=1318502814 instance=ExtResource("m9")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -21.1, 0, -15)
+metadata/category = "SightlineInfillHouses"
+
+[node name="Fill_garden_path_large_017" parent="ExistingNeighborhood" unique_id=345962054 instance=ExtResource("m15")]
+transform = Transform3D(0, 0, 1.65, 0, 1, 0, -1, 0, 0, -10.8, 0.065, -15)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_garden_gate_018" parent="ExistingNeighborhood" unique_id=2138868397 instance=ExtResource("m21")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.8, 0.025, -15)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_019" parent="ExistingNeighborhood" unique_id=900881919 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, -6.85, 0.025, -13.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_020" parent="ExistingNeighborhood" unique_id=2117514379 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, -6.85, 0.025, -11.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_021" parent="ExistingNeighborhood" unique_id=600207959 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -17.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_022" parent="ExistingNeighborhood" unique_id=1372137321 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, -17.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_023" parent="ExistingNeighborhood" unique_id=1421146715 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -12.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_024" parent="ExistingNeighborhood" unique_id=137949514 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, -12.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_mailbox_025" parent="ExistingNeighborhood" unique_id=926361319 instance=ExtResource("m16")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -7.5, 0.025, -14.05)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerpot_026" parent="ExistingNeighborhood" unique_id=173614760 instance=ExtResource("m18")]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, -15.1, 0.08, -13.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_027" parent="ExistingNeighborhood" unique_id=1262354240 instance=ExtResource("m25")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -11.6, 0.025, -17.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_028" parent="ExistingNeighborhood" unique_id=783241113 instance=ExtResource("m23")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -27.8, 0, -17)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_029" parent="ExistingNeighborhood" unique_id=1667649306 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, -19)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_030" parent="ExistingNeighborhood" unique_id=287478348 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, -15)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_031" parent="ExistingNeighborhood" unique_id=2057437824 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, -11)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_house_peach_032" parent="ExistingNeighborhood" unique_id=1277370372 instance=ExtResource("m6")]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -20.5, 0, -39)
+metadata/category = "SightlineInfillHouses"
+
+[node name="Fill_garden_path_large_033" parent="ExistingNeighborhood" unique_id=1032562959 instance=ExtResource("m15")]
+transform = Transform3D(0, 0, 1.65, 0, 1, 0, -1, 0, 0, -10.8, 0.065, -39)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_garden_gate_034" parent="ExistingNeighborhood" unique_id=1862672490 instance=ExtResource("m21")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.8, 0.025, -39)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_035" parent="ExistingNeighborhood" unique_id=2097505020 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, -6.85, 0.025, -37.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_036" parent="ExistingNeighborhood" unique_id=239468941 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, -6.85, 0.025, -35.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_037" parent="ExistingNeighborhood" unique_id=1546702887 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -41.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_038" parent="ExistingNeighborhood" unique_id=1147938468 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, -41.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_039" parent="ExistingNeighborhood" unique_id=948993574 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -36.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_040" parent="ExistingNeighborhood" unique_id=1974873812 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, -36.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_mailbox_041" parent="ExistingNeighborhood" unique_id=1264123585 instance=ExtResource("m16")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -7.5, 0.025, -38.05)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerpot_042" parent="ExistingNeighborhood" unique_id=171551577 instance=ExtResource("m18")]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, -15.1, 0.08, -37.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_043" parent="ExistingNeighborhood" unique_id=1848234508 instance=ExtResource("m25")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -11.6, 0.025, -41.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_044" parent="ExistingNeighborhood" unique_id=1138701890 instance=ExtResource("m23")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -27.8, 0, -41)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_045" parent="ExistingNeighborhood" unique_id=1895986711 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, -43)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_046" parent="ExistingNeighborhood" unique_id=1379309971 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, -39)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_047" parent="ExistingNeighborhood" unique_id=2052649957 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, -28, 0.025, -35)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_house_cedar_048" parent="ExistingNeighborhood" unique_id=1906494848 instance=ExtResource("m9")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 20.5, 0, 9)
+metadata/category = "SightlineInfillHouses"
+
+[node name="Fill_garden_path_large_049" parent="ExistingNeighborhood" unique_id=1206918614 instance=ExtResource("m15")]
+transform = Transform3D(0, 0, -1.65, 0, 1, 0, 1, 0, 0, 10.8, 0.065, 9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_garden_gate_050" parent="ExistingNeighborhood" unique_id=367966636 instance=ExtResource("m21")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.8, 0.025, 9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_051" parent="ExistingNeighborhood" unique_id=1993338874 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, 10.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_052" parent="ExistingNeighborhood" unique_id=237462839 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, 12.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_053" parent="ExistingNeighborhood" unique_id=937064173 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, 6.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_054" parent="ExistingNeighborhood" unique_id=523619500 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, 6.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_055" parent="ExistingNeighborhood" unique_id=1146401563 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, 11.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_056" parent="ExistingNeighborhood" unique_id=1289633917 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, 11.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_mailbox_057" parent="ExistingNeighborhood" unique_id=2004312582 instance=ExtResource("m16")]
+transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 7.5, 0.025, 9.95)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerpot_058" parent="ExistingNeighborhood" unique_id=1841443255 instance=ExtResource("m18")]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.1, 0.08, 10.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_059" parent="ExistingNeighborhood" unique_id=1577623674 instance=ExtResource("m25")]
+transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 11.6, 0.025, 6.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_060" parent="ExistingNeighborhood" unique_id=1788325075 instance=ExtResource("m23")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 27.8, 0, 7)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_061" parent="ExistingNeighborhood" unique_id=1804936151 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, 5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_062" parent="ExistingNeighborhood" unique_id=696057939 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, 9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_063" parent="ExistingNeighborhood" unique_id=1902382219 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, 13)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_house_peach_064" parent="ExistingNeighborhood" unique_id=128607615 instance=ExtResource("m6")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 21.1, 0, -15)
+metadata/category = "SightlineInfillHouses"
+
+[node name="Fill_garden_path_large_065" parent="ExistingNeighborhood" unique_id=1335289969 instance=ExtResource("m15")]
+transform = Transform3D(0, 0, -1.65, 0, 1, 0, 1, 0, 0, 10.8, 0.065, -15)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_garden_gate_066" parent="ExistingNeighborhood" unique_id=301381744 instance=ExtResource("m21")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.8, 0.025, -15)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_067" parent="ExistingNeighborhood" unique_id=651180237 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -13.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_068" parent="ExistingNeighborhood" unique_id=1554925726 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -11.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_069" parent="ExistingNeighborhood" unique_id=1578572224 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -17.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_070" parent="ExistingNeighborhood" unique_id=559273574 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, -17.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_071" parent="ExistingNeighborhood" unique_id=470083134 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -12.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_072" parent="ExistingNeighborhood" unique_id=2093611992 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, -12.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_mailbox_073" parent="ExistingNeighborhood" unique_id=1808085320 instance=ExtResource("m16")]
+transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 7.5, 0.025, -14.05)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerpot_074" parent="ExistingNeighborhood" unique_id=415949531 instance=ExtResource("m18")]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.1, 0.08, -13.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_075" parent="ExistingNeighborhood" unique_id=532036489 instance=ExtResource("m25")]
+transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 11.6, 0.025, -17.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_076" parent="ExistingNeighborhood" unique_id=2132269591 instance=ExtResource("m23")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 27.8, 0, -17)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_077" parent="ExistingNeighborhood" unique_id=1698816595 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, -19)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_078" parent="ExistingNeighborhood" unique_id=120095065 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, -15)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_079" parent="ExistingNeighborhood" unique_id=225729943 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, -11)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_house_cedar_080" parent="ExistingNeighborhood" unique_id=1844590364 instance=ExtResource("m9")]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 20.5, 0, -39)
+metadata/category = "SightlineInfillHouses"
+
+[node name="Fill_garden_path_large_081" parent="ExistingNeighborhood" unique_id=1025092133 instance=ExtResource("m15")]
+transform = Transform3D(0, 0, -1.65, 0, 1, 0, 1, 0, 0, 10.8, 0.065, -39)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_garden_gate_082" parent="ExistingNeighborhood" unique_id=758129171 instance=ExtResource("m21")]
+transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.8, 0.025, -39)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_083" parent="ExistingNeighborhood" unique_id=1209526268 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -37.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_084" parent="ExistingNeighborhood" unique_id=388844134 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -35.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_085" parent="ExistingNeighborhood" unique_id=1272274179 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -41.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_086" parent="ExistingNeighborhood" unique_id=1826367850 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, -41.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_087" parent="ExistingNeighborhood" unique_id=128900130 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -36.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_shrub_round_088" parent="ExistingNeighborhood" unique_id=1238108725 instance=ExtResource("m24")]
+transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, -36.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_mailbox_089" parent="ExistingNeighborhood" unique_id=1013151036 instance=ExtResource("m16")]
+transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 7.5, 0.025, -38.05)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerpot_090" parent="ExistingNeighborhood" unique_id=1954404662 instance=ExtResource("m18")]
+transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.1, 0.08, -37.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_091" parent="ExistingNeighborhood" unique_id=505961532 instance=ExtResource("m25")]
+transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 11.6, 0.025, -41.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_092" parent="ExistingNeighborhood" unique_id=1387815208 instance=ExtResource("m23")]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 27.8, 0, -41)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_093" parent="ExistingNeighborhood" unique_id=1699448799 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, -43)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_094" parent="ExistingNeighborhood" unique_id=1323739232 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, -39)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_095" parent="ExistingNeighborhood" unique_id=1463417543 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, 8, 0, 9, 0, -8.3, 0, 0, 28, 0.025, -35)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_096" parent="ExistingNeighborhood" unique_id=1917369135 instance=ExtResource("m30")]
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -29, 0, -57.3)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_097" parent="ExistingNeighborhood" unique_id=263360551 instance=ExtResource("m23")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -33, 0, -50)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_098" parent="ExistingNeighborhood" unique_id=1906568371 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -32.6, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_099" parent="ExistingNeighborhood" unique_id=1203286208 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -29, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_100" parent="ExistingNeighborhood" unique_id=463741588 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -25.4, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_101" parent="ExistingNeighborhood" unique_id=1966535030 instance=ExtResource("m25")]
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, -29, 0.025, -56.3)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_102" parent="ExistingNeighborhood" unique_id=2009948673 instance=ExtResource("m17")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -29, 0.025, -60.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_103" parent="ExistingNeighborhood" unique_id=1963407597 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, -32.6, 0.025, -55.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_litter_bin_104" parent="ExistingNeighborhood" unique_id=1172239372 instance=ExtResource("m28")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -26.3, 0.025, -56.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_105" parent="ExistingNeighborhood" unique_id=547836616 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -32, 0.03, -61.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_106" parent="ExistingNeighborhood" unique_id=900242329 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -32, 0.03, -60.7)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_107" parent="ExistingNeighborhood" unique_id=240094641 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -32, 0.03, -59.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_108" parent="ExistingNeighborhood" unique_id=1768491062 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -32, 0.03, -58.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_109" parent="ExistingNeighborhood" unique_id=227407295 instance=ExtResource("m30")]
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -40, 0, -57.3)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_110" parent="ExistingNeighborhood" unique_id=631432958 instance=ExtResource("m23")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -44, 0, -50)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_111" parent="ExistingNeighborhood" unique_id=1260524941 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -43.6, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_112" parent="ExistingNeighborhood" unique_id=1059754457 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -40, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_113" parent="ExistingNeighborhood" unique_id=272535478 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -36.4, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_114" parent="ExistingNeighborhood" unique_id=841420667 instance=ExtResource("m25")]
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, -40, 0.025, -56.3)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_115" parent="ExistingNeighborhood" unique_id=917430876 instance=ExtResource("m17")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -40, 0.025, -60.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_116" parent="ExistingNeighborhood" unique_id=604097764 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, -43.6, 0.025, -55.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_litter_bin_117" parent="ExistingNeighborhood" unique_id=150948053 instance=ExtResource("m28")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -37.3, 0.025, -56.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_118" parent="ExistingNeighborhood" unique_id=1538464666 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43, 0.03, -61.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_119" parent="ExistingNeighborhood" unique_id=2053019979 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43, 0.03, -60.7)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_120" parent="ExistingNeighborhood" unique_id=818630758 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43, 0.03, -59.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_121" parent="ExistingNeighborhood" unique_id=908109336 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43, 0.03, -58.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_122" parent="ExistingNeighborhood" unique_id=633209170 instance=ExtResource("m30")]
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -53, 0, -57.3)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_123" parent="ExistingNeighborhood" unique_id=977954984 instance=ExtResource("m23")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -57, 0, -50)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_124" parent="ExistingNeighborhood" unique_id=619342273 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -56.6, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_125" parent="ExistingNeighborhood" unique_id=1761526357 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -53, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_126" parent="ExistingNeighborhood" unique_id=1962033028 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -49.4, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_127" parent="ExistingNeighborhood" unique_id=673172045 instance=ExtResource("m25")]
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, -53, 0.025, -56.3)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_128" parent="ExistingNeighborhood" unique_id=1419963145 instance=ExtResource("m17")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -53, 0.025, -60.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_129" parent="ExistingNeighborhood" unique_id=1061503161 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, -56.6, 0.025, -55.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_litter_bin_130" parent="ExistingNeighborhood" unique_id=2069319395 instance=ExtResource("m28")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -50.3, 0.025, -56.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_131" parent="ExistingNeighborhood" unique_id=1419387499 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -56, 0.03, -61.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_132" parent="ExistingNeighborhood" unique_id=1426424027 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -56, 0.03, -60.7)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_133" parent="ExistingNeighborhood" unique_id=1690921810 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -56, 0.03, -59.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_134" parent="ExistingNeighborhood" unique_id=305468381 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -56, 0.03, -58.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_135" parent="ExistingNeighborhood" unique_id=1890337948 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_136" parent="ExistingNeighborhood" unique_id=1984727919 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -12.7, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_137" parent="ExistingNeighborhood" unique_id=1080884663 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_138" parent="ExistingNeighborhood" unique_id=2082074696 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -23.7, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_139" parent="ExistingNeighborhood" unique_id=608212868 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_140" parent="ExistingNeighborhood" unique_id=1973941911 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -37.7, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_141" parent="ExistingNeighborhood" unique_id=1711883986 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_142" parent="ExistingNeighborhood" unique_id=1774379413 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -62.7, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_sidewalk_slab_large_143" parent="ExistingNeighborhood" unique_id=2143149591 instance=ExtResource("m10")]
+transform = Transform3D(0, 0, 0.225, 0, 1, 0, -1, 0, 0, -5.775, 0, -63.35)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_144" parent="ExistingNeighborhood" unique_id=640037348 instance=ExtResource("m10")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, -62.8, 0, -72.65)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_145" parent="ExistingNeighborhood" unique_id=273342761 instance=ExtResource("m10")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, -62.8, 0, -63.35)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_146" parent="ExistingNeighborhood" unique_id=1080687377 instance=ExtResource("m11")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, -62.8, 0, -71.675)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_147" parent="ExistingNeighborhood" unique_id=747946037 instance=ExtResource("m11")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, -62.8, 0, -64.325)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_148" parent="ExistingNeighborhood" unique_id=195544851 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, 66.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_149" parent="ExistingNeighborhood" unique_id=1621815624 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.675, 0, 66.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_150" parent="ExistingNeighborhood" unique_id=1337822680 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, 68.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_151" parent="ExistingNeighborhood" unique_id=351733206 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.675, 0, 68.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_152" parent="ExistingNeighborhood" unique_id=1164108605 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65, 0, 70.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_153" parent="ExistingNeighborhood" unique_id=780437881 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.675, 0, 70.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_154" parent="ExistingNeighborhood" unique_id=1829792317 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, -4.65, 0, 72.2)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_155" parent="ExistingNeighborhood" unique_id=1954514736 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, -3.675, 0, 72.2)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_tree_maple_large_156" parent="ExistingNeighborhood" unique_id=916318259 instance=ExtResource("m30")]
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, 29, 0, -57.3)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_157" parent="ExistingNeighborhood" unique_id=1885832134 instance=ExtResource("m23")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 33, 0, -50)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_158" parent="ExistingNeighborhood" unique_id=1001482349 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 25.4, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_159" parent="ExistingNeighborhood" unique_id=162185202 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 29, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_160" parent="ExistingNeighborhood" unique_id=2018750402 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 32.6, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_161" parent="ExistingNeighborhood" unique_id=827683606 instance=ExtResource("m25")]
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, 29, 0.025, -56.3)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_162" parent="ExistingNeighborhood" unique_id=1465409879 instance=ExtResource("m17")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 29, 0.025, -60.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_163" parent="ExistingNeighborhood" unique_id=127205808 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, 32.6, 0.025, -55.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_litter_bin_164" parent="ExistingNeighborhood" unique_id=549145765 instance=ExtResource("m28")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 26.3, 0.025, -56.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_165" parent="ExistingNeighborhood" unique_id=1593469973 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 32, 0.03, -61.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_166" parent="ExistingNeighborhood" unique_id=1514178025 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 32, 0.03, -60.7)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_167" parent="ExistingNeighborhood" unique_id=391891226 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 32, 0.03, -59.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_168" parent="ExistingNeighborhood" unique_id=1834930586 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 32, 0.03, -58.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_169" parent="ExistingNeighborhood" unique_id=1404915229 instance=ExtResource("m30")]
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 40, 0, -57.3)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_170" parent="ExistingNeighborhood" unique_id=295374232 instance=ExtResource("m23")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 44, 0, -50)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_171" parent="ExistingNeighborhood" unique_id=1239363027 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 36.4, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_172" parent="ExistingNeighborhood" unique_id=2058094687 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 40, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_173" parent="ExistingNeighborhood" unique_id=16411448 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 43.6, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_174" parent="ExistingNeighborhood" unique_id=554650315 instance=ExtResource("m25")]
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, 40, 0.025, -56.3)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_175" parent="ExistingNeighborhood" unique_id=1096773775 instance=ExtResource("m17")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 40, 0.025, -60.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_176" parent="ExistingNeighborhood" unique_id=1447976189 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, 43.6, 0.025, -55.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_litter_bin_177" parent="ExistingNeighborhood" unique_id=1436124271 instance=ExtResource("m28")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 37.3, 0.025, -56.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_178" parent="ExistingNeighborhood" unique_id=41663508 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 43, 0.03, -61.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_179" parent="ExistingNeighborhood" unique_id=122953050 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 43, 0.03, -60.7)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_180" parent="ExistingNeighborhood" unique_id=825440423 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 43, 0.03, -59.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_181" parent="ExistingNeighborhood" unique_id=1787482891 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 43, 0.03, -58.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_182" parent="ExistingNeighborhood" unique_id=387607202 instance=ExtResource("m30")]
+transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, 53, 0, -57.3)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_183" parent="ExistingNeighborhood" unique_id=1269044185 instance=ExtResource("m23")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 57, 0, -50)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_184" parent="ExistingNeighborhood" unique_id=495983252 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 49.4, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_185" parent="ExistingNeighborhood" unique_id=745020462 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 53, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_186" parent="ExistingNeighborhood" unique_id=574447597 instance=ExtResource("m20")]
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 56.6, 0.025, -59.4)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_bench_187" parent="ExistingNeighborhood" unique_id=1522749139 instance=ExtResource("m25")]
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, 53, 0.025, -56.3)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_188" parent="ExistingNeighborhood" unique_id=339269370 instance=ExtResource("m17")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 53, 0.025, -60.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_flowerbed_189" parent="ExistingNeighborhood" unique_id=1739894471 instance=ExtResource("m17")]
+transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, 56.6, 0.025, -55.1)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_litter_bin_190" parent="ExistingNeighborhood" unique_id=74846011 instance=ExtResource("m28")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 50.3, 0.025, -56.2)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_191" parent="ExistingNeighborhood" unique_id=1887892621 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 56, 0.03, -61.6)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_192" parent="ExistingNeighborhood" unique_id=1118204201 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 56, 0.03, -60.7)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_193" parent="ExistingNeighborhood" unique_id=458287716 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 56, 0.03, -59.8)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_stepping_stone_194" parent="ExistingNeighborhood" unique_id=526079701 instance=ExtResource("fill_0")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 56, 0.03, -58.9)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_195" parent="ExistingNeighborhood" unique_id=675093020 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_196" parent="ExistingNeighborhood" unique_id=58976979 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 9.3, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_197" parent="ExistingNeighborhood" unique_id=456608988 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_198" parent="ExistingNeighborhood" unique_id=1991172352 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 20.3, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_199" parent="ExistingNeighborhood" unique_id=476898634 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_200" parent="ExistingNeighborhood" unique_id=166902143 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 34.3, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_201" parent="ExistingNeighborhood" unique_id=1082640504 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61, 0, -78.5)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_202" parent="ExistingNeighborhood" unique_id=405027149 instance=ExtResource("m24")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 59.3, 0.025, -76.5)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_sidewalk_slab_large_203" parent="ExistingNeighborhood" unique_id=667152933 instance=ExtResource("m10")]
+transform = Transform3D(0, 0, 0.225, 0, 1, 0, -1, 0, 0, 5.775, 0, -63.35)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_204" parent="ExistingNeighborhood" unique_id=2036854925 instance=ExtResource("m10")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, 62.8, 0, -72.65)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_205" parent="ExistingNeighborhood" unique_id=99347737 instance=ExtResource("m10")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, 62.8, 0, -63.35)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_206" parent="ExistingNeighborhood" unique_id=1636022619 instance=ExtResource("m11")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, 62.8, 0, -71.675)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_207" parent="ExistingNeighborhood" unique_id=1535888730 instance=ExtResource("m11")]
+transform = Transform3D(0, 0, 0.8, 0, 1, 0, -1, 0, 0, 62.8, 0, -64.325)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_208" parent="ExistingNeighborhood" unique_id=1897250316 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, 66.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_209" parent="ExistingNeighborhood" unique_id=767196184 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, 66.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_210" parent="ExistingNeighborhood" unique_id=13483681 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, 68.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_211" parent="ExistingNeighborhood" unique_id=1488686907 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, 68.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_212" parent="ExistingNeighborhood" unique_id=342515029 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, 70.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_213" parent="ExistingNeighborhood" unique_id=477947499 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, 70.6)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_sidewalk_slab_large_214" parent="ExistingNeighborhood" unique_id=1091884146 instance=ExtResource("m10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 4.65, 0, 72.2)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_curb_large_215" parent="ExistingNeighborhood" unique_id=625406931 instance=ExtResource("m11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.6, 3.675, 0, 72.2)
+metadata/category = "SightlinePaving"
+
+[node name="Fill_continuation_east_road_216" parent="ExistingNeighborhood" unique_id=92551149 instance=ExtResource("fill_1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.6, 0, -68)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_continuation_east_sidewalk_217" parent="ExistingNeighborhood" unique_id=214313877 instance=ExtResource("fill_2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.6, 0, -68)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_continuation_east_curb_218" parent="ExistingNeighborhood" unique_id=1400946225 instance=ExtResource("fill_3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.6, 0, -68)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_tree_oak_large_219" parent="ExistingNeighborhood" unique_id=441967529 instance=ExtResource("m22")]
+transform = Transform3D(1.192139, 0, 0, 0, 1.192139, 0, 0, 0, 1.192139, 64.22437, 0, -77.86149)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_220" parent="ExistingNeighborhood" unique_id=549775870 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 64.21103, 0.025, -74.44855)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_221" parent="ExistingNeighborhood" unique_id=401758007 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 64.25033, 0, -84.49847)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_222" parent="ExistingNeighborhood" unique_id=1770510990 instance=ExtResource("m22")]
+transform = Transform3D(1.110729, 0, 0, 0, 1.110729, 0, 0, 0, 1.110729, 64.14673, 0, -58.00745)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_223" parent="ExistingNeighborhood" unique_id=755010516 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 64.16057, 0.025, -61.54865)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_224" parent="ExistingNeighborhood" unique_id=897934855 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 64.12127, 0, -51.49873)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_225" parent="ExistingNeighborhood" unique_id=593993188 instance=ExtResource("m20")]
+transform = Transform3D(8.499935, 0, -0.027376, 0, 8.2, 0, 0.033242, 0, 6.999946, 64.21279, 0.025, -74.89855)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_226" parent="ExistingNeighborhood" unique_id=872287201 instance=ExtResource("m20")]
+transform = Transform3D(8.499935, 0, -0.027376, 0, 8.2, 0, 0.033242, 0, 6.999946, 64.15881, 0.025, -61.09865)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_227" parent="ExistingNeighborhood" unique_id=361661121 instance=ExtResource("m36")]
+transform = Transform3D(0.026594, 0, 6.799948, 0, 6.8, 0, -6.799948, 0, 0.026594, 64.16585, 0.16, -62.89864)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_hedge_straight_228" parent="ExistingNeighborhood" unique_id=1171185285 instance=ExtResource("m20")]
+transform = Transform3D(8.49085, 0, 0.324706, 0, 8.2, 0, -0.394286, 0, 6.992465, 68.05773, 0.025, -74.92957)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_229" parent="ExistingNeighborhood" unique_id=1992133114 instance=ExtResource("m20")]
+transform = Transform3D(8.49085, 0, 0.324706, 0, 8.2, 0, -0.394286, 0, 6.992465, 68.69787, 0.025, -61.14443)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_230" parent="ExistingNeighborhood" unique_id=546140914 instance=ExtResource("m22")]
+transform = Transform3D(1.141959, 0, 0, 0, 1.141959, 0, 0, 0, 1.141959, 70.14814, 0, -77.35918)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_231" parent="ExistingNeighborhood" unique_id=767563777 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 70.68022, 0.025, -74.77152)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_232" parent="ExistingNeighborhood" unique_id=2035605430 instance=ExtResource("m22")]
+transform = Transform3D(0.97601, 0, 0, 0, 0.97601, 0, 0, 0, 0.97601, 73.90373, 0, -59.09463)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_233" parent="ExistingNeighborhood" unique_id=1619602864 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 73.27838, 0.025, -62.13588)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_234" parent="ExistingNeighborhood" unique_id=1081425963 instance=ExtResource("m20")]
+transform = Transform3D(8.257765, 0, 1.659226, 0, 8.2, 0, -2.014774, 0, 6.800513, 70.93418, 0.025, -75.28926)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_235" parent="ExistingNeighborhood" unique_id=361254612 instance=ExtResource("m20")]
+transform = Transform3D(8.257765, 0, 1.659226, 0, 8.2, 0, -2.014774, 0, 6.800513, 74.20522, 0.025, -61.88254)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_236" parent="ExistingNeighborhood" unique_id=11084844 instance=ExtResource("m20")]
+transform = Transform3D(7.169893, 0, 3.75972, 0, 8.2, 0, -4.565374, 0, 5.904618, 72.83239, 0.025, -76.06097)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_237" parent="ExistingNeighborhood" unique_id=1722046525 instance=ExtResource("m20")]
+transform = Transform3D(7.169893, 0, 3.75972, 0, 8.2, 0, -4.565374, 0, 5.904618, 80.24441, 0.025, -64.42043)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_238" parent="ExistingNeighborhood" unique_id=226414872 instance=ExtResource("m22")]
+transform = Transform3D(1.041458, 0, 0, 0, 1.041458, 0, 0, 0, 1.041458, 72.77977, 0, -78.41773)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_239" parent="ExistingNeighborhood" unique_id=422134712 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 74.34145, 0.025, -76.6967)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_240" parent="ExistingNeighborhood" unique_id=363591959 instance=ExtResource("m22")]
+transform = Transform3D(0.991361, 0, 0, 0, 0.991361, 0, 0, 0, 0.991361, 85.03192, 0, -64.91543)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_241" parent="ExistingNeighborhood" unique_id=588521255 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 83.01015, 0.025, -67.1435)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_242" parent="ExistingNeighborhood" unique_id=904851787 instance=ExtResource("m20")]
+transform = Transform3D(5.991798, 0, 4.965025, 0, 8.2, 0, -6.028959, 0, 4.934422, 74.9096, 0.025, -77.86393)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_243" parent="ExistingNeighborhood" unique_id=1610142682 instance=ExtResource("m20")]
+transform = Transform3D(5.991798, 0, 4.965025, 0, 8.2, 0, -6.028959, 0, 4.934422, 84.6978, 0.025, -68.13607)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_244" parent="ExistingNeighborhood" unique_id=1932312827 instance=ExtResource("m36")]
+transform = Transform3D(-4.823167, 0, 4.793439, 0, 6.8, 0, -4.793439, 0, -4.823167, 83.42108, 0.16, -69.40492)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_hedge_straight_245" parent="ExistingNeighborhood" unique_id=875051683 instance=ExtResource("m20")]
+transform = Transform3D(5.284675, 0, 5.482641, 0, 8.2, 0, -6.657493, 0, 4.352085, 77.28748, 0.025, -80.55161)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_246" parent="ExistingNeighborhood" unique_id=1065966600 instance=ExtResource("m20")]
+transform = Transform3D(5.284675, 0, 5.482641, 0, 8.2, 0, -6.657493, 0, 4.352085, 88.09612, 0.025, -71.97179)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_247" parent="ExistingNeighborhood" unique_id=669067474 instance=ExtResource("m22")]
+transform = Transform3D(1.010168, 0, 0, 0, 1.010168, 0, 0, 0, 1.010168, 76.11832, 0, -83.30403)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_248" parent="ExistingNeighborhood" unique_id=740943415 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 78.58559, 0.025, -81.51827)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_249" parent="ExistingNeighborhood" unique_id=303677908 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 70.44429, 0, -87.41079)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_250" parent="ExistingNeighborhood" unique_id=1687214920 instance=ExtResource("m22")]
+transform = Transform3D(0.975575, 0, 0, 0, 0.975575, 0, 0, 0, 0.975575, 91.60015, 0, -72.09856)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_251" parent="ExistingNeighborhood" unique_id=223606506 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 89.03561, 0.025, -73.95473)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_252" parent="ExistingNeighborhood" unique_id=1389986064 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 97.17691, 0, -68.06221)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_253" parent="ExistingNeighborhood" unique_id=1727681841 instance=ExtResource("m20")]
+transform = Transform3D(4.467718, 0, 5.955063, 0, 8.2, 0, -7.231147, 0, 3.679297, 79.50371, 0.025, -83.69274)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_254" parent="ExistingNeighborhood" unique_id=1153128080 instance=ExtResource("m20")]
+transform = Transform3D(4.467718, 0, 5.955063, 0, 8.2, 0, -7.231147, 0, 3.679297, 91.24369, 0.025, -76.43926)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_255" parent="ExistingNeighborhood" unique_id=872198415 instance=ExtResource("m22")]
+transform = Transform3D(1.095041, 0, 0, 0, 1.095041, 0, 0, 0, 1.095041, 79.23982, 0, -87.51491)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_256" parent="ExistingNeighborhood" unique_id=1148633453 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 81.51549, 0.025, -86.5671)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_257" parent="ExistingNeighborhood" unique_id=709418266 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 72.23801, 0, -90.43113)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_258" parent="ExistingNeighborhood" unique_id=307675926 instance=ExtResource("m22")]
+transform = Transform3D(1.281396, 0, 0, 0, 1.281396, 0, 0, 0, 1.281396, 96.04522, 0, -80.51553)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_259" parent="ExistingNeighborhood" unique_id=257969843 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 93.42391, 0.025, -81.6073)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_260" parent="ExistingNeighborhood" unique_id=337970995 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 102.70139, 0, -77.74327)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_261" parent="ExistingNeighborhood" unique_id=1769036355 instance=ExtResource("m20")]
+transform = Transform3D(3.268087, 0, 6.461931, 0, 8.2, 0, -7.84663, 0, 2.691366, 81.10008, 0.025, -86.74012)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_262" parent="ExistingNeighborhood" unique_id=299195141 instance=ExtResource("m20")]
+transform = Transform3D(3.268087, 0, 6.461931, 0, 8.2, 0, -7.84663, 0, 2.691366, 93.83932, 0.025, -81.43428)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_263" parent="ExistingNeighborhood" unique_id=423810714 instance=ExtResource("m20")]
+transform = Transform3D(1.215275, 0, 6.928086, 0, 8.2, 0, -8.412675, 0, 1.000815, 81.77089, 0.025, -88.98652)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_264" parent="ExistingNeighborhood" unique_id=1185163074 instance=ExtResource("m20")]
+transform = Transform3D(1.215275, 0, 6.928086, 0, 8.2, 0, -8.412675, 0, 1.000815, 95.42911, 0.025, -87.01348)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_265" parent="ExistingNeighborhood" unique_id=1540199818 instance=ExtResource("m36")]
+transform = Transform3D(-6.73014, 0, 0.97222, 0, 6.8, 0, -0.97222, 0, -6.73014, 93.64761, 0.16, -87.27083)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_tree_oak_large_266" parent="ExistingNeighborhood" unique_id=860238314 instance=ExtResource("m22")]
+transform = Transform3D(1.276728, 0, 0, 0, 1.276728, 0, 0, 0, 1.276728, 78.87037, 0, -91.35488)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_267" parent="ExistingNeighborhood" unique_id=1448068576 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 82.29633, 0.025, -91.56087)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_268" parent="ExistingNeighborhood" unique_id=1545607796 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 72.26445, 0, -90.95768)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_269" parent="ExistingNeighborhood" unique_id=835442698 instance=ExtResource("m22")]
+transform = Transform3D(1.282816, 0, 0, 0, 1.282816, 0, 0, 0, 1.282816, 98.21302, 0, -92.51791)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_270" parent="ExistingNeighborhood" unique_id=1114766817 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 95.17307, 0.025, -92.33513)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_271" parent="ExistingNeighborhood" unique_id=1603343511 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 105.20495, 0, -92.93832)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_272" parent="ExistingNeighborhood" unique_id=1579907131 instance=ExtResource("m20")]
+transform = Transform3D(-0.510166, 0, 6.98738, 0, 8.2, 0, -8.484676, 0, -0.420137, 81.84714, 0.025, -91.53387)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_273" parent="ExistingNeighborhood" unique_id=1012151006 instance=ExtResource("m20")]
+transform = Transform3D(-0.510166, 0, 6.98738, 0, 8.2, 0, -8.484676, 0, -0.420137, 95.62226, 0.025, -92.36213)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_274" parent="ExistingNeighborhood" unique_id=2123572291 instance=ExtResource("m20")]
+transform = Transform3D(-1.937969, 0, 6.815634, 0, 8.2, 0, -8.276127, 0, -1.595974, 81.39703, 0.025, -94.55613)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_275" parent="ExistingNeighborhood" unique_id=1747274253 instance=ExtResource("m20")]
+transform = Transform3D(-1.937969, 0, 6.815634, 0, 8.2, 0, -8.276127, 0, -1.595974, 94.83357, 0.025, -97.70247)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_276" parent="ExistingNeighborhood" unique_id=711720414 instance=ExtResource("m22")]
+transform = Transform3D(1.004439, 0, 0, 0, 1.004439, 0, 0, 0, 1.004439, 78.17774, 0, -96.10803)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_277" parent="ExistingNeighborhood" unique_id=621231827 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 81.06164, 0.025, -97.19799)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_278" parent="ExistingNeighborhood" unique_id=575968096 instance=ExtResource("m22")]
+transform = Transform3D(1.01871, 0, 0, 0, 1.01871, 0, 0, 0, 1.01871, 95.5429, 0, -102.6711)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_279" parent="ExistingNeighborhood" unique_id=2042243769 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 93.12856, 0.025, -101.75861)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_280" parent="ExistingNeighborhood" unique_id=25728762 instance=ExtResource("m20")]
+transform = Transform3D(-3.269094, 0, 6.461585, 0, 8.2, 0, -7.846211, 0, -2.692195, 80.39962, 0.025, -97.64606)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_281" parent="ExistingNeighborhood" unique_id=1663958461 instance=ExtResource("m20")]
+transform = Transform3D(-3.269094, 0, 6.461585, 0, 8.2, 0, -7.846211, 0, -2.692195, 93.13818, 0.025, -102.95354)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_282" parent="ExistingNeighborhood" unique_id=298503467 instance=ExtResource("m20")]
+transform = Transform3D(-4.603553, 0, 5.884479, 0, 8.2, 0, -7.145439, 0, -3.791161, 78.92228, 0.025, -100.4783)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_283" parent="ExistingNeighborhood" unique_id=1984058713 instance=ExtResource("m20")]
+transform = Transform3D(-4.603553, 0, 5.884479, 0, 8.2, 0, -7.145439, 0, -3.791161, 90.52312, 0.025, -107.9523)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_284" parent="ExistingNeighborhood" unique_id=610711433 instance=ExtResource("m36")]
+transform = Transform3D(-5.570177, 0, -3.900401, 0, 6.8, 0, 3.900401, 0, -5.570177, 88.40943, 0.16, -107.8716)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_tree_oak_large_285" parent="ExistingNeighborhood" unique_id=2008499951 instance=ExtResource("m22")]
+transform = Transform3D(1.100282, 0, 0, 0, 1.100282, 0, 0, 0, 1.100282, 76.26625, 0, -100.61906)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_286" parent="ExistingNeighborhood" unique_id=2037495250 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 78.20403, 0.025, -102.22494)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_287" parent="ExistingNeighborhood" unique_id=1264693969 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 70.46589, 0, -95.81217)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_288" parent="ExistingNeighborhood" unique_id=1389202792 instance=ExtResource("m22")]
+transform = Transform3D(1.083138, 0, 0, 0, 1.083138, 0, 0, 0, 1.083138, 89.83811, 0, -111.86636)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_289" parent="ExistingNeighborhood" unique_id=428136861 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 88.13657, 0.025, -110.45626)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_290" parent="ExistingNeighborhood" unique_id=296136828 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 95.87471, 0, -116.86903)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_291" parent="ExistingNeighborhood" unique_id=1418539494 instance=ExtResource("m20")]
+transform = Transform3D(-6.076862, 0, 4.894408, 0, 8.2, 0, -5.94321, 0, -5.004475, 77.16501, 0.025, -102.70092)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_292" parent="ExistingNeighborhood" unique_id=1349503441 instance=ExtResource("m20")]
+transform = Transform3D(-6.076862, 0, 4.894408, 0, 8.2, 0, -5.94321, 0, -5.004475, 86.81399, 0.025, -112.56688)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_293" parent="ExistingNeighborhood" unique_id=42620383 instance=ExtResource("m20")]
+transform = Transform3D(-7.23024, 0, 3.680507, 0, 8.2, 0, -4.469187, 0, -5.954315, 74.59707, 0.025, -104.62295)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_294" parent="ExistingNeighborhood" unique_id=1720724900 instance=ExtResource("m20")]
+transform = Transform3D(-7.23024, 0, 3.680507, 0, 8.2, 0, -4.469187, 0, -5.954315, 81.85293, 0.025, -116.36145)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_295" parent="ExistingNeighborhood" unique_id=1555098521 instance=ExtResource("m22")]
+transform = Transform3D(1.221636, 0, 0, 0, 1.221636, 0, 0, 0, 1.221636, 72.96581, 0, -103.43072)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_296" parent="ExistingNeighborhood" unique_id=1889011709 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 74.12296, 0.025, -105.42988)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_297" parent="ExistingNeighborhood" unique_id=1441089592 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 69.0884, 0, -96.73186)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_298" parent="ExistingNeighborhood" unique_id=674499550 instance=ExtResource("m22")]
+transform = Transform3D(1.177361, 0, 0, 0, 1.177361, 0, 0, 0, 1.177361, 81.8916, 0, -118.85147)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_299" parent="ExistingNeighborhood" unique_id=1139012016 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 80.58524, 0.025, -116.59452)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_300" parent="ExistingNeighborhood" unique_id=1841358993 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 85.6198, 0, -125.29254)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_301" parent="ExistingNeighborhood" unique_id=1233750481 instance=ExtResource("m20")]
+transform = Transform3D(-7.613177, 0, 3.113065, 0, 8.2, 0, -3.780151, 0, -6.269675, 71.49901, 0.025, -106.31609)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_302" parent="ExistingNeighborhood" unique_id=1199888823 instance=ExtResource("m20")]
+transform = Transform3D(-7.613177, 0, 3.113065, 0, 8.2, 0, -3.780151, 0, -6.269675, 77.63619, 0.025, -118.67631)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_303" parent="ExistingNeighborhood" unique_id=1150739891 instance=ExtResource("m22")]
+transform = Transform3D(1.03434, 0, 0, 0, 1.03434, 0, 0, 0, 1.03434, 66.53377, 0, -105.28158)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_304" parent="ExistingNeighborhood" unique_id=1021822903 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 67.95149, 0.025, -108.463)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_305" parent="ExistingNeighborhood" unique_id=1831538372 instance=ExtResource("m22")]
+transform = Transform3D(1.231878, 0, 0, 0, 1.231878, 0, 0, 0, 1.231878, 74.15804, 0, -122.39069)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_306" parent="ExistingNeighborhood" unique_id=1516272522 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 73.20231, 0.025, -120.246)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_307" parent="ExistingNeighborhood" unique_id=2076502963 instance=ExtResource("m20")]
+transform = Transform3D(-7.76399, 0, 2.849277, 0, 8.2, 0, -3.459836, 0, -6.393874, 67.76833, 0.025, -108.05197)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_308" parent="ExistingNeighborhood" unique_id=147930227 instance=ExtResource("m20")]
+transform = Transform3D(-7.76399, 0, 2.849277, 0, 8.2, 0, -3.459836, 0, -6.393874, 73.38547, 0.025, -120.65703)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_309" parent="ExistingNeighborhood" unique_id=1500912103 instance=ExtResource("m20")]
+transform = Transform3D(-7.763848, 0, 2.849538, 0, 8.2, 0, -3.460154, 0, -6.393757, 63.66617, 0.025, -109.86168)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_310" parent="ExistingNeighborhood" unique_id=364180723 instance=ExtResource("m20")]
+transform = Transform3D(-7.763848, 0, 2.849538, 0, 8.2, 0, -3.460154, 0, -6.393757, 69.28383, 0.025, -122.46652)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_311" parent="ExistingNeighborhood" unique_id=398954141 instance=ExtResource("m23")]
+transform = Transform3D(1.136567, 0, 0, 0, 1.136567, 0, 0, 0, 1.136567, 59.6781, 0, -109.64384)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_312" parent="ExistingNeighborhood" unique_id=656563606 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 60.67585, 0.025, -111.72945)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_313" parent="ExistingNeighborhood" unique_id=1861064796 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 56.3387, 0, -102.66349)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_314" parent="ExistingNeighborhood" unique_id=1544015968 instance=ExtResource("m23")]
+transform = Transform3D(1.028369, 0, 0, 0, 1.028369, 0, 0, 0, 1.028369, 67.52464, 0, -126.04547)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_315" parent="ExistingNeighborhood" unique_id=627016989 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 66.24295, 0.025, -123.36635)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_316" parent="ExistingNeighborhood" unique_id=926164224 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 70.5801, 0, -132.43231)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_317" parent="ExistingNeighborhood" unique_id=661157837 instance=ExtResource("m20")]
+transform = Transform3D(-7.613334, 0, 3.112805, 0, 8.2, 0, -3.779834, 0, -6.269804, 59.41596, 0.025, -111.84206)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_318" parent="ExistingNeighborhood" unique_id=1928819272 instance=ExtResource("m20")]
+transform = Transform3D(-7.613334, 0, 3.112805, 0, 8.2, 0, -3.779834, 0, -6.269804, 65.55264, 0.025, -124.20254)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_continuation_west_road_319" parent="ExistingNeighborhood" unique_id=1680892007 instance=ExtResource("fill_4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.6, 0, -68)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_continuation_west_sidewalk_320" parent="ExistingNeighborhood" unique_id=490780 instance=ExtResource("fill_5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.6, 0, -68)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_continuation_west_curb_321" parent="ExistingNeighborhood" unique_id=475468973 instance=ExtResource("fill_6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.6, 0, -68)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_tree_oak_large_322" parent="ExistingNeighborhood" unique_id=981425094 instance=ExtResource("m22")]
+transform = Transform3D(1.209318, 0, 0, 0, 1.209318, 0, 0, 0, 1.209318, -64.15005, 0, -58.85724)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_323" parent="ExistingNeighborhood" unique_id=474767436 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -64.16057, 0.025, -61.54865)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_324" parent="ExistingNeighborhood" unique_id=380324600 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -64.12127, 0, -51.49873)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_325" parent="ExistingNeighborhood" unique_id=1717543984 instance=ExtResource("m22")]
+transform = Transform3D(1.245215, 0, 0, 0, 1.245215, 0, 0, 0, 1.245215, -64.21956, 0, -76.63197)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_326" parent="ExistingNeighborhood" unique_id=1768697447 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -64.21103, 0.025, -74.44855)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_327" parent="ExistingNeighborhood" unique_id=868254212 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -64.25033, 0, -84.49847)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_328" parent="ExistingNeighborhood" unique_id=1792714895 instance=ExtResource("m20")]
+transform = Transform3D(-8.499935, 0, -0.027376, 0, 8.2, 0, 0.033242, 0, -6.999946, -64.15881, 0.025, -61.09865)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_329" parent="ExistingNeighborhood" unique_id=1437484519 instance=ExtResource("m20")]
+transform = Transform3D(-8.499935, 0, -0.027376, 0, 8.2, 0, 0.033242, 0, -6.999946, -64.21279, 0.025, -74.89855)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_330" parent="ExistingNeighborhood" unique_id=634134078 instance=ExtResource("m36")]
+transform = Transform3D(0.026594, 0, -6.799948, 0, 6.8, 0, 6.799948, 0, 0.026594, -64.20575, 0.16, -73.09856)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_hedge_straight_331" parent="ExistingNeighborhood" unique_id=2002056556 instance=ExtResource("m20")]
+transform = Transform3D(-8.49085, 0, 0.324706, 0, 8.2, 0, -0.394286, 0, -6.992465, -68.69787, 0.025, -61.14443)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_332" parent="ExistingNeighborhood" unique_id=1647777857 instance=ExtResource("m20")]
+transform = Transform3D(-8.49085, 0, 0.324706, 0, 8.2, 0, -0.394286, 0, -6.992465, -68.05773, 0.025, -74.92957)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_333" parent="ExistingNeighborhood" unique_id=163600921 instance=ExtResource("m22")]
+transform = Transform3D(0.971332, 0, 0, 0, 0.971332, 0, 0, 0, 0.971332, -73.78416, 0, -59.67613)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_334" parent="ExistingNeighborhood" unique_id=1567387293 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -73.27838, 0.025, -62.13588)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_335" parent="ExistingNeighborhood" unique_id=2044738687 instance=ExtResource("m22")]
+transform = Transform3D(1.099444, 0, 0, 0, 1.099444, 0, 0, 0, 1.099444, -70.18222, 0, -77.19345)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_336" parent="ExistingNeighborhood" unique_id=1350846909 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -70.68022, 0.025, -74.77152)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_337" parent="ExistingNeighborhood" unique_id=159326314 instance=ExtResource("m20")]
+transform = Transform3D(-8.257765, 0, 1.659226, 0, 8.2, 0, -2.014774, 0, -6.800513, -74.20522, 0.025, -61.88254)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_338" parent="ExistingNeighborhood" unique_id=699470267 instance=ExtResource("m20")]
+transform = Transform3D(-8.257765, 0, 1.659226, 0, 8.2, 0, -2.014774, 0, -6.800513, -70.93418, 0.025, -75.28926)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_339" parent="ExistingNeighborhood" unique_id=1379527223 instance=ExtResource("m20")]
+transform = Transform3D(-7.169893, 0, 3.75972, 0, 8.2, 0, -4.565374, 0, -5.904618, -80.24441, 0.025, -64.42043)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_340" parent="ExistingNeighborhood" unique_id=1537761269 instance=ExtResource("m20")]
+transform = Transform3D(-7.169893, 0, 3.75972, 0, 8.2, 0, -4.565374, 0, -5.904618, -72.83239, 0.025, -76.06097)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_341" parent="ExistingNeighborhood" unique_id=295069679 instance=ExtResource("m22")]
+transform = Transform3D(0.993141, 0, 0, 0, 0.993141, 0, 0, 0, 0.993141, -84.99479, 0, -64.95635)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_342" parent="ExistingNeighborhood" unique_id=313291642 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -83.01015, 0.025, -67.1435)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_343" parent="ExistingNeighborhood" unique_id=274002437 instance=ExtResource("m22")]
+transform = Transform3D(1.174055, 0, 0, 0, 1.174055, 0, 0, 0, 1.174055, -72.72177, 0, -78.48164)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_344" parent="ExistingNeighborhood" unique_id=1844690483 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -74.34145, 0.025, -76.6967)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_345" parent="ExistingNeighborhood" unique_id=1885417967 instance=ExtResource("m20")]
+transform = Transform3D(-5.991798, 0, 4.965025, 0, 8.2, 0, -6.028959, 0, -4.934422, -84.6978, 0.025, -68.13607)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_346" parent="ExistingNeighborhood" unique_id=146060493 instance=ExtResource("m20")]
+transform = Transform3D(-5.991798, 0, 4.965025, 0, 8.2, 0, -6.028959, 0, -4.934422, -74.9096, 0.025, -77.86393)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_347" parent="ExistingNeighborhood" unique_id=1789342746 instance=ExtResource("m36")]
+transform = Transform3D(-4.823167, 0, -4.793439, 0, 6.8, 0, 4.793439, 0, -4.823167, -76.18632, 0.16, -76.59508)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_hedge_straight_348" parent="ExistingNeighborhood" unique_id=1166350000 instance=ExtResource("m20")]
+transform = Transform3D(-5.284675, 0, 5.482641, 0, 8.2, 0, -6.657493, 0, -4.352085, -88.09612, 0.025, -71.97179)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_349" parent="ExistingNeighborhood" unique_id=1313537781 instance=ExtResource("m20")]
+transform = Transform3D(-5.284675, 0, 5.482641, 0, 8.2, 0, -6.657493, 0, -4.352085, -77.28748, 0.025, -80.55161)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_350" parent="ExistingNeighborhood" unique_id=280411094 instance=ExtResource("m22")]
+transform = Transform3D(1.244979, 0, 0, 0, 1.244979, 0, 0, 0, 1.244979, -90.88034, 0, -72.61955)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_351" parent="ExistingNeighborhood" unique_id=1037683644 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -89.03561, 0.025, -73.95473)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_352" parent="ExistingNeighborhood" unique_id=1255082803 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -97.17691, 0, -68.06221)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_353" parent="ExistingNeighborhood" unique_id=1263454179 instance=ExtResource("m22")]
+transform = Transform3D(1.090262, 0, 0, 0, 1.090262, 0, 0, 0, 1.090262, -76.20155, 0, -83.24379)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_354" parent="ExistingNeighborhood" unique_id=919223656 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -78.58559, 0.025, -81.51827)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_355" parent="ExistingNeighborhood" unique_id=245058670 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -70.44429, 0, -87.41079)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_356" parent="ExistingNeighborhood" unique_id=82721298 instance=ExtResource("m20")]
+transform = Transform3D(-4.467718, 0, 5.955063, 0, 8.2, 0, -7.231147, 0, -3.679297, -91.24369, 0.025, -76.43926)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_357" parent="ExistingNeighborhood" unique_id=1402705411 instance=ExtResource("m20")]
+transform = Transform3D(-4.467718, 0, 5.955063, 0, 8.2, 0, -7.231147, 0, -3.679297, -79.50371, 0.025, -83.69274)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_358" parent="ExistingNeighborhood" unique_id=1983187 instance=ExtResource("m22")]
+transform = Transform3D(1.249089, 0, 0, 0, 1.249089, 0, 0, 0, 1.249089, -95.91115, 0, -80.57137)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_359" parent="ExistingNeighborhood" unique_id=2130225168 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -93.42391, 0.025, -81.6073)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_360" parent="ExistingNeighborhood" unique_id=426701520 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -102.70139, 0, -77.74327)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_361" parent="ExistingNeighborhood" unique_id=2091202698 instance=ExtResource("m22")]
+transform = Transform3D(1.258727, 0, 0, 0, 1.258727, 0, 0, 0, 1.258727, -78.98207, 0, -87.62226)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_362" parent="ExistingNeighborhood" unique_id=1231855804 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -81.51549, 0.025, -86.5671)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_363" parent="ExistingNeighborhood" unique_id=1237971068 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -72.23801, 0, -90.43113)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_364" parent="ExistingNeighborhood" unique_id=732424708 instance=ExtResource("m20")]
+transform = Transform3D(-3.268087, 0, 6.461931, 0, 8.2, 0, -7.84663, 0, -2.691366, -93.83932, 0.025, -81.43428)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_365" parent="ExistingNeighborhood" unique_id=1309188190 instance=ExtResource("m20")]
+transform = Transform3D(-3.268087, 0, 6.461931, 0, 8.2, 0, -7.84663, 0, -2.691366, -81.10008, 0.025, -86.74012)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_366" parent="ExistingNeighborhood" unique_id=2079754937 instance=ExtResource("m20")]
+transform = Transform3D(-1.215275, 0, 6.928086, 0, 8.2, 0, -8.412675, 0, -1.000815, -95.42911, 0.025, -87.01348)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_367" parent="ExistingNeighborhood" unique_id=782921263 instance=ExtResource("m20")]
+transform = Transform3D(-1.215275, 0, 6.928086, 0, 8.2, 0, -8.412675, 0, -1.000815, -81.77089, 0.025, -88.98652)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_368" parent="ExistingNeighborhood" unique_id=1006401573 instance=ExtResource("m36")]
+transform = Transform3D(-6.73014, 0, -0.97222, 0, 6.8, 0, 0.97222, 0, -6.73014, -83.55239, 0.16, -88.72917)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_tree_oak_large_369" parent="ExistingNeighborhood" unique_id=2057970628 instance=ExtResource("m22")]
+transform = Transform3D(1.109058, 0, 0, 0, 1.109058, 0, 0, 0, 1.109058, -97.42954, 0, -92.4708)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_370" parent="ExistingNeighborhood" unique_id=2084353300 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -95.17307, 0.025, -92.33513)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_371" parent="ExistingNeighborhood" unique_id=1576653060 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -105.20495, 0, -92.93832)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_372" parent="ExistingNeighborhood" unique_id=1057105921 instance=ExtResource("m22")]
+transform = Transform3D(1.281339, 0, 0, 0, 1.281339, 0, 0, 0, 1.281339, -79.00289, 0, -91.36285)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_373" parent="ExistingNeighborhood" unique_id=1574559905 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -82.29633, 0.025, -91.56087)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_374" parent="ExistingNeighborhood" unique_id=516451865 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -72.26445, 0, -90.95768)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_375" parent="ExistingNeighborhood" unique_id=217439106 instance=ExtResource("m20")]
+transform = Transform3D(0.510166, 0, 6.98738, 0, 8.2, 0, -8.484676, 0, 0.420137, -95.62226, 0.025, -92.36213)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_376" parent="ExistingNeighborhood" unique_id=1930974017 instance=ExtResource("m20")]
+transform = Transform3D(0.510166, 0, 6.98738, 0, 8.2, 0, -8.484676, 0, 0.420137, -81.84714, 0.025, -91.53387)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_377" parent="ExistingNeighborhood" unique_id=164842 instance=ExtResource("m20")]
+transform = Transform3D(1.937969, 0, 6.815634, 0, 8.2, 0, -8.276127, 0, 1.595974, -94.83357, 0.025, -97.70247)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_378" parent="ExistingNeighborhood" unique_id=688645254 instance=ExtResource("m20")]
+transform = Transform3D(1.937969, 0, 6.815634, 0, 8.2, 0, -8.276127, 0, 1.595974, -81.39703, 0.025, -94.55613)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_379" parent="ExistingNeighborhood" unique_id=1956909404 instance=ExtResource("m22")]
+transform = Transform3D(0.96579, 0, 0, 0, 0.96579, 0, 0, 0, 0.96579, -95.28471, 0, -102.57352)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_380" parent="ExistingNeighborhood" unique_id=538433398 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -93.12856, 0.025, -101.75861)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_381" parent="ExistingNeighborhood" unique_id=1990065670 instance=ExtResource("m22")]
+transform = Transform3D(1.227252, 0, 0, 0, 1.227252, 0, 0, 0, 1.227252, -78.0636, 0, -96.06489)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_382" parent="ExistingNeighborhood" unique_id=1538895623 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -81.06164, 0.025, -97.19799)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_383" parent="ExistingNeighborhood" unique_id=511705380 instance=ExtResource("m20")]
+transform = Transform3D(3.269094, 0, 6.461585, 0, 8.2, 0, -7.846211, 0, 2.692195, -93.13818, 0.025, -102.95354)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_384" parent="ExistingNeighborhood" unique_id=2036697197 instance=ExtResource("m20")]
+transform = Transform3D(3.269094, 0, 6.461585, 0, 8.2, 0, -7.846211, 0, 2.692195, -80.39962, 0.025, -97.64606)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_385" parent="ExistingNeighborhood" unique_id=1406039367 instance=ExtResource("m20")]
+transform = Transform3D(4.603553, 0, 5.884479, 0, 8.2, 0, -7.145439, 0, 3.791161, -90.52312, 0.025, -107.9523)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_386" parent="ExistingNeighborhood" unique_id=1145667182 instance=ExtResource("m20")]
+transform = Transform3D(4.603553, 0, 5.884479, 0, 8.2, 0, -7.145439, 0, 3.791161, -78.92228, 0.025, -100.4783)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_387" parent="ExistingNeighborhood" unique_id=572425436 instance=ExtResource("m36")]
+transform = Transform3D(-5.570177, 0, 3.900401, 0, 6.8, 0, -3.900401, 0, -5.570177, -80.05417, 0.16, -102.021)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_tree_oak_large_388" parent="ExistingNeighborhood" unique_id=1387520661 instance=ExtResource("m22")]
+transform = Transform3D(1.114663, 0, 0, 0, 1.114663, 0, 0, 0, 1.114663, -90.48524, 0, -112.40265)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_389" parent="ExistingNeighborhood" unique_id=909373309 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -88.13657, 0.025, -110.45626)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_390" parent="ExistingNeighborhood" unique_id=1339958616 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -95.87471, 0, -116.86903)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_391" parent="ExistingNeighborhood" unique_id=1138355384 instance=ExtResource("m22")]
+transform = Transform3D(1.195955, 0, 0, 0, 1.195955, 0, 0, 0, 1.195955, -76.32621, 0, -100.66875)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_392" parent="ExistingNeighborhood" unique_id=1848561220 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -78.20403, 0.025, -102.22494)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_393" parent="ExistingNeighborhood" unique_id=1919772955 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -70.46589, 0, -95.81217)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_394" parent="ExistingNeighborhood" unique_id=1387549460 instance=ExtResource("m20")]
+transform = Transform3D(6.076862, 0, 4.894408, 0, 8.2, 0, -5.94321, 0, 5.004475, -86.81399, 0.025, -112.56688)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_395" parent="ExistingNeighborhood" unique_id=334341702 instance=ExtResource("m20")]
+transform = Transform3D(6.076862, 0, 4.894408, 0, 8.2, 0, -5.94321, 0, 5.004475, -77.16501, 0.025, -102.70092)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_396" parent="ExistingNeighborhood" unique_id=758930261 instance=ExtResource("m20")]
+transform = Transform3D(7.23024, 0, 3.680507, 0, 8.2, 0, -4.469187, 0, 5.954315, -81.85293, 0.025, -116.36145)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_397" parent="ExistingNeighborhood" unique_id=651276492 instance=ExtResource("m20")]
+transform = Transform3D(7.23024, 0, 3.680507, 0, 8.2, 0, -4.469187, 0, 5.954315, -74.59707, 0.025, -104.62295)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_398" parent="ExistingNeighborhood" unique_id=1210032522 instance=ExtResource("m22")]
+transform = Transform3D(1.056984, 0, 0, 0, 1.056984, 0, 0, 0, 1.056984, -82.30406, 0, -119.56406)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_399" parent="ExistingNeighborhood" unique_id=589397204 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -80.58524, 0.025, -116.59452)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_400" parent="ExistingNeighborhood" unique_id=2013674713 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -85.6198, 0, -125.29254)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_401" parent="ExistingNeighborhood" unique_id=1272964676 instance=ExtResource("m22")]
+transform = Transform3D(1.148994, 0, 0, 0, 1.148994, 0, 0, 0, 1.148994, -72.59272, 0, -102.78614)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_402" parent="ExistingNeighborhood" unique_id=1494221597 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -74.12296, 0.025, -105.42988)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_403" parent="ExistingNeighborhood" unique_id=62466334 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -69.0884, 0, -96.73186)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_404" parent="ExistingNeighborhood" unique_id=806678360 instance=ExtResource("m20")]
+transform = Transform3D(7.613177, 0, 3.113065, 0, 8.2, 0, -3.780151, 0, 6.269675, -77.63619, 0.025, -118.67631)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_405" parent="ExistingNeighborhood" unique_id=1699206333 instance=ExtResource("m20")]
+transform = Transform3D(7.613177, 0, 3.113065, 0, 8.2, 0, -3.780151, 0, 6.269675, -71.49901, 0.025, -106.31609)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_406" parent="ExistingNeighborhood" unique_id=513488372 instance=ExtResource("m22")]
+transform = Transform3D(1.189148, 0, 0, 0, 1.189148, 0, 0, 0, 1.189148, -74.33368, 0, -122.78484)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_407" parent="ExistingNeighborhood" unique_id=991791110 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -73.20231, 0.025, -120.246)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_408" parent="ExistingNeighborhood" unique_id=2052192792 instance=ExtResource("m22")]
+transform = Transform3D(0.973961, 0, 0, 0, 0.973961, 0, 0, 0, 0.973961, -66.58888, 0, -105.40524)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_409" parent="ExistingNeighborhood" unique_id=90145695 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -67.95149, 0.025, -108.463)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_410" parent="ExistingNeighborhood" unique_id=1199162611 instance=ExtResource("m20")]
+transform = Transform3D(7.76399, 0, 2.849277, 0, 8.2, 0, -3.459836, 0, 6.393874, -73.38547, 0.025, -120.65703)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_411" parent="ExistingNeighborhood" unique_id=967094351 instance=ExtResource("m20")]
+transform = Transform3D(7.76399, 0, 2.849277, 0, 8.2, 0, -3.459836, 0, 6.393874, -67.76833, 0.025, -108.05197)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_412" parent="ExistingNeighborhood" unique_id=984857045 instance=ExtResource("m20")]
+transform = Transform3D(7.763848, 0, 2.849538, 0, 8.2, 0, -3.460154, 0, 6.393757, -69.28383, 0.025, -122.46652)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_413" parent="ExistingNeighborhood" unique_id=291187011 instance=ExtResource("m20")]
+transform = Transform3D(7.763848, 0, 2.849538, 0, 8.2, 0, -3.460154, 0, 6.393757, -63.66617, 0.025, -109.86168)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_414" parent="ExistingNeighborhood" unique_id=16224710 instance=ExtResource("m23")]
+transform = Transform3D(1.09866, 0, 0, 0, 1.09866, 0, 0, 0, 1.09866, -67.47802, 0, -125.94803)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_415" parent="ExistingNeighborhood" unique_id=2128059899 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -66.24295, 0.025, -123.36635)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_416" parent="ExistingNeighborhood" unique_id=1618426492 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -70.5801, 0, -132.43231)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_417" parent="ExistingNeighborhood" unique_id=1502094882 instance=ExtResource("m23")]
+transform = Transform3D(1.273908, 0, 0, 0, 1.273908, 0, 0, 0, 1.273908, -59.36785, 0, -108.99534)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_418" parent="ExistingNeighborhood" unique_id=2089602191 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -60.67585, 0.025, -111.72945)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_419" parent="ExistingNeighborhood" unique_id=1253861998 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -56.3387, 0, -102.66349)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_420" parent="ExistingNeighborhood" unique_id=48016262 instance=ExtResource("m20")]
+transform = Transform3D(7.613334, 0, 3.112805, 0, 8.2, 0, -3.779834, 0, 6.269804, -65.55264, 0.025, -124.20254)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_421" parent="ExistingNeighborhood" unique_id=532448175 instance=ExtResource("m20")]
+transform = Transform3D(7.613334, 0, 3.112805, 0, 8.2, 0, -3.779834, 0, 6.269804, -59.41596, 0.025, -111.84206)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_continuation_south_road_422" parent="ExistingNeighborhood" unique_id=1460057725 instance=ExtResource("fill_7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 72.8)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_continuation_south_sidewalk_423" parent="ExistingNeighborhood" unique_id=907964203 instance=ExtResource("fill_8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 72.8)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_continuation_south_curb_424" parent="ExistingNeighborhood" unique_id=648981540 instance=ExtResource("fill_9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 72.8)
+metadata/category = "SightlineRoadContinuation"
+
+[node name="Fill_tree_oak_large_425" parent="ExistingNeighborhood" unique_id=1623155979 instance=ExtResource("m22")]
+transform = Transform3D(1.08858, 0, 0, 0, 1.08858, 0, 0, 0, 1.08858, 9.72977, 0, 73.5906)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_426" parent="ExistingNeighborhood" unique_id=1346439106 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 6.44846, 0.025, 73.57944)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_427" parent="ExistingNeighborhood" unique_id=1672426181 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 16.4984, 0, 73.61363)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_428" parent="ExistingNeighborhood" unique_id=1084594436 instance=ExtResource("m22")]
+transform = Transform3D(1.071007, 0, 0, 0, 1.071007, 0, 0, 0, 1.071007, -8.94165, 0, 73.52709)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_429" parent="ExistingNeighborhood" unique_id=832083292 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -6.45146, 0.025, 73.53556)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_430" parent="ExistingNeighborhood" unique_id=1420301141 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -16.5014, 0, 73.50137)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_431" parent="ExistingNeighborhood" unique_id=1927947505 instance=ExtResource("m20")]
+transform = Transform3D(-0.028915, 0, -6.999959, 0, 8.2, 0, 8.499951, 0, -0.023813, 6.89846, 0.025, 73.58097)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_432" parent="ExistingNeighborhood" unique_id=127249091 instance=ExtResource("m20")]
+transform = Transform3D(-0.028915, 0, -6.999959, 0, 8.2, 0, 8.499951, 0, -0.023813, -6.90146, 0.025, 73.53403)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_433" parent="ExistingNeighborhood" unique_id=1146720864 instance=ExtResource("m36")]
+transform = Transform3D(6.799961, 0, -0.023132, 0, 6.8, 0, 0.023132, 0, 6.799961, -5.10147, 0.16, 73.54015)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_hedge_straight_434" parent="ExistingNeighborhood" unique_id=1875760960 instance=ExtResource("m20")]
+transform = Transform3D(0.02997, 0, -6.999956, 0, 8.2, 0, 8.499947, 0, 0.024681, 6.88436, 0.025, 77.48657)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_435" parent="ExistingNeighborhood" unique_id=375612791 instance=ExtResource("m20")]
+transform = Transform3D(0.02997, 0, -6.999956, 0, 8.2, 0, 8.499947, 0, 0.024681, -6.91556, 0.025, 77.53523)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_436" parent="ExistingNeighborhood" unique_id=1487502085 instance=ExtResource("m22")]
+transform = Transform3D(1.190354, 0, 0, 0, 1.190354, 0, 0, 0, 1.190354, 9.55367, 0, 81.08083)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_437" parent="ExistingNeighborhood" unique_id=456238243 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 6.5205, 0.025, 81.23486)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_438" parent="ExistingNeighborhood" unique_id=582645128 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 16.55756, 0, 80.72514)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_439" parent="ExistingNeighborhood" unique_id=1634117688 instance=ExtResource("m22")]
+transform = Transform3D(1.047071, 0, 0, 0, 1.047071, 0, 0, 0, 1.047071, -9.10581, 0, 82.02843)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_440" parent="ExistingNeighborhood" unique_id=2045219328 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -6.3629, 0.025, 81.88914)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_441" parent="ExistingNeighborhood" unique_id=1779030726 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -16.39996, 0, 82.39886)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_442" parent="ExistingNeighborhood" unique_id=948383416 instance=ExtResource("m20")]
+transform = Transform3D(0.43111, 0, -6.990991, 0, 8.2, 0, 8.48906, 0, 0.355032, 6.96992, 0.025, 81.21204)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_443" parent="ExistingNeighborhood" unique_id=1968452149 instance=ExtResource("m20")]
+transform = Transform3D(0.43111, 0, -6.990991, 0, 8.2, 0, 8.48906, 0, 0.355032, -6.81232, 0.025, 81.91196)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_444" parent="ExistingNeighborhood" unique_id=1977641535 instance=ExtResource("m20")]
+transform = Transform3D(1.248854, 0, -6.924034, 0, 8.2, 0, 8.407756, 0, 1.028468, 7.26952, 0.025, 84.45292)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_445" parent="ExistingNeighborhood" unique_id=1516492286 instance=ExtResource("m20")]
+transform = Transform3D(1.248854, 0, -6.924034, 0, 8.2, 0, 8.407756, 0, 1.028468, -6.38072, 0.025, 86.48048)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_446" parent="ExistingNeighborhood" unique_id=2130633747 instance=ExtResource("m23")]
+transform = Transform3D(1.279556, 0, 0, 0, 1.279556, 0, 0, 0, 1.279556, 10.55714, 0, 85.8953)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_447" parent="ExistingNeighborhood" unique_id=350197691 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 7.36683, 0.025, 86.95225)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_448" parent="ExistingNeighborhood" unique_id=1898144610 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 16.90691, 0, 83.79163)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_449" parent="ExistingNeighborhood" unique_id=926379565 instance=ExtResource("m23")]
+transform = Transform3D(1.092844, 0, 0, 0, 1.092844, 0, 0, 0, 1.092844, -8.05568, 0, 92.0617)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_450" parent="ExistingNeighborhood" unique_id=509555830 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, -4.87863, 0.025, 91.00915)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_451" parent="ExistingNeighborhood" unique_id=934357586 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -14.41871, 0, 94.16977)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_452" parent="ExistingNeighborhood" unique_id=1500420650 instance=ExtResource("m20")]
+transform = Transform3D(3.053549, 0, -6.532714, 0, 8.2, 0, 7.932581, 0, 2.514687, 7.90989, 0.025, 87.13634)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_453" parent="ExistingNeighborhood" unique_id=558894655 instance=ExtResource("m20")]
+transform = Transform3D(3.053549, 0, -6.532714, 0, 8.2, 0, 7.932581, 0, 2.514687, -4.96889, 0.025, 92.09386)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_454" parent="ExistingNeighborhood" unique_id=1756794550 instance=ExtResource("m36")]
+transform = Transform3D(6.051519, 0, 3.10147, 0, 6.8, 0, -3.10147, 0, 6.051519, -2.53864, 0.16, 93.1261)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_hedge_straight_455" parent="ExistingNeighborhood" unique_id=1890782879 instance=ExtResource("m20")]
+transform = Transform3D(5.313049, 0, -5.464011, 0, 8.2, 0, 6.634871, 0, 4.375452, 9.13005, 0.025, 89.15575)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_456" parent="ExistingNeighborhood" unique_id=32624425 instance=ExtResource("m20")]
+transform = Transform3D(5.313049, 0, -5.464011, 0, 8.2, 0, 6.634871, 0, 4.375452, -1.64185, 0.025, 97.78165)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_457" parent="ExistingNeighborhood" unique_id=1162381136 instance=ExtResource("m23")]
+transform = Transform3D(1.158923, 0, 0, 0, 1.158923, 0, 0, 0, 1.158923, 11.75982, 0, 88.64095)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_458" parent="ExistingNeighborhood" unique_id=264186546 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 9.89862, 0.025, 90.64038)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_459" parent="ExistingNeighborhood" unique_id=481526896 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 16.7462, 0, 83.28422)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_460" parent="ExistingNeighborhood" unique_id=995351672 instance=ExtResource("m23")]
+transform = Transform3D(1.101261, 0, 0, 0, 1.101261, 0, 0, 0, 1.101261, -0.51288, 0, 101.82515)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_461" parent="ExistingNeighborhood" unique_id=2105145661 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 1.10918, 0.025, 100.08262)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_462" parent="ExistingNeighborhood" unique_id=616558904 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -5.7384, 0, 107.43878)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_463" parent="ExistingNeighborhood" unique_id=2122173574 instance=ExtResource("m20")]
+transform = Transform3D(6.799922, 0, -4.200086, 0, 8.2, 0, 5.100104, 0, 5.599935, 11.14008, 0.025, 91.09256)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_464" parent="ExistingNeighborhood" unique_id=1624052281 instance=ExtResource("m20")]
+transform = Transform3D(6.799922, 0, -4.200086, 0, 8.2, 0, 5.100104, 0, 5.599935, 2.85992, 0.025, 102.13244)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_465" parent="ExistingNeighborhood" unique_id=1015131475 instance=ExtResource("m20")]
+transform = Transform3D(7.853766, 0, -2.677213, 0, 8.2, 0, 3.250901, 0, 6.467807, 13.57547, 0.025, 92.48759)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_466" parent="ExistingNeighborhood" unique_id=71530051 instance=ExtResource("m20")]
+transform = Transform3D(7.853766, 0, -2.677213, 0, 8.2, 0, 3.250901, 0, 6.467807, 8.29753, 0.025, 105.23841)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_467" parent="ExistingNeighborhood" unique_id=405828181 instance=ExtResource("m23")]
+transform = Transform3D(1.029735, 0, 0, 0, 1.029735, 0, 0, 0, 1.029735, 15.15237, 0, 90.13302)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_468" parent="ExistingNeighborhood" unique_id=1176324627 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 14.15327, 0.025, 93.18148)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_469" parent="ExistingNeighborhood" unique_id=1011767884 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 17.28322, 0, 83.6313)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_470" parent="ExistingNeighborhood" unique_id=68927192 instance=ExtResource("m23")]
+transform = Transform3D(1.182275, 0, 0, 0, 1.182275, 0, 0, 0, 1.182275, 9.28967, 0, 108.02143)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_471" parent="ExistingNeighborhood" unique_id=1916303218 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 10.13573, 0.025, 105.43992)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_472" parent="ExistingNeighborhood" unique_id=640976356 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 7.00578, 0, 114.9901)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_473" parent="ExistingNeighborhood" unique_id=1529836204 instance=ExtResource("m20")]
+transform = Transform3D(8.499342, 0, -0.087119, 0, 8.2, 0, 0.105788, 0, 6.999458, 15.37897, 0.025, 93.02933)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_474" parent="ExistingNeighborhood" unique_id=1895939520 instance=ExtResource("m20")]
+transform = Transform3D(8.499342, 0, -0.087119, 0, 8.2, 0, 0.105788, 0, 6.999458, 15.20723, 0.025, 106.82827)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_475" parent="ExistingNeighborhood" unique_id=373561795 instance=ExtResource("m36")]
+transform = Transform3D(-0.419704, 0, 6.787035, 0, 6.8, 0, -6.787035, 0, -0.419704, 16.28448, 0.16, 105.00068)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_tree_oak_large_476" parent="ExistingNeighborhood" unique_id=1846560614 instance=ExtResource("m22")]
+transform = Transform3D(1.077584, 0, 0, 0, 1.077584, 0, 0, 0, 1.077584, 16.89478, 0, 89.68576)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_477" parent="ExistingNeighborhood" unique_id=1505333546 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 17.8343, 0.025, 93.00169)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_478" parent="ExistingNeighborhood" unique_id=235672857 instance=ExtResource("m22")]
+transform = Transform3D(1.16132, 0, 0, 0, 1.16132, 0, 0, 0, 1.16132, 22.16286, 0, 108.27883)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_479" parent="ExistingNeighborhood" unique_id=1546599758 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 21.3509, 0.025, 105.41311)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_480" parent="ExistingNeighborhood" unique_id=1968276460 instance=ExtResource("m20")]
+transform = Transform3D(8.178072, 0, 1.908232, 0, 8.2, 0, -2.317139, 0, 6.734883, 17.71163, 0.025, 92.56873)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_481" parent="ExistingNeighborhood" unique_id=1531621587 instance=ExtResource("m20")]
+transform = Transform3D(8.178072, 0, 1.908232, 0, 8.2, 0, -2.317139, 0, 6.734883, 21.47357, 0.025, 105.84607)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_482" parent="ExistingNeighborhood" unique_id=1358818410 instance=ExtResource("m20")]
+transform = Transform3D(8.101645, 0, 2.117822, 0, 8.2, 0, -2.571642, 0, 6.671943, 21.38833, 0.025, 91.40697)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_483" parent="ExistingNeighborhood" unique_id=629170581 instance=ExtResource("m20")]
+transform = Transform3D(8.101645, 0, 2.117822, 0, 8.2, 0, -2.571642, 0, 6.671943, 25.56347, 0.025, 104.56023)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_484" parent="ExistingNeighborhood" unique_id=1450970403 instance=ExtResource("m22")]
+transform = Transform3D(1.109076, 0, 0, 0, 1.109076, 0, 0, 0, 1.109076, 24.52428, 0, 87.91163)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_485" parent="ExistingNeighborhood" unique_id=871432815 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 25.19133, 0.025, 90.80064)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_486" parent="ExistingNeighborhood" unique_id=1242624009 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 22.93036, 0, 81.00827)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_487" parent="ExistingNeighborhood" unique_id=452343831 instance=ExtResource("m22")]
+transform = Transform3D(1.284022, 0, 0, 0, 1.284022, 0, 0, 0, 1.284022, 28.80057, 0, 106.43242)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_488" parent="ExistingNeighborhood" unique_id=406531375 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 28.09347, 0.025, 103.36996)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_489" parent="ExistingNeighborhood" unique_id=1011111591 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 30.35444, 0, 113.16233)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_490" parent="ExistingNeighborhood" unique_id=369955213 instance=ExtResource("m20")]
+transform = Transform3D(8.346151, 0, 1.325797, 0, 8.2, 0, -1.609896, 0, 6.873301, 26.12284, 0.025, 90.14209)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_491" parent="ExistingNeighborhood" unique_id=1651321751 instance=ExtResource("m20")]
+transform = Transform3D(8.346151, 0, 1.325797, 0, 8.2, 0, -1.609896, 0, 6.873301, 28.73656, 0.025, 103.69231)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_492" parent="ExistingNeighborhood" unique_id=713496815 instance=ExtResource("m20")]
+transform = Transform3D(8.353964, 0, -1.291993, 0, 8.2, 0, 1.568849, 0, 6.879735, 33.27354, 0.025, 90.01855)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_493" parent="ExistingNeighborhood" unique_id=1398579640 instance=ExtResource("m20")]
+transform = Transform3D(8.353964, 0, -1.291993, 0, 8.2, 0, 1.568849, 0, 6.879735, 30.72646, 0.025, 103.58145)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_streetlamp_494" parent="ExistingNeighborhood" unique_id=2009652237 instance=ExtResource("m36")]
+transform = Transform3D(1.593329, 0, 6.610696, 0, 6.8, 0, -6.610696, 0, 1.593329, 31.5425, 0.16, 101.92092)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_tree_poplar_large_495" parent="ExistingNeighborhood" unique_id=437255720 instance=ExtResource("m23")]
+transform = Transform3D(1.006451, 0, 0, 0, 1.006451, 0, 0, 0, 1.006451, 37.26117, 0, 87.85569)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_496" parent="ExistingNeighborhood" unique_id=1146146420 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 36.19509, 0.025, 91.23563)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_497" parent="ExistingNeighborhood" unique_id=64556121 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 39.21819, 0, 81.65109)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_498" parent="ExistingNeighborhood" unique_id=647393659 instance=ExtResource("m23")]
+transform = Transform3D(1.097709, 0, 0, 0, 1.097709, 0, 0, 0, 1.097709, 31.6549, 0, 105.63005)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_499" parent="ExistingNeighborhood" unique_id=530627225 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 32.31471, 0.025, 103.53817)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_500" parent="ExistingNeighborhood" unique_id=1049289880 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 29.29161, 0, 113.12271)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_501" parent="ExistingNeighborhood" unique_id=967253584 instance=ExtResource("m20")]
+transform = Transform3D(7.940229, 0, -2.498264, 0, 8.2, 0, 3.033607, 0, 6.539012, 38.27567, 0.025, 91.4859)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_502" parent="ExistingNeighborhood" unique_id=466654701 instance=ExtResource("m20")]
+transform = Transform3D(7.940229, 0, -2.498264, 0, 8.2, 0, 3.033607, 0, 6.539012, 33.35053, 0.025, 104.3771)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_503" parent="ExistingNeighborhood" unique_id=1931432067 instance=ExtResource("m20")]
+transform = Transform3D(7.502982, 0, -3.289509, 0, 8.2, 0, 3.994404, 0, 6.178926, 43.00442, 0.025, 93.65064)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_504" parent="ExistingNeighborhood" unique_id=1412037291 instance=ExtResource("m20")]
+transform = Transform3D(7.502982, 0, -3.289509, 0, 8.2, 0, 3.994404, 0, 6.178926, 36.51938, 0.025, 105.83196)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_505" parent="ExistingNeighborhood" unique_id=393400001 instance=ExtResource("m23")]
+transform = Transform3D(1.088659, 0, 0, 0, 1.088659, 0, 0, 0, 1.088659, 45.99976, 0, 92.69172)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_506" parent="ExistingNeighborhood" unique_id=730305167 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 44.59733, 0.025, 95.06161)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_507" parent="ExistingNeighborhood" unique_id=366585998 instance=ExtResource("m23")]
+transform = Transform3D(1.086158, 0, 0, 0, 1.086158, 0, 0, 0, 1.086158, 36.52449, 0, 108.70353)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_508" parent="ExistingNeighborhood" unique_id=334665620 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 38.02767, 0.025, 106.16339)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_509" parent="ExistingNeighborhood" unique_id=1002083694 instance=ExtResource("m20")]
+transform = Transform3D(7.004115, 0, -3.96599, 0, 8.2, 0, 4.815846, 0, 5.768095, 47.45723, 0.025, 96.35361)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_510" parent="ExistingNeighborhood" unique_id=526076255 instance=ExtResource("m20")]
+transform = Transform3D(7.004115, 0, -3.96599, 0, 8.2, 0, 4.815846, 0, 5.768095, 39.63857, 0.025, 107.72499)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_511" parent="ExistingNeighborhood" unique_id=1328026177 instance=ExtResource("m20")]
+transform = Transform3D(6.331341, 0, -4.670517, 0, 8.2, 0, 5.671342, 0, 5.214046, 51.4765, 0.025, 99.49604)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_512" parent="ExistingNeighborhood" unique_id=1656673299 instance=ExtResource("m20")]
+transform = Transform3D(6.331341, 0, -4.670517, 0, 8.2, 0, 5.671342, 0, 5.214046, 42.2689, 0.025, 109.77516)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_poplar_large_513" parent="ExistingNeighborhood" unique_id=392833928 instance=ExtResource("m23")]
+transform = Transform3D(1.014043, 0, 0, 0, 1.014043, 0, 0, 0, 1.014043, 54.24469, 0, 98.04334)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_514" parent="ExistingNeighborhood" unique_id=1783738359 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 51.90351, 0.025, 100.50249)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_515" parent="ExistingNeighborhood" unique_id=614104111 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 58.8332, 0, 93.22362)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_poplar_large_516" parent="ExistingNeighborhood" unique_id=1651451214 instance=ExtResource("m23")]
+transform = Transform3D(1.014188, 0, 0, 0, 1.014188, 0, 0, 0, 1.014188, 40.92502, 0, 112.03417)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_517" parent="ExistingNeighborhood" unique_id=69655880 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 43.00869, 0.025, 109.84551)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_518" parent="ExistingNeighborhood" unique_id=164912502 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 36.079, 0, 117.12438)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_streetlamp_519" parent="ExistingNeighborhood" unique_id=746083610 instance=ExtResource("m36")]
+transform = Transform3D(4.688744, 0, 4.925005, 0, 6.8, 0, -4.925005, 0, 4.688744, 43.93954, 0.16, 108.86775)
+metadata/category = "SightlineStreetFurniture"
+
+[node name="Fill_hedge_straight_520" parent="ExistingNeighborhood" unique_id=1576228838 instance=ExtResource("m20")]
+transform = Transform3D(4.660985, 0, -5.853737, 0, 8.2, 0, 7.108109, 0, 3.838458, 55.60691, 0.025, 104.13968)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_521" parent="ExistingNeighborhood" unique_id=528361878 instance=ExtResource("m20")]
+transform = Transform3D(4.660985, 0, -5.853737, 0, 8.2, 0, 7.108109, 0, 3.838458, 44.06669, 0.025, 111.70692)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_522" parent="ExistingNeighborhood" unique_id=492647388 instance=ExtResource("m22")]
+transform = Transform3D(0.986492, 0, 0, 0, 0.986492, 0, 0, 0, 0.986492, 60.62321, 0, 108.84868)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_523" parent="ExistingNeighborhood" unique_id=1964311338 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 57.71072, 0.025, 109.76095)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_524" parent="ExistingNeighborhood" unique_id=1221809539 instance=ExtResource("m22")]
+transform = Transform3D(1.053057, 0, 0, 0, 1.053057, 0, 0, 0, 1.053057, 43.01907, 0, 114.36277)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_525" parent="ExistingNeighborhood" unique_id=1691908959 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 45.40048, 0.025, 113.61685)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_526" parent="ExistingNeighborhood" unique_id=810013077 instance=ExtResource("m20")]
+transform = Transform3D(2.540708, 0, -6.679976, 0, 8.2, 0, 8.1114, 0, 2.092348, 58.14015, 0.025, 109.62644)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_527" parent="ExistingNeighborhood" unique_id=1434313054 instance=ExtResource("m20")]
+transform = Transform3D(2.540708, 0, -6.679976, 0, 8.2, 0, 8.1114, 0, 2.092348, 44.97105, 0.025, 113.75136)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_528" parent="ExistingNeighborhood" unique_id=2006473636 instance=ExtResource("m20")]
+transform = Transform3D(1.547207, 0, -6.883058, 0, 8.2, 0, 8.357999, 0, 1.274171, 59.30903, 0.025, 114.57353)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_529" parent="ExistingNeighborhood" unique_id=401411825 instance=ExtResource("m20")]
+transform = Transform3D(1.547207, 0, -6.883058, 0, 8.2, 0, 8.357999, 0, 1.274171, 45.73957, 0.025, 117.08547)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_oak_large_530" parent="ExistingNeighborhood" unique_id=227729920 instance=ExtResource("m22")]
+transform = Transform3D(1.201643, 0, 0, 0, 1.201643, 0, 0, 0, 1.201643, 61.79309, 0, 117.67781)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_531" parent="ExistingNeighborhood" unique_id=442428354 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 59.49482, 0.025, 118.12683)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_532" parent="ExistingNeighborhood" unique_id=1768815189 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 69.35833, 0, 116.19978)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_533" parent="ExistingNeighborhood" unique_id=2097868290 instance=ExtResource("m22")]
+transform = Transform3D(1.019951, 0, 0, 0, 1.019951, 0, 0, 0, 1.019951, 43.96885, 0, 121.16017)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_shrub_round_534" parent="ExistingNeighborhood" unique_id=1380904514 instance=ExtResource("m24")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 46.83418, 0.025, 120.60037)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_tree_maple_large_535" parent="ExistingNeighborhood" unique_id=1938142898 instance=ExtResource("m30")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 36.97067, 0, 122.52742)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_hedge_straight_536" parent="ExistingNeighborhood" unique_id=409906637 instance=ExtResource("m20")]
+transform = Transform3D(1.743847, 0, -6.851101, 0, 8.2, 0, 8.319194, 0, 1.436109, 60.05883, 0.025, 118.64831)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_537" parent="ExistingNeighborhood" unique_id=614599603 instance=ExtResource("m20")]
+transform = Transform3D(1.743847, 0, -6.851101, 0, 8.2, 0, 8.319194, 0, 1.436109, 46.55237, 0.025, 121.47949)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_lawn_tile_538" parent="ExistingNeighborhood" unique_id=1787094466 instance=ExtResource("m0")]
+transform = Transform3D(27, 0, 0, 0, 1, 0, 0, 0, 19, 48, -0.025, 116)
+metadata/category = "SightlineGround"
+
+[node name="Fill_distant_roofline_539" parent="ExistingNeighborhood" unique_id=1537894736 instance=ExtResource("fill_10")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 48, 1, -109)
+metadata/category = "SightlineRoofHints"
+
+[node name="Fill_hedge_straight_540" parent="ExistingNeighborhood" unique_id=58809107 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 43, 0.025, -105)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_541" parent="ExistingNeighborhood" unique_id=1795893169 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 47, 0.025, -105)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_542" parent="ExistingNeighborhood" unique_id=1072518953 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 51, 0.025, -105)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_543" parent="ExistingNeighborhood" unique_id=285154524 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 55, 0.025, -105)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_distant_roofline_544" parent="ExistingNeighborhood" unique_id=1532844789 instance=ExtResource("fill_10")]
+transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, -49, 1, -110)
+metadata/category = "SightlineRoofHints"
+
+[node name="Fill_hedge_straight_545" parent="ExistingNeighborhood" unique_id=1774955857 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, -54, 0.025, -106)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_546" parent="ExistingNeighborhood" unique_id=1524232228 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, -50, 0.025, -106)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_547" parent="ExistingNeighborhood" unique_id=94616879 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, -46, 0.025, -106)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_548" parent="ExistingNeighborhood" unique_id=1871135355 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, -42, 0.025, -106)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_distant_roofline_549" parent="ExistingNeighborhood" unique_id=1386634617 instance=ExtResource("fill_10")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 40, 1, 113)
+metadata/category = "SightlineRoofHints"
+
+[node name="Fill_hedge_straight_550" parent="ExistingNeighborhood" unique_id=509557537 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 35, 0.025, 117)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_551" parent="ExistingNeighborhood" unique_id=1775139269 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 39, 0.025, 117)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_552" parent="ExistingNeighborhood" unique_id=1628543622 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 43, 0.025, 117)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_hedge_straight_553" parent="ExistingNeighborhood" unique_id=689688983 instance=ExtResource("m20")]
+transform = Transform3D(8.5, 0, 0, 0, 13, 0, 0, 0, 10, 47, 0.025, 117)
+metadata/category = "SightlineGardens"
+
+[node name="Fill_landscape_mound_554" parent="ExistingNeighborhood" unique_id=1676963978 instance=ExtResource("m41")]
+transform = Transform3D(1, 0, 0, 0, 0.95, 0, 0, 0, 0.85, 48, -1.8, -128)
+metadata/category = "SightlineTerminalScreen"
+
+[node name="Fill_tree_oak_large_555" parent="ExistingNeighborhood" unique_id=2101634001 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 40, 0, -128)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_556" parent="ExistingNeighborhood" unique_id=331513318 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 46, 0, -131)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_557" parent="ExistingNeighborhood" unique_id=860781552 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 53, 0, -128)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_landscape_mound_558" parent="ExistingNeighborhood" unique_id=394821467 instance=ExtResource("m41")]
+transform = Transform3D(1, 0, 0, 0, 0.95, 0, 0, 0, 0.85, -48, -1.8, -128)
+metadata/category = "SightlineTerminalScreen"
+
+[node name="Fill_tree_oak_large_559" parent="ExistingNeighborhood" unique_id=594874079 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -56, 0, -128)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_560" parent="ExistingNeighborhood" unique_id=1578952648 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -50, 0, -131)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_561" parent="ExistingNeighborhood" unique_id=2138192805 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -43, 0, -128)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_562" parent="ExistingNeighborhood" unique_id=1259297071 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -38, 0, -124)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_landscape_mound_563" parent="ExistingNeighborhood" unique_id=375047564 instance=ExtResource("m41")]
+transform = Transform3D(1, 0, 0, 0, 0.95, 0, 0, 0, 0.85, 57, -1.8, 133)
+metadata/category = "SightlineTerminalScreen"
+
+[node name="Fill_tree_oak_large_564" parent="ExistingNeighborhood" unique_id=563493703 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 49, 0, 133)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_565" parent="ExistingNeighborhood" unique_id=137982346 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 55, 0, 130)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_566" parent="ExistingNeighborhood" unique_id=1000943649 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 62, 0, 133)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_567" parent="ExistingNeighborhood" unique_id=1456899055 instance=ExtResource("m22")]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 67, 0, 137)
+metadata/category = "SightlineTrees"
+
+[node name="Basketball_PlaceHolder" type="MeshInstance3D" parent="ExistingNeighborhood" unique_id=1516079859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.501232, -0.08392334, 64.36063)
+mesh = SubResource("BoxMesh_ymsu0")
+
+[node name="Label3D" type="Label3D" parent="ExistingNeighborhood/Basketball_PlaceHolder" unique_id=310102452]
+transform = Transform3D(-0.008062438, 0, -0.9999675, 0, 1, 0, 0.9999675, 0, -0.008062438, 0, 1.1712861, 0)
+pixel_size = 0.05
+text = "BASKETBALL"
+
+[node name="Soccer_Goal_PlaceHolder" type="MeshInstance3D" parent="ExistingNeighborhood" unique_id=414997477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.00514, 0, -40.214054)
+mesh = SubResource("BoxMesh_wav6d")
+
+[node name="Label3D" type="Label3D" parent="ExistingNeighborhood/Soccer_Goal_PlaceHolder" unique_id=1090256883]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1.5951717, 0)
+pixel_size = 0.05
+text = "SOCCER_GOAL"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ExistingNeighborhood" unique_id=846386459]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.332146, -0.20581055, 32.820614)
+mesh = SubResource("BoxMesh_8578d")
+
+[node name="Label3D" type="Label3D" parent="ExistingNeighborhood/MeshInstance3D" unique_id=227322610]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 1.1113732, 0.9094925)
+pixel_size = 0.05
+text = "DRIVEWAY"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ExistingNeighborhood" unique_id=587740977]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.133102, 0.02115345, 32.132114)
+mesh = SubResource("BoxMesh_nq8gu")
+
+[node name="Label3D" type="Label3D" parent="ExistingNeighborhood/MeshInstance3D2" unique_id=1379878151]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.4052887, 1.189261, 0)
+pixel_size = 0.05
+text = "DRIVEWAY"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1965007304]
 environment = SubResource("env")

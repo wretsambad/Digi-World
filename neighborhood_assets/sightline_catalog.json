@@ -1,0 +1,92 @@
+[
+  {
+    "name": "continuation_east_road",
+    "category": "road_continuation",
+    "width": 33.462,
+    "height": 0.152,
+    "depth": 57.788,
+    "triangles": 648,
+    "notes": "Curving scenic continuation; full road width remains 7.2m."
+  },
+  {
+    "name": "continuation_east_sidewalk",
+    "category": "road_continuation",
+    "width": 36.327,
+    "height": 0.15,
+    "depth": 61.46,
+    "triangles": 1160,
+    "notes": "Continuous 1.8m sidewalks around the bend."
+  },
+  {
+    "name": "continuation_east_curb",
+    "category": "road_continuation",
+    "width": 33.682,
+    "height": 0.17,
+    "depth": 58.071,
+    "triangles": 1160,
+    "notes": "17cm curb follows road curvature."
+  },
+  {
+    "name": "continuation_west_road",
+    "category": "road_continuation",
+    "width": 33.462,
+    "height": 0.152,
+    "depth": 57.788,
+    "triangles": 648,
+    "notes": "Curving scenic continuation; full road width remains 7.2m."
+  },
+  {
+    "name": "continuation_west_sidewalk",
+    "category": "road_continuation",
+    "width": 36.327,
+    "height": 0.15,
+    "depth": 61.46,
+    "triangles": 1160,
+    "notes": "Continuous 1.8m sidewalks around the bend."
+  },
+  {
+    "name": "continuation_west_curb",
+    "category": "road_continuation",
+    "width": 33.682,
+    "height": 0.17,
+    "depth": 58.071,
+    "triangles": 1160,
+    "notes": "17cm curb follows road curvature."
+  },
+  {
+    "name": "continuation_south_road",
+    "category": "road_continuation",
+    "width": 61.069,
+    "height": 0.152,
+    "depth": 51.027,
+    "triangles": 810,
+    "notes": "Curving scenic continuation; full road width remains 7.2m."
+  },
+  {
+    "name": "continuation_south_sidewalk",
+    "category": "road_continuation",
+    "width": 64.889,
+    "height": 0.15,
+    "depth": 51.583,
+    "triangles": 1448,
+    "notes": "Continuous 1.8m sidewalks around the bend."
+  },
+  {
+    "name": "continuation_south_curb",
+    "category": "road_continuation",
+    "width": 61.363,
+    "height": 0.17,
+    "depth": 51.07,
+    "triangles": 1448,
+    "notes": "17cm curb follows road curvature."
+  },
+  {
+    "name": "distant_roofline",
+    "category": "background_silhouette",
+    "width": 8.8,
+    "height": 4.61,
+    "depth": 5.7,
+    "triangles": 330,
+    "notes": "Partial roof/facade silhouette, intended behind hedges and trees rather than as a playable house."
+  }
+]

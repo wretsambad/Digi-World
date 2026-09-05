@@ -1,6 +1,6 @@
 # Digi-World expanded neighborhood
 
-The neighborhood now uses ordinary building proportions, with approximately one Godot unit per meter. It contains a 210 x 240 meter ground area, 25 houses, 215 large trees and 1,040 individually editable model instances.
+The neighborhood now uses ordinary building proportions, with approximately one Godot unit per meter. Its original 210 x 240 meter ground area now extends into screened road bends. It contains 31 houses, 350 large trees and 1,583 individually editable model instances.
 
 ## Open the updated scene
 
@@ -8,7 +8,7 @@ Open `C:/Users/samar/Documents/digi-world/houses.tscn` in Godot and press F6.
 
 The same expanded layout is also in `C:/Users/samar/Documents/digi-world/neighborhood_assets/preview/neighborhood_filled.tscn`. Both files are ordinary authored scenes, with a Node3D root and a local `ExistingNeighborhood` Node3D. Every house, tree, car, paving piece and room object is directly instanced beneath that node. It is no longer a CharacterBody3D or a nested instance of houses.tscn. Edit either scene independently; edits do not synchronize between the two copies.
 
-The main game startup scene and lesson scripts were not changed. F6 runs the scene you have open. The included camera nodes are OpeningCamera, OverviewCamera and BedroomCamera; switch their Current property to choose a running view. In the editor, the usual 3D scene navigation also lets you inspect everything freely.
+The main game startup scene and lesson scripts were not changed. F6 runs the scene you have open. In houses.tscn, the included camera nodes are OpeningCamera, OverviewCamera and BedroomCamera; switch their Current property to choose a running view. The independently edited neighborhood_filled.tscn has no saved cameras; its existing editor setup was preserved. In the editor, the usual 3D scene navigation also lets you inspect everything freely.
 
 ## What changed
 
@@ -25,7 +25,7 @@ The 34 new GLB files are in `C:/Users/samar/Documents/digi-world/neighborhood_as
 
 LearningHouse is centered at world (17, 0, -27) and faces the main street. Bedroom floor elevation is approximately 3.51 meters. Its open front window is around world (12, 5.6, -29.3). The sash is a separate model swung outward 72 degrees to leave enough passage for the camera; it can be animated independently later.
 
-The FlyThroughMarkers node records StreetStart, StreetApproach, WindowApproach, WindowPassage and BedroomArrival. These are editable route markers, not a completed animation. The window and bedroom are real geometry; the room is not a facade or a separate cutaway stage. Computer_LessonAnchor and Phone_LessonAnchor are individually placed models ready for later lesson interactions.
+In houses.tscn, the FlyThroughMarkers node records StreetStart, StreetApproach, WindowApproach, WindowPassage and BedroomArrival. These are editable route markers, not a completed animation. The window and bedroom are real geometry; the room is not a facade or a separate cutaway stage. Computer_LessonAnchor and Phone_LessonAnchor are individually placed models ready for later lesson interactions.
 
 Only the featured house has a furnished, enterable bedroom. The other detailed houses are background exteriors. Game movement, Play-button animation, lessons, navigation and persistent collision shapes are not implemented by this environment update.
 
@@ -38,8 +38,24 @@ Only the featured house has a furnished, enterable bedroom. The other detailed h
 
 ## Checks completed
 
-Loaded all 34 new GLBs in Godot 4.7.2. Checked both main neighborhood scenes have local Node3D containers with 1,040 directly owned instances. Checked the GLB structure, finite position bounds and triangle counts. Tested nine parallel rays across a 0.36-meter camera corridor through the house, sash and curtains into the bedroom. Rendered the opening street, full map, learning-house exterior and bedroom using the project's Forward+ renderer on D3D12.
+Loaded all 34 new GLBs in Godot 4.7.2. The earlier expansion checked both main neighborhood scenes at 1,040 directly owned instances. The current fill pass rechecked them at 1,583 instances each; the reusable dressing scene has 1,540. Checked the GLB structure, finite position bounds and triangle counts. Tested nine parallel rays across a 0.36-meter camera corridor through the house, sash and curtains into the bedroom. Rendered the opening street, full map, learning-house exterior and bedroom using the project's Forward+ renderer on D3D12.
 
 ## Backup package
 
 `Digi-World-expanded-neighborhood.zip` contains the updated houses.tscn and neighborhood_assets folder. Extract into the existing Digi-World project to restore this update. This is an environment package, not a standalone replacement for the project's lesson code.
+
+## Street-camera fill update
+
+The origin and central street gaps now have six additional peach/cedar homes, front paths, layered gardens, hedges, flowers and large trees. Corner planting fills the views while the camera turns along the existing road. The current main scenes contain 31 houses and 350 trees.
+
+At the east, west and south ends, separate road, sidewalk and curb models extend into tree-screened curves. Three partial upper-facade/roof silhouettes suggest more homes behind the planting. These are scenic continuations for the opening camera; the map is finite. The new road surface remains 7.2 meters wide, with 1.8-meter sidewalks.
+
+The 10 additional GLB files are in `sightline_models/`; `source/sightline_continuations.blend` retains their editable geometry. There are 76 GLB models total across the three model folders. New scene additions use the `Fill_` name prefix beneath ExistingNeighborhood. All remain separate, directly editable model instances.
+
+This pass added 568 instances to each main scene and removed 16 trees and nine distant mounds that conflicted with the new roads. All surviving original node definitions were compared with the pre-fill backups and are unchanged, including the user's LearningHouse, bed, computer and lighting edits and the preview's removed cameras. The user's model_catalog.tscn was not edited.
+
+`sightline_routes.json` provides sampled centerlines for the three new bends, for future camera animation. `sightline_placement.json` records additions; `sightline_changes.json` records additions and removed scenery. `source/before_sightline_fill/` preserves the scenes as they stood immediately before this pass. The main and preview scenes remain independently edited copies.
+
+Validation loaded all ten new GLBs and all three scenes in Godot 4.7.2. A temporary collision check traced 936 rays across a 0.36-meter corridor along the three new road centerlines at 2.4 meters above ground; all were clear. Seven street-camera views were rendered with the project's existing Forward+ lighting: origin, both junction directions, both outer bends, south end and farther around the east bend. This is sampled view and geometry validation, not a completed camera animation or a target-device performance benchmark.
+
+The latest restore package is `Digi-World-filled-streets.zip`. It contains houses.tscn and neighborhood_assets for the existing Digi-World project.

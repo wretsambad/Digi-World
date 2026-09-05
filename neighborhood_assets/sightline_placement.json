@@ -1,0 +1,7386 @@
+[
+  {
+    "name": "house_peach",
+    "x": -20.5,
+    "z": 9,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineInfillHouses"
+  },
+  {
+    "name": "garden_path_large",
+    "x": -10.8,
+    "z": 9,
+    "y": 0.065,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      1.65
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "garden_gate",
+    "x": -6.8,
+    "z": 9,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.85,
+    "z": 10.8,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.85,
+    "z": 12.8,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -12.7,
+    "z": 6.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": -16.1,
+    "z": 6.1,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -12.7,
+    "z": 11.9,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": -16.1,
+    "z": 11.9,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "mailbox",
+    "x": -7.5,
+    "z": 9.95,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerpot",
+    "x": -15.1,
+    "z": 10.4,
+    "y": 0.08,
+    "angle": 0,
+    "scale": [
+      6.4,
+      6.4,
+      6.4
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": -11.6,
+    "z": 6.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -27.8,
+    "z": 7,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1,
+      1.1,
+      1.1
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": 5,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": 9,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": 13,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "house_cedar",
+    "x": -21.1,
+    "z": -15,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineInfillHouses"
+  },
+  {
+    "name": "garden_path_large",
+    "x": -10.8,
+    "z": -15,
+    "y": 0.065,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      1.65
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "garden_gate",
+    "x": -6.8,
+    "z": -15,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.85,
+    "z": -13.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.85,
+    "z": -11.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -12.7,
+    "z": -17.9,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": -16.1,
+    "z": -17.9,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -12.7,
+    "z": -12.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": -16.1,
+    "z": -12.1,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "mailbox",
+    "x": -7.5,
+    "z": -14.05,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerpot",
+    "x": -15.1,
+    "z": -13.6,
+    "y": 0.08,
+    "angle": 0,
+    "scale": [
+      6.4,
+      6.4,
+      6.4
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": -11.6,
+    "z": -17.8,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -27.8,
+    "z": -17,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1,
+      1.1,
+      1.1
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": -19,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": -15,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": -11,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "house_peach",
+    "x": -20.5,
+    "z": -39,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineInfillHouses"
+  },
+  {
+    "name": "garden_path_large",
+    "x": -10.8,
+    "z": -39,
+    "y": 0.065,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      1.65
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "garden_gate",
+    "x": -6.8,
+    "z": -39,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.85,
+    "z": -37.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.85,
+    "z": -35.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -12.7,
+    "z": -41.9,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": -16.1,
+    "z": -41.9,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -12.7,
+    "z": -36.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": -16.1,
+    "z": -36.1,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "mailbox",
+    "x": -7.5,
+    "z": -38.05,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerpot",
+    "x": -15.1,
+    "z": -37.6,
+    "y": 0.08,
+    "angle": 0,
+    "scale": [
+      6.4,
+      6.4,
+      6.4
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": -11.6,
+    "z": -41.8,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -27.8,
+    "z": -41,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1,
+      1.1,
+      1.1
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": -43,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": -39,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -28,
+    "z": -35,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "house_cedar",
+    "x": 20.5,
+    "z": 9,
+    "y": 0,
+    "angle": -90,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineInfillHouses"
+  },
+  {
+    "name": "garden_path_large",
+    "x": 10.8,
+    "z": 9,
+    "y": 0.065,
+    "angle": -90,
+    "scale": [
+      1,
+      1,
+      1.65
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "garden_gate",
+    "x": 6.8,
+    "z": 9,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.85,
+    "z": 10.8,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.85,
+    "z": 12.8,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 12.7,
+    "z": 6.1,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": 16.1,
+    "z": 6.1,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 12.7,
+    "z": 11.9,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": 16.1,
+    "z": 11.9,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "mailbox",
+    "x": 7.5,
+    "z": 9.95,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerpot",
+    "x": 15.1,
+    "z": 10.4,
+    "y": 0.08,
+    "angle": 0,
+    "scale": [
+      6.4,
+      6.4,
+      6.4
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": 11.6,
+    "z": 6.2,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 27.8,
+    "z": 7,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1,
+      1.1,
+      1.1
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": 5,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": 9,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": 13,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "house_peach",
+    "x": 21.1,
+    "z": -15,
+    "y": 0,
+    "angle": -90,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineInfillHouses"
+  },
+  {
+    "name": "garden_path_large",
+    "x": 10.8,
+    "z": -15,
+    "y": 0.065,
+    "angle": -90,
+    "scale": [
+      1,
+      1,
+      1.65
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "garden_gate",
+    "x": 6.8,
+    "z": -15,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.85,
+    "z": -13.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.85,
+    "z": -11.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 12.7,
+    "z": -17.9,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": 16.1,
+    "z": -17.9,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 12.7,
+    "z": -12.1,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": 16.1,
+    "z": -12.1,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "mailbox",
+    "x": 7.5,
+    "z": -14.05,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerpot",
+    "x": 15.1,
+    "z": -13.6,
+    "y": 0.08,
+    "angle": 0,
+    "scale": [
+      6.4,
+      6.4,
+      6.4
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": 11.6,
+    "z": -17.8,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 27.8,
+    "z": -17,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1,
+      1.1,
+      1.1
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": -19,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": -15,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": -11,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "house_cedar",
+    "x": 20.5,
+    "z": -39,
+    "y": 0,
+    "angle": -90,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineInfillHouses"
+  },
+  {
+    "name": "garden_path_large",
+    "x": 10.8,
+    "z": -39,
+    "y": 0.065,
+    "angle": -90,
+    "scale": [
+      1,
+      1,
+      1.65
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "garden_gate",
+    "x": 6.8,
+    "z": -39,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.85,
+    "z": -37.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.85,
+    "z": -35.2,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      4.1,
+      6.3,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 12.7,
+    "z": -41.9,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": 16.1,
+    "z": -41.9,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 12.7,
+    "z": -36.1,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5.7,
+      5.7,
+      5.7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "shrub_round",
+    "x": 16.1,
+    "z": -36.1,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.2,
+      7.2,
+      7.2
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "mailbox",
+    "x": 7.5,
+    "z": -38.05,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerpot",
+    "x": 15.1,
+    "z": -37.6,
+    "y": 0.08,
+    "angle": 0,
+    "scale": [
+      6.4,
+      6.4,
+      6.4
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": 11.6,
+    "z": -41.8,
+    "y": 0.025,
+    "angle": -90,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 27.8,
+    "z": -41,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1,
+      1.1,
+      1.1
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": -43,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": -39,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28,
+    "z": -35,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      8.3,
+      9,
+      8
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -29,
+    "z": -57.3,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.03,
+      1.03,
+      1.03
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -33,
+    "z": -50,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2,
+      1.2,
+      1.2
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -32.6,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -29,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -25.4,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": -29,
+    "z": -56.3,
+    "y": 0.025,
+    "angle": 180,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -29,
+    "z": -60.6,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      6.3,
+      6.3,
+      6.3
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -32.6,
+    "z": -55.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "litter_bin",
+    "x": -26.3,
+    "z": -56.2,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      5.5,
+      5.5,
+      5.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -32,
+    "z": -61.6,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -32,
+    "z": -60.7,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -32,
+    "z": -59.800000000000004,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -32,
+    "z": -58.9,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -40,
+    "z": -57.3,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.15,
+      1.15,
+      1.15
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -44,
+    "z": -50,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2,
+      1.2,
+      1.2
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -43.6,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -40,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -36.4,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": -40,
+    "z": -56.3,
+    "y": 0.025,
+    "angle": 180,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -40,
+    "z": -60.6,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      6.3,
+      6.3,
+      6.3
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -43.6,
+    "z": -55.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "litter_bin",
+    "x": -37.3,
+    "z": -56.2,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      5.5,
+      5.5,
+      5.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -43,
+    "z": -61.6,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -43,
+    "z": -60.7,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -43,
+    "z": -59.800000000000004,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -43,
+    "z": -58.9,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -53,
+    "z": -57.3,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.03,
+      1.03,
+      1.03
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -57,
+    "z": -50,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2,
+      1.2,
+      1.2
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -56.6,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -53,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -49.4,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": -53,
+    "z": -56.3,
+    "y": 0.025,
+    "angle": 180,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -53,
+    "z": -60.6,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      6.3,
+      6.3,
+      6.3
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": -56.6,
+    "z": -55.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "litter_bin",
+    "x": -50.3,
+    "z": -56.2,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      5.5,
+      5.5,
+      5.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -56,
+    "z": -61.6,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -56,
+    "z": -60.7,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -56,
+    "z": -59.800000000000004,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": -56,
+    "z": -58.9,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -11,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -12.7,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -22,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -23.7,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -36,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -37.7,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -61,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -62.7,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": -5.775,
+    "z": -63.35,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.225
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": -62.8,
+    "z": -72.65,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": -62.8,
+    "z": -63.35,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": -62.8,
+    "z": -71.675,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": -62.8,
+    "z": -64.325,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": -4.65,
+    "z": 66.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": -3.675,
+    "z": 66.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": -4.65,
+    "z": 68.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": -3.675,
+    "z": 68.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": -4.65,
+    "z": 70.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": -3.675,
+    "z": 70.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": -4.65,
+    "z": 72.2,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      0.6
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": -3.675,
+    "z": 72.2,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      0.6
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 29,
+    "z": -57.3,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.03,
+      1.03,
+      1.03
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 33,
+    "z": -50,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2,
+      1.2,
+      1.2
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 25.4,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 29,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 32.6,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": 29,
+    "z": -56.3,
+    "y": 0.025,
+    "angle": 180,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 29,
+    "z": -60.6,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      6.3,
+      6.3,
+      6.3
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 32.6,
+    "z": -55.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "litter_bin",
+    "x": 26.3,
+    "z": -56.2,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      5.5,
+      5.5,
+      5.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 32,
+    "z": -61.6,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 32,
+    "z": -60.7,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 32,
+    "z": -59.800000000000004,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 32,
+    "z": -58.9,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 40,
+    "z": -57.3,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.15,
+      1.15,
+      1.15
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 44,
+    "z": -50,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2,
+      1.2,
+      1.2
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 36.4,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 40,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 43.6,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": 40,
+    "z": -56.3,
+    "y": 0.025,
+    "angle": 180,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 40,
+    "z": -60.6,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      6.3,
+      6.3,
+      6.3
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 43.6,
+    "z": -55.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "litter_bin",
+    "x": 37.3,
+    "z": -56.2,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      5.5,
+      5.5,
+      5.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 43,
+    "z": -61.6,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 43,
+    "z": -60.7,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 43,
+    "z": -59.800000000000004,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 43,
+    "z": -58.9,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 53,
+    "z": -57.3,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.03,
+      1.03,
+      1.03
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 57,
+    "z": -50,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2,
+      1.2,
+      1.2
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 49.4,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 53,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 56.6,
+    "z": -59.4,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      7.6,
+      7.8,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "bench",
+    "x": 53,
+    "z": -56.3,
+    "y": 0.025,
+    "angle": 180,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 53,
+    "z": -60.6,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      6.3,
+      6.3,
+      6.3
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "flowerbed",
+    "x": 56.6,
+    "z": -55.1,
+    "y": 0.025,
+    "angle": 90,
+    "scale": [
+      6,
+      6,
+      6
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "litter_bin",
+    "x": 50.3,
+    "z": -56.2,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      5.5,
+      5.5,
+      5.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 56,
+    "z": -61.6,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 56,
+    "z": -60.7,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 56,
+    "z": -59.800000000000004,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "stepping_stone",
+    "x": 56,
+    "z": -58.9,
+    "y": 0.03,
+    "angle": 0,
+    "scale": [
+      5,
+      5,
+      5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 11,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 9.3,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 22,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 20.3,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 36,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 34.3,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 61,
+    "z": -78.5,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 59.3,
+    "z": -76.5,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      9,
+      9,
+      9
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": 5.775,
+    "z": -63.35,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.225
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": 62.8,
+    "z": -72.65,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": 62.8,
+    "z": -63.35,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": 62.8,
+    "z": -71.675,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": 62.8,
+    "z": -64.325,
+    "y": 0,
+    "angle": 90,
+    "scale": [
+      1,
+      1,
+      0.8
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": 4.65,
+    "z": 66.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": 3.675,
+    "z": 66.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": 4.65,
+    "z": 68.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": 3.675,
+    "z": 68.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": 4.65,
+    "z": 70.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": 3.675,
+    "z": 70.6,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "x": 4.65,
+    "z": 72.2,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      0.6
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "curb_large",
+    "x": 3.675,
+    "z": 72.2,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      0.6
+    ],
+    "category": "SightlinePaving"
+  },
+  {
+    "name": "continuation_east_road",
+    "x": 63.6,
+    "z": -68,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "continuation_east_sidewalk",
+    "x": 63.6,
+    "z": -68,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "continuation_east_curb",
+    "x": 63.6,
+    "z": -68,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 64.22437276093467,
+    "z": -77.86148726334748,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1921393630127637,
+      1.1921393630127637,
+      1.1921393630127637
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 64.21102510890941,
+    "z": -74.4485506737556,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 64.25032934837292,
+    "z": -84.49847381658412,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 64.1467256278823,
+    "z": -58.00745293807193,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.110729345670026,
+      1.110729345670026,
+      1.110729345670026
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 64.16057489109059,
+    "z": -61.54864932624438,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 64.12127065162709,
+    "z": -51.49872618341587,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 64.21278500022868,
+    "z": -74.89854723238972,
+    "y": 0.025,
+    "angle": -0.22407689342010437,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 64.15881499977132,
+    "z": -61.09865276761027,
+    "y": 0.025,
+    "angle": -0.22407689342010437,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": 64.16585456504838,
+    "z": -62.89863900214672,
+    "y": 0.16,
+    "angle": 89.7759231065799,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 68.0577326857684,
+    "z": -74.929572590431,
+    "y": 0.025,
+    "angle": 2.6587085764093126,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 68.69786731423159,
+    "z": -61.14442740956902,
+    "y": 0.025,
+    "angle": 2.6587085764093126,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 70.14814064423636,
+    "z": -77.35917819693411,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1419593943201158,
+      1.1419593943201158,
+      1.1419593943201158
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 70.68021864104674,
+    "z": -74.77152301293889,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 73.90372704632394,
+    "z": -59.09463299761925,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.976009775825085,
+      0.976009775825085,
+      0.976009775825085
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 73.27838135895325,
+    "z": -62.13587698706112,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 70.93417760917984,
+    "z": -75.28926232864715,
+    "y": 0.025,
+    "angle": 13.711446145808434,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 74.20522239082015,
+    "z": -61.882537671352836,
+    "y": 0.025,
+    "angle": 13.711446145808434,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 72.83239077512496,
+    "z": -76.06096594110107,
+    "y": 0.025,
+    "angle": 32.486629886367574,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 80.24440922487503,
+    "z": -64.42043405889893,
+    "y": 0.025,
+    "angle": 32.486629886367574,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 72.77977019595465,
+    "z": -78.41772949380581,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0414584841412862,
+      1.0414584841412862,
+      1.0414584841412862
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 74.34145193122772,
+    "z": -76.69670201594504,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 85.03192023237274,
+    "z": -64.91543488455153,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.9913608766064006,
+      0.9913608766064006,
+      0.9913608766064006
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 83.01014806877227,
+    "z": -67.14349798405497,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 74.90960358018623,
+    "z": -77.86393053338203,
+    "y": 0.025,
+    "angle": 45.17712315002463,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 84.69779641981378,
+    "z": -68.13606946661797,
+    "y": 0.025,
+    "angle": 45.17712315002463,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": 83.42107561464496,
+    "z": -69.40492091010893,
+    "y": 0.16,
+    "angle": 135.1771231500246,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 77.28748235291796,
+    "z": -80.55161267620188,
+    "y": 0.025,
+    "angle": 51.55767928707475,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 88.09611764708204,
+    "z": -71.97178732379813,
+    "y": 0.025,
+    "angle": 51.55767928707475,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 76.11832408330058,
+    "z": -83.30402915263225,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0101681385832475,
+      1.0101681385832475,
+      1.0101681385832475
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 78.58558946112842,
+    "z": -81.51826742657201,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 70.44429397032854,
+    "z": -87.41078876564933,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 91.60015497250777,
+    "z": -72.09856203923104,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.9755749894722642,
+      0.9755749894722642,
+      0.9755749894722642
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 89.03561053887157,
+    "z": -73.954732573428,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 97.17690602967144,
+    "z": -68.06221123435068,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 79.50370976446798,
+    "z": -83.69273608562284,
+    "y": 0.025,
+    "angle": 58.290418387272126,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 91.24369023553201,
+    "z": -76.43926391437716,
+    "y": 0.025,
+    "angle": 58.290418387272126,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 79.23981853132163,
+    "z": -87.51490954246876,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0950412975467716,
+      1.0950412975467716,
+      1.0950412975467716
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 81.51549231956956,
+    "z": -86.5671013888264,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 72.2380059337826,
+    "z": -90.43113378536988,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 96.04521766065926,
+    "z": -80.51553449923652,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2813963703921645,
+      1.2813963703921645,
+      1.2813963703921645
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 93.42390768043045,
+    "z": -81.60729861117359,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 102.7013940662174,
+    "z": -77.74326621463011,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 81.1000824814,
+    "z": -86.74011776479104,
+    "y": 0.025,
+    "angle": 67.38848632097668,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 93.83931751860001,
+    "z": -81.43428223520895,
+    "y": 0.025,
+    "angle": 67.38848632097668,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 81.77088707417082,
+    "z": -88.98651743333448,
+    "y": 0.025,
+    "angle": 81.78005100315943,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 95.42911292582917,
+    "z": -87.01348256666552,
+    "y": 0.025,
+    "angle": 81.78005100315943,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": 93.64760520604764,
+    "z": -87.27083494057885,
+    "y": 0.16,
+    "angle": 171.78005100315943,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 78.8703685482395,
+    "z": -91.35487815151455,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.276727517229914,
+      1.276727517229914,
+      1.276727517229914
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 82.29632804211904,
+    "z": -91.5608740102084,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 72.26444615425802,
+    "z": -90.95767770053313,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 98.2130220311186,
+    "z": -92.5179119003786,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2828158957851268,
+      1.2828158957851268,
+      1.2828158957851268
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 95.17307195788096,
+    "z": -92.33512598979159,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 105.20495384574198,
+    "z": -92.93832229946686,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 81.84713930087153,
+    "z": -91.53386522022294,
+    "y": 0.025,
+    "angle": 93.44093396385506,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 95.62226069912847,
+    "z": -92.36213477977705,
+    "y": 0.025,
+    "angle": 93.44093396385506,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 81.39703220645546,
+    "z": -94.55612554870028,
+    "y": 0.025,
+    "angle": 103.17913403943034,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 94.83356779354455,
+    "z": -97.70247445129972,
+    "y": 0.025,
+    "angle": 103.17913403943034,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 78.17774340721132,
+    "z": -96.10803278655642,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0044386599814281,
+      1.0044386599814281,
+      1.0044386599814281
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 81.06163790963934,
+    "z": -97.1979852839617,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 95.54289754802751,
+    "z": -102.67109988477196,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0187104418542174,
+      1.0187104418542174,
+      1.0187104418542174
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 93.12856209036066,
+    "z": -101.75861471603831,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 80.39962306805185,
+    "z": -97.64606463938978,
+    "y": 0.025,
+    "angle": 112.61886828736934,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 93.13817693194815,
+    "z": -102.95353536061023,
+    "y": 0.025,
+    "angle": 112.61886828736934,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 78.92228466368601,
+    "z": -100.47829827050435,
+    "y": 0.025,
+    "angle": 122.79224630569354,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 90.52311533631399,
+    "z": -107.95230172949564,
+    "y": 0.025,
+    "angle": 122.79224630569354,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": 88.40943300335141,
+    "z": -107.87160041009622,
+    "y": 0.16,
+    "angle": 215.00083090839323,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 76.26625303609411,
+    "z": -100.61906234428058,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1002824060603493,
+      1.1002824060603493,
+      1.1002824060603493
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 78.20402904992197,
+    "z": -102.22494053274434,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 70.46588594166086,
+    "z": -95.81216880469483,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 89.83811136462532,
+    "z": -111.86636394734641,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.083137924296349,
+      1.083137924296349,
+      1.083137924296349
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 88.13657095007802,
+    "z": -110.45625946725565,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 95.87471405833914,
+    "z": -116.86903119530515,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 77.16501170449502,
+    "z": -102.70091787084776,
+    "y": 0.025,
+    "angle": 135.63704857319797,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 86.813988295505,
+    "z": -112.56688212915223,
+    "y": 0.025,
+    "angle": 135.63704857319797,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 74.59707176079458,
+    "z": -104.622946496259,
+    "y": 0.025,
+    "angle": 148.2787812886488,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 81.85292823920541,
+    "z": -116.36145350374099,
+    "y": 0.025,
+    "angle": 148.2787812886488,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 72.96581389154306,
+    "z": -103.43072275269908,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2216356948158187,
+      1.2216356948158187,
+      1.2216356948158187
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 74.12296213051307,
+    "z": -105.42988434533058,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 69.08839847340553,
+    "z": -96.73185762758982,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 81.89160365074913,
+    "z": -118.85147479600823,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1773611532224149,
+      1.1773611532224149,
+      1.1773611532224149
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 80.58523786948693,
+    "z": -116.59451565466944,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 85.61980152659447,
+    "z": -125.2925423724102,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 71.49900687807546,
+    "z": -106.31609188993612,
+    "y": 0.025,
+    "angle": 153.59434125459381,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 77.63619312192453,
+    "z": -118.67630811006389,
+    "y": 0.025,
+    "angle": 153.59434125459381,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 66.53377092326355,
+    "z": -105.28158140208862,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0343395845478642,
+      1.0343395845478642,
+      1.0343395845478642
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 67.95149490950064,
+    "z": -108.4630020486484,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 74.15803793519271,
+    "z": -122.39069482762656,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2318782554130097,
+      1.2318782554130097,
+      1.2318782554130097
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 73.20230509049935,
+    "z": -120.2459979513516,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 67.76832711248905,
+    "z": -108.05196730785643,
+    "y": 0.025,
+    "angle": 155.98100093700694,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 73.38547288751094,
+    "z": -120.65703269214357,
+    "y": 0.025,
+    "angle": 155.98100093700694,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 63.66616942183322,
+    "z": -109.86168214784554,
+    "y": 0.025,
+    "angle": 155.97865827220306,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 69.28383057816677,
+    "z": -122.46651785215447,
+    "y": 0.025,
+    "angle": 155.97865827220306,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 59.67809572423366,
+    "z": -109.64383722192939,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1365669887071919,
+      1.1365669887071919,
+      1.1365669887071919
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 60.675852847567775,
+    "z": -111.72944958342116,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 56.338697982150116,
+    "z": -102.66349195758903,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 67.52463920034036,
+    "z": -126.04547213490885,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0283694749240475,
+      1.0283694749240475,
+      1.0283694749240475
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 66.24294715243224,
+    "z": -123.36635041657884,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 70.5801020178499,
+    "z": -132.43230804241097,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 59.415963847357,
+    "z": -111.84206430430166,
+    "y": 0.025,
+    "angle": 153.596723592096,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 65.552636152643,
+    "z": -124.20253569569834,
+    "y": 0.025,
+    "angle": 153.596723592096,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "continuation_west_road",
+    "x": -63.6,
+    "z": -68,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "continuation_west_sidewalk",
+    "x": -63.6,
+    "z": -68,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "continuation_west_curb",
+    "x": -63.6,
+    "z": -68,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -64.1500490594841,
+    "z": -58.85723994894952,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2093184721895458,
+      1.2093184721895458,
+      1.2093184721895458
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -64.16057489109059,
+    "z": -61.54864932624438,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -64.12127065162709,
+    "z": -51.49872618341587,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -64.21956422857627,
+    "z": -76.63196644596505,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2452146760560296,
+      1.2452146760560296,
+      1.2452146760560296
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -64.21102510890941,
+    "z": -74.4485506737556,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -64.25032934837292,
+    "z": -84.49847381658412,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -64.15881499977132,
+    "z": -61.09865276761027,
+    "y": 0.025,
+    "angle": -179.7759231065799,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -64.21278500022868,
+    "z": -74.89854723238972,
+    "y": 0.025,
+    "angle": -179.7759231065799,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": -64.20574543495162,
+    "z": -73.09856099785327,
+    "y": 0.16,
+    "angle": -89.77592310657991,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -68.69786731423159,
+    "z": -61.14442740956902,
+    "y": 0.025,
+    "angle": 177.3412914235907,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -68.0577326857684,
+    "z": -74.929572590431,
+    "y": 0.025,
+    "angle": 177.3412914235907,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -73.78415842922315,
+    "z": -59.67613111206626,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.9713323311628104,
+      0.9713323311628104,
+      0.9713323311628104
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -73.27838135895325,
+    "z": -62.13587698706112,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -70.18221817668848,
+    "z": -77.1934489165728,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0994441416081941,
+      1.0994441416081941,
+      1.0994441416081941
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -70.68021864104674,
+    "z": -74.77152301293889,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -74.20522239082015,
+    "z": -61.882537671352836,
+    "y": 0.025,
+    "angle": 166.28855385419155,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -70.93417760917984,
+    "z": -75.28926232864715,
+    "y": 0.025,
+    "angle": 166.28855385419155,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -80.24440922487503,
+    "z": -64.42043405889893,
+    "y": 0.025,
+    "angle": 147.51337011363245,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -72.83239077512496,
+    "z": -76.06096594110107,
+    "y": 0.025,
+    "angle": 147.51337011363245,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -84.99479386487728,
+    "z": -64.95634943017863,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.993140719723733,
+      0.993140719723733,
+      0.993140719723733
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -83.01014806877227,
+    "z": -67.14349798405497,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -72.72177425356301,
+    "z": -78.48164303534634,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1740552871976508,
+      1.1740552871976508,
+      1.1740552871976508
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -74.34145193122772,
+    "z": -76.69670201594504,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -84.69779641981378,
+    "z": -68.13606946661797,
+    "y": 0.025,
+    "angle": 134.8228768499754,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -74.90960358018623,
+    "z": -77.86393053338203,
+    "y": 0.025,
+    "angle": 134.8228768499754,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": -76.18632438535505,
+    "z": -76.59507908989107,
+    "y": 0.16,
+    "angle": 224.8228768499754,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -88.09611764708204,
+    "z": -71.97178732379813,
+    "y": 0.025,
+    "angle": 128.44232071292527,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -77.28748235291796,
+    "z": -80.55161267620188,
+    "y": 0.025,
+    "angle": 128.44232071292527,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -90.88033552425182,
+    "z": -72.61955424052434,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2449788864770903,
+      1.2449788864770903,
+      1.2449788864770903
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -89.03561053887157,
+    "z": -73.954732573428,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -97.17690602967144,
+    "z": -68.06221123435068,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -76.20154749377632,
+    "z": -83.24379356448867,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.090262111843199,
+      1.090262111843199,
+      1.090262111843199
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -78.58558946112842,
+    "z": -81.51826742657201,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -70.44429397032854,
+    "z": -87.41078876564933,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -91.24369023553201,
+    "z": -76.43926391437716,
+    "y": 0.025,
+    "angle": 121.70958161272789,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -79.50370976446798,
+    "z": -83.69273608562284,
+    "y": 0.025,
+    "angle": 121.70958161272789,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -95.91114694121102,
+    "z": -80.57137436596697,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2490888168735532,
+      1.2490888168735532,
+      1.2490888168735532
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -93.42390768043045,
+    "z": -81.60729861117359,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -102.7013940662174,
+    "z": -77.74326621463011,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -78.98206648656968,
+    "z": -87.62226213882748,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2587268680309578,
+      1.2587268680309578,
+      1.2587268680309578
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -81.51549231956956,
+    "z": -86.5671013888264,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -72.2380059337826,
+    "z": -90.43113378536988,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -93.83931751860001,
+    "z": -81.43428223520895,
+    "y": 0.025,
+    "angle": 112.61151367902333,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -81.1000824814,
+    "z": -86.74011776479104,
+    "y": 0.025,
+    "angle": 112.61151367902333,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -95.42911292582917,
+    "z": -87.01348256666552,
+    "y": 0.025,
+    "angle": 98.21994899684057,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -81.77088707417082,
+    "z": -88.98651743333448,
+    "y": 0.025,
+    "angle": 98.21994899684057,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": -83.55239479395235,
+    "z": -88.72916505942115,
+    "y": 0.16,
+    "angle": 188.21994899684057,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -97.42954096289523,
+    "z": -92.47080280416559,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1090583154226121,
+      1.1090583154226121,
+      1.1090583154226121
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -95.17307195788096,
+    "z": -92.33512598979159,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -105.20495384574198,
+    "z": -92.93832229946686,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -79.00288816842681,
+    "z": -91.36284628219533,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.281339469452503,
+      1.281339469452503,
+      1.281339469452503
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -82.29632804211904,
+    "z": -91.5608740102084,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -72.26444615425802,
+    "z": -90.95767770053313,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -95.62226069912847,
+    "z": -92.36213477977705,
+    "y": 0.025,
+    "angle": 86.55906603614496,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -81.84713930087153,
+    "z": -91.53386522022294,
+    "y": 0.025,
+    "angle": 86.55906603614496,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -94.83356779354455,
+    "z": -97.70247445129972,
+    "y": 0.025,
+    "angle": 76.82086596056966,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -81.39703220645546,
+    "z": -94.55612554870028,
+    "y": 0.025,
+    "angle": 76.82086596056966,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -95.28470799072932,
+    "z": -102.57351852299045,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.9657903113932348,
+      0.9657903113932348,
+      0.9657903113932348
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -93.12856209036066,
+    "z": -101.75861471603831,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -78.06360125095792,
+    "z": -96.06489336929866,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.227251800915624,
+      1.227251800915624,
+      1.227251800915624
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -81.06163790963934,
+    "z": -97.1979852839617,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -93.13817693194815,
+    "z": -102.95353536061023,
+    "y": 0.025,
+    "angle": 67.38113171263066,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -80.39962306805185,
+    "z": -97.64606463938978,
+    "y": 0.025,
+    "angle": 67.38113171263066,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -90.52311533631399,
+    "z": -107.95230172949564,
+    "y": 0.025,
+    "angle": 57.207753694306476,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -78.92228466368601,
+    "z": -100.47829827050435,
+    "y": 0.025,
+    "angle": 57.207753694306476,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": -80.0541669966486,
+    "z": -102.02099958990377,
+    "y": 0.16,
+    "angle": 144.9991690916068,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -90.48523904289306,
+    "z": -112.40265308306986,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1146625913923311,
+      1.1146625913923311,
+      1.1146625913923311
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -88.13657095007802,
+    "z": -110.45625946725565,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -95.87471405833914,
+    "z": -116.86903119530515,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -76.32621120088916,
+    "z": -100.66875101230907,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1959550072721832,
+      1.1959550072721832,
+      1.1959550072721832
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -78.20402904992197,
+    "z": -102.22494053274434,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -70.46588594166086,
+    "z": -95.81216880469483,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -86.813988295505,
+    "z": -112.56688212915223,
+    "y": 0.025,
+    "angle": 44.362951426802034,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -77.16501170449502,
+    "z": -102.70091787084776,
+    "y": 0.025,
+    "angle": 44.362951426802034,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -81.85292823920541,
+    "z": -116.36145350374099,
+    "y": 0.025,
+    "angle": 31.721218711351224,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -74.59707176079458,
+    "z": -104.622946496259,
+    "y": 0.025,
+    "angle": 31.721218711351224,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -82.30406011991084,
+    "z": -119.5640603611165,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0569839246794641,
+      1.0569839246794641,
+      1.0569839246794641
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -80.58523786948693,
+    "z": -116.59451565466944,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -85.61980152659447,
+    "z": -125.2925423724102,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -72.59271760315917,
+    "z": -102.78613829500301,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.148994236455556,
+      1.148994236455556,
+      1.148994236455556
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -74.12296213051307,
+    "z": -105.42988434533058,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -69.08839847340553,
+    "z": -96.73185762758982,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -77.63619312192453,
+    "z": -118.67630811006389,
+    "y": 0.025,
+    "angle": 26.4056587454062,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -71.49900687807546,
+    "z": -106.31609188993612,
+    "y": 0.025,
+    "angle": 26.4056587454062,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -74.33367752514218,
+    "z": -122.78483601677412,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1891477646400592,
+      1.1891477646400592,
+      1.1891477646400592
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -73.20230509049935,
+    "z": -120.2459979513516,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -66.58887775983506,
+    "z": -105.40524300994541,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.9739608220331465,
+      0.9739608220331465,
+      0.9739608220331465
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -67.95149490950064,
+    "z": -108.4630020486484,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -73.38547288751094,
+    "z": -120.65703269214357,
+    "y": 0.025,
+    "angle": 24.018999062993064,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -67.76832711248905,
+    "z": -108.05196730785643,
+    "y": 0.025,
+    "angle": 24.018999062993064,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -69.28383057816677,
+    "z": -122.46651785215447,
+    "y": 0.025,
+    "angle": 24.021341727796933,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -63.66616942183322,
+    "z": -109.86168214784554,
+    "y": 0.025,
+    "angle": 24.021341727796933,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -67.47802464289707,
+    "z": -125.94803369527705,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0986599453881913,
+      1.0986599453881913,
+      1.0986599453881913
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -66.24294715243224,
+    "z": -123.36635041657884,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -70.5801020178499,
+    "z": -132.43230804241097,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -59.36785291015102,
+    "z": -108.99533646660271,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2739083546932675,
+      1.2739083546932675,
+      1.2739083546932675
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -60.675852847567775,
+    "z": -111.72944958342116,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -56.338697982150116,
+    "z": -102.66349195758903,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -65.552636152643,
+    "z": -124.20253569569834,
+    "y": 0.025,
+    "angle": 26.403276407904023,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -59.415963847357,
+    "z": -111.84206430430166,
+    "y": 0.025,
+    "angle": 26.403276407904023,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "continuation_south_road",
+    "x": 0,
+    "z": 72.8,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "continuation_south_sidewalk",
+    "x": 0,
+    "z": 72.8,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "continuation_south_curb",
+    "x": 0,
+    "z": 72.8,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoadContinuation"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 9.72976678220218,
+    "z": 73.59060387757913,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0885804198579017,
+      1.0885804198579017,
+      1.0885804198579017
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 6.4484626797171645,
+    "z": 73.5794415189942,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 16.498404529509028,
+    "z": 73.61362946719446,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -8.941650497065803,
+    "z": 73.52708734620913,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0710068118401106,
+      1.0710068118401106,
+      1.0710068118401106
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -6.451462679717165,
+    "z": 73.53555848100581,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -16.501404529509028,
+    "z": 73.50137053280555,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.8984600759765025,
+    "z": 73.58097232264495,
+    "y": 0.025,
+    "angle": -90.19490835025626,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.901460075976503,
+    "z": 73.53402767735506,
+    "y": 0.025,
+    "angle": -90.19490835025626,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": -5.101470490939153,
+    "z": 73.54015089195808,
+    "y": 0.16,
+    "angle": -0.19490835025625586,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.884357109648234,
+    "z": 77.48657131292528,
+    "y": 0.025,
+    "angle": -89.79798058279636,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.915557109648234,
+    "z": 77.53522868707473,
+    "y": 0.025,
+    "angle": -89.79798058279636,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 9.553667972808846,
+    "z": 81.08082671982747,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1903544096291365,
+      1.1903544096291365,
+      1.1903544096291365
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 6.5204986765231014,
+    "z": 81.23486369678598,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 16.557564056221885,
+    "z": 80.7251396894525,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -9.10581413453759,
+    "z": 82.02843298069347,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0470713375385705,
+      1.0470713375385705,
+      1.0470713375385705
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -6.362898676523101,
+    "z": 81.88913630321402,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -16.399964056221883,
+    "z": 82.39886031054749,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 6.969919514420062,
+    "z": 81.21204023377105,
+    "y": 0.025,
+    "angle": -87.09277910328348,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.812319514420062,
+    "z": 81.91195976622895,
+    "y": 0.025,
+    "angle": -87.09277910328348,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 7.269519669353262,
+    "z": 84.45292413768762,
+    "y": 0.025,
+    "angle": -81.55128811210098,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -6.380719669353263,
+    "z": 86.48047586231239,
+    "y": 0.025,
+    "angle": -81.55128811210098,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 10.557139890790317,
+    "z": 85.89530132490852,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2795558255187611,
+      1.2795558255187611,
+      1.2795558255187611
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 7.366834125844461,
+    "z": 86.95224570566165,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 16.906908228904435,
+    "z": 83.79163087494842,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -8.055677851225733,
+    "z": 92.06170497767566,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.092843988726525,
+      1.092843988726525,
+      1.092843988726525
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": -4.87863412584446,
+    "z": 91.00915429433834,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -14.418708228904435,
+    "z": 94.16976912505157,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 7.909889293520772,
+    "z": 87.13633709756458,
+    "y": 0.025,
+    "angle": -68.94640942114056,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -4.968889293520771,
+    "z": 92.09386290243542,
+    "y": 0.025,
+    "angle": -68.94640942114056,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": -2.5386392892320124,
+    "z": 93.1261026207456,
+    "y": 0.16,
+    "angle": 27.135639368517552,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 9.13005386915687,
+    "z": 89.15575426427434,
+    "y": 0.025,
+    "angle": -51.31307096677949,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -1.641853869156869,
+    "z": 97.78164573572566,
+    "y": 0.025,
+    "angle": -51.31307096677949,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 11.759815114741777,
+    "z": 88.6409527090898,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1589225117738966,
+      1.1589225117738966,
+      1.1589225117738966
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 9.898618185897408,
+    "z": 90.6403823286702,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 16.74620233601663,
+    "z": 83.28422223613306,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": -0.5128772338986565,
+    "z": 101.82514843474334,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1012607728152102,
+      1.1012607728152102,
+      1.1012607728152102
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 1.109181814102591,
+    "z": 100.08261767132981,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": -5.7384023360166285,
+    "z": 107.43877776386695,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 11.140084815589434,
+    "z": 91.09256361271021,
+    "y": 0.025,
+    "angle": -36.870778008762954,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 2.859915184410566,
+    "z": 102.13243638728979,
+    "y": 0.025,
+    "angle": -36.870778008762954,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 13.57546670962026,
+    "z": 92.48758984021295,
+    "y": 0.025,
+    "angle": -22.48607868084935,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 8.297533290379741,
+    "z": 105.23841015978705,
+    "y": 0.025,
+    "angle": -22.48607868084935,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 15.152368660022542,
+    "z": 90.13301778922153,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0297347085351536,
+      1.0297347085351536,
+      1.0297347085351536
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 14.153273674834676,
+    "z": 93.18148077376154,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 17.283223354228237,
+    "z": 83.63130197938997,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 9.289669560304542,
+    "z": 108.02142826065003,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1822753584851045,
+      1.1822753584851045,
+      1.1822753584851045
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 10.135726325165326,
+    "z": 105.43991922623846,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 7.005776645771764,
+    "z": 114.99009802061002,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 15.378974731137316,
+    "z": 93.0293344025387,
+    "y": 0.025,
+    "angle": -0.713099520151107,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 15.207225268862686,
+    "z": 106.8282655974613,
+    "y": 0.025,
+    "angle": -0.713099520151107,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": 16.284478272786302,
+    "z": 105.00067647962089,
+    "y": 0.16,
+    "angle": 93.53861514451467,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 16.894781534091283,
+    "z": 89.68576178566629,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0775837467303198,
+      1.0775837467303198,
+      1.0775837467303198
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 17.83430075501752,
+    "z": 93.0016862001947,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 22.162858363296518,
+    "z": 108.27882958725046,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.16131957338049,
+      1.16131957338049,
+      1.16131957338049
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 21.350899244982482,
+    "z": 105.41311379980532,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 17.711628714669907,
+    "z": 92.56872942346409,
+    "y": 0.025,
+    "angle": 15.819310766088574,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 21.473571285330095,
+    "z": 105.84607057653592,
+    "y": 0.025,
+    "angle": 15.819310766088574,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 21.388332125903197,
+    "z": 91.40697013577326,
+    "y": 0.025,
+    "angle": 17.610590273115065,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 25.5634678740968,
+    "z": 104.56022986422673,
+    "y": 0.025,
+    "angle": 17.610590273115065,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 24.524282209203093,
+    "z": 87.91163475070175,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.1090763656487312,
+      1.1090763656487312,
+      1.1090763656487312
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 25.191328926194014,
+    "z": 90.80064466030447,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 22.930357718170736,
+    "z": 81.00827471240679,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 28.800565971050716,
+    "z": 106.43241575383976,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.284021627506822,
+      1.284021627506822,
+      1.284021627506822
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 28.093471073805983,
+    "z": 103.36995533969554,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 30.35444228182926,
+    "z": 113.16232528759322,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 26.122843370628587,
+    "z": 90.14208924442795,
+    "y": 0.025,
+    "angle": 10.917742459033944,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 28.736556629371414,
+    "z": 103.69231075557204,
+    "y": 0.025,
+    "angle": 10.917742459033944,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 33.27353608425382,
+    "z": 90.01854692251702,
+    "y": 0.025,
+    "angle": -10.636089558586558,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 30.72646391574618,
+    "z": 103.58145307748298,
+    "y": 0.025,
+    "angle": -10.636089558586558,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "streetlamp",
+    "x": 31.542503208992184,
+    "z": 101.92092205213743,
+    "y": 0.16,
+    "angle": 76.4488643797581,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 37.26117264786244,
+    "z": 87.85569141161461,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0064514543068754,
+      1.0064514543068754,
+      1.0064514543068754
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 36.195094673050676,
+    "z": 91.23562821030758,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 39.21818869850173,
+    "z": 81.65108844497288,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 31.65489820320102,
+    "z": 105.63005102393925,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0977094620431118,
+      1.0977094620431118,
+      1.0977094620431118
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 32.31470532694932,
+    "z": 103.53817178969241,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 29.291611301498268,
+    "z": 113.12271155502711,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 38.27567499879614,
+    "z": 91.4859027138438,
+    "y": 0.025,
+    "angle": -20.909624876764777,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 33.350525001203856,
+    "z": 104.3770972861562,
+    "y": 0.025,
+    "angle": -20.909624876764777,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 43.004415908236666,
+    "z": 93.65064399388439,
+    "y": 0.025,
+    "angle": -28.02974250953848,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 36.51938409176333,
+    "z": 105.8319560061156,
+    "y": 0.025,
+    "angle": -28.02974250953848,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 45.99975825988782,
+    "z": 92.69172185408156,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0886593981217052,
+      1.0886593981217052,
+      1.0886593981217052
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 44.597334715023685,
+    "z": 95.06161170217096,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 36.524489411154974,
+    "z": 108.7035347866041,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0861583459041266,
+      1.0861583459041266,
+      1.0861583459041266
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 38.027665284976315,
+    "z": 106.16338829782903,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 47.45723348725939,
+    "z": 96.35360640243493,
+    "y": 0.025,
+    "angle": -34.51139099893657,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 39.63856651274061,
+    "z": 107.72499359756506,
+    "y": 0.025,
+    "angle": -34.51139099893657,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 51.476495095970115,
+    "z": 99.49604061087707,
+    "y": 0.025,
+    "angle": -41.85260862575961,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 42.26890490402989,
+    "z": 109.77515938912292,
+    "y": 0.025,
+    "angle": -41.85260862575961,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 54.24468613851963,
+    "z": 98.04334357069168,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0140433701220708,
+      1.0140433701220708,
+      1.0140433701220708
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 51.90351171969357,
+    "z": 100.50248750450861,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 58.83319974805332,
+    "z": 93.22361919758015,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_poplar_large",
+    "x": 40.92502153559336,
+    "z": 112.0341731925131,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.01418782562236,
+      1.01418782562236,
+      1.01418782562236
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 43.00868828030643,
+    "z": 109.8455124954914,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 36.07900025194668,
+    "z": 117.12438080241986,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "streetlamp",
+    "x": 43.93954189605625,
+    "z": 108.86775406620251,
+    "y": 0.16,
+    "angle": 46.40778060758137,
+    "scale": [
+      6.8,
+      6.8,
+      6.8
+    ],
+    "category": "SightlineStreetFurniture"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 55.60691228754184,
+    "z": 104.13967684366443,
+    "y": 0.025,
+    "angle": -56.74602945429536,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 44.066687712458155,
+    "z": 111.70692315633556,
+    "y": 0.025,
+    "angle": -56.74602945429536,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 60.62320558215274,
+    "z": 108.84868293154113,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      0.9864919926830047,
+      0.9864919926830047,
+      0.9864919926830047
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 57.710720905358706,
+    "z": 109.76095118314406,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 43.01906540513464,
+    "z": 114.3627714032233,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0530571440645664,
+      1.0530571440645664,
+      1.0530571440645664
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 45.40047909464129,
+    "z": 113.61684881685595,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 58.14014794526745,
+    "z": 109.6264431261541,
+    "y": 0.025,
+    "angle": -72.60804556764639,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 44.971052054732546,
+    "z": 113.7513568738459,
+    "y": 0.025,
+    "angle": -72.60804556764639,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 59.30902872400351,
+    "z": 114.57353179113417,
+    "y": 0.025,
+    "angle": -79.51230363956104,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 45.73957127599648,
+    "z": 117.08546820886582,
+    "y": 0.025,
+    "angle": -79.51230363956104,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 61.79309243591696,
+    "z": 117.67781447887818,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.2016433242668234,
+      1.2016433242668234,
+      1.2016433242668234
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 59.494816584363654,
+    "z": 118.12683327109336,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 69.35833312279075,
+    "z": 116.19977813535509,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 43.968851304062625,
+    "z": 121.16017244725185,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.0199510379247005,
+      1.0199510379247005,
+      1.0199510379247005
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "shrub_round",
+    "x": 46.83418341563634,
+    "z": 120.60036672890665,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      8.5,
+      8.5
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "tree_maple_large",
+    "x": 36.97066687720925,
+    "z": 122.52742186464492,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.25,
+      1.25,
+      1.25
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 60.05882846681051,
+    "z": 118.64830638774394,
+    "y": 0.025,
+    "angle": -78.16122267740764,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 46.552371533189486,
+    "z": 121.47949361225606,
+    "y": 0.025,
+    "angle": -78.16122267740764,
+    "scale": [
+      8.5,
+      8.2,
+      7
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "lawn_tile",
+    "x": 48,
+    "z": 116,
+    "y": -0.025,
+    "angle": 0,
+    "scale": [
+      27,
+      1,
+      19
+    ],
+    "category": "SightlineGround"
+  },
+  {
+    "name": "distant_roofline",
+    "x": 48,
+    "z": -109,
+    "y": 1.0,
+    "angle": 15,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoofHints"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 43,
+    "z": -105,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 47,
+    "z": -105,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 51,
+    "z": -105,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 55,
+    "z": -105,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "distant_roofline",
+    "x": -49,
+    "z": -110,
+    "y": 1.0,
+    "angle": -20,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoofHints"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -54,
+    "z": -106,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -50,
+    "z": -106,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -46,
+    "z": -106,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": -42,
+    "z": -106,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "distant_roofline",
+    "x": 40,
+    "z": 113,
+    "y": 1.0,
+    "angle": 30,
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "category": "SightlineRoofHints"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 35,
+    "z": 117,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 39,
+    "z": 117,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 43,
+    "z": 117,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "hedge_straight",
+    "x": 47,
+    "z": 117,
+    "y": 0.025,
+    "angle": 0,
+    "scale": [
+      8.5,
+      13,
+      10
+    ],
+    "category": "SightlineGardens"
+  },
+  {
+    "name": "landscape_mound",
+    "x": 48,
+    "z": -128,
+    "y": -1.8,
+    "angle": 0,
+    "scale": [
+      1.0,
+      0.95,
+      0.85
+    ],
+    "category": "SightlineTerminalScreen"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 40,
+    "z": -128,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 46,
+    "z": -131,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 53,
+    "z": -128,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "landscape_mound",
+    "x": -48,
+    "z": -128,
+    "y": -1.8,
+    "angle": 0,
+    "scale": [
+      1.0,
+      0.95,
+      0.85
+    ],
+    "category": "SightlineTerminalScreen"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -56,
+    "z": -128,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -50,
+    "z": -131,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -43,
+    "z": -128,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": -38,
+    "z": -124,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "landscape_mound",
+    "x": 57,
+    "z": 133,
+    "y": -1.8,
+    "angle": 0,
+    "scale": [
+      1.0,
+      0.95,
+      0.85
+    ],
+    "category": "SightlineTerminalScreen"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 49,
+    "z": 133,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 55,
+    "z": 130,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 62,
+    "z": 133,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  },
+  {
+    "name": "tree_oak_large",
+    "x": 67,
+    "z": 137,
+    "y": 0,
+    "angle": 0,
+    "scale": [
+      1.4,
+      1.4,
+      1.4
+    ],
+    "category": "SightlineTrees"
+  }
+]
