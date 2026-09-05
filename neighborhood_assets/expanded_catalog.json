@@ -1,0 +1,308 @@
+[
+  {
+    "name": "house_willow",
+    "category": "detailed_houses",
+    "width": 11.024,
+    "height": 7.063,
+    "depth": 9.685,
+    "triangles": 3522,
+    "notes": "Original house geometry enlarged 8x, recolored and extended with architectural details. Background exterior; not a navigable interior."
+  },
+  {
+    "name": "house_buttercup",
+    "category": "detailed_houses",
+    "width": 12.224,
+    "height": 6.541,
+    "depth": 10.884,
+    "triangles": 3039,
+    "notes": "Original house geometry enlarged 8x, recolored and extended with architectural details. Background exterior; not a navigable interior."
+  },
+  {
+    "name": "house_bluebell",
+    "category": "detailed_houses",
+    "width": 12.959,
+    "height": 9.646,
+    "depth": 12.711,
+    "triangles": 5598,
+    "notes": "Original house geometry enlarged 8x, recolored and extended with architectural details. Background exterior; not a navigable interior."
+  },
+  {
+    "name": "house_peach",
+    "category": "detailed_houses",
+    "width": 7.991,
+    "height": 9.592,
+    "depth": 9.62,
+    "triangles": 2996,
+    "notes": "Original house geometry enlarged 8x, recolored and extended with architectural details. Background exterior; not a navigable interior."
+  },
+  {
+    "name": "house_lavender",
+    "category": "detailed_houses",
+    "width": 13.874,
+    "height": 6.295,
+    "depth": 12.884,
+    "triangles": 4648,
+    "notes": "Original house geometry enlarged 8x, recolored and extended with architectural details. Background exterior; not a navigable interior."
+  },
+  {
+    "name": "house_cedar",
+    "category": "detailed_houses",
+    "width": 8.848,
+    "height": 9.524,
+    "depth": 9.62,
+    "triangles": 3002,
+    "notes": "Original house geometry enlarged 8x, recolored and extended with architectural details. Background exterior; not a navigable interior."
+  },
+  {
+    "name": "house_learning_home",
+    "category": "hero_house",
+    "width": 13.0,
+    "height": 9.755,
+    "depth": 13.45,
+    "triangles": 16986,
+    "notes": "12 x 10 m house. Enterable 7.4 x 6.6 m upper bedroom. Floor elevation 3.51m; window opening local X[-3.6,-1], Godot Z=5, Y[4.55,6.65]."
+  },
+  {
+    "name": "bedroom_window_sash",
+    "category": "hero_parts",
+    "width": 2.58,
+    "height": 2.06,
+    "depth": 0.165,
+    "triangles": 648,
+    "notes": "Hinge pivot at left edge, midpoint height. Separate from wall opening; scene swings it outward."
+  },
+  {
+    "name": "bedroom_curtain",
+    "category": "hero_parts",
+    "width": 0.871,
+    "height": 1.95,
+    "depth": 0.162,
+    "triangles": 972,
+    "notes": "Top-center pivot. Hang to either side of the clear window opening."
+  },
+  {
+    "name": "bedroom_bed",
+    "category": "interior",
+    "width": 1.66,
+    "height": 1.435,
+    "depth": 2.2,
+    "triangles": 1080,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_desk",
+    "category": "interior",
+    "width": 2.0,
+    "height": 0.83,
+    "depth": 0.85,
+    "triangles": 756,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_chair",
+    "category": "interior",
+    "width": 0.52,
+    "height": 1.05,
+    "depth": 0.54,
+    "triangles": 648,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_computer",
+    "category": "interior",
+    "width": 0.86,
+    "height": 0.72,
+    "depth": 0.495,
+    "triangles": 984,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_phone",
+    "category": "interior",
+    "width": 0.082,
+    "height": 0.033,
+    "depth": 0.165,
+    "triangles": 324,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_bookshelf",
+    "category": "interior",
+    "width": 1.3,
+    "height": 1.84,
+    "depth": 0.413,
+    "triangles": 3024,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_rug",
+    "category": "interior",
+    "width": 3.2,
+    "height": 0.033,
+    "depth": 2.35,
+    "triangles": 132,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_lamp",
+    "category": "interior",
+    "width": 0.37,
+    "height": 0.51,
+    "depth": 0.32,
+    "triangles": 116,
+    "notes": ""
+  },
+  {
+    "name": "bedroom_wall_art",
+    "category": "interior",
+    "width": 0.92,
+    "height": 0.7,
+    "depth": 0.087,
+    "triangles": 203,
+    "notes": ""
+  },
+  {
+    "name": "tree_oak_large",
+    "category": "large_trees",
+    "width": 7.82,
+    "height": 10.577,
+    "depth": 6.689,
+    "triangles": 520,
+    "notes": "8\u201312m class tree with broad overlapping foliage masses."
+  },
+  {
+    "name": "tree_maple_large",
+    "category": "large_trees",
+    "width": 7.82,
+    "height": 10.577,
+    "depth": 6.689,
+    "triangles": 520,
+    "notes": "8\u201312m class tree with broad overlapping foliage masses."
+  },
+  {
+    "name": "tree_poplar_large",
+    "category": "large_trees",
+    "width": 3.614,
+    "height": 12.05,
+    "depth": 3.116,
+    "triangles": 356,
+    "notes": "8\u201312m class tree with broad overlapping foliage masses."
+  },
+  {
+    "name": "car_ocean",
+    "category": "cars",
+    "width": 1.953,
+    "height": 1.596,
+    "depth": 3.774,
+    "triangles": 2900,
+    "notes": "3.8m compact car at full neighborhood scale."
+  },
+  {
+    "name": "car_sage",
+    "category": "cars",
+    "width": 1.953,
+    "height": 1.596,
+    "depth": 3.774,
+    "triangles": 2900,
+    "notes": "3.8m compact car at full neighborhood scale."
+  },
+  {
+    "name": "car_sunshine",
+    "category": "cars",
+    "width": 1.953,
+    "height": 1.596,
+    "depth": 3.774,
+    "triangles": 2900,
+    "notes": "3.8m compact car at full neighborhood scale."
+  },
+  {
+    "name": "car_lilac",
+    "category": "cars",
+    "width": 1.953,
+    "height": 1.596,
+    "depth": 3.774,
+    "triangles": 2900,
+    "notes": "3.8m compact car at full neighborhood scale."
+  },
+  {
+    "name": "car_cream",
+    "category": "cars",
+    "width": 1.953,
+    "height": 1.596,
+    "depth": 3.774,
+    "triangles": 2900,
+    "notes": "3.8m compact car at full neighborhood scale."
+  },
+  {
+    "name": "road_straight_large",
+    "category": "streets",
+    "width": 7.2,
+    "height": 0.167,
+    "depth": 10.0,
+    "triangles": 48,
+    "notes": "10m straight, 7.2m road width; driving surface Y=0."
+  },
+  {
+    "name": "road_junction_large",
+    "category": "streets",
+    "width": 7.2,
+    "height": 0.15,
+    "depth": 7.2,
+    "triangles": 12,
+    "notes": ""
+  },
+  {
+    "name": "sidewalk_slab_large",
+    "category": "streets",
+    "width": 1.8,
+    "height": 0.15,
+    "depth": 2.0,
+    "triangles": 108,
+    "notes": "2m length, 1.8m width, 15cm high."
+  },
+  {
+    "name": "curb_large",
+    "category": "streets",
+    "width": 0.15,
+    "height": 0.17,
+    "depth": 2.0,
+    "triangles": 108,
+    "notes": ""
+  },
+  {
+    "name": "driveway_large",
+    "category": "streets",
+    "width": 3.1,
+    "height": 0.077,
+    "depth": 8.0,
+    "triangles": 144,
+    "notes": "3.1m x8m; ground pivot at leading apron centerline."
+  },
+  {
+    "name": "driveway_apron_large",
+    "category": "streets",
+    "width": 3.4,
+    "height": 0.15,
+    "depth": 1.8,
+    "triangles": 12,
+    "notes": ""
+  },
+  {
+    "name": "garden_path_large",
+    "category": "streets",
+    "width": 1.2,
+    "height": 0.07,
+    "depth": 5.94,
+    "triangles": 648,
+    "notes": ""
+  },
+  {
+    "name": "landscape_mound",
+    "category": "landscape",
+    "width": 41.847,
+    "height": 11.2,
+    "depth": 32.0,
+    "triangles": 80,
+    "notes": "Backdrop berm, part buried below ground."
+  }
+]

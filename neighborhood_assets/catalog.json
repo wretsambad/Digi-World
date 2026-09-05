@@ -1,0 +1,290 @@
+[
+  {
+    "name": "tree_round",
+    "category": "landscaping",
+    "width": 0.6454,
+    "height": 0.968,
+    "depth": 0.4751,
+    "triangles": 408,
+    "notes": "Broad faceted crown; ground-center pivot."
+  },
+  {
+    "name": "tree_tall",
+    "category": "landscaping",
+    "width": 0.3209,
+    "height": 0.982,
+    "depth": 0.232,
+    "triangles": 348,
+    "notes": "Narrow crown for close-set gardens."
+  },
+  {
+    "name": "shrub_round",
+    "category": "landscaping",
+    "width": 0.3279,
+    "height": 0.244,
+    "depth": 0.236,
+    "triangles": 240,
+    "notes": ""
+  },
+  {
+    "name": "hedge_straight",
+    "category": "landscaping",
+    "width": 0.5128,
+    "height": 0.238,
+    "depth": 0.13,
+    "triangles": 208,
+    "notes": "Length 0.48; duplicate end to end."
+  },
+  {
+    "name": "flowerbed",
+    "category": "landscaping",
+    "width": 0.396,
+    "height": 0.1291,
+    "depth": 0.196,
+    "triangles": 1716,
+    "notes": ""
+  },
+  {
+    "name": "flowerpot",
+    "category": "landscaping",
+    "width": 0.148,
+    "height": 0.1928,
+    "depth": 0.148,
+    "triangles": 636,
+    "notes": ""
+  },
+  {
+    "name": "grass_tuft",
+    "category": "landscaping",
+    "width": 0.1231,
+    "height": 0.096,
+    "depth": 0.1216,
+    "triangles": 56,
+    "notes": ""
+  },
+  {
+    "name": "garden_rock",
+    "category": "landscaping",
+    "width": 0.1789,
+    "height": 0.132,
+    "depth": 0.1259,
+    "triangles": 20,
+    "notes": ""
+  },
+  {
+    "name": "fence_picket",
+    "category": "boundaries",
+    "width": 0.5564,
+    "height": 0.279,
+    "depth": 0.0764,
+    "triangles": 1212,
+    "notes": "Post centers are 0.48 apart; place posts together when tiling."
+  },
+  {
+    "name": "fence_corner",
+    "category": "boundaries",
+    "width": 0.5564,
+    "height": 0.279,
+    "depth": 0.5564,
+    "triangles": 2304,
+    "notes": "Two perpendicular fence spans."
+  },
+  {
+    "name": "garden_gate",
+    "category": "boundaries",
+    "width": 0.314,
+    "height": 0.26,
+    "depth": 0.0568,
+    "triangles": 1020,
+    "notes": "Gate rails and pickets remain named meshes; hinge rig not supplied."
+  },
+  {
+    "name": "lawn_tile",
+    "category": "ground",
+    "width": 2.0,
+    "height": 0.024,
+    "depth": 2.0,
+    "triangles": 12,
+    "notes": "2 x 2 ground tile; flat edges for seamless repetition."
+  },
+  {
+    "name": "lawn_verge",
+    "category": "ground",
+    "width": 1.6,
+    "height": 0.01,
+    "depth": 0.26,
+    "triangles": 12,
+    "notes": "1.6 x 0.26 planting strip."
+  },
+  {
+    "name": "garden_path",
+    "category": "ground",
+    "width": 0.26,
+    "height": 0.016,
+    "depth": 0.474,
+    "triangles": 432,
+    "notes": "0.26 wide, 0.474 long; four paving slabs in one path module."
+  },
+  {
+    "name": "stepping_stone",
+    "category": "ground",
+    "width": 0.1677,
+    "height": 0.02,
+    "depth": 0.1635,
+    "triangles": 24,
+    "notes": ""
+  },
+  {
+    "name": "driveway",
+    "category": "ground",
+    "width": 0.6,
+    "height": 0.0164,
+    "depth": 0.96,
+    "triangles": 132,
+    "notes": "0.6 wide x 0.96 long."
+  },
+  {
+    "name": "curb_ramp",
+    "category": "ground",
+    "width": 0.32,
+    "height": 0.052,
+    "depth": 0.24,
+    "triangles": 432,
+    "notes": "Low end faces Godot +Z; adjust vertical placement to your curb height."
+  },
+  {
+    "name": "streetlamp",
+    "category": "street",
+    "width": 0.223,
+    "height": 0.93,
+    "depth": 0.092,
+    "triangles": 404,
+    "notes": "Decorative lamp; add a Godot light separately if needed."
+  },
+  {
+    "name": "mailbox",
+    "category": "street",
+    "width": 0.0996,
+    "height": 0.356,
+    "depth": 0.1531,
+    "triangles": 864,
+    "notes": ""
+  },
+  {
+    "name": "bench",
+    "category": "street",
+    "width": 0.38,
+    "height": 0.244,
+    "depth": 0.144,
+    "triangles": 1728,
+    "notes": ""
+  },
+  {
+    "name": "litter_bin",
+    "category": "street",
+    "width": 0.128,
+    "height": 0.218,
+    "depth": 0.1318,
+    "triangles": 468,
+    "notes": ""
+  },
+  {
+    "name": "recycling_bin",
+    "category": "street",
+    "width": 0.128,
+    "height": 0.218,
+    "depth": 0.132,
+    "triangles": 468,
+    "notes": ""
+  },
+  {
+    "name": "hydrant",
+    "category": "street",
+    "width": 0.132,
+    "height": 0.1895,
+    "depth": 0.096,
+    "triangles": 272,
+    "notes": ""
+  },
+  {
+    "name": "street_name_sign",
+    "category": "street",
+    "width": 0.296,
+    "height": 0.62,
+    "depth": 0.0186,
+    "triangles": 452,
+    "notes": "Lettering is mesh geometry; no external font needed."
+  },
+  {
+    "name": "bollard",
+    "category": "street",
+    "width": 0.064,
+    "height": 0.177,
+    "depth": 0.064,
+    "triangles": 212,
+    "notes": ""
+  },
+  {
+    "name": "bicycle_rack",
+    "category": "street",
+    "width": 0.264,
+    "height": 0.183,
+    "depth": 0.044,
+    "triangles": 284,
+    "notes": ""
+  },
+  {
+    "name": "bicycle",
+    "category": "street",
+    "width": 0.3944,
+    "height": 0.2388,
+    "depth": 0.1124,
+    "triangles": 1896,
+    "notes": "Static bicycle with separate named wheels and frame pieces."
+  },
+  {
+    "name": "compact_car",
+    "category": "street",
+    "width": 0.3616,
+    "height": 0.2955,
+    "depth": 0.6988,
+    "triangles": 2900,
+    "notes": "Static parked car; wheels are separate named mesh nodes."
+  },
+  {
+    "name": "utility_cabinet",
+    "category": "street",
+    "width": 0.17,
+    "height": 0.234,
+    "depth": 0.106,
+    "triangles": 468,
+    "notes": ""
+  },
+  {
+    "name": "storm_drain",
+    "category": "street",
+    "width": 0.17,
+    "height": 0.0216,
+    "depth": 0.106,
+    "triangles": 876,
+    "notes": ""
+  },
+  {
+    "name": "manhole_cover",
+    "category": "street",
+    "width": 0.172,
+    "height": 0.0188,
+    "depth": 0.172,
+    "triangles": 724,
+    "notes": ""
+  },
+  {
+    "name": "birdbath",
+    "category": "garden",
+    "width": 0.214,
+    "height": 0.2238,
+    "depth": 0.214,
+    "triangles": 528,
+    "notes": ""
+  }
+]
