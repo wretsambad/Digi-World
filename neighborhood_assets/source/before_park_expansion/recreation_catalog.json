@@ -1,0 +1,173 @@
+[
+  {
+    "name": "basketball_court",
+    "category": "sport_surface",
+    "width": 12.0,
+    "height": 0.151,
+    "depth": 18.0,
+    "triangles": 1018,
+    "notes": "Compact neighborhood two-hoop court, 12 x 18m including runoff; decorative linework, not a regulation venue."
+  },
+  {
+    "name": "basketball_hoop",
+    "category": "sports_equipment",
+    "width": 1.65,
+    "height": 3.6,
+    "depth": 1.778,
+    "triangles": 1100,
+    "notes": "Standalone hoop with backboard, target, padded post, rim and open net."
+  },
+  {
+    "name": "basketball",
+    "category": "sports_prop",
+    "width": 0.244,
+    "height": 0.244,
+    "depth": 0.244,
+    "triangles": 1472,
+    "notes": ""
+  },
+  {
+    "name": "soccer_pitch",
+    "category": "sport_surface",
+    "width": 12.0,
+    "height": 0.07,
+    "depth": 18.0,
+    "triangles": 470,
+    "notes": "Small 12 x 18m recreational soccer area; 10 x 16m marked pitch."
+  },
+  {
+    "name": "soccer_goal",
+    "category": "sports_equipment",
+    "width": 3.11,
+    "height": 1.855,
+    "depth": 1.235,
+    "triangles": 896,
+    "notes": "3m wide goal with visible open net; opening faces Godot +Z."
+  },
+  {
+    "name": "soccer_ball",
+    "category": "sports_prop",
+    "width": 0.219,
+    "height": 0.23,
+    "depth": 0.23,
+    "triangles": 80,
+    "notes": ""
+  },
+  {
+    "name": "sports_fence_panel",
+    "category": "boundary",
+    "width": 3.09,
+    "height": 2.5,
+    "depth": 0.09,
+    "triangles": 444,
+    "notes": "3m-wide open sports fence, no glass or opaque backdrop."
+  },
+  {
+    "name": "park_path_loop",
+    "category": "park_surface",
+    "width": 18.0,
+    "height": 0.03,
+    "depth": 14.0,
+    "triangles": 432,
+    "notes": "18 x 14m walking loop with 2m-wide paths and grassy center."
+  },
+  {
+    "name": "path_tile",
+    "category": "park_surface",
+    "width": 2.0,
+    "height": 0.03,
+    "depth": 1.0,
+    "triangles": 108,
+    "notes": "2m-wide modular path; scale length to connect paths."
+  },
+  {
+    "name": "playground_surface",
+    "category": "park_surface",
+    "width": 10.0,
+    "height": 0.05,
+    "depth": 8.0,
+    "triangles": 108,
+    "notes": ""
+  },
+  {
+    "name": "play_tower_slide",
+    "category": "play_equipment",
+    "width": 1.9,
+    "height": 3.0,
+    "depth": 4.804,
+    "triangles": 1618,
+    "notes": "Small sheltered play tower with open ladder, side rails and slide."
+  },
+  {
+    "name": "swing_set",
+    "category": "play_equipment",
+    "width": 4.6,
+    "height": 2.829,
+    "depth": 2.159,
+    "triangles": 492,
+    "notes": "Two-seat timber swing frame with separate visible hangers."
+  },
+  {
+    "name": "sandbox",
+    "category": "play_equipment",
+    "width": 3.18,
+    "height": 0.495,
+    "depth": 2.68,
+    "triangles": 596,
+    "notes": ""
+  },
+  {
+    "name": "picnic_table",
+    "category": "park_furniture",
+    "width": 2.0,
+    "height": 0.792,
+    "depth": 1.84,
+    "triangles": 924,
+    "notes": ""
+  },
+  {
+    "name": "drinking_fountain",
+    "category": "park_furniture",
+    "width": 0.46,
+    "height": 1.085,
+    "depth": 0.46,
+    "triangles": 196,
+    "notes": ""
+  },
+  {
+    "name": "park_bollard",
+    "category": "park_furniture",
+    "width": 0.134,
+    "height": 0.8,
+    "depth": 0.134,
+    "triangles": 88,
+    "notes": ""
+  },
+  {
+    "name": "park_sign",
+    "category": "wayfinding",
+    "width": 1.8,
+    "height": 1.665,
+    "depth": 0.101,
+    "triangles": 780,
+    "notes": ""
+  },
+  {
+    "name": "court_sign",
+    "category": "wayfinding",
+    "width": 1.8,
+    "height": 1.665,
+    "depth": 0.101,
+    "triangles": 648,
+    "notes": ""
+  },
+  {
+    "name": "soccer_sign",
+    "category": "wayfinding",
+    "width": 1.8,
+    "height": 1.665,
+    "depth": 0.101,
+    "triangles": 796,
+    "notes": ""
+  }
+]

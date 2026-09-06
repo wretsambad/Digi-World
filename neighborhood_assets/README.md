@@ -59,3 +59,13 @@ This pass added 568 instances to each main scene and removed 16 trees and nine d
 Validation loaded all ten new GLBs and all three scenes in Godot 4.7.2. A temporary collision check traced 936 rays across a 0.36-meter corridor along the three new road centerlines at 2.4 meters above ground; all were clear. Seven street-camera views were rendered with the project's existing Forward+ lighting: origin, both junction directions, both outer bends, south end and farther around the east bend. This is sampled view and geometry validation, not a completed camera animation or a target-device performance benchmark.
 
 The latest restore package is `Digi-World-filled-streets.zip`. It contains houses.tscn and neighborhood_assets for the existing Digi-World project.
+
+## Recreation placeholder completion
+
+The user's recreation placeholders are now finished in `preview/neighborhood_filled.tscn`: BasketballCourt, WillowPark and SoccerArea are three local Node3D groups with 65 separately editable model instances. The 19 new GLBs in `recreation_models/` bring the model library to 95 GLBs. Their source is `source/recreation_amenities.blend`. See `RECREATION.md` for exact locations, contents and validation.
+
+This pass updates only the preview scene containing the user's markers. `houses.tscn` and `preview/neighborhood_dressing.tscn` remain independent copies of the earlier layout. Earlier instance counts above describe those prior layouts, not the user's currently edited preview. Current lighting and unrelated scene edits are retained. Backups of the preview are in `source/before_recreation/`.
+
+## Larger fenced park
+
+WillowPark is now 24 x 18m with more space between equipment, 30 separate picket fence sections and two open entrances. The soccer sign reads “Soccer”. Current recreation totals are 21 GLBs and 96 placed objects (55 in the park); the full model library contains 97 GLBs. See RECREATION.md for current details and source/before_park_expansion for the pre-edit backup.

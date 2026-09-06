@@ -1,0 +1,22 @@
+name,category,width,height,depth,triangles,notes
+basketball_court,sport_surface,12.0,0.151,18.0,1018,"Compact neighborhood two-hoop court, 12 x 18m including runoff; decorative linework, not a regulation venue."
+basketball_hoop,sports_equipment,1.65,3.6,1.778,1100,"Standalone hoop with backboard, target, padded post, rim and open net."
+basketball,sports_prop,0.244,0.244,0.244,1472,
+soccer_pitch,sport_surface,12.0,0.07,18.0,470,Small 12 x 18m recreational soccer area; 10 x 16m marked pitch.
+soccer_goal,sports_equipment,3.11,1.855,1.235,896,3m wide goal with visible open net; opening faces Godot +Z.
+soccer_ball,sports_prop,0.219,0.23,0.23,80,
+sports_fence_panel,boundary,3.09,2.5,0.09,444,"3m-wide open sports fence, no glass or opaque backdrop."
+park_path_loop,park_surface,18.0,0.03,14.0,432,18 x 14m walking loop with 2m-wide paths and grassy center.
+path_tile,park_surface,2.0,0.03,1.0,108,2m-wide modular path; scale length to connect paths.
+playground_surface,park_surface,10.0,0.05,8.0,108,
+play_tower_slide,play_equipment,1.9,3.0,4.804,1618,"Small sheltered play tower with open ladder, side rails and slide."
+swing_set,play_equipment,4.6,2.829,2.159,492,Two-seat timber swing frame with separate visible hangers.
+sandbox,play_equipment,3.18,0.495,2.68,596,
+picnic_table,park_furniture,2.0,0.792,1.84,924,
+drinking_fountain,park_furniture,0.46,1.085,0.46,196,
+park_bollard,park_furniture,0.134,0.8,0.134,88,
+park_sign,wayfinding,1.8,1.665,0.101,780,
+court_sign,wayfinding,1.8,1.665,0.101,648,
+soccer_sign,wayfinding,1.8,1.665,0.101,740,
+park_path_loop_large,park_surface,24.0,0.03,18.0,432,24 x 18m walking loop; 2m-wide paths retain ordinary proportions.
+park_fence_panel,boundary,3.16,1.163,0.18,2052,"3m cream picket fence with teal rails and capped posts, roughly 1.16m tall; separately instanced perimeter sections."
