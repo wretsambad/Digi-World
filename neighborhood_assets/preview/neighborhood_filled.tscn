@@ -5973,6 +5973,10 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(6.051519, 0, 3.10147, 0, 6.8, 0, -3.10147, 0, 6.051519, -2.53864, 0.16, 93.1261)
 metadata/category = "SightlineStreetFurniture"
 
+[node name="OmniLight3D" type="OmniLight3D" parent="ExistingNeighborhood/Fill_streetlamp_454" unique_id=1203558570]
+transform = Transform3D(0.14705883, 0, 0, 0, 0.14705881, 0, 0, 0, 0.14705883, 0.122329235, 0.8484924, -0.013591766)
+omni_range = 9.259
+
 [node name="Fill_hedge_straight_455" parent="ExistingNeighborhood" unique_id=1890782879 instance=ExtResource("m20")]
 transform = Transform3D(5.313049, 0, -5.464011, 0, 8.2, 0, 6.634871, 0, 4.375452, 9.13005, 0.025, 89.15575)
 metadata/category = "SightlineGardens"
@@ -6057,6 +6061,10 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(-0.419704, 0, 6.787035, 0, 6.8, 0, -6.787035, 0, -0.419704, 16.28448, 0.16, 105.00068)
 metadata/category = "SightlineStreetFurniture"
 
+[node name="OmniLight3D" type="OmniLight3D" parent="ExistingNeighborhood/Fill_streetlamp_475" unique_id=2099925183]
+transform = Transform3D(0.14705883, 0, 0, 0, 0.14705881, 0, 0, 0, 0.14705883, 0.1309843, 0.86457455, 0.008099914)
+omni_range = 9.259
+
 [node name="Fill_tree_oak_large_476" parent="ExistingNeighborhood" unique_id=1846560614 instance=ExtResource("m22")]
 transform = Transform3D(1.077584, 0, 0, 0, 1.077584, 0, 0, 0, 1.077584, 16.89478, 0, 89.68576)
 metadata/category = "SightlineTrees"
@@ -6132,6 +6140,10 @@ metadata/category = "SightlineGardens"
 [node name="Fill_streetlamp_494" parent="ExistingNeighborhood" unique_id=2009652237 instance=ExtResource("m36")]
 transform = Transform3D(1.593329, 0, 6.610696, 0, 6.8, 0, -6.610696, 0, 1.593329, 31.5425, 0.16, 101.92092)
 metadata/category = "SightlineStreetFurniture"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ExistingNeighborhood/Fill_streetlamp_494" unique_id=1903351477]
+transform = Transform3D(0.1470588, 0, 0, 0, 0.1470588, 0, 0, 0, 0.1470588, 0.1186409, 0.8590246, -0.02859497)
+omni_range = 10.801
 
 [node name="Fill_tree_poplar_large_495" parent="ExistingNeighborhood" unique_id=437255720 instance=ExtResource("m23")]
 transform = Transform3D(1.006451, 0, 0, 0, 1.006451, 0, 0, 0, 1.006451, 37.26117, 0, 87.85569)
@@ -6232,6 +6244,10 @@ metadata/category = "SightlineTrees"
 [node name="Fill_streetlamp_519" parent="ExistingNeighborhood" unique_id=746083610 instance=ExtResource("m36")]
 transform = Transform3D(4.688744, 0, 4.925005, 0, 6.8, 0, -4.925005, 0, 4.688744, 43.93954, 0.16, 108.86775)
 metadata/category = "SightlineStreetFurniture"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="ExistingNeighborhood/Fill_streetlamp_519" unique_id=1295987225]
+transform = Transform3D(0.015644304, 0.048244372, -0.13803634, -0.04824437, -0.12934753, -0.050675362, -0.13803634, 0.05067536, 0.0020669624, 0.11642218, 0.8654828, -0.0118665695)
+omni_range = 9.259
 
 [node name="Fill_hedge_straight_520" parent="ExistingNeighborhood" unique_id=1576228838 instance=ExtResource("m20")]
 transform = Transform3D(4.660985, 0, -5.853737, 0, 8.2, 0, 7.108109, 0, 3.838458, 55.60691, 0.025, 104.13968)
