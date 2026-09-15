@@ -1,0 +1,67 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://bedroom_assets/bedroom_arrival.gd" id="1_c5ypq"]
+[ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="2_h0q5s"]
+[ext_resource type="PackedScene" path="res://bedroom_assets/nearby_neighborhood.tscn" id="3_jxknc"]
+[ext_resource type="Environment" path="res://bedroom_assets/neighborhood_environment.tres" id="4_tfi6f"]
+
+[node name="TeenBedroom" type="Node3D" unique_id=218072624]
+script = ExtResource("1_c5ypq")
+metadata/separate_scene = true
+metadata/exterior_instance_count = 544
+
+[node name="LearningHouseDetailed" type="Node3D" parent="." unique_id=1768198947 instance=ExtResource("2_h0q5s")]
+metadata/source_house_path = "ExistingNeighborhood/LearningHouse"
+metadata/window_world_center = Vector3(11.840567, 5.5518985, -29.289724)
+
+[node name="NearbyNeighborhood" type="Node3D" parent="." unique_id=1062087736 instance=ExtResource("3_jxknc")]
+metadata/source_scene = "res://neighborhood_assets/preview/neighborhood_filled.tscn"
+metadata/retained_model_instances = 543
+metadata/purpose = "Nearby block and existing window-visible tree backdrop; no full neighborhood dependency"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1648109889]
+environment = ExtResource("4_tfi6f")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1608404544]
+transform = Transform3D(0.88294756, 0.31413782, -0.34888536, 0, 0.7431448, 0.6691306, 0.46947157, -0.59080726, 0.6561579, 0, 0, 0)
+light_color = Color(1, 0.93, 0.8, 1)
+light_energy = 0.55
+shadow_enabled = true
+directional_shadow_max_distance = 180.0
+
+[node name="EntryCamera" type="Camera3D" parent="." unique_id=1638587547]
+transform = Transform3D(0.89327663, -0.07378933, 0.44340953, 0, 0.9864344, 0.16415599, -0.44950736, -0.14663671, 0.88115877, 17.300566, 5.421899, -25.969725)
+current = true
+fov = 76.0
+near = 0.04
+far = 180.0
+
+[node name="StudyCamera" type="Camera3D" parent="." unique_id=651314469]
+transform = Transform3D(0.90811247, -0.07021977, 0.41279653, 0, 0.98583835, 0.16769846, -0.41872638, -0.15228906, 0.8952521, 15.700566, 5.3218985, -28.739725)
+fov = 68.0
+near = 0.04
+far = 180.0
+
+[node name="CreativeCamera" type="Camera3D" parent="." unique_id=1154272302]
+transform = Transform3D(-0.9225189, -0.043322142, 0.38351277, 0, 0.9936803, 0.11224752, -0.38595188, 0.10355046, -0.91668886, 15.950566, 5.2718983, -30.589725)
+fov = 72.0
+near = 0.04
+far = 180.0
+
+[node name="BedsideCamera" type="Camera3D" parent="." unique_id=105875878]
+transform = Transform3D(0.81538296, 0.15466127, -0.5578804, 0, 0.96365386, 0.26715392, 0.578922, -0.21783276, 0.78574693, 16.200565, 5.0918984, -27.989725)
+fov = 70.0
+near = 0.04
+far = 180.0
+
+[node name="WindowViewCamera" type="Camera3D" parent="." unique_id=286492161]
+transform = Transform3D(-0.0033474343, -0.0598312, 0.99820286, 0, 0.99820846, 0.059831534, -0.9999944, 0.00020028213, -0.0033414373, 14.740566, 5.5018983, -29.139725)
+fov = 72.0
+near = 0.04
+far = 180.0
+
+[node name="ExteriorCamera" type="Camera3D" parent="." unique_id=69502817]
+transform = Transform3D(0.652133, 0.08595942, -0.75321543, 0, 0.99355084, 0.11338729, 0.75810456, -0.07394359, 0.6479273, 4.3405666, 6.9518986, -21.789724)
+fov = 68.0
+near = 0.04
+far = 180.0

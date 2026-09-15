@@ -1,0 +1,5451 @@
+{
+  "handoff": [
+    13.3405666351318,
+    5.55189847946167,
+    -29.2897243499756
+  ],
+  "instances": [
+    {
+      "model": "res://neighborhood_assets/expanded_models/road_straight_large.glb",
+      "node": "Roads_road_straight_large_001",
+      "position": [
+        0.0,
+        0.0,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Roads_road_straight_large_001"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/road_straight_large.glb",
+      "node": "Roads_road_straight_large_002",
+      "position": [
+        0.0,
+        0.0,
+        -49.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Roads_road_straight_large_002"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/road_straight_large.glb",
+      "node": "Roads_road_straight_large_003",
+      "position": [
+        0.0,
+        0.0,
+        -39.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Roads_road_straight_large_003"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/road_straight_large.glb",
+      "node": "Roads_road_straight_large_004",
+      "position": [
+        0.0,
+        0.0,
+        -29.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Roads_road_straight_large_004"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/road_straight_large.glb",
+      "node": "Roads_road_straight_large_005",
+      "position": [
+        0.0,
+        0.0,
+        -19.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Roads_road_straight_large_005"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/road_straight_large.glb",
+      "node": "Roads_road_straight_large_006",
+      "position": [
+        0.0,
+        0.0,
+        -9.39999961853027
+      ],
+      "source_path": "ExistingNeighborhood/Roads_road_straight_large_006"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/road_straight_large.glb",
+      "node": "Roads_road_straight_large_007",
+      "position": [
+        0.0,
+        0.0,
+        0.600000023841858
+      ],
+      "source_path": "ExistingNeighborhood/Roads_road_straight_large_007"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_buttercup.glb",
+      "node": "House_West_03",
+      "position": [
+        -16.7000007629395,
+        0.0,
+        -3.0
+      ],
+      "source_path": "ExistingNeighborhood/House_West_03"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_peach.glb",
+      "node": "House_West_04",
+      "position": [
+        -17.6000003814697,
+        0.0,
+        -27.0
+      ],
+      "source_path": "ExistingNeighborhood/House_West_04"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_lavender.glb",
+      "node": "House_West_05",
+      "position": [
+        -17.0,
+        0.0,
+        -51.0
+      ],
+      "source_path": "ExistingNeighborhood/House_West_05"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_lavender.glb",
+      "node": "House_East_03",
+      "position": [
+        16.7000007629395,
+        0.0,
+        -3.0
+      ],
+      "source_path": "ExistingNeighborhood/House_East_03"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_willow.glb",
+      "node": "House_East_05",
+      "position": [
+        17.0,
+        0.0,
+        -51.0
+      ],
+      "source_path": "ExistingNeighborhood/House_East_05"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_peach.glb",
+      "node": "House_Outer_-1_2",
+      "position": [
+        -46.0,
+        0.0,
+        -24.0
+      ],
+      "source_path": "ExistingNeighborhood/House_Outer_-1_2"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_053",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -63.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_053"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_054",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -63.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_054"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_055",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -61.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_055"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_056",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -61.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_056"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_057",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_057"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_058",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_058"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_059",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -57.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_059"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_060",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -57.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_060"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_061",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -55.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_061"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_062",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -55.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_062"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_063",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -53.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_063"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_064",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -53.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_064"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_065",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -51.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_065"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_066",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -51.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_066"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_067",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -49.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_067"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_068",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -49.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_068"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_069",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -47.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_069"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_070",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -47.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_070"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_071",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -45.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_071"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_072",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -45.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_072"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_073",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -39.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_073"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_074",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -39.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_074"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_075",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -37.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_075"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_076",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -37.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_076"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_077",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -35.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_077"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_078",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -35.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_078"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_079",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -33.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_079"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_080",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -33.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_080"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_081",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -31.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_081"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_082",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -31.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_082"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_083",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -29.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_083"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_084",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -29.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_084"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_085",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -27.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_085"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_086",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -27.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_086"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_087",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -25.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_087"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_088",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -25.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_088"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_089",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -23.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_089"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_090",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -23.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_090"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_091",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -21.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_091"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_092",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -21.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_092"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_093",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -15.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_093"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_094",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -15.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_094"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_095",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -13.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_095"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_096",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -13.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_096"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_097",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -11.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_097"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_098",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -11.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_098"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_099",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -9.39999961853027
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_099"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_100",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -9.39999961853027
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_100"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_101",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -7.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_101"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_102",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -7.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_102"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_103",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -5.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_103"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_104",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -5.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_104"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_105",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -3.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_105"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_106",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -3.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_106"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_107",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -1.39999997615814
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_107"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_108",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        -1.39999997615814
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_108"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_109",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        0.600000023841858
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_109"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_110",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        0.600000023841858
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_110"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_111",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        2.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_111"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_112",
+      "position": [
+        -3.67499995231628,
+        0.0,
+        2.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_112"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_apron_large.glb",
+      "node": "Driveways_driveway_apron_large_165",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_apron_large_165"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_apron_large.glb",
+      "node": "Driveways_driveway_apron_large_166",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_apron_large_166"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_apron_large.glb",
+      "node": "Driveways_driveway_apron_large_167",
+      "position": [
+        -4.65000009536743,
+        0.0,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_apron_large_167"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_280",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -63.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_280"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_281",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -63.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_281"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_282",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -61.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_282"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_283",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -61.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_283"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_284",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_284"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_285",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_285"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_286",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -57.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_286"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_287",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -57.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_287"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_288",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -55.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_288"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_289",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -55.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_289"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_290",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -53.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_290"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_291",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -53.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_291"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_292",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -51.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_292"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_293",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -51.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_293"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_294",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -49.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_294"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_295",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -49.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_295"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_296",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -47.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_296"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_297",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -47.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_297"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_298",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -45.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_298"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_299",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -45.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_299"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_300",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -39.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_300"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_301",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -39.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_301"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_302",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -37.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_302"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_303",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -37.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_303"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_304",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -35.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_304"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_305",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -35.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_305"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_306",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -33.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_306"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_307",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -33.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_307"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_308",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -31.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_308"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_309",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -31.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_309"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_310",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -29.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_310"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_311",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -29.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_311"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_312",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -27.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_312"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_313",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -27.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_313"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_314",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -25.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_314"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_315",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -25.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_315"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_316",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -23.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_316"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_317",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -23.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_317"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_318",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -21.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_318"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_319",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -21.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_319"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_320",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -15.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_320"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_321",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -15.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_321"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_322",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -13.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_322"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_323",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -13.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_323"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_324",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -11.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_324"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_325",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -11.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_325"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_326",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -9.39999961853027
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_326"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_327",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -9.39999961853027
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_327"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_328",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -7.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_328"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_329",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -7.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_329"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_330",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -5.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_330"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_331",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -5.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_331"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_332",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -3.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_332"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_333",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -3.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_333"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_334",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -1.39999997615814
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_334"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_335",
+      "position": [
+        3.67499995231628,
+        0.0,
+        -1.39999997615814
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_335"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_336",
+      "position": [
+        4.65000009536743,
+        0.0,
+        0.600000023841858
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_336"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_337",
+      "position": [
+        3.67499995231628,
+        0.0,
+        0.600000023841858
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_337"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_338",
+      "position": [
+        4.65000009536743,
+        0.0,
+        2.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_338"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_339",
+      "position": [
+        3.67499995231628,
+        0.0,
+        2.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_339"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_apron_large.glb",
+      "node": "Driveways_driveway_apron_large_392",
+      "position": [
+        4.65000009536743,
+        0.0,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_apron_large_392"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_apron_large.glb",
+      "node": "Driveways_driveway_apron_large_393",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_apron_large_393"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_apron_large.glb",
+      "node": "Driveways_driveway_apron_large_394",
+      "position": [
+        4.65000009536743,
+        0.0,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_apron_large_394"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_401",
+      "position": [
+        -55.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_401"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_402",
+      "position": [
+        -55.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_402"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_403",
+      "position": [
+        -53.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_403"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_404",
+      "position": [
+        -53.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_404"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_405",
+      "position": [
+        -51.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_405"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_406",
+      "position": [
+        -51.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_406"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_407",
+      "position": [
+        -49.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_407"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_408",
+      "position": [
+        -49.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_408"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_409",
+      "position": [
+        -47.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_409"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_410",
+      "position": [
+        -47.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_410"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_411",
+      "position": [
+        -45.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_411"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_412",
+      "position": [
+        -45.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_412"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_413",
+      "position": [
+        -43.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_413"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_414",
+      "position": [
+        -43.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_414"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_415",
+      "position": [
+        -41.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_415"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_416",
+      "position": [
+        -41.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_416"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_417",
+      "position": [
+        -39.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_417"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_418",
+      "position": [
+        -39.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_418"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_419",
+      "position": [
+        -37.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_419"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_420",
+      "position": [
+        -37.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_420"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_421",
+      "position": [
+        -35.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_421"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_422",
+      "position": [
+        -35.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_422"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_423",
+      "position": [
+        -33.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_423"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_424",
+      "position": [
+        -33.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_424"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_425",
+      "position": [
+        -31.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_425"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_426",
+      "position": [
+        -31.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_426"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_427",
+      "position": [
+        -29.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_427"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_428",
+      "position": [
+        -29.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_428"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_429",
+      "position": [
+        -27.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_429"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_430",
+      "position": [
+        -27.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_430"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_431",
+      "position": [
+        -25.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_431"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_432",
+      "position": [
+        -25.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_432"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_433",
+      "position": [
+        -23.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_433"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_434",
+      "position": [
+        -23.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_434"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_435",
+      "position": [
+        -21.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_435"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_436",
+      "position": [
+        -21.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_436"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_437",
+      "position": [
+        -19.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_437"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_438",
+      "position": [
+        -19.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_438"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_439",
+      "position": [
+        -17.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_439"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_440",
+      "position": [
+        -17.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_440"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_441",
+      "position": [
+        -15.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_441"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_442",
+      "position": [
+        -15.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_442"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_443",
+      "position": [
+        -13.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_443"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_444",
+      "position": [
+        -13.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_444"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_445",
+      "position": [
+        -11.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_445"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_446",
+      "position": [
+        -11.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_446"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_447",
+      "position": [
+        -9.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_447"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_448",
+      "position": [
+        -9.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_448"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_449",
+      "position": [
+        -7.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_449"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_450",
+      "position": [
+        -7.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_450"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_451",
+      "position": [
+        7.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_451"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_452",
+      "position": [
+        7.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_452"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_453",
+      "position": [
+        9.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_453"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_454",
+      "position": [
+        9.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_454"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_455",
+      "position": [
+        11.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_455"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_456",
+      "position": [
+        11.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_456"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_457",
+      "position": [
+        13.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_457"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_458",
+      "position": [
+        13.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_458"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_459",
+      "position": [
+        15.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_459"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_460",
+      "position": [
+        15.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_460"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_461",
+      "position": [
+        17.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_461"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_462",
+      "position": [
+        17.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_462"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_463",
+      "position": [
+        19.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_463"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_464",
+      "position": [
+        19.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_464"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_465",
+      "position": [
+        21.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_465"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_466",
+      "position": [
+        21.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_466"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_467",
+      "position": [
+        23.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_467"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_468",
+      "position": [
+        23.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_468"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_469",
+      "position": [
+        25.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_469"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_470",
+      "position": [
+        25.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_470"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_471",
+      "position": [
+        27.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_471"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_472",
+      "position": [
+        27.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_472"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_473",
+      "position": [
+        29.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_473"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_474",
+      "position": [
+        29.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_474"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Sidewalks_sidewalk_slab_large_475",
+      "position": [
+        31.0,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_sidewalk_slab_large_475"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/curb_large.glb",
+      "node": "Sidewalks_curb_large_476",
+      "position": [
+        31.0,
+        0.0,
+        -64.3249969482422
+      ],
+      "source_path": "ExistingNeighborhood/Sidewalks_curb_large_476"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_large.glb",
+      "node": "Driveways_driveway_large_557",
+      "position": [
+        -9.60000038146973,
+        0.0700000002980232,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_large_557"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/car_sunshine.glb",
+      "node": "Cars_car_sunshine_558",
+      "position": [
+        -8.92637634277344,
+        0.150000005960464,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Cars_car_sunshine_558"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Paths_garden_path_large_559",
+      "position": [
+        -8.55000019073486,
+        0.0599999986588955,
+        -3.0
+      ],
+      "source_path": "ExistingNeighborhood/Paths_garden_path_large_559"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "StreetFurniture_mailbox_560",
+      "position": [
+        -6.34999990463257,
+        0.0399999991059303,
+        -1.20000004768372
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_mailbox_560"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Gardens_flowerbed_561",
+      "position": [
+        -10.3000001907349,
+        0.0399999991059303,
+        -5.34999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerbed_561"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Gardens_flowerpot_562",
+      "position": [
+        -11.3000001907349,
+        0.119999997317791,
+        -1.10000002384186
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerpot_562"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_563",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -9.39999961853027
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_563"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_564",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -7.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_564"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_565",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -4.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_565"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_566",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -1.29999995231628
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_566"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_567",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        1.10000002384186
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_567"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_568",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -9.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_568"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_569",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -5.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_569"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_570",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -1.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_570"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_571",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        3.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_571"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fences_garden_gate_572",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -3.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_garden_gate_572"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "StreetTrees_tree_oak_large_573",
+      "position": [
+        -8.10000038146973,
+        0.0,
+        -12.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/StreetTrees_tree_oak_large_573"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_574",
+      "position": [
+        -25.0,
+        0.0,
+        4.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_574"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_575",
+      "position": [
+        -25.0,
+        0.0,
+        -10.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_575"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_576",
+      "position": [
+        -12.0,
+        0.0299999993294477,
+        -7.80000019073486
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_576"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_577",
+      "position": [
+        -12.0,
+        0.0299999993294477,
+        0.600000023841858
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_577"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Patios_bench_578",
+      "position": [
+        -21.0,
+        0.0399999991059303,
+        0.400000005960464
+      ],
+      "source_path": "ExistingNeighborhood/Patios_bench_578"
+    },
+    {
+      "model": "res://neighborhood_assets/models/birdbath.glb",
+      "node": "Patios_birdbath_579",
+      "position": [
+        -21.0,
+        0.0399999991059303,
+        -4.80000019073486
+      ],
+      "source_path": "ExistingNeighborhood/Patios_birdbath_579"
+    },
+    {
+      "model": "res://neighborhood_assets/models/recycling_bin.glb",
+      "node": "StreetFurniture_recycling_bin_580",
+      "position": [
+        -17.0,
+        0.0399999991059303,
+        4.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_recycling_bin_580"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "StreetFurniture_litter_bin_581",
+      "position": [
+        -17.0,
+        0.0399999991059303,
+        5.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_litter_bin_581"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_large.glb",
+      "node": "Driveways_driveway_large_582",
+      "position": [
+        -9.60000038146973,
+        0.0700000002980232,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_large_582"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/car_lilac.glb",
+      "node": "Cars_car_lilac_583",
+      "position": [
+        -9.030517578125,
+        0.150000005960464,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Cars_car_lilac_583"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Paths_garden_path_large_584",
+      "position": [
+        -8.55000019073486,
+        0.0599999986588955,
+        -27.0
+      ],
+      "source_path": "ExistingNeighborhood/Paths_garden_path_large_584"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "StreetFurniture_mailbox_585",
+      "position": [
+        -6.34999990463257,
+        0.0399999991059303,
+        -25.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_mailbox_585"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Gardens_flowerbed_586",
+      "position": [
+        -10.3000001907349,
+        0.0399999991059303,
+        -29.3500003814697
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerbed_586"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Gardens_flowerpot_587",
+      "position": [
+        -12.3057222366333,
+        0.119999997317791,
+        -25.1000003814697
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerpot_587"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_588",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -33.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_588"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_589",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -31.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_589"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_590",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -28.6000003814697
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_590"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_591",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -25.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_591"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_592",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -22.8999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_592"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_593",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -33.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_593"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_594",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -29.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_594"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_595",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -25.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_595"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_596",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -21.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_596"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fences_garden_gate_597",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -27.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_garden_gate_597"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "StreetTrees_tree_maple_large_598",
+      "position": [
+        -8.10000038146973,
+        0.0,
+        -36.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/StreetTrees_tree_maple_large_598"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_599",
+      "position": [
+        -25.0,
+        0.0,
+        -20.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_599"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_600",
+      "position": [
+        -25.0,
+        0.0,
+        -34.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_600"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_601",
+      "position": [
+        -12.0,
+        0.0299999993294477,
+        -31.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_601"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_602",
+      "position": [
+        -12.0,
+        0.0299999993294477,
+        -23.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_602"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bicycle_rack.glb",
+      "node": "StreetFurniture_bicycle_rack_603",
+      "position": [
+        -12.6000003814697,
+        0.100000001490116,
+        -21.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_bicycle_rack_603"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bicycle.glb",
+      "node": "StreetFurniture_bicycle_604",
+      "position": [
+        -12.8000001907349,
+        0.100000001490116,
+        -21.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_bicycle_604"
+    },
+    {
+      "model": "res://neighborhood_assets/models/recycling_bin.glb",
+      "node": "StreetFurniture_recycling_bin_605",
+      "position": [
+        -17.0,
+        0.0399999991059303,
+        -19.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_recycling_bin_605"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "StreetFurniture_litter_bin_606",
+      "position": [
+        -17.0,
+        0.0399999991059303,
+        -18.6000003814697
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_litter_bin_606"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_large.glb",
+      "node": "Driveways_driveway_large_607",
+      "position": [
+        -9.60000038146973,
+        0.0700000002980232,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_large_607"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/car_cream.glb",
+      "node": "Cars_car_cream_608",
+      "position": [
+        -8.91228675842285,
+        0.150000005960464,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Cars_car_cream_608"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Paths_garden_path_large_609",
+      "position": [
+        -8.55000019073486,
+        0.0599999986588955,
+        -51.0
+      ],
+      "source_path": "ExistingNeighborhood/Paths_garden_path_large_609"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "StreetFurniture_mailbox_610",
+      "position": [
+        -6.34999990463257,
+        0.0399999991059303,
+        -49.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_mailbox_610"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Gardens_flowerbed_611",
+      "position": [
+        -10.3000001907349,
+        0.0399999991059303,
+        -53.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerbed_611"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Gardens_flowerpot_612",
+      "position": [
+        -11.3000001907349,
+        0.119999997317791,
+        -49.0999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerpot_612"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_613",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -57.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_613"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_614",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -55.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_614"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_615",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -52.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_615"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_616",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -49.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_616"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_617",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -46.9000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_617"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_618",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -57.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_618"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_619",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -53.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_619"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_620",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -49.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_620"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_621",
+      "position": [
+        -26.0,
+        0.0199999995529652,
+        -45.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_621"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fences_garden_gate_622",
+      "position": [
+        -6.75,
+        0.0199999995529652,
+        -51.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_garden_gate_622"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "StreetTrees_tree_oak_large_623",
+      "position": [
+        -8.10000038146973,
+        0.0,
+        -60.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/StreetTrees_tree_oak_large_623"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_624",
+      "position": [
+        -25.0,
+        0.0,
+        -44.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_624"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_625",
+      "position": [
+        -25.0,
+        0.0,
+        -58.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_625"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_626",
+      "position": [
+        -12.0,
+        0.0299999993294477,
+        -55.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_626"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_627",
+      "position": [
+        -12.0,
+        0.0299999993294477,
+        -47.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_627"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Patios_bench_628",
+      "position": [
+        -21.0,
+        0.0399999991059303,
+        -47.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Patios_bench_628"
+    },
+    {
+      "model": "res://neighborhood_assets/models/birdbath.glb",
+      "node": "Patios_birdbath_629",
+      "position": [
+        -21.0,
+        0.0399999991059303,
+        -52.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Patios_birdbath_629"
+    },
+    {
+      "model": "res://neighborhood_assets/models/recycling_bin.glb",
+      "node": "StreetFurniture_recycling_bin_630",
+      "position": [
+        -17.0,
+        0.0399999991059303,
+        -43.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_recycling_bin_630"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "StreetFurniture_litter_bin_631",
+      "position": [
+        -17.0,
+        0.0399999991059303,
+        -42.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_litter_bin_631"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_large.glb",
+      "node": "Driveways_driveway_large_682",
+      "position": [
+        9.60000038146973,
+        0.0700000002980232,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_large_682"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/car_cream.glb",
+      "node": "Cars_car_cream_683",
+      "position": [
+        9.47393035888672,
+        0.150000005960464,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Cars_car_cream_683"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Paths_garden_path_large_684",
+      "position": [
+        8.55000019073486,
+        0.0599999986588955,
+        -3.0
+      ],
+      "source_path": "ExistingNeighborhood/Paths_garden_path_large_684"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "StreetFurniture_mailbox_685",
+      "position": [
+        6.34999990463257,
+        0.0399999991059303,
+        -1.20000004768372
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_mailbox_685"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Gardens_flowerbed_686",
+      "position": [
+        10.3000001907349,
+        0.0399999991059303,
+        -5.34999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerbed_686"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Gardens_flowerpot_687",
+      "position": [
+        10.1430139541626,
+        0.119999997317791,
+        -1.10000002384186
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerpot_687"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_688",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -9.39999961853027
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_688"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_689",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -7.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_689"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_690",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -4.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_690"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_691",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -1.29999995231628
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_691"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_692",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        1.10000002384186
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_692"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_693",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -9.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_693"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_694",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -5.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_694"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_695",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -1.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_695"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_696",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        3.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_696"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fences_garden_gate_697",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -3.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_garden_gate_697"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "StreetTrees_tree_oak_large_698",
+      "position": [
+        8.10000038146973,
+        0.0,
+        -12.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/StreetTrees_tree_oak_large_698"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_699",
+      "position": [
+        25.0,
+        0.0,
+        4.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_699"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_700",
+      "position": [
+        25.0,
+        0.0,
+        -10.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_700"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_701",
+      "position": [
+        12.0,
+        0.0299999993294477,
+        -7.80000019073486
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_701"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_702",
+      "position": [
+        12.0,
+        0.0299999993294477,
+        0.600000023841858
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_702"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Patios_bench_703",
+      "position": [
+        21.0,
+        0.0399999991059303,
+        0.400000005960464
+      ],
+      "source_path": "ExistingNeighborhood/Patios_bench_703"
+    },
+    {
+      "model": "res://neighborhood_assets/models/birdbath.glb",
+      "node": "Patios_birdbath_704",
+      "position": [
+        21.0,
+        0.0399999991059303,
+        -4.80000019073486
+      ],
+      "source_path": "ExistingNeighborhood/Patios_birdbath_704"
+    },
+    {
+      "model": "res://neighborhood_assets/models/recycling_bin.glb",
+      "node": "StreetFurniture_recycling_bin_705",
+      "position": [
+        17.0,
+        0.0399999991059303,
+        4.59999990463257
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_recycling_bin_705"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "StreetFurniture_litter_bin_706",
+      "position": [
+        17.0,
+        0.0399999991059303,
+        5.40000009536743
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_litter_bin_706"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_large.glb",
+      "node": "Driveways_driveway_large_707",
+      "position": [
+        9.60000038146973,
+        0.0700000002980232,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_large_707"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/car_ocean.glb",
+      "node": "Cars_car_ocean_708",
+      "position": [
+        9.52683448791504,
+        0.150000005960464,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Cars_car_ocean_708"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Paths_garden_path_large_709",
+      "position": [
+        8.55000019073486,
+        0.0599999986588955,
+        -27.0
+      ],
+      "source_path": "ExistingNeighborhood/Paths_garden_path_large_709"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "StreetFurniture_mailbox_710",
+      "position": [
+        6.34999990463257,
+        0.0399999991059303,
+        -25.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_mailbox_710"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Gardens_flowerbed_711",
+      "position": [
+        10.9729413986206,
+        0.0399999991059303,
+        -29.96608543396
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerbed_711"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Gardens_flowerpot_712",
+      "position": [
+        11.3000001907349,
+        0.119999997317791,
+        -24.4686946868896
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerpot_712"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_713",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -33.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_713"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_714",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -31.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_714"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_715",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -28.6000003814697
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_715"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_716",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -25.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_716"
+    },
+    {
+      "model": "res://neighborhood_assets/models/fence_picket.glb",
+      "node": "Fences_fence_picket_717",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -22.8999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Fences_fence_picket_717"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_718",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -33.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_718"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_719",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -29.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_719"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_720",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -25.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_720"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_721",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -21.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_721"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fences_garden_gate_722",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -27.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_garden_gate_722"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "StreetTrees_tree_maple_large_723",
+      "position": [
+        8.10000038146973,
+        0.0,
+        -36.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/StreetTrees_tree_maple_large_723"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_724",
+      "position": [
+        25.0,
+        0.0,
+        -20.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_724"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_725",
+      "position": [
+        25.0,
+        0.0,
+        -34.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_725"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_726",
+      "position": [
+        12.0,
+        0.0299999993294477,
+        -31.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_726"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_727",
+      "position": [
+        12.0,
+        0.0299999993294477,
+        -23.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_727"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bicycle_rack.glb",
+      "node": "StreetFurniture_bicycle_rack_728",
+      "position": [
+        12.6000003814697,
+        0.100000001490116,
+        -21.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_bicycle_rack_728"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bicycle.glb",
+      "node": "StreetFurniture_bicycle_729",
+      "position": [
+        12.8000001907349,
+        0.100000001490116,
+        -21.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_bicycle_729"
+    },
+    {
+      "model": "res://neighborhood_assets/models/recycling_bin.glb",
+      "node": "StreetFurniture_recycling_bin_730",
+      "position": [
+        17.0,
+        0.0399999991059303,
+        -19.3999996185303
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_recycling_bin_730"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "StreetFurniture_litter_bin_731",
+      "position": [
+        17.0,
+        0.0399999991059303,
+        -18.6000003814697
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_litter_bin_731"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/driveway_large.glb",
+      "node": "Driveways_driveway_large_732",
+      "position": [
+        9.60000038146973,
+        0.0700000002980232,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Driveways_driveway_large_732"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/car_sage.glb",
+      "node": "Cars_car_sage_733",
+      "position": [
+        9.17087078094482,
+        0.150000005960464,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Cars_car_sage_733"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Paths_garden_path_large_734",
+      "position": [
+        8.55000019073486,
+        0.0599999986588955,
+        -51.0
+      ],
+      "source_path": "ExistingNeighborhood/Paths_garden_path_large_734"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "StreetFurniture_mailbox_735",
+      "position": [
+        6.34999990463257,
+        0.0399999991059303,
+        -49.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_mailbox_735"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Gardens_flowerbed_736",
+      "position": [
+        11.7489080429077,
+        0.0399999991059303,
+        -53.6707992553711
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerbed_736"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Gardens_flowerpot_737",
+      "position": [
+        11.3000001907349,
+        0.119999997317791,
+        -49.0999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_flowerpot_737"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_738",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -57.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_738"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_739",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -55.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_739"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_740",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -52.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_740"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_741",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -49.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_741"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_742",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -46.9000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_742"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_743",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -57.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_743"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_744",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -53.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_744"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_745",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -49.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_745"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Hedges_hedge_straight_746",
+      "position": [
+        26.0,
+        0.0199999995529652,
+        -45.0
+      ],
+      "source_path": "ExistingNeighborhood/Hedges_hedge_straight_746"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fences_garden_gate_747",
+      "position": [
+        6.75,
+        0.0199999995529652,
+        -51.0
+      ],
+      "source_path": "ExistingNeighborhood/Fences_garden_gate_747"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "StreetTrees_tree_oak_large_748",
+      "position": [
+        8.10000038146973,
+        0.0,
+        -60.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/StreetTrees_tree_oak_large_748"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_749",
+      "position": [
+        25.0,
+        0.0,
+        -44.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_749"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_750",
+      "position": [
+        25.0,
+        0.0,
+        -58.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_750"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_751",
+      "position": [
+        12.0,
+        0.0299999993294477,
+        -55.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_751"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Gardens_shrub_round_752",
+      "position": [
+        12.0,
+        0.0299999993294477,
+        -47.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Gardens_shrub_round_752"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Patios_bench_753",
+      "position": [
+        21.0,
+        0.0399999991059303,
+        -47.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Patios_bench_753"
+    },
+    {
+      "model": "res://neighborhood_assets/models/birdbath.glb",
+      "node": "Patios_birdbath_754",
+      "position": [
+        21.0,
+        0.0399999991059303,
+        -52.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Patios_birdbath_754"
+    },
+    {
+      "model": "res://neighborhood_assets/models/recycling_bin.glb",
+      "node": "StreetFurniture_recycling_bin_755",
+      "position": [
+        17.0,
+        0.0399999991059303,
+        -43.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_recycling_bin_755"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "StreetFurniture_litter_bin_756",
+      "position": [
+        17.0,
+        0.0399999991059303,
+        -42.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_litter_bin_756"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "GardenTrees_tree_maple_large_762",
+      "position": [
+        -57.0,
+        0.0,
+        -79.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_maple_large_762"
+    },
+    {
+      "model": "res://neighborhood_assets/models/streetlamp.glb",
+      "node": "StreetFurniture_streetlamp_787",
+      "position": [
+        -5.09999990463257,
+        0.159999996423721,
+        -57.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_streetlamp_787"
+    },
+    {
+      "model": "res://neighborhood_assets/models/streetlamp.glb",
+      "node": "StreetFurniture_streetlamp_788",
+      "position": [
+        -5.09999990463257,
+        0.159999996423721,
+        -33.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_streetlamp_788"
+    },
+    {
+      "model": "res://neighborhood_assets/models/streetlamp.glb",
+      "node": "StreetFurniture_streetlamp_789",
+      "position": [
+        -5.09999990463257,
+        0.159999996423721,
+        -9.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_streetlamp_789"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hydrant.glb",
+      "node": "StreetFurniture_hydrant_793",
+      "position": [
+        -5.80000019073486,
+        0.0399999991059303,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_hydrant_793"
+    },
+    {
+      "model": "res://neighborhood_assets/models/streetlamp.glb",
+      "node": "StreetFurniture_streetlamp_796",
+      "position": [
+        5.09999990463257,
+        0.159999996423721,
+        -57.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_streetlamp_796"
+    },
+    {
+      "model": "res://neighborhood_assets/models/streetlamp.glb",
+      "node": "StreetFurniture_streetlamp_797",
+      "position": [
+        5.09999990463257,
+        0.159999996423721,
+        -33.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_streetlamp_797"
+    },
+    {
+      "model": "res://neighborhood_assets/models/streetlamp.glb",
+      "node": "StreetFurniture_streetlamp_798",
+      "position": [
+        5.09999990463257,
+        0.159999996423721,
+        -9.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_streetlamp_798"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hydrant.glb",
+      "node": "StreetFurniture_hydrant_802",
+      "position": [
+        5.80000019073486,
+        0.0399999991059303,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_hydrant_802"
+    },
+    {
+      "model": "res://neighborhood_assets/models/street_name_sign.glb",
+      "node": "StreetFurniture_street_name_sign_811",
+      "position": [
+        -5.80000019073486,
+        0.0399999991059303,
+        -62.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_street_name_sign_811"
+    },
+    {
+      "model": "res://neighborhood_assets/models/manhole_cover.glb",
+      "node": "StreetFurniture_manhole_cover_812",
+      "position": [
+        1.5,
+        -0.0780000016093254,
+        -48.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_manhole_cover_812"
+    },
+    {
+      "model": "res://neighborhood_assets/models/manhole_cover.glb",
+      "node": "StreetFurniture_manhole_cover_813",
+      "position": [
+        1.5,
+        -0.0780000016093254,
+        -16.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_manhole_cover_813"
+    },
+    {
+      "model": "res://neighborhood_assets/models/storm_drain.glb",
+      "node": "StreetFurniture_storm_drain_816",
+      "position": [
+        -3.25,
+        -0.0989999994635582,
+        -45.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_storm_drain_816"
+    },
+    {
+      "model": "res://neighborhood_assets/models/storm_drain.glb",
+      "node": "StreetFurniture_storm_drain_817",
+      "position": [
+        -3.25,
+        -0.0989999994635582,
+        -20.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_storm_drain_817"
+    },
+    {
+      "model": "res://neighborhood_assets/models/storm_drain.glb",
+      "node": "StreetFurniture_storm_drain_818",
+      "position": [
+        -3.25,
+        -0.0989999994635582,
+        6.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_storm_drain_818"
+    },
+    {
+      "model": "res://neighborhood_assets/models/storm_drain.glb",
+      "node": "StreetFurniture_storm_drain_821",
+      "position": [
+        3.25,
+        -0.0989999994635582,
+        -45.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_storm_drain_821"
+    },
+    {
+      "model": "res://neighborhood_assets/models/storm_drain.glb",
+      "node": "StreetFurniture_storm_drain_822",
+      "position": [
+        3.25,
+        -0.0989999994635582,
+        -20.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_storm_drain_822"
+    },
+    {
+      "model": "res://neighborhood_assets/models/storm_drain.glb",
+      "node": "StreetFurniture_storm_drain_823",
+      "position": [
+        3.25,
+        -0.0989999994635582,
+        6.0
+      ],
+      "source_path": "ExistingNeighborhood/StreetFurniture_storm_drain_823"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_829",
+      "position": [
+        -78.7255020141602,
+        0.0,
+        -92.0704116821289
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_829"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_830",
+      "position": [
+        -66.4759368896484,
+        0.0,
+        -82.4554595947266
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_830"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_831",
+      "position": [
+        -77.9644622802734,
+        0.0,
+        -83.0718078613281
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_831"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_836",
+      "position": [
+        -67.4930725097656,
+        0.0,
+        -57.136890411377
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_836"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_837",
+      "position": [
+        -75.7357406616211,
+        0.0,
+        -55.8957099914551
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_837"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_838",
+      "position": [
+        -62.0773086547852,
+        0.0,
+        -44.2624588012695
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_838"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "TreeBelt_tree_poplar_large_839",
+      "position": [
+        -77.0991592407227,
+        0.0,
+        -44.7625312805176
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_poplar_large_839"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "TreeBelt_tree_poplar_large_840",
+      "position": [
+        -62.184700012207,
+        0.0,
+        -37.2804298400879
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_poplar_large_840"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_841",
+      "position": [
+        -77.3629531860352,
+        0.0,
+        -36.0497894287109
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_841"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_842",
+      "position": [
+        -64.2575912475586,
+        0.0,
+        -26.0576705932617
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_842"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_843",
+      "position": [
+        -78.1026229858398,
+        0.0,
+        -28.0358104705811
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_843"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_844",
+      "position": [
+        -62.8991394042969,
+        0.0,
+        -17.8479804992676
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_844"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "TreeBelt_tree_poplar_large_845",
+      "position": [
+        -74.2553329467773,
+        0.0,
+        -17.2050304412842
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_poplar_large_845"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "TreeBelt_tree_poplar_large_846",
+      "position": [
+        -66.6006088256836,
+        0.0,
+        -9.54623985290527
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_poplar_large_846"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_847",
+      "position": [
+        -76.311653137207,
+        0.0,
+        -8.95409965515137
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_847"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_848",
+      "position": [
+        -62.0918502807617,
+        0.0,
+        3.15844011306763
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_848"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_849",
+      "position": [
+        -78.1756286621094,
+        0.0,
+        -0.422129988670349
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_849"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_850",
+      "position": [
+        -62.7638206481934,
+        0.0,
+        9.98488998413086
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_850"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "TreeBelt_tree_poplar_large_851",
+      "position": [
+        -74.8050231933594,
+        0.0,
+        12.5506000518799
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_poplar_large_851"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "TreeBelt_tree_poplar_large_852",
+      "position": [
+        -67.8351669311523,
+        0.0,
+        20.238410949707
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_poplar_large_852"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_853",
+      "position": [
+        -75.7442626953125,
+        0.0,
+        18.9606704711914
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_853"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "TreeBelt_tree_maple_large_854",
+      "position": [
+        -62.3879585266113,
+        0.0,
+        31.7500095367432
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_maple_large_854"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "TreeBelt_tree_oak_large_855",
+      "position": [
+        -76.281120300293,
+        0.0,
+        29.5217399597168
+      ],
+      "source_path": "ExistingNeighborhood/TreeBelt_tree_oak_large_855"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/landscape_mound.glb",
+      "node": "BackdropHills_landscape_mound_976",
+      "position": [
+        -80.0,
+        -1.79999995231628,
+        -21.0
+      ],
+      "source_path": "ExistingNeighborhood/BackdropHills_landscape_mound_976"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/landscape_mound.glb",
+      "node": "BackdropHills_landscape_mound_977",
+      "position": [
+        -80.0,
+        -1.79999995231628,
+        12.0
+      ],
+      "source_path": "ExistingNeighborhood/BackdropHills_landscape_mound_977"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_999",
+      "position": [
+        -32.5867805480957,
+        0.0,
+        -57.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_999"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_1000",
+      "position": [
+        -33.0950202941895,
+        0.0,
+        -46.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_1000"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_1001",
+      "position": [
+        -31.8184394836426,
+        0.0,
+        -35.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_1001"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "GardenTrees_tree_poplar_large_1002",
+      "position": [
+        -33.6118087768555,
+        0.0,
+        -24.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_poplar_large_1002"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_1003",
+      "position": [
+        -31.3953399658203,
+        0.0,
+        -13.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_1003"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "GardenTrees_tree_oak_large_1004",
+      "position": [
+        -32.4595718383789,
+        0.0,
+        -2.0
+      ],
+      "source_path": "ExistingNeighborhood/GardenTrees_tree_oak_large_1004"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_005",
+      "position": [
+        -12.6999998092651,
+        0.025000000372529,
+        6.09999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_005"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Fill_shrub_round_006",
+      "position": [
+        -16.1000003814697,
+        0.025000000372529,
+        6.09999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Fill_shrub_round_006"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_011",
+      "position": [
+        -14.1679801940918,
+        0.025000000372529,
+        6.19999980926514
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_011"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_012",
+      "position": [
+        -27.7999992370605,
+        0.0,
+        7.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_012"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_013",
+      "position": [
+        -28.0,
+        0.025000000372529,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_013"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_cedar.glb",
+      "node": "Fill_house_cedar_016",
+      "position": [
+        -21.1000003814697,
+        0.0,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_house_cedar_016"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Fill_garden_path_large_017",
+      "position": [
+        -10.8000001907349,
+        0.0649999976158142,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_path_large_017"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fill_garden_gate_018",
+      "position": [
+        -6.80000019073486,
+        0.025000000372529,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_gate_018"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_019",
+      "position": [
+        -6.84999990463257,
+        0.025000000372529,
+        -13.1999998092651
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_019"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_020",
+      "position": [
+        -6.84999990463257,
+        0.025000000372529,
+        -11.1999998092651
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_020"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_021",
+      "position": [
+        -12.6999998092651,
+        0.025000000372529,
+        -17.8999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_021"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_023",
+      "position": [
+        -12.6999998092651,
+        0.025000000372529,
+        -12.1000003814697
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_023"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Fill_shrub_round_024",
+      "position": [
+        -16.1000003814697,
+        0.025000000372529,
+        -12.1000003814697
+      ],
+      "source_path": "ExistingNeighborhood/Fill_shrub_round_024"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "Fill_mailbox_025",
+      "position": [
+        -7.5,
+        0.025000000372529,
+        -14.0500001907349
+      ],
+      "source_path": "ExistingNeighborhood/Fill_mailbox_025"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Fill_flowerpot_026",
+      "position": [
+        -15.1000003814697,
+        0.0799999982118607,
+        -13.6000003814697
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerpot_026"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_027",
+      "position": [
+        -14.3677606582642,
+        0.025000000372529,
+        -17.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_027"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_028",
+      "position": [
+        -27.7999992370605,
+        0.0,
+        -17.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_028"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_029",
+      "position": [
+        -28.0,
+        0.025000000372529,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_029"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_030",
+      "position": [
+        -28.0,
+        0.025000000372529,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_030"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_031",
+      "position": [
+        -28.0,
+        0.025000000372529,
+        -11.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_031"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_peach.glb",
+      "node": "Fill_house_peach_032",
+      "position": [
+        -20.5,
+        0.0,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_house_peach_032"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Fill_garden_path_large_033",
+      "position": [
+        -10.8000001907349,
+        0.0649999976158142,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_path_large_033"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fill_garden_gate_034",
+      "position": [
+        -6.80000019073486,
+        0.025000000372529,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_gate_034"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_035",
+      "position": [
+        -6.84999990463257,
+        0.025000000372529,
+        -37.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_035"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_036",
+      "position": [
+        -6.84999990463257,
+        0.025000000372529,
+        -35.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_036"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_037",
+      "position": [
+        -12.6999998092651,
+        0.025000000372529,
+        -41.9000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_037"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_039",
+      "position": [
+        -12.6999998092651,
+        0.025000000372529,
+        -36.0999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_039"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Fill_shrub_round_040",
+      "position": [
+        -16.1000003814697,
+        0.025000000372529,
+        -36.0999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_shrub_round_040"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "Fill_mailbox_041",
+      "position": [
+        -7.5,
+        0.025000000372529,
+        -38.0499992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_mailbox_041"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Fill_flowerpot_042",
+      "position": [
+        -15.1000003814697,
+        0.0799999982118607,
+        -37.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerpot_042"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_043",
+      "position": [
+        -14.2028465270996,
+        0.025000000372529,
+        -41.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_043"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_044",
+      "position": [
+        -27.7999992370605,
+        0.0,
+        -41.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_044"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_045",
+      "position": [
+        -28.0,
+        0.025000000372529,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_045"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_046",
+      "position": [
+        -28.0,
+        0.025000000372529,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_046"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_047",
+      "position": [
+        -28.0,
+        0.025000000372529,
+        -35.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_047"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_053",
+      "position": [
+        12.6999998092651,
+        0.025000000372529,
+        6.09999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_053"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Fill_shrub_round_054",
+      "position": [
+        16.1000003814697,
+        0.025000000372529,
+        6.09999990463257
+      ],
+      "source_path": "ExistingNeighborhood/Fill_shrub_round_054"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_060",
+      "position": [
+        27.7999992370605,
+        0.0,
+        7.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_060"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_061",
+      "position": [
+        28.0,
+        0.025000000372529,
+        5.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_061"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_peach.glb",
+      "node": "Fill_house_peach_064",
+      "position": [
+        21.1000003814697,
+        0.0,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_house_peach_064"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Fill_garden_path_large_065",
+      "position": [
+        10.8000001907349,
+        0.0649999976158142,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_path_large_065"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fill_garden_gate_066",
+      "position": [
+        6.80000019073486,
+        0.025000000372529,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_gate_066"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_067",
+      "position": [
+        6.84999990463257,
+        0.025000000372529,
+        -13.1999998092651
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_067"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_068",
+      "position": [
+        6.84999990463257,
+        0.025000000372529,
+        -11.1999998092651
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_068"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_069",
+      "position": [
+        12.6999998092651,
+        0.025000000372529,
+        -17.8999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_069"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Fill_shrub_round_070",
+      "position": [
+        16.1000003814697,
+        0.025000000372529,
+        -17.8999996185303
+      ],
+      "source_path": "ExistingNeighborhood/Fill_shrub_round_070"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_071",
+      "position": [
+        12.6999998092651,
+        0.025000000372529,
+        -12.1000003814697
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_071"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "Fill_mailbox_073",
+      "position": [
+        7.5,
+        0.025000000372529,
+        -14.0500001907349
+      ],
+      "source_path": "ExistingNeighborhood/Fill_mailbox_073"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Fill_flowerpot_074",
+      "position": [
+        15.1000003814697,
+        0.0799999982118607,
+        -16.6665229797363
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerpot_074"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_075",
+      "position": [
+        15.7007608413696,
+        0.025000000372529,
+        -12.4633111953735
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_075"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_076",
+      "position": [
+        27.7999992370605,
+        0.0,
+        -17.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_076"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_077",
+      "position": [
+        28.0,
+        0.025000000372529,
+        -19.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_077"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_078",
+      "position": [
+        28.0,
+        0.025000000372529,
+        -15.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_078"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_079",
+      "position": [
+        28.0,
+        0.025000000372529,
+        -11.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_079"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/house_cedar.glb",
+      "node": "Fill_house_cedar_080",
+      "position": [
+        20.5,
+        0.0,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_house_cedar_080"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/garden_path_large.glb",
+      "node": "Fill_garden_path_large_081",
+      "position": [
+        10.8000001907349,
+        0.0649999976158142,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_path_large_081"
+    },
+    {
+      "model": "res://neighborhood_assets/models/garden_gate.glb",
+      "node": "Fill_garden_gate_082",
+      "position": [
+        6.80000019073486,
+        0.025000000372529,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_garden_gate_082"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_083",
+      "position": [
+        6.84999990463257,
+        0.025000000372529,
+        -37.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_083"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_084",
+      "position": [
+        6.84999990463257,
+        0.025000000372529,
+        -35.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_084"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_085",
+      "position": [
+        13.7730169296265,
+        0.025000000372529,
+        -41.9000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_085"
+    },
+    {
+      "model": "res://neighborhood_assets/models/shrub_round.glb",
+      "node": "Fill_shrub_round_086",
+      "position": [
+        16.1000003814697,
+        0.025000000372529,
+        -41.9000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_shrub_round_086"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_087",
+      "position": [
+        13.830587387085,
+        0.025000000372529,
+        -36.0999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_087"
+    },
+    {
+      "model": "res://neighborhood_assets/models/mailbox.glb",
+      "node": "Fill_mailbox_089",
+      "position": [
+        7.5,
+        0.025000000372529,
+        -38.0499992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_mailbox_089"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerpot.glb",
+      "node": "Fill_flowerpot_090",
+      "position": [
+        15.4315757751465,
+        0.0799999982118607,
+        -36.6230659484863
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerpot_090"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_091",
+      "position": [
+        11.6000003814697,
+        0.025000000372529,
+        -36.6856956481934
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_091"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_092",
+      "position": [
+        27.7999992370605,
+        0.0,
+        -41.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_092"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_093",
+      "position": [
+        28.0,
+        0.025000000372529,
+        -43.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_093"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_094",
+      "position": [
+        28.0,
+        0.025000000372529,
+        -39.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_094"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_095",
+      "position": [
+        28.0,
+        0.025000000372529,
+        -35.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_095"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_096",
+      "position": [
+        -29.0,
+        0.0,
+        -57.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_096"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_097",
+      "position": [
+        -33.0,
+        0.0,
+        -50.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_097"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_098",
+      "position": [
+        -32.5999984741211,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_098"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_099",
+      "position": [
+        -29.0,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_099"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_100",
+      "position": [
+        -25.3999996185303,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_100"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_101",
+      "position": [
+        -29.0,
+        0.025000000372529,
+        -56.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_101"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_102",
+      "position": [
+        -29.0,
+        0.025000000372529,
+        -60.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_102"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_103",
+      "position": [
+        -32.5999984741211,
+        0.025000000372529,
+        -55.0999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_103"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "Fill_litter_bin_104",
+      "position": [
+        -26.2999992370605,
+        0.025000000372529,
+        -56.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_litter_bin_104"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_105",
+      "position": [
+        -32.0,
+        0.0299999993294477,
+        -61.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_105"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_106",
+      "position": [
+        -32.0,
+        0.0299999993294477,
+        -60.7000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_106"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_107",
+      "position": [
+        -32.0,
+        0.0299999993294477,
+        -59.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_107"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_108",
+      "position": [
+        -32.0,
+        0.0299999993294477,
+        -58.9000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_108"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_109",
+      "position": [
+        -40.0,
+        0.0,
+        -57.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_109"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_110",
+      "position": [
+        -44.0,
+        0.0,
+        -50.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_110"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_111",
+      "position": [
+        -43.5999984741211,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_111"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_112",
+      "position": [
+        -40.0,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_112"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_113",
+      "position": [
+        -36.4000015258789,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_113"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_114",
+      "position": [
+        -40.0,
+        0.025000000372529,
+        -56.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_114"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_115",
+      "position": [
+        -40.0,
+        0.025000000372529,
+        -60.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_115"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_116",
+      "position": [
+        -43.5999984741211,
+        0.025000000372529,
+        -55.0999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_116"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "Fill_litter_bin_117",
+      "position": [
+        -37.2999992370605,
+        0.025000000372529,
+        -56.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_litter_bin_117"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_118",
+      "position": [
+        -43.0,
+        0.0299999993294477,
+        -61.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_118"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_119",
+      "position": [
+        -43.0,
+        0.0299999993294477,
+        -60.7000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_119"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_120",
+      "position": [
+        -43.0,
+        0.0299999993294477,
+        -59.7999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_120"
+    },
+    {
+      "model": "res://neighborhood_assets/models/stepping_stone.glb",
+      "node": "Fill_stepping_stone_121",
+      "position": [
+        -43.0,
+        0.0299999993294477,
+        -58.9000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_stepping_stone_121"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_122",
+      "position": [
+        -53.0,
+        0.0,
+        -57.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_122"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_poplar_large.glb",
+      "node": "Fill_tree_poplar_large_123",
+      "position": [
+        -57.0,
+        0.0,
+        -50.0
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_poplar_large_123"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_125",
+      "position": [
+        -53.0,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_125"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_126",
+      "position": [
+        -49.4000015258789,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_126"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_127",
+      "position": [
+        -53.0,
+        0.025000000372529,
+        -55.5079345703125
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_127"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_128",
+      "position": [
+        -53.0,
+        0.025000000372529,
+        -60.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_128"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "Fill_litter_bin_130",
+      "position": [
+        -50.2999992370605,
+        0.025000000372529,
+        -56.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_litter_bin_130"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_141",
+      "position": [
+        -61.0,
+        0.0,
+        -78.5
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_141"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Fill_sidewalk_slab_large_143",
+      "position": [
+        -5.77500009536743,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_sidewalk_slab_large_143"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_156",
+      "position": [
+        29.0,
+        0.0,
+        -57.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_156"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_158",
+      "position": [
+        25.3999996185303,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_158"
+    },
+    {
+      "model": "res://neighborhood_assets/models/hedge_straight.glb",
+      "node": "Fill_hedge_straight_159",
+      "position": [
+        29.0,
+        0.025000000372529,
+        -59.4000015258789
+      ],
+      "source_path": "ExistingNeighborhood/Fill_hedge_straight_159"
+    },
+    {
+      "model": "res://neighborhood_assets/models/bench.glb",
+      "node": "Fill_bench_161",
+      "position": [
+        29.0,
+        0.025000000372529,
+        -56.2999992370605
+      ],
+      "source_path": "ExistingNeighborhood/Fill_bench_161"
+    },
+    {
+      "model": "res://neighborhood_assets/models/flowerbed.glb",
+      "node": "Fill_flowerbed_162",
+      "position": [
+        29.0,
+        0.025000000372529,
+        -60.5999984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_flowerbed_162"
+    },
+    {
+      "model": "res://neighborhood_assets/models/litter_bin.glb",
+      "node": "Fill_litter_bin_164",
+      "position": [
+        26.2999992370605,
+        0.025000000372529,
+        -56.2000007629395
+      ],
+      "source_path": "ExistingNeighborhood/Fill_litter_bin_164"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb",
+      "node": "Fill_sidewalk_slab_large_203",
+      "position": [
+        5.77500009536743,
+        0.0,
+        -63.3499984741211
+      ],
+      "source_path": "ExistingNeighborhood/Fill_sidewalk_slab_large_203"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_322",
+      "position": [
+        -64.1500473022461,
+        0.0,
+        -58.8572387695313
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_322"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_324",
+      "position": [
+        -64.1212692260742,
+        0.0,
+        -51.4987297058105
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_324"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_325",
+      "position": [
+        -64.2195587158203,
+        0.0,
+        -76.6319732666016
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_325"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_327",
+      "position": [
+        -64.2503280639648,
+        0.0,
+        -84.4984664916992
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_327"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_333",
+      "position": [
+        -73.7841567993164,
+        0.0,
+        -59.6761283874512
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_333"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_335",
+      "position": [
+        -70.1822204589844,
+        0.0,
+        -77.1934509277344
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_335"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_341",
+      "position": [
+        -84.9947891235352,
+        0.0,
+        -64.9563522338867
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_341"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_343",
+      "position": [
+        -72.7217712402344,
+        0.0,
+        -78.4816436767578
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_343"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_350",
+      "position": [
+        -90.8803405761719,
+        0.0,
+        -72.6195526123047
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_350"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_352",
+      "position": [
+        -97.1769104003906,
+        0.0,
+        -68.0622100830078
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_352"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_353",
+      "position": [
+        -76.2015533447266,
+        0.0,
+        -83.2437896728516
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_353"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_355",
+      "position": [
+        -70.4442901611328,
+        0.0,
+        -87.4107894897461
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_355"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_358",
+      "position": [
+        -95.9111480712891,
+        0.0,
+        -80.5713729858398
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_358"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_360",
+      "position": [
+        -102.701393127441,
+        0.0,
+        -77.7432708740234
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_360"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_361",
+      "position": [
+        -78.9820709228516,
+        0.0,
+        -87.6222610473633
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_361"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_363",
+      "position": [
+        -72.2380065917969,
+        0.0,
+        -90.4311294555664
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_363"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_oak_large.glb",
+      "node": "Fill_tree_oak_large_372",
+      "position": [
+        -79.0028915405273,
+        0.0,
+        -91.3628463745117
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_oak_large_372"
+    },
+    {
+      "model": "res://neighborhood_assets/expanded_models/tree_maple_large.glb",
+      "node": "Fill_tree_maple_large_374",
+      "position": [
+        -72.2644500732422,
+        0.0,
+        -90.9576797485352
+      ],
+      "source_path": "ExistingNeighborhood/Fill_tree_maple_large_374"
+    }
+  ],
+  "retained_instances": 544,
+  "room_origin": [
+    15.4005661010742,
+    3.47189855575562,
+    -28.989725112915
+  ],
+  "source_scene": "res://neighborhood_assets/preview/neighborhood_filled.tscn",
+  "window_center": [
+    11.8405666351318,
+    5.55189847946167,
+    -29.2897243499756
+  ]
+}

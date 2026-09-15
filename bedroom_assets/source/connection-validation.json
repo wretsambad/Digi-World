@@ -1,0 +1,16 @@
+{
+  "existing_files_preserved": 156,
+  "corridor_rays": 1629,
+  "retained_exterior_instances": 544,
+  "actual_scene_handoff_passed": true,
+  "render_comparison": {
+    "bedroom-transition-before": {
+      "mean_channel_difference_0_to_255": 0.26950666666666667,
+      "fraction_pixels_difference_above_10": 0.016554375
+    },
+    "bedroom-window-full": {
+      "mean_channel_difference_0_to_255": 0.004565625,
+      "fraction_pixels_difference_above_10": 0.000104375
+    }
+  }
+}

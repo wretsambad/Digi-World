@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T03:44:59.969Z",
+  "title": "Design System: Digi-World Teenage Bedroom",
+  "extensions": {},
+  "components": [],
+  "narrative": {
+    "northStar": "A lived-in teenager's study and retreat",
+    "overview": "The teenage study and retreat now occupies the actual LearningHouse, preserving Digi-World’s soft low-poly style. teen_bedroom.tscn instances learning_house_detailed.tscn and nearby_neighborhood.tscn. The same detailed house appears in window_transition_preview.tscn, a neighborhood copy with its old house/interior replaced. The existing neighborhood_filled.tscn also uses this shared house at ExistingNeighborhood/LearningHouse. Its old bedroom furnishings and extra fill light were removed; other neighborhood nodes, other authored scenes and startup settings remain unchanged.",
+    "keyCharacteristics": [],
+    "rules": [],
+    "dos": [
+      "Do preserve shared house geometry, neighborhood lighting and source exterior placements.",
+      "Do keep the window corridor clear and lesson anchors static."
+    ],
+    "donts": [
+      "Don’t treat camera animation as lesson functionality.",
+      "Don’t promise pixel-identical lighting or certified continuous performance."
+    ]
+  }
+}
+

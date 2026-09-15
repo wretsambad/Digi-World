@@ -1,0 +1,5 @@
+# Continuous neighborhood-to-bedroom transition
+
+Preserve Digi-World's current low-poly neighborhood and the detailed teenage-room contents. Fit the separate room into the actual LearningHouse and its existing upper-floor opening. Use one shared detailed-house scene before and after the switch; copy the current neighborhood's environment, sun and nearby exterior placements exactly. Keep only a bounded neighboring area in the destination scene, with distant vegetation where visible through the window.
+
+The original neighborhood scene and startup settings remain unchanged. Add a separate street-to-window transition preview that replaces the old house interior only in that preview. Hand over the same camera transform and lens after crossing the window, then settle inside. The four lesson objects remain static. Validate clear passage, camera handoff, exterior placement consistency, bounded destination contents, and matched before/after renders. This is a native Godot 3D continuity refinement; no web detector or visual-world redesign.

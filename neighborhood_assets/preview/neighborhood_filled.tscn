@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://diho2e1eifytr" path="res://neighborhood_assets/expanded_models/house_buttercup.glb" id="m5"]
 [ext_resource type="PackedScene" uid="uid://b2likh56gv6ex" path="res://neighborhood_assets/expanded_models/house_peach.glb" id="m6"]
 [ext_resource type="PackedScene" uid="uid://gr3j2ncoa8tn" path="res://neighborhood_assets/expanded_models/house_lavender.glb" id="m7"]
-[ext_resource type="PackedScene" uid="uid://bd2nkl368rlns" path="res://neighborhood_assets/expanded_models/house_learning_home.glb" id="m8"]
 [ext_resource type="PackedScene" uid="uid://d248y677601lo" path="res://neighborhood_assets/expanded_models/house_cedar.glb" id="m9"]
 [ext_resource type="PackedScene" uid="uid://biwyxfkf4uraa" path="res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb" id="m10"]
 [ext_resource type="PackedScene" uid="uid://fbon8tnevnyv" path="res://neighborhood_assets/expanded_models/curb_large.glb" id="m11"]
@@ -52,17 +51,6 @@
 [ext_resource type="PackedScene" uid="uid://eehckl8f0trh" path="res://neighborhood_assets/models/manhole_cover.glb" id="m39"]
 [ext_resource type="PackedScene" uid="uid://cu0ylq8gh0oam" path="res://neighborhood_assets/models/storm_drain.glb" id="m40"]
 [ext_resource type="PackedScene" uid="uid://csfmt2bn2yo0q" path="res://neighborhood_assets/expanded_models/landscape_mound.glb" id="m41"]
-[ext_resource type="PackedScene" uid="uid://sr6ot7g7hlwk" path="res://neighborhood_assets/expanded_models/bedroom_window_sash.glb" id="m42"]
-[ext_resource type="PackedScene" uid="uid://cb0n6megueyef" path="res://neighborhood_assets/expanded_models/bedroom_curtain.glb" id="m43"]
-[ext_resource type="PackedScene" uid="uid://crj473x15vyip" path="res://neighborhood_assets/expanded_models/bedroom_bed.glb" id="m44"]
-[ext_resource type="PackedScene" uid="uid://dfed8e7aqcq7e" path="res://neighborhood_assets/expanded_models/bedroom_desk.glb" id="m45"]
-[ext_resource type="PackedScene" uid="uid://fx6mrjmvte1c" path="res://neighborhood_assets/expanded_models/bedroom_chair.glb" id="m46"]
-[ext_resource type="PackedScene" uid="uid://ncs3wjelsfxs" path="res://neighborhood_assets/expanded_models/bedroom_computer.glb" id="m47"]
-[ext_resource type="PackedScene" uid="uid://bgxrbou72ncfa" path="res://neighborhood_assets/expanded_models/bedroom_phone.glb" id="m48"]
-[ext_resource type="PackedScene" uid="uid://bnqjthl42n5sc" path="res://neighborhood_assets/expanded_models/bedroom_lamp.glb" id="m49"]
-[ext_resource type="PackedScene" uid="uid://d3fwtdfl2oosl" path="res://neighborhood_assets/expanded_models/bedroom_bookshelf.glb" id="m50"]
-[ext_resource type="PackedScene" uid="uid://yh7u1vc685i7" path="res://neighborhood_assets/expanded_models/bedroom_rug.glb" id="m51"]
-[ext_resource type="PackedScene" uid="uid://ion7ruuqvk44" path="res://neighborhood_assets/expanded_models/bedroom_wall_art.glb" id="m52"]
 [ext_resource type="PackedScene" uid="uid://bx1v43ysgrlyo" path="res://neighborhood_assets/recreation_models/park_fence_panel.glb" id="park_expand_fence"]
 [ext_resource type="PackedScene" uid="uid://cf651py1tkv12" path="res://neighborhood_assets/recreation_models/park_path_loop_large.glb" id="park_expand_path"]
 [ext_resource type="PackedScene" uid="uid://c0i3thdd0i528" path="res://neighborhood_assets/recreation_models/basketball_court.glb" id="recreation_0"]
@@ -83,6 +71,8 @@
 [ext_resource type="PackedScene" uid="uid://d3dw5mkktgah0" path="res://neighborhood_assets/recreation_models/soccer_goal.glb" id="recreation_16"]
 [ext_resource type="PackedScene" uid="uid://bysgjeltensya" path="res://neighborhood_assets/recreation_models/soccer_ball.glb" id="recreation_17"]
 [ext_resource type="PackedScene" uid="uid://cvm5bvmvgot37" path="res://neighborhood_assets/recreation_models/soccer_sign.glb" id="recreation_18"]
+
+[ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="bedroom_shared"]
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_material"]
 sky_top_color = Color(0.43, 0.66, 0.83, 1)
@@ -109,7 +99,7 @@ adjustment_brightness = 0.92
 
 [node name="NeighborhoodFilled" type="Node3D" unique_id=2075057916]
 metadata/scale_convention = "1 Godot unit is approximately 1 meter"
-metadata/bedroom_size = "7.4 x 6.6 meters"
+metadata/bedroom_size = "6.52 x 7.52 meters"
 
 [node name="ExistingNeighborhood" type="Node3D" parent="." unique_id=1320333921]
 
@@ -257,8 +247,7 @@ metadata/category = "Houses"
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.7, 0, -3)
 metadata/category = "Houses"
 
-[node name="LearningHouse" parent="ExistingNeighborhood" unique_id=1677300764 instance=ExtResource("m8")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.980566, -0.048101425, -26.989725)
+[node name="LearningHouse" parent="ExistingNeighborhood" unique_id=1677300764 instance=ExtResource("bedroom_shared")]
 metadata/category = "Houses"
 
 [node name="House_East_05" parent="ExistingNeighborhood" unique_id=349287274 instance=ExtResource("m3")]
@@ -4097,54 +4086,6 @@ metadata/category = "GardenTrees"
 transform = Transform3D(1.337399, 0, 0, 0, 1.337399, 0, 0, 0, 1.337399, 31.33356, 0, 75)
 metadata/category = "GardenTrees"
 
-[node name="WindowSash_Open72Degrees" parent="ExistingNeighborhood" unique_id=1572730627 instance=ExtResource("m42")]
-transform = Transform3D(-0.951057, 0, -0.309017, 0, 1, 0, 0.309017, 0, -0.951057, 11.84, 5.6, -30.54)
-metadata/category = "Bedroom"
-
-[node name="CurtainLeft" parent="ExistingNeighborhood" unique_id=1769628927 instance=ExtResource("m43")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 12.23, 6.76, -31.15)
-metadata/category = "Bedroom"
-
-[node name="CurtainRight" parent="ExistingNeighborhood" unique_id=762731030 instance=ExtResource("m43")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 12.23, 6.76, -27.42)
-metadata/category = "Bedroom"
-
-[node name="Bed" parent="ExistingNeighborhood" unique_id=232185643 instance=ExtResource("m44")]
-transform = Transform3D(8.742278e-08, 0, 1, 0, 1, 0, -1, 0, 8.742278e-08, 13.457615, 3.52, -26.4)
-metadata/category = "Bedroom"
-
-[node name="Desk" parent="ExistingNeighborhood" unique_id=714367604 instance=ExtResource("m45")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 17.95, 3.52, -30.9)
-metadata/category = "Bedroom"
-
-[node name="DeskChair" parent="ExistingNeighborhood" unique_id=18118604 instance=ExtResource("m46")]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 16.95, 3.52, -30.9)
-metadata/category = "Bedroom"
-
-[node name="Computer_LessonAnchor" parent="ExistingNeighborhood" unique_id=1790087380 instance=ExtResource("m47")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 17.959671, 4.348543, -30.89996)
-metadata/category = "Bedroom"
-
-[node name="Phone_LessonAnchor" parent="ExistingNeighborhood" unique_id=2050189714 instance=ExtResource("m48")]
-transform = Transform3D(0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, 0.34202, 17.74, 4.36, -30.16)
-metadata/category = "Bedroom"
-
-[node name="DeskLamp" parent="ExistingNeighborhood" unique_id=2129991184 instance=ExtResource("m49")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 18, 4.35, -31.65)
-metadata/category = "Bedroom"
-
-[node name="Bookshelf" parent="ExistingNeighborhood" unique_id=1980789993 instance=ExtResource("m50")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 18.22, 3.52, -27.5)
-metadata/category = "Bedroom"
-
-[node name="Rug" parent="ExistingNeighborhood" unique_id=2020112018 instance=ExtResource("m51")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 15.4, 3.52, -29)
-metadata/category = "Bedroom"
-
-[node name="BedroomArtwork" parent="ExistingNeighborhood" unique_id=1541388084 instance=ExtResource("m52")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 18.7, 5.35, -29.3)
-metadata/category = "Bedroom"
-
 [node name="Fill_house_peach_000" parent="ExistingNeighborhood" unique_id=2082845399 instance=ExtResource("m6")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -20.5, 0, 9)
 metadata/category = "SightlineInfillHouses"
@@ -6714,12 +6655,6 @@ light_color = Color(1, 0.93, 0.8, 1)
 light_energy = 0.55
 shadow_enabled = true
 directional_shadow_max_distance = 180.0
-
-[node name="BedroomFill" type="OmniLight3D" parent="." unique_id=806432858]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 6.1, -29)
-light_color = Color(1, 0.92, 0.78, 1)
-light_energy = 0.6
-omni_range = 7.0
 
 [node name="driveway_large" parent="." unique_id=2064111150 instance=ExtResource("m13")]
 transform = Transform3D(-4.3711392e-08, 0, -4.9133725, 0, 1.3209469, 0, 1.0000001, 0, -2.1477034e-07, 23.178282, -0.021390915, 32.07372)
