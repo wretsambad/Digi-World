@@ -27,7 +27,7 @@ transform = Transform3D(0.88294756, 0.31413782, -0.34888536, 0, 0.7431448, 0.669
 light_color = Color(1, 0.93, 0.8, 1)
 light_energy = 0.55
 shadow_enabled = true
-directional_shadow_max_distance = 180.0
+directional_shadow_max_distance = 100.0
 
 [node name="EntryCamera" type="Camera3D" parent="." unique_id=1638587547]
 transform = Transform3D(0.89327663, -0.07378933, 0.44340953, 0, 0.9864344, 0.16415599, -0.44950736, -0.14663671, 0.88115877, 17.300566, 5.421899, -25.969725)

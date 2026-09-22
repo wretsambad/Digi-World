@@ -15,6 +15,7 @@ func view(scene:Node3D,pos:Vector3,target:Vector3,fov:float=76.0)->Camera3D:
 func clear_rays(scene:Node3D)->bool:
 	var box=AABB(Vector3(-4,2.3,-35),Vector3(27,5,30))
 	for mi in scene.find_children("*","MeshInstance3D",true,false):
+		if mi.mesh==null:continue # Static import optimization keeps empty attachment nodes.
 		if (mi.global_transform*mi.get_aabb()).intersects(box):mi.create_trimesh_collision()
 	await physics_frame;await physics_frame
 	var space=scene.get_world_3d().direct_space_state;var count=0

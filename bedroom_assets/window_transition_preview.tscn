@@ -6638,7 +6638,7 @@ transform = Transform3D(0.88294756, 0.31413782, -0.34888536, 0, 0.7431448, 0.669
 light_color = Color(1, 0.93, 0.8, 1)
 light_energy = 0.55
 shadow_enabled = true
-directional_shadow_max_distance = 180.0
+directional_shadow_max_distance = 100.0
 
 [node name="driveway_large" type="Node3D" parent="." unique_id=2064111150 instance=ExtResource("14_ig6bd")]
 transform = Transform3D(-4.3711392e-08, 0, -4.9133725, 0, 1.3209469, 0, 1.0000001, 0, -2.1477034e-07, 23.178282, -0.021390915, 32.07372)

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://derb788hgktys"]
 
+[ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="bedroom_shared"]
 [ext_resource type="PackedScene" uid="uid://drslow14q6p6c" path="res://neighborhood_assets/models/stepping_stone.glb" id="fill_0"]
 [ext_resource type="PackedScene" uid="uid://blwr6yq083ywc" path="res://neighborhood_assets/sightline_models/continuation_east_road.glb" id="fill_1"]
 [ext_resource type="PackedScene" uid="uid://dfrtw8a34rnfc" path="res://neighborhood_assets/sightline_models/continuation_east_sidewalk.glb" id="fill_2"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c3kl6fyg4sj0u" path="res://neighborhood_assets/sightline_models/continuation_south_road.glb" id="fill_7"]
 [ext_resource type="PackedScene" uid="uid://o6nuhkpn3r41" path="res://neighborhood_assets/sightline_models/continuation_south_sidewalk.glb" id="fill_8"]
 [ext_resource type="PackedScene" uid="uid://cfptwc8x3bvgw" path="res://neighborhood_assets/sightline_models/continuation_south_curb.glb" id="fill_9"]
+[ext_resource type="Script" uid="uid://c7cb8gv3870qp" path="res://neighborhood_assets/preview/level_street_camera.gd" id="level_street_camera"]
 [ext_resource type="PackedScene" uid="uid://dywbx8meken3e" path="res://neighborhood_assets/models/lawn_tile.glb" id="m0"]
 [ext_resource type="PackedScene" uid="uid://ynchy3ii2art" path="res://neighborhood_assets/expanded_models/road_straight_large.glb" id="m1"]
 [ext_resource type="PackedScene" uid="uid://dih03v322ec7h" path="res://neighborhood_assets/expanded_models/road_junction_large.glb" id="m2"]
@@ -72,8 +74,6 @@
 [ext_resource type="PackedScene" uid="uid://bysgjeltensya" path="res://neighborhood_assets/recreation_models/soccer_ball.glb" id="recreation_17"]
 [ext_resource type="PackedScene" uid="uid://cvm5bvmvgot37" path="res://neighborhood_assets/recreation_models/soccer_sign.glb" id="recreation_18"]
 
-[ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="bedroom_shared"]
-
 [sub_resource type="ProceduralSkyMaterial" id="sky_material"]
 sky_top_color = Color(0.43, 0.66, 0.83, 1)
 sky_horizon_color = Color(0.79, 0.87, 0.86, 1)
@@ -96,6 +96,51 @@ fog_enabled = true
 fog_light_color = Color(0.5921569, 0.83137256, 0.8117647, 1)
 fog_density = 0.0012
 adjustment_brightness = 0.92
+
+[sub_resource type="Animation" id="Animation_tox8f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8wk7v"]
+resource_name = "camera_preview"
+length = 25.1
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path3D/PathFollow3D:progress_ratio")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 25.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r7wej"]
+_data = {
+&"RESET": SubResource("Animation_tox8f"),
+&"camera_preview": SubResource("Animation_8wk7v")
+}
+
+[sub_resource type="Curve3D" id="Curve3D_tox8f"]
+_data = {
+"points": PackedVector3Array(-0.829952, -0.095248, 0.849635, 0.829952, 0.095248, -0.849635, 0.048119, -0.151484, 0.085899, -0.840928, -0.124664, 0.834908, 0.840928, 0.124664, -0.834908, 2.419411, 0.120653, -2.341629, -0.76314, -0.146356, 0.848737, 0.76314, 0.146356, -0.848737, 5.00959, 0.589197, -4.835297, -0.592064, -0.151003, 0.975097, 0.592064, 0.151003, -0.975097, 7.010601, 0.998526, -7.411697, -0.298762, -0.150483, 0.968413, 0.298762, 0.150483, -0.968413, 8.739327, 1.567812, -11.17276, -0.131692, -0.16119, 1.003196, 0.131692, 0.16119, -1.003196, 9.220825, 2.021536, -14.024338, -0.053349, -0.136731, 0.792963, 0.053349, 0.136731, -0.792963, 9.573792, 2.630518, -17.77826, 0.031882, -0.132115, 0.794897, -0.031882, 0.132115, -0.794897, 9.665588, 3.044149, -20.04306, 0.113963, -0.100258, 0.672678, -0.113963, 0.100258, -0.672678, 9.12561, 3.713415, -24.5121, 0.176448, -0.096965, 0.659544, -0.176448, 0.096965, -0.659544, 8.708885, 3.995937, -26.416946, 0.431467, -0.136579, 0.93025, -0.431467, 0.136579, -0.93025, 7.480827, 4.559508, -30.285278, 0.629662, -0.130092, 0.810423, -0.629662, 0.130092, -0.810423, 5.920647, 4.927264, -32.768578, 0.856822, -0.123172, 0.779346, -0.856822, 0.123172, -0.779346, 3.304718, 5.408928, -35.52015, 0.904276, -0.100138, 0.727291, -0.904276, 0.100138, -0.727291, 0.697075, 5.691952, -37.56836, 0.837791, -0.11279, 0.809134, -0.837791, 0.11279, -0.809134, -2.055832, 6.002981, -39.835243, 0.5636, -0.137889, 0.914042, -0.5636, 0.137889, -0.914042, -4.256958, 6.35497, -42.327072, 0.281716, -0.163568, 1.032479, -0.281716, 0.163568, -1.032479, -5.393921, 6.805716, -45.168297, 0.062954, -0.17604, 1.127924, -0.062954, 0.17604, -1.127924, -5.970192, 7.401174, -48.931942, -0.150986, -0.174262, 1.119822, 0.150986, 0.174262, -1.119822, -5.839836, 7.897848, -52.15794, -0.347624, -0.162995, 1.040848, 0.347624, 0.162995, -1.040848, -5.108421, 8.394519, -55.31513, -0.552209, -0.149577, 0.950509, 0.552209, 0.149577, -0.950509, -3.837837, 8.841657, -58.18442, -0.785693, -0.142385, 0.838232, 0.785693, 0.142385, -0.838232, -1.632072, 9.317429, -61.174828, -0.898758, -0.123903, 0.719098, 0.898758, 0.123903, -0.719098, 0.879547, 9.705454, -63.291847, -0.934324, -0.106245, 0.65333, 0.934324, 0.106245, -0.65333, 3.783844, 10.059576, -65.49655, -0.958304, -0.104829, 0.617861, 0.958304, 0.104829, -0.617861, 6.5252, 10.349994, -67.258194, -2.439103, -0.076519, 0.520576, 2.439103, 0.076519, -0.520576, 123.344666, 23.533052, -142.82582, -2.099126, 0.221233, -1.330715, 2.099126, -0.221233, 1.330715, 130.38658, 23.26842, -141.74576, -1.37959, 0.312858, -2.061274, 1.37959, -0.312858, 2.061274, 139.63544, 21.170998, -127.92684),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 28
 
 [node name="NeighborhoodFilled" type="Node3D" unique_id=2075057916]
 metadata/scale_convention = "1 Godot unit is approximately 1 meter"
@@ -3175,7 +3220,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -1.5, 0.06, -74.4)
 metadata/category = "StreetFurniture"
 
 [node name="GardenTrees_tree_maple_large_774" parent="ExistingNeighborhood" unique_id=1034906789 instance=ExtResource("m30")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -8, 0, -79)
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -7.700627, 0, -96.77366)
 metadata/category = "GardenTrees"
 
 [node name="Paths_garden_path_large_775" parent="ExistingNeighborhood" unique_id=1863186368 instance=ExtResource("m15")]
@@ -3199,7 +3244,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 23.5, 0.06, -74.4)
 metadata/category = "StreetFurniture"
 
 [node name="GardenTrees_tree_maple_large_780" parent="ExistingNeighborhood" unique_id=1348766042 instance=ExtResource("m30")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 17, 0, -79)
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 45.854164, 0, -95.94136)
 metadata/category = "GardenTrees"
 
 [node name="Paths_garden_path_large_781" parent="ExistingNeighborhood" unique_id=679452171 instance=ExtResource("m15")]
@@ -3223,7 +3268,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 47.5, 0.06, -74.4)
 metadata/category = "StreetFurniture"
 
 [node name="GardenTrees_tree_maple_large_786" parent="ExistingNeighborhood" unique_id=66846120 instance=ExtResource("m30")]
-transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 41, 0, -79)
+transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 45.194145, 0, -75.772194)
 metadata/category = "GardenTrees"
 
 [node name="StreetFurniture_streetlamp_787" parent="ExistingNeighborhood" unique_id=242132051 instance=ExtResource("m36")]
@@ -3671,7 +3716,7 @@ transform = Transform3D(-1.214042, 0, -0.468142, 0, 1.301175, 0, 0.468142, 0, -1
 metadata/category = "TreeBelt"
 
 [node name="TreeBelt_tree_oak_large_906" parent="ExistingNeighborhood" unique_id=1656400942 instance=ExtResource("m22")]
-transform = Transform3D(-0.812274, 0, 1.355155, 0, 1.579947, 0, -1.355155, 0, -0.812274, 67.00838, 0, -76.36509)
+transform = Transform3D(-0.812274, 0, 1.355155, 0, 1.579947, 0, -1.355155, 0, -0.812274, 56.919174, 0, -94.25363)
 metadata/category = "TreeBelt"
 
 [node name="TreeBelt_tree_maple_large_910" parent="ExistingNeighborhood" unique_id=1468245233 instance=ExtResource("m30")]
@@ -3966,6 +4011,10 @@ metadata/category = "BackdropHills"
 transform = Transform3D(1.276575, 0, 0, 0, 1.276575, 0, 0, 0, 1.276575, -32.15399, 0, -90)
 metadata/category = "GardenTrees"
 
+[node name="GardenTrees_tree_poplar_large_997" parent="ExistingNeighborhood" unique_id=869651672 instance=ExtResource("m23")]
+transform = Transform3D(1.276575, 0, 0, 0, 1.276575, 0, 0, 0, 1.276575, -53.885742, 0, -97.24893)
+metadata/category = "GardenTrees"
+
 [node name="GardenTrees_tree_oak_large_997" parent="ExistingNeighborhood" unique_id=340405674 instance=ExtResource("m22")]
 transform = Transform3D(1.160395, 0, 0, 0, 1.160395, 0, 0, 0, 1.160395, -33.11992, 0, -79)
 metadata/category = "GardenTrees"
@@ -3979,7 +4028,7 @@ transform = Transform3D(1.309937, 0, 0, 0, 1.309937, 0, 0, 0, 1.309937, -32.5867
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_oak_large_1000" parent="ExistingNeighborhood" unique_id=2126313040 instance=ExtResource("m22")]
-transform = Transform3D(1.125372, 0, 0, 0, 1.125372, 0, 0, 0, 1.125372, -33.09502, 0, -46)
+transform = Transform3D(1.125372, 0, 0, 0, 1.125372, 0, 0, 0, 1.125372, -33, 0, -34)
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_oak_large_1001" parent="ExistingNeighborhood" unique_id=953151620 instance=ExtResource("m22")]
@@ -4027,11 +4076,11 @@ transform = Transform3D(1.305255, 0, 0, 0, 1.305255, 0, 0, 0, 1.305255, -32.1944
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_poplar_large_1012" parent="ExistingNeighborhood" unique_id=1612253916 instance=ExtResource("m23")]
-transform = Transform3D(1.165623, 0, 0, 0, 1.165623, 0, 0, 0, 1.165623, 33.87861, 0, -90)
+transform = Transform3D(1.165623, 0, 0, 0, 1.165623, 0, 0, 0, 1.165623, 33.87861, 0, -101)
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_oak_large_1014" parent="ExistingNeighborhood" unique_id=1704650717 instance=ExtResource("m22")]
-transform = Transform3D(1.008821, 0, 0, 0, 1.008821, 0, 0, 0, 1.008821, 40.214054, 0, -92.64541)
+transform = Transform3D(1.008821, 0, 0, 0, 1.008821, 0, 0, 0, 1.008821, 36, 0, -101)
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_poplar_large_1015" parent="ExistingNeighborhood" unique_id=2052766814 instance=ExtResource("m23")]
@@ -4039,7 +4088,7 @@ transform = Transform3D(1.157725, 0, 0, 0, 1.157725, 0, 0, 0, 1.157725, 34.67569
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_oak_large_1016" parent="ExistingNeighborhood" unique_id=720976823 instance=ExtResource("m22")]
-transform = Transform3D(1.198248, 0, 0, 0, 1.198248, 0, 0, 0, 1.198248, 33.51591, 0, -46)
+transform = Transform3D(1.198248, 0, 0, 0, 1.198248, 0, 0, 0, 1.198248, 33, 0, -30)
 metadata/category = "GardenTrees"
 
 [node name="GardenTrees_tree_oak_large_1017" parent="ExistingNeighborhood" unique_id=1207515720 instance=ExtResource("m22")]
@@ -4455,7 +4504,7 @@ transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, -29, 0, -57.3)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_tree_poplar_large_097" parent="ExistingNeighborhood" unique_id=263360551 instance=ExtResource("m23")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -33, 0, -50)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -30, 0, -49)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_hedge_straight_098" parent="ExistingNeighborhood" unique_id=1906568371 instance=ExtResource("m20")]
@@ -4507,7 +4556,7 @@ transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -40, 0, -57.3)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_tree_poplar_large_110" parent="ExistingNeighborhood" unique_id=631432958 instance=ExtResource("m23")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -44, 0, -50)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -46, 0, -43)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_hedge_straight_111" parent="ExistingNeighborhood" unique_id=1260524941 instance=ExtResource("m20")]
@@ -4515,7 +4564,7 @@ transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -43.6, 0.025, -59.4)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_hedge_straight_112" parent="ExistingNeighborhood" unique_id=1059754457 instance=ExtResource("m20")]
-transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -40, 0.025, -59.4)
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -36.6, 0.025, -59.4)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_hedge_straight_113" parent="ExistingNeighborhood" unique_id=272535478 instance=ExtResource("m20")]
@@ -4523,11 +4572,11 @@ transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -36.4, 0.025, -59.4)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_bench_114" parent="ExistingNeighborhood" unique_id=841420667 instance=ExtResource("m25")]
-transform = Transform3D(6, 0, 5.2453663e-07, 0, 6, 0, -5.2453663e-07, 0, 6, -40, 0.025, -56.3)
+transform = Transform3D(6, 0, 5.2453663e-07, 0, 6, 0, -5.2453663e-07, 0, 6, -41, 0.025, -56.3)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_flowerbed_115" parent="ExistingNeighborhood" unique_id=917430876 instance=ExtResource("m17")]
-transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -40, 0.025, -60.6)
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -36.6, 0.025, -60.6)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_flowerbed_116" parent="ExistingNeighborhood" unique_id=604097764 instance=ExtResource("m17")]
@@ -4607,7 +4656,19 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -56, 0.03, -58.9)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_tree_oak_large_135" parent="ExistingNeighborhood" unique_id=1890337948 instance=ExtResource("m22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -78.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.959975, 0, -96.02225)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_138" parent="ExistingNeighborhood" unique_id=1067404372 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.962598, 0, -87.555214)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_140" parent="ExistingNeighborhood" unique_id=1597418827 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.783752, 0, -87.189545)
+metadata/category = "SightlineTrees"
+
+[node name="Fill_tree_oak_large_136" parent="ExistingNeighborhood" unique_id=1349429835 instance=ExtResource("m22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.926601, 0, -96.02225)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_shrub_round_136" parent="ExistingNeighborhood" unique_id=1984727919 instance=ExtResource("m24")]
@@ -4615,7 +4676,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, -12.7, 0.025, -76.5)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_tree_oak_large_137" parent="ExistingNeighborhood" unique_id=1080884663 instance=ExtResource("m22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.720194, 0, -84.445404)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1561155, 0, -98.20864)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_shrub_round_138" parent="ExistingNeighborhood" unique_id=2082074696 instance=ExtResource("m24")]
@@ -4695,7 +4756,7 @@ transform = Transform3D(1.03, 0, 0, 0, 1.03, 0, 0, 0, 1.03, 29, 0, -57.3)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_tree_poplar_large_157" parent="ExistingNeighborhood" unique_id=1885832134 instance=ExtResource("m23")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 33, 0, -50)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 29, 0, -48)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_hedge_straight_158" parent="ExistingNeighborhood" unique_id=1001482349 instance=ExtResource("m20")]
@@ -4747,15 +4808,15 @@ transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 40, 0, -57.3)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_tree_poplar_large_170" parent="ExistingNeighborhood" unique_id=295374232 instance=ExtResource("m23")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 44, 0, -50)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 44, 0, -43)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_hedge_straight_171" parent="ExistingNeighborhood" unique_id=1239363027 instance=ExtResource("m20")]
-transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 36.4, 0.025, -59.4)
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 40.7, 0.025, -59.4)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_hedge_straight_172" parent="ExistingNeighborhood" unique_id=2058094687 instance=ExtResource("m20")]
-transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 40, 0.025, -59.4)
+transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, 43.4, 0.025, -59.4)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_hedge_straight_173" parent="ExistingNeighborhood" unique_id=16411448 instance=ExtResource("m20")]
@@ -4767,7 +4828,7 @@ transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, 40, 0.025, -56.3)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_flowerbed_175" parent="ExistingNeighborhood" unique_id=1096773775 instance=ExtResource("m17")]
-transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 40, 0.025, -60.6)
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 43.4, 0.025, -60.6)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_flowerbed_176" parent="ExistingNeighborhood" unique_id=1447976189 instance=ExtResource("m17")]
@@ -4775,7 +4836,7 @@ transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, 43.6, 0.025, -55.1)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_litter_bin_177" parent="ExistingNeighborhood" unique_id=1436124271 instance=ExtResource("m28")]
-transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 37.3, 0.025, -56.2)
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 35.8, 0.025, -56.2)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_stepping_stone_178" parent="ExistingNeighborhood" unique_id=41663508 instance=ExtResource("fill_0")]
@@ -4847,7 +4908,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 56, 0.03, -58.9)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_tree_oak_large_195" parent="ExistingNeighborhood" unique_id=675093020 instance=ExtResource("m22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -78.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -100.80933)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_shrub_round_196" parent="ExistingNeighborhood" unique_id=58976979 instance=ExtResource("m24")]
@@ -4855,19 +4916,19 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 9.3, 0.025, -76.5)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_tree_oak_large_197" parent="ExistingNeighborhood" unique_id=456608988 instance=ExtResource("m22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -78.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -99.53493)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_shrub_round_198" parent="ExistingNeighborhood" unique_id=1991172352 instance=ExtResource("m24")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 20.3, 0.025, -76.5)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 20.3, 0.025, -75.45838)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_tree_oak_large_199" parent="ExistingNeighborhood" unique_id=476898634 instance=ExtResource("m22")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -78.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.26064, 0, -95.6343)
 metadata/category = "SightlineTrees"
 
 [node name="Fill_shrub_round_200" parent="ExistingNeighborhood" unique_id=166902143 instance=ExtResource("m24")]
-transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 36.5851, 0.025, -75.45525)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 33.8, 0.025, -75.5)
 metadata/category = "SightlineGardens"
 
 [node name="Fill_tree_oak_large_201" parent="ExistingNeighborhood" unique_id=1082640504 instance=ExtResource("m22")]
@@ -6646,6 +6707,191 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5174637, 0.035, -9.142075)
 [node name="car_lilac" parent="ExistingNeighborhood" unique_id=1372395974 instance=ExtResource("m34")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -40.447624, 0, 33.06565)
 
+[node name="CanvasLayer" type="CanvasLayer" parent="ExistingNeighborhood" unique_id=1297016291]
+
+[node name="CameraRouteInfill" type="Node3D" parent="ExistingNeighborhood" unique_id=10407218]
+metadata/purpose = "Homes and gardens filling the extended camera route"
+
+[node name="PeachLane" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=93361159]
+
+[node name="House" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=1718466109 instance=ExtResource("m6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -89)
+
+[node name="FrontWalk" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=843621645 instance=ExtResource("recreation_4")]
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 10.1, 14, 0.095, -78.55)
+
+[node name="PorchFlowers0" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=1187041773 instance=ExtResource("m17")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 4, 11.7, 0, -83.6)
+
+[node name="FrontShrub0" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=1765524062 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.8, 0, -81.6)
+
+[node name="GardenEdge0" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=1680007594 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -19.695787, 0, 4, 0, 4, 0, 0, 9.4, 0, -78.55)
+
+[node name="PorchFlowers1" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=869311641 instance=ExtResource("m17")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 4, 16.3, 0, -83.6)
+
+[node name="FrontShrub1" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=2033774468 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 17.2, 0, -81.6)
+
+[node name="GardenEdge1" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=827704691 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -19.695787, 0, 4, 0, 4, 0, 0, 16.39209, 0, -76.89747)
+
+[node name="Mailbox" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=1401108970 instance=ExtResource("m16")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 15.2, 0, -72.9)
+
+[node name="CedarLane" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=1605731425]
+
+[node name="House" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=337151113 instance=ExtResource("m9")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, -89)
+
+[node name="FrontWalk" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=246059868 instance=ExtResource("recreation_4")]
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 10.1, 37, 0.095, -78.55)
+
+[node name="PorchFlowers0" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=963837184 instance=ExtResource("m17")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 4, 34.7, 0, -83.6)
+
+[node name="FrontShrub0" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=2049386673 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33.8, 0, -81.6)
+
+[node name="GardenEdge0" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=716889670 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -19.695787, 0, 4, 0, 4, 0, 0, 32.4, 0, -78.55)
+
+[node name="PorchFlowers1" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=31184557 instance=ExtResource("m17")]
+transform = Transform3D(5, 0, 0, 0, 4, 0, 0, 0, 4, 39.3, 0, -83.6)
+
+[node name="FrontShrub1" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=905621058 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 40.2, 0, -81.6)
+
+[node name="GardenEdge1" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=959875657 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -19.695787, 0, 4, 0, 4, 0, 0, 41.6, 0, -78.55)
+
+[node name="Mailbox" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=1706696514 instance=ExtResource("m16")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 38.2, 0, -72.9)
+
+[node name="EastGardenHome" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=1825542953]
+
+[node name="House" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=1163519393 instance=ExtResource("m6")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 38, 0, -44)
+
+[node name="FrontWalk" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=1420064480 instance=ExtResource("recreation_4")]
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 13, 38, 0.095, -55.9)
+
+[node name="PorchFlowers0" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=1773247223 instance=ExtResource("m17")]
+transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, 35.7, 0, -49.4)
+
+[node name="FrontShrub0" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=255178620 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 34.8, 0, -51.4)
+
+[node name="GardenEdge0" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=139743055 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -25.351013, 0, 4, 0, 4, 0, 0, 33.4, 0, -55.9)
+
+[node name="PorchFlowers1" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=1410523531 instance=ExtResource("m17")]
+transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, 40.3, 0, -49.4)
+
+[node name="FrontShrub1" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=171574786 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 41.2, 0, -51.4)
+
+[node name="GardenEdge1" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=589526078 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -25.351013, 0, 4, 0, 4, 0, 0, 42.6, 0, -55.9)
+
+[node name="Mailbox" parent="ExistingNeighborhood/CameraRouteInfill/EastGardenHome" unique_id=984281304 instance=ExtResource("m16")]
+transform = Transform3D(-4, 0, 0, 0, 4, 0, 0, 0, -4, 39.2, 0, -63)
+
+[node name="WestGardenHome" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=1595004459]
+
+[node name="House" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=1206295676 instance=ExtResource("m9")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -39, 0, -44)
+
+[node name="FrontWalk" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=515036212 instance=ExtResource("recreation_4")]
+transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 13, -39, 0.095, -55.9)
+
+[node name="PorchFlowers0" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=133741107 instance=ExtResource("m17")]
+transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, -41.3, 0, -49.4)
+
+[node name="FrontShrub0" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=1177350133 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -42.2, 0, -51.4)
+
+[node name="GardenEdge0" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=928735325 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -25.351013, 0, 4, 0, 4, 0, 0, -43.6, 0, -55.9)
+
+[node name="PorchFlowers1" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=961738366 instance=ExtResource("m17")]
+transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, -36.7, 0, -49.4)
+
+[node name="FrontShrub1" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=1084519287 instance=ExtResource("m24")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -35.8, 0, -51.4)
+
+[node name="GardenEdge1" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=2122959765 instance=ExtResource("m20")]
+transform = Transform3D(0, 0, -25.351013, 0, 4, 0, 4, 0, 0, -34.4, 0, -55.9)
+
+[node name="Mailbox" parent="ExistingNeighborhood/CameraRouteInfill/WestGardenHome" unique_id=245712866 instance=ExtResource("m16")]
+transform = Transform3D(-4, 0, 0, 0, 4, 0, 0, 0, -4, -37.8, 0, -63)
+
+[node name="SideYardTrees" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=2134943815]
+
+[node name="GardenTree00" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=459657410 instance=ExtResource("m22")]
+transform = Transform3D(0.013464, 0, 0.736629, 0, 0.736752, 0, -0.736629, 0, 0.013464, 55.153397, 0, 65.39169)
+
+[node name="GardenTree01" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=1441276417 instance=ExtResource("m30")]
+transform = Transform3D(0.229419, 0, 0.702484, 0, 0.738997, 0, -0.702484, 0, 0.229419, 54.356552, 0, 1.127558)
+
+[node name="GardenTree02" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=2137981194 instance=ExtResource("m30")]
+transform = Transform3D(-0.657651, 0, 0.451858, 0, 0.797923, 0, -0.451858, 0, -0.657651, -54.17071, 0, 17.46517)
+
+[node name="GardenTree03" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=669779253 instance=ExtResource("m22")]
+transform = Transform3D(0.727915, 0, -0.096398, 0, 0.73427, 0, 0.096398, 0, 0.727915, -55.387638, 0, 49.69339)
+
+[node name="GardenTree04" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=62655681 instance=ExtResource("m30")]
+transform = Transform3D(-0.022285, 0, 0.710446, 0, 0.710796, 0, -0.710446, 0, -0.022285, 54.542595, 0, 50.5535)
+
+[node name="GardenTree05" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=424199638 instance=ExtResource("m30")]
+transform = Transform3D(-0.460426, 0, -0.598218, 0, 0.754889, 0, 0.598218, 0, -0.460426, 55.413715, 0, -14.123896)
+
+[node name="GardenTree06" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=1494386916 instance=ExtResource("m22")]
+transform = Transform3D(0.587559, 0, -0.386347, 0, 0.703199, 0, 0.386347, 0, 0.587559, 54.287376, 0, 17.507229)
+
+[node name="GardenTree07" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=419114049 instance=ExtResource("m30")]
+transform = Transform3D(-0.693974, 0, 0.116493, 0, 0.703684, 0, -0.116493, 0, -0.693974, -54.528965, 0, -30.494976)
+
+[node name="GardenTree08" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=744411173 instance=ExtResource("m30")]
+transform = Transform3D(0.684035, 0, 0.178498, 0, 0.706941, 0, -0.178498, 0, 0.684035, 55.476208, 0, 57.205814)
+
+[node name="GardenTree09" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=173760290 instance=ExtResource("m22")]
+transform = Transform3D(-0.672031, 0, -0.252333, 0, 0.717842, 0, 0.252333, 0, -0.672031, 54.7821, 0, -6.239193)
+
+[node name="GardenTree10" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=877356465 instance=ExtResource("m30")]
+transform = Transform3D(0.34371, 0, 0.59773, 0, 0.689505, 0, -0.59773, 0, 0.34371, 54.670876, 0, 9.615256)
+
+[node name="GardenTree11" parent="ExistingNeighborhood/CameraRouteInfill/SideYardTrees" unique_id=457768209 instance=ExtResource("m30")]
+transform = Transform3D(-0.211873, 0, -0.717985, 0, 0.748594, 0, 0.717985, 0, -0.211873, 55.20977, 0, 42.09513)
+
+[node name="GardenSeating" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=1578518867]
+
+[node name="Terrace" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=313791963 instance=ExtResource("recreation_4")]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 5, 39, 0.08, -34)
+
+[node name="Access" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=958048565 instance=ExtResource("recreation_4")]
+transform = Transform3D(3, 0, 0, 0, 1, 0, 0, 0, 1.3, 45, 0.095, -34)
+
+[node name="PicnicTable" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=881220397 instance=ExtResource("recreation_13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 0, -34)
+
+[node name="GardenShrub0" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=982228043 instance=ExtResource("m24")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 35.5, 0, -37)
+
+[node name="GardenShrub1" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=926936207 instance=ExtResource("m24")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 35.5, 0, -31)
+
+[node name="GardenShrub2" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=1332321530 instance=ExtResource("m24")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 42.4, 0, -37)
+
+[node name="GardenShrub3" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=268857123 instance=ExtResource("m24")]
+transform = Transform3D(4.5, 0, 0, 0, 4.5, 0, 0, 0, 4.5, 42.4, 0, -31)
+
+[node name="Flowers" parent="ExistingNeighborhood/CameraRouteInfill/GardenSeating" unique_id=1124103219 instance=ExtResource("m17")]
+transform = Transform3D(6, 0, 0, 0, 4, 0, 0, 0, 4, 39, 0, -37)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1965007304]
 environment = SubResource("env")
 
@@ -6654,7 +6900,6 @@ transform = Transform3D(0.88294756, 0.31413782, -0.34888536, 0, 0.7431448, 0.669
 light_color = Color(1, 0.93, 0.8, 1)
 light_energy = 0.55
 shadow_enabled = true
-directional_shadow_max_distance = 180.0
 
 [node name="driveway_large" parent="." unique_id=2064111150 instance=ExtResource("m13")]
 transform = Transform3D(-4.3711392e-08, 0, -4.9133725, 0, 1.3209469, 0, 1.0000001, 0, -2.1477034e-07, 23.178282, -0.021390915, 32.07372)
@@ -6664,3 +6909,27 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 39.9
 
 [node name="driveway_large2" parent="." unique_id=544057837 instance=ExtResource("m13")]
 transform = Transform3D(-4.3711392e-08, 0, -5.1234317, 0, 1, 0, 1.0000001, 0, -2.2395231e-07, -24.062601, 0, 32.923122)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1504597732]
+libraries/ = SubResource("AnimationLibrary_r7wej")
+autoplay = &"camera_preview"
+
+[node name="Path3D" type="Path3D" parent="." unique_id=635047132]
+transform = Transform3D(0.54921144, -0.124172054, 0.8264066, -0.009635076, 0.9878926, 0.15483947, -0.83562785, -0.093002126, 0.54136556, 53.270554, 0.2687196, 119.87453)
+curve = SubResource("Curve3D_tox8f")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=566436998]
+transform = Transform3D(-0.7153159, 0, 0.6987493, 0, 0.99994004, 0, -0.69874465, 0, -0.7153206, 0.048119, -0.151484, 0.085899)
+rotation_mode = 1
+use_model_front = true
+loop = false
+tilt_enabled = false
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D" unique_id=98111876]
+process_priority = 100
+transform = Transform3D(-0.99471277, -0.10274207, 0.0045129806, -0.10280409, 0.9922091, -0.07065448, 0.0027812421, -0.07074302, -0.9974991, -0.17590904, 2.1399226, -1.0728302)
+current = true
+fov = 51.661728
+near = 0.042
+far = 4028.7
+script = ExtResource("level_street_camera")
