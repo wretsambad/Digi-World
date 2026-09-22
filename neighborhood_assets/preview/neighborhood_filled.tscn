@@ -308,11 +308,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -87)
 metadata/category = "Houses"
 
 [node name="House_North_03" parent="ExistingNeighborhood" unique_id=512808211 instance=ExtResource("m7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -87)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -87)
 metadata/category = "Houses"
 
 [node name="House_North_04" parent="ExistingNeighborhood" unique_id=341238871 instance=ExtResource("m9")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -87)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 25, 0, -87)
 metadata/category = "Houses"
 
 [node name="House_North_05" parent="ExistingNeighborhood" unique_id=1203437410 instance=ExtResource("m3")]
@@ -6715,7 +6715,7 @@ metadata/purpose = "Homes and gardens filling the extended camera route"
 [node name="PeachLane" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=93361159]
 
 [node name="House" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=1718466109 instance=ExtResource("m6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -89)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14, 0, -89)
 
 [node name="FrontWalk" parent="ExistingNeighborhood/CameraRouteInfill/PeachLane" unique_id=843621645 instance=ExtResource("recreation_4")]
 transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 10.1, 14, 0.095, -78.55)
@@ -6744,7 +6744,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 15.2, 0, -72.9)
 [node name="CedarLane" type="Node3D" parent="ExistingNeighborhood/CameraRouteInfill" unique_id=1605731425]
 
 [node name="House" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=337151113 instance=ExtResource("m9")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 0, -89)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 36.974773, -0.015759468, -88.977356)
 
 [node name="FrontWalk" parent="ExistingNeighborhood/CameraRouteInfill/CedarLane" unique_id=246059868 instance=ExtResource("recreation_4")]
 transform = Transform3D(0.65, 0, 0, 0, 1, 0, 0, 0, 10.1, 37, 0.095, -78.55)

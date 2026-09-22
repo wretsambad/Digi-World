@@ -1,23 +1,18 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dcu8hg38b3qpq"]
 
-[ext_resource type="Script" path="res://bedroom_assets/bedroom_arrival.gd" id="1_c5ypq"]
+[ext_resource type="Script" uid="uid://clcpd8c57xkgc" path="res://bedroom_assets/bedroom_arrival.gd" id="1_c5ypq"]
 [ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="2_h0q5s"]
 [ext_resource type="PackedScene" path="res://bedroom_assets/nearby_neighborhood.tscn" id="3_jxknc"]
-[ext_resource type="Environment" path="res://bedroom_assets/neighborhood_environment.tres" id="4_tfi6f"]
+[ext_resource type="Environment" uid="uid://ywbnkjvqaakm" path="res://bedroom_assets/neighborhood_environment.tres" id="4_tfi6f"]
 
 [node name="TeenBedroom" type="Node3D" unique_id=218072624]
 script = ExtResource("1_c5ypq")
 metadata/separate_scene = true
 metadata/exterior_instance_count = 544
 
-[node name="LearningHouseDetailed" type="Node3D" parent="." unique_id=1768198947 instance=ExtResource("2_h0q5s")]
-metadata/source_house_path = "ExistingNeighborhood/LearningHouse"
-metadata/window_world_center = Vector3(11.840567, 5.5518985, -29.289724)
+[node name="LearningHouseDetailed" parent="." unique_id=1768198947 instance=ExtResource("2_h0q5s")]
 
-[node name="NearbyNeighborhood" type="Node3D" parent="." unique_id=1062087736 instance=ExtResource("3_jxknc")]
-metadata/source_scene = "res://neighborhood_assets/preview/neighborhood_filled.tscn"
-metadata/retained_model_instances = 543
-metadata/purpose = "Nearby block and existing window-visible tree backdrop; no full neighborhood dependency"
+[node name="NearbyNeighborhood" parent="." unique_id=1062087736 instance=ExtResource("3_jxknc")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1648109889]
 environment = ExtResource("4_tfi6f")
@@ -27,7 +22,6 @@ transform = Transform3D(0.88294756, 0.31413782, -0.34888536, 0, 0.7431448, 0.669
 light_color = Color(1, 0.93, 0.8, 1)
 light_energy = 0.55
 shadow_enabled = true
-directional_shadow_max_distance = 100.0
 
 [node name="EntryCamera" type="Camera3D" parent="." unique_id=1638587547]
 transform = Transform3D(0.89327663, -0.07378933, 0.44340953, 0, 0.9864344, 0.16415599, -0.44950736, -0.14663671, 0.88115877, 17.300566, 5.421899, -25.969725)
