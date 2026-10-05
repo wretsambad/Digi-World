@@ -1,0 +1,73 @@
+extends SceneTree
+var game: Node3D
+var failures: Array[String] = []
+func _initialize(): call_deferred("run")
+func check(ok: bool, message: String):
+	if not ok: failures.append(message)
+func shot(label: String):
+	for i in range(4): await process_frame
+	if DisplayServer.get_name() == "headless": return
+	await RenderingServer.frame_post_draw
+	root.get_texture().get_image().save_png("res://.impeccable/review/typing-"+label+".png")
+func run():
+	root.size = Vector2i(1280,900)
+	var scene = load("res://bedroom_assets/teen_bedroom.tscn").instantiate()
+	root.add_child(scene)
+	game = scene.get_node("BedroomGameplay")
+	game.set_process(false)
+	var tour = game.lesson_tour
+	check(tour.welcome_heading.visible_characters == 0, "Welcome starts unwritten")
+	game._process(.4)
+	check(tour.welcome_heading.visible_characters > 0 and tour.welcome_heading.visible_characters < tour.welcome_heading.get_total_character_count(), "Welcome writes progressively")
+	check(tour.welcome_intro.visible_characters == 0, "Welcome heading leads its introduction")
+	await shot("welcome-mid")
+	tour.welcome_next.pressed.emit()
+	game._process(2.61)
+	check(tour.title_label.visible_characters == 0 and tour.body_label.visible_characters == 0, "Lesson text waits for camera arrival")
+	game._process(.4)
+	check(tour.title_label.visible_characters > 0 and tour.body_label.visible_characters == 0, "Lesson title leads description")
+	await shot("title-mid")
+	var bounds: Rect2 = tour.card.get_global_rect()
+	game._process(.6)
+	check(tour.body_label.visible_characters > 0 and tour.body_label.visible_characters < tour.body_label.get_total_character_count(), "Description writes progressively")
+	await shot("body-mid")
+	tour.pause_button.pressed.emit()
+	var paused_at: int = tour.body_label.visible_characters
+	game._process(10)
+	check(tour.body_label.visible_characters == paused_at and tour.index == 0, "Pause holds dialogue and timer")
+	check(tour.pause_button.get_node("TypedCaption").text == "Resume", "Paused control announces Resume")
+	tour.pause_button.pressed.emit()
+	game._process(10)
+	check(tour.index == 0 and is_zero_approx(tour.elapsed), "Long frames cannot consume the reading interval while writing")
+	await shot("complete")
+	check(bounds.is_equal_approx(tour.card.get_global_rect()), "Typing does not shift or resize the card: %s -> %s" % [bounds, tour.card.get_global_rect()])
+	game._process(7.9)
+	check(tour.index == 0, "Full reading interval follows final letter")
+	game._process(.2)
+	check(tour.index == 1 and tour.travelling, "Tour advances after writing and reading")
+	game._process(2.61)
+	game._process(.3)
+	tour.next_button.pressed.emit()
+	check(tour.index == 2, "Next remains usable during typing")
+	check(not game.text_writer.is_writing(tour.body_label), "Fast Next cancels previous text jobs")
+	game._process(2.61)
+	game._process(.2)
+	var event := InputEventMouseButton.new()
+	event.pressed = true
+	event.button_index = MOUSE_BUTTON_LEFT
+	tour.card.gui_input.emit(event)
+	check(not game.text_writer.is_writing(tour.body_label) and tour.body_label.visible_characters == tour.body_label.get_total_character_count(), "Clicking dialogue completes the writing")
+	tour.next_button.pressed.emit()
+	game._process(2.61)
+	tour.next_button.pressed.emit()
+	game._process(2.41)
+	var play_caption = game.play_button.get_node("TypedCaption")
+	check(play_caption.visible_characters == 0, "Bedroom Play caption starts unwritten")
+	game._process(.03)
+	check(play_caption.visible_characters > 0 and play_caption.visible_characters < 4, "Play caption writes progressively")
+	game._process(.2)
+	check(play_caption.visible_characters == 4, "Play finishes writing")
+	for message in failures: push_error(message)
+	if failures.is_empty(): print("TEXT WRITER PASS: ordered welcome and lesson reveals, steady layout, pause/resume, full reading interval, skip/reveal controls, and bedroom Play.")
+	scene.free()
+	quit(0 if failures.is_empty() else 1)

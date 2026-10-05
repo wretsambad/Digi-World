@@ -1,0 +1,42 @@
+{
+  "title": "Welcome to Digi World",
+  "question": "Which opening should greet players as the camera follows the neighborhood path?",
+  "options": [
+    {
+      "id": "skyline-story",
+      "label": "Skyline Story",
+      "kicker": "THE ROLL",
+      "thesis": "A bright, oversized hello lives in the open sky while the neighborhood stays the hero.",
+      "palette": ["#F9EFDA", "#61CB8B", "#FF7E44", "#515566"],
+      "materials": ["soft low-poly world", "cream display lettering", "gentle text motion"],
+      "viewport": "Welcome to Digi World stretches across the upper sky; a short invitation sits below it, and the existing Play action appears at the bottom after the first camera beat. The title settles into a small corner mark before the flight ends.",
+      "risk": "The text needs a subtle sky tint behind it when the camera crosses brighter scenery.",
+      "comp": ".impeccable/mocks/decision/skyline-story.png"
+    },
+    {
+      "id": "route-ribbon",
+      "label": "Route Ribbon",
+      "kicker": "ALTERNATE",
+      "thesis": "A friendly route strip grounds the welcome in the road the camera is exploring.",
+      "palette": ["#F9EFDA", "#407E80", "#FF7E44", "#61CB8B"],
+      "materials": ["cream route card", "rounded wayfinding forms", "low-poly scenery"],
+      "viewport": "The upper view is completely open. A broad cream ribbon follows the lower edge, carrying the welcome on the left, a tiny path motif through the center, and Play on the right. It can slide away when the flight reaches its destination.",
+      "risk": "A tall ribbon could cover too much of the road on smaller displays.",
+      "comp": ".impeccable/mocks/decision/route-ribbon.png"
+    },
+    {
+      "id": "storybook-window",
+      "label": "Storybook Window",
+      "kicker": "ALTERNATE",
+      "thesis": "The street becomes a living picture inside a warm invitation card.",
+      "palette": ["#F9EFDA", "#515566", "#61CB8B", "#FF7E44"],
+      "materials": ["cream paper-like frame", "cutout scene window", "soft rounded buttons"],
+      "viewport": "A roomy, centered cream frame names Digi World above a wide live window into the moving neighborhood. One sentence and a clear Play button sit underneath. The frame opens outward and disappears as the journey begins.",
+      "risk": "It briefly hides more of the 3D world, so its opening transition must be quick and graceful.",
+      "comp": ".impeccable/mocks/decision/storybook-window.png"
+    }
+  ],
+  "reroll": true,
+  "steer": true,
+  "buildPath": { "value": "comp", "toggle": true }
+}

@@ -4,10 +4,16 @@ extends Node
 
 signal bedroom_entered
 
+const BEDROOM_SCENE = preload("res://bedroom_assets/teen_bedroom.tscn")
+const HANDOFF_KEY = &"digi_world_bedroom_camera"
+
 @export_range(1.0, 8.0, 0.1) var flight_speed_multiplier: float = 4.0
 @export var acceleration_seconds: float = 2.8
-@export var play_delay_seconds: float = 3.0
-@export var play_fade_seconds: float = 1.0
+@export var play_delay_seconds: float = 4.4
+@export var play_fade_seconds: float = 0.8
+@export_range(0.5, 3.0, 0.1) var intro_speed: float = 1.0
+@export_range(0.1, 1.0, 0.05) var preview_speed: float = 0.7
+@export var enable_bedroom_player: bool = true
 
 enum State { PREVIEW, TURNING, FLYING, BEDROOM }
 var state: State = State.PREVIEW
@@ -32,17 +38,24 @@ var _room_distance: float = 0.0
 @onready var street: Path3D = scene.get_node("Path3D")
 @onready var camera: Camera3D = scene.get_node("Path3D/PathFollow3D/Camera3D")
 @onready var play_button: Button = scene.get_node("ExistingNeighborhood/CanvasLayer/PlayButton")
+@onready var background_veil: ColorRect = scene.get_node("ExistingNeighborhood/CanvasLayer/BackgroundVeil")
+@onready var welcome_overlay: DigiWorldWelcomeOverlay = scene.get_node("ExistingNeighborhood/CanvasLayer/WelcomeOverlay")
+@onready var tips_popup: DigiWorldTipsPopup = scene.get_node("ExistingNeighborhood/CanvasLayer/TipsPopup")
 @onready var window_target: Marker3D = scene.get_node("BedroomWindowTarget")
 @onready var bedroom_view: Marker3D = scene.get_node("BedroomView")
 
 func _ready() -> void:
 	play_button.pressed.connect(start_game)
+	animation.speed_scale = preview_speed
 	# The preview eases at its endpoints. Use its mean cruising speed rather
 	# than an instantaneous near-zero speed at a turnaround.
 	var preview := animation.get_animation("camera_preview")
 	cruise_speed = street.curve.get_baked_length() * street.global_basis.get_scale().x / preview.length * flight_speed_multiplier
 	_previous_position = camera.global_position
 	play_button.modulate.a = 0.0
+	_set_background_blur(0.0)
+	welcome_overlay.update_intro(0.0, play_delay_seconds, 0.0)
+	tips_popup.modulate.a = 0.0
 	play_button.disabled = true
 	play_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	play_button.focus_mode = Control.FOCUS_NONE
@@ -54,6 +67,9 @@ func start_game() -> void:
 	camera.set_process(false)
 	play_button.disabled = true
 	play_button.hide()
+	create_tween().tween_method(_set_background_blur, 1.0, 0.0, 0.55).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	welcome_overlay.begin_flight()
+	tips_popup.begin_flight()
 	flight_curve = build_flight_curve(camera.global_position)
 	distance = 0.0
 	speed = 0.0
@@ -135,11 +151,19 @@ func advance_preview(delta: float) -> void:
 		_preview_elapsed += delta
 		_preview_velocity = (camera.global_position - _previous_position) / maxf(delta, 0.0001)
 	_previous_position = camera.global_position
-	var opacity := _ease((_preview_elapsed - play_delay_seconds) / maxf(play_fade_seconds, 0.1))
+	var intro_elapsed := _preview_elapsed * intro_speed
+	var opacity := _ease((intro_elapsed - play_delay_seconds) / maxf(play_fade_seconds, 0.1))
 	play_button.modulate.a = opacity
+	_set_background_blur(_ease(intro_elapsed / 0.7))
+	welcome_overlay.update_intro(intro_elapsed, play_delay_seconds, opacity)
+	tips_popup.reveal(_ease((intro_elapsed - play_delay_seconds - 0.3) / 0.8))
 	play_button.disabled = opacity <= 0.0
 	play_button.mouse_filter = Control.MOUSE_FILTER_IGNORE if opacity <= 0.0 else Control.MOUSE_FILTER_STOP
 	play_button.focus_mode = Control.FOCUS_NONE if opacity <= 0.0 else Control.FOCUS_ALL
+
+func _set_background_blur(strength: float) -> void:
+	var blur_material := background_veil.material as ShaderMaterial
+	blur_material.set_shader_parameter("blur_strength", strength)
 
 # Quintic easing has zero acceleration and jerk at each speed transition.
 func _ease(value: float) -> float:
@@ -213,3 +237,21 @@ func advance_flight(delta: float) -> void:
 			state = State.BEDROOM
 			set_process(false)
 			bedroom_entered.emit()
+			if enable_bedroom_player:
+				_enter_bedroom_scene()
+
+func _enter_bedroom_scene() -> void:
+	var seated_character := scene.get_node("ExistingNeighborhood/LearningHouse/BedroomInterior/StudyCorner/SeatedCharacter")
+	get_tree().set_meta(HANDOFF_KEY, {
+		"transform": camera.global_transform,
+		"fov": camera.fov,
+		"near": camera.near,
+		"far": camera.far,
+		"keep_aspect": camera.keep_aspect,
+		"flight_complete": true,
+		"seated_clock": seated_character.clock,
+	})
+	var result := get_tree().change_scene_to_packed(BEDROOM_SCENE)
+	if result != OK:
+		get_tree().remove_meta(HANDOFF_KEY)
+		push_error("Could not open the bedroom: " + error_string(result))

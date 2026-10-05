@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="2_h0q5s"]
 [ext_resource type="PackedScene" path="res://bedroom_assets/nearby_neighborhood.tscn" id="3_jxknc"]
 [ext_resource type="Environment" uid="uid://ywbnkjvqaakm" path="res://bedroom_assets/neighborhood_environment.tres" id="4_tfi6f"]
+[ext_resource type="PackedScene" path="res://bedroom_assets/bedroom_gameplay.tscn" id="bedroom_gameplay"]
 
 [node name="TeenBedroom" type="Node3D" unique_id=218072624]
 script = ExtResource("1_c5ypq")
@@ -59,3 +60,5 @@ transform = Transform3D(0.652133, 0.08595942, -0.75321543, 0, 0.99355084, 0.1133
 fov = 68.0
 near = 0.04
 far = 180.0
+
+[node name="BedroomGameplay" parent="." unique_id=1997588627 instance=ExtResource("bedroom_gameplay")]

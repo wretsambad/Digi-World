@@ -72,40 +72,47 @@
 [ext_resource type="PackedScene" uid="uid://d3dw5mkktgah0" path="res://neighborhood_assets/recreation_models/soccer_goal.glb" id="recreation_16"]
 [ext_resource type="PackedScene" uid="uid://bysgjeltensya" path="res://neighborhood_assets/recreation_models/soccer_ball.glb" id="recreation_17"]
 [ext_resource type="PackedScene" uid="uid://cvm5bvmvgot37" path="res://neighborhood_assets/recreation_models/soccer_sign.glb" id="recreation_18"]
+[ext_resource type="Script" uid="uid://b4qhgeux4ii8e" path="res://neighborhood_assets/preview/tips_popup.gd" id="tips_popup"]
+[ext_resource type="Shader" uid="uid://cs1vu3mn1dm5a" path="res://neighborhood_assets/preview/welcome_background_blur.gdshader" id="welcome_background_blur"]
+[ext_resource type="Texture2D" uid="uid://iaclyiotqlbd" path="res://neighborhood_assets/preview/logo_globe.svg" id="welcome_globe"]
+[ext_resource type="Script" uid="uid://cd8evosfed4n6" path="res://neighborhood_assets/preview/welcome_overlay.gd" id="welcome_overlay"]
+
+[sub_resource type="ShaderMaterial" id="welcome_blur_material"]
+shader = ExtResource("welcome_background_blur")
+shader_parameter/blur_strength = 0.0
 
 [sub_resource type="StyleBoxFlat" id="play_normal"]
-bg_color = Color(0.975, 0.945, 0.855, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.13, 0.25, 0.25, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-shadow_color = Color(0, 0, 0, 0.2)
-shadow_size = 5
-shadow_offset = Vector2(0, 3)
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.498, 0.259, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.25)
+shadow_size = 12
+shadow_offset = Vector2(0, 7)
 
 [sub_resource type="StyleBoxFlat" id="play_pressed"]
-bg_color = Color(0.73, 0.87, 0.77, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(0.86, 0.322, 0.18, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
 
 [sub_resource type="StyleBoxFlat" id="play_hover"]
-bg_color = Color(1, 0.99, 0.94, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.13, 0.25, 0.25, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+content_margin_left = 20.0
+content_margin_right = 20.0
+bg_color = Color(1, 0.588, 0.369, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0, 0, 0, 0.29)
+shadow_size = 14
+shadow_offset = Vector2(0, 8)
 
 [sub_resource type="StyleBoxFlat" id="play_focus"]
 bg_color = Color(0, 0, 0, 0)
@@ -113,11 +120,11 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.95, 0.62, 0.2, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
+border_color = Color(0.975, 0.945, 0.855, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
 
 [sub_resource type="ProceduralSkyMaterial" id="sky_material"]
 sky_top_color = Color(0.43, 0.66, 0.83, 1)
@@ -6742,6 +6749,58 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -40.
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ExistingNeighborhood" unique_id=1297016291]
 
+[node name="BackgroundVeil" type="ColorRect" parent="ExistingNeighborhood/CanvasLayer" unique_id=1334193525]
+material = SubResource("welcome_blur_material")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="WelcomeOverlay" type="Control" parent="ExistingNeighborhood/CanvasLayer" unique_id=1802910842]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("welcome_overlay")
+
+[node name="BrandGroup" type="Control" parent="ExistingNeighborhood/CanvasLayer/WelcomeOverlay" unique_id=2062772759]
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="LogoBody" type="Control" parent="ExistingNeighborhood/CanvasLayer/WelcomeOverlay/BrandGroup" unique_id=903230801]
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="Globe" type="TextureRect" parent="ExistingNeighborhood/CanvasLayer/WelcomeOverlay/BrandGroup/LogoBody" unique_id=662234815]
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("welcome_globe")
+
+[node name="Wordmark" type="Label" parent="ExistingNeighborhood/CanvasLayer/WelcomeOverlay/BrandGroup/LogoBody" unique_id=839650347]
+layout_mode = 0
+text = "DIGI WORLD"
+
+[node name="Slogan" type="Label" parent="ExistingNeighborhood/CanvasLayer/WelcomeOverlay/BrandGroup" unique_id=1909978618]
+layout_mode = 0
+text = "Become a Cyber Hero. Keep your world safe!"
+
+[node name="CornerMark" type="Label" parent="ExistingNeighborhood/CanvasLayer/WelcomeOverlay" unique_id=1458888956]
+layout_mode = 0
+text = "DIGI WORLD"
+
+[node name="TipsPopup" type="Panel" parent="ExistingNeighborhood/CanvasLayer" unique_id=1298219904]
+mouse_filter = 2
+script = ExtResource("tips_popup")
+
+[node name="TipText" type="RichTextLabel" parent="ExistingNeighborhood/CanvasLayer/TipsPopup" unique_id=1643382850]
+layout_mode = 0
+mouse_filter = 2
+
 [node name="PlayButton" type="Button" parent="ExistingNeighborhood/CanvasLayer" unique_id=1749353948]
 anchors_preset = 7
 anchor_left = 0.5
@@ -6749,16 +6808,17 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -110.0
-offset_top = -108.0
+offset_top = -250.0
 offset_right = 110.0
-offset_bottom = -44.0
+offset_bottom = -188.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_default_cursor_shape = 2
-theme_override_colors/font_color = Color(0.1, 0.22, 0.24, 1)
-theme_override_colors/font_pressed_color = Color(0.1, 0.22, 0.24, 1)
-theme_override_colors/font_hover_color = Color(0.1, 0.22, 0.24, 1)
-theme_override_font_sizes/font_size = 28
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("play_normal")
 theme_override_styles/pressed = SubResource("play_pressed")
 theme_override_styles/hover = SubResource("play_hover")

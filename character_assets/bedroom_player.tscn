@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://character_assets/bedroom_player.gd" id="1_62pwn"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5b4x"]
+radius = 0.26
+height = 1.84
+
+[node name="Player" type="CharacterBody3D" unique_id=1970741859]
+collision_layer = 2
+floor_snap_length = 0.18
+script = ExtResource("1_62pwn")
+
+[node name="BodyCollision" type="CollisionShape3D" parent="." unique_id=6217210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92, 0)
+shape = SubResource("CapsuleShape3D_p5b4x")
