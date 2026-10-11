@@ -13,6 +13,7 @@ const HANDOFF_KEY = &"digi_world_bedroom_camera"
 @export var play_fade_seconds: float = 0.8
 @export_range(0.5, 3.0, 0.1) var intro_speed: float = 1.0
 @export_range(0.1, 1.0, 0.05) var preview_speed: float = 0.7
+@export_range(0.1, 3.0, 0.1) var preview_fade_seconds: float = 0.8
 @export var enable_bedroom_player: bool = true
 
 enum State { PREVIEW, TURNING, FLYING, BEDROOM }
@@ -32,6 +33,7 @@ var _preview_velocity := Vector3.ZERO
 var _motion: Array[Dictionary] = []
 var _flight_duration: float = 0.0
 var _room_distance: float = 0.0
+var _preview_loop_tween: Tween
 
 @onready var scene: Node3D = get_parent()
 @onready var animation: AnimationPlayer = scene.get_node("AnimationPlayer")
@@ -39,6 +41,7 @@ var _room_distance: float = 0.0
 @onready var camera: Camera3D = scene.get_node("Path3D/PathFollow3D/Camera3D")
 @onready var play_button: Button = scene.get_node("ExistingNeighborhood/CanvasLayer/PlayButton")
 @onready var background_veil: ColorRect = scene.get_node("ExistingNeighborhood/CanvasLayer/BackgroundVeil")
+@onready var preview_fade: ColorRect = scene.get_node("ExistingNeighborhood/CanvasLayer/PreviewFade")
 @onready var welcome_overlay: DigiWorldWelcomeOverlay = scene.get_node("ExistingNeighborhood/CanvasLayer/WelcomeOverlay")
 @onready var tips_popup: DigiWorldTipsPopup = scene.get_node("ExistingNeighborhood/CanvasLayer/TipsPopup")
 @onready var window_target: Marker3D = scene.get_node("BedroomWindowTarget")
@@ -46,6 +49,7 @@ var _room_distance: float = 0.0
 
 func _ready() -> void:
 	play_button.pressed.connect(start_game)
+	animation.animation_finished.connect(_on_preview_finished)
 	animation.speed_scale = preview_speed
 	# The preview eases at its endpoints. Use its mean cruising speed rather
 	# than an instantaneous near-zero speed at a turnaround.
@@ -63,6 +67,9 @@ func _ready() -> void:
 func start_game() -> void:
 	if state != State.PREVIEW:
 		return
+	if _preview_loop_tween != null:
+		_preview_loop_tween.kill()
+	preview_fade.color.a = 0.0
 	animation.pause()
 	camera.set_process(false)
 	play_button.disabled = true
@@ -84,6 +91,27 @@ func start_game() -> void:
 	_plan_motion(initial_speed)
 	state = State.TURNING if _turn_seconds > 0.0 else State.FLYING
 	set_process(true)
+
+func _on_preview_finished(animation_name: StringName) -> void:
+	if animation_name != &"camera_preview" or state != State.PREVIEW:
+		return
+	if _preview_loop_tween != null and _preview_loop_tween.is_running():
+		return
+	_preview_loop_tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_preview_loop_tween.tween_property(preview_fade, "color:a", 1.0, preview_fade_seconds)
+	_preview_loop_tween.tween_callback(_restart_preview)
+	_preview_loop_tween.tween_interval(0.1)
+	_preview_loop_tween.tween_property(preview_fade, "color:a", 0.0, preview_fade_seconds)
+
+func _restart_preview() -> void:
+	if state != State.PREVIEW:
+		return
+	# Clouds fully cover the street here, hiding the return to the start.
+	animation.play(&"camera_preview")
+	animation.seek(0.0, true)
+	camera.snap_to_path()
+	_previous_position = camera.global_position
+	_preview_velocity = Vector3.ZERO
 
 func build_flight_curve(start: Vector3) -> Curve3D:
 	var window := window_target.global_position

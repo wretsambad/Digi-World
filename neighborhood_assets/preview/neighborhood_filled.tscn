@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://derb788hgktys"]
 
 [ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="bedroom_shared"]
+[ext_resource type="Shader" path="res://neighborhood_assets/preview/cloud_transition.gdshader" id="cloud_transition"]
 [ext_resource type="PackedScene" path="res://neighborhood_assets/preview/east_background_roads.tscn" id="east_roads"]
 [ext_resource type="PackedScene" uid="uid://drslow14q6p6c" path="res://neighborhood_assets/models/stepping_stone.glb" id="fill_0"]
 [ext_resource type="PackedScene" uid="uid://bopvimawqxjvm" path="res://neighborhood_assets/sightline_models/continuation_west_road.glb" id="fill_4"]
@@ -76,6 +77,9 @@
 [ext_resource type="Shader" uid="uid://cs1vu3mn1dm5a" path="res://neighborhood_assets/preview/welcome_background_blur.gdshader" id="welcome_background_blur"]
 [ext_resource type="Texture2D" uid="uid://iaclyiotqlbd" path="res://neighborhood_assets/preview/logo_globe.svg" id="welcome_globe"]
 [ext_resource type="Script" uid="uid://cd8evosfed4n6" path="res://neighborhood_assets/preview/welcome_overlay.gd" id="welcome_overlay"]
+
+[sub_resource type="ShaderMaterial" id="cloud_transition_material"]
+shader = ExtResource("cloud_transition")
 
 [sub_resource type="ShaderMaterial" id="welcome_blur_material"]
 shader = ExtResource("welcome_background_blur")
@@ -167,7 +171,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_8wk7v"]
 resource_name = "camera_preview"
 length = 25.1
-loop_mode = 2
+loop_mode = 0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -6757,6 +6761,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="PreviewFade" type="ColorRect" parent="ExistingNeighborhood/CanvasLayer"]
+material = SubResource("cloud_transition_material")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
 
 [node name="WelcomeOverlay" type="Control" parent="ExistingNeighborhood/CanvasLayer" unique_id=1802910842]
 layout_mode = 3
