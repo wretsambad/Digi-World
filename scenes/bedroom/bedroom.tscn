@@ -1,0 +1,3 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="PackedScene" path="res://bedroom_assets/teen_bedroom.tscn" id="1"]
+[node name="Bedroom" instance=ExtResource("1")]

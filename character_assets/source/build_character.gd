@@ -144,5 +144,3 @@ func prism(parent: Node, label: String, points: PackedVector2Array, depth: float
 	n.material_override = palette[color]
 	put(parent,n,label)
 	return n
-
-

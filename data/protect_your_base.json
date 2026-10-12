@@ -1,0 +1,13 @@
+{
+  "steps": [
+    {"id": 1, "prompt": "Start with at least 8 letters", "material": "PLASTIC", "explanation": "More letters give our toy gate a stronger start!", "options": [
+      {"text":"fern", "correct":false}, {"text":"mossycomet", "correct":true}, {"text":"alex2016", "correct":false}, {"text":"password123", "correct":false}
+    ]},
+    {"id": 2, "prompt": "Keep your words. Mix BIG + small letters", "material": "WOOD", "explanation": "MossyComet keeps our words and mixes letter sizes. Wood defenses, coming up!", "options": [
+      {"text":"mossycomet", "correct":false}, {"text":"MOSSYCOMET", "correct":false}, {"text":"MossyComet", "correct":true}, {"text":"MoSs", "correct":false}
+    ]},
+    {"id": 3, "prompt": "Now add a number AND a symbol", "material": "METAL", "explanation": "MossyComet7! keeps every earlier rule and adds two new ingredients!", "options": [
+      {"text":"MossyComet7", "correct":false}, {"text":"MossyComet!", "correct":false}, {"text":"mossycomet7!", "correct":false}, {"text":"MossyComet7!", "correct":true}
+    ]}
+  ]
+}

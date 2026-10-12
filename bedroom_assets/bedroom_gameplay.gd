@@ -13,11 +13,12 @@ var look_captured := false
 var _entry_elapsed := 0.0
 var _entry_pose: Transform3D
 var _entry_fov := 72.0
-enum Phase { WAITING, ARRIVING, ZOOMING, PLAYING, WELCOME, TOUR }
+enum Phase { WAITING, ARRIVING, ZOOMING, PLAYING, WELCOME, TOUR, COMPUTER }
 var phase := Phase.WAITING
 var lesson_tour: Control
 var lesson_outline: Node
 var lesson_focus: Control
+var computer_lesson: Node
 var text_writer = preload("res://bedroom_assets/text_writer.gd").new()
 var seated_character: Node3D
 var play_button: Button
@@ -70,6 +71,9 @@ func _ready() -> void:
 	lesson_focus = preload("res://bedroom_assets/lesson_focus.gd").new()
 	$Controls.add_child(lesson_focus)
 	lesson_focus.setup(self)
+	computer_lesson = preload("res://scripts/ComputerSession.gd").new()
+	add_child(computer_lesson)
+	computer_lesson.setup(self)
 	set_active(false)
 	camera.global_transform = _intro_pose
 	camera.fov = 62.0
@@ -180,6 +184,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		player.controls_enabled = false
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if look_captured and phase == Phase.PLAYING and lesson_focus.pick_lesson() == 0:
+			computer_lesson.start()
+			get_viewport().set_input_as_handled()
+			return
 		look_captured = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		player.controls_enabled = true

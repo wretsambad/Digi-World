@@ -104,7 +104,7 @@ func set_focus(index: int) -> void:
 	card.lesson_index = index
 	heading.text = TOUR.STOPS[index].title
 	description.text = TOUR.STOPS[index].body
-	object_label.text = NAMES[index]
+	object_label.text = "Computer  /  Click to play" if index == 0 else NAMES[index]
 	position_card()
 	card.show()
 	card.modulate.a = 0.0

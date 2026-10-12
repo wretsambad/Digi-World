@@ -1,0 +1,8 @@
+{
+	"animation_players_compared": 0,
+	"checks": "Identical hierarchy, transforms, geometry, scripts, cameras and animation keys",
+	"mesh_instances_compared": 6890,
+	"nodes_compared": 8128,
+	"passed": true,
+	"unique_mesh_pairs": 644
+}

@@ -5,7 +5,7 @@ const INK := Color("16364a")
 const TRAVEL_SECONDS := 2.6
 const READ_SECONDS := 8.0
 const STOPS := [
-	{"node":"Lesson_Computer", "title":"Build a stronger password", "body":"Explore what makes a password strong and how to keep your accounts safe.", "position":Vector3(-.25, 1.95, -1.7)},
+	{"node":"Lesson_Computer", "title":"Protect Your Base", "body":"Join Pip inside the computer. Build your base and discover how to keep its account safe.", "position":Vector3(-.25, 1.95, -1.7)},
 	{"node":"Lesson_SharingBoard", "title":"Think before you share", "body":"Choose what is safe to post and which personal details to keep private.", "position":Vector3(.35, 1.95, -1.6)},
 	{"node":"Lesson_Phone", "title":"Spot a suspicious message", "body":"Look for warning signs in messages before trusting a link or replying.", "position":Vector3(.6, 1.65, .05)},
 	{"node":"Lesson_BackupRobot", "title":"Give your files a backup", "body":"Discover how a backup can help you restore a project when something goes wrong.", "position":Vector3(-.6, 1.85, 1.5)},

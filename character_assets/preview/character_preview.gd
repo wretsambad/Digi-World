@@ -202,4 +202,3 @@ func _unhandled_input(event: InputEvent) -> void:
 			heading -= .3
 		elif event.keycode == KEY_RIGHT:
 			heading += .3
-

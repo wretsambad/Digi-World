@@ -106,4 +106,3 @@ func _process(delta: float) -> void:
 		return
 	var speed := 2.2 if preview_animation == "Walk" else (3.5 if preview_animation == "Jog" else 0.0)
 	animate(delta, speed)
-

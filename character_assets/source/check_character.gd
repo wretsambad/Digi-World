@@ -65,6 +65,3 @@ func run() -> void:
 		for error in failures.slice(0,15): push_error(error)
 		print("FAILURES: ",failures.size())
 	quit(0 if failures.is_empty() else 1)
-
-
-

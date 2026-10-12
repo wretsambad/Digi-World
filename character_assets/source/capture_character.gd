@@ -36,4 +36,3 @@ func run() -> void:
 		print("CAPTURED ",destination)
 	scene.free()
 	quit()
-
