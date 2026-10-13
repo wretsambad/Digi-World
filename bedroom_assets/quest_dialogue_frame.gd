@@ -35,7 +35,7 @@ func _draw() -> void:
 		var tip_x := size.x-70
 		draw_colored_polygon(PackedVector2Array([Vector2(tip_x-21,7),Vector2(tip_x,-20),Vector2(tip_x+27,7)]), INK)
 		draw_colored_polygon(PackedVector2Array([Vector2(tip_x-13,8),Vector2(tip_x,-13),Vector2(tip_x+19,8)]), PAPER)
-	else:
+	elif pointer_side != "none":
 		var x := 0.0 if pointer_side == "left" else size.x
 		var sign_x := -1.0 if pointer_side == "left" else 1.0
 		var y := size.y*.45

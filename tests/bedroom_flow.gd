@@ -1,69 +1,95 @@
 extends Node
-var failures: int = 0
-var capture: bool = false
+## Bedroom -> click the computer -> full lesson -> back to the bedroom.
+## Headless: godot --headless --path . res://tests/bedroom_flow.tscn
+## With screenshots: godot --path . res://tests/bedroom_flow.tscn -- --capture
 
-func check(condition: bool, message: String) -> void:
+const AUTOPLAY := preload("res://tests/lesson_autoplay.gd")
+
+var failures: Array[String] = []
+var capture := false
+var shots := 0
+
+
+func verify(condition: bool, message: String) -> void:
 	if not condition:
-		failures += 1
+		failures.append(message)
 		push_error(message)
 
+
 func snapshot(label: String) -> void:
-	if not capture: return
+	if not capture:
+		return
 	await RenderingServer.frame_post_draw
-	get_viewport().get_texture().get_image().save_png("res://.impeccable/review/new-"+label+".png")
+	shots += 1
+	get_viewport().get_texture().get_image().save_png("res://work/review/bedroom_%02d_%s.png" % [shots, label])
+
 
 func _ready() -> void:
 	capture = "--capture" in OS.get_cmdline_user_args()
-	get_window().size = Vector2i(1280,720)
-	PlayerProfile.muted = true
+	if capture:
+		DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path("res://work/review"))
+	AudioManager.muted = not capture
+	PlayerProfile.reset()
 	var room: Node3D = preload("res://scenes/bedroom/bedroom.tscn").instantiate()
 	add_child(room)
 	var game: Node3D = room.get_node("BedroomGameplay")
 	await get_tree().process_frame
-	check(game.phase==game.Phase.WELCOME,"Bedroom welcome missing")
 	game.lesson_tour.hide()
 	game.show_seated_intro()
 	game.start_first_person()
-	await get_tree().create_timer(2.7).timeout
-	check(game.phase==game.Phase.PLAYING,"First person entry failed")
+	await get_tree().create_timer(2.8).timeout
+	verify(game.phase == game.Phase.PLAYING, "First-person entry failed")
+	# Face the computer and click it, the way a player would.
 	var computer: Node3D = game.room.get_node("Lesson_Computer/Computer")
-	game.camera.look_at(computer.global_position+Vector3.UP*.5)
-	check(game.lesson_focus.pick_lesson()==0,"Computer cannot be selected from first person")
+	var target: Vector3 = computer.global_position + Vector3.UP * 0.5
+	var eye: Vector3 = game.first_person_pose().origin
+	var to_target := (target - eye).normalized()
+	game.yaw = atan2(-to_target.x, -to_target.z)
+	game.pitch = asin(to_target.y)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	verify(game.lesson_focus.pick_lesson() == 0, "The computer can't be picked from first person")
 	var click := InputEventMouseButton.new()
 	click.button_index = MOUSE_BUTTON_LEFT
 	click.pressed = true
 	game._unhandled_input(click)
-	check(game.computer_lesson.state=="intro","Click did not launch computer lesson")
-	await get_tree().create_timer(4.8).timeout
-	await snapshot("typing")
-	await get_tree().create_timer(3.5).timeout
 	var session: Node = game.computer_lesson
-	check(session.state=="game","Monitor entry failed")
-	check(session.viewport.get_parent()==session.container,"Viewport not shared with fullscreen")
-	var lesson: Node3D = session.lesson
-	lesson.customization_page = 3
-	lesson.show_customization()
-	lesson.ui.action.pressed.emit()
-	lesson.ui.action.pressed.emit()
-	for choice in [1,2,3]:
-		lesson.choose(choice)
-		await get_tree().create_timer(.95).timeout
-		lesson.ui.action.pressed.emit()
-	await get_tree().create_timer(2).timeout
-	lesson.ui.action.pressed.emit()
-	await get_tree().create_timer(3).timeout
-	check(session.state=="complete","Bedroom return failed")
-	check(session.screen.visible and session.next_button.visible,"Monitor or next button missing")
-	check(session.viewport.get_parent()==session,"Monitor viewport not restored")
-	check(session.viewport.render_target_update_mode==SubViewport.UPDATE_ALWAYS,"Returned monitor rendering stopped")
-	if capture:
-		await RenderingServer.frame_post_draw
-		var pixels: Image = session.viewport.get_texture().get_image()
-		check(pixels.get_pixel(pixels.get_width()/2,pixels.get_height()/2).get_luminance()>.02,"Returned monitor is black")
-	await snapshot("bedroom-complete")
-	session.next_button.pressed.emit()
-	check(game.phase==game.Phase.TOUR and game.lesson_tour.index==1 and game.lesson_tour.visible,"Next lesson preview failed")
-	print("BEDROOM FLOW: ","PASS" if failures==0 else "FAIL"," (",failures," failures; original entry, typing, viewport, finale, next lesson)")
-	room.queue_free()
+	verify(session.state == "intro", "Clicking the computer did not start the lesson")
+	await get_tree().create_timer(2.2).timeout
+	await snapshot("typing")
+	await get_tree().create_timer(1.9).timeout
+	await snapshot("shoulder_click")
+	await get_tree().create_timer(1.4).timeout
+	await snapshot("game_icon_open")
+	await get_tree().create_timer(1.0).timeout
+	await snapshot("zoom_into_monitor")
+	await get_tree().create_timer(1.2).timeout
+	verify(session.state == "game", "Did not enter the full-screen game")
+	verify(session.viewport.get_parent() == session.container, "Viewport not moved to full screen")
+	await snapshot("fullscreen_game")
+	var lesson: ProtectYourBase = session.lesson
+	Engine.time_scale = 6.0
+	add_child(AUTOPLAY.new(lesson))
+	var waited := 0.0
+	while session.state != "return" and waited < 900.0:
+		await get_tree().create_timer(0.5).timeout
+		waited += 0.5
+	Engine.time_scale = 1.0
+	verify(session.state == "return", "Lesson never returned to the bedroom")
+	await get_tree().create_timer(1.0).timeout
+	await snapshot("pull_back")
+	await get_tree().create_timer(2.6).timeout
+	await snapshot("boy_celebrates")
+	verify(session.continue_button.visible, "Continue button missing")
+	verify(session.screen.visible, "Monitor screen should still show the treehouse")
+	verify(session.viewport.get_parent() == session, "Viewport not returned to the monitor")
+	verify(GameState.is_complete(GameState.PROTECT_YOUR_BASE), "Lesson not marked complete")
+	verify(game.room.get_node("Lesson_Computer").get_meta("lesson_status", "") == "complete", "Computer not marked complete")
+	session.continue_button.pressed.emit()
 	await get_tree().process_frame
-	get_tree().quit(failures)
+	verify(game.phase == game.Phase.PLAYING and game.active, "Continue did not return to the room")
+	verify(session.state == "idle", "Session not idle after Continue")
+	await get_tree().create_timer(0.5).timeout
+	await snapshot("back_in_room")
+	print("BEDROOM FLOW ", "PASS" if failures.is_empty() else "FAIL ", failures)
+	get_tree().quit(0 if failures.is_empty() else 1)

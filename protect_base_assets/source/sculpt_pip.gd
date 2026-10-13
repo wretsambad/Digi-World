@@ -110,16 +110,29 @@ func pigment(p: Vector3,t: float,a: float,kind: String) -> Color:
 		var brow := pow((absf(p.x)-.16)/.082,2)+pow((p.y-.165)/.032,2)
 		color = color.lerp(cream,(1-smoothstep(.35,1.45,brow))*smoothstep(.15,.25,p.z))
 		var blush := pow((absf(p.x)-.265)/.064,2)+pow((p.y+.07)/.043,2)
-		return color.lerp(Color("e08a6a"),(1-smoothstep(.2,1.5,blush))*.32*smoothstep(.12,.23,p.z))
+		var face := color.lerp(Color("e08a6a"),(1-smoothstep(.2,1.5,blush))*.32*smoothstep(.12,.23,p.z))
+		face.a = 0.0
+		return face
 	if kind == "ear":
 		var patch := pow(p.x/.091,2)+pow((p.y-.015)/.118,2)
-		return cream.lerp(Color("b5604a"),(1-smoothstep(.72,1.02,patch))*smoothstep(.012,.035,p.z))
+		var ear := cream.lerp(Color("b5604a"),(1-smoothstep(.72,1.02,patch))*smoothstep(.012,.035,p.z))
+		ear.a = 0.0
+		return ear
+	# Vertex alpha marks how much of each point is jacket, so the lesson can
+	# recolour Pip's outfit while keeping the painted bib and paws.
 	if kind == "body":
 		var bib := pow(p.x/.115,2)+pow((p.y-.298)/.13,2)
-		return palette["teal"].albedo_color.lerp(cream,(1-smoothstep(.70,1.25,bib))*smoothstep(.05,.11,p.z))
+		var k: float = (1-smoothstep(.70,1.25,bib))*smoothstep(.05,.11,p.z)
+		var jacket: Color = palette["teal"].albedo_color.lerp(cream,k)
+		jacket.a = 1.0-k
+		return jacket
 	if kind == "arm":
-		return palette["teal"].albedo_color.lerp(dark,smoothstep(.48,.50,t))
-	return dark
+		var sleeve: Color = palette["teal"].albedo_color.lerp(dark,smoothstep(.48,.50,t))
+		sleeve.a = 1.0-smoothstep(.48,.50,t)
+		return sleeve
+	var paw := dark
+	paw.a = 0.0
+	return paw
 
 func sculpt(parent: Node3D,label: String,kind: String,side: float=1) -> void:
 	var surface := SurfaceTool.new()
