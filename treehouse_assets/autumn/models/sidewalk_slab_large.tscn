@@ -40,9 +40,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wcup0")
 
-[node name="sidewalk_slab_large" type="Node3D" unique_id=512350802]
+[node name="sidewalk_slab_large" type="Node3D" unique_id=1385928783]
 
-[node name="sidewalk_slab_large_Mesh" type="MeshInstance3D" parent="." unique_id=1022946178]
+[node name="sidewalk_slab_large_Mesh" type="MeshInstance3D" parent="." unique_id=2012115829]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_7xojt")
 surface_material_override/0 = SubResource("StandardMaterial3D_arnjs")

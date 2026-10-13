@@ -964,182 +964,207 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m63jq")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxhlx"]
-resource_name = "Autumn_b17c86fffalse"
-albedo_color = Color(0.6950474, 0.48811516, 0.52441907, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb58v"]
+resource_name = "Autumn_985146fffalse"
+albedo_color = Color(0.5979919, 0.31694198, 0.27425084, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4mll"]
-resource_name = "Autumn_b37f88fffalse"
-albedo_color = Color(0.7020045, 0.4997932, 0.53526884, 1)
+resource_name = "Autumn_9b564bfffalse"
+albedo_color = Color(0.60969067, 0.33681947, 0.29537067, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ievgn"]
-resource_name = "Autumn_b27d86fffalse"
-albedo_color = Color(0.6965975, 0.49071723, 0.5268366, 1)
+resource_name = "Autumn_995247fffalse"
+albedo_color = Color(0.6005986, 0.32137102, 0.2789567, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fp0nx"]
-resource_name = "Autumn_b27e87fffalse"
-albedo_color = Color(0.6985908, 0.49406317, 0.5299452, 1)
+resource_name = "Autumn_9a5349fffalse"
+albedo_color = Color(0.60395044, 0.3270662, 0.28500783, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yjsiq"]
-resource_name = "Autumn_b48089fffalse"
-albedo_color = Color(0.7043484, 0.5037276, 0.5389242, 1)
+resource_name = "Autumn_9c584dfffalse"
+albedo_color = Color(0.613632, 0.34351635, 0.30248612, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fccc"]
-resource_name = "Autumn_b38089fffalse"
-albedo_color = Color(0.7030566, 0.50155926, 0.53690964, 1)
+resource_name = "Autumn_9c574cfffalse"
+albedo_color = Color(0.6114598, 0.33982545, 0.29856455, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r7oq"]
-resource_name = "Autumn_b4818afffalse"
-albedo_color = Color(0.7053818, 0.50546235, 0.5405359, 1)
-roughness = 0.94
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rb58v"]
-resource_name = "Autumn_b17d86fffalse"
-albedo_color = Color(0.6957675, 0.489324, 0.52554214, 1)
+resource_name = "Autumn_9d584efffalse"
+albedo_color = Color(0.61536986, 0.34646904, 0.30562338, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esfc7"]
-resource_name = "Autumn_b27e88fffalse"
-albedo_color = Color(0.6996243, 0.49579787, 0.5315569, 1)
-roughness = 0.94
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8j1m"]
-resource_name = "Autumn_e89d76fffalse"
-albedo_color = Color(0.9098039, 0.6156863, 0.4627451, 1)
-roughness = 0.94
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ypka"]
-resource_name = "Autumn_df8150fffalse"
-albedo_color = Color(0.8745098, 0.5058824, 0.3137255, 1)
-roughness = 0.94
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10g5t"]
-resource_name = "Autumn_e6b747fffalse"
-albedo_color = Color(0.9019608, 0.7176471, 0.2784314, 1)
-roughness = 0.94
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxhib"]
-resource_name = "Autumn_b94f65fffalse"
-albedo_color = Color(0.7254902, 0.30980393, 0.39607844, 1)
-roughness = 0.94
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0fku"]
-resource_name = "Autumn_f0cd69fffalse"
-albedo_color = Color(0.9411765, 0.8039216, 0.4117647, 1)
-roughness = 0.94
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8a0ju"]
-resource_name = "Autumn_af7983fffalse"
-albedo_color = Color(0.6879576, 0.47621447, 0.5133624, 1)
+resource_name = "Autumn_995146fffalse"
+albedo_color = Color(0.5992029, 0.31899956, 0.27643704, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02vft"]
-resource_name = "Autumn_b07a84fffalse"
-albedo_color = Color(0.68954504, 0.47887918, 0.5158381, 1)
+resource_name = "Autumn_9a5449fffalse"
+albedo_color = Color(0.6056882, 0.3300189, 0.2881451, 1)
+roughness = 0.94
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxhlx"]
+resource_name = "Autumn_9b554afffalse"
+albedo_color = Color(0.6075184, 0.33312857, 0.2914491, 1)
+roughness = 0.94
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_deaph"]
+resource_name = "Autumn_9a5348fffalse"
+albedo_color = Color(0.602244, 0.32416677, 0.28192723, 1)
+roughness = 0.94
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjwdy"]
+resource_name = "Autumn_leafc13d1fff"
+albedo_color = Color(0.75686276, 0.23921569, 0.12156863, 1)
+roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.49196076, 0.15549019, 0.079019606, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10g5t"]
+resource_name = "Autumn_leaf9a271bff"
+albedo_color = Color(0.6039216, 0.15294118, 0.105882354, 1)
+roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.392549, 0.09941176, 0.06882353, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ypka"]
+resource_name = "Autumn_leafb8341cff"
+albedo_color = Color(0.72156864, 0.20392157, 0.10980392, 1)
+roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.4690196, 0.13254902, 0.071372546, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxhib"]
+resource_name = "Autumn_954c40fffalse"
+albedo_color = Color(0.5860701, 0.29668546, 0.2527283, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xskvh"]
-resource_name = "Autumn_b07b84fffalse"
-albedo_color = Color(0.6905785, 0.4806139, 0.5174498, 1)
+resource_name = "Autumn_964d42fffalse"
+albedo_color = Color(0.5887395, 0.30122113, 0.25754744, 1)
 roughness = 0.94
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrms7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0fku"]
+resource_name = "Autumn_974e42fffalse"
+albedo_color = Color(0.59047735, 0.30417383, 0.2606847, 1)
+roughness = 0.94
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4wmx"]
 resource_name = "Autumn_c3b9a6fffalse"
 albedo_color = Color(0.7629412, 0.7237255, 0.6501961, 1)
 roughness = 0.94
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4wmx"]
-resource_name = "Autumn_f4e3c4fffalse"
-albedo_color = Color(0.95686275, 0.88823533, 0.76666665, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rp0o"]
+resource_name = "Autumn_f1dfbcfffalse"
+albedo_color = Color(0.94411767, 0.87254906, 0.7384314, 1)
 roughness = 0.94
 
-[sub_resource type="Gradient" id="Gradient_0rp0o"]
+[sub_resource type="Gradient" id="Gradient_njj6u"]
 colors = PackedColorArray(0.7341176, 0.59294116, 0.40588236, 1, 0.8267451, 0.6792941, 0.48392156, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_njj6u"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3w5la"]
 seed = 41
 frequency = 0.045
 fractal_octaves = 3
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3w5la"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xgjyc"]
 width = 128
 height = 128
-noise = SubResource("FastNoiseLite_njj6u")
-color_ramp = SubResource("Gradient_0rp0o")
+noise = SubResource("FastNoiseLite_3w5la")
+color_ramp = SubResource("Gradient_njj6u")
 seamless = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgjyc"]
-resource_name = "Autumn_d0a873fftrue"
-albedo_texture = SubResource("NoiseTexture2D_3w5la")
-roughness = 0.94
-uv1_scale = Vector3(3, 0.38, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p82jv"]
-resource_name = "Autumn_f0d0aefffalse"
-albedo_color = Color(0.93921566, 0.8137255, 0.68235296, 1)
+resource_name = "Autumn_d0a873fftrue"
+albedo_texture = SubResource("NoiseTexture2D_xgjyc")
+roughness = 0.94
+uv1_scale = Vector3(3, 0.38, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oogum"]
+resource_name = "Autumn_edcda9fffalse"
+albedo_color = Color(0.9282353, 0.8054902, 0.662549, 1)
 roughness = 0.94
 
-[sub_resource type="Gradient" id="Gradient_vjwdy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrms7"]
+resource_name = "Autumn_leafcf4a1bff"
+albedo_color = Color(0.8117647, 0.2901961, 0.105882354, 1)
+roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.527647, 0.18862745, 0.06882353, 1)
+
+[sub_resource type="Gradient" id="Gradient_mkynh"]
 colors = PackedColorArray(0.5294118, 0.38470587, 0.24705882, 1, 0.6129412, 0.4618039, 0.31803924, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_mkynh"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4tggm"]
 seed = 41
 frequency = 0.045
 fractal_octaves = 3
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4tggm"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yiqv5"]
 width = 128
 height = 128
-noise = SubResource("FastNoiseLite_mkynh")
-color_ramp = SubResource("Gradient_vjwdy")
+noise = SubResource("FastNoiseLite_4tggm")
+color_ramp = SubResource("Gradient_mkynh")
 seamless = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yiqv5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vy1ed"]
 resource_name = "Autumn_966d46fftrue"
-albedo_texture = SubResource("NoiseTexture2D_4tggm")
+albedo_texture = SubResource("NoiseTexture2D_yiqv5")
 roughness = 0.94
 uv1_scale = Vector3(3, 0.38, 1)
 
-[node name="house_bluebell" type="Node3D" unique_id=1993358543]
+[node name="house_bluebell" type="Node3D" unique_id=643658809]
 
-[node name="house_bluebell_Mesh" type="MeshInstance3D" parent="." unique_id=1001236227]
+[node name="house_bluebell_Mesh" type="MeshInstance3D" parent="." unique_id=1277219809]
 mesh = SubResource("ArrayMesh_lefko")
-surface_material_override/0 = SubResource("StandardMaterial3D_jxhlx")
+surface_material_override/0 = SubResource("StandardMaterial3D_rb58v")
 surface_material_override/1 = SubResource("StandardMaterial3D_w4mll")
 surface_material_override/2 = SubResource("StandardMaterial3D_ievgn")
 surface_material_override/3 = SubResource("StandardMaterial3D_fp0nx")
 surface_material_override/4 = SubResource("StandardMaterial3D_yjsiq")
 surface_material_override/5 = SubResource("StandardMaterial3D_5fccc")
 surface_material_override/6 = SubResource("StandardMaterial3D_8r7oq")
-surface_material_override/7 = SubResource("StandardMaterial3D_rb58v")
-surface_material_override/8 = SubResource("StandardMaterial3D_esfc7")
-surface_material_override/9 = SubResource("StandardMaterial3D_w4mll")
-surface_material_override/10 = SubResource("StandardMaterial3D_fp0nx")
-surface_material_override/11 = SubResource("StandardMaterial3D_fp0nx")
+surface_material_override/7 = SubResource("StandardMaterial3D_esfc7")
+surface_material_override/8 = SubResource("StandardMaterial3D_02vft")
+surface_material_override/9 = SubResource("StandardMaterial3D_jxhlx")
+surface_material_override/10 = SubResource("StandardMaterial3D_deaph")
+surface_material_override/11 = SubResource("StandardMaterial3D_deaph")
 surface_material_override/12 = SubResource("StandardMaterial3D_nxalb")
-surface_material_override/13 = SubResource("StandardMaterial3D_w4mll")
+surface_material_override/13 = SubResource("StandardMaterial3D_jxhlx")
 surface_material_override/14 = SubResource("StandardMaterial3D_46tgf")
 surface_material_override/15 = SubResource("StandardMaterial3D_efvpt")
 surface_material_override/16 = SubResource("StandardMaterial3D_qa82l")
 surface_material_override/17 = SubResource("StandardMaterial3D_afdp7")
 surface_material_override/18 = SubResource("StandardMaterial3D_c14aq")
-surface_material_override/19 = SubResource("StandardMaterial3D_s8j1m")
-surface_material_override/20 = SubResource("StandardMaterial3D_7ypka")
+surface_material_override/19 = SubResource("StandardMaterial3D_vjwdy")
+surface_material_override/20 = SubResource("StandardMaterial3D_10g5t")
 surface_material_override/21 = SubResource("StandardMaterial3D_10g5t")
-surface_material_override/22 = SubResource("StandardMaterial3D_hxhib")
-surface_material_override/23 = SubResource("StandardMaterial3D_r0fku")
-surface_material_override/24 = SubResource("StandardMaterial3D_8a0ju")
-surface_material_override/25 = SubResource("StandardMaterial3D_02vft")
-surface_material_override/26 = SubResource("StandardMaterial3D_xskvh")
-surface_material_override/27 = SubResource("StandardMaterial3D_wrms7")
-surface_material_override/28 = SubResource("StandardMaterial3D_g4wmx")
-surface_material_override/29 = SubResource("StandardMaterial3D_xgjyc")
-surface_material_override/30 = SubResource("StandardMaterial3D_p82jv")
-surface_material_override/31 = SubResource("StandardMaterial3D_7ypka")
-surface_material_override/32 = SubResource("StandardMaterial3D_yiqv5")
+surface_material_override/22 = SubResource("StandardMaterial3D_10g5t")
+surface_material_override/23 = SubResource("StandardMaterial3D_7ypka")
+surface_material_override/24 = SubResource("StandardMaterial3D_hxhib")
+surface_material_override/25 = SubResource("StandardMaterial3D_xskvh")
+surface_material_override/26 = SubResource("StandardMaterial3D_r0fku")
+surface_material_override/27 = SubResource("StandardMaterial3D_g4wmx")
+surface_material_override/28 = SubResource("StandardMaterial3D_0rp0o")
+surface_material_override/29 = SubResource("StandardMaterial3D_p82jv")
+surface_material_override/30 = SubResource("StandardMaterial3D_oogum")
+surface_material_override/31 = SubResource("StandardMaterial3D_wrms7")
+surface_material_override/32 = SubResource("StandardMaterial3D_vy1ed")

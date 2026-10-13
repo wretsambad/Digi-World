@@ -42,27 +42,27 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="birdbath2" type="Node3D" unique_id=1118579654]
+[node name="birdbath2" type="Node3D" unique_id=1296954417]
 metadata/optimized_static_parts = 5
 
-[node name="birdbath" type="Node3D" parent="." unique_id=1576302955]
+[node name="birdbath" type="Node3D" parent="." unique_id=1864403782]
 
-[node name="birdbath__Bowl" type="MeshInstance3D" parent="birdbath" unique_id=926365281]
+[node name="birdbath__Bowl" type="MeshInstance3D" parent="birdbath" unique_id=247842567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19600001, 0)
 
-[node name="birdbath__Foot" type="MeshInstance3D" parent="birdbath" unique_id=950513363]
+[node name="birdbath__Foot" type="MeshInstance3D" parent="birdbath" unique_id=780930968]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.014, 0)
 
-[node name="birdbath__Lip" type="MeshInstance3D" parent="birdbath" unique_id=1596225280]
+[node name="birdbath__Lip" type="MeshInstance3D" parent="birdbath" unique_id=74994690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.216, 0)
 
-[node name="birdbath__Stem" type="MeshInstance3D" parent="birdbath" unique_id=1727185096]
+[node name="birdbath__Stem" type="MeshInstance3D" parent="birdbath" unique_id=1333759487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103999995, 0)
 
-[node name="birdbath__Water" type="MeshInstance3D" parent="birdbath" unique_id=201217973]
+[node name="birdbath__Water" type="MeshInstance3D" parent="birdbath" unique_id=1566506956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2148, 0)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=836809001]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=415999069]
 mesh = SubResource("ArrayMesh_2xae6")
 surface_material_override/0 = SubResource("StandardMaterial3D_a68jq")
 surface_material_override/1 = SubResource("StandardMaterial3D_3rnop")

@@ -79,15 +79,25 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8j1m"]
-resource_name = "Autumn_e89d76fffalse"
-albedo_color = Color(0.9098039, 0.6156863, 0.4627451, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ypka"]
+resource_name = "Autumn_leafb8341cff"
+albedo_color = Color(0.72156864, 0.20392157, 0.10980392, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.4690196, 0.13254902, 0.071372546, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10g5t"]
-resource_name = "Autumn_e6b747fffalse"
-albedo_color = Color(0.9019608, 0.7176471, 0.2784314, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5pjwj"]
+resource_name = "Autumn_leafd95a1cff"
+albedo_color = Color(0.8509804, 0.3529412, 0.10980392, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.55313724, 0.22941177, 0.071372546, 1)
 
 [sub_resource type="Gradient" id="Gradient_1cenj"]
 colors = PackedColorArray(0.7517647, 0.6388235, 0.45176473, 1, 0.84517646, 0.7272157, 0.5318432, 1)
@@ -110,47 +120,47 @@ albedo_texture = SubResource("NoiseTexture2D_sctoi")
 roughness = 0.94
 uv1_scale = Vector3(3, 0.38, 1)
 
-[node name="garden_gate2" type="Node3D" unique_id=72803893]
+[node name="garden_gate2" type="Node3D" unique_id=2018828412]
 metadata/optimized_static_parts = 11
 
-[node name="garden_gate" type="Node3D" parent="." unique_id=1320721167]
+[node name="garden_gate" type="Node3D" parent="." unique_id=1457907032]
 
-[node name="garden_gate__Diagonal brace" type="MeshInstance3D" parent="garden_gate" unique_id=830515375]
+[node name="garden_gate__Diagonal brace" type="MeshInstance3D" parent="garden_gate" unique_id=1741237388]
 transform = Transform3D(0, 0.9011247, 0.43355983, 2.9802322e-08, 0.4335599, -0.9011247, -0.99999994, -8.940697e-08, 0, 0, 0.123, -0.014)
 
-[node name="garden_gate__Gate picket" type="MeshInstance3D" parent="garden_gate" unique_id=920209080]
+[node name="garden_gate__Gate picket" type="MeshInstance3D" parent="garden_gate" unique_id=425086490]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.096, 0.124000005, 0.008)
 
-[node name="garden_gate__Gate picket_001" type="MeshInstance3D" parent="garden_gate" unique_id=982517299]
+[node name="garden_gate__Gate picket_001" type="MeshInstance3D" parent="garden_gate" unique_id=1732556797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048, 0.124000005, 0.008)
 
-[node name="garden_gate__Gate picket_002" type="MeshInstance3D" parent="garden_gate" unique_id=1075687018]
+[node name="garden_gate__Gate picket_002" type="MeshInstance3D" parent="garden_gate" unique_id=2033761873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124000005, 0.008)
 
-[node name="garden_gate__Gate picket_003" type="MeshInstance3D" parent="garden_gate" unique_id=1199278290]
+[node name="garden_gate__Gate picket_003" type="MeshInstance3D" parent="garden_gate" unique_id=1993304586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048, 0.124000005, 0.008)
 
-[node name="garden_gate__Gate picket_004" type="MeshInstance3D" parent="garden_gate" unique_id=12854631]
+[node name="garden_gate__Gate picket_004" type="MeshInstance3D" parent="garden_gate" unique_id=1874866278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.096, 0.124000005, 0.008)
 
-[node name="garden_gate__Gate rail" type="MeshInstance3D" parent="garden_gate" unique_id=368130973]
+[node name="garden_gate__Gate rail" type="MeshInstance3D" parent="garden_gate" unique_id=404370458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068, 0)
 
-[node name="garden_gate__Gate rail_001" type="MeshInstance3D" parent="garden_gate" unique_id=291781577]
+[node name="garden_gate__Gate rail_001" type="MeshInstance3D" parent="garden_gate" unique_id=2135875674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.178, 0)
 
-[node name="garden_gate__Latch" type="MeshInstance3D" parent="garden_gate" unique_id=820642717]
+[node name="garden_gate__Latch" type="MeshInstance3D" parent="garden_gate" unique_id=866229213]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.084, 0.172, 0.029)
 
-[node name="garden_gate__Post" type="MeshInstance3D" parent="garden_gate" unique_id=281704179]
+[node name="garden_gate__Post" type="MeshInstance3D" parent="garden_gate" unique_id=920559284]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0.13, 0)
 
-[node name="garden_gate__Post_001" type="MeshInstance3D" parent="garden_gate" unique_id=1578814571]
+[node name="garden_gate__Post_001" type="MeshInstance3D" parent="garden_gate" unique_id=988378721]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14, 0.13, 0)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=591228408]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=1516549645]
 mesh = SubResource("ArrayMesh_kbgx2")
-surface_material_override/0 = SubResource("StandardMaterial3D_s8j1m")
-surface_material_override/1 = SubResource("StandardMaterial3D_10g5t")
+surface_material_override/0 = SubResource("StandardMaterial3D_7ypka")
+surface_material_override/1 = SubResource("StandardMaterial3D_5pjwj")
 surface_material_override/2 = SubResource("StandardMaterial3D_ynw5e")
 surface_material_override/3 = SubResource("StandardMaterial3D_ynw5e")

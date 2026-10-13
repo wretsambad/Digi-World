@@ -4,7 +4,9 @@ const SOURCE := "res://work/treehouse_animated_before_autumn.tscn"
 const TARGET := "res://treehouse_animated.tscn"
 const ASSETS := "res://treehouse_assets/autumn/models/"
 var materials: Dictionary = {}
-var foliage_colors: Array[Color] = [Color("e6b747"),Color("df8150"),Color("b94f65"),Color("f0cd69"),Color("e89d76")]
+# Sunset-maple palette sampled from the reference painting: crimson, scarlet, ember, amber, gold.
+var foliage_colors: Array[Color] = [Color("9a271b"),Color("b8341c"),Color("cf4a1b"),Color("d95a1c"),Color("e2711f"),Color("c13d1f")]
+var evergreen_colors: Array[Color] = [Color("2e4a2d"),Color("3a5834")]
 var replacements: Dictionary = {}
 
 func _initialize() -> void:
@@ -37,24 +39,39 @@ func weathered(color: Color, grain: bool) -> StandardMaterial3D:
 	materials[key] = material
 	return material
 
+func foliage(color: Color) -> StandardMaterial3D:
+	# Soft warm rim and backlight give leaves the glowing sunset edge of the reference.
+	var key: String = "leaf"+color.to_html()
+	if materials.has(key): return materials[key]
+	var material := weathered(color,false).duplicate() as StandardMaterial3D
+	material.resource_name = "Autumn_"+key
+	material.rim_enabled = true
+	material.rim = .3
+	material.rim_tint = .7
+	material.backlight_enabled = true
+	material.backlight = color.darkened(.35)
+	materials[key] = material
+	return material
+
 func autumn_material(original: Material, node: MeshInstance3D, asset: String) -> Material:
 	if not original is StandardMaterial3D: return original
 	var label: String = original.resource_name
 	var c: Color = original.albedo_color
-	var colors := {"HoneyCedar":"b5814d","HoneyCedarLight":"d3a567","HoneyCedarDark":"95653f","SupportTimber":"745037","CreamTrim":"fff0c2","SagePaint":"398f91","Terracotta":"cf6260","TerracottaLight":"e88a71","DarkIron":"385267","FlagCoral":"efb83f","Flowers":"f3c651","Leaves":"9baa50"}
+	var colors := {"HoneyCedar":"b3804c","HoneyCedarLight":"cf9f63","HoneyCedarDark":"87593a","SupportTimber":"6a452d","CreamTrim":"f2dfb4","SagePaint":"6f8a5f","Terracotta":"9e3426","TerracottaLight":"bd4a32","DarkIron":"3b3634","FlagCoral":"f0b23c","Flowers":"f2c14e","Leaves":"5f8a3c"}
 	if label == "CanopyVertexPaint":
 		var index: int = str(node.name).trim_prefix("FoliageCluster").to_int()
-		return weathered(foliage_colors[(index*3+index/5)%foliage_colors.size()],false)
+		return foliage(foliage_colors[(index*3+index/5)%foliage_colors.size()])
 	if label == "SculptedBark":
 		var bark: StandardMaterial3D = original.duplicate()
-		bark.albedo_color = Color("ddc3a5")
+		bark.albedo_color = Color("c9a07a")
 		bark.roughness = 1.0
 		return bark
 	if label == "WindowTeal":
-		var glass := weathered(Color("c08a48"),false).duplicate() as StandardMaterial3D
+		# Lamp-lit windows, as in the reference painting.
+		var glass := weathered(Color("e7a54f"),false).duplicate() as StandardMaterial3D
 		glass.emission_enabled = true
-		glass.emission = Color("ffc47a")
-		glass.emission_energy_multiplier = .05
+		glass.emission = Color("ffb35c")
+		glass.emission_energy_multiplier = 1.4
 		glass.roughness = .5
 		return glass
 	if colors.has(label):
@@ -66,18 +83,23 @@ func autumn_material(original: Material, node: MeshInstance3D, asset: String) ->
 			materials["ground"] = ground
 		return materials["ground"]
 	if label.to_lower() in ["leaf","mint","lightleaf"] or (c.g>c.r*1.23 and c.g>c.b*1.15):
+		if "poplar" in asset or "tree_tall" in asset:
+			# Evergreens break up the warm canopy the way the pines do in the reference.
+			return weathered(evergreen_colors[posmod(hash(asset+label),evergreen_colors.size())],false)
+		if "hedge" in asset or "shrub" in asset:
+			return weathered(Color("7b6a2e") if posmod(hash(asset+label),3)==0 else Color("a8461f").darkened(.1),false)
 		var pick: int = posmod(hash(asset+label),foliage_colors.size())
-		return weathered(foliage_colors[pick].darkened(.1 if "hedge" in asset else 0),false)
-	if label in ["grass","ground"]: return weathered(Color("b0b56d"),false)
+		return foliage(foliage_colors[pick])
+	if label in ["grass","ground"]: return weathered(Color("9a8c4a"),false)
 	if "fence" in asset or "garden_gate" in asset:
 		return weathered(Color("d5b580") if c.get_luminance()>.3 else Color("886442"),true)
 	if label in ["wood","woodlight"]:
 		return weathered(Color("966d46") if label=="wood" else Color("d0a873"),true)
-	if "landscape_mound" in asset: return weathered(Color("a5ad70"),false)
+	if "landscape_mound" in asset: return weathered(Color("8f8446"),false)
 	if "house_" in asset:
 		if c.b>c.r*1.08 and c.get_luminance()<.59:
-			return weathered(Color("ab727c").lightened(c.get_luminance()*.2),false)
-		if label in ["wall","cream","peach"]: return weathered(c.lerp(Color("efd6ad"),.5),false)
+			return weathered(Color("8e3f33").lightened(c.get_luminance()*.25),false)
+		if label in ["wall","cream","peach"]: return weathered(c.lerp(Color("ead1a4"),.55),false)
 	if label in ["stone","path","concrete"]: return weathered(c.lerp(Color("ccb99b"),.55),false)
 	return original
 
@@ -116,23 +138,29 @@ func run() -> void:
 		var path: String = found.get_string(1)
 		text = text.replace('path="'+path+'"','path="'+style_asset(path)+'"')
 	# Edit only the appearance fields in the source text, preserving IDs and node records.
+	var sky_block := "[sub_resource type=\"ProceduralSkyMaterial\" id=\"sky_material\"]\nsky_top_color = Color(0.43, 0.66, 0.83, 1)\nsky_horizon_color = Color(0.79, 0.87, 0.86, 1)\nground_bottom_color = Color(0.37, 0.49, 0.36, 1)\nground_horizon_color = Color(0.79, 0.87, 0.86, 1)"
 	var edits := {
-		"sky_top_color = Color(0.43, 0.66, 0.83, 1)":"sky_top_color = Color(0.32, 0.60, 0.83, 1)",
-		"sky_horizon_color = Color(0.79, 0.87, 0.86, 1)":"sky_horizon_color = Color(0.77, 0.88, 0.95, 1)",
-		"ground_bottom_color = Color(0.37, 0.49, 0.36, 1)":"ground_bottom_color = Color(0.49, 0.45, 0.29, 1)",
-		"ground_horizon_color = Color(0.79, 0.87, 0.86, 1)":"ground_horizon_color = Color(0.88, 0.83, 0.69, 1)",
+		# Painted sunset sky with drifting clouds and hazy hills replaces the procedural sky.
+		sky_block:"[sub_resource type=\"ShaderMaterial\" id=\"sky_material\"]\nshader = ExtResource(\"autumn_sky\")",
 		"ambient_light_source = 2":"ambient_light_source = 3",
-		"tonemap_mode = 3":"tonemap_mode = 3\ntonemap_exposure = 0.85\nbackground_energy_multiplier = 0.75",
-		"ambient_light_color = Color(5.2943824e-07, 0.33862355, 0.519534, 1)":"ambient_light_color = Color(0.59, 0.65, 0.76, 1)",
-		"ambient_light_energy = 0.5":"ambient_light_energy = 0.38",
-		"fog_light_color = Color(0.69, 0.79, 0.87, 1)":"fog_light_color = Color(0.84, 0.85, 0.79, 1)",
-		"fog_density = 0.0012":"fog_density = 0.0012",
-		"light_color = Color(1, 0.93, 0.8, 1)":"light_color = Color(1, 0.96, 0.87, 1)",
-		"light_energy = 0.55":"light_energy = 0.42"
+		"tonemap_mode = 3":"tonemap_mode = 3\ntonemap_exposure = 1.0\nglow_enabled = true\nglow_intensity = 0.5\nglow_bloom = 0.0\nglow_hdr_threshold = 1.1\nglow_blend_mode = 1",
+		"ambient_light_color = Color(5.2943824e-07, 0.33862355, 0.519534, 1)":"ambient_light_color = Color(0.95, 0.72, 0.62, 1)",
+		"ambient_light_energy = 0.5":"ambient_light_energy = 0.45",
+		"fog_light_color = Color(0.69, 0.79, 0.87, 1)":"fog_light_color = Color(0.96, 0.70, 0.52, 1)\nfog_sun_scatter = 0.3\nfog_sky_affect = 0.0",
+		"fog_density = 0.0012":"fog_density = 0.0026",
+		"adjustment_brightness = 0.92":"adjustment_enabled = true\nadjustment_brightness = 1.0\nadjustment_contrast = 1.08\nadjustment_saturation = 1.12",
+		# Low golden-hour sun from the right of the backyard view; long shadows fall left.
+		"transform = Transform3D(0.88294756, 0.31413782, -0.34888536, 0, 0.7431448, 0.6691306, 0.46947157, -0.59080726, 0.6561579, 0, 0, 0)\nlight_color = Color(1, 0.93, 0.8, 1)":"transform = Transform3D(-0.099, -0.34, 0.935, 0, 0.94, 0.342, -0.995, 0.0339, -0.093, 0, 0, 0)\nlight_color = Color(1, 0.8, 0.56, 1)",
+		"light_energy = 0.55":"light_energy = 0.8"
 	}
 	for old in edits:
 		assert(text.contains(old),"Missing expected appearance field: "+old)
 		text = text.replace(old,edits[old])
+	# Shared resources for the sky and the live ambience layer go after the last ext_resource.
+	var last_ext: int = text.rfind("[ext_resource")
+	var insert_at: int = text.find("\n",last_ext)+1
+	text = text.insert(insert_at,'[ext_resource type="Shader" path="res://treehouse_assets/autumn/autumn_sky.gdshader" id="autumn_sky"]\n[ext_resource type="Script" path="res://treehouse_assets/autumn/autumn_ambience.gd" id="autumn_ambience"]\n')
+	text += '\n[node name="AutumnAmbience" type="Node3D" parent="."]\nscript = ExtResource("autumn_ambience")\n'
 	FileAccess.open(TARGET,FileAccess.WRITE).store_string(text)
 	print("AUTUMN STYLE: isolated ",replacements.size()," model scenes; no transforms or node records changed")
 	quit()

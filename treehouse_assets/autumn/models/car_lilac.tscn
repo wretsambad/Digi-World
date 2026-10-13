@@ -188,9 +188,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tf0wo")
 
-[node name="car_lilac" type="Node3D" unique_id=1315174963]
+[node name="car_lilac" type="Node3D" unique_id=106977241]
 
-[node name="car_lilac_Mesh" type="MeshInstance3D" parent="." unique_id=1310624490]
+[node name="car_lilac_Mesh" type="MeshInstance3D" parent="." unique_id=604235408]
 mesh = SubResource("ArrayMesh_3yra8")
 surface_material_override/0 = SubResource("StandardMaterial3D_2xeaq")
 surface_material_override/1 = SubResource("StandardMaterial3D_ps0ot")

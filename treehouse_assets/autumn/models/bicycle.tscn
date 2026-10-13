@@ -100,114 +100,114 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="bicycle2" type="Node3D" unique_id=1326801926]
+[node name="bicycle2" type="Node3D" unique_id=1319846958]
 metadata/optimized_static_parts = 34
 
-[node name="bicycle" type="Node3D" parent="." unique_id=57237298]
+[node name="bicycle" type="Node3D" parent="." unique_id=1933708006]
 
-[node name="bicycle__Crank" type="MeshInstance3D" parent="bicycle" unique_id=772591035]
+[node name="bicycle__Crank" type="MeshInstance3D" parent="bicycle" unique_id=1617143286]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.038, 0.0772, 0)
 
-[node name="bicycle__Frame tube" type="MeshInstance3D" parent="bicycle" unique_id=1379134189]
+[node name="bicycle__Frame tube" type="MeshInstance3D" parent="bicycle" unique_id=1424493851]
 transform = Transform3D(-2.3841858e-07, 0.99607265, 0.0885396, 0, 0.0885396, -0.99607265, -1, -2.3841858e-07, 0, -0.083, 0.0732, 0)
 
-[node name="bicycle__Frame tube_001" type="MeshInstance3D" parent="bicycle" unique_id=53342701]
+[node name="bicycle__Frame tube_001" type="MeshInstance3D" parent="bicycle" unique_id=910832326]
 transform = Transform3D(0, -0.23337297, -0.9723874, 2.2351742e-07, 0.9723873, -0.23337299, 1.0000001, -2.0116568e-07, 5.9604645e-08, -0.05, 0.1272, 0)
 
-[node name="bicycle__Frame tube_002" type="MeshInstance3D" parent="bicycle" unique_id=1672965139]
+[node name="bicycle__Frame tube_002" type="MeshInstance3D" parent="bicycle" unique_id=1353566101]
 transform = Transform3D(-1.1920929e-07, -0.52145, 0.8532819, -5.9604645e-08, -0.853282, -0.52145, 1, -1.1920929e-07, 5.9604645e-08, -0.095, 0.12320001, 0)
 
-[node name="bicycle__Frame tube_003" type="MeshInstance3D" parent="bicycle" unique_id=1318036729]
+[node name="bicycle__Frame tube_003" type="MeshInstance3D" parent="bicycle" unique_id=208895646]
 transform = Transform3D(-1.1920929e-07, 0.9996035, 0.028157681, -5.9604645e-08, 0.028157651, -0.9996035, -1, -5.9604645e-08, 0, 0.009000001, 0.1792, 0)
 
-[node name="bicycle__Frame tube_004" type="MeshInstance3D" parent="bicycle" unique_id=1299626625]
+[node name="bicycle__Frame tube_004" type="MeshInstance3D" parent="bicycle" unique_id=1083482650]
 transform = Transform3D(-1.1920929e-07, -0.75020874, 0.6612012, 8.940697e-08, -0.66120124, -0.75020874, 1, 0, 5.9604645e-08, 0.021000002, 0.1292, 0)
 
-[node name="bicycle__Frame tube_005" type="MeshInstance3D" parent="bicycle" unique_id=1362547609]
+[node name="bicycle__Frame tube_005" type="MeshInstance3D" parent="bicycle" unique_id=1348068339]
 transform = Transform3D(0, 0.39391917, -0.9191451, 5.9604645e-08, -0.9191451, -0.39391917, -1, -5.9604645e-08, 0, 0.103999995, 0.1252, 0)
 
-[node name="bicycle__Grip" type="MeshInstance3D" parent="bicycle" unique_id=1243042775]
+[node name="bicycle__Grip" type="MeshInstance3D" parent="bicycle" unique_id=1013087882]
 transform = Transform3D(0, -1, 0, 0, 0, -1, 1, 0, 0, 0.059000004, 0.2332, 0.044)
 
-[node name="bicycle__Grip_001" type="MeshInstance3D" parent="bicycle" unique_id=1202815571]
+[node name="bicycle__Grip_001" type="MeshInstance3D" parent="bicycle" unique_id=1905322290]
 transform = Transform3D(0, -1, 0, 0, 0, -1, 1, 0, 0, 0.059000004, 0.2332, -0.044)
 
-[node name="bicycle__Handlebar" type="MeshInstance3D" parent="bicycle" unique_id=930488181]
+[node name="bicycle__Handlebar" type="MeshInstance3D" parent="bicycle" unique_id=121525129]
 transform = Transform3D(-1, -7.5497915e-08, -7.5497915e-08, 7.5497915e-08, 0, -1, 7.5497915e-08, -1, 0, 0.072000004, 0.2332, 0)
 
-[node name="bicycle__Hub" type="MeshInstance3D" parent="bicycle" unique_id=874075904]
+[node name="bicycle__Hub" type="MeshInstance3D" parent="bicycle" unique_id=421283145]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.128, 0.0692, 0)
 
-[node name="bicycle__Hub_001" type="MeshInstance3D" parent="bicycle" unique_id=680866336]
+[node name="bicycle__Hub_001" type="MeshInstance3D" parent="bicycle" unique_id=903674174]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.128, 0.0692, 0)
 
-[node name="bicycle__Kickstand" type="MeshInstance3D" parent="bicycle" unique_id=1436443040]
+[node name="bicycle__Kickstand" type="MeshInstance3D" parent="bicycle" unique_id=703125780]
 transform = Transform3D(-0.8376106, -0.31719846, 0.44473973, 7.4505806e-08, -0.8141426, -0.5806649, 0.5462676, -0.48637107, 0.68193465, -0.055000003, 0.0407, -0.033000004)
 
-[node name="bicycle__Pedal" type="MeshInstance3D" parent="bicycle" unique_id=830998411]
+[node name="bicycle__Pedal" type="MeshInstance3D" parent="bicycle" unique_id=313417206]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, 0.061200004, 0.036000002)
 
-[node name="bicycle__Pedal arm" type="MeshInstance3D" parent="bicycle" unique_id=1841645037]
+[node name="bicycle__Pedal arm" type="MeshInstance3D" parent="bicycle" unique_id=699822525]
 transform = Transform3D(5.9604645e-08, 0.8516582, -0.5240974, -2.682209e-07, -0.52409744, -0.8516583, -0.99999994, 1.1920929e-07, 2.3841858e-07, -0.025, 0.0692, 0.022)
 
-[node name="bicycle__Rim" type="MeshInstance3D" parent="bicycle" unique_id=1278245293]
+[node name="bicycle__Rim" type="MeshInstance3D" parent="bicycle" unique_id=583503951]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.128, 0.0692, 0)
 
-[node name="bicycle__Rim_001" type="MeshInstance3D" parent="bicycle" unique_id=1642088719]
+[node name="bicycle__Rim_001" type="MeshInstance3D" parent="bicycle" unique_id=352435929]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.128, 0.0692, 0)
 
-[node name="bicycle__Saddle" type="MeshInstance3D" parent="bicycle" unique_id=1755976221]
+[node name="bicycle__Saddle" type="MeshInstance3D" parent="bicycle" unique_id=1990116032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.068, 0.2112, 0)
 
-[node name="bicycle__Seat tube" type="MeshInstance3D" parent="bicycle" unique_id=1228214400]
+[node name="bicycle__Seat tube" type="MeshInstance3D" parent="bicycle" unique_id=121344016]
 transform = Transform3D(5.9604645e-08, -0.2248595, -0.9743912, 1.2665987e-07, 0.9743912, -0.2248595, 1, -1.0430813e-07, 5.9604645e-08, -0.065, 0.1902, 0)
 
-[node name="bicycle__Spoke" type="MeshInstance3D" parent="bicycle" unique_id=1409971312]
+[node name="bicycle__Spoke" type="MeshInstance3D" parent="bicycle" unique_id=1349294653]
 transform = Transform3D(0, 1, 0, 0, 0, -1, -1, 0, 0, -0.103, 0.0692, 0)
 
-[node name="bicycle__Spoke_001" type="MeshInstance3D" parent="bicycle" unique_id=2018583167]
+[node name="bicycle__Spoke_001" type="MeshInstance3D" parent="bicycle" unique_id=1275179169]
 transform = Transform3D(-1.1920929e-07, 0.50000006, 0.8660253, 5.9604645e-08, 0.8660253, -0.50000006, -1, 0, -1.1920929e-07, -0.115499996, 0.09085063, 0)
 
-[node name="bicycle__Spoke_002" type="MeshInstance3D" parent="bicycle" unique_id=335897504]
+[node name="bicycle__Spoke_002" type="MeshInstance3D" parent="bicycle" unique_id=323152755]
 transform = Transform3D(-1.1920929e-07, -0.50000006, -0.8660253, -5.9604645e-08, 0.8660253, -0.50000006, 1, 0, -1.1920929e-07, -0.1405, 0.09085063, 0)
 
-[node name="bicycle__Spoke_003" type="MeshInstance3D" parent="bicycle" unique_id=1011456644]
+[node name="bicycle__Spoke_003" type="MeshInstance3D" parent="bicycle" unique_id=437635347]
 transform = Transform3D(0, -1, 0, 0, 0, -1, 1, 0, 0, -0.153, 0.0692, 0)
 
-[node name="bicycle__Spoke_004" type="MeshInstance3D" parent="bicycle" unique_id=1632770853]
+[node name="bicycle__Spoke_004" type="MeshInstance3D" parent="bicycle" unique_id=1219789508]
 transform = Transform3D(-1.1920929e-07, -0.5, 0.8660253, 8.940697e-08, -0.86602545, -0.5, 1, 2.9802322e-08, 1.1920929e-07, -0.1405, 0.047549363, 0)
 
-[node name="bicycle__Spoke_005" type="MeshInstance3D" parent="bicycle" unique_id=1828102010]
+[node name="bicycle__Spoke_005" type="MeshInstance3D" parent="bicycle" unique_id=1484624133]
 transform = Transform3D(-1.1920929e-07, 0.5, -0.8660253, -8.940697e-08, -0.86602545, -0.5, -1, 2.9802322e-08, 1.1920929e-07, -0.115499996, 0.047549363, 0)
 
-[node name="bicycle__Spoke_006" type="MeshInstance3D" parent="bicycle" unique_id=1410599903]
+[node name="bicycle__Spoke_006" type="MeshInstance3D" parent="bicycle" unique_id=1160928400]
 transform = Transform3D(0, 1, 0, 0, 0, -1, -1, 0, 0, 0.153, 0.0692, 0)
 
-[node name="bicycle__Spoke_007" type="MeshInstance3D" parent="bicycle" unique_id=298780082]
+[node name="bicycle__Spoke_007" type="MeshInstance3D" parent="bicycle" unique_id=2041010669]
 transform = Transform3D(-1.1920929e-07, 0.50000006, 0.8660253, 5.9604645e-08, 0.8660253, -0.50000006, -1, 0, -1.1920929e-07, 0.1405, 0.09085063, 0)
 
-[node name="bicycle__Spoke_008" type="MeshInstance3D" parent="bicycle" unique_id=843108278]
+[node name="bicycle__Spoke_008" type="MeshInstance3D" parent="bicycle" unique_id=1510803191]
 transform = Transform3D(-1.1920929e-07, -0.50000006, -0.8660253, -5.9604645e-08, 0.8660253, -0.50000006, 1, 0, -1.1920929e-07, 0.115499996, 0.09085063, 0)
 
-[node name="bicycle__Spoke_009" type="MeshInstance3D" parent="bicycle" unique_id=759515483]
+[node name="bicycle__Spoke_009" type="MeshInstance3D" parent="bicycle" unique_id=448208931]
 transform = Transform3D(0, -1, 0, 0, 0, -1, 1, 0, 0, 0.103, 0.0692, 0)
 
-[node name="bicycle__Spoke_010" type="MeshInstance3D" parent="bicycle" unique_id=1951281105]
+[node name="bicycle__Spoke_010" type="MeshInstance3D" parent="bicycle" unique_id=1183602321]
 transform = Transform3D(-1.1920929e-07, -0.5, 0.8660253, 8.940697e-08, -0.86602545, -0.5, 1, 2.9802322e-08, 1.1920929e-07, 0.115499996, 0.047549363, 0)
 
-[node name="bicycle__Spoke_011" type="MeshInstance3D" parent="bicycle" unique_id=2061380122]
+[node name="bicycle__Spoke_011" type="MeshInstance3D" parent="bicycle" unique_id=626829897]
 transform = Transform3D(-1.1920929e-07, 0.5, -0.8660253, -8.940697e-08, -0.86602545, -0.5, -1, 2.9802322e-08, 1.1920929e-07, 0.1405, 0.047549363, 0)
 
-[node name="bicycle__Stem" type="MeshInstance3D" parent="bicycle" unique_id=2102320484]
+[node name="bicycle__Stem" type="MeshInstance3D" parent="bicycle" unique_id=1613929379]
 transform = Transform3D(1.1920929e-07, -0.1520572, -0.98837173, 2.0116568e-07, 0.9883717, -0.1520572, 1, -1.7136335e-07, 1.7881393e-07, 0.076, 0.20719999, 0)
 
-[node name="bicycle__Tire" type="MeshInstance3D" parent="bicycle" unique_id=459963218]
+[node name="bicycle__Tire" type="MeshInstance3D" parent="bicycle" unique_id=437383577]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.128, 0.0692, 0)
 
-[node name="bicycle__Tire_001" type="MeshInstance3D" parent="bicycle" unique_id=149668857]
+[node name="bicycle__Tire_001" type="MeshInstance3D" parent="bicycle" unique_id=1646881031]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.128, 0.0692, 0)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=953777955]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=57697481]
 mesh = SubResource("ArrayMesh_2pugv")
 surface_material_override/0 = SubResource("StandardMaterial3D_nftni")
 surface_material_override/1 = SubResource("StandardMaterial3D_wl67o")

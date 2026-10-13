@@ -118,71 +118,81 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10g5t"]
-resource_name = "Autumn_e6b747fffalse"
-albedo_color = Color(0.9019608, 0.7176471, 0.2784314, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrms7"]
+resource_name = "Autumn_leafcf4a1bff"
+albedo_color = Color(0.8117647, 0.2901961, 0.105882354, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.527647, 0.18862745, 0.06882353, 1)
 
-[sub_resource type="Gradient" id="Gradient_0rp0o"]
+[sub_resource type="Gradient" id="Gradient_njj6u"]
 colors = PackedColorArray(0.7341176, 0.59294116, 0.40588236, 1, 0.8267451, 0.6792941, 0.48392156, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_njj6u"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3w5la"]
 seed = 41
 frequency = 0.045
 fractal_octaves = 3
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3w5la"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xgjyc"]
 width = 128
 height = 128
-noise = SubResource("FastNoiseLite_njj6u")
-color_ramp = SubResource("Gradient_0rp0o")
+noise = SubResource("FastNoiseLite_3w5la")
+color_ramp = SubResource("Gradient_njj6u")
 seamless = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgjyc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p82jv"]
 resource_name = "Autumn_d0a873fftrue"
-albedo_texture = SubResource("NoiseTexture2D_3w5la")
+albedo_texture = SubResource("NoiseTexture2D_xgjyc")
 roughness = 0.94
 uv1_scale = Vector3(3, 0.38, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8j1m"]
-resource_name = "Autumn_e89d76fffalse"
-albedo_color = Color(0.9098039, 0.6156863, 0.4627451, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10g5t"]
+resource_name = "Autumn_leaf9a271bff"
+albedo_color = Color(0.6039216, 0.15294118, 0.105882354, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.392549, 0.09941176, 0.06882353, 1)
 
-[node name="mailbox2" type="Node3D" unique_id=1242161835]
+[node name="mailbox2" type="Node3D" unique_id=460223472]
 metadata/optimized_static_parts = 8
 
-[node name="mailbox" type="Node3D" parent="." unique_id=1709787828]
+[node name="mailbox" type="Node3D" parent="." unique_id=1086185743]
 
-[node name="mailbox__Body" type="MeshInstance3D" parent="mailbox" unique_id=1382139211]
+[node name="mailbox__Body" type="MeshInstance3D" parent="mailbox" unique_id=966195821]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29200003, 0)
 
-[node name="mailbox__Crosspiece" type="MeshInstance3D" parent="mailbox" unique_id=1800514831]
+[node name="mailbox__Crosspiece" type="MeshInstance3D" parent="mailbox" unique_id=2041896877]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23, 0)
 
-[node name="mailbox__Door" type="MeshInstance3D" parent="mailbox" unique_id=601842226]
+[node name="mailbox__Door" type="MeshInstance3D" parent="mailbox" unique_id=993651058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28599998, 0.0686)
 
-[node name="mailbox__Flag" type="MeshInstance3D" parent="mailbox" unique_id=1438898746]
+[node name="mailbox__Flag" type="MeshInstance3D" parent="mailbox" unique_id=1560842791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051, 0.344, -0.032)
 
-[node name="mailbox__Flag stem" type="MeshInstance3D" parent="mailbox" unique_id=2103446052]
+[node name="mailbox__Flag stem" type="MeshInstance3D" parent="mailbox" unique_id=603681225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051, 0.314, -0.014)
 
-[node name="mailbox__Handle" type="MeshInstance3D" parent="mailbox" unique_id=271435883]
+[node name="mailbox__Handle" type="MeshInstance3D" parent="mailbox" unique_id=714640989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.266, 0.0776)
 
-[node name="mailbox__Mail slot" type="MeshInstance3D" parent="mailbox" unique_id=71661552]
+[node name="mailbox__Mail slot" type="MeshInstance3D" parent="mailbox" unique_id=1098850746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.296, 0.0732)
 
-[node name="mailbox__Post" type="MeshInstance3D" parent="mailbox" unique_id=348196619]
+[node name="mailbox__Post" type="MeshInstance3D" parent="mailbox" unique_id=2067926942]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=1195070217]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=2056254799]
 mesh = SubResource("ArrayMesh_myidd")
-surface_material_override/0 = SubResource("StandardMaterial3D_10g5t")
-surface_material_override/1 = SubResource("StandardMaterial3D_xgjyc")
-surface_material_override/2 = SubResource("StandardMaterial3D_s8j1m")
+surface_material_override/0 = SubResource("StandardMaterial3D_wrms7")
+surface_material_override/1 = SubResource("StandardMaterial3D_p82jv")
+surface_material_override/2 = SubResource("StandardMaterial3D_10g5t")
 surface_material_override/3 = SubResource("StandardMaterial3D_upypp")
 surface_material_override/4 = SubResource("StandardMaterial3D_bf7jr")
 surface_material_override/5 = SubResource("StandardMaterial3D_vwj6p")

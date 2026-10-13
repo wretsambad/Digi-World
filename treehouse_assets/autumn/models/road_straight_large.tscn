@@ -66,9 +66,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ljp37")
 
-[node name="road_straight_large" type="Node3D" unique_id=178147049]
+[node name="road_straight_large" type="Node3D" unique_id=250808519]
 
-[node name="road_straight_large_Mesh" type="MeshInstance3D" parent="." unique_id=432036333]
+[node name="road_straight_large_Mesh" type="MeshInstance3D" parent="." unique_id=980806070]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_g62gh")
 surface_material_override/0 = SubResource("StandardMaterial3D_7yqxb")

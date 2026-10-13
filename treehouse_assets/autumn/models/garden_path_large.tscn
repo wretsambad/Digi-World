@@ -40,9 +40,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6pivo")
 
-[node name="garden_path_large" type="Node3D" unique_id=98912742]
+[node name="garden_path_large" type="Node3D" unique_id=1852077006]
 
-[node name="garden_path_large_Mesh" type="MeshInstance3D" parent="." unique_id=1700115634]
+[node name="garden_path_large_Mesh" type="MeshInstance3D" parent="." unique_id=1581002307]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_25mjd")
 surface_material_override/0 = SubResource("StandardMaterial3D_td5xr")

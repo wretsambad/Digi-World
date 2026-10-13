@@ -43,11 +43,11 @@ resource_name = "Autumn_cfc4b2fffalse"
 albedo_color = Color(0.81058824, 0.76960784, 0.6960784, 1)
 roughness = 0.94
 
-[node name="stepping_stone2" type="Node3D" unique_id=1813785025]
+[node name="stepping_stone2" type="Node3D" unique_id=133542520]
 
-[node name="stepping_stone" type="Node3D" parent="." unique_id=243019575]
+[node name="stepping_stone" type="Node3D" parent="." unique_id=433143465]
 
-[node name="stepping_stone__Stepping stone" type="MeshInstance3D" parent="stepping_stone" unique_id=922155414]
+[node name="stepping_stone__Stepping stone" type="MeshInstance3D" parent="stepping_stone" unique_id=1374600567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010000001, 0)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_rn0ue")

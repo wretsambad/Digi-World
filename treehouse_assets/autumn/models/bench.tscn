@@ -42,81 +42,81 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="Gradient" id="Gradient_0rp0o"]
+[sub_resource type="Gradient" id="Gradient_njj6u"]
 colors = PackedColorArray(0.7341176, 0.59294116, 0.40588236, 1, 0.8267451, 0.6792941, 0.48392156, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_njj6u"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3w5la"]
 seed = 41
 frequency = 0.045
 fractal_octaves = 3
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3w5la"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xgjyc"]
 width = 128
 height = 128
-noise = SubResource("FastNoiseLite_njj6u")
-color_ramp = SubResource("Gradient_0rp0o")
+noise = SubResource("FastNoiseLite_3w5la")
+color_ramp = SubResource("Gradient_njj6u")
 seamless = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgjyc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p82jv"]
 resource_name = "Autumn_d0a873fftrue"
-albedo_texture = SubResource("NoiseTexture2D_3w5la")
+albedo_texture = SubResource("NoiseTexture2D_xgjyc")
 roughness = 0.94
 uv1_scale = Vector3(3, 0.38, 1)
 
-[node name="bench2" type="Node3D" unique_id=273123899]
+[node name="bench2" type="Node3D" unique_id=1476320446]
 metadata/optimized_static_parts = 16
 
-[node name="bench" type="Node3D" parent="." unique_id=1057970904]
+[node name="bench" type="Node3D" parent="." unique_id=926163824]
 
-[node name="bench__Arm rest" type="MeshInstance3D" parent="bench" unique_id=522733452]
+[node name="bench__Arm rest" type="MeshInstance3D" parent="bench" unique_id=1080851552]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16000001, 0.154, 0)
 
-[node name="bench__Arm rest_001" type="MeshInstance3D" parent="bench" unique_id=1613864196]
+[node name="bench__Arm rest_001" type="MeshInstance3D" parent="bench" unique_id=7921500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16000001, 0.154, 0)
 
-[node name="bench__Arm support" type="MeshInstance3D" parent="bench" unique_id=1265804803]
+[node name="bench__Arm support" type="MeshInstance3D" parent="bench" unique_id=119040284]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16000001, 0.128, 0.046)
 
-[node name="bench__Arm support_001" type="MeshInstance3D" parent="bench" unique_id=283359948]
+[node name="bench__Arm support_001" type="MeshInstance3D" parent="bench" unique_id=1557579504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16000001, 0.128, 0.046)
 
-[node name="bench__Back slat" type="MeshInstance3D" parent="bench" unique_id=1322677548]
+[node name="bench__Back slat" type="MeshInstance3D" parent="bench" unique_id=1221118239]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.164, -0.062000003)
 
-[node name="bench__Back slat_001" type="MeshInstance3D" parent="bench" unique_id=2100924403]
+[node name="bench__Back slat_001" type="MeshInstance3D" parent="bench" unique_id=38453648]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20799999, -0.062000003)
 
-[node name="bench__Back support" type="MeshInstance3D" parent="bench" unique_id=641990851]
+[node name="bench__Back support" type="MeshInstance3D" parent="bench" unique_id=968007376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0.134, -0.060000002)
 
-[node name="bench__Back support_001" type="MeshInstance3D" parent="bench" unique_id=730236528]
+[node name="bench__Back support_001" type="MeshInstance3D" parent="bench" unique_id=1358959460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14, 0.134, -0.060000002)
 
-[node name="bench__Leg" type="MeshInstance3D" parent="bench" unique_id=1467132601]
+[node name="bench__Leg" type="MeshInstance3D" parent="bench" unique_id=1764469501]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0.05, 0.046)
 
-[node name="bench__Leg_001" type="MeshInstance3D" parent="bench" unique_id=787483400]
+[node name="bench__Leg_001" type="MeshInstance3D" parent="bench" unique_id=598855009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 0.05, -0.046)
 
-[node name="bench__Leg_002" type="MeshInstance3D" parent="bench" unique_id=2039912780]
+[node name="bench__Leg_002" type="MeshInstance3D" parent="bench" unique_id=1480916785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14, 0.05, 0.046)
 
-[node name="bench__Leg_003" type="MeshInstance3D" parent="bench" unique_id=501855302]
+[node name="bench__Leg_003" type="MeshInstance3D" parent="bench" unique_id=606794933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14, 0.05, -0.046)
 
-[node name="bench__Seat slat" type="MeshInstance3D" parent="bench" unique_id=145958235]
+[node name="bench__Seat slat" type="MeshInstance3D" parent="bench" unique_id=894379857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0.054)
 
-[node name="bench__Seat slat_001" type="MeshInstance3D" parent="bench" unique_id=1778984474]
+[node name="bench__Seat slat_001" type="MeshInstance3D" parent="bench" unique_id=498222857]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0.018000001)
 
-[node name="bench__Seat slat_002" type="MeshInstance3D" parent="bench" unique_id=2000258028]
+[node name="bench__Seat slat_002" type="MeshInstance3D" parent="bench" unique_id=350291280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, -0.018000001)
 
-[node name="bench__Seat slat_003" type="MeshInstance3D" parent="bench" unique_id=1051265586]
+[node name="bench__Seat slat_003" type="MeshInstance3D" parent="bench" unique_id=185781943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, -0.054)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=2119708826]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=1476651696]
 mesh = SubResource("ArrayMesh_feswd")
 surface_material_override/0 = SubResource("StandardMaterial3D_kvdv3")
-surface_material_override/1 = SubResource("StandardMaterial3D_xgjyc")
+surface_material_override/1 = SubResource("StandardMaterial3D_p82jv")

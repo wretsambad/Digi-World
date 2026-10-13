@@ -38,13 +38,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hida5")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0fku"]
-resource_name = "Autumn_f0cd69fffalse"
-albedo_color = Color(0.9411765, 0.8039216, 0.4117647, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ypka"]
+resource_name = "Autumn_leafb8341cff"
+albedo_color = Color(0.72156864, 0.20392157, 0.10980392, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.4690196, 0.13254902, 0.071372546, 1)
 
-[node name="landscape_mound" type="Node3D" unique_id=1492185099]
+[node name="landscape_mound" type="Node3D" unique_id=673001703]
 
-[node name="landscape_mound_Mesh" type="MeshInstance3D" parent="." unique_id=736057569]
+[node name="landscape_mound_Mesh" type="MeshInstance3D" parent="." unique_id=1599312336]
 mesh = SubResource("ArrayMesh_cuprs")
-surface_material_override/0 = SubResource("StandardMaterial3D_r0fku")
+surface_material_override/0 = SubResource("StandardMaterial3D_7ypka")

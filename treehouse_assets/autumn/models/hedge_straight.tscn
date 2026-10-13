@@ -42,39 +42,39 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ej5cx"]
-resource_name = "Autumn_a7475bfffalse"
-albedo_color = Color(0.65294117, 0.27882352, 0.35647058, 1)
+resource_name = "Autumn_973f1cfffalse"
+albedo_color = Color(0.59294116, 0.24705882, 0.10941176, 1)
 roughness = 0.94
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfeqk"]
-resource_name = "Autumn_c97448fffalse"
-albedo_color = Color(0.78705883, 0.45529413, 0.28235295, 1)
+resource_name = "Autumn_7b6a2efffalse"
+albedo_color = Color(0.48235294, 0.41568628, 0.18039216, 1)
 roughness = 0.94
 
-[node name="hedge_straight2" type="Node3D" unique_id=435078137]
+[node name="hedge_straight2" type="Node3D" unique_id=233954374]
 metadata/optimized_static_parts = 6
 
-[node name="hedge_straight" type="Node3D" parent="." unique_id=256975120]
+[node name="hedge_straight" type="Node3D" parent="." unique_id=778114794]
 
-[node name="hedge_straight__Crown" type="MeshInstance3D" parent="hedge_straight" unique_id=1836971693]
+[node name="hedge_straight__Crown" type="MeshInstance3D" parent="hedge_straight" unique_id=1187155280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 0.184, 0)
 
-[node name="hedge_straight__Crown_001" type="MeshInstance3D" parent="hedge_straight" unique_id=1634850168]
+[node name="hedge_straight__Crown_001" type="MeshInstance3D" parent="hedge_straight" unique_id=296705011]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094000004, 0.184, 0)
 
-[node name="hedge_straight__Crown_002" type="MeshInstance3D" parent="hedge_straight" unique_id=600582178]
+[node name="hedge_straight__Crown_002" type="MeshInstance3D" parent="hedge_straight" unique_id=1038261424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002, 0.184, 0)
 
-[node name="hedge_straight__Crown_003" type="MeshInstance3D" parent="hedge_straight" unique_id=732948906]
+[node name="hedge_straight__Crown_003" type="MeshInstance3D" parent="hedge_straight" unique_id=968540601]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098000005, 0.184, 0)
 
-[node name="hedge_straight__Crown_004" type="MeshInstance3D" parent="hedge_straight" unique_id=1875722153]
+[node name="hedge_straight__Crown_004" type="MeshInstance3D" parent="hedge_straight" unique_id=2069784531]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.194, 0.184, 0)
 
-[node name="hedge_straight__Hedge" type="MeshInstance3D" parent="hedge_straight" unique_id=1689317855]
+[node name="hedge_straight__Hedge" type="MeshInstance3D" parent="hedge_straight" unique_id=917110674]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103999995, 0)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=1829976404]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=2027821782]
 mesh = SubResource("ArrayMesh_1s17d")
 surface_material_override/0 = SubResource("StandardMaterial3D_ej5cx")
 surface_material_override/1 = SubResource("StandardMaterial3D_gfeqk")

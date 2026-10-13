@@ -61,48 +61,48 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="storm_drain2" type="Node3D" unique_id=1766122482]
+[node name="storm_drain2" type="Node3D" unique_id=453912764]
 metadata/optimized_static_parts = 9
 
-[node name="storm_drain" type="Node3D" parent="." unique_id=682714470]
+[node name="storm_drain" type="Node3D" parent="." unique_id=408800057]
 
-[node name="storm_drain__Frame" type="MeshInstance3D" parent="storm_drain" unique_id=442654092]
+[node name="storm_drain__Frame" type="MeshInstance3D" parent="storm_drain" unique_id=1680635301]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Grate bar" type="MeshInstance3D" parent="storm_drain" unique_id=1751414672]
+[node name="storm_drain__Grate bar" type="MeshInstance3D" parent="storm_drain" unique_id=927625822]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.060000002, 0.0182, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Grate bar_001" type="MeshInstance3D" parent="storm_drain" unique_id=434707960]
+[node name="storm_drain__Grate bar_001" type="MeshInstance3D" parent="storm_drain" unique_id=1313388463]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040000003, 0.0182, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Grate bar_002" type="MeshInstance3D" parent="storm_drain" unique_id=1830394760]
+[node name="storm_drain__Grate bar_002" type="MeshInstance3D" parent="storm_drain" unique_id=749408159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020000001, 0.0182, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Grate bar_003" type="MeshInstance3D" parent="storm_drain" unique_id=984590644]
+[node name="storm_drain__Grate bar_003" type="MeshInstance3D" parent="storm_drain" unique_id=136943077]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0182, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Grate bar_004" type="MeshInstance3D" parent="storm_drain" unique_id=1891502889]
+[node name="storm_drain__Grate bar_004" type="MeshInstance3D" parent="storm_drain" unique_id=1143051373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020000001, 0.0182, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Grate bar_005" type="MeshInstance3D" parent="storm_drain" unique_id=1757557655]
+[node name="storm_drain__Grate bar_005" type="MeshInstance3D" parent="storm_drain" unique_id=1492509036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040000003, 0.0182, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Grate bar_006" type="MeshInstance3D" parent="storm_drain" unique_id=1495610689]
+[node name="storm_drain__Grate bar_006" type="MeshInstance3D" parent="storm_drain" unique_id=1502876258]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060000002, 0.0182, 0)
 cast_shadow = 0
 
-[node name="storm_drain__Recess" type="MeshInstance3D" parent="storm_drain" unique_id=1974707289]
+[node name="storm_drain__Recess" type="MeshInstance3D" parent="storm_drain" unique_id=781282406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015000001, 0)
 cast_shadow = 0
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=191982914]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=325042857]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_v80cd")
 surface_material_override/0 = SubResource("StandardMaterial3D_3hn6s")

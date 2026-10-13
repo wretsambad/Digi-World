@@ -63,51 +63,51 @@ albedo_texture = SubResource("NoiseTexture2D_sctoi")
 roughness = 0.94
 uv1_scale = Vector3(3, 0.38, 1)
 
-[node name="fence_picket2" type="Node3D" unique_id=1287535756]
+[node name="fence_picket2" type="Node3D" unique_id=1349314060]
 metadata/optimized_static_parts = 13
 
-[node name="fence_picket" type="Node3D" parent="." unique_id=1942556849]
+[node name="fence_picket" type="Node3D" parent="." unique_id=1575198791]
 
-[node name="fence_picket__Picket" type="MeshInstance3D" parent="fence_picket" unique_id=2093287877]
+[node name="fence_picket__Picket" type="MeshInstance3D" parent="fence_picket" unique_id=1088661839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.192, 0.128, 0.011)
 
-[node name="fence_picket__Picket_001" type="MeshInstance3D" parent="fence_picket" unique_id=1488334855]
+[node name="fence_picket__Picket_001" type="MeshInstance3D" parent="fence_picket" unique_id=884044041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128, 0.128, 0.011)
 
-[node name="fence_picket__Picket_002" type="MeshInstance3D" parent="fence_picket" unique_id=1646975453]
+[node name="fence_picket__Picket_002" type="MeshInstance3D" parent="fence_picket" unique_id=644725048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064, 0.128, 0.011)
 
-[node name="fence_picket__Picket_003" type="MeshInstance3D" parent="fence_picket" unique_id=251491781]
+[node name="fence_picket__Picket_003" type="MeshInstance3D" parent="fence_picket" unique_id=1337894929]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128, 0.011)
 
-[node name="fence_picket__Picket_004" type="MeshInstance3D" parent="fence_picket" unique_id=1598888820]
+[node name="fence_picket__Picket_004" type="MeshInstance3D" parent="fence_picket" unique_id=59837637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.064, 0.128, 0.011)
 
-[node name="fence_picket__Picket_005" type="MeshInstance3D" parent="fence_picket" unique_id=1338709364]
+[node name="fence_picket__Picket_005" type="MeshInstance3D" parent="fence_picket" unique_id=1036378103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.128, 0.128, 0.011)
 
-[node name="fence_picket__Picket_006" type="MeshInstance3D" parent="fence_picket" unique_id=1592477005]
+[node name="fence_picket__Picket_006" type="MeshInstance3D" parent="fence_picket" unique_id=1524260797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192, 0.128, 0.011)
 
-[node name="fence_picket__Post" type="MeshInstance3D" parent="fence_picket" unique_id=1907333277]
+[node name="fence_picket__Post" type="MeshInstance3D" parent="fence_picket" unique_id=990986375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24000001, 0.13, 0)
 
-[node name="fence_picket__Post cap" type="MeshInstance3D" parent="fence_picket" unique_id=465073095]
+[node name="fence_picket__Post cap" type="MeshInstance3D" parent="fence_picket" unique_id=1100303462]
 transform = Transform3D(0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071068, -0.24000001, 0.26700002, 0)
 
-[node name="fence_picket__Post cap_001" type="MeshInstance3D" parent="fence_picket" unique_id=808590620]
+[node name="fence_picket__Post cap_001" type="MeshInstance3D" parent="fence_picket" unique_id=1834533653]
 transform = Transform3D(0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071068, 0.24000001, 0.26700002, 0)
 
-[node name="fence_picket__Post_001" type="MeshInstance3D" parent="fence_picket" unique_id=88418250]
+[node name="fence_picket__Post_001" type="MeshInstance3D" parent="fence_picket" unique_id=659795532]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24000001, 0.13, 0)
 
-[node name="fence_picket__Rail" type="MeshInstance3D" parent="fence_picket" unique_id=362347589]
+[node name="fence_picket__Rail" type="MeshInstance3D" parent="fence_picket" unique_id=1870391278]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068, -0.009000001)
 
-[node name="fence_picket__Rail_001" type="MeshInstance3D" parent="fence_picket" unique_id=1012564108]
+[node name="fence_picket__Rail_001" type="MeshInstance3D" parent="fence_picket" unique_id=392477592]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, -0.009000001)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=473117824]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=1392617033]
 mesh = SubResource("ArrayMesh_jeghm")
 surface_material_override/0 = SubResource("StandardMaterial3D_ynw5e")
 surface_material_override/1 = SubResource("StandardMaterial3D_ynw5e")

@@ -126,42 +126,52 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_shi76")
 
-[sub_resource type="Gradient" id="Gradient_vjwdy"]
+[sub_resource type="Gradient" id="Gradient_mkynh"]
 colors = PackedColorArray(0.5294118, 0.38470587, 0.24705882, 1, 0.6129412, 0.4618039, 0.31803924, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_mkynh"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4tggm"]
 seed = 41
 frequency = 0.045
 fractal_octaves = 3
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4tggm"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yiqv5"]
 width = 128
 height = 128
-noise = SubResource("FastNoiseLite_mkynh")
-color_ramp = SubResource("Gradient_vjwdy")
+noise = SubResource("FastNoiseLite_4tggm")
+color_ramp = SubResource("Gradient_mkynh")
 seamless = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yiqv5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vy1ed"]
 resource_name = "Autumn_966d46fftrue"
-albedo_texture = SubResource("NoiseTexture2D_4tggm")
+albedo_texture = SubResource("NoiseTexture2D_yiqv5")
 roughness = 0.94
 uv1_scale = Vector3(3, 0.38, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0fku"]
-resource_name = "Autumn_f0cd69fffalse"
-albedo_color = Color(0.9411765, 0.8039216, 0.4117647, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrms7"]
+resource_name = "Autumn_leafcf4a1bff"
+albedo_color = Color(0.8117647, 0.2901961, 0.105882354, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.527647, 0.18862745, 0.06882353, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxhib"]
-resource_name = "Autumn_b94f65fffalse"
-albedo_color = Color(0.7254902, 0.30980393, 0.39607844, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_715cy"]
+resource_name = "Autumn_leafe2711fff"
+albedo_color = Color(0.8862745, 0.44313726, 0.12156863, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.5760784, 0.2880392, 0.079019606, 1)
 
-[node name="tree_maple_large" type="Node3D" unique_id=1477421794]
+[node name="tree_maple_large" type="Node3D" unique_id=1455221174]
 
-[node name="tree_maple_large_Mesh" type="MeshInstance3D" parent="." unique_id=896367064]
+[node name="tree_maple_large_Mesh" type="MeshInstance3D" parent="." unique_id=426602076]
 mesh = SubResource("ArrayMesh_qg1p7")
-surface_material_override/0 = SubResource("StandardMaterial3D_yiqv5")
-surface_material_override/1 = SubResource("StandardMaterial3D_r0fku")
-surface_material_override/2 = SubResource("StandardMaterial3D_r0fku")
-surface_material_override/3 = SubResource("StandardMaterial3D_hxhib")
+surface_material_override/0 = SubResource("StandardMaterial3D_vy1ed")
+surface_material_override/1 = SubResource("StandardMaterial3D_wrms7")
+surface_material_override/2 = SubResource("StandardMaterial3D_715cy")
+surface_material_override/3 = SubResource("StandardMaterial3D_715cy")

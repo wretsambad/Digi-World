@@ -73,15 +73,15 @@ resource_name = "Autumn_cfc4b2fffalse"
 albedo_color = Color(0.81058824, 0.76960784, 0.6960784, 1)
 roughness = 0.94
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wrms7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4wmx"]
 resource_name = "Autumn_c3b9a6fffalse"
 albedo_color = Color(0.7629412, 0.7237255, 0.6501961, 1)
 roughness = 0.94
 
-[node name="driveway_large" type="Node3D" unique_id=1889991665]
+[node name="driveway_large" type="Node3D" unique_id=1516261439]
 
-[node name="driveway_large_Mesh" type="MeshInstance3D" parent="." unique_id=258533173]
+[node name="driveway_large_Mesh" type="MeshInstance3D" parent="." unique_id=1647748947]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_20tso")
 surface_material_override/0 = SubResource("StandardMaterial3D_qodex")
-surface_material_override/1 = SubResource("StandardMaterial3D_wrms7")
+surface_material_override/1 = SubResource("StandardMaterial3D_g4wmx")

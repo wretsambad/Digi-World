@@ -40,9 +40,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_btkow")
 
-[node name="curb_large" type="Node3D" unique_id=1291095929]
+[node name="curb_large" type="Node3D" unique_id=365263095]
 
-[node name="curb_large_Mesh" type="MeshInstance3D" parent="." unique_id=36155482]
+[node name="curb_large_Mesh" type="MeshInstance3D" parent="." unique_id=480951516]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_lk24i")
 surface_material_override/0 = SubResource("StandardMaterial3D_yw13i")

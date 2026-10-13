@@ -188,9 +188,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vm7nc")
 
-[node name="car_cream" type="Node3D" unique_id=96224319]
+[node name="car_cream" type="Node3D" unique_id=1898669356]
 
-[node name="car_cream_Mesh" type="MeshInstance3D" parent="." unique_id=1366711351]
+[node name="car_cream_Mesh" type="MeshInstance3D" parent="." unique_id=1248966848]
 mesh = SubResource("ArrayMesh_v311e")
 surface_material_override/0 = SubResource("StandardMaterial3D_xh51q")
 surface_material_override/1 = SubResource("StandardMaterial3D_h5665")

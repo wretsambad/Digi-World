@@ -37,9 +37,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mruds")
 
-[node name="driveway_apron_large" type="Node3D" unique_id=2038368677]
+[node name="driveway_apron_large" type="Node3D" unique_id=38228971]
 
-[node name="driveway_apron_large_Mesh" type="MeshInstance3D" parent="." unique_id=2111004404]
+[node name="driveway_apron_large_Mesh" type="MeshInstance3D" parent="." unique_id=1936934304]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_okyq4")
 surface_material_override/0 = SubResource("StandardMaterial3D_ipyaj")

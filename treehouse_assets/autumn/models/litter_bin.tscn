@@ -61,33 +61,33 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="litter_bin2" type="Node3D" unique_id=1701579865]
+[node name="litter_bin2" type="Node3D" unique_id=176323801]
 metadata/optimized_static_parts = 7
 
-[node name="litter_bin" type="Node3D" parent="." unique_id=2036353515]
+[node name="litter_bin" type="Node3D" parent="." unique_id=1097483048]
 
-[node name="litter_bin__Badge" type="MeshInstance3D" parent="litter_bin" unique_id=1968935260]
+[node name="litter_bin__Badge" type="MeshInstance3D" parent="litter_bin" unique_id=1208715757]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0.0612)
 
-[node name="litter_bin__Bin symbol" type="MeshInstance3D" parent="litter_bin" unique_id=1608923272]
+[node name="litter_bin__Bin symbol" type="MeshInstance3D" parent="litter_bin" unique_id=521685057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010000001, 0.102, 0.06600001)
 
-[node name="litter_bin__Bin symbol_001" type="MeshInstance3D" parent="litter_bin" unique_id=1463082542]
+[node name="litter_bin__Bin symbol_001" type="MeshInstance3D" parent="litter_bin" unique_id=2085721222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0.06600001)
 
-[node name="litter_bin__Bin symbol_002" type="MeshInstance3D" parent="litter_bin" unique_id=394888559]
+[node name="litter_bin__Bin symbol_002" type="MeshInstance3D" parent="litter_bin" unique_id=1958001389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010000001, 0.102, 0.06600001)
 
-[node name="litter_bin__Body" type="MeshInstance3D" parent="litter_bin" unique_id=1597722979]
+[node name="litter_bin__Body" type="MeshInstance3D" parent="litter_bin" unique_id=543099954]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0)
 
-[node name="litter_bin__Lid" type="MeshInstance3D" parent="litter_bin" unique_id=1800153549]
+[node name="litter_bin__Lid" type="MeshInstance3D" parent="litter_bin" unique_id=1585501587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208, 0)
 
-[node name="litter_bin__Opening" type="MeshInstance3D" parent="litter_bin" unique_id=773100633]
+[node name="litter_bin__Opening" type="MeshInstance3D" parent="litter_bin" unique_id=1423814860]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16600001, 0.061400004)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=2038270869]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=58208690]
 mesh = SubResource("ArrayMesh_sdfms")
 surface_material_override/0 = SubResource("StandardMaterial3D_yj28v")
 surface_material_override/1 = SubResource("StandardMaterial3D_wrt5u")

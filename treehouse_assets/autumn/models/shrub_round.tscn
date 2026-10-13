@@ -61,32 +61,27 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0fku"]
-resource_name = "Autumn_f0cd69fffalse"
-albedo_color = Color(0.9411765, 0.8039216, 0.4117647, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ej5cx"]
+resource_name = "Autumn_973f1cfffalse"
+albedo_color = Color(0.59294116, 0.24705882, 0.10941176, 1)
 roughness = 0.94
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8j1m"]
-resource_name = "Autumn_e89d76fffalse"
-albedo_color = Color(0.9098039, 0.6156863, 0.4627451, 1)
-roughness = 0.94
-
-[node name="shrub_round2" type="Node3D" unique_id=982830657]
+[node name="shrub_round2" type="Node3D" unique_id=748920337]
 metadata/optimized_static_parts = 3
 
-[node name="shrub_round" type="Node3D" parent="." unique_id=391060577]
+[node name="shrub_round" type="Node3D" parent="." unique_id=1548567165]
 
-[node name="shrub_round__Shrub lobe" type="MeshInstance3D" parent="shrub_round" unique_id=1873097211]
+[node name="shrub_round__Shrub lobe" type="MeshInstance3D" parent="shrub_round" unique_id=1957033179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.072000004, 0.09600001, 0)
 
-[node name="shrub_round__Shrub lobe_001" type="MeshInstance3D" parent="shrub_round" unique_id=227216700]
+[node name="shrub_round__Shrub lobe_001" type="MeshInstance3D" parent="shrub_round" unique_id=796073455]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060000002, 0.11000001, -0.016)
 
-[node name="shrub_round__Shrub lobe_002" type="MeshInstance3D" parent="shrub_round" unique_id=1541331265]
+[node name="shrub_round__Shrub lobe_002" type="MeshInstance3D" parent="shrub_round" unique_id=1180446297]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.154, 0.040000003)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=622368640]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=42279096]
 mesh = SubResource("ArrayMesh_ob5d2")
-surface_material_override/0 = SubResource("StandardMaterial3D_r0fku")
-surface_material_override/1 = SubResource("StandardMaterial3D_s8j1m")
-surface_material_override/2 = SubResource("StandardMaterial3D_s8j1m")
+surface_material_override/0 = SubResource("StandardMaterial3D_ej5cx")
+surface_material_override/1 = SubResource("StandardMaterial3D_ej5cx")
+surface_material_override/2 = SubResource("StandardMaterial3D_ej5cx")

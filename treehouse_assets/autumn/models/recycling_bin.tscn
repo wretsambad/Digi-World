@@ -61,33 +61,33 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="recycling_bin2" type="Node3D" unique_id=992474588]
+[node name="recycling_bin2" type="Node3D" unique_id=1494107257]
 metadata/optimized_static_parts = 7
 
-[node name="recycling_bin" type="Node3D" parent="." unique_id=1316752121]
+[node name="recycling_bin" type="Node3D" parent="." unique_id=1461393383]
 
-[node name="recycling_bin__Badge" type="MeshInstance3D" parent="recycling_bin" unique_id=1951917491]
+[node name="recycling_bin__Badge" type="MeshInstance3D" parent="recycling_bin" unique_id=1902887881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0.0612)
 
-[node name="recycling_bin__Body" type="MeshInstance3D" parent="recycling_bin" unique_id=1949682339]
+[node name="recycling_bin__Body" type="MeshInstance3D" parent="recycling_bin" unique_id=1571850234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.102, 0)
 
-[node name="recycling_bin__Cycle mark" type="MeshInstance3D" parent="recycling_bin" unique_id=31155988]
+[node name="recycling_bin__Cycle mark" type="MeshInstance3D" parent="recycling_bin" unique_id=1718862670]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012999999, 0.102, 0.0662)
 
-[node name="recycling_bin__Cycle mark_001" type="MeshInstance3D" parent="recycling_bin" unique_id=1923714714]
+[node name="recycling_bin__Cycle mark_001" type="MeshInstance3D" parent="recycling_bin" unique_id=852561767]
 transform = Transform3D(-0.5, -0.8660253, 0, 0.8660253, -0.5, 0, 0, 0, 1, -0.0064999997, 0.113258325, 0.0662)
 
-[node name="recycling_bin__Cycle mark_002" type="MeshInstance3D" parent="recycling_bin" unique_id=2070950364]
+[node name="recycling_bin__Cycle mark_002" type="MeshInstance3D" parent="recycling_bin" unique_id=73909197]
 transform = Transform3D(-0.5, 0.8660254, 0, -0.8660254, -0.5, 0, 0, 0, 1, -0.0064999997, 0.090741664, 0.0662)
 
-[node name="recycling_bin__Lid" type="MeshInstance3D" parent="recycling_bin" unique_id=1517671232]
+[node name="recycling_bin__Lid" type="MeshInstance3D" parent="recycling_bin" unique_id=1796076778]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208, 0)
 
-[node name="recycling_bin__Opening" type="MeshInstance3D" parent="recycling_bin" unique_id=1787110584]
+[node name="recycling_bin__Opening" type="MeshInstance3D" parent="recycling_bin" unique_id=404589706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16600001, 0.061400004)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=2118677204]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=1790476091]
 mesh = SubResource("ArrayMesh_11bd5")
 surface_material_override/0 = SubResource("StandardMaterial3D_vasp7")
 surface_material_override/1 = SubResource("StandardMaterial3D_snd6p")

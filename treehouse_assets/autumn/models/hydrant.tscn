@@ -42,33 +42,33 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="hydrant2" type="Node3D" unique_id=112583489]
+[node name="hydrant2" type="Node3D" unique_id=722642777]
 metadata/optimized_static_parts = 7
 
-[node name="hydrant" type="Node3D" parent="." unique_id=302957654]
+[node name="hydrant" type="Node3D" parent="." unique_id=1263063514]
 
-[node name="hydrant__Barrel" type="MeshInstance3D" parent="hydrant" unique_id=1459687622]
+[node name="hydrant__Barrel" type="MeshInstance3D" parent="hydrant" unique_id=336237108]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.086, 0)
 
-[node name="hydrant__Cap" type="MeshInstance3D" parent="hydrant" unique_id=1141940981]
+[node name="hydrant__Cap" type="MeshInstance3D" parent="hydrant" unique_id=1172078947]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.158, 0)
 
-[node name="hydrant__Foot" type="MeshInstance3D" parent="hydrant" unique_id=1683350591]
+[node name="hydrant__Foot" type="MeshInstance3D" parent="hydrant" unique_id=54866880]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012999999, 0)
 
-[node name="hydrant__Front cap" type="MeshInstance3D" parent="hydrant" unique_id=882263444]
+[node name="hydrant__Front cap" type="MeshInstance3D" parent="hydrant" unique_id=1897374216]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.114, 0.032)
 
-[node name="hydrant__Outlet" type="MeshInstance3D" parent="hydrant" unique_id=835186049]
+[node name="hydrant__Outlet" type="MeshInstance3D" parent="hydrant" unique_id=1528290510]
 transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -0.046, 0.11000001, 0)
 
-[node name="hydrant__Outlet_001" type="MeshInstance3D" parent="hydrant" unique_id=794883663]
+[node name="hydrant__Outlet_001" type="MeshInstance3D" parent="hydrant" unique_id=1950510957]
 transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0.046, 0.11000001, 0)
 
-[node name="hydrant__Top nut" type="MeshInstance3D" parent="hydrant" unique_id=307864427]
+[node name="hydrant__Top nut" type="MeshInstance3D" parent="hydrant" unique_id=1900002894]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18200001, 0)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=862462869]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=1348956265]
 mesh = SubResource("ArrayMesh_rqety")
 surface_material_override/0 = SubResource("StandardMaterial3D_lvmpp")
 surface_material_override/1 = SubResource("StandardMaterial3D_ewglm")

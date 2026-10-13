@@ -28,6 +28,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _physics_process(delta: float) -> void:
+	print("physics running")
 	# Apply gravity when in the air
 	if not is_on_floor():
 		velocity.y -= gravity * delta

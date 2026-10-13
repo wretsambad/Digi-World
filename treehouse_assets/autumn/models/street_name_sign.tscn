@@ -61,27 +61,32 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8j1m"]
-resource_name = "Autumn_e89d76fffalse"
-albedo_color = Color(0.9098039, 0.6156863, 0.4627451, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ypka"]
+resource_name = "Autumn_leafb8341cff"
+albedo_color = Color(0.72156864, 0.20392157, 0.10980392, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.4690196, 0.13254902, 0.071372546, 1)
 
-[node name="street_name_sign2" type="Node3D" unique_id=1244161469]
+[node name="street_name_sign2" type="Node3D" unique_id=1407855282]
 metadata/optimized_static_parts = 3
 
-[node name="street_name_sign" type="Node3D" parent="." unique_id=757261101]
+[node name="street_name_sign" type="Node3D" parent="." unique_id=1368260166]
 
-[node name="street_name_sign__Post" type="MeshInstance3D" parent="street_name_sign" unique_id=1834970320]
+[node name="street_name_sign__Post" type="MeshInstance3D" parent="street_name_sign" unique_id=880329336]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31, 0)
 
-[node name="street_name_sign__Sign board" type="MeshInstance3D" parent="street_name_sign" unique_id=1299253236]
+[node name="street_name_sign__Sign board" type="MeshInstance3D" parent="street_name_sign" unique_id=958981475]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.556, 0)
 
-[node name="street_name_sign__Street lettering" type="MeshInstance3D" parent="street_name_sign" unique_id=585708235]
+[node name="street_name_sign__Street lettering" type="MeshInstance3D" parent="street_name_sign" unique_id=1874594710]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.556, 0.0094)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=691712733]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=827130751]
 mesh = SubResource("ArrayMesh_o6c2i")
 surface_material_override/0 = SubResource("StandardMaterial3D_qv2lp")
-surface_material_override/1 = SubResource("StandardMaterial3D_s8j1m")
+surface_material_override/1 = SubResource("StandardMaterial3D_7ypka")
 surface_material_override/2 = SubResource("StandardMaterial3D_j4kqt")

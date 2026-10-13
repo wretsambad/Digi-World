@@ -44,11 +44,11 @@ shadow_mesh = SubResource("ArrayMesh_577yx")
 render_priority = 0
 shader = ExtResource("1_6h6yf")
 
-[node name="lawn_tile2" type="Node3D" unique_id=2085272739]
+[node name="lawn_tile2" type="Node3D" unique_id=663672933]
 
-[node name="lawn_tile" type="Node3D" parent="." unique_id=301679854]
+[node name="lawn_tile" type="Node3D" parent="." unique_id=1031049236]
 
-[node name="lawn_tile__Lawn" type="MeshInstance3D" parent="lawn_tile" unique_id=649345067]
+[node name="lawn_tile__Lawn" type="MeshInstance3D" parent="lawn_tile" unique_id=390612481]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012, 0)
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_qdrl5")

@@ -133,226 +133,231 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxhib"]
-resource_name = "Autumn_b94f65fffalse"
-albedo_color = Color(0.7254902, 0.30980393, 0.39607844, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_715cy"]
+resource_name = "Autumn_leafe2711fff"
+albedo_color = Color(0.8862745, 0.44313726, 0.12156863, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.5760784, 0.2880392, 0.079019606, 1)
 
-[sub_resource type="Gradient" id="Gradient_0rp0o"]
+[sub_resource type="Gradient" id="Gradient_njj6u"]
 colors = PackedColorArray(0.7341176, 0.59294116, 0.40588236, 1, 0.8267451, 0.6792941, 0.48392156, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_njj6u"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3w5la"]
 seed = 41
 frequency = 0.045
 fractal_octaves = 3
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3w5la"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xgjyc"]
 width = 128
 height = 128
-noise = SubResource("FastNoiseLite_njj6u")
-color_ramp = SubResource("Gradient_0rp0o")
+noise = SubResource("FastNoiseLite_3w5la")
+color_ramp = SubResource("Gradient_njj6u")
 seamless = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xgjyc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p82jv"]
 resource_name = "Autumn_d0a873fftrue"
-albedo_texture = SubResource("NoiseTexture2D_3w5la")
+albedo_texture = SubResource("NoiseTexture2D_xgjyc")
 roughness = 0.94
 uv1_scale = Vector3(3, 0.38, 1)
 
-[node name="flowerbed2" type="Node3D" unique_id=1787645529]
+[node name="flowerbed2" type="Node3D" unique_id=125525744]
 metadata/optimized_static_parts = 61
 
-[node name="flowerbed" type="Node3D" parent="." unique_id=1037221234]
+[node name="flowerbed" type="Node3D" parent="." unique_id=780800510]
 
-[node name="flowerbed__Flower center" type="MeshInstance3D" parent="flowerbed" unique_id=1990425916]
+[node name="flowerbed__Flower center" type="MeshInstance3D" parent="flowerbed" unique_id=1647182846]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14400001, 0.12100001, -0.034)
 
-[node name="flowerbed__Flower center_001" type="MeshInstance3D" parent="flowerbed" unique_id=2138303414]
+[node name="flowerbed__Flower center_001" type="MeshInstance3D" parent="flowerbed" unique_id=840489221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.096, 0.12100001, 0.034)
 
-[node name="flowerbed__Flower center_002" type="MeshInstance3D" parent="flowerbed" unique_id=1704982577]
+[node name="flowerbed__Flower center_002" type="MeshInstance3D" parent="flowerbed" unique_id=826490609]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048, 0.12100001, -0.034)
 
-[node name="flowerbed__Flower center_003" type="MeshInstance3D" parent="flowerbed" unique_id=1962843657]
+[node name="flowerbed__Flower center_003" type="MeshInstance3D" parent="flowerbed" unique_id=1039398217]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12100001, 0.034)
 
-[node name="flowerbed__Flower center_004" type="MeshInstance3D" parent="flowerbed" unique_id=1502884772]
+[node name="flowerbed__Flower center_004" type="MeshInstance3D" parent="flowerbed" unique_id=801260596]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.048, 0.12100001, -0.034)
 
-[node name="flowerbed__Flower center_005" type="MeshInstance3D" parent="flowerbed" unique_id=823099093]
+[node name="flowerbed__Flower center_005" type="MeshInstance3D" parent="flowerbed" unique_id=1410658361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.096, 0.12100001, 0.034)
 
-[node name="flowerbed__Flower center_006" type="MeshInstance3D" parent="flowerbed" unique_id=1163524160]
+[node name="flowerbed__Flower center_006" type="MeshInstance3D" parent="flowerbed" unique_id=401967221]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14400001, 0.12100001, -0.034)
 
-[node name="flowerbed__Leaf" type="MeshInstance3D" parent="flowerbed" unique_id=1146759626]
+[node name="flowerbed__Leaf" type="MeshInstance3D" parent="flowerbed" unique_id=695677415]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133, 0.080000006, -0.034)
 
-[node name="flowerbed__Leaf_001" type="MeshInstance3D" parent="flowerbed" unique_id=1128553331]
+[node name="flowerbed__Leaf_001" type="MeshInstance3D" parent="flowerbed" unique_id=1595650769]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.085, 0.080000006, 0.034)
 
-[node name="flowerbed__Leaf_002" type="MeshInstance3D" parent="flowerbed" unique_id=789581344]
+[node name="flowerbed__Leaf_002" type="MeshInstance3D" parent="flowerbed" unique_id=1535642845]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.037, 0.080000006, -0.034)
 
-[node name="flowerbed__Leaf_003" type="MeshInstance3D" parent="flowerbed" unique_id=1990952562]
+[node name="flowerbed__Leaf_003" type="MeshInstance3D" parent="flowerbed" unique_id=616253340]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.011, 0.080000006, 0.034)
 
-[node name="flowerbed__Leaf_004" type="MeshInstance3D" parent="flowerbed" unique_id=1150975802]
+[node name="flowerbed__Leaf_004" type="MeshInstance3D" parent="flowerbed" unique_id=1414260560]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.058999997, 0.080000006, -0.034)
 
-[node name="flowerbed__Leaf_005" type="MeshInstance3D" parent="flowerbed" unique_id=2113376671]
+[node name="flowerbed__Leaf_005" type="MeshInstance3D" parent="flowerbed" unique_id=45448503]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10700001, 0.080000006, 0.034)
 
-[node name="flowerbed__Leaf_006" type="MeshInstance3D" parent="flowerbed" unique_id=223290305]
+[node name="flowerbed__Leaf_006" type="MeshInstance3D" parent="flowerbed" unique_id=2089371915]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155, 0.080000006, -0.034)
 
-[node name="flowerbed__Petal" type="MeshInstance3D" parent="flowerbed" unique_id=1401006002]
+[node name="flowerbed__Petal" type="MeshInstance3D" parent="flowerbed" unique_id=989150686]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1279, 0.116, -0.034)
 
-[node name="flowerbed__Petal_001" type="MeshInstance3D" parent="flowerbed" unique_id=2145088850]
+[node name="flowerbed__Petal_001" type="MeshInstance3D" parent="flowerbed" unique_id=112569270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13902484, 0.116, -0.04931201)
 
-[node name="flowerbed__Petal_002" type="MeshInstance3D" parent="flowerbed" unique_id=1313628869]
+[node name="flowerbed__Petal_002" type="MeshInstance3D" parent="flowerbed" unique_id=1649490791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15702517, 0.116, -0.043463346)
 
-[node name="flowerbed__Petal_003" type="MeshInstance3D" parent="flowerbed" unique_id=855616166]
+[node name="flowerbed__Petal_003" type="MeshInstance3D" parent="flowerbed" unique_id=1086740103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15702517, 0.116, -0.024536658)
 
-[node name="flowerbed__Petal_004" type="MeshInstance3D" parent="flowerbed" unique_id=2080620271]
+[node name="flowerbed__Petal_004" type="MeshInstance3D" parent="flowerbed" unique_id=137347696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13902484, 0.116, -0.018687991)
 
-[node name="flowerbed__Petal_005" type="MeshInstance3D" parent="flowerbed" unique_id=1529692642]
+[node name="flowerbed__Petal_005" type="MeshInstance3D" parent="flowerbed" unique_id=773312265]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079900004, 0.116, 0.034)
 
-[node name="flowerbed__Petal_006" type="MeshInstance3D" parent="flowerbed" unique_id=1494395343]
+[node name="flowerbed__Petal_006" type="MeshInstance3D" parent="flowerbed" unique_id=1187778404]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09102483, 0.116, 0.018687991)
 
-[node name="flowerbed__Petal_007" type="MeshInstance3D" parent="flowerbed" unique_id=142874020]
+[node name="flowerbed__Petal_007" type="MeshInstance3D" parent="flowerbed" unique_id=26372240]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10902517, 0.116, 0.024536658)
 
-[node name="flowerbed__Petal_008" type="MeshInstance3D" parent="flowerbed" unique_id=1087254576]
+[node name="flowerbed__Petal_008" type="MeshInstance3D" parent="flowerbed" unique_id=1196315096]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10902517, 0.116, 0.043463346)
 
-[node name="flowerbed__Petal_009" type="MeshInstance3D" parent="flowerbed" unique_id=1664394758]
+[node name="flowerbed__Petal_009" type="MeshInstance3D" parent="flowerbed" unique_id=787919982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09102483, 0.116, 0.04931201)
 
-[node name="flowerbed__Petal_010" type="MeshInstance3D" parent="flowerbed" unique_id=611464854]
+[node name="flowerbed__Petal_010" type="MeshInstance3D" parent="flowerbed" unique_id=216262682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0319, 0.116, -0.034)
 
-[node name="flowerbed__Petal_011" type="MeshInstance3D" parent="flowerbed" unique_id=767241504]
+[node name="flowerbed__Petal_011" type="MeshInstance3D" parent="flowerbed" unique_id=2080539495]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043024827, 0.116, -0.04931201)
 
-[node name="flowerbed__Petal_012" type="MeshInstance3D" parent="flowerbed" unique_id=1034854697]
+[node name="flowerbed__Petal_012" type="MeshInstance3D" parent="flowerbed" unique_id=2073280727]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.061025172, 0.116, -0.043463346)
 
-[node name="flowerbed__Petal_013" type="MeshInstance3D" parent="flowerbed" unique_id=286857228]
+[node name="flowerbed__Petal_013" type="MeshInstance3D" parent="flowerbed" unique_id=1858982852]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.061025172, 0.116, -0.024536658)
 
-[node name="flowerbed__Petal_014" type="MeshInstance3D" parent="flowerbed" unique_id=286353532]
+[node name="flowerbed__Petal_014" type="MeshInstance3D" parent="flowerbed" unique_id=1929445134]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.043024827, 0.116, -0.018687991)
 
-[node name="flowerbed__Petal_015" type="MeshInstance3D" parent="flowerbed" unique_id=609337300]
+[node name="flowerbed__Petal_015" type="MeshInstance3D" parent="flowerbed" unique_id=107099203]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0161, 0.116, 0.034)
 
-[node name="flowerbed__Petal_016" type="MeshInstance3D" parent="flowerbed" unique_id=177457645]
+[node name="flowerbed__Petal_016" type="MeshInstance3D" parent="flowerbed" unique_id=1165121533]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049751736, 0.116, 0.018687991)
 
-[node name="flowerbed__Petal_017" type="MeshInstance3D" parent="flowerbed" unique_id=625152718]
+[node name="flowerbed__Petal_017" type="MeshInstance3D" parent="flowerbed" unique_id=1896541881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013025174, 0.116, 0.024536658)
 
-[node name="flowerbed__Petal_018" type="MeshInstance3D" parent="flowerbed" unique_id=903807063]
+[node name="flowerbed__Petal_018" type="MeshInstance3D" parent="flowerbed" unique_id=1365958412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013025174, 0.116, 0.043463346)
 
-[node name="flowerbed__Petal_019" type="MeshInstance3D" parent="flowerbed" unique_id=460813862]
+[node name="flowerbed__Petal_019" type="MeshInstance3D" parent="flowerbed" unique_id=472252979]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049751736, 0.116, 0.04931201)
 
-[node name="flowerbed__Petal_020" type="MeshInstance3D" parent="flowerbed" unique_id=217793984]
+[node name="flowerbed__Petal_020" type="MeshInstance3D" parent="flowerbed" unique_id=281115431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0641, 0.116, -0.034)
 
-[node name="flowerbed__Petal_021" type="MeshInstance3D" parent="flowerbed" unique_id=690648606]
+[node name="flowerbed__Petal_021" type="MeshInstance3D" parent="flowerbed" unique_id=1452441870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052975174, 0.116, -0.04931201)
 
-[node name="flowerbed__Petal_022" type="MeshInstance3D" parent="flowerbed" unique_id=1525411594]
+[node name="flowerbed__Petal_022" type="MeshInstance3D" parent="flowerbed" unique_id=808395165]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034974825, 0.116, -0.043463346)
 
-[node name="flowerbed__Petal_023" type="MeshInstance3D" parent="flowerbed" unique_id=1028016774]
+[node name="flowerbed__Petal_023" type="MeshInstance3D" parent="flowerbed" unique_id=198116500]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034974825, 0.116, -0.024536658)
 
-[node name="flowerbed__Petal_024" type="MeshInstance3D" parent="flowerbed" unique_id=893186981]
+[node name="flowerbed__Petal_024" type="MeshInstance3D" parent="flowerbed" unique_id=214940762]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052975174, 0.116, -0.018687991)
 
-[node name="flowerbed__Petal_025" type="MeshInstance3D" parent="flowerbed" unique_id=1353104573]
+[node name="flowerbed__Petal_025" type="MeshInstance3D" parent="flowerbed" unique_id=1775901600]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.112100005, 0.116, 0.034)
 
-[node name="flowerbed__Petal_026" type="MeshInstance3D" parent="flowerbed" unique_id=1907770354]
+[node name="flowerbed__Petal_026" type="MeshInstance3D" parent="flowerbed" unique_id=70053159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10097517, 0.116, 0.018687991)
 
-[node name="flowerbed__Petal_027" type="MeshInstance3D" parent="flowerbed" unique_id=1493348566]
+[node name="flowerbed__Petal_027" type="MeshInstance3D" parent="flowerbed" unique_id=1295700354]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08297483, 0.116, 0.024536658)
 
-[node name="flowerbed__Petal_028" type="MeshInstance3D" parent="flowerbed" unique_id=522307098]
+[node name="flowerbed__Petal_028" type="MeshInstance3D" parent="flowerbed" unique_id=279578828]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08297483, 0.116, 0.043463346)
 
-[node name="flowerbed__Petal_029" type="MeshInstance3D" parent="flowerbed" unique_id=1301959833]
+[node name="flowerbed__Petal_029" type="MeshInstance3D" parent="flowerbed" unique_id=1969150178]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10097517, 0.116, 0.04931201)
 
-[node name="flowerbed__Petal_030" type="MeshInstance3D" parent="flowerbed" unique_id=811889386]
+[node name="flowerbed__Petal_030" type="MeshInstance3D" parent="flowerbed" unique_id=1080715234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1601, 0.116, -0.034)
 
-[node name="flowerbed__Petal_031" type="MeshInstance3D" parent="flowerbed" unique_id=111249858]
+[node name="flowerbed__Petal_031" type="MeshInstance3D" parent="flowerbed" unique_id=1067211158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14897518, 0.116, -0.04931201)
 
-[node name="flowerbed__Petal_032" type="MeshInstance3D" parent="flowerbed" unique_id=1042728601]
+[node name="flowerbed__Petal_032" type="MeshInstance3D" parent="flowerbed" unique_id=1512810870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13097483, 0.116, -0.043463346)
 
-[node name="flowerbed__Petal_033" type="MeshInstance3D" parent="flowerbed" unique_id=1185051811]
+[node name="flowerbed__Petal_033" type="MeshInstance3D" parent="flowerbed" unique_id=934258709]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13097483, 0.116, -0.024536658)
 
-[node name="flowerbed__Petal_034" type="MeshInstance3D" parent="flowerbed" unique_id=552532942]
+[node name="flowerbed__Petal_034" type="MeshInstance3D" parent="flowerbed" unique_id=7853369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14897518, 0.116, -0.018687991)
 
-[node name="flowerbed__Soil" type="MeshInstance3D" parent="flowerbed" unique_id=646159627]
+[node name="flowerbed__Soil" type="MeshInstance3D" parent="flowerbed" unique_id=1675119243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.020000001, 0)
 
-[node name="flowerbed__Stem" type="MeshInstance3D" parent="flowerbed" unique_id=411900256]
+[node name="flowerbed__Stem" type="MeshInstance3D" parent="flowerbed" unique_id=1175930869]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.14400001, 0.078, -0.034)
 
-[node name="flowerbed__Stem_001" type="MeshInstance3D" parent="flowerbed" unique_id=1291574094]
+[node name="flowerbed__Stem_001" type="MeshInstance3D" parent="flowerbed" unique_id=29538126]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.096, 0.078, 0.034)
 
-[node name="flowerbed__Stem_002" type="MeshInstance3D" parent="flowerbed" unique_id=1505569085]
+[node name="flowerbed__Stem_002" type="MeshInstance3D" parent="flowerbed" unique_id=1953490172]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.048, 0.078, -0.034)
 
-[node name="flowerbed__Stem_003" type="MeshInstance3D" parent="flowerbed" unique_id=332876612]
+[node name="flowerbed__Stem_003" type="MeshInstance3D" parent="flowerbed" unique_id=1877255506]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.078, 0.034)
 
-[node name="flowerbed__Stem_004" type="MeshInstance3D" parent="flowerbed" unique_id=901398473]
+[node name="flowerbed__Stem_004" type="MeshInstance3D" parent="flowerbed" unique_id=230287472]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.048, 0.078, -0.034)
 
-[node name="flowerbed__Stem_005" type="MeshInstance3D" parent="flowerbed" unique_id=1770139783]
+[node name="flowerbed__Stem_005" type="MeshInstance3D" parent="flowerbed" unique_id=1325738304]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.096, 0.078, 0.034)
 
-[node name="flowerbed__Stem_006" type="MeshInstance3D" parent="flowerbed" unique_id=1976448328]
+[node name="flowerbed__Stem_006" type="MeshInstance3D" parent="flowerbed" unique_id=1676630760]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.14400001, 0.078, -0.034)
 
-[node name="flowerbed__Timber edging" type="MeshInstance3D" parent="flowerbed" unique_id=699433161]
+[node name="flowerbed__Timber edging" type="MeshInstance3D" parent="flowerbed" unique_id=1469704804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024, 0.084)
 
-[node name="flowerbed__Timber edging_001" type="MeshInstance3D" parent="flowerbed" unique_id=946498858]
+[node name="flowerbed__Timber edging_001" type="MeshInstance3D" parent="flowerbed" unique_id=518524309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.024, -0.084)
 
-[node name="flowerbed__Timber edging_002" type="MeshInstance3D" parent="flowerbed" unique_id=793565154]
+[node name="flowerbed__Timber edging_002" type="MeshInstance3D" parent="flowerbed" unique_id=802400829]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184, 0.024, 0)
 
-[node name="flowerbed__Timber edging_003" type="MeshInstance3D" parent="flowerbed" unique_id=79507436]
+[node name="flowerbed__Timber edging_003" type="MeshInstance3D" parent="flowerbed" unique_id=167287079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.184, 0.024, 0)
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=773628238]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=744452226]
 mesh = SubResource("ArrayMesh_knksc")
 surface_material_override/0 = SubResource("StandardMaterial3D_tovia")
-surface_material_override/1 = SubResource("StandardMaterial3D_hxhib")
+surface_material_override/1 = SubResource("StandardMaterial3D_715cy")
 surface_material_override/2 = SubResource("StandardMaterial3D_4n280")
 surface_material_override/3 = SubResource("StandardMaterial3D_ny2fa")
 surface_material_override/4 = SubResource("StandardMaterial3D_6bv1n")
 surface_material_override/5 = SubResource("StandardMaterial3D_36bgw")
-surface_material_override/6 = SubResource("StandardMaterial3D_xgjyc")
+surface_material_override/6 = SubResource("StandardMaterial3D_p82jv")

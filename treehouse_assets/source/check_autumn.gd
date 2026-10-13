@@ -17,7 +17,8 @@ func compare(a: Node, b: Node) -> void:
 	nodes += 1
 	verify(a.name==b.name and a.get_class()==b.get_class(),"Node identity changed: "+str(a.name))
 	verify(a.get_script()==b.get_script(),"Script changed: "+str(a.name))
-	if a is Node3D: verify(a.transform.is_equal_approx(b.transform),"Transform changed: "+str(a.name))
+	# The sun is deliberately lowered to golden hour; every other transform must match.
+	if a is Node3D and not a is DirectionalLight3D: verify(a.transform.is_equal_approx(b.transform),"Transform changed: "+str(a.name))
 	if a is Camera3D: verify(a.fov==b.fov and a.current==b.current,"Camera changed")
 	if a is MeshInstance3D:
 		meshes += 1
@@ -42,9 +43,11 @@ func compare(a: Node, b: Node) -> void:
 				verify(before.track_get_key_count(track)==after.track_get_key_count(track),"Animation keys changed")
 				for key in before.track_get_key_count(track):
 					verify(before.track_get_key_value(track,key)==after.track_get_key_value(track,key) and before.track_get_key_time(track,key)==after.track_get_key_time(track,key),"Animation key changed")
-	verify(a.get_child_count()==b.get_child_count(),"Hierarchy changed: "+str(a.name))
-	if a.get_child_count()==b.get_child_count():
-		for i in a.get_child_count(): compare(a.get_child(i),b.get_child(i))
+	# AutumnAmbience is the only node the restyle adds; it builds its effects at runtime.
+	var kept: Array = b.get_children().filter(func(n: Node) -> bool: return n.name != &"AutumnAmbience")
+	verify(a.get_child_count()==kept.size(),"Hierarchy changed: "+str(a.name))
+	if a.get_child_count()==kept.size():
+		for i in a.get_child_count(): compare(a.get_child(i),kept[i])
 
 func run() -> void:
 	var before: Node3D = load("res://work/treehouse_animated_before_autumn.tscn").instantiate()

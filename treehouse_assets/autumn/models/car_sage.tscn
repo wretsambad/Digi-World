@@ -188,18 +188,23 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_82ol8")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10g5t"]
-resource_name = "Autumn_e6b747fffalse"
-albedo_color = Color(0.9019608, 0.7176471, 0.2784314, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vjwdy"]
+resource_name = "Autumn_leafc13d1fff"
+albedo_color = Color(0.75686276, 0.23921569, 0.12156863, 1)
 roughness = 0.94
+rim_enabled = true
+rim = 0.3
+rim_tint = 0.7
+backlight_enabled = true
+backlight = Color(0.49196076, 0.15549019, 0.079019606, 1)
 
-[node name="car_sage" type="Node3D" unique_id=180423270]
+[node name="car_sage" type="Node3D" unique_id=1286323136]
 
-[node name="car_sage_Mesh" type="MeshInstance3D" parent="." unique_id=1067360933]
+[node name="car_sage_Mesh" type="MeshInstance3D" parent="." unique_id=692329755]
 mesh = SubResource("ArrayMesh_vu7m1")
 surface_material_override/0 = SubResource("StandardMaterial3D_dgdgg")
 surface_material_override/1 = SubResource("StandardMaterial3D_id5pb")
 surface_material_override/2 = SubResource("StandardMaterial3D_vde72")
 surface_material_override/3 = SubResource("StandardMaterial3D_ok22m")
-surface_material_override/4 = SubResource("StandardMaterial3D_10g5t")
+surface_material_override/4 = SubResource("StandardMaterial3D_vjwdy")
 surface_material_override/5 = SubResource("StandardMaterial3D_4x6dt")

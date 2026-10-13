@@ -43,40 +43,40 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="manhole_cover2" type="Node3D" unique_id=1185495022]
+[node name="manhole_cover2" type="Node3D" unique_id=559116064]
 metadata/optimized_static_parts = 7
 
-[node name="manhole_cover" type="Node3D" parent="." unique_id=2004795877]
+[node name="manhole_cover" type="Node3D" parent="." unique_id=412314540]
 
-[node name="manhole_cover__Cover" type="MeshInstance3D" parent="manhole_cover" unique_id=1563358317]
+[node name="manhole_cover__Cover" type="MeshInstance3D" parent="manhole_cover" unique_id=283889489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0148, 0)
 cast_shadow = 0
 
-[node name="manhole_cover__Grip ridge" type="MeshInstance3D" parent="manhole_cover" unique_id=1247779305]
+[node name="manhole_cover__Grip ridge" type="MeshInstance3D" parent="manhole_cover" unique_id=1393840669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040000003, 0.0174, 0)
 cast_shadow = 0
 
-[node name="manhole_cover__Grip ridge_001" type="MeshInstance3D" parent="manhole_cover" unique_id=1569551889]
+[node name="manhole_cover__Grip ridge_001" type="MeshInstance3D" parent="manhole_cover" unique_id=1055874696]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020000001, 0.0174, 0)
 cast_shadow = 0
 
-[node name="manhole_cover__Grip ridge_002" type="MeshInstance3D" parent="manhole_cover" unique_id=1816171172]
+[node name="manhole_cover__Grip ridge_002" type="MeshInstance3D" parent="manhole_cover" unique_id=2069686373]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0174, 0)
 cast_shadow = 0
 
-[node name="manhole_cover__Grip ridge_003" type="MeshInstance3D" parent="manhole_cover" unique_id=365500276]
+[node name="manhole_cover__Grip ridge_003" type="MeshInstance3D" parent="manhole_cover" unique_id=103377646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020000001, 0.0174, 0)
 cast_shadow = 0
 
-[node name="manhole_cover__Grip ridge_004" type="MeshInstance3D" parent="manhole_cover" unique_id=376293724]
+[node name="manhole_cover__Grip ridge_004" type="MeshInstance3D" parent="manhole_cover" unique_id=1322052959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.040000003, 0.0174, 0)
 cast_shadow = 0
 
-[node name="manhole_cover__Rim" type="MeshInstance3D" parent="manhole_cover" unique_id=671983152]
+[node name="manhole_cover__Rim" type="MeshInstance3D" parent="manhole_cover" unique_id=1638403259]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.007, 0)
 cast_shadow = 0
 
-[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=487075451]
+[node name="OptimizedStaticGeometry" type="MeshInstance3D" parent="." unique_id=504907521]
 cast_shadow = 0
 mesh = SubResource("ArrayMesh_iiger")
 surface_material_override/0 = SubResource("StandardMaterial3D_yriyc")
