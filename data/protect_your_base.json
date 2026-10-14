@@ -20,9 +20,9 @@
 			"title": "Step 1: Make it long",
 			"prompt": "Pick the password with at least 8 letters.",
 			"required_rules": ["common", "personal", "length"],
-			"defense": "Wooden gate and fence around the ladder",
-			"cheer": "Yes! A long password builds a gate across the ladder!",
-			"glitch_line": "Hey! It hopped right over the fence! We need it stronger.",
+			"defense": "Braced cabin door and gate on the upper deck",
+			"cheer": "Yes! A long password braces our cabin door and adds a gate to our deck!",
+			"glitch_line": "It jumped our short deck gate and reached an open window! We need taller protection and shutters.",
 			"options": [
 				{
 					"text": "treetopcastle",
@@ -59,9 +59,9 @@
 			"title": "Step 2: Mix big and small letters",
 			"prompt": "Add capital letters to your password. Which one mixes UPPER and lower case?",
 			"required_rules": ["common", "personal", "length", "mixed_case"],
-			"defense": "Taller fence and a big gate",
-			"cheer": "Big and small letters! The fence grows taller!",
-			"glitch_line": "Oh no, it's climbing the branches instead!",
+			"defense": "Taller deck gate, window shutters and a door crossbar",
+			"cheer": "Big and small letters! Our deck gate grows taller, and the cabin windows get shutters!",
+			"glitch_line": "Our gate and shutters stopped it! But now it is climbing the branches to reach the roof!",
 			"options": [
 				{
 					"text": "treetopcastle",
@@ -98,8 +98,8 @@
 			"title": "Step 3: Add numbers and symbols",
 			"prompt": "Finish your password with numbers AND symbols. Which one has both?",
 			"required_rules": ["common", "personal", "length", "mixed_case", "number", "symbol"],
-			"defense": "Metal guards on the branches",
-			"cheer": "Numbers and symbols! Metal guards cover the branches!",
+			"defense": "Reinforced cabin and wide overhanging branch shields",
+			"cheer": "Numbers and symbols! Wide shields block the branches, and our cabin is reinforced!",
 			"glitch_line": "",
 			"options": [
 				{

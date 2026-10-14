@@ -1677,34 +1677,34 @@ _surfaces = [{
 }]
 
 [sub_resource type="BoxMesh" id="BoxMesh_2dwam"]
-size = Vector3(0.29475608, 0.18, 3.1894166)
+size = Vector3(0.29475608, 0.18, 4.0894166)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vnif3"]
-size = Vector3(0.29475608, 0.18, 5.324328)
+size = Vector3(0.29475608, 0.18, 6.224328)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h8fap"]
-size = Vector3(0.29475608, 0.18, 6.6234674)
+size = Vector3(0.29475608, 0.18, 7.5234674)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3l0hu"]
-size = Vector3(0.29475608, 0.18, 7.5504866)
+size = Vector3(0.29475608, 0.18, 8.4504866)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t3ilr"]
-size = Vector3(0.29475608, 0.18, 8.247683)
+size = Vector3(0.29475608, 0.18, 9.147683)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pktgb"]
-size = Vector3(0.29475608, 0.18, 8.7838545)
+size = Vector3(0.29475608, 0.18, 9.6838545)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m0fts"]
 size = Vector3(0.29475608, 0.18, 2.7170334)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmlup"]
-size = Vector3(0.29475608, 0.18, 5.957033)
+size = Vector3(0.29475608, 0.18, 6.857033)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fhual"]
 size = Vector3(0.29475608, 0.18, 2.3645418)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4qdrv"]
-size = Vector3(0.29475608, 0.18, 5.604542)
+size = Vector3(0.29475608, 0.18, 6.504542)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ss4od"]
 size = Vector3(0.29475608, 0.18, 2.2931774)
@@ -1713,7 +1713,7 @@ size = Vector3(0.29475608, 0.18, 2.2931774)
 size = Vector3(0.29475608, 0.18, 0.5237903)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0hf60"]
-size = Vector3(0.29475608, 0.18, 3.9610178)
+size = Vector3(0.29475608, 0.18, 4.8610178)
 
 [sub_resource type="BoxMesh" id="BoxMesh_p5uqu"]
 size = Vector3(0.29475608, 0.18, 2.3134344)
@@ -1722,13 +1722,13 @@ size = Vector3(0.29475608, 0.18, 2.3134344)
 size = Vector3(0.29475608, 0.18, 0.091631114)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pf40f"]
-size = Vector3(0.29475608, 0.18, 3.6977916)
+size = Vector3(0.29475608, 0.18, 4.5977916)
 
 [sub_resource type="BoxMesh" id="BoxMesh_y5ur3"]
 size = Vector3(0.29475608, 0.18, 2.4044697)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ct5wu"]
-size = Vector3(0.29475608, 0.18, 3.6069896)
+size = Vector3(0.29475608, 0.18, 4.5069896)
 
 [sub_resource type="BoxMesh" id="BoxMesh_s3bp0"]
 size = Vector3(0.29475608, 0.18, 2.5773623)
@@ -1737,7 +1737,7 @@ size = Vector3(0.29475608, 0.18, 2.5773623)
 size = Vector3(0.29475608, 0.18, 0.015515387)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xxo18"]
-size = Vector3(0.29475608, 0.18, 3.6031466)
+size = Vector3(0.29475608, 0.18, 4.5031466)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a3w7r"]
 size = Vector3(0.29475608, 0.18, 2.891956)
@@ -1746,13 +1746,13 @@ size = Vector3(0.29475608, 0.18, 2.891956)
 size = Vector3(0.29475608, 0.18, 0.32675707)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bbhxw"]
-size = Vector3(0.29475608, 0.18, 3.6734931)
+size = Vector3(0.29475608, 0.18, 4.5734931)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8v5pd"]
 size = Vector3(0.29475608, 0.18, 4.630928)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gw76s"]
-size = Vector3(0.29475608, 0.18, 3.830928)
+size = Vector3(0.29475608, 0.18, 4.730928)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1tdva"]
 size = Vector3(0.29475608, 0.18, 0.95188713)
@@ -1761,118 +1761,118 @@ size = Vector3(0.29475608, 0.18, 0.95188713)
 size = Vector3(0.29475608, 0.18, 3.0265698)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nxw45"]
-size = Vector3(0.29475608, 0.18, 4.136453)
+size = Vector3(0.29475608, 0.18, 5.036453)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d5c58"]
 size = Vector3(0.29475608, 0.18, 0.50153923)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pri5b"]
-size = Vector3(0.29475608, 0.18, 8.001539)
+size = Vector3(0.29475608, 0.18, 8.901539)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f3emm"]
 size = Vector3(0.29475608, 0.18, 0.28732967)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b8fnn"]
-size = Vector3(0.29475608, 0.18, 7.7873297)
+size = Vector3(0.29475608, 0.18, 8.6873297)
 
 [sub_resource type="BoxMesh" id="BoxMesh_doqtv"]
 size = Vector3(0.29475608, 0.18, 0.17915821)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dydge"]
-size = Vector3(0.29475608, 0.18, 7.679158)
+size = Vector3(0.29475608, 0.18, 8.579158)
 
 [sub_resource type="BoxMesh" id="BoxMesh_x2nys"]
 size = Vector3(0.29475608, 0.18, 0.15012169)
 
 [sub_resource type="BoxMesh" id="BoxMesh_e7jbo"]
-size = Vector3(0.29475608, 0.18, 7.6501217)
+size = Vector3(0.29475608, 0.18, 8.5501217)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j73rt"]
 size = Vector3(0.29475608, 0.18, 0.19530058)
 
 [sub_resource type="BoxMesh" id="BoxMesh_74bjy"]
-size = Vector3(0.29475608, 0.18, 7.6953006)
+size = Vector3(0.29475608, 0.18, 8.5953006)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7mfdp"]
 size = Vector3(0.29475608, 0.18, 0.32416677)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oq832"]
-size = Vector3(0.29475608, 0.18, 7.824167)
+size = Vector3(0.29475608, 0.18, 8.724167)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ud3co"]
 size = Vector3(0.29475608, 0.18, 0.5731344)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5gogi"]
-size = Vector3(0.29475608, 0.18, 8.073134)
+size = Vector3(0.29475608, 0.18, 8.973134)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7su04"]
 size = Vector3(0.29475608, 0.18, 1.1698737)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ltgt5"]
-size = Vector3(0.29475608, 0.18, 8.669874)
+size = Vector3(0.29475608, 0.18, 9.569874)
 
 [sub_resource type="BoxMesh" id="BoxMesh_016mh"]
-size = Vector3(0.29475608, 0.18, 10.3976145)
+size = Vector3(0.29475608, 0.18, 11.297614)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wbbha"]
-size = Vector3(0.29475608, 0.18, 10.39246)
+size = Vector3(0.29475608, 0.18, 11.29246)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ktcib"]
-size = Vector3(0.29475608, 0.18, 10.381581)
+size = Vector3(0.29475608, 0.18, 11.281581)
 
 [sub_resource type="BoxMesh" id="BoxMesh_snv7m"]
-size = Vector3(0.29475608, 0.18, 10.361771)
+size = Vector3(0.29475608, 0.18, 11.261771)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v6hbq"]
-size = Vector3(0.29475608, 0.18, 10.329064)
+size = Vector3(0.29475608, 0.18, 11.229064)
 
 [sub_resource type="BoxMesh" id="BoxMesh_a53cl"]
-size = Vector3(0.29475608, 0.18, 10.278692)
+size = Vector3(0.29475608, 0.18, 11.178692)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3w0nv"]
-size = Vector3(0.29475608, 0.18, 10.204993)
+size = Vector3(0.29475608, 0.18, 11.104993)
 
 [sub_resource type="BoxMesh" id="BoxMesh_51y8a"]
-size = Vector3(0.29475608, 0.18, 10.101275)
+size = Vector3(0.29475608, 0.18, 11.001275)
 
 [sub_resource type="BoxMesh" id="BoxMesh_urt2t"]
-size = Vector3(0.29475608, 0.18, 9.959595)
+size = Vector3(0.29475608, 0.18, 10.859595)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lu132"]
-size = Vector3(0.29475608, 0.18, 9.770405)
+size = Vector3(0.29475608, 0.18, 10.670405)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rhbl4"]
-size = Vector3(0.29475608, 0.18, 9.522006)
+size = Vector3(0.29475608, 0.18, 10.422006)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dvk77"]
-size = Vector3(0.29475608, 0.18, 9.199629)
+size = Vector3(0.29475608, 0.18, 10.099629)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4iarn"]
-size = Vector3(0.29475608, 0.18, 8.7838545)
+size = Vector3(0.29475608, 0.18, 9.6838545)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w4mx8"]
-size = Vector3(0.29475608, 0.18, 8.247683)
+size = Vector3(0.29475608, 0.18, 9.147683)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mvgws"]
-size = Vector3(0.29475608, 0.18, 7.5504866)
+size = Vector3(0.29475608, 0.18, 8.4504866)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jef1v"]
-size = Vector3(0.29475608, 0.18, 6.6234674)
+size = Vector3(0.29475608, 0.18, 7.5234674)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2if22"]
-size = Vector3(0.29475608, 0.18, 5.324328)
+size = Vector3(0.29475608, 0.18, 6.224328)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m1mex"]
-size = Vector3(0.29475608, 0.18, 3.1894166)
+size = Vector3(0.29475608, 0.18, 4.0894166)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nglwi"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h0bko"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 4.3186635, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w8aik"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 4.3186635, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ovl7w"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -1887,28 +1887,28 @@ size = Vector3(0.13, 1.2412243, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xyy76"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vsxwc"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q23ld"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_m3gx1"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_j78nw"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_53i4t"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_lctje"]
-size = Vector3(0.13, 0.8018166, 0.14)
+size = Vector3(0.13, 0.80181662, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hxr8i"]
-size = Vector3(0.13, 0.8018166, 0.14)
+size = Vector3(0.13, 0.80181662, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_srajt"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -1923,28 +1923,28 @@ size = Vector3(0.13, 0.7948344, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_txi5l"]
-size = Vector3(0.13, 0.7938072, 0.14)
+size = Vector3(0.13, 0.79380719, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_07cad"]
-size = Vector3(0.13, 0.7938072, 0.14)
+size = Vector3(0.13, 0.79380719, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pcfec"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sojqe"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_36h5k"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_boht4"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ysux2"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pvnyu"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b1kh3"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -1962,28 +1962,28 @@ size = Vector3(0.16, 1.44, 0.16)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2yqlx"]
-size = Vector3(0.13, 0.0051099206, 0.14)
+size = Vector3(0.13, 0.0051099205, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_klqxp"]
-size = Vector3(0.13, 0.0051099206, 0.14)
+size = Vector3(0.13, 0.0051099205, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4rbs1"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5bgbj"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_y7qqa"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aapgk"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4rot8"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ragd3"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2lbwu"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -1998,19 +1998,19 @@ size = Vector3(0.13, 1.2412243, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_w2bma"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 4.3186635, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fuigh"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 4.3186635, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xkmpr"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6qqag"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 3.4379772, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_10d65"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 3.4379772, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h01xo"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2025,28 +2025,28 @@ size = Vector3(0.13, 1.2412243, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tl18w"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gmabc"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0vs6o"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ymjda"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dc57g"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ykm5r"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_e507i"]
-size = Vector3(0.13, 0.8018166, 0.14)
+size = Vector3(0.13, 0.80181662, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_44qym"]
-size = Vector3(0.13, 0.8018166, 0.14)
+size = Vector3(0.13, 0.80181662, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_he7qb"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2061,37 +2061,37 @@ size = Vector3(0.13, 0.7948344, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2nvml"]
-size = Vector3(0.13, 0.7938072, 0.14)
+size = Vector3(0.13, 0.79380719, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jsf2h"]
-size = Vector3(0.13, 0.7938072, 0.14)
+size = Vector3(0.13, 0.79380719, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8u24t"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vpa6l"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_b57t8"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4un5l"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bth4s"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q6c46"]
-size = Vector3(0.13, 0.7937502, 0.14)
+size = Vector3(0.13, 0.79375022, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_drasu"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i5lp4"]
-size = Vector3(0.13, 0.7938072, 0.14)
+size = Vector3(0.13, 0.79380719, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qc0j5"]
-size = Vector3(0.13, 0.7938072, 0.14)
+size = Vector3(0.13, 0.79380719, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_xq4q6"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2106,28 +2106,28 @@ size = Vector3(0.13, 0.7948344, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_f3cjp"]
-size = Vector3(0.13, 0.8018166, 0.14)
+size = Vector3(0.13, 0.80181662, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h5lfd"]
-size = Vector3(0.13, 0.8018166, 0.14)
+size = Vector3(0.13, 0.80181662, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rjg8u"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_e4aou"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fs7e4"]
-size = Vector3(0.13, 0.8315963, 0.14)
+size = Vector3(0.13, 0.83159633, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_qlemr"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1vccr"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_eap8t"]
-size = Vector3(0.13, 0.93150854, 0.14)
+size = Vector3(0.13, 0.93150859, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ubpo8"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2142,10 +2142,10 @@ size = Vector3(0.13, 1.2412243, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jkkso"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 3.4379772, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tcsee"]
-size = Vector3(0.13, 3.437977, 0.14)
+size = Vector3(0.13, 3.4379772, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_apkse"]
 size = Vector3(0.285, 0.18, 3.2762022)
@@ -2247,34 +2247,34 @@ size = Vector3(0.285, 0.18, 4.193818)
 size = Vector3(0.285, 0.18, 1.3372245)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0fei3"]
-size = Vector3(0.285, 0.18, 4.4372244)
+size = Vector3(0.285, 0.18, 5.5872244)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bhye7"]
 size = Vector3(0.285, 0.18, 1.6815872)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0cavm"]
-size = Vector3(0.285, 0.18, 4.781587)
+size = Vector3(0.285, 0.18, 5.931587)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gxrs7"]
 size = Vector3(0.285, 0.18, 2.2826073)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rvj26"]
-size = Vector3(0.285, 0.18, 5.3826075)
+size = Vector3(0.285, 0.18, 6.5326075)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t3w0v"]
-size = Vector3(0.285, 0.18, 8.907862)
+size = Vector3(0.285, 0.18, 10.057862)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uhyw5"]
-size = Vector3(0.285, 0.18, 8.712782)
+size = Vector3(0.285, 0.18, 9.862782)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4bm83"]
-size = Vector3(0.285, 0.18, 8.427471)
+size = Vector3(0.285, 0.18, 9.577471)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ew5ty"]
-size = Vector3(0.285, 0.18, 8.019846)
+size = Vector3(0.285, 0.18, 9.169846)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h6ijk"]
-size = Vector3(0.285, 0.18, 7.4430065)
+size = Vector3(0.285, 0.18, 8.5930065)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1d4qa"]
 size = Vector3(0.285, 0.18, 6.6198263)
@@ -2307,28 +2307,28 @@ size = Vector3(0.13, 1.014391, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sheqo"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.70879703, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0s3vf"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.70879703, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ospm0"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_hl22k"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d5exr"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_si4ld"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_gqug8"]
-size = Vector3(0.13, 0.48849124, 0.14)
+size = Vector3(0.13, 0.48849125, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tpawd"]
-size = Vector3(0.13, 0.48849124, 0.14)
+size = Vector3(0.13, 0.48849125, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_uirjy"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2355,55 +2355,55 @@ size = Vector3(0.13, 0.5625003, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_kug8j"]
-size = Vector3(0.13, 0.5625632, 0.14)
+size = Vector3(0.13, 1.2726292, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_h2ao4"]
-size = Vector3(0.13, 0.5625632, 0.14)
+size = Vector3(0.13, 1.2726292, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0ybrt"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2xutk"]
-size = Vector3(0.13, 0.5636971, 0.14)
+size = Vector3(0.13, 0.33571294, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q63hw"]
-size = Vector3(0.13, 0.5636971, 0.14)
+size = Vector3(0.13, 0.33571294, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i778u"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7e4id"]
-size = Vector3(0.13, 0.5713827, 0.14)
+size = Vector3(0.13, 0.57138269, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_y3fl0"]
-size = Vector3(0.13, 0.5713827, 0.14)
+size = Vector3(0.13, 0.57138269, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_panji"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ro86s"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vry75"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vhysq"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dfxac"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.29611965, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mk5mq"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.29611965, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nn43n"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0bafq"]
-size = Vector3(0.13, 1.014391, 0.14)
+size = Vector3(0.13, 2.0719617, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_15pfy"]
-size = Vector3(0.13, 1.014391, 0.14)
+size = Vector3(0.13, 2.0719617, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i3jmj"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2436,28 +2436,28 @@ size = Vector3(0.13, 1.0143912, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2rbgd"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.70879703, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pljb7"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.70879703, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ucytb"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oadtp"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yof3u"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_skvjv"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_11rvv"]
-size = Vector3(0.13, 0.57138264, 0.14)
+size = Vector3(0.13, 0.57138265, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_eapgh"]
-size = Vector3(0.13, 0.57138264, 0.14)
+size = Vector3(0.13, 0.57138265, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_p0837"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2472,10 +2472,10 @@ size = Vector3(0.13, 0.5636971, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2haa8"]
-size = Vector3(0.13, 0.5625632, 0.14)
+size = Vector3(0.13, 0.56256321, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1kypp"]
-size = Vector3(0.13, 0.5625632, 0.14)
+size = Vector3(0.13, 0.56256321, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mp14y"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2499,10 +2499,10 @@ size = Vector3(0.13, 0.5625003, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xr2n"]
-size = Vector3(0.13, 0.5625632, 0.14)
+size = Vector3(0.13, 0.56256321, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_vj6l6"]
-size = Vector3(0.13, 0.5625632, 0.14)
+size = Vector3(0.13, 0.56256321, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_daw1y"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2517,28 +2517,28 @@ size = Vector3(0.13, 0.5636971, 0.14)
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jnwnr"]
-size = Vector3(0.13, 0.57138264, 0.14)
+size = Vector3(0.13, 0.57138265, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_u12mt"]
-size = Vector3(0.13, 0.57138264, 0.14)
+size = Vector3(0.13, 0.57138265, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_r5rs2"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_is4ug"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_v8jim"]
-size = Vector3(0.13, 0.60377413, 0.14)
+size = Vector3(0.13, 0.60377415, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_iitc6"]
 size = Vector3(0.16, 1.44, 0.16)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rcpet"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.70879703, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_2o7w7"]
-size = Vector3(0.13, 0.708797, 0.14)
+size = Vector3(0.13, 0.70879703, 0.14)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5efmf"]
 size = Vector3(0.16, 1.44, 0.16)
@@ -2725,6 +2725,12 @@ size = Vector3(1.4, 0.14, 0.34)
 
 [sub_resource type="BoxMesh" id="BoxMesh_tb60f"]
 size = Vector3(1.4, 0.14, 0.34)
+
+[sub_resource type="BoxMesh" id="BoxMesh_stair_landing"]
+size = Vector3(1.8, 0.18, 0.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_stair_opening_post"]
+size = Vector3(0.16, 1.44, 0.16)
 
 [node name="TreehouseOak" type="Node3D" unique_id=2122349697]
 
@@ -4032,33 +4038,35 @@ mesh = SubResource("ArrayMesh_hantq")
 metadata/deck_half_size = Vector2(6.35, 5.2)
 metadata/surface_height = 6.21
 
+metadata/front_extension = 0.9
+
 [node name="RingPlank" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=329927412]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.195122, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.195122, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2dwam")
 
 [node name="RingPlank2" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1757208423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.885366, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.885366, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_vnif3")
 
 [node name="RingPlank3" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1593021173]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5756097, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5756097, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_h8fap")
 
 [node name="RingPlank4" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=428664848]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.265854, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.265854, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_3l0hu")
 
 [node name="RingPlank5" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1969145900]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9560976, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9560976, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_t3ilr")
 
 [node name="RingPlank6" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1655989563]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6463413, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6463413, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_pktgb")
 
@@ -4068,7 +4076,7 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_m0fts")
 
 [node name="RingPlank8" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1170738167]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3365855, 6.12, 1.6212978)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3365855, 6.12, 2.0712978)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_cmlup")
 
@@ -4078,7 +4086,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_fhual")
 
 [node name="RingPlank10" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=619407236]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0268292, 6.12, 1.9587321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0268292, 6.12, 2.4087321)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_4qdrv")
 
@@ -4093,7 +4101,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_7oe74")
 
 [node name="RingPlank13" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=617903755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7170732, 6.12, 2.9046936)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7170732, 6.12, 3.3546936)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_0hf60")
 
@@ -4108,7 +4116,7 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_443qv")
 
 [node name="RingPlank16" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1324064803]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4073172, 6.12, 3.1309016)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4073172, 6.12, 3.5809016)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_pf40f")
 
@@ -4118,7 +4126,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_y5ur3")
 
 [node name="RingPlank18" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1180404979]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.097561, 6.12, 3.2471428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.097561, 6.12, 3.6971428)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ct5wu")
 
@@ -4133,7 +4141,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_s44cq")
 
 [node name="RingPlank21" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1625473240]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7878048, 6.12, 3.3009233)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7878048, 6.12, 3.7509233)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_xxo18")
 
@@ -4148,7 +4156,7 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_xfbm5")
 
 [node name="RingPlank24" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1534314523]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4780488, 6.12, 3.3025994)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4780488, 6.12, 3.7525994)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_bbhxw")
 
@@ -4158,7 +4166,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_8v5pd")
 
 [node name="RingPlank26" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1231231566]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1682928, 6.12, 3.2490683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1682928, 6.12, 3.6990683)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_gw76s")
 
@@ -4173,7 +4181,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_6lxxi")
 
 [node name="RingPlank29" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=361321413]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8585366, 6.12, 3.1126587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8585366, 6.12, 3.5626587)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_nxw45")
 
@@ -4183,7 +4191,7 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_d5c58")
 
 [node name="RingPlank31" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1777260291]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5487804, 6.12, 1.1900212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5487804, 6.12, 1.6400212)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_pri5b")
 
@@ -4193,7 +4201,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_f3emm")
 
 [node name="RingPlank33" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1142214821]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2390244, 6.12, 1.3025652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2390244, 6.12, 1.7525652)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_b8fnn")
 
@@ -4203,7 +4211,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_doqtv")
 
 [node name="RingPlank35" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=60143480]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9292683, 6.12, 1.3592283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9292683, 6.12, 1.8092283)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_dydge")
 
@@ -4213,7 +4221,7 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_x2nys")
 
 [node name="RingPlank37" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=18380532]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6195122, 6.12, 1.3747033)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6195122, 6.12, 1.8247033)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_e7jbo")
 
@@ -4223,7 +4231,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_j73rt")
 
 [node name="RingPlank39" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=306103393]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3097561, 6.12, 1.3523352)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3097561, 6.12, 1.8023352)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_74bjy")
 
@@ -4233,7 +4241,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_7mfdp")
 
 [node name="RingPlank41" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1154474307]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.12, 1.2879164)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.12, 1.7379164)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_oq832")
 
@@ -4243,7 +4251,7 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_ud3co")
 
 [node name="RingPlank43" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1576614401]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3097561, 6.12, 1.1634184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3097561, 6.12, 1.6134184)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_5gogi")
 
@@ -4253,97 +4261,97 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_7su04")
 
 [node name="RingPlank45" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=488385101]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6195122, 6.12, 0.8648274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6195122, 6.12, 1.3148274)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ltgt5")
 
 [node name="RingPlank46" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1028669227]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9292683, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9292683, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_016mh")
 
 [node name="RingPlank47" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=502324839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2390244, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2390244, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_wbbha")
 
 [node name="RingPlank48" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=799288687]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5487804, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5487804, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ktcib")
 
 [node name="RingPlank49" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=168984383]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8585366, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8585366, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_snv7m")
 
 [node name="RingPlank50" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1837815604]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1682928, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1682928, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_v6hbq")
 
 [node name="RingPlank51" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=2085614714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4780488, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4780488, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_a53cl")
 
 [node name="RingPlank52" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=818508096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7878048, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7878048, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_3w0nv")
 
 [node name="RingPlank53" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=682586154]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.097561, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.097561, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_51y8a")
 
 [node name="RingPlank54" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1564875183]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4073172, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4073172, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_urt2t")
 
 [node name="RingPlank55" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1613085146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7170732, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7170732, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_lu132")
 
 [node name="RingPlank56" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=458059805]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0268292, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0268292, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_rhbl4")
 
 [node name="RingPlank57" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=842370975]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3365855, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3365855, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_dvk77")
 
 [node name="RingPlank58" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1521942654]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6463413, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6463413, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_4iarn")
 
 [node name="RingPlank59" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=383107189]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9560976, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9560976, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_w4mx8")
 
 [node name="RingPlank60" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1768973358]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.265854, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.265854, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_mvgws")
 
 [node name="RingPlank61" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1712140816]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5756097, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5756097, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_jef1v")
 
 [node name="RingPlank62" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=235172933]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.885366, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.885366, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2if22")
 
 [node name="RingPlank63" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=278286539]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.195122, 6.12, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.195122, 6.12, 0.45)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_m1mex")
 
@@ -4353,227 +4361,227 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_nglwi")
 
 [node name="PerimeterRail" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1890843394]
-transform = Transform3D(0.9466958, 0.230877, -0.2246394, -0.230877, -1.1920929e-07, -0.972983, -0.2246394, 0.972983, 0.053304076, -5.953125, 6.52, 1.6725466)
+transform = Transform3D(0.9563486, -0.18379524, -0.22719302, 0.23113042, -9.489945e-08, 0.97292278, -0.1788186, -0.98296455, 0.04248058, -5.953125, 6.52, 2.1225466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_h0bko")
 
 [node name="PerimeterRail2" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=741256342]
-transform = Transform3D(0.9466958, 0.230877, -0.2246394, -0.230877, -1.1920929e-07, -0.972983, -0.2246394, 0.972983, 0.053304076, -5.953125, 7.3999996, 1.6725466)
+transform = Transform3D(0.9563486, -0.18379524, -0.22719302, 0.23113042, -9.489945e-08, 0.97292278, -0.1788186, -0.98296455, 0.04248058, -5.953125, 7.3999996, 2.1225466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_w8aik")
 
 [node name="RailingPost2" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1910418537]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55625, 6.7999997, 3.3450933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55625, 6.7999997, 4.2450933)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ovl7w")
 
 [node name="PerimeterRail3" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1906228294]
-transform = Transform3D(0.5910528, 0.6394898, -0.4916395, -0.6394898, 0, -0.76879954, -0.4916395, 0.76879954, 0.40894723, -5.159375, 6.52, 3.8222196)
+transform = Transform3D(0.59105279, -0.63948982, -0.49163948, 0.6394898, 0, 0.76879958, -0.49163951, -0.76879956, 0.40894721, -5.159375, 6.52, 4.7222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_wjlqs")
 
 [node name="PerimeterRail4" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1756478960]
-transform = Transform3D(0.5910528, 0.6394898, -0.4916395, -0.6394898, 0, -0.76879954, -0.4916395, 0.76879954, 0.40894723, -5.159375, 7.3999996, 3.8222196)
+transform = Transform3D(0.59105279, -0.63948982, -0.49163948, 0.6394898, 0, 0.76879958, -0.49163951, -0.76879956, 0.40894721, -5.159375, 7.3999996, 4.7222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_wp7tj")
 
 [node name="RailingPost3" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=180729749]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7625, 6.7999997, 4.299346)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7625, 6.7999997, 5.199346)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_m3bpb")
 
 [node name="PerimeterRail5" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=2072848682]
-transform = Transform3D(0.27390468, 0.85211223, -0.44596076, -0.85211223, -1.1920929e-07, -0.5233592, -0.44596076, 0.5233592, 0.7260952, -4.365625, 6.52, 4.5431027)
+transform = Transform3D(0.27390471, -0.85211219, -0.4459608, 0.85211222, -1.1920928e-07, 0.52335912, -0.44596073, -0.52335917, 0.72609517, -4.365625, 6.52, 5.4431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_xyy76")
 
 [node name="PerimeterRail6" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=744482142]
-transform = Transform3D(0.27390468, 0.85211223, -0.44596076, -0.85211223, -1.1920929e-07, -0.5233592, -0.44596076, 0.5233592, 0.7260952, -4.365625, 7.3999996, 4.5431027)
+transform = Transform3D(0.27390471, -0.85211219, -0.4459608, 0.85211222, -1.1920928e-07, 0.52335912, -0.44596073, -0.52335917, 0.72609517, -4.365625, 7.3999996, 5.4431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_vsxwc")
 
 [node name="RailingPost4" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=53371575]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96875, 6.7999997, 4.7868595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96875, 6.7999997, 5.6868595)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_q23ld")
 
 [node name="PerimeterRail7" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1196269013]
-transform = Transform3D(0.0889495, 0.95448965, -0.28467098, -0.95448965, -1.1920929e-07, -0.29824415, -0.28467098, 0.29824415, 0.91105044, -3.571875, 6.52, 4.9108686)
+transform = Transform3D(0.088949462, -0.95448962, -0.28467097, 0.95448962, -1.1920929e-07, 0.29824415, -0.28467098, -0.29824414, 0.91105042, -3.571875, 6.52, 5.8108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_m3gx1")
 
 [node name="PerimeterRail8" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=43590234]
-transform = Transform3D(0.0889495, 0.95448965, -0.28467098, -0.95448965, -1.1920929e-07, -0.29824415, -0.28467098, 0.29824415, 0.91105044, -3.571875, 7.3999996, 4.9108686)
+transform = Transform3D(0.088949462, -0.95448962, -0.28467097, 0.95448962, -1.1920929e-07, 0.29824415, -0.28467098, -0.29824414, 0.91105042, -3.571875, 7.3999996, 5.8108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_j78nw")
 
 [node name="RailingPost5" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=268058049]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.175, 6.7999997, 5.0348783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.175, 6.7999997, 5.9348783)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_53i4t")
 
 [node name="PerimeterRail9" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1870167894]
-transform = Transform3D(0.020019412, 0.9899397, -0.14006665, -0.9899397, 0, -0.14149009, -0.14006665, 0.14149009, 0.9799805, -2.7781248, 6.52, 5.091603)
+transform = Transform3D(0.020019443, -0.98993967, -0.14006665, 0.98993967, 0, 0.14149008, -0.14006664, -0.14149009, 0.97998056, -2.7781248, 6.52, 5.991603)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_lctje")
 
 [node name="PerimeterRail10" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=345461406]
-transform = Transform3D(0.020019412, 0.9899397, -0.14006665, -0.9899397, 0, -0.14149009, -0.14006665, 0.14149009, 0.9799805, -2.7781248, 7.3999996, 5.091603)
+transform = Transform3D(0.020019443, -0.98993967, -0.14006665, 0.98993967, 0, 0.14149008, -0.14006664, -0.14149009, 0.97998056, -2.7781248, 7.3999996, 5.991603)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_hxr8i")
 
 [node name="RailingPost6" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=269537260]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38125, 6.7999997, 5.1483274)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38125, 6.7999997, 6.0483274)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_srajt")
 
 [node name="PerimeterRail11" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1984549209]
-transform = Transform3D(0.0027269125, 0.9986356, -0.0521488, -0.9986356, 0, -0.05222005, -0.0521488, 0.05222005, 0.9972731, -1.984375, 6.52, 5.1690807)
+transform = Transform3D(0.0027269335, -0.9986356, -0.052148801, 0.9986356, 0, 0.052220048, -0.052148799, -0.05222005, 0.99727307, -1.984375, 6.52, 6.0690807)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_riqr2")
 
 [node name="PerimeterRail12" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=186732800]
-transform = Transform3D(0.0027269125, 0.9986356, -0.0521488, -0.9986356, 0, -0.05222005, -0.0521488, 0.05222005, 0.9972731, -1.984375, 7.3999996, 5.1690807)
+transform = Transform3D(0.0027269335, -0.9986356, -0.052148801, 0.9986356, 0, 0.052220048, -0.052148799, -0.05222005, 0.99727307, -1.984375, 7.3999996, 6.0690807)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_a8m8k")
 
 [node name="RailingPost7" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1390778606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5875, 6.7999997, 5.1898336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5875, 6.7999997, 6.0898336)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_bknja")
 
 [node name="PerimeterRail13" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1741571281]
-transform = Transform3D(0.00014418364, 0.9999279, -0.012006455, -0.9999279, 0, -0.012007321, -0.012006455, 0.012007321, 0.9998558, -1.190625, 6.52, 5.194599)
+transform = Transform3D(0.00014417576, -0.99992791, -0.012006456, 0.99992791, 0, 0.012007321, -0.012006455, -0.012007321, 0.99985582, -1.190625, 6.52, 6.094599)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_txi5l")
 
 [node name="PerimeterRail14" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1578799086]
-transform = Transform3D(0.00014418364, 0.9999279, -0.012006455, -0.9999279, 0, -0.012007321, -0.012006455, 0.012007321, 0.9998558, -1.190625, 7.3999996, 5.194599)
+transform = Transform3D(0.00014417576, -0.99992791, -0.012006456, 0.99992791, 0, 0.012007321, -0.012006455, -0.012007321, 0.99985582, -1.190625, 7.3999996, 6.094599)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_07cad")
 
 [node name="RailingPost8" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1213247001]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79375, 6.7999997, 5.199365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79375, 6.7999997, 6.099365)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_pcfec")
 
 [node name="PerimeterRail15" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=695439222]
-transform = Transform3D(5.9604645e-07, 0.9999997, -0.00079958414, -0.9999997, 0, -0.0007995844, -0.00079958414, 0.0007995844, 0.99999934, -0.396875, 6.52, 5.199682)
+transform = Transform3D(6.3933516e-07, -0.99999968, -0.00079958413, 0.99999968, 0, 0.00079958435, -0.00079958409, -0.00079958438, 0.99999936, -0.396875, 6.52, 6.099682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_sojqe")
 
 [node name="PerimeterRail16" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=2064338942]
-transform = Transform3D(5.9604645e-07, 0.9999997, -0.00079958414, -0.9999997, 0, -0.0007995844, -0.00079958414, 0.0007995844, 0.99999934, -0.396875, 7.3999996, 5.199682)
+transform = Transform3D(6.3933516e-07, -0.99999968, -0.00079958413, 0.99999968, 0, 0.00079958435, -0.00079958409, -0.00079958438, 0.99999936, -0.396875, 7.3999996, 6.099682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_36h5k")
 
 [node name="RailingPost9" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=2097232732]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7999997, 5.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.7999997, 6.1)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_boht4")
 
 [node name="PerimeterRail17" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1488460298]
-transform = Transform3D(5.9604645e-07, 0.9999997, 0.00079958414, -0.9999997, 0, 0.0007995844, 0.00079958414, -0.0007995844, 0.99999934, 0.396875, 6.52, 5.199682)
+transform = Transform3D(6.3933516e-07, -0.99999968, 0.00079958413, 0.99999968, 0, -0.00079958435, 0.00079958409, 0.00079958438, 0.99999936, 0.396875, 6.52, 6.099682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_ysux2")
 
 [node name="PerimeterRail18" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1641720407]
-transform = Transform3D(5.9604645e-07, 0.9999997, 0.00079958414, -0.9999997, 0, 0.0007995844, 0.00079958414, -0.0007995844, 0.99999934, 0.396875, 7.3999996, 5.199682)
+transform = Transform3D(6.3933516e-07, -0.99999968, 0.00079958413, 0.99999968, 0, -0.00079958435, 0.00079958409, 0.00079958438, 0.99999936, 0.396875, 7.3999996, 6.099682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_pvnyu")
 
 [node name="RailingPost10" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1135041815]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79375, 6.7999997, 5.199365)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.79375, 6.7999997, 6.099365)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_b1kh3")
 
 [node name="PerimeterRail19" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1157221681]
-transform = Transform3D(9.0539455e-05, 0.9999547, 0.009517895, -0.9999547, 0, 0.009518326, 0.009517895, -0.009518326, 0.9999094, 1.1118749, 6.52, 5.1963367)
+transform = Transform3D(9.0598526e-05, -0.9999547, 0.0095178948, 0.9999547, 0, -0.0095183256, 0.0095178944, 0.009518326, 0.9999094, 1.1118749, 6.52, 6.0963367)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_bojk0")
 
 [node name="PerimeterRail20" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=914990557]
-transform = Transform3D(9.0539455e-05, 0.9999547, 0.009517895, -0.9999547, 0, 0.009518326, 0.009517895, -0.009518326, 0.9999094, 1.1118749, 7.3999996, 5.1963367)
+transform = Transform3D(9.0598526e-05, -0.9999547, 0.0095178948, 0.9999547, 0, -0.0095183256, 0.0095178944, 0.009518326, 0.9999094, 1.1118749, 7.3999996, 6.0963367)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_lfrrn")
 
 [node name="RailingPost11" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1962335594]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 6.7999997, 5.193309)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43, 6.7999997, 6.093309)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_eb8lu")
 
 [node name="RailingPost12" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=253956202]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17, 6.7999997, 5.035933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17, 6.7999997, 5.935933)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_xdo7q")
 
 [node name="PerimeterRail21" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1602451822]
-transform = Transform3D(0.04260713, 0.97846454, 0.20196967, -0.97846454, 0, 0.20641491, 0.20196967, -0.20641491, 0.9573929, 3.1725001, 6.52, 5.0354056)
+transform = Transform3D(0.042607116, -0.97846455, 0.20196968, 0.97846455, 0, -0.20641491, 0.20196968, 0.20641491, 0.95739288, 3.1725001, 6.52, 5.9354056)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2yqlx")
 
 [node name="PerimeterRail22" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=838838659]
-transform = Transform3D(0.04260713, 0.97846454, 0.20196967, -0.97846454, 0, 0.20641491, 0.20196967, -0.20641491, 0.9573929, 3.1725001, 7.3999996, 5.0354056)
+transform = Transform3D(0.042607116, -0.97846455, 0.20196968, 0.97846455, 0, -0.20641491, 0.20196968, 0.20641491, 0.95739288, 3.1725001, 7.3999996, 5.9354056)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_klqxp")
 
 [node name="RailingPost13" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=711994914]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.175, 6.7999997, 5.0348783)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.175, 6.7999997, 5.9348783)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_4rbs1")
 
 [node name="PerimeterRail23" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=913019017]
-transform = Transform3D(0.0889495, 0.95448965, 0.28467098, -0.95448965, -1.1920929e-07, 0.29824415, 0.28467098, -0.29824415, 0.91105044, 3.571875, 6.52, 4.9108686)
+transform = Transform3D(0.088949462, -0.95448962, 0.28467097, 0.95448962, -1.1920929e-07, -0.29824415, 0.28467098, 0.29824414, 0.91105042, 3.571875, 6.52, 5.8108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_5bgbj")
 
 [node name="PerimeterRail24" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1762645460]
-transform = Transform3D(0.0889495, 0.95448965, 0.28467098, -0.95448965, -1.1920929e-07, 0.29824415, 0.28467098, -0.29824415, 0.91105044, 3.571875, 7.3999996, 4.9108686)
+transform = Transform3D(0.088949462, -0.95448962, 0.28467097, 0.95448962, -1.1920929e-07, -0.29824415, 0.28467098, 0.29824414, 0.91105042, 3.571875, 7.3999996, 5.8108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_y7qqa")
 
 [node name="RailingPost14" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=932997016]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96875, 6.7999997, 4.7868595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.96875, 6.7999997, 5.6868595)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_aapgk")
 
 [node name="PerimeterRail25" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=577387445]
-transform = Transform3D(0.27390468, 0.85211223, 0.44596076, -0.85211223, -1.1920929e-07, 0.5233592, 0.44596076, -0.5233592, 0.7260952, 4.365625, 6.52, 4.5431027)
+transform = Transform3D(0.27390471, -0.85211219, 0.4459608, 0.85211222, -1.1920928e-07, -0.52335912, 0.44596073, 0.52335917, 0.72609517, 4.365625, 6.52, 5.4431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_4rot8")
 
 [node name="PerimeterRail26" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1973829621]
-transform = Transform3D(0.27390468, 0.85211223, 0.44596076, -0.85211223, -1.1920929e-07, 0.5233592, 0.44596076, -0.5233592, 0.7260952, 4.365625, 7.3999996, 4.5431027)
+transform = Transform3D(0.27390471, -0.85211219, 0.4459608, 0.85211222, -1.1920928e-07, -0.52335912, 0.44596073, 0.52335917, 0.72609517, 4.365625, 7.3999996, 5.4431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_ragd3")
 
 [node name="RailingPost15" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1549049140]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7625, 6.7999997, 4.299346)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7625, 6.7999997, 5.199346)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_2lbwu")
 
 [node name="PerimeterRail27" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1043176007]
-transform = Transform3D(0.5910528, 0.6394898, 0.4916395, -0.6394898, 0, 0.76879954, 0.4916395, -0.76879954, 0.40894723, 5.159375, 6.52, 3.8222196)
+transform = Transform3D(0.59105279, -0.63948982, 0.49163948, 0.6394898, 0, -0.76879958, 0.49163951, 0.76879956, 0.40894721, 5.159375, 6.52, 4.7222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_bpg2e")
 
 [node name="PerimeterRail28" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=2064297062]
-transform = Transform3D(0.5910528, 0.6394898, 0.4916395, -0.6394898, 0, 0.76879954, 0.4916395, -0.76879954, 0.40894723, 5.159375, 7.3999996, 3.8222196)
+transform = Transform3D(0.59105279, -0.63948982, 0.49163948, 0.6394898, 0, -0.76879958, 0.49163951, 0.76879956, 0.40894721, 5.159375, 7.3999996, 4.7222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_rqil4")
 
 [node name="RailingPost16" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1060515365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55625, 6.7999997, 3.3450933)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55625, 6.7999997, 4.2450933)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_b7rn1")
 
 [node name="PerimeterRail29" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=993202964]
-transform = Transform3D(0.9466958, 0.230877, 0.2246394, -0.230877, -1.1920929e-07, 0.972983, 0.2246394, -0.972983, 0.053304076, 5.953125, 6.52, 1.6725466)
+transform = Transform3D(0.9563486, -0.18379524, 0.22719302, 0.23113042, -9.489945e-08, -0.97292278, 0.1788186, 0.98296455, 0.04248058, 5.953125, 6.52, 2.1225466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_w2bma")
 
 [node name="PerimeterRail30" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1604446901]
-transform = Transform3D(0.9466958, 0.230877, 0.2246394, -0.230877, -1.1920929e-07, 0.972983, 0.2246394, -0.972983, 0.053304076, 5.953125, 7.3999996, 1.6725466)
+transform = Transform3D(0.9563486, -0.18379524, 0.22719302, 0.23113042, -9.489945e-08, -0.97292278, 0.1788186, 0.98296455, 0.04248058, 5.953125, 7.3999996, 2.1225466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_fuigh")
 
@@ -4583,12 +4591,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_xkmpr")
 
 [node name="PerimeterRail31" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1774534814]
-transform = Transform3D(0.9466958, -0.230877, -0.2246394, 0.230877, -1.1920929e-07, 0.972983, -0.2246394, -0.972983, 0.053304076, 5.953125, 6.52, -1.6725466)
+transform = Transform3D(0.94669581, 0.23087699, -0.22463941, -0.230877, -1.1920928e-07, -0.97298294, -0.2246394, 0.97298295, 0.053304074, 5.953125, 6.52, -1.6725466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_6qqag")
 
 [node name="PerimeterRail32" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1235096645]
-transform = Transform3D(0.9466958, -0.230877, -0.2246394, 0.230877, -1.1920929e-07, 0.972983, -0.2246394, -0.972983, 0.053304076, 5.953125, 7.3999996, -1.6725466)
+transform = Transform3D(0.94669581, 0.23087699, -0.22463941, -0.230877, -1.1920928e-07, -0.97298294, -0.2246394, 0.97298295, 0.053304074, 5.953125, 7.3999996, -1.6725466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_10d65")
 
@@ -4598,12 +4606,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_h01xo")
 
 [node name="PerimeterRail33" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1659913489]
-transform = Transform3D(0.5910528, -0.6394898, -0.4916395, 0.6394898, 0, 0.76879954, -0.4916395, -0.76879954, 0.40894723, 5.159375, 6.52, -3.8222196)
+transform = Transform3D(0.59105279, 0.63948982, -0.49163948, -0.6394898, 0, -0.76879958, -0.49163951, 0.76879956, 0.40894721, 5.159375, 6.52, -3.8222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_jxxem")
 
 [node name="PerimeterRail34" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=739119825]
-transform = Transform3D(0.5910528, -0.6394898, -0.4916395, 0.6394898, 0, 0.76879954, -0.4916395, -0.76879954, 0.40894723, 5.159375, 7.3999996, -3.8222196)
+transform = Transform3D(0.59105279, 0.63948982, -0.49163948, -0.6394898, 0, -0.76879958, -0.49163951, 0.76879956, 0.40894721, 5.159375, 7.3999996, -3.8222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2l7vr")
 
@@ -4613,12 +4621,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_a6dug")
 
 [node name="PerimeterRail35" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1435527843]
-transform = Transform3D(0.27390468, -0.85211223, -0.44596076, 0.85211223, -1.1920929e-07, 0.5233592, -0.44596076, -0.5233592, 0.7260952, 4.365625, 6.52, -4.5431027)
+transform = Transform3D(0.27390471, 0.85211219, -0.4459608, -0.85211222, -1.1920928e-07, -0.52335912, -0.44596073, 0.52335917, 0.72609517, 4.365625, 6.52, -4.5431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_tl18w")
 
 [node name="PerimeterRail36" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1456678778]
-transform = Transform3D(0.27390468, -0.85211223, -0.44596076, 0.85211223, -1.1920929e-07, 0.5233592, -0.44596076, -0.5233592, 0.7260952, 4.365625, 7.3999996, -4.5431027)
+transform = Transform3D(0.27390471, 0.85211219, -0.4459608, -0.85211222, -1.1920928e-07, -0.52335912, -0.44596073, 0.52335917, 0.72609517, 4.365625, 7.3999996, -4.5431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_gmabc")
 
@@ -4628,12 +4636,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_0vs6o")
 
 [node name="PerimeterRail37" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=927521767]
-transform = Transform3D(0.0889495, -0.95448965, -0.28467098, 0.95448965, -1.1920929e-07, 0.29824415, -0.28467098, -0.29824415, 0.91105044, 3.571875, 6.52, -4.9108686)
+transform = Transform3D(0.088949462, 0.95448962, -0.28467097, -0.95448962, -1.1920929e-07, -0.29824415, -0.28467098, 0.29824414, 0.91105042, 3.571875, 6.52, -4.9108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_ymjda")
 
 [node name="PerimeterRail38" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=196683564]
-transform = Transform3D(0.0889495, -0.95448965, -0.28467098, 0.95448965, -1.1920929e-07, 0.29824415, -0.28467098, -0.29824415, 0.91105044, 3.571875, 7.3999996, -4.9108686)
+transform = Transform3D(0.088949462, 0.95448962, -0.28467097, -0.95448962, -1.1920929e-07, -0.29824415, -0.28467098, 0.29824414, 0.91105042, 3.571875, 7.3999996, -4.9108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_dc57g")
 
@@ -4643,12 +4651,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ykm5r")
 
 [node name="PerimeterRail39" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=267023680]
-transform = Transform3D(0.020019412, -0.9899397, -0.14006665, 0.9899397, 0, 0.14149009, -0.14006665, -0.14149009, 0.9799805, 2.7781248, 6.52, -5.091603)
+transform = Transform3D(0.020019443, 0.98993967, -0.14006665, -0.98993967, 0, -0.14149008, -0.14006664, 0.14149009, 0.97998056, 2.7781248, 6.52, -5.091603)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_e507i")
 
 [node name="PerimeterRail40" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1610796991]
-transform = Transform3D(0.020019412, -0.9899397, -0.14006665, 0.9899397, 0, 0.14149009, -0.14006665, -0.14149009, 0.9799805, 2.7781248, 7.3999996, -5.091603)
+transform = Transform3D(0.020019443, 0.98993967, -0.14006665, -0.98993967, 0, -0.14149008, -0.14006664, 0.14149009, 0.97998056, 2.7781248, 7.3999996, -5.091603)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_44qym")
 
@@ -4658,12 +4666,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_he7qb")
 
 [node name="PerimeterRail41" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=521827075]
-transform = Transform3D(0.0027269125, -0.9986356, -0.0521488, 0.9986356, 0, 0.05222005, -0.0521488, -0.05222005, 0.9972731, 1.984375, 6.52, -5.1690807)
+transform = Transform3D(0.0027269335, 0.9986356, -0.052148801, -0.9986356, 0, -0.052220048, -0.052148799, 0.05222005, 0.99727307, 1.984375, 6.52, -5.1690807)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_gbir5")
 
 [node name="PerimeterRail42" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1585947378]
-transform = Transform3D(0.0027269125, -0.9986356, -0.0521488, 0.9986356, 0, 0.05222005, -0.0521488, -0.05222005, 0.9972731, 1.984375, 7.3999996, -5.1690807)
+transform = Transform3D(0.0027269335, 0.9986356, -0.052148801, -0.9986356, 0, -0.052220048, -0.052148799, 0.05222005, 0.99727307, 1.984375, 7.3999996, -5.1690807)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_pjcmd")
 
@@ -4673,12 +4681,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_mevgf")
 
 [node name="PerimeterRail43" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1313917497]
-transform = Transform3D(0.00014418364, -0.9999279, -0.012006455, 0.9999279, 0, 0.012007321, -0.012006455, -0.012007321, 0.9998558, 1.190625, 6.52, -5.194599)
+transform = Transform3D(0.00014417576, 0.99992791, -0.012006456, -0.99992791, 0, -0.012007321, -0.012006455, 0.012007321, 0.99985582, 1.190625, 6.52, -5.194599)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2nvml")
 
 [node name="PerimeterRail44" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1275428176]
-transform = Transform3D(0.00014418364, -0.9999279, -0.012006455, 0.9999279, 0, 0.012007321, -0.012006455, -0.012007321, 0.9998558, 1.190625, 7.3999996, -5.194599)
+transform = Transform3D(0.00014417576, 0.99992791, -0.012006456, -0.99992791, 0, -0.012007321, -0.012006455, 0.012007321, 0.99985582, 1.190625, 7.3999996, -5.194599)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_jsf2h")
 
@@ -4688,12 +4696,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_8u24t")
 
 [node name="PerimeterRail45" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1631722455]
-transform = Transform3D(5.9604645e-07, -0.9999997, -0.00079958414, 0.9999997, 0, 0.0007995844, -0.00079958414, -0.0007995844, 0.99999934, 0.396875, 6.52, -5.199682)
+transform = Transform3D(6.3933516e-07, 0.99999968, -0.00079958413, -0.99999968, 0, -0.00079958435, -0.00079958409, 0.00079958438, 0.99999936, 0.396875, 6.52, -5.199682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_vpa6l")
 
 [node name="PerimeterRail46" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=842140388]
-transform = Transform3D(5.9604645e-07, -0.9999997, -0.00079958414, 0.9999997, 0, 0.0007995844, -0.00079958414, -0.0007995844, 0.99999934, 0.396875, 7.3999996, -5.199682)
+transform = Transform3D(6.3933516e-07, 0.99999968, -0.00079958413, -0.99999968, 0, -0.00079958435, -0.00079958409, 0.00079958438, 0.99999936, 0.396875, 7.3999996, -5.199682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_b57t8")
 
@@ -4703,12 +4711,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_4un5l")
 
 [node name="PerimeterRail47" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=907902090]
-transform = Transform3D(5.9604645e-07, -0.9999997, 0.00079958414, 0.9999997, 0, -0.0007995844, 0.00079958414, 0.0007995844, 0.99999934, -0.396875, 6.52, -5.199682)
+transform = Transform3D(6.3933516e-07, 0.99999968, 0.00079958413, -0.99999968, 0, 0.00079958435, 0.00079958409, -0.00079958438, 0.99999936, -0.396875, 6.52, -5.199682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_bth4s")
 
 [node name="PerimeterRail48" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1932003478]
-transform = Transform3D(5.9604645e-07, -0.9999997, 0.00079958414, 0.9999997, 0, -0.0007995844, 0.00079958414, 0.0007995844, 0.99999934, -0.396875, 7.3999996, -5.199682)
+transform = Transform3D(6.3933516e-07, 0.99999968, 0.00079958413, -0.99999968, 0, 0.00079958435, 0.00079958409, -0.00079958438, 0.99999936, -0.396875, 7.3999996, -5.199682)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_q6c46")
 
@@ -4718,12 +4726,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_drasu")
 
 [node name="PerimeterRail49" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1464520240]
-transform = Transform3D(0.00014418364, -0.9999279, 0.012006455, 0.9999279, 0, -0.012007321, 0.012006455, 0.012007321, 0.9998558, -1.190625, 6.52, -5.194599)
+transform = Transform3D(0.00014417576, 0.99992791, 0.012006456, -0.99992791, 0, 0.012007321, 0.012006455, -0.012007321, 0.99985582, -1.190625, 6.52, -5.194599)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_i5lp4")
 
 [node name="PerimeterRail50" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1402101290]
-transform = Transform3D(0.00014418364, -0.9999279, 0.012006455, 0.9999279, 0, -0.012007321, 0.012006455, 0.012007321, 0.9998558, -1.190625, 7.3999996, -5.194599)
+transform = Transform3D(0.00014417576, 0.99992791, 0.012006456, -0.99992791, 0, 0.012007321, 0.012006455, -0.012007321, 0.99985582, -1.190625, 7.3999996, -5.194599)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_qc0j5")
 
@@ -4733,12 +4741,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_xq4q6")
 
 [node name="PerimeterRail51" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=2141983197]
-transform = Transform3D(0.0027269125, -0.9986356, 0.0521488, 0.9986356, 0, -0.05222005, 0.0521488, 0.05222005, 0.9972731, -1.984375, 6.52, -5.1690807)
+transform = Transform3D(0.0027269335, 0.9986356, 0.052148801, -0.9986356, 0, 0.052220048, 0.052148799, -0.05222005, 0.99727307, -1.984375, 6.52, -5.1690807)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_5qtk1")
 
 [node name="PerimeterRail52" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=193414826]
-transform = Transform3D(0.0027269125, -0.9986356, 0.0521488, 0.9986356, 0, -0.05222005, 0.0521488, 0.05222005, 0.9972731, -1.984375, 7.3999996, -5.1690807)
+transform = Transform3D(0.0027269335, 0.9986356, 0.052148801, -0.9986356, 0, 0.052220048, 0.052148799, -0.05222005, 0.99727307, -1.984375, 7.3999996, -5.1690807)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_a2bpu")
 
@@ -4748,12 +4756,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_g4xcj")
 
 [node name="PerimeterRail53" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=979573204]
-transform = Transform3D(0.020019412, -0.9899397, 0.14006665, 0.9899397, 0, -0.14149009, 0.14006665, 0.14149009, 0.9799805, -2.7781248, 6.52, -5.091603)
+transform = Transform3D(0.020019443, 0.98993967, 0.14006665, -0.98993967, 0, 0.14149008, 0.14006664, -0.14149009, 0.97998056, -2.7781248, 6.52, -5.091603)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_f3cjp")
 
 [node name="PerimeterRail54" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=653411367]
-transform = Transform3D(0.020019412, -0.9899397, 0.14006665, 0.9899397, 0, -0.14149009, 0.14006665, 0.14149009, 0.9799805, -2.7781248, 7.3999996, -5.091603)
+transform = Transform3D(0.020019443, 0.98993967, 0.14006665, -0.98993967, 0, 0.14149008, 0.14006664, -0.14149009, 0.97998056, -2.7781248, 7.3999996, -5.091603)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_h5lfd")
 
@@ -4763,12 +4771,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_rjg8u")
 
 [node name="PerimeterRail55" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1525864837]
-transform = Transform3D(0.0889495, -0.95448965, 0.28467098, 0.95448965, -1.1920929e-07, -0.29824415, 0.28467098, 0.29824415, 0.91105044, -3.571875, 6.52, -4.9108686)
+transform = Transform3D(0.088949462, 0.95448962, 0.28467097, -0.95448962, -1.1920929e-07, 0.29824415, 0.28467098, -0.29824414, 0.91105042, -3.571875, 6.52, -4.9108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_e4aou")
 
 [node name="PerimeterRail56" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1777097355]
-transform = Transform3D(0.0889495, -0.95448965, 0.28467098, 0.95448965, -1.1920929e-07, -0.29824415, 0.28467098, 0.29824415, 0.91105044, -3.571875, 7.3999996, -4.9108686)
+transform = Transform3D(0.088949462, 0.95448962, 0.28467097, -0.95448962, -1.1920929e-07, 0.29824415, 0.28467098, -0.29824414, 0.91105042, -3.571875, 7.3999996, -4.9108686)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_fs7e4")
 
@@ -4778,12 +4786,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_qlemr")
 
 [node name="PerimeterRail57" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1510926464]
-transform = Transform3D(0.27390468, -0.85211223, 0.44596076, 0.85211223, -1.1920929e-07, -0.5233592, 0.44596076, 0.5233592, 0.7260952, -4.365625, 6.52, -4.5431027)
+transform = Transform3D(0.27390471, 0.85211219, 0.4459608, -0.85211222, -1.1920928e-07, 0.52335912, 0.44596073, -0.52335917, 0.72609517, -4.365625, 6.52, -4.5431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_1vccr")
 
 [node name="PerimeterRail58" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1609715190]
-transform = Transform3D(0.27390468, -0.85211223, 0.44596076, 0.85211223, -1.1920929e-07, -0.5233592, 0.44596076, 0.5233592, 0.7260952, -4.365625, 7.3999996, -4.5431027)
+transform = Transform3D(0.27390471, 0.85211219, 0.4459608, -0.85211222, -1.1920928e-07, 0.52335912, 0.44596073, -0.52335917, 0.72609517, -4.365625, 7.3999996, -4.5431027)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_eap8t")
 
@@ -4793,12 +4801,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ubpo8")
 
 [node name="PerimeterRail59" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1915950913]
-transform = Transform3D(0.5910528, -0.6394898, 0.4916395, 0.6394898, 0, -0.76879954, 0.4916395, 0.76879954, 0.40894723, -5.159375, 6.52, -3.8222196)
+transform = Transform3D(0.59105279, 0.63948982, 0.49163948, -0.6394898, 0, 0.76879958, 0.49163951, -0.76879956, 0.40894721, -5.159375, 6.52, -3.8222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_y3clh")
 
 [node name="PerimeterRail60" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=853461719]
-transform = Transform3D(0.5910528, -0.6394898, 0.4916395, 0.6394898, 0, -0.76879954, 0.4916395, 0.76879954, 0.40894723, -5.159375, 7.3999996, -3.8222196)
+transform = Transform3D(0.59105279, 0.63948982, 0.49163948, -0.6394898, 0, 0.76879958, 0.49163951, -0.76879956, 0.40894721, -5.159375, 7.3999996, -3.8222196)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_ywhjy")
 
@@ -4808,12 +4816,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_we3d1")
 
 [node name="PerimeterRail61" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=423511542]
-transform = Transform3D(0.9466958, -0.230877, 0.2246394, 0.230877, -1.1920929e-07, -0.972983, 0.2246394, 0.972983, 0.053304076, -5.953125, 6.52, -1.6725466)
+transform = Transform3D(0.94669581, 0.23087699, 0.22463941, -0.230877, -1.1920928e-07, 0.97298294, 0.2246394, -0.97298295, 0.053304074, -5.953125, 6.52, -1.6725466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_jkkso")
 
 [node name="PerimeterRail62" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound" unique_id=1452447483]
-transform = Transform3D(0.9466958, -0.230877, 0.2246394, 0.230877, -1.1920929e-07, -0.972983, 0.2246394, 0.972983, 0.053304076, -5.953125, 7.3999996, -1.6725466)
+transform = Transform3D(0.94669581, 0.23087699, 0.22463941, -0.230877, -1.1920928e-07, 0.97298294, 0.2246394, -0.97298295, 0.053304074, -5.953125, 7.3999996, -1.6725466)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_tcsee")
 
@@ -4987,7 +4995,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_wdqrb")
 
 [node name="RingPlank34" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=378590460]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 3.2, 3.5627198)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35, 3.2, 4.1377198)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_0fei3")
 
@@ -4997,7 +5005,7 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_bhye7")
 
 [node name="RingPlank36" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1144069836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65, 3.2, 3.3674438)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.65, 3.2, 3.9424438)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_0cavm")
 
@@ -5007,32 +5015,32 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_gxrs7")
 
 [node name="RingPlank38" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=712123727]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95, 3.2, 3.0268693)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95, 3.2, 3.6018693)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_rvj26")
 
 [node name="RingPlank39" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=315486663]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3.2, 1.1999999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3.2, 1.7749999)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_t3w0v")
 
 [node name="RingPlank40" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=295884351]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 3.2, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 3.2, 1.775)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_uhyw5")
 
 [node name="RingPlank41" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=160440177]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85, 3.2, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.85, 3.2, 1.775)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_4bm83")
 
 [node name="RingPlank42" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1817240907]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15, 3.2, 1.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15, 3.2, 1.775)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ew5ty")
 
 [node name="RingPlank43" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1963901913]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45, 3.2, 1.1999999)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45, 3.2, 1.7749999)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_h6ijk")
 
@@ -5057,12 +5065,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_vcqij")
 
 [node name="PerimeterRail" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=202158679]
-transform = Transform3D(0.96512586, 0.18674621, -0.18346103, -0.18674621, -1.1920929e-07, -0.9824082, -0.18346103, 0.9824082, 0.03487408, -4.21875, 3.6000001, 2.6795607)
+transform = Transform3D(0.96512585, -0.18674621, -0.18346103, 0.18674621, -1.1920929e-07, 0.98240819, -0.18346103, -0.98240819, 0.034874031, -4.21875, 3.6000001, 2.6795607)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_xjisk")
 
 [node name="PerimeterRail2" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1759570559]
-transform = Transform3D(0.96512586, 0.18674621, -0.18346103, -0.18674621, -1.1920929e-07, -0.9824082, -0.18346103, 0.9824082, 0.03487408, -4.21875, 4.48, 2.6795607)
+transform = Transform3D(0.96512585, -0.18674621, -0.18346103, 0.18674621, -1.1920929e-07, 0.98240819, -0.18346103, -0.98240819, 0.034874031, -4.21875, 4.48, 2.6795607)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_j2ng4")
 
@@ -5072,12 +5080,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_qepfk")
 
 [node name="PerimeterRail3" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=674118852]
-transform = Transform3D(0.6925076, 0.55451995, -0.46145508, -0.55451995, 0, -0.8321704, -0.46145508, 0.8321704, 0.30749238, -3.65625, 3.6000001, 4.581194)
+transform = Transform3D(0.69250761, -0.55451996, -0.46145511, 0.55451997, 0, 0.83217042, -0.46145511, -0.83217042, 0.30749239, -3.65625, 3.6000001, 4.581194)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_6mkrv")
 
 [node name="PerimeterRail4" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1243415616]
-transform = Transform3D(0.6925076, 0.55451995, -0.46145508, -0.55451995, 0, -0.8321704, -0.46145508, 0.8321704, 0.30749238, -3.65625, 4.48, 4.581194)
+transform = Transform3D(0.69250761, -0.55451996, -0.46145511, 0.55451997, 0, 0.83217042, -0.46145511, -0.83217042, 0.30749239, -3.65625, 4.48, 4.581194)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_behl6")
 
@@ -5087,12 +5095,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_qa7st")
 
 [node name="PerimeterRail5" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1965560683]
-transform = Transform3D(0.37020195, 0.7935982, -0.48285866, -0.7935982, 0, -0.60844225, -0.48285866, 0.60844225, 0.62979805, -3.09375, 3.6000001, 5.2188983)
+transform = Transform3D(0.37020194, -0.79359817, -0.48285864, 0.79359817, 0, 0.60844223, -0.48285864, -0.60844223, 0.62979806, -3.09375, 3.6000001, 5.2188983)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_sheqo")
 
 [node name="PerimeterRail6" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=668137469]
-transform = Transform3D(0.37020195, 0.7935982, -0.48285866, -0.7935982, 0, -0.60844225, -0.48285866, 0.60844225, 0.62979805, -3.09375, 4.48, 5.2188983)
+transform = Transform3D(0.37020194, -0.79359817, -0.48285864, 0.79359817, 0, 0.60844223, -0.48285864, -0.60844223, 0.62979806, -3.09375, 4.48, 5.2188983)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_0s3vf")
 
@@ -5102,12 +5110,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ospm0")
 
 [node name="PerimeterRail7" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=320715273]
-transform = Transform3D(0.13204736, 0.9316398, -0.33854225, -0.9316398, 0, -0.3633832, -0.33854225, 0.3633832, 0.86795264, -2.53125, 3.6000001, 5.54423)
+transform = Transform3D(0.13204735, -0.93163977, -0.33854223, 0.93163976, 0, 0.3633832, -0.33854224, -0.36338319, 0.86795265, -2.53125, 3.6000001, 5.54423)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_hl22k")
 
 [node name="PerimeterRail8" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1945464331]
-transform = Transform3D(0.13204736, 0.9316398, -0.33854225, -0.9316398, 0, -0.3633832, -0.33854225, 0.3633832, 0.86795264, -2.53125, 4.48, 5.54423)
+transform = Transform3D(0.13204735, -0.93163977, -0.33854223, 0.93163976, 0, 0.3633832, -0.33854224, -0.36338319, 0.86795265, -2.53125, 4.48, 5.54423)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_d5exr")
 
@@ -5117,12 +5125,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_si4ld")
 
 [node name="PerimeterRail9" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2089252818]
-transform = Transform3D(0.03446287, 0.9826175, -0.18241493, -0.9826175, 0, -0.18564186, -0.18241493, 0.18564186, 0.9655371, -2.01, 3.6000001, 5.699273)
+transform = Transform3D(0.034462896, -0.98261747, -0.18241493, 0.98261748, 0, 0.18564184, -0.18241492, -0.18564186, 0.9655371, -2.01, 3.6000001, 5.699273)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_gqug8")
 
 [node name="PerimeterRail10" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1203757754]
-transform = Transform3D(0.03446287, 0.9826175, -0.18241493, -0.9826175, 0, -0.18564186, -0.18241493, 0.18564186, 0.9655371, -2.01, 4.48, 5.699273)
+transform = Transform3D(0.034462896, -0.98261747, -0.18241493, 0.98261748, 0, 0.18564184, -0.18241492, -0.18564186, 0.9655371, -2.01, 4.48, 5.699273)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_tpawd")
 
@@ -5137,12 +5145,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_uorir")
 
 [node name="PerimeterRail11" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1533339381]
-transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -0.015, 3.6000001, 5.8)
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, -0, 1, -0.015, 3.6000001, 5.8)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_42xl5")
 
 [node name="PerimeterRail12" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1511527980]
-transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -0.015, 4.48, 5.8)
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, -0, 1, -0.015, 4.48, 5.8)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_yb04b")
 
@@ -5152,12 +5160,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_3yumi")
 
 [node name="PerimeterRail13" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=130120871]
-transform = Transform3D(9.536743e-07, 0.9999995, 0.0009986021, -0.9999995, 0, 0.0009986026, 0.0009986021, -0.0009986026, 0.999999, 0.28125, 3.6000001, 5.7997193)
+transform = Transform3D(9.9720711e-07, -0.9999995, 0.0009986021, 0.9999995, 0, -0.00099860256, 0.00099860206, 0.0009986026, 0.999999, 0.28125, 3.6000001, 5.7997193)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_6igdw")
 
 [node name="PerimeterRail14" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1560632339]
-transform = Transform3D(9.536743e-07, 0.9999995, 0.0009986021, -0.9999995, 0, 0.0009986026, 0.0009986021, -0.0009986026, 0.999999, 0.28125, 4.48, 5.7997193)
+transform = Transform3D(9.9720711e-07, -0.9999995, 0.0009986021, 0.9999995, 0, -0.00099860256, 0.00099860206, 0.0009986026, 0.999999, 0.28125, 4.48, 5.7997193)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_0g4xy")
 
@@ -5167,87 +5175,52 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_wmfhg")
 
 [node name="PerimeterRail15" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=931908286]
-transform = Transform3D(0.0002245903, 0.9998877, 0.014985851, -0.9998877, 0, 0.014987534, 0.014985851, -0.014987534, 0.99977535, 0.84375, 3.6000001, 5.7952228)
+transform = Transform3D(-0.0057613978, -0.44199837, -0.89699735, 0.99997937, 0, -0.0064228494, 0.0028388889, -0.89701586, 0.44198925, 0.84375, 3.6000001, 6.3702228)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_kug8j")
 
 [node name="PerimeterRail16" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1928923467]
-transform = Transform3D(0.0002245903, 0.9998877, 0.014985851, -0.9998877, 0, 0.014987534, 0.014985851, -0.014987534, 0.99977535, 0.84375, 4.48, 5.7952228)
+transform = Transform3D(-0.0057613978, -0.44199837, -0.89699735, 0.99997937, 0, -0.0064228494, 0.0028388889, -0.89701586, 0.44198925, 0.84375, 4.48, 6.3702228)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_h2ao4")
 
 [node name="RailingPost10" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=297832468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.125, 3.88, 5.791007)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.125, 3.88, 6.941007)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_0ybrt")
 
 [node name="PerimeterRail17" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1865923015]
-transform = Transform3D(0.0042428374, 0.99787635, 0.064998455, -0.99787635, 5.9604645e-08, 0.06513678, 0.064998455, -0.06513678, 0.9957572, 1.40625, 3.6000001, 5.7726483)
+transform = Transform3D(0.0042428598, -0.99787635, 0.064998448, 0.99787634, 5.9604644e-08, -0.065136785, 0.064998453, 0.06513678, 0.9957572, 1.2925, 3.6000001, 6.9300734)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2xutk")
 
 [node name="PerimeterRail18" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1945773388]
-transform = Transform3D(0.0042428374, 0.99787635, 0.064998455, -0.99787635, 5.9604645e-08, 0.06513678, 0.064998455, -0.06513678, 0.9957572, 1.40625, 4.48, 5.7726483)
+transform = Transform3D(0.0042428598, -0.99787635, 0.064998448, 0.99787634, 5.9604644e-08, -0.065136785, 0.064998453, 0.06513678, 0.9957572, 1.2925, 4.48, 6.9300734)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_q63hw")
 
-[node name="RailingPost11" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2116235764]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6875, 3.88, 5.7542896)
-material_override = SubResource("StandardMaterial3D_2qvf3")
-mesh = SubResource("BoxMesh_i778u")
-
-[node name="PerimeterRail19" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1274952817]
-transform = Transform3D(0.030850232, 0.98445404, 0.17291175, -0.98445404, 0, 0.17564228, 0.17291175, -0.17564228, 0.96914977, 1.96875, 3.6000001, 5.70411)
-material_override = SubResource("StandardMaterial3D_v3ny5")
-mesh = SubResource("BoxMesh_7e4id")
-
-[node name="PerimeterRail20" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2081043330]
-transform = Transform3D(0.030850232, 0.98445404, 0.17291175, -0.98445404, 0, 0.17564228, 0.17291175, -0.17564228, 0.96914977, 1.96875, 4.48, 5.70411)
-material_override = SubResource("StandardMaterial3D_v3ny5")
-mesh = SubResource("BoxMesh_y3fl0")
-
-[node name="RailingPost12" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=854736281]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 3.88, 5.6539307)
-material_override = SubResource("StandardMaterial3D_2qvf3")
-mesh = SubResource("BoxMesh_panji")
-
-[node name="PerimeterRail21" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1972047000]
-transform = Transform3D(0.13204736, 0.9316398, 0.33854225, -0.9316398, 0, 0.3633832, 0.33854225, -0.3633832, 0.86795264, 2.53125, 3.6000001, 5.54423)
-material_override = SubResource("StandardMaterial3D_v3ny5")
-mesh = SubResource("BoxMesh_ro86s")
-
-[node name="PerimeterRail22" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1758684641]
-transform = Transform3D(0.13204736, 0.9316398, 0.33854225, -0.9316398, 0, 0.3633832, 0.33854225, -0.3633832, 0.86795264, 2.53125, 4.48, 5.54423)
-material_override = SubResource("StandardMaterial3D_v3ny5")
-mesh = SubResource("BoxMesh_vry75")
-
-[node name="RailingPost13" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2132123756]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8125, 3.88, 5.4345293)
-material_override = SubResource("StandardMaterial3D_2qvf3")
-mesh = SubResource("BoxMesh_vhysq")
-
 [node name="PerimeterRail23" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1661953960]
-transform = Transform3D(0.37020195, 0.7935982, 0.48285866, -0.7935982, 0, 0.60844225, 0.48285866, -0.60844225, 0.62979805, 3.09375, 3.6000001, 5.2188983)
+transform = Transform3D(0.37020194, -0.79359817, 0.48285864, 0.79359817, 0, -0.60844223, 0.48285864, 0.60844223, 0.62979806, 3.2575, 3.6000001, 6.2433531)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_dfxac")
 
 [node name="PerimeterRail24" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=431471886]
-transform = Transform3D(0.37020195, 0.7935982, 0.48285866, -0.7935982, 0, 0.60844225, 0.48285866, -0.60844225, 0.62979805, 3.09375, 4.48, 5.2188983)
+transform = Transform3D(0.37020194, -0.79359817, 0.48285864, 0.79359817, 0, -0.60844223, 0.48285864, 0.60844223, 0.62979806, 3.2575, 4.48, 6.2433531)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_mk5mq")
 
 [node name="RailingPost14" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=552574403]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.375, 3.88, 5.0032673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.375, 3.88, 6.1532673)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_nn43n")
 
 [node name="PerimeterRail25" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1834457086]
-transform = Transform3D(0.6925076, 0.55451995, 0.46145508, -0.55451995, 0, 0.8321704, 0.46145508, -0.8321704, 0.30749238, 3.65625, 3.6000001, 4.581194)
+transform = Transform3D(0.78833506, -0.27148188, 0.55210997, 0.5736544, 0, -0.81909745, 0.22237011, 0.96244355, 0.15573677, 3.65625, 3.6000001, 5.156194)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_0bafq")
 
 [node name="PerimeterRail26" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1078631995]
-transform = Transform3D(0.6925076, 0.55451995, 0.46145508, -0.55451995, 0, 0.8321704, 0.46145508, -0.8321704, 0.30749238, 3.65625, 4.48, 4.581194)
+transform = Transform3D(0.78833506, -0.27148188, 0.55210997, 0.5736544, 0, -0.81909745, 0.22237011, 0.96244355, 0.15573677, 3.65625, 4.48, 5.156194)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_15pfy")
 
@@ -5257,12 +5230,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_i3jmj")
 
 [node name="PerimeterRail27" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1561996911]
-transform = Transform3D(0.96512586, 0.18674621, 0.18346103, -0.18674621, -1.1920929e-07, 0.9824082, 0.18346103, -0.9824082, 0.03487408, 4.21875, 3.6000001, 2.6795607)
+transform = Transform3D(0.96512585, -0.18674621, 0.18346103, 0.18674621, -1.1920929e-07, -0.98240819, 0.18346103, 0.98240819, 0.034874031, 4.21875, 3.6000001, 2.6795607)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_uwrxn")
 
 [node name="PerimeterRail28" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1327717234]
-transform = Transform3D(0.96512586, 0.18674621, 0.18346103, -0.18674621, -1.1920929e-07, 0.9824082, 0.18346103, -0.9824082, 0.03487408, 4.21875, 4.48, 2.6795607)
+transform = Transform3D(0.96512585, -0.18674621, 0.18346103, 0.18674621, -1.1920929e-07, -0.98240819, 0.18346103, 0.98240819, 0.034874031, 4.21875, 4.48, 2.6795607)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_c7p5f")
 
@@ -5272,12 +5245,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_qfwlw")
 
 [node name="PerimeterRail29" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2062387579]
-transform = Transform3D(0.96512586, -0.18674621, -0.18346103, 0.18674621, -1.1920929e-07, 0.9824082, -0.18346103, -0.9824082, 0.03487408, 4.21875, 3.6000001, -0.27956045)
+transform = Transform3D(0.96512585, 0.18674621, -0.18346103, -0.18674621, -1.1920929e-07, -0.98240819, -0.18346103, 0.98240819, 0.034874031, 4.21875, 3.6000001, -0.27956045)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_eq3uo")
 
 [node name="PerimeterRail30" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2040863536]
-transform = Transform3D(0.96512586, -0.18674621, -0.18346103, 0.18674621, -1.1920929e-07, 0.9824082, -0.18346103, -0.9824082, 0.03487408, 4.21875, 4.48, -0.27956045)
+transform = Transform3D(0.96512585, 0.18674621, -0.18346103, -0.18674621, -1.1920929e-07, -0.98240819, -0.18346103, 0.98240819, 0.034874031, 4.21875, 4.48, -0.27956045)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_n85bt")
 
@@ -5287,12 +5260,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_mnf7j")
 
 [node name="PerimeterRail31" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=64345668]
-transform = Transform3D(0.69250774, -0.5545198, -0.46145505, 0.5545198, -1.1920929e-07, 0.83217055, -0.46145505, -0.83217055, 0.30749214, 3.65625, 3.6000001, -2.1811943)
+transform = Transform3D(0.69250775, 0.55451979, -0.46145511, -0.55451982, -1.1920929e-07, -0.83217052, -0.46145508, 0.83217054, 0.30749213, 3.65625, 3.6000001, -2.1811943)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_vy23i")
 
 [node name="PerimeterRail32" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1889856707]
-transform = Transform3D(0.69250774, -0.5545198, -0.46145505, 0.5545198, -1.1920929e-07, 0.83217055, -0.46145505, -0.83217055, 0.30749214, 3.65625, 4.48, -2.1811943)
+transform = Transform3D(0.69250775, 0.55451979, -0.46145511, -0.55451982, -1.1920929e-07, -0.83217052, -0.46145508, 0.83217054, 0.30749213, 3.65625, 4.48, -2.1811943)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_o1vxi")
 
@@ -5302,12 +5275,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_8ghfg")
 
 [node name="PerimeterRail33" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=975599646]
-transform = Transform3D(0.37020195, -0.7935982, -0.48285866, 0.7935982, 0, 0.60844225, -0.48285866, -0.60844225, 0.62979805, 3.09375, 3.6000001, -2.8188984)
+transform = Transform3D(0.37020194, 0.79359817, -0.48285864, -0.79359817, 0, -0.60844223, -0.48285864, 0.60844223, 0.62979806, 3.09375, 3.6000001, -2.8188984)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2rbgd")
 
 [node name="PerimeterRail34" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=882640745]
-transform = Transform3D(0.37020195, -0.7935982, -0.48285866, 0.7935982, 0, 0.60844225, -0.48285866, -0.60844225, 0.62979805, 3.09375, 4.48, -2.8188984)
+transform = Transform3D(0.37020194, 0.79359817, -0.48285864, -0.79359817, 0, -0.60844223, -0.48285864, 0.60844223, 0.62979806, 3.09375, 4.48, -2.8188984)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_pljb7")
 
@@ -5317,12 +5290,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ucytb")
 
 [node name="PerimeterRail35" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1621674178]
-transform = Transform3D(0.13204736, -0.9316398, -0.33854225, 0.9316398, 0, 0.3633832, -0.33854225, -0.3633832, 0.86795264, 2.53125, 3.6000001, -3.1442301)
+transform = Transform3D(0.13204735, 0.93163977, -0.33854223, -0.93163976, 0, -0.3633832, -0.33854224, 0.36338319, 0.86795265, 2.53125, 3.6000001, -3.1442301)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_oadtp")
 
 [node name="PerimeterRail36" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1005711461]
-transform = Transform3D(0.13204736, -0.9316398, -0.33854225, 0.9316398, 0, 0.3633832, -0.33854225, -0.3633832, 0.86795264, 2.53125, 4.48, -3.1442301)
+transform = Transform3D(0.13204735, 0.93163977, -0.33854223, -0.93163976, 0, -0.3633832, -0.33854224, 0.36338319, 0.86795265, 2.53125, 4.48, -3.1442301)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_yof3u")
 
@@ -5332,12 +5305,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_skvjv")
 
 [node name="PerimeterRail37" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=795874035]
-transform = Transform3D(0.030849993, -0.98445415, -0.17291139, 0.98445415, -1.1920929e-07, 0.1756419, -0.17291139, -0.1756419, 0.96914995, 1.96875, 3.6000001, -3.30411)
+transform = Transform3D(0.030849957, 0.98445413, -0.17291141, -0.98445413, -1.1920929e-07, -0.17564188, -0.17291139, 0.1756419, 0.96914992, 1.96875, 3.6000001, -3.30411)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_11rvv")
 
 [node name="PerimeterRail38" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=69597515]
-transform = Transform3D(0.030849993, -0.98445415, -0.17291139, 0.98445415, -1.1920929e-07, 0.1756419, -0.17291139, -0.1756419, 0.96914995, 1.96875, 4.48, -3.30411)
+transform = Transform3D(0.030849957, 0.98445413, -0.17291141, -0.98445413, -1.1920929e-07, -0.17564188, -0.17291139, 0.1756419, 0.96914992, 1.96875, 4.48, -3.30411)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_eapgh")
 
@@ -5347,12 +5320,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_p0837")
 
 [node name="PerimeterRail39" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=912841424]
-transform = Transform3D(0.0042428374, -0.99787635, -0.064998455, 0.99787635, 5.9604645e-08, 0.06513678, -0.064998455, -0.06513678, 0.9957572, 1.40625, 3.6000001, -3.3726482)
+transform = Transform3D(0.0042428598, 0.99787635, -0.064998448, -0.99787634, 5.9604644e-08, -0.065136785, -0.064998453, 0.06513678, 0.9957572, 1.40625, 3.6000001, -3.3726482)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_i0d2y")
 
 [node name="PerimeterRail40" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=225104636]
-transform = Transform3D(0.0042428374, -0.99787635, -0.064998455, 0.99787635, 5.9604645e-08, 0.06513678, -0.064998455, -0.06513678, 0.9957572, 1.40625, 4.48, -3.3726482)
+transform = Transform3D(0.0042428598, 0.99787635, -0.064998448, -0.99787634, 5.9604644e-08, -0.065136785, -0.064998453, 0.06513678, 0.9957572, 1.40625, 4.48, -3.3726482)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_k00ju")
 
@@ -5362,12 +5335,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_dqqrv")
 
 [node name="PerimeterRail41" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1418210957]
-transform = Transform3D(0.0002245903, -0.9998877, -0.014985851, 0.9998877, 0, 0.014987534, -0.014985851, -0.014987534, 0.99977535, 0.84375, 3.6000001, -3.3952227)
+transform = Transform3D(0.00022462616, 0.99988768, -0.01498585, -0.99988768, 0, -0.014987534, -0.01498585, 0.014987534, 0.99977537, 0.84375, 3.6000001, -3.3952227)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2haa8")
 
 [node name="PerimeterRail42" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=169351459]
-transform = Transform3D(0.0002245903, -0.9998877, -0.014985851, 0.9998877, 0, 0.014987534, -0.014985851, -0.014987534, 0.99977535, 0.84375, 4.48, -3.3952227)
+transform = Transform3D(0.00022462616, 0.99988768, -0.01498585, -0.99988768, 0, -0.014987534, -0.01498585, 0.014987534, 0.99977537, 0.84375, 4.48, -3.3952227)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_1kypp")
 
@@ -5377,12 +5350,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_mp14y")
 
 [node name="PerimeterRail43" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=421681611]
-transform = Transform3D(9.536743e-07, -0.9999995, -0.0009986021, 0.9999995, 0, 0.0009986026, -0.0009986021, -0.0009986026, 0.999999, 0.28125, 3.6000001, -3.3997192)
+transform = Transform3D(9.9720711e-07, 0.9999995, -0.0009986021, -0.9999995, 0, -0.00099860256, -0.00099860206, 0.0009986026, 0.999999, 0.28125, 3.6000001, -3.3997192)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_tmdp3")
 
 [node name="PerimeterRail44" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=496045380]
-transform = Transform3D(9.536743e-07, -0.9999995, -0.0009986021, 0.9999995, 0, 0.0009986026, -0.0009986021, -0.0009986026, 0.999999, 0.28125, 4.48, -3.3997192)
+transform = Transform3D(9.9720711e-07, 0.9999995, -0.0009986021, -0.9999995, 0, -0.00099860256, -0.00099860206, 0.0009986026, 0.999999, 0.28125, 4.48, -3.3997192)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_ve6w0")
 
@@ -5392,12 +5365,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_emnbm")
 
 [node name="PerimeterRail45" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2128775842]
-transform = Transform3D(9.536743e-07, -0.9999995, 0.0009986021, 0.9999995, 0, -0.0009986026, 0.0009986021, 0.0009986026, 0.999999, -0.28125, 3.6000001, -3.3997192)
+transform = Transform3D(9.9720711e-07, 0.9999995, 0.0009986021, -0.9999995, 0, 0.00099860256, 0.00099860206, -0.0009986026, 0.999999, -0.28125, 3.6000001, -3.3997192)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_fuiu1")
 
 [node name="PerimeterRail46" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=80471333]
-transform = Transform3D(9.536743e-07, -0.9999995, 0.0009986021, 0.9999995, 0, -0.0009986026, 0.0009986021, 0.0009986026, 0.999999, -0.28125, 4.48, -3.3997192)
+transform = Transform3D(9.9720711e-07, 0.9999995, 0.0009986021, -0.9999995, 0, 0.00099860256, 0.00099860206, -0.0009986026, 0.999999, -0.28125, 4.48, -3.3997192)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_a73wp")
 
@@ -5407,12 +5380,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_8itha")
 
 [node name="PerimeterRail47" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1606622371]
-transform = Transform3D(0.0002245903, -0.9998877, 0.014985851, 0.9998877, 0, -0.014987534, 0.014985851, 0.014987534, 0.99977535, -0.84375, 3.6000001, -3.3952227)
+transform = Transform3D(0.00022462616, 0.99988768, 0.01498585, -0.99988768, 0, 0.014987534, 0.01498585, -0.014987534, 0.99977537, -0.84375, 3.6000001, -3.3952227)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_0xr2n")
 
 [node name="PerimeterRail48" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=734767368]
-transform = Transform3D(0.0002245903, -0.9998877, 0.014985851, 0.9998877, 0, -0.014987534, 0.014985851, 0.014987534, 0.99977535, -0.84375, 4.48, -3.3952227)
+transform = Transform3D(0.00022462616, 0.99988768, 0.01498585, -0.99988768, 0, 0.014987534, 0.01498585, -0.014987534, 0.99977537, -0.84375, 4.48, -3.3952227)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_vj6l6")
 
@@ -5422,12 +5395,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_daw1y")
 
 [node name="PerimeterRail49" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=2110532526]
-transform = Transform3D(0.0042428374, -0.99787635, 0.064998455, 0.99787635, 5.9604645e-08, -0.06513678, 0.064998455, 0.06513678, 0.9957572, -1.40625, 3.6000001, -3.3726482)
+transform = Transform3D(0.0042428598, 0.99787635, 0.064998448, -0.99787634, 5.9604644e-08, 0.065136785, 0.064998453, -0.06513678, 0.9957572, -1.40625, 3.6000001, -3.3726482)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_od16c")
 
 [node name="PerimeterRail50" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1617133107]
-transform = Transform3D(0.0042428374, -0.99787635, 0.064998455, 0.99787635, 5.9604645e-08, -0.06513678, 0.064998455, 0.06513678, 0.9957572, -1.40625, 4.48, -3.3726482)
+transform = Transform3D(0.0042428598, 0.99787635, 0.064998448, -0.99787634, 5.9604644e-08, 0.065136785, 0.064998453, -0.06513678, 0.9957572, -1.40625, 4.48, -3.3726482)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_d438d")
 
@@ -5437,12 +5410,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_ah5he")
 
 [node name="PerimeterRail51" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1731875284]
-transform = Transform3D(0.030849993, -0.98445415, 0.17291139, 0.98445415, -1.1920929e-07, -0.1756419, 0.17291139, 0.1756419, 0.96914995, -1.96875, 3.6000001, -3.30411)
+transform = Transform3D(0.030849957, 0.98445413, 0.17291141, -0.98445413, -1.1920929e-07, 0.17564188, 0.17291139, -0.1756419, 0.96914992, -1.96875, 3.6000001, -3.30411)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_jnwnr")
 
 [node name="PerimeterRail52" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=197322549]
-transform = Transform3D(0.030849993, -0.98445415, 0.17291139, 0.98445415, -1.1920929e-07, -0.1756419, 0.17291139, 0.1756419, 0.96914995, -1.96875, 4.48, -3.30411)
+transform = Transform3D(0.030849957, 0.98445413, 0.17291141, -0.98445413, -1.1920929e-07, 0.17564188, 0.17291139, -0.1756419, 0.96914992, -1.96875, 4.48, -3.30411)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_u12mt")
 
@@ -5452,12 +5425,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_r5rs2")
 
 [node name="PerimeterRail53" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=368547273]
-transform = Transform3D(0.13204736, -0.9316398, 0.33854225, 0.9316398, 0, -0.3633832, 0.33854225, 0.3633832, 0.86795264, -2.53125, 3.6000001, -3.1442301)
+transform = Transform3D(0.13204735, 0.93163977, 0.33854223, -0.93163976, 0, 0.3633832, 0.33854224, -0.36338319, 0.86795265, -2.53125, 3.6000001, -3.1442301)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_is4ug")
 
 [node name="PerimeterRail54" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=1738014055]
-transform = Transform3D(0.13204736, -0.9316398, 0.33854225, 0.9316398, 0, -0.3633832, 0.33854225, 0.3633832, 0.86795264, -2.53125, 4.48, -3.1442301)
+transform = Transform3D(0.13204735, 0.93163977, 0.33854223, -0.93163976, 0, 0.3633832, 0.33854224, -0.36338319, 0.86795265, -2.53125, 4.48, -3.1442301)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_v8jim")
 
@@ -5467,12 +5440,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_iitc6")
 
 [node name="PerimeterRail55" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=161938808]
-transform = Transform3D(0.37020195, -0.7935982, 0.48285866, 0.7935982, 0, -0.60844225, 0.48285866, 0.60844225, 0.62979805, -3.09375, 3.6000001, -2.8188984)
+transform = Transform3D(0.37020194, 0.79359817, 0.48285864, -0.79359817, 0, 0.60844223, 0.48285864, -0.60844223, 0.62979806, -3.09375, 3.6000001, -2.8188984)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_rcpet")
 
 [node name="PerimeterRail56" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=920859571]
-transform = Transform3D(0.37020195, -0.7935982, 0.48285866, 0.7935982, 0, -0.60844225, 0.48285866, 0.60844225, 0.62979805, -3.09375, 4.48, -2.8188984)
+transform = Transform3D(0.37020194, 0.79359817, 0.48285864, -0.79359817, 0, 0.60844223, 0.48285864, -0.60844223, 0.62979806, -3.09375, 4.48, -2.8188984)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2o7w7")
 
@@ -5482,12 +5455,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_5efmf")
 
 [node name="PerimeterRail57" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=107730553]
-transform = Transform3D(0.69250774, -0.5545198, 0.46145505, 0.5545198, -1.1920929e-07, -0.83217055, 0.46145505, 0.83217055, 0.30749214, -3.65625, 3.6000001, -2.1811943)
+transform = Transform3D(0.69250775, 0.55451979, 0.46145511, -0.55451982, -1.1920929e-07, 0.83217052, 0.46145508, -0.83217054, 0.30749213, -3.65625, 3.6000001, -2.1811943)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_tawia")
 
 [node name="PerimeterRail58" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=458791497]
-transform = Transform3D(0.69250774, -0.5545198, 0.46145505, 0.5545198, -1.1920929e-07, -0.83217055, 0.46145505, 0.83217055, 0.30749214, -3.65625, 4.48, -2.1811943)
+transform = Transform3D(0.69250775, 0.55451979, 0.46145511, -0.55451982, -1.1920929e-07, 0.83217052, 0.46145508, -0.83217054, 0.30749213, -3.65625, 4.48, -2.1811943)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_he0lj")
 
@@ -5497,12 +5470,12 @@ material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_hs6s6")
 
 [node name="PerimeterRail59" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=887022323]
-transform = Transform3D(0.96512586, -0.18674621, 0.18346103, 0.18674621, -1.1920929e-07, -0.9824082, 0.18346103, 0.9824082, 0.03487408, -4.21875, 3.6000001, -0.27956045)
+transform = Transform3D(0.96512585, 0.18674621, 0.18346103, -0.18674621, -1.1920929e-07, 0.98240819, 0.18346103, -0.98240819, 0.034874031, -4.21875, 3.6000001, -0.27956045)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_pi26t")
 
 [node name="PerimeterRail60" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout" unique_id=812815683]
-transform = Transform3D(0.96512586, -0.18674621, 0.18346103, 0.18674621, -1.1920929e-07, -0.9824082, 0.18346103, 0.9824082, 0.03487408, -4.21875, 4.48, -0.27956045)
+transform = Transform3D(0.96512585, 0.18674621, 0.18346103, -0.18674621, -1.1920929e-07, 0.98240819, 0.18346103, -0.98240819, 0.034874031, -4.21875, 4.48, -0.27956045)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_xj3cj")
 
@@ -5695,70 +5668,85 @@ material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_5qir5")
 
 [node name="LandingToTopDeck" type="Node3D" parent="BranchPlatforms" unique_id=615624287]
-metadata/foot = Vector3(2.3, 3.29, 5.48)
-metadata/landing = Vector3(2.3, 6.21, 5.155056)
+metadata/foot = Vector3(2.3, 3.29, 6.63)
+metadata/landing = Vector3(2.3, 6.21, 6.305056)
 
 [node name="ContinuousStringer" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=182736456]
-transform = Transform3D(1, 0, 0, 0, 0.9938651, 0.11059949, 0, -0.11059949, 0.9938651, 1.6399999, 5.236994, 5.2633343)
+transform = Transform3D(1, 0, 0, 0, 0.9938651, 0.11059949, 0, -0.11059949, 0.9938651, 1.6399999, 5.236994, 6.4133343)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_jmqpp")
 
 [node name="ContinuousStringer2" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=498143979]
-transform = Transform3D(1, 0, 0, 0, 0.9938651, 0.11059949, 0, -0.11059949, 0.9938651, 2.96, 5.236994, 5.2633343)
+transform = Transform3D(1, 0, 0, 0, 0.9938651, 0.11059949, 0, -0.11059949, 0.9938651, 2.96, 5.236994, 6.4133343)
 material_override = SubResource("StandardMaterial3D_2qvf3")
 mesh = SubResource("BoxMesh_biqej")
 
 [node name="LevelTread01" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=452373227]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 3.4854546, 5.4504595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 3.4854546, 6.6004595)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_smbql")
 
 [node name="LevelTread02" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=981147758]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 3.750909, 5.4209194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 3.750909, 6.5709194)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_vgmge")
 
 [node name="LevelTread03" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=1942748587]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.0163636, 5.391379)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.0163636, 6.541379)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_1wngu")
 
 [node name="LevelTread04" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=985581546]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.281818, 5.3618383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.281818, 6.5118383)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_2masr")
 
 [node name="LevelTread05" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=1310486848]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.5472727, 5.3322983)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.5472727, 6.4822983)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_wqq6w")
 
 [node name="LevelTread06" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=1843261436]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.812727, 5.3027577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 4.812727, 6.4527577)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_ufxvp")
 
 [node name="LevelTread07" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=847657592]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.0781817, 5.2732177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.0781817, 6.4232177)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_1c35g")
 
 [node name="LevelTread08" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=848262168]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.343636, 5.243677)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.343636, 6.393677)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_k4duw")
 
 [node name="LevelTread09" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=16800466]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.609091, 5.2141366)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.609091, 6.3641366)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_57t1o")
 
 [node name="LevelTread10" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=1426718266]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.8745456, 5.1845965)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 5.8745456, 6.3345965)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_vjidd")
 
 [node name="LevelTread11" type="MeshInstance3D" parent="BranchPlatforms/LandingToTopDeck" unique_id=265596146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 6.14, 5.155056)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 6.14, 6.305056)
 material_override = SubResource("StandardMaterial3D_v3ny5")
 mesh = SubResource("BoxMesh_tb60f")
+
+[node name="UpperStairLanding" type="MeshInstance3D" parent="BranchPlatforms/UpperWraparound"]
+position = Vector3(2.3, 6.12, 5.97)
+material_override = SubResource("StandardMaterial3D_v3ny5")
+mesh = SubResource("BoxMesh_stair_landing")
+
+[node name="UpperLadderOpeningLeft" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout"]
+position = Vector3(1.46, 3.88, 6.9191397)
+material_override = SubResource("StandardMaterial3D_2qvf3")
+mesh = SubResource("BoxMesh_stair_opening_post")
+
+[node name="UpperLadderOpeningRight" type="MeshInstance3D" parent="BranchPlatforms/LowerLookout"]
+position = Vector3(3.14, 3.88, 6.333439)
+material_override = SubResource("StandardMaterial3D_2qvf3")
+mesh = SubResource("BoxMesh_stair_opening_post")

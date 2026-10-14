@@ -8,11 +8,12 @@ signal next_pressed
 signal option_chosen(index: int)
 signal customize_done
 signal finish_pressed
+signal play_pressed
 
 const FONT := preload("res://neighborhood_assets/preview/fonts/Fredoka.ttf")
 const DIALOGUE_FRAME := preload("res://bedroom_assets/quest_dialogue_frame.gd")
 const TEXT_WRITER := preload("res://bedroom_assets/text_writer.gd")
-const FROST_SHADER := preload("res://ui/frost.gdshader")
+const FROST_SHADER := preload("res://neighborhood_assets/preview/welcome_background_blur.gdshader")
 const INK := Color("16364a")
 const PAPER := Color("fff3d4")
 const GOLD := Color("ffd76e")
@@ -28,8 +29,12 @@ var display_font: FontVariation
 var frost: ColorRect
 var frost_material: ShaderMaterial
 var frost_amount: float = 0.0
+var _frost_on := false
+var _frost_tween: Tween
+var _dialogue_frosted := false
 var desktop: DesktopScreen
 var title_card: Control
+var play_button: Button
 var dialogue: PanelContainer
 var dialogue_speaker: Label
 var dialogue_body: Label
@@ -90,6 +95,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	writer.advance(delta)
+	# Only reading/decision screens blur the world. The HUD, customization
+	# and Pip's in-world dialogue must leave the action visible.
+	var want_frost := (title_card.visible or question.visible or finale_card.visible or (dialogue.visible and _dialogue_frosted)) and not desktop.visible
+	if want_frost != _frost_on:
+		set_frost(want_frost)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -183,6 +193,24 @@ func _fade_out(node: Control) -> void:
 	node.hide()
 
 
+## Keep the authored width while containers measure wrapped text, then
+## shrink height to the actual contents before positioning/animating.
+func _fit_content(panel: Control, width: float, placement: String = "bottom") -> void:
+	panel.modulate.a = 0.0
+	panel.show()
+	panel.size = Vector2(width, 0)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	panel.size = Vector2(width, panel.get_combined_minimum_size().y)
+	panel.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	var x := (root.size.x - panel.size.x) * 0.5
+	var y := (root.size.y - panel.size.y) * 0.5 if placement == "center" else root.size.y - panel.size.y - 24.0
+	if placement == "right":
+		x = root.size.x - panel.size.x - 20.0
+		y = 20.0
+	panel.position = Vector2(x, y)
+
+
 # ------------------------------------------------------------------ frost
 
 func _build_frost() -> void:
@@ -192,22 +220,24 @@ func _build_frost() -> void:
 	frost_material = ShaderMaterial.new()
 	frost_material.shader = FROST_SHADER
 	frost.material = frost_material
-	frost_material.set_shader_parameter("amount", 0.0)
-	frost.mouse_filter = Control.MOUSE_FILTER_STOP
+	frost_material.set_shader_parameter("blur_strength", 0.0)
+	frost.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	root.add_child(frost)
 	frost.hide()
 
 
 func set_frost(on: bool) -> void:
+	_frost_on = on
+	if _frost_tween and _frost_tween.is_valid():
+		_frost_tween.kill()
 	if on:
 		frost.show()
-	var tween := create_tween()
-	tween.tween_method(func(v: float) -> void:
+	_frost_tween = create_tween()
+	_frost_tween.tween_method(func(v: float) -> void:
 		frost_amount = v
-		frost_material.set_shader_parameter("amount", v), frost_amount, 1.0 if on else 0.0, 0.35)
+		frost_material.set_shader_parameter("blur_strength", v), frost_amount, 1.0 if on else 0.0, 0.35)
 	if not on:
-		await tween.finished
-		frost.hide()
+		_frost_tween.tween_callback(frost.hide)
 
 
 # ------------------------------------------------------------------ title
@@ -231,12 +261,33 @@ func _build_title() -> void:
 	sub.add_theme_color_override("font_outline_color", INK)
 	sub.add_theme_constant_override("outline_size", 8)
 	title_card.add_child(sub)
+	var actions := CenterContainer.new()
+	title_card.add_child(actions)
+	play_button = action_button("Play")
+	play_button.custom_minimum_size = Vector2(240, 60)
+	play_button.disabled = true
+	play_button.pressed.connect(func() -> void:
+		if not play_button.disabled:
+			play_button.disabled = true
+			play_pressed.emit())
+	actions.add_child(play_button)
+	title_card.add_theme_constant_override("separation", 20)
 	root.add_child(title_card)
 	title_card.hide()
 
 
 func show_title() -> void:
+	play_button.disabled = true
 	_pop_in(title_card, 0.6)
+
+
+func wait_for_play() -> void:
+	if not title_card.visible:
+		show_title()
+	play_button.disabled = false
+	play_button.grab_focus()
+	await play_pressed
+	await hide_title()
 
 
 func hide_title() -> void:
@@ -259,6 +310,7 @@ func _build_dialogue() -> void:
 	dialogue.pointer_side = "none"
 	root.add_child(dialogue)
 	var content := VBoxContainer.new()
+	content.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	content.add_theme_constant_override("separation", 12)
 	dialogue.add_child(content)
 	dialogue_speaker = label("PIP", 18, true, Color("b5604a"))
@@ -307,15 +359,21 @@ func _on_dialogue_button() -> void:
 
 ## Shows a typewritten line over the frosted background and waits for Next.
 func say(text: String, speaker: String = "PIP", button_text: String = "Next", tip: String = "", frosted: bool = true) -> void:
-	if frosted:
-		set_frost(true)
-	_place_dialogue(frosted)
+	_dialogue_frosted = frosted and speaker != "PIP"
+	_place_dialogue(_dialogue_frosted)
 	dialogue_speaker.text = speaker
 	dialogue_body.text = text
 	dialogue_tip.text = ("Tip: " + tip) if tip != "" else ""
 	dialogue_tip.visible = tip != ""
 	dialogue_button.text = button_text
-	dialogue.reset_size()
+	var text_width := display_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, 30).x
+	if tip != "":
+		text_width = maxf(text_width, body_font.get_string_size(dialogue_tip.text, HORIZONTAL_ALIGNMENT_LEFT, -1, 22).x)
+	var width := clampf(text_width + 68.0, 480.0, 760.0)
+	dialogue.custom_minimum_size.x = width
+	dialogue_body.custom_minimum_size.x = width - 68.0
+	dialogue_tip.custom_minimum_size.x = width - 68.0
+	await _fit_content(dialogue, width, "center" if _dialogue_frosted else "bottom")
 	_pop_in(dialogue)
 	var duration: float = writer.reveal(dialogue_body, 0.15)
 	if tip != "":
@@ -323,8 +381,6 @@ func say(text: String, speaker: String = "PIP", button_text: String = "Next", ti
 	dialogue_button.grab_focus()
 	await next_pressed
 	await _fade_out(dialogue)
-	if frosted:
-		await set_frost(false)
 
 
 # ------------------------------------------------------------------ caption
@@ -356,6 +412,8 @@ func caption(text: String, seconds: float = 2.8) -> void:
 	_caption_serial += 1
 	var serial := _caption_serial
 	caption_label.text = text
+	var width := clampf(display_font.get_string_size(text, HORIZONTAL_ALIGNMENT_LEFT, -1, 26).x + 110.0, 420.0, 720.0)
+	await _fit_content(caption_panel, width)
 	_pop_in(caption_panel, 0.9)
 	var duration: float = writer.reveal(caption_label)
 	await get_tree().create_timer(duration + seconds).timeout
@@ -549,6 +607,7 @@ func ask(step: Dictionary, crossed: Array[int] = [], heading: String = "") -> in
 		button.disabled = i in crossed
 		button.modulate = Color(1, 1, 1, 0.55) if i in crossed else Color.WHITE
 		button.get_node("Cross").visible = i in crossed
+	await _fit_content(question, 1180)
 	_pop_in(question, 0.95)
 	writer.reveal(question_prompt)
 	_accept_options = true
@@ -620,9 +679,6 @@ func _build_customize() -> void:
 		flag_buttons.append(button)
 	_swatch_row(content, "Flag colour", "flag_color", PlayerProfile.FLAG_COLORS, PlayerProfile.FLAG_COLOR_NAMES)
 	_swatch_row(content, "Pip's colour", "pip_color", PlayerProfile.PIP_COLORS, PlayerProfile.PIP_COLOR_NAMES)
-	var spacer := Control.new()
-	spacer.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	content.add_child(spacer)
 	var done := action_button("Looks great!")
 	done.custom_minimum_size = Vector2(0, 56)
 	done.pressed.connect(func() -> void: customize_done.emit())
@@ -667,6 +723,7 @@ func _refresh_customize() -> void:
 
 func show_customize() -> void:
 	_refresh_customize()
+	await _fit_content(customize, 450, "right")
 	_pop_in(customize, 0.95)
 	await customize_done
 	await _fade_out(customize)
@@ -676,6 +733,7 @@ func show_customize() -> void:
 
 func _build_finale() -> void:
 	finale_card = PanelContainer.new()
+	finale_card.custom_minimum_size = Vector2(660, 0)
 	finale_card.add_theme_stylebox_override("panel", paper_style(PAPER, 3, 26))
 	finale_card.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	finale_card.offset_left = -330
@@ -688,6 +746,7 @@ func _build_finale() -> void:
 
 func show_finale(summary: Array, password: String) -> void:
 	for child in finale_card.get_children():
+		finale_card.remove_child(child)
 		child.queue_free()
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation", 12)
@@ -707,6 +766,7 @@ func show_finale(summary: Array, password: String) -> void:
 		check.custom_minimum_size = Vector2(40, 40)
 		row.add_child(check)
 		var words := VBoxContainer.new()
+		words.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		words.add_theme_constant_override("separation", -2)
 		words.add_child(label(item.rule, 24, true))
 		words.add_child(label(item.detail, 18, false, Color("3d5a66")))
@@ -724,7 +784,9 @@ func show_finale(summary: Array, password: String) -> void:
 	done.custom_minimum_size = Vector2(280, 58)
 	done.pressed.connect(func() -> void: finish_pressed.emit())
 	row.add_child(done)
-	finale_card.reset_size()
+	# Let containers wrap and sort at the card's authored width before
+	# calculating the animation pivot. reset_size() collapses wrapping text.
+	await _fit_content(finale_card, 660, "center")
 	_pop_in(finale_card, 0.7)
 	done.grab_focus()
 	await finish_pressed
