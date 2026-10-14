@@ -21,7 +21,10 @@ func _process(delta: float) -> void:
 	if wait > 0.0 or not is_instance_valid(game) or game.ui == null:
 		return
 	var ui := game.ui
-	if ui.dialogue.visible and not ui.writer.is_writing(ui.dialogue_body):
+	if ui.title_card.visible and not ui.play_button.disabled and ui.title_card.modulate.a > 0.95:
+		wait = 1.0
+		ui.play_button.pressed.emit()
+	elif ui.dialogue.visible and not ui.writer.is_writing(ui.dialogue_body):
 		wait = 1.0
 		ui.next_pressed.emit()
 	elif ui.customize.visible and ui.customize.modulate.a > 0.95:

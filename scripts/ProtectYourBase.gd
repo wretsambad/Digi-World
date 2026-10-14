@@ -20,8 +20,8 @@ const SHOTS: Dictionary = {
 	"customize": [Vector3(-12.5, 9, 20), Vector3(2.6, 7.6, 1.5), 50.0],
 	"question": [Vector3(-7.5, 7.5, 21), Vector3(0.5, 5.5, 3), 52.0],
 	"ladder": [Vector3(3.2, 2.6, 14.5), Vector3(-0.9, 1.9, 6.8), 38.0],
-	"gate": [Vector3(1.8, 1.9, 14.8), Vector3(-0.9, 1.0, 8.8), 40.0],
-	"fence_wide": [Vector3(5.5, 5.0, 17.5), Vector3(-0.9, 1.3, 7.4), 44.0],
+	"gate": [Vector3(6.0, 9.6, 14.5), Vector3(1.6, 7.5, 3.9), 44.0],
+	"fence_wide": [Vector3(-10.5, 12.0, 19.5), Vector3(0, 7.5, 1.5), 48.0],
 	"branches": [Vector3(-14.5, 3.4, 11.0), Vector3(-5.6, 2.4, 1.8), 44.0],
 	"runaway": [Vector3(-15.5, 1.6, 15.0), Vector3(-5.0, 0.5, 12.5), 46.0],
 	"roof": [Vector3(0.8, 13.6, 4.4), Vector3(0.2, 13.1, -0.3), 42.0],
@@ -66,8 +66,6 @@ func _ready() -> void:
 	PlayerProfile.changed.connect(_on_profile_changed)
 	if get_tree().current_scene == self:
 		# Run directly for development: skip the desktop and start.
-		ui.show_title()
-		await get_tree().create_timer(1.2).timeout
 		begin()
 
 
@@ -95,10 +93,11 @@ func glide(name: String, seconds: float = 1.4) -> void:
 
 ## A close-up on Pip's face, from a little to the side.
 func glide_pip(seconds: float = 1.1, side: float = 1.0, distance: float = 3.4) -> void:
+	distance = minf(distance, 1.0)
 	var face := pip.global_position + Vector3(0, 1.2, 0)
 	var facing := pip.global_basis.z.normalized()
-	var eye := face + facing * distance + facing.cross(Vector3.UP) * (1.1 * side) + Vector3.UP * 0.35
-	await camera.glide(eye, face, 30.0, seconds)
+	var eye := face + facing * distance + facing.cross(Vector3.UP) * (1.6 * side) + Vector3.UP * 0.8
+	await camera.glide(eye, face - Vector3.UP * 0.35, 58.0, seconds)
 
 
 func glide_glitch(seconds: float = 0.9, distance: float = 2.6) -> void:
@@ -127,6 +126,7 @@ func begin() -> void:
 	if running:
 		return
 	running = true
+	await ui.wait_for_play()
 	GameState.start_lesson(GameState.PROTECT_YOUR_BASE)
 	await _intro()
 	machine.advance()
@@ -140,7 +140,6 @@ func begin() -> void:
 
 
 func _intro() -> void:
-	ui.hide_title()
 	pip.set_mood("Wave")
 	await glide("establish", 3.0)
 	await glide_pip(1.6, -1.0)
@@ -266,15 +265,15 @@ func _prank_paint() -> void:
 
 
 func _prank_wall() -> void:
-	glide("gate", 1.0)
+	glide("cabin", 1.0)
 	base.make_plastic_wall()
 	await get_tree().create_timer(0.4).timeout
 	var wall_z := base.plastic_wall.position.z
-	await glitch.blink_to(Vector3(TreehouseBase.LADDER_FOOT.x, 0, wall_z + 1.4))
-	glitch.face(TreehouseBase.LADDER_FOOT)
-	await glitch.hop_to(Vector3(TreehouseBase.LADDER_FOOT.x, 0, wall_z + 0.45), 0.3, 0.15)
+	await glitch.blink_to(Vector3(0, TreehouseBase.DECK_WALK_HEIGHT, wall_z + 1.4))
+	glitch.face(Vector3(0, TreehouseBase.DECK_WALK_HEIGHT, wall_z))
+	await glitch.hop_to(Vector3(0, TreehouseBase.DECK_WALK_HEIGHT, wall_z + 0.45), 0.3, 0.15)
 	await base.fold_plastic_wall()
-	await glitch.hop_to(Vector3(TreehouseBase.LADDER_FOOT.x, 0.05, wall_z - 0.3), 0.4, 0.4)
+	await glitch.hop_to(Vector3(0, TreehouseBase.DECK_WALK_HEIGHT, wall_z - 0.3), 0.4, 0.4)
 	await glitch.dance(1.0)
 
 
@@ -312,19 +311,22 @@ func _glitch_event(index: int) -> void:
 		2: await _event_runs_away()
 
 
+func _approach_deck_gate() -> void:
+	await glitch.run_to(TreehouseBase.LADDER_FOOT, 5.0)
+	camera.follow(glitch, Vector3(3.0, 1.8, 4.0), Vector3(0, 0.5, 0), 46.0)
+	await glitch.climb(base.deck_approach_points(), 0.23)
+	await glide("gate", 0.65)
+
+
 func _event_jumps_fence() -> void:
-	glide("fence_wide", 1.0)
 	glitch.position = TreehouseBase.HIDEOUT
-	await glitch.run_to(TreehouseBase.GATE_FRONT, 4.0)
+	await _approach_deck_gate()
 	await glitch.bonk(Vector3(0, 0, -1))
-	camera.follow(glitch, Vector3(2.0, 1.2, 3.0), Vector3(0, 0.4, 0), 42.0)
-	var outside := Vector3(TreehouseBase.FENCE_LEFT + 0.7, 0, TreehouseBase.FENCE_Z + 0.7)
-	await glitch.run_to(outside, 4.0)
-	# A big hop clean over the short fence.
-	await glitch.hop_to(Vector3(outside.x, 0, TreehouseBase.FENCE_Z - 0.9), 0.7, 1.7)
-	await glitch.run_to(TreehouseBase.LADDER_FOOT + Vector3(0, 0, 0.3), 4.0)
-	glide("ladder", 0.8)
-	await glitch.climb(base.ladder_climb_points().slice(0, 4), 0.28)
+	# Jump over the short deck gate, then reach an unprotected cabin window.
+	await glitch.hop_to(Vector3(2.3, TreehouseBase.DECK_WALK_HEIGHT, 5.3), 0.5, 1.6)
+	await glitch.run_to(Vector3(2.3, TreehouseBase.DECK_WALK_HEIGHT, 3.1), 5.0)
+	await glitch.run_to(Vector3(-1.75, TreehouseBase.DECK_WALK_HEIGHT, 2.8), 5.0)
+	await glitch.hop_to(Vector3(-1.75, 7.45, 2.65), 0.35, 0.4)
 	pip.set_mood("Worried")
 	await glide_pip(0.8)
 	await ui.say(String(data.steps[0].glitch_line), "PIP", "Next", "", false)
@@ -333,42 +335,48 @@ func _event_jumps_fence() -> void:
 
 
 func _event_climbs_branches() -> void:
-	glide("fence_wide", 1.0)
-	var outside := Vector3(TreehouseBase.FENCE_LEFT + 0.7, 0, TreehouseBase.FENCE_Z + 0.75)
-	await glitch.run_to(outside, 4.0)
-	# Tries the same trick, but the fence is far too tall now.
-	await glitch.hop_to(outside + Vector3(0, 1.1, -0.45), 0.35, 0.3)
+	await _approach_deck_gate()
+	await glitch.hop_to(TreehouseBase.GATE_FRONT + Vector3(0, 0.9, -0.05), 0.3, 0.3)
 	await glitch.bonk(Vector3(0, 0, -1))
-	await glitch.hop_to(outside + Vector3(0, 0, 0.3), 0.3, 0.1)
-	await glitch.dance(0.6)
-	camera.follow(glitch, Vector3(-2.2, 1.3, 3.2), Vector3(0, 0.4, 0), 42.0)
-	await glitch.run_to(TreehouseBase.BRANCH_FOOT, 4.5)
-	glide("branches", 0.9)
-	await glitch.climb(base.branch_climb_points(), 0.42)
+	await glitch.hop_to(TreehouseBase.GATE_FRONT, 0.25, 0.1)
+	# The higher gate and shutters work. It must retreat and try the tree.
+	await glitch.blink_to(TreehouseBase.BRANCH_FOOT)
+	await glide("branches", 0.65)
+	await glitch.climb(base.branch_climb_points(), 0.24)
+	camera.follow(glitch, Vector3(-3.0, 2.0, 5.0), Vector3(0, 0.4, 0), 46.0)
+	await glitch.climb(base.roof_climb_points(), 0.25)
 	pip.set_mood("Worried")
-	await glide_pip(0.8, 1.0)
+	await glide_pip(0.8)
 	await ui.say(String(data.steps[1].glitch_line), "PIP", "Next", "", false)
 	await glitch.blink_to(TreehouseBase.HIDEOUT)
 	pip.set_mood("Idle")
 
 
 func _event_runs_away() -> void:
-	glide("branches", 1.0)
-	await glitch.run_to(TreehouseBase.BRANCH_FOOT, 4.5)
-	var first: Vector3 = base.branch_climb_points()[0]
-	# Slips straight off the smooth metal.
-	await glitch.hop_to(first, 0.35, 0.3)
-	AudioManager.play("whoosh")
-	await glitch.hop_to(TreehouseBase.BRANCH_FOOT + Vector3(-0.4, 0, 0.3), 0.3, 0.1)
-	await glitch.bonk(Vector3(1, 0, -1))
-	glide("gate", 1.0)
-	await glitch.run_to(TreehouseBase.GATE_FRONT + Vector3(0, 0, 0.6), 5.0)
+	await glide("branches", 0.8)
+	await glitch.run_to(TreehouseBase.BRANCH_FOOT, 5.5)
+	# Test two routes. Each shield spans the entire branch; the Glitch
+	# hits its face on the tip side and falls away, never passes through it.
+	for index in range(2):
+		var branch: Array = TreehouseBase.BRANCHES[index]
+		var tip: Vector3 = branch[1]
+		var start: Vector3 = branch[0]
+		var direction := (tip - start).normalized()
+		var contact := base.branch_barrier_point(index) + direction * 0.65
+		await glitch.hop_to(tip + Vector3.UP * 0.12, 0.35, 0.4)
+		await glitch.hop_to(contact, 0.3, 0.12)
+		await glitch.bonk(-direction)
+		camera.shake(0.07)
+		await glitch.hop_to(TreehouseBase.BRANCH_FOOT + Vector3(0, 0, 0.5), 0.4, 0.2)
+	await _approach_deck_gate()
 	await glitch.bonk(Vector3(0, 0, -1))
-	# BOING: bounced right off the metal gate.
-	camera.shake(0.12)
-	AudioManager.play("boing")
-	await glitch.hop_to(TreehouseBase.GATE_FRONT + Vector3(0.8, 0, 4.0), 0.7, 2.2)
-	glide("runaway", 1.0)
+	camera.shake(0.1)
+	# Defeated at both routes, it retreats down the actual stairs.
+	var retreat := base.deck_approach_points()
+	retreat.reverse()
+	await glitch.climb(retreat, 0.15)
+	await glitch.hop_to(TreehouseBase.LADDER_FOOT, 0.25, 0.2)
+	glide("runaway", 0.7)
 	await glitch.run_to(Vector3(-12.0, 0, 12.2), 6.0)
 	await glitch.vanish()
 

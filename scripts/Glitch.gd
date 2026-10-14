@@ -36,6 +36,7 @@ var jitter_amount: float = 1.0
 var _burst_timer: float = 0.5
 var _ghost_timer: float = 0.0
 var _clock: float = 0.0
+var _pixel_jitter := Vector3.ZERO
 var _rng := RandomNumberGenerator.new()
 
 
@@ -118,7 +119,9 @@ func _build_pixels(ghost: bool, tint: Color) -> Node3D:
 func _process(delta: float) -> void:
 	_clock += delta
 	# Constant tiny jitter, with a bigger glitchy burst every so often.
-	pixels.position = Vector3(_rng.randf_range(-1, 1), _rng.randf_range(-1, 1), 0) * 0.006 * jitter_amount
+	_pixel_jitter = Vector3(_rng.randf_range(-1, 1), _rng.randf_range(-1, 1), 0) * 0.006 * jitter_amount
+	pixels.position = _pixel_jitter
+	_keep_feet_above_origin()
 	_burst_timer -= delta
 	if _burst_timer <= 0.0:
 		_burst_timer = _rng.randf_range(0.4, 1.4)
@@ -141,7 +144,23 @@ func face(point: Vector3) -> void:
 		look_at(flat, Vector3.UP, true)
 
 
-func hop_to(target: Vector3, duration: float = 0.45, height: float = 0.35) -> void:
+func _keep_feet_above_origin() -> void:
+	# The voxel model pivots at its feet. A sideways dance/bonk rotation
+	# otherwise swings the lower corners through the supporting floor.
+	pixels.position.y = _pixel_jitter.y + absf(sin(pixels.rotation.z)) * PIXEL * ART[4].length() * 0.5 * pixels.scale.x
+
+
+func _set_pixel_rotation(value: Vector3) -> void:
+	pixels.rotation = value
+	_keep_feet_above_origin()
+
+
+func _set_pixel_roll(value: float) -> void:
+	pixels.rotation.z = value
+	_keep_feet_above_origin()
+
+
+func hop_to(target: Vector3, duration: float = 0.45, height: float = 0.35, settle: bool = true) -> void:
 	face(target)
 	var start := global_position
 	var tween := create_tween()
@@ -149,7 +168,8 @@ func hop_to(target: Vector3, duration: float = 0.45, height: float = 0.35) -> vo
 		global_position = start.lerp(target, t) + Vector3.UP * sin(t * PI) * height
 		pixels.scale = Vector3(1.0 + sin(t * PI) * -0.1, 1.0 + sin(t * PI) * 0.15, 1.0), 0.0, 1.0, duration)
 	await tween.finished
-	await squash()
+	if settle:
+		await squash()
 	landed.emit()
 
 
@@ -157,15 +177,20 @@ func run_to(target: Vector3, speed: float = 3.0) -> void:
 	face(target)
 	var start := global_position
 	var distance := start.distance_to(target)
-	var hops := maxi(1, int(distance / 0.6))
+	var hops := maxi(1, int(ceil(distance / 1.0)))
+	# Running is continuous: the old squash after every 60 cm hop made
+	# most of each trip a pause and ignored the requested running speed.
+	var hop_time := distance / maxf(speed * 1.5, 0.1) / hops
 	for i in hops:
 		var point := start.lerp(target, float(i + 1) / hops)
-		await hop_to(point, 0.6 / speed * 1.6, 0.18)
+		await hop_to(point, hop_time, 0.16, false)
+	await squash()
 
 
 func climb(points: Array[Vector3], step_time: float = 0.28) -> void:
 	for point in points:
-		await hop_to(point, step_time, 0.12)
+		await hop_to(point, step_time * 0.65, 0.12, false)
+	await squash()
 
 
 func squash() -> void:
@@ -211,9 +236,9 @@ func bonk(direction: Vector3) -> void:
 	var tween := create_tween()
 	tween.tween_property(self, "global_position", start + direction.normalized() * 0.18, 0.08)
 	tween.tween_property(self, "global_position", start - direction.normalized() * 0.5 + Vector3.UP * 0.05, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.parallel().tween_property(pixels, "rotation:z", 0.5, 0.12)
-	tween.tween_property(pixels, "rotation:z", -0.3, 0.12)
-	tween.tween_property(pixels, "rotation:z", 0.0, 0.2)
+	tween.parallel().tween_method(_set_pixel_roll, pixels.rotation.z, 0.5, 0.12)
+	tween.tween_method(_set_pixel_roll, 0.5, -0.3, 0.12)
+	tween.tween_method(_set_pixel_roll, -0.3, 0.0, 0.2)
 	await tween.finished
 
 
@@ -223,8 +248,9 @@ func dance(seconds: float = 1.2) -> void:
 	var beats := int(seconds / 0.2)
 	for i in beats:
 		var side := 1.0 if i % 2 == 0 else -1.0
-		tween.tween_property(pixels, "rotation", Vector3(0, side * 0.35, side * 0.18), 0.1)
-		tween.tween_property(pixels, "rotation", Vector3.ZERO, 0.1)
+		var tilt := Vector3(0, side * 0.35, side * 0.18)
+		tween.tween_method(_set_pixel_rotation, Vector3.ZERO, tilt, 0.1)
+		tween.tween_method(_set_pixel_rotation, tilt, Vector3.ZERO, 0.1)
 	await tween.finished
 
 
