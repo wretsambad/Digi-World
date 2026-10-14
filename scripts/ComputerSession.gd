@@ -64,7 +64,7 @@ func _build_screen_and_overlay() -> void:
 	overlay.layer = 20
 	add_child(overlay)
 	backdrop = ColorRect.new()
-	backdrop.color = Color("0b1a22")
+	backdrop.color = SunsetUI.PLUM_DEEP
 	backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.add_child(backdrop)
 	container = SubViewportContainer.new()
@@ -81,18 +81,8 @@ func _build_screen_and_overlay() -> void:
 	continue_button.offset_right = 120
 	continue_button.offset_top = -104
 	continue_button.offset_bottom = -44
-	continue_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	continue_button.add_theme_font_override("font", preload("res://neighborhood_assets/preview/fonts/Fredoka.ttf"))
-	continue_button.add_theme_font_size_override("font_size", 28)
-	for key: String in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
-		continue_button.add_theme_color_override(key, Color("16364a"))
-	for key: String in ["normal", "hover", "pressed", "focus"]:
-		var style := StyleBoxFlat.new()
-		style.bg_color = {"normal": Color("ff7f42"), "hover": Color("ffddb2"), "pressed": Color("b7dfc4"), "focus": Color("ff7f42")}[key]
-		style.set_corner_radius_all(14)
-		style.set_border_width_all(3)
-		style.border_color = Color("e3ae24") if key == "focus" else Color("16364a")
-		continue_button.add_theme_stylebox_override(key, style)
+	SunsetUI.style_button(continue_button, true, 30)
+	SunsetUI.add_arrow(continue_button)
 	continue_button.pressed.connect(release_player)
 	overlay.add_child(continue_button)
 	continue_button.hide()

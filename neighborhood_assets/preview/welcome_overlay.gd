@@ -1,9 +1,3 @@
-# THESIS: The supplied globe logo and slogan greet players over the live neighborhood; no HTML scenery or extra controls are imported.
-# OWN-WORLD: A turning teal globe, coral orbit, cream Fredoka wordmark, and rectangular Play button sit over Digi World's existing 3D street.
-# STORY: The logo names the world, a short cyber-safety promise sets the tone, rotating tips offer useful advice, and Play begins the existing flight.
-# FIRST VIEWPORT: Center the logo high, slogan directly beneath, one coral Play action low, and one small white tip popup at lower left.
-# FORM: The user selected these four elements from the supplied Digi World.html and explicitly excluded the rest.
-# FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 extends Control
 class_name DigiWorldWelcomeOverlay
 
@@ -42,20 +36,21 @@ func _ready() -> void:
 	body_font.variation_opentype = {weight_tag: 600}
 	for label in [wordmark, corner_mark]:
 		label.add_theme_font_override("font", display_font)
-		label.add_theme_color_override("font_color", Color("faefdc"))
-		label.add_theme_color_override("font_outline_color", Color("0d2b38"))
-		label.add_theme_color_override("font_shadow_color", Color(0.05, 0.17, 0.22, 0.35))
+		label.add_theme_color_override("font_color", SunsetUI.BUTTER)
+		label.add_theme_color_override("font_outline_color", SunsetUI.PLUM_DEEP)
+		label.add_theme_color_override("font_shadow_color", SunsetUI.SHADOW)
 		label.add_theme_constant_override("shadow_offset_x", 0)
 		label.add_theme_constant_override("shadow_offset_y", 10)
 		label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	wordmark.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	corner_mark.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 	slogan.add_theme_font_override("font", body_font)
-	slogan.add_theme_color_override("font_color", Color("faefdc"))
-	slogan.add_theme_color_override("font_outline_color", Color("0d2b38"))
+	slogan.add_theme_color_override("font_color", SunsetUI.CREAM)
+	slogan.add_theme_color_override("font_outline_color", SunsetUI.PLUM_DEEP)
 	slogan.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	slogan.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	play_button.add_theme_font_override("font", display_font)
+	SunsetUI.style_button(play_button, true, 32)
+	SunsetUI.add_arrow(play_button)
 	globe.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	globe.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	globe.texture = LOGO_ACCENTS

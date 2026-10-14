@@ -19,15 +19,9 @@ var _rotation_started := false
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var paper := StyleBoxFlat.new()
-	paper.bg_color = Color.WHITE
-	paper.corner_radius_top_left = 18
-	paper.corner_radius_top_right = 18
-	paper.corner_radius_bottom_right = 18
+	# A plum speech bubble: one tight corner points back at the street.
+	var paper := SunsetUI.panel_style()
 	paper.corner_radius_bottom_left = 4
-	paper.shadow_color = Color(0, 0, 0, 0.25)
-	paper.shadow_size = 14
-	paper.shadow_offset = Vector2(0, 8)
 	add_theme_stylebox_override("panel", paper)
 	var body_font := FontVariation.new()
 	body_font.base_font = FREDOKA
@@ -36,7 +30,7 @@ func _ready() -> void:
 	tip_text.scroll_active = false
 	tip_text.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	tip_text.add_theme_font_override("normal_font", body_font)
-	tip_text.add_theme_color_override("default_color", Color("12394a"))
+	tip_text.add_theme_color_override("default_color", SunsetUI.CREAM)
 	_layout()
 	get_viewport().size_changed.connect(_layout)
 	_show_tip()
@@ -49,15 +43,15 @@ func _ready() -> void:
 func _layout() -> void:
 	var view := get_viewport_rect().size
 	var width := clampf(view.x * 0.21, 250.0, 270.0)
-	var height := 98.0
+	var height := 104.0
 	position = Vector2(clampf(view.x * 0.025, 18.0, 36.0), view.y - height - clampf(view.y * 0.1, 40.0, 75.0))
 	size = Vector2(width, height)
-	tip_text.position = Vector2(14, 10)
-	tip_text.size = size - Vector2(28, 20)
+	tip_text.position = Vector2(18, 12)
+	tip_text.size = size - Vector2(36, 24)
 	tip_text.add_theme_font_size_override("normal_font_size", 21)
 
 func _show_tip() -> void:
-	tip_text.text = "[color=#e4622a]Tip:[/color] " + TIPS[_tip_index]
+	tip_text.text = "[color=#%s]Tip:[/color] %s" % [SunsetUI.BUTTER.to_html(false), TIPS[_tip_index]]
 
 func reveal(opacity: float) -> void:
 	modulate.a = opacity

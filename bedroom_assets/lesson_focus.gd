@@ -1,17 +1,31 @@
 extends Control
-## The reticle ray selects actual object geometry; the card is anchored to its bounds.
+## First-person inspect UI. The crosshair ray selects real object geometry. When it
+## lands on a lesson object the crosshair blooms and a plum card slides in, docked
+## at the lower left so the centre of the screen stays clear. A slim leader line
+## ties the card to the object.
 const TOUR = preload("res://bedroom_assets/bedroom_tour.gd")
 const NAMES := ["Computer", "Sharing board", "Phone", "Backup robot"]
 const PICK_LAYER := 4
+const CLEAR_RADIUS := 64.0
 var game: Node3D
 var card: PanelContainer
 var heading: Label
 var description: Label
 var object_label: Label
+var action_chip: PanelContainer
+var mouse_icon: Control
 var focused_index := -1
 var targets: Array[Dictionary] = []
 var connector_from := Vector2.ZERO
 var connector_to := Vector2.ZERO
+## 0 = resting dot, 1 = fully bloomed inspect ring.
+var bloom := 0.0
+var _clock := 0.0
+var _card_tween: Tween
+## Horizontal offset while the card slides in from the left edge.
+var slide := 0.0
+## True while the card fades out after the aim leaves an object.
+var exiting := false
 
 func setup(owner_game: Node3D) -> void:
 	game = owner_game
@@ -19,37 +33,63 @@ func setup(owner_game: Node3D) -> void:
 	process_priority = 110
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	theme = game.lesson_tour.theme
-	card = preload("res://bedroom_assets/quest_dialogue_frame.gd").new()
+	card = PanelContainer.new()
 	card.name = "ObjectCard"
 	card.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var margins := StyleBoxEmpty.new()
-	margins.content_margin_left = 24
-	margins.content_margin_right = 24
-	margins.content_margin_top = 42
-	margins.content_margin_bottom = 22
-	card.add_theme_stylebox_override("panel", margins)
+	card.add_theme_stylebox_override("panel", SunsetUI.panel_style())
 	add_child(card)
 	var content := VBoxContainer.new()
 	content.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	content.add_theme_constant_override("separation", 12)
+	content.add_theme_constant_override("separation", 8)
 	card.add_child(content)
-	heading = game.lesson_tour.label("", 25)
-	heading.add_theme_font_override("font", game.lesson_tour.display_font)
-	description = game.lesson_tour.label("", 18)
-	object_label = game.lesson_tour.label("", 14)
-	for label in [heading, description, object_label]:
-		label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		content.add_child(label)
+	heading = SunsetUI.label("", 28, "title")
+	description = SunsetUI.label("", 20, "body")
+	content.add_child(heading)
+	content.add_child(description)
+	var gap := Control.new()
+	gap.custom_minimum_size = Vector2(0, 6)
+	gap.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	content.add_child(gap)
+	var row := HBoxContainer.new()
+	row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_theme_constant_override("separation", 10)
+	content.add_child(row)
+	action_chip = PanelContainer.new()
+	action_chip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	row.add_child(action_chip)
+	var chip_row := HBoxContainer.new()
+	chip_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	chip_row.add_theme_constant_override("separation", 8)
+	action_chip.add_child(chip_row)
+	mouse_icon = SunsetUI.MouseIcon.new()
+	mouse_icon.custom_minimum_size = Vector2(16, 24)
+	mouse_icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	chip_row.add_child(mouse_icon)
+	object_label = SunsetUI.label("", 18, "title")
+	object_label.autowrap_mode = TextServer.AUTOWRAP_OFF
+	object_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	chip_row.add_child(object_label)
 	card.hide()
 	build_picking_geometry()
 	hide()
+
+func _chip_style(fill: Color) -> StyleBoxFlat:
+	var style := StyleBoxFlat.new()
+	style.bg_color = fill
+	style.set_corner_radius_all(12)
+	style.content_margin_left = 12
+	style.content_margin_right = 14
+	style.content_margin_top = 5
+	style.content_margin_bottom = 5
+	style.anti_aliasing = true
+	return style
 
 func build_picking_geometry() -> void:
 	var groups: Dictionary = {-1: PackedVector3Array()}
 	for index in range(TOUR.STOPS.size()):
 		groups[index] = PackedVector3Array()
-		targets.append({"node":game.room.get_node(TOUR.STOPS[index].node), "bounds":AABB(), "has_bounds":false})
+		var node: Node3D = game.room.get_node(TOUR.STOPS[index].node)
+		targets.append({"node":node, "anchor":node.get_node("FocusAnchor"), "bounds":AABB(), "has_bounds":false})
 	var face_cache: Dictionary = {}
 	for mesh: MeshInstance3D in game.room.find_children("*", "MeshInstance3D", true, false):
 		if mesh.mesh == null or not mesh.is_visible_in_tree() or "SeatedCharacter" in str(mesh.get_path()): continue
@@ -98,59 +138,118 @@ func set_focus(index: int) -> void:
 	if index == focused_index: return
 	for label in [heading, description, object_label]: game.text_writer.cancel(label)
 	focused_index = index
+	if _card_tween and _card_tween.is_valid(): _card_tween.kill()
 	if index < 0:
-		card.hide()
+		if card.visible and not exiting:
+			exiting = true
+			_card_tween = create_tween().set_parallel(true)
+			_card_tween.tween_property(card, "modulate:a", 0.0, .14).set_ease(Tween.EASE_IN)
+			_card_tween.tween_property(self, "slide", -16.0, .14).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+			_card_tween.chain().tween_callback(func() -> void:
+				card.hide()
+				exiting = false)
 		return
-	card.lesson_index = index
+	exiting = false
 	heading.text = TOUR.STOPS[index].title
 	description.text = TOUR.STOPS[index].body
-	object_label.text = "Computer  /  Click to play" if index == 0 else NAMES[index]
-	position_card()
+	var playable := index == 0
+	object_label.text = "Click to play" if playable else "Coming soon"
+	object_label.add_theme_color_override("font_color", SunsetUI.PLUM_DEEP if playable else SunsetUI.CREAM_MUTED)
+	action_chip.add_theme_stylebox_override("panel", _chip_style(SunsetUI.TANGERINE if playable else SunsetUI.PLUM_SOFT))
+	mouse_icon.visible = playable
 	card.show()
+	slide = -30.0
 	card.modulate.a = 0.0
-	var duration: float = game.text_writer.reveal(heading)
-	game.text_writer.reveal(description, duration+.1)
-	game.text_writer.reveal(object_label, .1, 55.0)
+	position_card()
+	_card_tween = create_tween().set_parallel(true)
+	_card_tween.tween_property(self, "slide", 0.0, .32).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	_card_tween.tween_property(card, "modulate:a", 1.0, .22)
+	# The slide carries the entrance: the title lands whole and the body types in alongside it.
+	heading.visible_characters = -1
+	object_label.visible_characters = -1
+	game.text_writer.reveal(description, .1, 70.0)
 
+## Docks the card at the lower left and aims the leader line at the object.
 func position_card() -> void:
 	if focused_index < 0: return
-	var width := minf(390, size.x*.36)
-	for label in [heading, description, object_label]: label.size.x = width-48
+	var s := clampf(minf(size.x/1280.0, size.y/720.0), .62, 1.5)
+	var width := clampf(size.x*.34, 300.0, 440.0)
+	for label in [heading, description]: label.size.x = width-48
 	card.size = Vector2(width, 0)
-	var target: Dictionary = targets[focused_index]
-	var bounds: AABB = target.bounds
-	var left := size.x
-	var right := 0.0
-	for corner in range(8):
-		var point := bounds.get_endpoint(corner)
-		if game.camera.is_position_behind(point): continue
-		var screen: Vector2 = game.camera.unproject_position(point)
-		left = minf(left, screen.x)
-		right = maxf(right, screen.x)
-	var anchor: Vector2 = game.camera.unproject_position(target.node.get_node("FocusAnchor").global_position)
-	var on_right := right+30+width < size.x-20 or left-30-width < 20
-	var x := right+30 if on_right else left-30-width
-	var y := clampf(anchor.y-card.size.y*.45, 68, maxf(68, size.y-card.size.y-24))
-	card.position = Vector2(clampf(x,20,size.x-width-20),y)
-	card.pointer_side = "left" if on_right else "right"
-	connector_from = Vector2(clampf(right if on_right else left,0,size.x),clampf(anchor.y,0,size.y))
-	connector_to = card.position+Vector2(-15 if on_right else width+15,card.size.y*.45)
+	card.reset_size()
+	card.size.x = width
+	var rest := Vector2(28*s, size.y-card.size.y-32*s)
+	card.position = rest+Vector2(slide, 0)
+	var center := size*.5
+	var anchor: Vector3 = targets[focused_index].anchor.global_position
+	var nearest: Vector2 = center if game.camera.is_position_behind(anchor) else game.camera.unproject_position(anchor)
+	# Never let the leader reach into the clear zone around the crosshair.
+	var away := nearest-center
+	if away.length() < CLEAR_RADIUS:
+		away = (rest-center).normalized()*CLEAR_RADIUS if away.length() < 1.0 else away.normalized()*CLEAR_RADIUS
+	connector_from = (center+away).clamp(Vector2.ZERO, size)
+	connector_to = rest+Vector2(width-36, 0)
 
 func _process(delta: float) -> void:
+	_clock += delta
 	var enabled: bool = game.phase == game.Phase.PLAYING and game.look_captured
 	visible = enabled
 	if not enabled:
 		set_focus(-1)
+		bloom = 0.0
 		return
 	set_focus(pick_lesson())
+	var target := 1.0 if focused_index >= 0 else 0.0
+	bloom = lerpf(bloom, target, 1.0-exp(-delta*14.0))
 	if focused_index >= 0:
 		position_card()
-		card.modulate.a = minf(1.0,card.modulate.a+delta/.15)
+	elif exiting:
+		# Slide the fading card back toward the left edge as it leaves.
+		card.position.x = 28*clampf(minf(size.x/1280.0, size.y/720.0), .62, 1.5)+slide
 	queue_redraw()
 
 func _draw() -> void:
-	if focused_index >= 0:
-		draw_line(connector_from,connector_to,Color("ffd76e"),1.5,true)
 	var center := size*.5
-	draw_circle(center,4.5,Color(0.025,.08,.13,.55),true,-1,true)
-	draw_circle(center,3.0,Color.WHITE,true,-1,true)
+	if focused_index >= 0 and card.visible:
+		_draw_leader(connector_from, connector_to, card.modulate.a)
+	# Resting: a small cream dot in a plum ring. Aiming at something: the ring
+	# blooms tangerine with four ticks and an inspect badge.
+	var ring := lerpf(5.5, 17.0, bloom)
+	var breathe := 1.0+sin(_clock*4.0)*.04*bloom
+	draw_circle(center+Vector2(0,1.5), ring*breathe+3.0, Color(SunsetUI.SHADOW, .25), true, -1, true)
+	draw_arc(center, ring*breathe, 0, TAU, 40, SunsetUI.PLUM_DEEP.lerp(SunsetUI.TANGERINE, bloom), lerpf(2.5, 4.0, bloom), true)
+	draw_circle(center, lerpf(3.2, 3.6, bloom), SunsetUI.CREAM, true, -1, true)
+	if bloom > .3:
+		var spin := _clock*.6
+		for i in 4:
+			var a := spin+i*TAU/4.0
+			var dir := Vector2(cos(a), sin(a))
+			draw_line(center+dir*(ring*breathe+5.0), center+dir*(ring*breathe+5.0+7.0*bloom), Color(SunsetUI.BUTTER, bloom), 3.0, true)
+		_draw_eye_badge(center+Vector2(27, 27)*bloom, bloom)
+
+func _draw_leader(from: Vector2, to: Vector2, alpha: float) -> void:
+	var length := from.distance_to(to)
+	if length < 8.0: return
+	var dir := (to-from)/length
+	var t := 0.0
+	while t < length:
+		draw_line(from+dir*t, from+dir*minf(t+9.0, length), Color(SunsetUI.BUTTER, .85*alpha), 3.0, true)
+		t += 16.0
+	draw_circle(from, 5.0, Color(SunsetUI.BUTTER, alpha), true, -1, true)
+	draw_circle(from, 2.2, Color(SunsetUI.PLUM_DEEP, alpha), true, -1, true)
+
+func _draw_eye_badge(at: Vector2, amount: float) -> void:
+	var r := 13.0*amount
+	draw_circle(at+Vector2(0,2), r+2.0, Color(SunsetUI.SHADOW, .4*amount), true, -1, true)
+	draw_circle(at, r, SunsetUI.PLUM, true, -1, true)
+	draw_arc(at, r, 0, TAU, 28, SunsetUI.BUTTER, 2.0, true)
+	var w := r*.62
+	var lid := PackedVector2Array()
+	for i in 13:
+		var x := lerpf(-w, w, i/12.0)
+		lid.append(at+Vector2(x, -sqrt(maxf(0.0, 1.0-pow(x/w,2)))*r*.36))
+	for i in 13:
+		var x := lerpf(w, -w, i/12.0)
+		lid.append(at+Vector2(x, sqrt(maxf(0.0, 1.0-pow(x/w,2)))*r*.36))
+	draw_colored_polygon(lid, SunsetUI.CREAM)
+	draw_circle(at, r*.2, SunsetUI.PLUM_DEEP, true, -1, true)

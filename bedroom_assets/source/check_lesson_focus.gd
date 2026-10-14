@@ -69,13 +69,13 @@ func run():
 			await physics_frame
 			await physics_frame
 			ui._process(.1)
-			check(ui.focused_index == -1 and not ui.card.visible, "Occluded objects do not show cards")
+			check(ui.focused_index == -1 and (not ui.card.visible or ui.exiting), "Occluded objects do not show cards")
 			blocker.free()
 	root.size = Vector2i(800,600)
 	await capture("compact")
 	game.camera.look_at(game.camera.global_position+Vector3.UP,Vector3.FORWARD)
 	ui._process(.1)
-	check(ui.focused_index == -1 and not ui.card.visible, "Looking away hides card")
+	check(ui.focused_index == -1 and (not ui.card.visible or ui.exiting), "Looking away hides card")
 	game.look_captured = false
 	ui._process(.1)
 	check(not ui.visible, "Releasing mouse hides aiming UI")

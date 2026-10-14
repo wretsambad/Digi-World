@@ -1,7 +1,6 @@
 extends Control
 ## A welcome pause, four guided lesson previews, then the seated-player reveal.
 const FONT = preload("res://neighborhood_assets/preview/fonts/Fredoka.ttf")
-const INK := Color("16364a")
 const TRAVEL_SECONDS := 2.6
 const READ_SECONDS := 8.0
 const STOPS := [
@@ -27,8 +26,9 @@ var end_pose: Transform3D
 var start_fov := 76.0
 var reveal := 0.0
 var reading_paused := false
+## 0 when the tour card appears, 1 once it has popped up into place.
+var card_pop := 1.0
 var pause_button: Button
-var display_font: FontVariation
 var welcome_heading: Label
 var welcome_intro: Label
 var chapter_label: Label
@@ -38,90 +38,72 @@ func setup(owner_game: Node3D) -> void:
 	name = "LessonTour"
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var ui_theme := Theme.new()
-	var weight_tag := TextServerManager.get_primary_interface().name_to_tag("wght")
-	var body_font := FontVariation.new()
-	body_font.base_font = FONT
-	body_font.variation_opentype = {weight_tag: 500}
-	display_font = FontVariation.new()
-	display_font.base_font = FONT
-	display_font.variation_opentype = {weight_tag: 700}
-	ui_theme.default_font = body_font
-	ui_theme.default_font_size = 20
-	theme = ui_theme
 	shade = ColorRect.new()
-	shade.color = Color(.035, .12, .15, .5)
+	shade.color = Color(SunsetUI.PLUM_DEEP, .55)
 	shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(shade)
 	welcome = VBoxContainer.new()
 	welcome.add_theme_constant_override("separation", 18)
 	add_child(welcome)
-	var heading := label("Welcome to\nDigi-World", 48)
+	var heading := label("Welcome to\nDigi-World", 60)
 	welcome_heading = heading
-	heading.add_theme_font_override("font", display_font)
+	SunsetUI.style_label(heading, 60, "hero")
 	heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	heading.add_theme_color_override("font_color", Color("fff5dd"))
-	heading.add_theme_color_override("font_outline_color", INK)
-	heading.add_theme_constant_override("outline_size", 8)
+	heading.add_theme_constant_override("line_spacing", -10)
 	welcome.add_child(heading)
-	var intro := label("A familiar room. A few digital discoveries.\nLet’s take a look around.", 22)
+	var intro := label("A familiar room. A few digital discoveries.\nLet’s take a look around.", 24)
 	welcome_intro = intro
 	intro.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	intro.add_theme_color_override("font_color", Color.WHITE)
+	intro.add_theme_color_override("font_outline_color", SunsetUI.PLUM_DEEP)
+	intro.add_theme_constant_override("outline_size", 6)
 	welcome.add_child(intro)
 	var row := CenterContainer.new()
 	welcome.add_child(row)
 	welcome_next = button("Next")
-	welcome_next.custom_minimum_size = Vector2(180, 54)
+	SunsetUI.add_arrow(welcome_next)
+	welcome_next.custom_minimum_size = Vector2(210, 64)
 	row.add_child(welcome_next)
 	welcome_next.pressed.connect(start)
-	card = preload("res://bedroom_assets/quest_dialogue_frame.gd").new()
-	var paper := StyleBoxEmpty.new()
+	card = PanelContainer.new()
+	var paper := SunsetUI.panel_style()
 	paper.content_margin_left = 30
 	paper.content_margin_right = 30
-	paper.content_margin_top = 43
+	paper.content_margin_top = 22
 	paper.content_margin_bottom = 22
 	card.add_theme_stylebox_override("panel", paper)
 	add_child(card)
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation", 12)
 	card.add_child(content)
-	title_label = label("", 34)
-	title_label.add_theme_font_override("font", display_font)
+	title_label = label("", 32)
+	SunsetUI.style_label(title_label, 32, "title")
 	content.add_child(title_label)
-	body_label = label("", 20)
+	body_label = label("", 22)
 	content.add_child(body_label)
 	var footer := HBoxContainer.new()
 	footer.add_theme_constant_override("separation", 14)
 	content.add_child(footer)
-	step_label = label("", 16)
+	step_label = label("", 17)
+	SunsetUI.style_label(step_label, 17, "muted")
 	step_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	step_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	footer.add_child(step_label)
-	pause_button = button("Pause")
-	for state in ["normal", "hover", "pressed", "disabled"]:
-		var quiet := StyleBoxEmpty.new()
-		quiet.content_margin_left = 10
-		quiet.content_margin_right = 10
-		pause_button.add_theme_stylebox_override(state, quiet)
-	pause_button.add_theme_font_size_override("font_size", 16)
+	pause_button = button("Pause", false)
+	pause_button.add_theme_font_size_override("font_size", 18)
 	footer.add_child(pause_button)
 	pause_button.pressed.connect(func():
 		reading_paused = not reading_paused
 		pause_button.text = "Resume" if reading_paused else "Pause"
 		game.text_writer.reveal_button(pause_button))
 	next_button = button("Next")
-	next_button.set_script(preload("res://bedroom_assets/quest_next_button.gd"))
-	next_button.add_theme_font_override("font", display_font)
-	next_button.alignment = HORIZONTAL_ALIGNMENT_LEFT
-	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
-		next_button.get_theme_stylebox(state).content_margin_right = 112
-	next_button.custom_minimum_size = Vector2(200, 54)
+	SunsetUI.add_arrow(next_button)
+	next_button.custom_minimum_size = Vector2(190, 58)
 	next_button.tooltip_text = "Next lesson (Enter)"
 	footer.add_child(next_button)
 	next_button.pressed.connect(next_stop)
-	chapter_label = label("Room discoveries", 17)
-	chapter_label.add_theme_color_override("font_color", Color("fff3d4"))
+	chapter_label = label("Room discoveries", 18)
+	SunsetUI.style_label(chapter_label, 18, "body")
+	chapter_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	chapter_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	chapter_label.hide()
 	add_child(chapter_label)
@@ -134,37 +116,15 @@ func setup(owner_game: Node3D) -> void:
 	hide()
 
 func label(copy: String, font_size: int) -> Label:
-	var item := Label.new()
-	item.text = copy
-	item.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	item.visible_characters_behavior = TextServer.VC_CHARS_AFTER_SHAPING
-	item.add_theme_font_size_override("font_size", font_size)
-	item.add_theme_color_override("font_color", INK)
+	var item := SunsetUI.label(copy, font_size, "body")
+	item.mouse_filter = Control.MOUSE_FILTER_PASS
 	return item
 
-func button(copy: String) -> Button:
+func button(copy: String, primary := true) -> Button:
 	var item := Button.new()
 	item.text = copy
-	item.custom_minimum_size = Vector2(90, 44)
-	item.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
-		var style := StyleBoxFlat.new()
-		style.bg_color = Color("ffad70") if state == "normal" else Color("ffc796")
-		style.border_color = INK
-		style.set_border_width_all(3)
-		style.border_width_bottom = 6 if state != "pressed" else 3
-		style.set_corner_radius_all(9)
-		style.content_margin_left = 16
-		style.content_margin_right = 16
-		style.content_margin_top = 9
-		style.content_margin_bottom = 12
-		if state == "focus":
-			style.bg_color = Color.TRANSPARENT
-			style.border_color = Color("117786")
-			style.set_border_width_all(3)
-		item.add_theme_stylebox_override(state, style)
-	for state in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
-		item.add_theme_color_override(state, INK)
+	item.custom_minimum_size = Vector2(110, 52)
+	SunsetUI.style_button(item, primary, 24)
 	return item
 
 func layout() -> void:
@@ -180,23 +140,27 @@ func layout() -> void:
 	card.size = Vector2(width, 0)
 	card.position = Vector2((size.x-width)/2, size.y-card.size.y-36)
 	if is_instance_valid(chapter_label):
-		chapter_label.position = Vector2((size.x-268)/2+16, 34)
-		chapter_label.size = Vector2(156,28)
+		chapter_label.position = Vector2((size.x-300)/2+22, 33)
+		chapter_label.size = Vector2(170,30)
 	queue_redraw()
 
 func _draw() -> void:
 	if not is_instance_valid(game) or game.phase != game.Phase.TOUR: return
-	var panel := StyleBoxFlat.new()
-	panel.bg_color = Color("10283e")
-	panel.border_color = Color("edda9e")
-	panel.set_border_width_all(2)
-	panel.set_corner_radius_all(9)
-	var origin := Vector2((size.x-268)/2, 26)
-	draw_style_box(panel, Rect2(origin, Vector2(268,44)))
+	# A plum progress pill: one dot per room discovery, the current one lit.
+	var panel := SunsetUI.panel_style()
+	panel.set_corner_radius_all(23)
+	panel.shadow_size = 12
+	panel.shadow_offset = Vector2(0, 6)
+	var origin := Vector2((size.x-300)/2, 24)
+	draw_style_box(panel, Rect2(origin, Vector2(300,46)))
 	for i in range(4):
-		var center := origin+Vector2(180+i*21,22)
-		var diamond := PackedVector2Array([center+Vector2(0,-7),center+Vector2(7,0),center+Vector2(0,7),center+Vector2(-7,0)])
-		draw_colored_polygon(diamond, Color("ffdd65") if i == index else Color("526778"))
+		var center := origin+Vector2(212+i*22,23)
+		if i == index:
+			draw_circle(center, 8.0, SunsetUI.BUTTER, true, -1, true)
+		elif i < index:
+			draw_circle(center, 5.5, SunsetUI.TANGERINE, true, -1, true)
+		else:
+			draw_arc(center, 5.0, 0, TAU, 20, SunsetUI.CREAM_MUTED, 2.0, true)
 
 func show_welcome() -> void:
 	show()
@@ -236,7 +200,6 @@ func next_stop() -> void:
 		game.finish_lesson_tour()
 		return
 	var stop: Dictionary = STOPS[index]
-	card.lesson_index = index
 	queue_redraw()
 	var object: Node3D = game.room.get_node(stop.node)
 	game.lesson_outline.set_lessons([StringName(stop.node)])
@@ -269,16 +232,21 @@ func advance(delta: float, was_writing_body := false) -> void:
 			elapsed = 0.0
 			card.modulate.a = 0.0
 			card.show()
+			card_pop = 0.0
 			var heading_duration: float = game.text_writer.reveal(title_label, .1)
 			game.text_writer.reveal(body_label, heading_duration+.12)
 			game.text_writer.reveal(step_label, .1, 55.0)
 			game.text_writer.reveal_button(next_button, .1)
-			game.text_writer.reveal_property(next_button, "hint_characters", 5)
 			game.text_writer.reveal_button(pause_button, .1)
 			layout()
 			next_button.grab_focus()
 	else:
-		card.modulate.a = minf(1.0, card.modulate.a+delta/.35)
+		# The card pops up from its bottom edge on the tour's own clock.
+		card_pop = minf(1.0, card_pop+delta/.35)
+		var back := 1.0+2.2*pow(card_pop-1.0, 3)+1.2*pow(card_pop-1.0, 2)
+		card.pivot_offset = Vector2(card.size.x*.5, card.size.y)
+		card.scale = Vector2.ONE*lerpf(.92, 1.0, back)
+		card.modulate.a = minf(1.0, card_pop*1.6)
 		# Give players the full reading interval after the last letter lands.
 		if not reading_paused and not was_writing_body and not game.text_writer.is_writing(body_label): elapsed += delta
 		layout()

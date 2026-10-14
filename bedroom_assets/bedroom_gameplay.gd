@@ -22,6 +22,7 @@ var computer_lesson: Node
 var text_writer = preload("res://bedroom_assets/text_writer.gd").new()
 var seated_character: Node3D
 var play_button: Button
+var pause_menu: PauseMenu
 var _intro_pose: Transform3D
 var _seated_eye_pose: Transform3D
 var _zoom_elapsed := 0.0
@@ -71,6 +72,10 @@ func _ready() -> void:
 	lesson_focus = preload("res://bedroom_assets/lesson_focus.gd").new()
 	$Controls.add_child(lesson_focus)
 	lesson_focus.setup(self)
+	pause_menu = PauseMenu.new()
+	$Controls.add_child(pause_menu)
+	pause_menu.resumed.connect(_on_pause_resumed)
+	pause_menu.quit_requested.connect(func() -> void: get_tree().quit())
 	computer_lesson = preload("res://scripts/ComputerSession.gd").new()
 	add_child(computer_lesson)
 	computer_lesson.setup(self)
@@ -96,17 +101,8 @@ func _build_play_button() -> void:
 	play_button.offset_right = 110
 	play_button.offset_top = -108
 	play_button.offset_bottom = -44
-	play_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	play_button.add_theme_font_size_override("font_size", 28)
-	for key in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
-		play_button.add_theme_color_override(key, Color(.1,.22,.24))
-	for key in ["normal", "hover", "pressed", "focus"]:
-		var style := StyleBoxFlat.new()
-		style.bg_color = {"normal":Color(.975,.945,.855), "hover":Color(1,.99,.94), "pressed":Color(.73,.87,.77), "focus":Color.TRANSPARENT}[key]
-		style.set_corner_radius_all(12)
-		style.set_border_width_all(3 if key == "focus" else 2)
-		style.border_color = Color(.95,.62,.2) if key == "focus" else Color(.13,.25,.25)
-		play_button.add_theme_stylebox_override(key, style)
+	SunsetUI.style_button(play_button, true, 32)
+	SunsetUI.add_arrow(play_button)
 	layer.add_child(play_button)
 	play_button.pressed.connect(start_first_person)
 
@@ -181,8 +177,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
 		look_captured = false
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		player.controls_enabled = false
+		if phase == Phase.PLAYING:
+			# The crosshair and inspect card step aside while paused.
+			lesson_focus.hide()
+			pause_menu.open()
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_viewport().set_input_as_handled()
 	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if look_captured and phase == Phase.PLAYING and lesson_focus.pick_lesson() == 0:
 			computer_lesson.start()
@@ -194,6 +196,13 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and look_captured:
 		yaw -= event.relative.x * mouse_sensitivity
 		pitch = clampf(pitch - event.relative.y * mouse_sensitivity, -1.25, 1.25)
+
+func _on_pause_resumed() -> void:
+	if not active:
+		return
+	look_captured = true
+	player.controls_enabled = true
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _install_input() -> void:
 	var bindings := {"bedroom_left":[KEY_A, KEY_LEFT], "bedroom_right":[KEY_D, KEY_RIGHT], "bedroom_forward":[KEY_W, KEY_UP], "bedroom_back":[KEY_S, KEY_DOWN], "bedroom_jog":[KEY_SHIFT]}

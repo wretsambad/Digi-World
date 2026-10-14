@@ -25,6 +25,16 @@ colors:
   choice-sunshine: "#e2c468"
   choice-leaf: "#92b96b"
   choice-sand: "#d9c8ac"
+  sunset-plum: "#3b2147"
+  sunset-plum-deep: "#241330"
+  sunset-plum-soft: "#553163"
+  sunset-butter: "#ffd166"
+  sunset-cream: "#fff6ea"
+  sunset-cream-muted: "#e9d3e6"
+  sunset-tangerine: "#ff8a3d"
+  sunset-tangerine-hover: "#ffa15c"
+  sunset-tangerine-lip: "#c95a1c"
+  sunset-shadow: "rgba(36, 10, 41, 0.42)"
 typography:
   display:
     fontFamily: Fredoka
@@ -46,15 +56,59 @@ typography:
     fontFamily: Fredoka
     fontSize: "17px"
     fontWeight: 550
+  sunset-wordmark:
+    fontFamily: Fredoka
+    fontSize: "68px"
+    fontWeight: 700
+  sunset-hero:
+    fontFamily: Fredoka
+    fontSize: "60px"
+    fontWeight: 700
+  sunset-headline:
+    fontFamily: Fredoka
+    fontSize: "52px"
+    fontWeight: 700
+  sunset-title:
+    fontFamily: Fredoka
+    fontSize: "32px"
+    fontWeight: 700
+  sunset-button:
+    fontFamily: Fredoka
+    fontSize: "26px"
+    fontWeight: 700
+  sunset-body:
+    fontFamily: Fredoka
+    fontSize: "21px"
+    fontWeight: 600
+  sunset-chip:
+    fontFamily: Fredoka
+    fontSize: "18px"
+    fontWeight: 700
+  sunset-caption:
+    fontFamily: Fredoka
+    fontSize: "17px"
+    fontWeight: 600
 rounded:
   button: "14px"
   card: "22px"
   meter: "6px"
+  sunset-panel: "20px"
+  sunset-button: "16px"
+  sunset-focus-ring: "21px"
+  sunset-chip: "12px"
+  sunset-pill: "23px"
+  sunset-tip-tail: "4px"
 spacing:
   compact: "10px"
   stack: "12px"
   button-horizontal: "16px"
   card-horizontal: "22px"
+  sunset-stack-tight: "8px"
+  sunset-stack: "12px"
+  sunset-panel-x: "24px"
+  sunset-button-x: "30px"
+  sunset-button-y: "12px"
+  sunset-pause-inset: "34px"
 components:
   button-primary:
     backgroundColor: "{colors.action-orange}"
@@ -78,6 +132,58 @@ components:
     textColor: "{colors.navy-ink}"
     rounded: "{rounded.card}"
     padding: "16px 22px"
+  sunset-button-primary:
+    backgroundColor: "{colors.sunset-tangerine}"
+    textColor: "{colors.sunset-plum-deep}"
+    typography: "{typography.sunset-button}"
+    rounded: "{rounded.sunset-button}"
+    padding: "12px 30px"
+  sunset-button-primary-hover:
+    backgroundColor: "{colors.sunset-tangerine-hover}"
+  sunset-button-secondary:
+    backgroundColor: "{colors.sunset-plum-soft}"
+    textColor: "{colors.sunset-cream}"
+    typography: "{typography.sunset-button}"
+    rounded: "{rounded.sunset-button}"
+    padding: "12px 30px"
+  sunset-panel:
+    backgroundColor: "{colors.sunset-plum}"
+    textColor: "{colors.sunset-cream}"
+    rounded: "{rounded.sunset-panel}"
+    padding: "18px 24px 20px"
+  sunset-tour-card:
+    backgroundColor: "{colors.sunset-plum}"
+    textColor: "{colors.sunset-cream}"
+    rounded: "{rounded.sunset-panel}"
+    padding: "22px 30px"
+  sunset-pause-panel:
+    backgroundColor: "{colors.sunset-plum}"
+    textColor: "{colors.sunset-cream}"
+    rounded: "{rounded.sunset-panel}"
+    padding: "{spacing.sunset-pause-inset}"
+  sunset-tip-bubble:
+    backgroundColor: "{colors.sunset-plum}"
+    textColor: "{colors.sunset-cream}"
+    typography: "{typography.sunset-body}"
+    padding: "12px 18px"
+    height: "104px"
+  sunset-chip-play:
+    backgroundColor: "{colors.sunset-tangerine}"
+    textColor: "{colors.sunset-plum-deep}"
+    typography: "{typography.sunset-chip}"
+    rounded: "{rounded.sunset-chip}"
+    padding: "5px 14px 5px 12px"
+  sunset-chip-soon:
+    backgroundColor: "{colors.sunset-plum-soft}"
+    textColor: "{colors.sunset-cream-muted}"
+    typography: "{typography.sunset-chip}"
+    rounded: "{rounded.sunset-chip}"
+    padding: "5px 14px 5px 12px"
+  sunset-progress-pill:
+    backgroundColor: "{colors.sunset-plum}"
+    rounded: "{rounded.sunset-pill}"
+    width: "300px"
+    height: "46px"
 ---
 
 # Design System: Protect Your Base
@@ -86,9 +192,9 @@ components:
 
 **Creative North Star: "My Treehouse Workshop"**
 
-This document covers only the replacement **Protect Your Base** lesson: its native Godot desktop interface, treehouse, Pip integration, Glitch, and lesson feedback. The player's own hideout is the teaching surface. A friendly faceted neighborhood provides the setting; chunky Fredoka lettering, cream paper panels, navy outlines, and orange actions make the workshop legible and inviting.
+The canonical sections below, Overview through Do's and Don'ts, cover only the replacement **Protect Your Base** lesson: its native Godot desktop interface, treehouse, Pip integration, Glitch, and lesson feedback. The player's own hideout is the teaching surface. A friendly faceted neighborhood provides the setting; chunky Fredoka lettering, cream paper panels, navy outlines, and orange actions make the workshop legible and inviting.
 
-Visual authority comes from the supplied brief and the preserved opening's authored assets. This lesson is a new implementation. The preserved neighborhood opening, bedroom arrival, and typing animation remain outside this document's scope. Their existing metadata, including root `.impeccable/design.json`, is retained separately. This lesson's extensions live in `.impeccable/protect-your-base/design.json`.
+Visual authority comes from the supplied brief and the preserved opening's authored assets. This lesson is a new implementation. The game's 2D interface follows **Sunset Treehouse**, documented in its own section at the end of this file with `sunset-` tokens: the opening start screen, the bedroom welcome and guided tour, the seated Play button, the first-person inspect popup and crosshair, the Esc pause menu, and, since the lesson restyle, every screen inside the computer lesson (`ui/LessonUI.gd`: title card, Pip dialogue and captions, password bar and rule chips, the four option buttons, the customization panel and the Great Job card) plus the bedroom Continue button. The cream-paper, navy-ink and orange descriptions of lesson panels and buttons in the canonical sections below are superseded by Sunset Treehouse; the lesson's 3D world, Pip, Glitch, defenses and choice palettes described there still apply. The neighborhood's 3D models, the opening's globe-and-orbit logo, and the shared typing animation belong to neither system. Sunset Treehouse extensions, together with the earlier opening metadata, live in root `.impeccable/design.json`. This lesson's extensions live in `.impeccable/protect-your-base/design.json`.
 
 **Key Characteristics:**
 
@@ -212,4 +318,110 @@ Text buttons report Sound: on/off and Motion: full/gentle. They save locally and
 - **Don't** treat Pip's colour as a clothing or accessory choice; it recolours fur.
 - **Don't** substitute web or iOS component conventions for the native Godot implementation.
 - **Don't** present the teaching meter as a real password-strength evaluator.
-- **Don't** apply this lesson's layout or metadata to the preserved opening and bedroom.
+- **Don't** apply this lesson's layout, cream-and-navy tokens, or metadata to the opening, bedroom, inspect popup, or pause menu; those surfaces use Sunset Treehouse. Equally, don't carry `sunset-` tokens into the computer lesson.
+
+## Sunset Treehouse: Opening, Bedroom and Pause
+
+**Creative North Star: "The Treehouse at Golden Hour"**
+
+Sunset Treehouse is the interface world for everything around the computer lesson: the opening start screen (wordmark, slogan, Play, and safety-tip bubble), the bedroom welcome and four-stop guided tour, the seated Play button, the first-person inspect popup and crosshair, and the Esc pause menu. Warm plum boards carry butter titles and cream copy; tangerine buttons sit on a darker lip that squishes flat when pressed. The 3D room is the subject, so the interface docks to the edges and keeps the centre of the screen clear during play.
+
+Every element is a native Godot `Control` styled in GDScript through the shared kit `ui/sunset_ui.gd` (`SunsetUI`). No raster assets were created for this system: boards and buttons are `StyleBoxFlat`, and the chevron, mouse icon, crosshair, eye badge, leader line, and progress dots are drawn with Godot draw calls. Sizes are logical pixels at the 1280 × 720 canvas; the opening scales by `clamp(min(width / 1280, height / 720), 0.62, 1.6)` and the inspect popup by the same ratio clamped to 0.62–1.5.
+
+**Key Characteristics:**
+
+- Deep plum boards with a plum-deep edge and a warm plum-tinted drop shadow.
+- Butter titles, cream body copy, and soft lilac muted copy.
+- Tangerine primary buttons on a darker lip; plum secondary buttons; a butter focus ring.
+- A drawn crosshair that blooms tangerine on lesson objects, with a docked popup and dashed leader line.
+- Springy, short motion: slide-ins from the left, a card pop from the bottom edge, a squash on press.
+
+### Colors
+
+The palette is a dusk gradient: plum for surfaces, butter and tangerine for light, cream for reading. Frontmatter `sunset-` values are normative; these are the roles.
+
+- **Tangerine** (`sunset-tangerine`): the forward action. Primary button face (Play, Next, Resume), the "Click to play" chip, and completed progress dots. The crosshair ring blooms to it.
+- **Tangerine Glow** (`sunset-tangerine-hover`): primary button hover.
+- **Ember Lip** (`sunset-tangerine-lip`): the thick bottom lip under primary buttons.
+- **Butter** (`sunset-butter`): titles, the wordmark, corner mark, and welcome hero; the focus ring; crosshair ticks; the eye badge rim; the leader line; the current progress dot; the "Tip:" prefix.
+- **Plum** (`sunset-plum`): every board, from popup, tour card, and pause panel to the progress pill, tip bubble, and eye badge disc.
+- **Plum Deep** (`sunset-plum-deep`): board borders, secondary button lips, ink on tangerine, outlines on text over the 3D world, and the resting crosshair ring. At 55% opacity it is the welcome shade; at 38% it is the pause dim.
+- **Plum Soft** (`sunset-plum-soft`): secondary button face (tour Pause, Sound, Quit game) and the "Coming soon" chip.
+- **Cream** (`sunset-cream`): body copy, slogan, secondary button labels, the crosshair dot, and the eye.
+- **Cream Muted** (`sunset-cream-muted`): muted copy (pause note, tour step counter), "Coming soon" text, and upcoming progress dots.
+- **Warm Shadow** (`sunset-shadow`): every drop shadow and the hero and wordmark text shadows.
+
+State colours are computed in code, not stored as tokens: primary pressed is Tangerine darkened 6%; secondary hover is Plum Soft lightened 12%, and pressed is darkened 6%; disabled faces darken 25% with the label at 45% opacity.
+
+**The Tangerine Means Go Rule.** Tangerine marks only the action that moves the player forward, and progress already made. Pausing, sound, and quitting stay plum.
+
+**The Warm Board Rule.** Copy sits on a plum board, or carries a plum-deep outline when it floats over the 3D world (wordmark, slogan, welcome hero and intro).
+
+### Typography
+
+**Font:** Fredoka, bundled at `neighborhood_assets/preview/fonts/Fredoka.ttf` under the SIL Open Font License, loaded directly with no fallback stack. `SunsetUI.font()` builds and caches a `FontVariation` on the `wght` axis at two weights: **700** for titles, buttons, the wordmark, and the chip; **600** for body, muted copy, the slogan, and tips. Line spacing is Godot's default, except the two-line welcome hero at −10.
+
+**Character:** round, chunky, and friendly; heavy enough to read over a busy room at a glance.
+
+- **Wordmark** (700, 68 × scale): "DIGI WORLD" on the opening; butter, plum-deep outline 15 × scale, warm shadow 10 below. The corner mark during the flight uses 27 × scale with a 6 outline.
+- **Hero** (700, 60): the bedroom "Welcome to / Digi-World" title; butter with a plum-deep outline of max(6, size / 5) and a warm shadow 6 below.
+- **Headline** (700, 52): "Paused".
+- **Title** (700): tour card title at 32, inspect popup heading at 28.
+- **Button** (700): menu buttons at 26, Play at 32 (the opening clamps it to 22–42 by scale), tour buttons at 24, tour Pause at 18.
+- **Body** (600): welcome intro 24, slogan 23, tour body 22, tip and pause note 21, popup description 20.
+- **Chip / Caption:** the action chip at 18 / 700; the tour chapter label at 18 / 600; the step counter at 17 / 600 in Cream Muted.
+
+### Shapes
+
+Soft, well-rounded boards. Panels use the 20 px radius with a 2 px plum-deep border and anti-aliased corners. Buttons use 16 px with a 7 px bottom lip that flattens to 2 px when pressed. The focus ring is a 4 px butter outline, 5 px outside the button, at 21 px radius. The action chip uses 12 px; the progress pill's 23 px radius on a 46 px height makes a full capsule. The tip bubble is a standard board with one tight 4 px bottom-left corner pointing back at the street. Drawn glyphs are line-based: a 4 px three-point chevron in an 18 × 22 box, and a mouse outline with a 2 px stroke and its left button lit tangerine.
+
+### Elevation & Depth
+
+Lifted. Boards and buttons float above the 3D world on warm, plum-tinted shadows; the world behind dims rather than blurs when a modal moment needs focus.
+
+- **Board** (`StyleBoxFlat` shadow size 18, offset 0, 9): popup, tour card, pause panel, tip bubble.
+- **Button** (size 12, offset 0, 7; pressed size 4, offset 0, 2): the press visibly sinks the button.
+- **Progress pill** (size 12, offset 0, 6).
+- **Text over the world:** hero shadow 6 below; wordmark and corner mark 10 below.
+- **Crosshair:** a soft halo at 25% shadow strength, 1.5 below the ring; the eye badge sits on a 40% shadow 2 below.
+
+**The Warm Shadow Rule.** Every shadow uses Warm Shadow; never neutral black or grey.
+
+### Components
+
+**Buttons.** Tactile and springy. Primary: tangerine face, Ember Lip, plum-deep label. Secondary: Plum Soft face, Plum Deep lip, cream label. Padding is 12 top and bottom with 30 at the sides; when pressed, the top grows to 17, so the label drops as the lip flattens. Hover scales to 1.05 in 0.18 s with a back ease-out and returns in 0.2 s; press squashes to 1.04 × 0.93 in 0.06 s; release springs back in 0.28 s. Each press plays the click sound; the cursor is a pointing hand. Forward actions add a drawn chevron 34 px from the right edge, with right padding widened to 56. Instances: opening Play (220 wide); seated Play (220 × 64, bottom centre, 44 from the bottom; fades in over 0.45 s); welcome Next (210 × 64); tour Next (190 × 58, "Meet your player" on the last stop); tour Pause and Resume (secondary, minimum 110 × 52); pause menu buttons (62 tall, left-aligned).
+
+**Inspect popup.** A plum board docked at the lower left, never over the centre: 28 × scale from the left, 32 × scale from the bottom, width 34% of the viewport clamped to 300–440. Contents stack at 8: the object's title (Title, 28), a description (Body, 20) that types in at 70 characters per second, a 6 px gap, then the action chip. The computer's chip is tangerine with the mouse icon (16 × 24) and "Click to play" in Plum Deep; the other objects show a Plum Soft "Coming soon" chip in Cream Muted with no icon. The popup never takes clicks; clicking the world while aiming at the computer starts its lesson.
+
+**Leader line.** A dashed butter line (3 px, 9 px dashes every 16 px, 85% opacity) from a butter dot (radius 5, plum-deep centre 2.2) at the object's projected anchor to the popup's top edge, 36 px in from its right.
+
+**Crosshair.** At rest: a cream dot (radius 3.2) in a plum-deep ring (radius 5.5, 2.5 stroke) on a soft halo. On a lesson object it blooms: the ring grows to 17 with a 4 px stroke and turns tangerine, breathes ±4%, and four butter ticks (7 long, 3 wide) circle it, turning slowly; an eye badge (plum disc, radius 13, butter rim, cream eye, plum-deep pupil) appears 27 px down and right. It shows only while playing with the mouse captured.
+
+**Pause panel.** Esc during first-person play pauses the game, hides the crosshair and popup, and slides a plum board in from the left edge, vertically centred, over a 38% Plum Deep dim. Width is 30% of the viewport clamped to 320–420, inset 20–40 from the left; inner padding 34, stack 14. Contents: "Paused" (Headline), "Take a breather. Your room will wait for you." (Body, Cream Muted), a 12 px gap, then Resume (primary, focused), "Sound: on/off" and "Quit game" (secondary). Esc or Resume closes it.
+
+**Progress pill.** During the tour, a 300 × 46 plum capsule sits 24 from the top centre with "Room discoveries" (18 / 600) at the left and four dots: the current stop butter (radius 8), completed stops tangerine (5.5), upcoming stops a Cream Muted ring (5, 2 stroke).
+
+**Tour card and welcome.** The welcome is a 520-wide centred column, 23% down, over a 55% Plum Deep shade: Hero title, cream intro (24, plum-deep outline 6), and Next, stacked at 18. The tour card sits low and centred under the framed object: width up to 760 (viewport minus 48), 36 from the bottom, padding 22 × 30, stack 12; title, body, then a footer (gap 14) with the "1 / 4 · Computer" step counter, Pause, and Next.
+
+**Tip bubble.** A plum board in the opening's lower left, 21% of the viewport wide clamped to 250–270, 104 tall, inset 18 × 12. Body copy at 21 / 600 in cream with a butter "Tip:" prefix; five tips rotate every 5 s (0.2 s fade out, 0.25 s fade in) and the bubble fades out over 0.45 s when the flight begins.
+
+### Motion
+
+Short, springy, and directional: things arrive from the left or pop up from below, and settle with an overshoot or an exponential ease-out.
+
+- **Popup entrance:** slides from 30 px left to rest in 0.32 s (exponential ease-out) while fading in over 0.22 s. **Exit:** fades over 0.14 s while sliding 16 px left (quadratic ease-in).
+- **Crosshair bloom:** eases exponentially toward its target (rate 14 per second); the ticks appear once bloom passes 0.3.
+- **Tour card pop:** on arrival at each stop, the card scales from 0.92 to 1 about its bottom edge over 0.35 s with a back overshoot, fading in across the first ~60%.
+- **Welcome:** the overlay fades in over 0.65 s; the hero, then intro, type in.
+- **Pause:** opens in 0.38 s (exponential ease-out) with the dim fading in over 0.25 s and a whoosh; closes in 0.22 s (quartic ease-in).
+- **Kit helper:** `SunsetUI.slide_in` offers the same entrance (28 px from the left, 0.32 s exponential ease-out, fade over 70% of the duration).
+
+**The Clear Centre Rule.** During first-person play, only the crosshair occupies the screen centre. The popup docks lower left; the leader line starts at least 64 px from the centre; the pause panel enters from the left edge so the room stays visible.
+
+### Sunset Do's and Don'ts
+
+- **Do** build new opening, bedroom, and pause UI from `SunsetUI` (`panel_style`, `style_label` roles, `style_button`) instead of restyling controls by hand.
+- **Do** keep a visible butter focus ring and focus the forward action when a screen appears.
+- **Do** draw small glyphs in GDScript, as the chevron, mouse icon, and crosshair are.
+- **Don't** place UI in the centre clear zone during first-person play.
+- **Don't** use tangerine for secondary actions such as pause, sound, or quit.

@@ -1,7 +1,8 @@
 class_name LessonUI
 extends CanvasLayer
 ## All 2D screens for Protect Your Base, laid out on a 1280x720 canvas in the
-## bedroom's cream-paper, navy-ink, Fredoka style. Dialogue uses the shared
+## Sunset Treehouse style shared with the bedroom (ui/sunset_ui.gd): plum boards,
+## butter titles, cream text and tangerine buttons. Dialogue uses the shared
 ## typewriter (bedroom_assets/text_writer.gd).
 
 signal next_pressed
@@ -10,17 +11,19 @@ signal customize_done
 signal finish_pressed
 signal play_pressed
 
-const FONT := preload("res://neighborhood_assets/preview/fonts/Fredoka.ttf")
-const DIALOGUE_FRAME := preload("res://bedroom_assets/quest_dialogue_frame.gd")
 const TEXT_WRITER := preload("res://bedroom_assets/text_writer.gd")
 const FROST_SHADER := preload("res://neighborhood_assets/preview/welcome_background_blur.gdshader")
-const INK := Color("16364a")
-const PAPER := Color("fff3d4")
-const GOLD := Color("ffd76e")
-const ORANGE := Color("ff7f42")
-const PEACH := Color("ffddb2")
-const MINT := Color("b7dfc4")
-const METER_COLORS: Array[Color] = [Color("d9534f"), Color("ef8d3c"), Color("e2c468"), Color("7cbf6a"), Color("2f9c94")]
+const PLUM := SunsetUI.PLUM
+const PLUM_DEEP := SunsetUI.PLUM_DEEP
+const PLUM_SOFT := SunsetUI.PLUM_SOFT
+const BUTTER := SunsetUI.BUTTER
+const CREAM := SunsetUI.CREAM
+const MUTED := SunsetUI.CREAM_MUTED
+const TANGERINE := SunsetUI.TANGERINE
+const SUCCESS := Color("8fd694")
+const WRONG := Color("ff7a7a")
+const METER_TRACK := Color("4c2a58")
+const METER_COLORS: Array[Color] = [Color("ff6b6b"), Color("ff9a52"), Color("ffd166"), Color("9ad97a"), Color("5ed6c0")]
 
 var writer = TEXT_WRITER.new()
 var root: Control
@@ -62,13 +65,8 @@ var _caption_serial: int = 0
 
 func _ready() -> void:
 	layer = 10
-	var weight := TextServerManager.get_primary_interface().name_to_tag("wght")
-	body_font = FontVariation.new()
-	body_font.base_font = FONT
-	body_font.variation_opentype = {weight: 500}
-	display_font = FontVariation.new()
-	display_font.base_font = FONT
-	display_font.variation_opentype = {weight: 700}
+	body_font = SunsetUI.font(600)
+	display_font = SunsetUI.font(700)
 	root = Control.new()
 	root.name = "LessonUIRoot"
 	root.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -76,7 +74,7 @@ func _ready() -> void:
 	var ui_theme := Theme.new()
 	ui_theme.default_font = body_font
 	ui_theme.default_font_size = 22
-	ui_theme.set_color("font_color", "Label", INK)
+	ui_theme.set_color("font_color", "Label", CREAM)
 	root.theme = ui_theme
 	add_child(root)
 	_build_frost()
@@ -118,61 +116,34 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # ------------------------------------------------------------------ helpers
 
-func label(text: String, size: int = 22, bold: bool = false, color: Color = INK) -> Label:
+func label(text: String, size: int = 22, bold: bool = false, color: Color = CREAM) -> Label:
 	var l := Label.new()
 	l.text = text
 	l.add_theme_font_size_override("font_size", size)
-	if bold:
-		l.add_theme_font_override("font", display_font)
+	l.add_theme_font_override("font", display_font if bold else body_font)
 	l.add_theme_color_override("font_color", color)
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	l.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	return l
 
 
-func paper_style(fill: Color = PAPER, border: int = 3, radius: int = 18) -> StyleBoxFlat:
-	var style := StyleBoxFlat.new()
-	style.bg_color = fill
-	style.border_color = INK
+## A plum board with a soft warm shadow (see SunsetUI.panel_style).
+func paper_style(fill: Color = PLUM, border: int = 2, radius: int = SunsetUI.RADIUS) -> StyleBoxFlat:
+	var style := SunsetUI.panel_style(fill, radius)
 	style.set_border_width_all(border)
-	style.set_corner_radius_all(radius)
-	style.corner_detail = 10
-	style.shadow_color = Color(0.025, 0.08, 0.13, 0.3)
-	style.shadow_size = 10
-	style.shadow_offset = Vector2(0, 6)
-	style.content_margin_left = 18
-	style.content_margin_right = 18
-	style.content_margin_top = 12
-	style.content_margin_bottom = 12
+	style.content_margin_left = 22
+	style.content_margin_right = 22
+	style.content_margin_top = 16
+	style.content_margin_bottom = 18
 	return style
 
 
 func action_button(text: String, primary: bool = true, size: int = 24) -> Button:
 	var button := Button.new()
 	button.text = text
-	button.focus_mode = Control.FOCUS_ALL
-	button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	button.add_theme_font_override("font", display_font)
-	button.add_theme_font_size_override("font_size", size)
-	for state: String in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color"]:
-		button.add_theme_color_override(state, INK)
-	var fills := {"normal": ORANGE if primary else PAPER, "hover": PEACH, "pressed": MINT, "disabled": Color(0.85, 0.83, 0.78)}
-	for state: String in fills:
-		var style := paper_style(fills[state], 3, 14)
-		style.content_margin_left = 26
-		style.content_margin_right = 26
-		button.add_theme_stylebox_override(state, style)
-	var focus := StyleBoxFlat.new()
-	focus.bg_color = Color.TRANSPARENT
-	focus.border_color = GOLD
-	focus.set_border_width_all(4)
-	focus.set_corner_radius_all(16)
-	focus.expand_margin_left = 4
-	focus.expand_margin_right = 4
-	focus.expand_margin_top = 4
-	focus.expand_margin_bottom = 4
-	button.add_theme_stylebox_override("focus", focus)
-	button.pressed.connect(AudioManager.play.bind("click"))
+	# Tangerine on a squishy lip (primary) or soft plum (secondary), with hover
+	# lift, press squish, click sound and the butter focus ring.
+	SunsetUI.style_button(button, primary, size)
 	return button
 
 
@@ -250,21 +221,22 @@ func _build_title() -> void:
 	title_card.offset_top = -170
 	title_card.offset_bottom = 60
 	title_card.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var heading := label("Protect\nYour Base", 78, true, Color("fff5dd"))
+	var heading := label("Protect\nYour Base", 80, true)
+	SunsetUI.style_label(heading, 80, "hero")
 	heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	heading.add_theme_color_override("font_outline_color", INK)
-	heading.add_theme_constant_override("outline_size", 16)
+	heading.add_theme_constant_override("outline_size", 18)
 	heading.add_theme_constant_override("line_spacing", -18)
 	title_card.add_child(heading)
-	var sub := label("A treehouse adventure with Pip", 26, true, GOLD)
+	var sub := label("A treehouse adventure with Pip", 26, true, CREAM)
 	sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	sub.add_theme_color_override("font_outline_color", INK)
+	sub.add_theme_color_override("font_outline_color", PLUM_DEEP)
 	sub.add_theme_constant_override("outline_size", 8)
 	title_card.add_child(sub)
 	var actions := CenterContainer.new()
 	title_card.add_child(actions)
-	play_button = action_button("Play")
-	play_button.custom_minimum_size = Vector2(240, 60)
+	play_button = action_button("Play", true, 30)
+	SunsetUI.add_arrow(play_button)
+	play_button.custom_minimum_size = Vector2(240, 64)
 	play_button.disabled = true
 	play_button.pressed.connect(func() -> void:
 		if not play_button.disabled:
@@ -298,35 +270,34 @@ func hide_title() -> void:
 # ------------------------------------------------------------------ dialogue
 
 func _build_dialogue() -> void:
-	dialogue = DIALOGUE_FRAME.new()
+	dialogue = PanelContainer.new()
 	dialogue.name = "Dialogue"
-	var margins := StyleBoxEmpty.new()
+	var margins := paper_style()
 	margins.content_margin_left = 34
 	margins.content_margin_right = 34
-	margins.content_margin_top = 48
+	margins.content_margin_top = 24
 	margins.content_margin_bottom = 26
 	dialogue.add_theme_stylebox_override("panel", margins)
 	dialogue.custom_minimum_size = Vector2(760, 0)
-	dialogue.pointer_side = "none"
 	root.add_child(dialogue)
 	var content := VBoxContainer.new()
 	content.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 	content.add_theme_constant_override("separation", 12)
 	dialogue.add_child(content)
-	dialogue_speaker = label("PIP", 18, true, Color("b5604a"))
-	dialogue_speaker.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	dialogue_speaker = label("PIP", 19, true, BUTTER)
 	content.add_child(dialogue_speaker)
 	dialogue_body = label("", 30, true)
 	dialogue_body.custom_minimum_size = Vector2(690, 0)
 	content.add_child(dialogue_body)
-	dialogue_tip = label("", 22, false, Color("2f6b5e"))
+	dialogue_tip = label("", 22, false, MUTED)
 	dialogue_tip.custom_minimum_size = Vector2(690, 0)
 	content.add_child(dialogue_tip)
 	var row := HBoxContainer.new()
 	row.alignment = BoxContainer.ALIGNMENT_END
 	content.add_child(row)
 	dialogue_button = action_button("Next")
-	dialogue_button.custom_minimum_size = Vector2(170, 54)
+	SunsetUI.add_arrow(dialogue_button)
+	dialogue_button.custom_minimum_size = Vector2(180, 58)
 	dialogue_button.pressed.connect(_on_dialogue_button)
 	row.add_child(dialogue_button)
 	dialogue.hide()
@@ -387,7 +358,7 @@ func say(text: String, speaker: String = "PIP", button_text: String = "Next", ti
 
 func _build_caption() -> void:
 	caption_panel = PanelContainer.new()
-	caption_panel.add_theme_stylebox_override("panel", paper_style(PAPER, 3, 16))
+	caption_panel.add_theme_stylebox_override("panel", paper_style())
 	caption_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 	caption_panel.offset_left = -360
 	caption_panel.offset_right = 360
@@ -397,8 +368,9 @@ func _build_caption() -> void:
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 14)
 	caption_panel.add_child(row)
-	var who := label("PIP", 18, true, Color("b5604a"))
+	var who := label("PIP", 19, true, BUTTER)
 	who.autowrap_mode = TextServer.AUTOWRAP_OFF
+	who.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	row.add_child(who)
 	caption_label = label("", 26, true)
 	caption_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -452,7 +424,7 @@ func _build_hud() -> void:
 	words.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	words.add_theme_constant_override("separation", -4)
 	row.add_child(words)
-	words.add_child(label("PRETEND PASSWORD", 14, true, Color("5b6f78")))
+	words.add_child(label("Pretend password", 16, true, MUTED))
 	password_label = label("", 36, true)
 	password_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	password_label.clip_text = true
@@ -467,8 +439,8 @@ func _build_hud() -> void:
 		var segment := Panel.new()
 		segment.custom_minimum_size = Vector2(38, 14)
 		var style := StyleBoxFlat.new()
-		style.bg_color = Color(0.85, 0.83, 0.76)
-		style.set_corner_radius_all(6)
+		style.bg_color = METER_TRACK
+		style.set_corner_radius_all(7)
 		segment.add_theme_stylebox_override("panel", style)
 		segments.add_child(segment)
 		meter_segments.append(segment)
@@ -481,10 +453,13 @@ func _build_hud() -> void:
 	hud.add_child(chips)
 	for text: String in ["8+ letters", "Aa Bb", "123 #!"]:
 		var chip := PanelContainer.new()
-		var style := paper_style(Color(1, 1, 1, 0.75), 2, 12)
+		var style := paper_style(PLUM_SOFT, 2, 14)
+		style.content_margin_left = 14
+		style.content_margin_right = 14
 		style.content_margin_top = 4
-		style.content_margin_bottom = 4
-		style.shadow_size = 0
+		style.content_margin_bottom = 5
+		style.shadow_size = 6
+		style.shadow_offset = Vector2(0, 3)
 		chip.add_theme_stylebox_override("panel", style)
 		var chip_label := label(text, 17, true)
 		chip_label.autowrap_mode = TextServer.AUTOWRAP_OFF
@@ -536,27 +511,30 @@ func set_password(value: String, animate: bool = true) -> void:
 
 func _render_password() -> void:
 	password_label.text = shown_password if shown_password != "" else "_ _ _ _ _ _ _ _"
-	password_label.modulate = Color.WHITE if shown_password != "" else Color(1, 1, 1, 0.35)
+	password_label.modulate = Color.WHITE if shown_password != "" else Color(1, 1, 1, 0.4)
 	var score := PasswordRules.strength(shown_password)
 	for i in meter_segments.size():
 		var style := meter_segments[i].get_theme_stylebox("panel") as StyleBoxFlat
-		style.bg_color = METER_COLORS[score] if i < score else Color(0.85, 0.83, 0.76)
+		style.bg_color = METER_COLORS[score] if i < score else METER_TRACK
 	meter_label.text = PasswordRules.strength_name(score)
 	var met := [
 		PasswordRules.passes(shown_password, "length"),
 		PasswordRules.passes(shown_password, "mixed_case"),
 		PasswordRules.passes(shown_password, "number") and PasswordRules.passes(shown_password, "symbol"),
 	]
+	# A met rule lights its chip butter with dark ink; unmet chips stay soft plum.
 	for i in rule_chips.size():
+		var lit: bool = met[i] and shown_password != ""
 		var style := rule_chips[i].get_theme_stylebox("panel") as StyleBoxFlat
-		style.bg_color = MINT if met[i] and shown_password != "" else Color(1, 1, 1, 0.75)
+		style.bg_color = BUTTER if lit else PLUM_SOFT
+		(rule_chips[i].get_child(0) as Label).add_theme_color_override("font_color", PLUM_DEEP if lit else CREAM)
 
 
 # ------------------------------------------------------------------ question
 
 func _build_question() -> void:
 	question = PanelContainer.new()
-	question.add_theme_stylebox_override("panel", paper_style(PAPER, 3, 22))
+	question.add_theme_stylebox_override("panel", paper_style())
 	question.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
 	question.offset_left = -590
 	question.offset_right = 590
@@ -566,7 +544,7 @@ func _build_question() -> void:
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation", 10)
 	question.add_child(content)
-	question_title = label("", 18, true, Color("b5604a"))
+	question_title = label("", 19, true, BUTTER)
 	content.add_child(question_title)
 	question_prompt = label("", 26, true)
 	content.add_child(question_prompt)
@@ -575,18 +553,22 @@ func _build_question() -> void:
 	options.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	content.add_child(options)
 	for i in 4:
-		var button := action_button("", false, 27)
+		var button := action_button("", false, 26)
 		button.custom_minimum_size = Vector2(0, 96)
+		# Long pretend passwords need the width more than the side padding.
+		for state: String in ["normal", "hover", "pressed", "disabled"]:
+			var face := button.get_theme_stylebox(state) as StyleBoxFlat
+			face.content_margin_left = 14
+			face.content_margin_right = 14
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.clip_text = true
-		var badge := label(str(i + 1), 16, true, Color("5b6f78"))
-		badge.position = Vector2(12, 6)
+		var badge := label(str(i + 1), 17, true, BUTTER)
+		badge.position = Vector2(14, 8)
 		button.add_child(badge)
-		var cross := label("X", 64, true, Color(0.85, 0.25, 0.2, 0.75))
+		var cross := CrossMark.new()
 		cross.name = "Cross"
 		cross.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		cross.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		cross.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		cross.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		cross.hide()
 		button.add_child(cross)
 		button.pressed.connect(_choose.bind(i))
@@ -638,7 +620,7 @@ func _choose(index: int) -> void:
 
 func _build_customize() -> void:
 	customize = PanelContainer.new()
-	customize.add_theme_stylebox_override("panel", paper_style(PAPER, 3, 22))
+	customize.add_theme_stylebox_override("panel", paper_style())
 	customize.set_anchors_and_offsets_preset(Control.PRESET_RIGHT_WIDE)
 	customize.offset_left = -470
 	customize.offset_right = -20
@@ -646,12 +628,12 @@ func _build_customize() -> void:
 	customize.offset_bottom = -20
 	root.add_child(customize)
 	var content := VBoxContainer.new()
-	content.add_theme_constant_override("separation", 8)
+	content.add_theme_constant_override("separation", 6)
 	customize.add_child(content)
-	content.add_child(label("Make it yours!", 36, true))
-	content.add_child(label("Pick your colours and flag. Everything updates live.", 18, false, Color("3d5a66")))
+	content.add_child(label("Make it yours!", 34, true, BUTTER))
+	content.add_child(label("Pick your colours and flag. Everything updates live.", 18, false, MUTED))
 	_swatch_row(content, "Treehouse colour", "house_color", PlayerProfile.HOUSE_COLORS, PlayerProfile.HOUSE_COLOR_NAMES)
-	content.add_child(label("Flag", 21, true))
+	content.add_child(label("Flag", 21, true, CREAM))
 	var flags := GridContainer.new()
 	flags.columns = 5
 	flags.add_theme_constant_override("h_separation", 8)
@@ -659,18 +641,19 @@ func _build_customize() -> void:
 	content.add_child(flags)
 	for i in PlayerProfile.FLAG_DESIGNS.size():
 		var button := Button.new()
-		button.custom_minimum_size = Vector2(74, 50)
+		button.custom_minimum_size = Vector2(74, 44)
 		button.tooltip_text = PlayerProfile.FLAG_DESIGNS[i]
 		button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		button.expand_icon = true
 		button.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		for state: String in ["normal", "hover", "pressed", "focus"]:
-			var style := paper_style(Color.WHITE if state != "hover" else PEACH, 2, 10)
+			var style := paper_style(PLUM_SOFT if state != "hover" else PLUM_SOFT.lightened(0.15), 2, 12)
 			style.content_margin_left = 6
 			style.content_margin_right = 6
-			style.content_margin_top = 6
-			style.content_margin_bottom = 6
-			style.shadow_size = 0
+			style.content_margin_top = 5
+			style.content_margin_bottom = 5
+			style.shadow_size = 4
+			style.shadow_offset = Vector2(0, 2)
 			button.add_theme_stylebox_override(state, style)
 		button.pressed.connect(func() -> void:
 			AudioManager.play("select")
@@ -680,6 +663,7 @@ func _build_customize() -> void:
 	_swatch_row(content, "Flag colour", "flag_color", PlayerProfile.FLAG_COLORS, PlayerProfile.FLAG_COLOR_NAMES)
 	_swatch_row(content, "Pip's colour", "pip_color", PlayerProfile.PIP_COLORS, PlayerProfile.PIP_COLOR_NAMES)
 	var done := action_button("Looks great!")
+	SunsetUI.add_arrow(done)
 	done.custom_minimum_size = Vector2(0, 56)
 	done.pressed.connect(func() -> void: customize_done.emit())
 	content.add_child(done)
@@ -689,7 +673,7 @@ func _build_customize() -> void:
 
 
 func _swatch_row(parent: Control, title: String, key: String, colors: Array[Color], names: Array[String]) -> void:
-	parent.add_child(label(title, 21, true))
+	parent.add_child(label(title, 21, true, CREAM))
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 8)
 	parent.add_child(row)
@@ -698,7 +682,7 @@ func _swatch_row(parent: Control, title: String, key: String, colors: Array[Colo
 		var swatch := Swatch.new()
 		swatch.color = colors[i]
 		swatch.tooltip_text = names[i]
-		swatch.custom_minimum_size = Vector2(44, 44)
+		swatch.custom_minimum_size = Vector2(42, 42)
 		swatch.pressed.connect(func() -> void:
 			AudioManager.play("select")
 			PlayerProfile.set_choice(key, i))
@@ -717,7 +701,7 @@ func _refresh_customize() -> void:
 		var selected := i == PlayerProfile.flag_design
 		for state: String in ["normal", "focus"]:
 			var style := flag_buttons[i].get_theme_stylebox(state) as StyleBoxFlat
-			style.border_color = ORANGE if selected else INK
+			style.border_color = TANGERINE if selected else PLUM_DEEP
 			style.set_border_width_all(4 if selected else 2)
 
 
@@ -734,7 +718,12 @@ func show_customize() -> void:
 func _build_finale() -> void:
 	finale_card = PanelContainer.new()
 	finale_card.custom_minimum_size = Vector2(660, 0)
-	finale_card.add_theme_stylebox_override("panel", paper_style(PAPER, 3, 26))
+	var board := paper_style(PLUM, 2, 26)
+	board.content_margin_left = 34
+	board.content_margin_right = 34
+	board.content_margin_top = 26
+	board.content_margin_bottom = 28
+	finale_card.add_theme_stylebox_override("panel", board)
 	finale_card.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
 	finale_card.offset_left = -330
 	finale_card.offset_right = 330
@@ -751,12 +740,11 @@ func show_finale(summary: Array, password: String) -> void:
 	var content := VBoxContainer.new()
 	content.add_theme_constant_override("separation", 12)
 	finale_card.add_child(content)
-	var heading := label("Great Job!", 58, true, ORANGE)
+	var heading := label("Great Job!", 62, true)
+	SunsetUI.style_label(heading, 62, "hero")
 	heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	heading.add_theme_color_override("font_outline_color", INK)
-	heading.add_theme_constant_override("outline_size", 10)
 	content.add_child(heading)
-	var sub := label("Your base is protected! You learned 3 password rules:", 21)
+	var sub := label("Your base is protected! You learned 3 password rules:", 22)
 	sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	content.add_child(sub)
 	for item: Dictionary in summary:
@@ -768,20 +756,21 @@ func show_finale(summary: Array, password: String) -> void:
 		var words := VBoxContainer.new()
 		words.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		words.add_theme_constant_override("separation", -2)
-		words.add_child(label(item.rule, 24, true))
-		words.add_child(label(item.detail, 18, false, Color("3d5a66")))
+		words.add_child(label(item.rule, 25, true, CREAM))
+		words.add_child(label(item.detail, 19, false, MUTED))
 		row.add_child(words)
 		content.add_child(row)
-	var example := label("Your pretend password: " + password + "  (" + PasswordRules.strength_name(PasswordRules.strength(password)) + ")", 18, true, Color("2f6b5e"))
+	var example := label("Your pretend password: " + password + "  (" + PasswordRules.strength_name(PasswordRules.strength(password)) + ")", 19, true, BUTTER)
 	example.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	content.add_child(example)
-	var note := label("Make your real passwords with a grown-up, and keep them secret!", 17, false, Color("3d5a66"))
+	var note := label("Make your real passwords with a grown-up, and keep them secret!", 18, false, MUTED)
 	note.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	content.add_child(note)
 	var row := CenterContainer.new()
 	content.add_child(row)
 	var done := action_button("Back to my room")
-	done.custom_minimum_size = Vector2(280, 58)
+	SunsetUI.add_arrow(done)
+	done.custom_minimum_size = Vector2(300, 62)
 	done.pressed.connect(func() -> void: finish_pressed.emit())
 	row.add_child(done)
 	# Let containers wrap and sort at the card's authored width before
@@ -811,11 +800,13 @@ class Swatch extends Button:
 		var center := size * 0.5
 		var radius := minf(size.x, size.y) * 0.5 - 4.0
 		if selected:
-			draw_circle(center, radius + 4.0, Color("ff7f42"), true, -1, true)
-		draw_circle(center, radius, Color("16364a"), true, -1, true)
+			draw_circle(center, radius + 4.0, SunsetUI.TANGERINE, true, -1, true)
+		else:
+			draw_arc(center, radius + 1.0, 0, TAU, 32, SunsetUI.CREAM_MUTED, 2.0, true)
+		draw_circle(center, radius, SunsetUI.PLUM_DEEP, true, -1, true)
 		draw_circle(center, radius - 3.0, color, true, -1, true)
 		if selected:
-			var ink := Color("16364a") if color.get_luminance() > 0.6 else Color.WHITE
+			var ink := SunsetUI.PLUM_DEEP if color.get_luminance() > 0.6 else Color.WHITE
 			draw_polyline(PackedVector2Array([center + Vector2(-7, 0), center + Vector2(-2, 6), center + Vector2(8, -6)]), ink, 3.0, true)
 		elif is_hovered():
 			draw_circle(center, radius - 3.0, Color(1, 1, 1, 0.2), true, -1, true)
@@ -823,11 +814,11 @@ class Swatch extends Button:
 
 class LockIcon extends Control:
 	func _draw() -> void:
-		var ink := Color("16364a")
+		var ink := SunsetUI.PLUM_DEEP
 		var c := size * 0.5
-		draw_arc(c + Vector2(0, -4), 11, PI, TAU, 16, ink, 4.0, true)
+		draw_arc(c + Vector2(0, -4), 11, PI, TAU, 16, SunsetUI.CREAM, 4.0, true)
 		var body := StyleBoxFlat.new()
-		body.bg_color = Color("ffd76e")
+		body.bg_color = SunsetUI.BUTTER
 		body.border_color = ink
 		body.set_border_width_all(3)
 		body.set_corner_radius_all(5)
@@ -838,6 +829,16 @@ class LockIcon extends Control:
 class CheckBadge extends Control:
 	func _draw() -> void:
 		var c := size * 0.5
-		draw_circle(c, 18, Color("16364a"), true, -1, true)
-		draw_circle(c, 15, Color("7cbf6a"), true, -1, true)
-		draw_polyline(PackedVector2Array([c + Vector2(-8, 0), c + Vector2(-2, 7), c + Vector2(9, -7)]), Color.WHITE, 4.0, true)
+		draw_circle(c, 18, SunsetUI.PLUM_DEEP, true, -1, true)
+		draw_circle(c, 15, Color("8fd694"), true, -1, true)
+		draw_polyline(PackedVector2Array([c + Vector2(-8, 0), c + Vector2(-2, 7), c + Vector2(9, -7)]), SunsetUI.PLUM_DEEP, 4.0, true)
+
+
+## A drawn cross over an option that was already tried.
+class CrossMark extends Control:
+	func _draw() -> void:
+		var c := size * 0.5
+		var r := minf(size.x, size.y) * 0.28
+		for dir: Vector2 in [Vector2(1, 1), Vector2(1, -1)]:
+			draw_line(c - dir * r, c + dir * r, Color(0.14, 0.04, 0.16, 0.5), 11.0, true)
+			draw_line(c - dir * r, c + dir * r, Color("ff7a7a"), 7.0, true)
