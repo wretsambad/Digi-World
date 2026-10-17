@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dcu8hg38b3qpq"]
 
+[ext_resource type="Script" path="res://scripts/StaticSceneryBatch.gd" id="static_scenery_batch"]
+
 [ext_resource type="Script" path="res://bedroom_assets/bedroom_arrival.gd" id="1_c5ypq"]
 [ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/house_learning_home.glb" id="2_p22fm"]
 [ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/bedroom_window_sash.glb" id="3_4dokm"]
@@ -3851,3 +3853,7 @@ far = 180.0
 [editable path="NearbyNeighborhood/Fill_tree_oak_large_372"]
 [editable path="NearbyNeighborhood/Fill_tree_maple_large_374"]
 [editable path="NearbyNeighborhood/CroppedNeighborhoodGround"]
+
+[node name="StaticSceneryBatches" type="Node" parent="."]
+script = ExtResource("static_scenery_batch")
+root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood")])

@@ -84,6 +84,7 @@ func _ready() -> void:
 func _build_pixels(ghost: bool, tint: Color) -> Node3D:
 	var root := Node3D.new()
 	var materials: Dictionary = {}
+	var static_pixels: Dictionary = {}
 	var box := BoxMesh.new()
 	box.size = Vector3(PIXEL, PIXEL, PIXEL * 3.0)
 	var rows := ART.size()
@@ -112,7 +113,27 @@ func _build_pixels(ghost: bool, tint: Color) -> Node3D:
 			if key == "P" and not ghost:
 				pupils.append(cube)
 				pupil_rest.append(cube.position.x)
-			root.add_child(cube)
+			if ghost or key == "P":
+				# Pupils move independently; translucent ghosts retain their sorting.
+				root.add_child(cube)
+			else:
+				if not static_pixels.has(key): static_pixels[key] = []
+				static_pixels[key].append(cube.transform)
+				cube.free()
+	# Opaque pixels move together with the Pixels root. Instancing the identical
+	# cubes preserves their geometry/colors while reducing body/shadow draw calls.
+	for key: String in static_pixels:
+		var poses: Array = static_pixels[key]
+		var multimesh := MultiMesh.new()
+		multimesh.transform_format = MultiMesh.TRANSFORM_3D
+		multimesh.mesh = box
+		multimesh.instance_count = poses.size()
+		for index in range(poses.size()): multimesh.set_instance_transform(index, poses[index])
+		var batch := MultiMeshInstance3D.new()
+		batch.name = "Pixels_" + key
+		batch.multimesh = multimesh
+		batch.material_override = materials[key]
+		root.add_child(batch)
 	return root
 
 

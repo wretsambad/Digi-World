@@ -41,7 +41,9 @@ func setup(owner_game: Node3D) -> void:
 func _build_screen_and_overlay() -> void:
 	viewport = SubViewport.new()
 	viewport.name = "MonitorViewport"
-	viewport.size = RENDER_SIZE
+	# Allocate the full-resolution target only when the monitor is first used.
+	# It is disabled and its screen is hidden until then.
+	viewport.size = Vector2i(2, 2)
 	viewport.size_2d_override = UI_SIZE
 	viewport.size_2d_override_stretch = true
 	viewport.own_world_3d = true
@@ -113,7 +115,9 @@ func _ensure_lesson() -> void:
 func start() -> void:
 	if state != "idle" or game.phase != game.Phase.PLAYING:
 		return
+	viewport.size = RENDER_SIZE
 	_ensure_lesson()
+	lesson.process_mode = Node.PROCESS_MODE_INHERIT
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	saved_pose = game.camera.global_transform
 	saved_fov = game.camera.fov
@@ -270,6 +274,9 @@ func release_player() -> void:
 	continue_button.hide()
 	# Keep the protected treehouse on the monitor as a still frame.
 	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
+	# The monitor now holds a still image. Stop the hidden lesson's characters,
+	# canopy, UI and particles until a new session replaces it.
+	lesson.process_mode = Node.PROCESS_MODE_DISABLED
 	game.seated_character.hide()
 	game.camera.global_transform = saved_pose
 	game.camera.fov = saved_fov

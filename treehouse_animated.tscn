@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://1ysilaabkowx"]
 
+[ext_resource type="Script" path="res://scripts/StaticSceneryBatch.gd" id="static_scenery_batch"]
+
 [ext_resource type="PackedScene" path="res://treehouse_assets/autumn/models/lawn_tile.tscn" id="1_rseoh"]
 [ext_resource type="PackedScene" path="res://treehouse_assets/autumn/models/road_straight_large.tscn" id="2_prm0u"]
 [ext_resource type="PackedScene" path="res://treehouse_assets/autumn/models/house_willow.tscn" id="3_qcgf0"]
@@ -3195,3 +3197,7 @@ far = 4028.7
 
 [node name="AutumnAmbience" type="Node3D" parent="." unique_id=1241783451]
 script = ExtResource("autumn_ambience")
+
+[node name="StaticSceneryBatches" type="Node" parent="."]
+script = ExtResource("static_scenery_batch")
+root_paths = Array[NodePath]([NodePath("../NeighborhoodSlice")])

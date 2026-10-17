@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://derb788hgktys"]
 
+[ext_resource type="Script" path="res://scripts/StaticSceneryBatch.gd" id="static_scenery_batch"]
+
 [ext_resource type="PackedScene" path="res://bedroom_assets/learning_house_detailed.tscn" id="bedroom_shared"]
 [ext_resource type="Shader" path="res://neighborhood_assets/preview/cloud_transition.gdshader" id="cloud_transition"]
 [ext_resource type="PackedScene" path="res://neighborhood_assets/preview/east_background_roads.tscn" id="east_roads"]
@@ -7696,3 +7698,8 @@ transform = Transform3D(0.89327663, -0.07378933, 0.44340953, 0, 0.9864344, 0.164
 [node name="OpeningSequence" type="Node" parent="." unique_id=1500223374]
 process_priority = 110
 script = ExtResource("opening_sequence")
+
+[node name="StaticSceneryBatches" type="Node" parent="."]
+script = ExtResource("static_scenery_batch")
+root_paths = Array[NodePath]([NodePath("../ExistingNeighborhood")])
+excluded_paths = Array[NodePath]([NodePath("../ExistingNeighborhood/LearningHouse")])

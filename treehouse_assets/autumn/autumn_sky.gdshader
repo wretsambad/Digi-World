@@ -52,12 +52,16 @@ void sky() {
 		col = mix(col, mix(cloud_shade, cloud_lit, 0.5), smoothstep(0.52, 0.72, c) * smoothstep(0.02, 0.12, h) * 0.85);
 	}
 
-	// Two layers of soft distant hills sitting on the horizon.
-	float far_line = 0.012 + 0.07 * ridge(az, 2.2, 3.0);
-	float near_line = -0.004 + 0.05 * ridge(az, 3.4, 11.0);
-	float haze = smoothstep(0.0, 0.08, h);
-	if (h < far_line) col = mix(far_hills, col, haze * 0.35);
-	if (h < near_line) col = mix(near_hills, far_hills, smoothstep(-0.05, 0.05, h) * 0.4);
-	if (h < -0.03) col = mix(col, ground_color, smoothstep(-0.03, -0.2, h));
+	// fbm is bounded by 0.96875, so both hill lines are below 0.08.
+	// Above that band these branches cannot affect any pixel. Skip their
+	// ten noise octaves while retaining the exact original hill calculation.
+	if (h < 0.082) {
+		float far_line = 0.012 + 0.07 * ridge(az, 2.2, 3.0);
+		float near_line = -0.004 + 0.05 * ridge(az, 3.4, 11.0);
+		float haze = smoothstep(0.0, 0.08, h);
+		if (h < far_line) col = mix(far_hills, col, haze * 0.35);
+		if (h < near_line) col = mix(near_hills, far_hills, smoothstep(-0.05, 0.05, h) * 0.4);
+		if (h < -0.03) col = mix(col, ground_color, smoothstep(-0.03, -0.2, h));
+	}
 	COLOR = col;
 }
