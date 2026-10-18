@@ -1,0 +1,4 @@
+ERROR: Texture with GL ID of 27: leaked 349524 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)
+ERROR: Texture with GL ID of 28: leaked 349524 bytes.
+   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)

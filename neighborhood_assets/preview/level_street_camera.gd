@@ -42,6 +42,14 @@ func _process(delta: float) -> void:
 	_apply_pose()
 
 
+func snap_to_path() -> void:
+	_last_distance = _follower.progress
+	var heading := _heading_at(_last_distance)
+	_yaw = atan2(heading.x, heading.z)
+	_position = _center_at(_last_distance) + Basis.looking_at(heading, Vector3.UP) * _offset
+	_apply_pose()
+
+
 func _center_at(distance: float) -> Vector3:
 	return _path.to_global(_path.curve.sample_baked(distance, true))
 

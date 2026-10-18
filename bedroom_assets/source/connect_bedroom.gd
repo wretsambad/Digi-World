@@ -118,6 +118,7 @@ func run():
 	camera(bedroom,"BedsideCamera",origin+Vector3(0.8,1.62,1.0),origin+Vector3(2.22,0.94,-1.0),70)
 	camera(bedroom,"WindowViewCamera",window+Vector3(2.9,-0.05,0.15),Vector3(-27,3.0,-29.0),72)
 	camera(bedroom,"ExteriorCamera",window+Vector3(-7.5,1.4,7.5),window+Vector3(1.8,0,-0.5),68)
+	preload("res://bedroom_assets/source/editable_bedroom.gd").expose_models(bedroom)
 	var bp=save_scene(bedroom,"teen_bedroom.tscn")
 	# A separate authored preview: keep the source scene unchanged, replace only this copy's old interior.
 	var preview=source.duplicate();preview.name="WindowTransitionPreview";root.add_child(preview)

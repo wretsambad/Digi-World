@@ -1,0 +1,139 @@
+{
+	"lesson": "protect_your_base",
+	"title": "Protect Your Base",
+	"note": "Every password here is a made-up example. Never use these for real accounts. Each step needs exactly 4 options and at least one correct one. 'correct' must agree with scripts/PasswordRules.gd (tests/lesson_flow.gd checks this). 'prank' is one of: flag_swap, paint, fold_wall, steal_hat.",
+	"lines": {
+		"intro": [
+			"Hi, I'm Pip! Welcome to my treehouse in Digi-World.",
+			"Before we start, let's make this base yours!"
+		],
+		"customize_done": "Wow, it looks amazing! This is OUR base now.",
+		"glitch_spotted": "Uh oh... what's that on the ladder?!",
+		"alert": "That's a Glitch! Let's build a strong password to keep it out!",
+		"finale": "We did it! The Glitch can't get in anymore!"
+	},
+	"steps": [
+		{
+			"id": "length",
+			"state": "Step1",
+			"rule": "At least 8 letters",
+			"title": "Step 1: Make it long",
+			"prompt": "Pick the password with at least 8 letters.",
+			"required_rules": ["common", "personal", "length"],
+			"defense": "Braced cabin door and gate on the upper deck",
+			"cheer": "Yes! A long password braces our cabin door and adds a gate to our deck!",
+			"glitch_line": "It jumped our short deck gate and reached an open window! We need taller protection and shutters.",
+			"options": [
+				{
+					"text": "treetopcastle",
+					"correct": true,
+					"explanation": "13 letters! Long passwords take way longer to guess."
+				},
+				{
+					"text": "pip",
+					"correct": false,
+					"prank": "fold_wall",
+					"explanation": "That one was too short! Only 3 letters.",
+					"tip": "Use at least 8 letters. Sticking a few words together works great."
+				},
+				{
+					"text": "password",
+					"correct": false,
+					"prank": "flag_swap",
+					"explanation": "\"password\" is the very first thing a Glitch tries!",
+					"tip": "Skip famous passwords. Make up your own mix of words."
+				},
+				{
+					"text": "sam2015",
+					"correct": false,
+					"prank": "paint",
+					"explanation": "A name and a birthday year are easy to find out.",
+					"tip": "Never use names, birthdays or things people know about you."
+				}
+			]
+		},
+		{
+			"id": "mixed_case",
+			"state": "Step2",
+			"rule": "Mix UPPER and lower case",
+			"title": "Step 2: Mix big and small letters",
+			"prompt": "Add capital letters to your password. Which one mixes UPPER and lower case?",
+			"required_rules": ["common", "personal", "length", "mixed_case"],
+			"defense": "Taller deck gate, window shutters and a door crossbar",
+			"cheer": "Big and small letters! Our deck gate grows taller, and the cabin windows get shutters!",
+			"glitch_line": "Our gate and shutters stopped it! But now it is climbing the branches to reach the roof!",
+			"options": [
+				{
+					"text": "treetopcastle",
+					"correct": false,
+					"prank": "steal_hat",
+					"explanation": "That's still all lowercase letters.",
+					"tip": "Switch some letters to CAPITALS, like the start of each word."
+				},
+				{
+					"text": "TreeTopCastle",
+					"correct": true,
+					"explanation": "Capitals AND small letters. Much trickier to guess!"
+				},
+				{
+					"text": "TREETOPCASTLE",
+					"correct": false,
+					"prank": "paint",
+					"explanation": "ALL CAPS is just one kind of letter.",
+					"tip": "Mix them! Some big letters, some small letters."
+				},
+				{
+					"text": "TreeTop",
+					"correct": false,
+					"prank": "fold_wall",
+					"explanation": "Oops, that made it too short again. Only 7 letters!",
+					"tip": "Keep it long AND mix the letters."
+				}
+			]
+		},
+		{
+			"id": "symbols_numbers",
+			"state": "Step3",
+			"rule": "Add numbers and symbols",
+			"title": "Step 3: Add numbers and symbols",
+			"prompt": "Finish your password with numbers AND symbols. Which one has both?",
+			"required_rules": ["common", "personal", "length", "mixed_case", "number", "symbol"],
+			"defense": "Reinforced cabin and wide overhanging branch shields",
+			"cheer": "Numbers and symbols! Wide shields block the branches, and our cabin is reinforced!",
+			"glitch_line": "",
+			"options": [
+				{
+					"text": "TreeTopCastle!",
+					"correct": false,
+					"prank": "flag_swap",
+					"explanation": "Nice symbol, but there's no number yet.",
+					"tip": "Add numbers AND symbols, like 4 7 and #."
+				},
+				{
+					"text": "TreeTopCastle2014",
+					"correct": false,
+					"prank": "steal_hat",
+					"explanation": "2014 looks like a birthday year. Those are easy to guess!",
+					"tip": "Pick random numbers, not birthdays or ages."
+				},
+				{
+					"text": "Password123!",
+					"correct": false,
+					"prank": "fold_wall",
+					"explanation": "\"Password123\" is one of the most-guessed passwords ever!",
+					"tip": "Adding 123 to a famous word doesn't fool anyone."
+				},
+				{
+					"text": "TreeTopCastle#47",
+					"correct": true,
+					"explanation": "Long, mixed letters, numbers AND a symbol. Super strong!"
+				}
+			]
+		}
+	],
+	"summary": [
+		{ "rule": "Make it long", "detail": "Use at least 8 letters." },
+		{ "rule": "Mix big and small letters", "detail": "Use UPPER and lower case." },
+		{ "rule": "Add numbers and symbols", "detail": "Like 4, 7, # or !" }
+	]
+}

@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-12T00:00:00Z",
+  "title": "Design System: Protect Your Base",
+  "extensions": {
+    "scope": {
+      "platform": "Godot 4 native desktop",
+      "designDocument": "DESIGN.md",
+      "sourceFiles": [
+        "ui/LessonUI.gd",
+        "scripts/MonitorGame.gd",
+        "scripts/Treehouse.gd",
+        "scripts/Pip.gd",
+        "scripts/Glitch.gd",
+        "autoload/PlayerProfile.gd"
+      ],
+      "notes": "Lesson-specific sidecar. Preserve root opening metadata. Component HTML/CSS is a documentation analogue, not shipping UI. Synthetic OKLCH tonal ramps are panel aids, not implemented game palette values. Fonts render through the panel's available fonts; Godot uses the bundled Fredoka TTF."
+    },
+    "colorMeta": {
+      "action-orange": {
+        "role": "primary",
+        "displayName": "Action Orange",
+        "tonalRamp": [
+          "oklch(15.00% 0.1727 44.15)",
+          "oklch(26.43% 0.1727 44.15)",
+          "oklch(37.86% 0.1727 44.15)",
+          "oklch(49.29% 0.1727 44.15)",
+          "oklch(60.71% 0.1727 44.15)",
+          "oklch(72.14% 0.1727 44.15)",
+          "oklch(83.57% 0.1727 44.15)",
+          "oklch(95.00% 0.1727 44.15)"
+        ]
+      },
+      "cream-paper": {
+        "role": "neutral",
+        "displayName": "Cream Paper",
+        "tonalRamp": [
+          "oklch(15.00% 0.0308 86.46)",
+          "oklch(26.43% 0.0308 86.46)",
+          "oklch(37.86% 0.0308 86.46)",
+          "oklch(49.29% 0.0308 86.46)",
+          "oklch(60.71% 0.0308 86.46)",
+          "oklch(72.14% 0.0308 86.46)",
+          "oklch(83.57% 0.0308 86.46)",
+          "oklch(95.00% 0.0308 86.46)"
+        ]
+      },
+      "navy-ink": {
+        "role": "neutral",
+        "displayName": "Navy Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.0489 233.44)",
+          "oklch(26.43% 0.0489 233.44)",
+          "oklch(37.86% 0.0489 233.44)",
+          "oklch(49.29% 0.0489 233.44)",
+          "oklch(60.71% 0.0489 233.44)",
+          "oklch(72.14% 0.0489 233.44)",
+          "oklch(83.57% 0.0489 233.44)",
+          "oklch(95.00% 0.0489 233.44)"
+        ]
+      },
+      "hover-peach": {
+        "role": "secondary",
+        "displayName": "Hover Peach",
+        "tonalRamp": [
+          "oklch(15.00% 0.0674 73.33)",
+          "oklch(26.43% 0.0674 73.33)",
+          "oklch(37.86% 0.0674 73.33)",
+          "oklch(49.29% 0.0674 73.33)",
+          "oklch(60.71% 0.0674 73.33)",
+          "oklch(72.14% 0.0674 73.33)",
+          "oklch(83.57% 0.0674 73.33)",
+          "oklch(95.00% 0.0674 73.33)"
+        ]
+      },
+      "pressed-mint": {
+        "role": "secondary",
+        "displayName": "Pressed Mint",
+        "tonalRamp": [
+          "oklch(15.00% 0.0560 155.55)",
+          "oklch(26.43% 0.0560 155.55)",
+          "oklch(37.86% 0.0560 155.55)",
+          "oklch(49.29% 0.0560 155.55)",
+          "oklch(60.71% 0.0560 155.55)",
+          "oklch(72.14% 0.0560 155.55)",
+          "oklch(83.57% 0.0560 155.55)",
+          "oklch(95.00% 0.0560 155.55)"
+        ]
+      },
+      "focus-gold": {
+        "role": "secondary",
+        "displayName": "Focus Gold",
+        "tonalRamp": [
+          "oklch(15.00% 0.1513 85.04)",
+          "oklch(26.43% 0.1513 85.04)",
+          "oklch(37.86% 0.1513 85.04)",
+          "oklch(49.29% 0.1513 85.04)",
+          "oklch(60.71% 0.1513 85.04)",
+          "oklch(72.14% 0.1513 85.04)",
+          "oklch(83.57% 0.1513 85.04)",
+          "oklch(95.00% 0.1513 85.04)"
+        ]
+      },
+      "progress-teal": {
+        "role": "secondary",
+        "displayName": "Progress Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.0876 174.90)",
+          "oklch(26.43% 0.0876 174.90)",
+          "oklch(37.86% 0.0876 174.90)",
+          "oklch(49.29% 0.0876 174.90)",
+          "oklch(60.71% 0.0876 174.90)",
+          "oklch(72.14% 0.0876 174.90)",
+          "oklch(83.57% 0.0876 174.90)",
+          "oklch(95.00% 0.0876 174.90)"
+        ]
+      },
+      "progress-track": {
+        "role": "neutral",
+        "displayName": "Progress Track",
+        "tonalRamp": [
+          "oklch(15.00% 0.0359 92.85)",
+          "oklch(26.43% 0.0359 92.85)",
+          "oklch(37.86% 0.0359 92.85)",
+          "oklch(49.29% 0.0359 92.85)",
+          "oklch(60.71% 0.0359 92.85)",
+          "oklch(72.14% 0.0359 92.85)",
+          "oklch(83.57% 0.0359 92.85)",
+          "oklch(95.00% 0.0359 92.85)"
+        ]
+      },
+      "world-mint": {
+        "role": "secondary",
+        "displayName": "World Mint",
+        "tonalRamp": [
+          "oklch(15.00% 0.0413 164.58)",
+          "oklch(26.43% 0.0413 164.58)",
+          "oklch(37.86% 0.0413 164.58)",
+          "oklch(49.29% 0.0413 164.58)",
+          "oklch(60.71% 0.0413 164.58)",
+          "oklch(72.14% 0.0413 164.58)",
+          "oklch(83.57% 0.0413 164.58)",
+          "oklch(95.00% 0.0413 164.58)"
+        ]
+      },
+      "lawn-green": {
+        "role": "secondary",
+        "displayName": "Lawn Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.0733 158.01)",
+          "oklch(26.43% 0.0733 158.01)",
+          "oklch(37.86% 0.0733 158.01)",
+          "oklch(49.29% 0.0733 158.01)",
+          "oklch(60.71% 0.0733 158.01)",
+          "oklch(72.14% 0.0733 158.01)",
+          "oklch(83.57% 0.0733 158.01)",
+          "oklch(95.00% 0.0733 158.01)"
+        ]
+      },
+      "timber-brown": {
+        "role": "secondary",
+        "displayName": "Timber Brown",
+        "tonalRamp": [
+          "oklch(15.00% 0.0726 61.91)",
+          "oklch(26.43% 0.0726 61.91)",
+          "oklch(37.86% 0.0726 61.91)",
+          "oklch(49.29% 0.0726 61.91)",
+          "oklch(60.71% 0.0726 61.91)",
+          "oklch(72.14% 0.0726 61.91)",
+          "oklch(83.57% 0.0726 61.91)",
+          "oklch(95.00% 0.0726 61.91)"
+        ]
+      },
+      "roof-teal": {
+        "role": "secondary",
+        "displayName": "Roof Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.0506 197.36)",
+          "oklch(26.43% 0.0506 197.36)",
+          "oklch(37.86% 0.0506 197.36)",
+          "oklch(49.29% 0.0506 197.36)",
+          "oklch(60.71% 0.0506 197.36)",
+          "oklch(72.14% 0.0506 197.36)",
+          "oklch(83.57% 0.0506 197.36)",
+          "oklch(95.00% 0.0506 197.36)"
+        ]
+      },
+      "plastic-gold": {
+        "role": "secondary",
+        "displayName": "Plastic Gold",
+        "tonalRamp": [
+          "oklch(15.00% 0.1189 71.53)",
+          "oklch(26.43% 0.1189 71.53)",
+          "oklch(37.86% 0.1189 71.53)",
+          "oklch(49.29% 0.1189 71.53)",
+          "oklch(60.71% 0.1189 71.53)",
+          "oklch(72.14% 0.1189 71.53)",
+          "oklch(83.57% 0.1189 71.53)",
+          "oklch(95.00% 0.1189 71.53)"
+        ]
+      },
+      "wood-brown": {
+        "role": "secondary",
+        "displayName": "Wood Brown",
+        "tonalRamp": [
+          "oklch(15.00% 0.0868 61.37)",
+          "oklch(26.43% 0.0868 61.37)",
+          "oklch(37.86% 0.0868 61.37)",
+          "oklch(49.29% 0.0868 61.37)",
+          "oklch(60.71% 0.0868 61.37)",
+          "oklch(72.14% 0.0868 61.37)",
+          "oklch(83.57% 0.0868 61.37)",
+          "oklch(95.00% 0.0868 61.37)"
+        ]
+      },
+      "metal-blue": {
+        "role": "secondary",
+        "displayName": "Metal Blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.0399 215.11)",
+          "oklch(26.43% 0.0399 215.11)",
+          "oklch(37.86% 0.0399 215.11)",
+          "oklch(49.29% 0.0399 215.11)",
+          "oklch(60.71% 0.0399 215.11)",
+          "oklch(72.14% 0.0399 215.11)",
+          "oklch(83.57% 0.0399 215.11)",
+          "oklch(95.00% 0.0399 215.11)"
+        ]
+      },
+      "choice-teal": {
+        "role": "secondary",
+        "displayName": "Choice Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.0909 178.05)",
+          "oklch(26.43% 0.0909 178.05)",
+          "oklch(37.86% 0.0909 178.05)",
+          "oklch(49.29% 0.0909 178.05)",
+          "oklch(60.71% 0.0909 178.05)",
+          "oklch(72.14% 0.0909 178.05)",
+          "oklch(83.57% 0.0909 178.05)",
+          "oklch(95.00% 0.0909 178.05)"
+        ]
+      },
+      "choice-apricot": {
+        "role": "secondary",
+        "displayName": "Choice Apricot",
+        "tonalRamp": [
+          "oklch(15.00% 0.1291 58.75)",
+          "oklch(26.43% 0.1291 58.75)",
+          "oklch(37.86% 0.1291 58.75)",
+          "oklch(49.29% 0.1291 58.75)",
+          "oklch(60.71% 0.1291 58.75)",
+          "oklch(72.14% 0.1291 58.75)",
+          "oklch(83.57% 0.1291 58.75)",
+          "oklch(95.00% 0.1291 58.75)"
+        ]
+      },
+      "choice-sky": {
+        "role": "secondary",
+        "displayName": "Choice Sky",
+        "tonalRamp": [
+          "oklch(15.00% 0.0771 241.92)",
+          "oklch(26.43% 0.0771 241.92)",
+          "oklch(37.86% 0.0771 241.92)",
+          "oklch(49.29% 0.0771 241.92)",
+          "oklch(60.71% 0.0771 241.92)",
+          "oklch(72.14% 0.0771 241.92)",
+          "oklch(83.57% 0.0771 241.92)",
+          "oklch(95.00% 0.0771 241.92)"
+        ]
+      },
+      "choice-lilac": {
+        "role": "secondary",
+        "displayName": "Choice Lilac",
+        "tonalRamp": [
+          "oklch(15.00% 0.0960 316.00)",
+          "oklch(26.43% 0.0960 316.00)",
+          "oklch(37.86% 0.0960 316.00)",
+          "oklch(49.29% 0.0960 316.00)",
+          "oklch(60.71% 0.0960 316.00)",
+          "oklch(72.14% 0.0960 316.00)",
+          "oklch(83.57% 0.0960 316.00)",
+          "oklch(95.00% 0.0960 316.00)"
+        ]
+      },
+      "choice-rose": {
+        "role": "secondary",
+        "displayName": "Choice Rose",
+        "tonalRamp": [
+          "oklch(15.00% 0.1283 6.57)",
+          "oklch(26.43% 0.1283 6.57)",
+          "oklch(37.86% 0.1283 6.57)",
+          "oklch(49.29% 0.1283 6.57)",
+          "oklch(60.71% 0.1283 6.57)",
+          "oklch(72.14% 0.1283 6.57)",
+          "oklch(83.57% 0.1283 6.57)",
+          "oklch(95.00% 0.1283 6.57)"
+        ]
+      },
+      "choice-sunshine": {
+        "role": "secondary",
+        "displayName": "Choice Sunshine",
+        "tonalRamp": [
+          "oklch(15.00% 0.1169 91.66)",
+          "oklch(26.43% 0.1169 91.66)",
+          "oklch(37.86% 0.1169 91.66)",
+          "oklch(49.29% 0.1169 91.66)",
+          "oklch(60.71% 0.1169 91.66)",
+          "oklch(72.14% 0.1169 91.66)",
+          "oklch(83.57% 0.1169 91.66)",
+          "oklch(95.00% 0.1169 91.66)"
+        ]
+      },
+      "choice-leaf": {
+        "role": "secondary",
+        "displayName": "Choice Leaf",
+        "tonalRamp": [
+          "oklch(15.00% 0.1134 130.43)",
+          "oklch(26.43% 0.1134 130.43)",
+          "oklch(37.86% 0.1134 130.43)",
+          "oklch(49.29% 0.1134 130.43)",
+          "oklch(60.71% 0.1134 130.43)",
+          "oklch(72.14% 0.1134 130.43)",
+          "oklch(83.57% 0.1134 130.43)",
+          "oklch(95.00% 0.1134 130.43)"
+        ]
+      },
+      "choice-sand": {
+        "role": "secondary",
+        "displayName": "Choice Sand",
+        "tonalRamp": [
+          "oklch(15.00% 0.0423 80.28)",
+          "oklch(26.43% 0.0423 80.28)",
+          "oklch(37.86% 0.0423 80.28)",
+          "oklch(49.29% 0.0423 80.28)",
+          "oklch(60.71% 0.0423 80.28)",
+          "oklch(72.14% 0.0423 80.28)",
+          "oklch(83.57% 0.0423 80.28)",
+          "oklch(95.00% 0.0423 80.28)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Lesson title",
+        "purpose": "36 logical pixels, Fredoka variable weight 550."
+      },
+      "headline": {
+        "displayName": "Workshop stage",
+        "purpose": "31 logical pixels."
+      },
+      "dialogue": {
+        "displayName": "Pip speech",
+        "purpose": "23 logical pixels."
+      },
+      "body": {
+        "displayName": "Default UI",
+        "purpose": "22 logical pixels."
+      },
+      "label": {
+        "displayName": "Progress and settings",
+        "purpose": "17 logical pixels."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "defense-arrival",
+        "value": "Godot TRANS_BACK EASE_OUT, position 0.5s; scale 0.5s",
+        "purpose": "Bring in completed defense pieces; skipped with gentle motion."
+      },
+      {
+        "name": "dialogue-reveal",
+        "value": "42 characters/s; gentle motion 60 characters/s",
+        "purpose": "Preserved text-writer behavior for Pip speech."
+      },
+      {
+        "name": "celebration",
+        "value": "22 CPUParticles3D cubes; lifetime 1.0s; explosiveness 0.95",
+        "purpose": "One-shot successful-build feedback; skipped with gentle motion."
+      },
+      {
+        "name": "flag-sway",
+        "value": "rotation.y = sin(clock * 2.8) * 0.13",
+        "purpose": "Flag idle movement; skipped with gentle motion."
+      }
+    ],
+    "breakpoints": [],
+    "nativeLayout": {
+      "canvas": [
+        1280,
+        720
+      ],
+      "scale": "min(viewport_width / 1280, viewport_height / 720)",
+      "alignment": "centered",
+      "minimumButtonHeight": 48,
+      "buttonBorder": 2,
+      "focusBorder": 4
+    },
+    "provenance": {
+      "models": "Existing project neighborhood GLBs and protect_base_assets/pip.tscn; local authoring sources retained.",
+      "font": "neighborhood_assets/preview/fonts/Fredoka.ttf; SIL OFL 1.1 in adjacent OFL.txt.",
+      "newGeometry": "Godot procedural geometry through scripts/Geometry.gd, Treehouse.gd, and Glitch.gd.",
+      "runtimeImages": "22x22 solid choice swatches and 128x72 procedural flag pattern images.",
+      "imagegenShippingAssets": false,
+      "reviewEvidence": [
+        ".impeccable/review/new-customize.png",
+        ".impeccable/review/new-finale.png"
+      ]
+    }
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Documentation-only HTML analogue of the native Godot primary action.",
+      "html": "<button class=\"ds-button ds-primary\">Next upgrade   ENTER</button>",
+      "css": ".ds-primary{background:#ff7f42}.ds-button{font-family:Fredoka, sans-serif;font-size:22px;font-weight:550;color:#18394a;border:2px solid #18394a;border-radius:14px;padding:10px 16px;min-height:48px;cursor:pointer}.ds-button:hover{background:#ffddb2}.ds-button:active,.ds-button[aria-pressed=true]{background:#b7dfc4}.ds-button:focus-visible{outline:4px solid #e3ae24;outline-offset:-4px}.ds-button:disabled{background:#fff5df;color:#18394a;cursor:default}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Cream action used for returning and settings.",
+      "html": "<button class=\"ds-button ds-secondary\">Sound: on</button>",
+      "css": ".ds-secondary{background:#fff5df}.ds-button{font-family:Fredoka, sans-serif;font-size:22px;font-weight:550;color:#18394a;border:2px solid #18394a;border-radius:14px;padding:10px 16px;min-height:48px;cursor:pointer}.ds-button:hover{background:#ffddb2}.ds-button:active,.ds-button[aria-pressed=true]{background:#b7dfc4}.ds-button:focus-visible{outline:4px solid #e3ae24;outline-offset:-4px}.ds-button:disabled{background:#fff5df;color:#18394a;cursor:default}"
+    },
+    {
+      "name": "Colour choice",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Labelled colour toggle; the Godot swatch is generated at runtime.",
+      "html": "<button class=\"ds-button ds-choice\" aria-pressed=\"true\"><span class=\"ds-swatch\" aria-hidden=\"true\"></span>Teal</button>",
+      "css": ".ds-choice{background:#fff5df;display:flex;align-items:center;gap:8px}.ds-swatch{display:inline-block;width:22px;height:22px;background:#409b89}.ds-button{font-family:Fredoka, sans-serif;font-size:22px;font-weight:550;color:#18394a;border:2px solid #18394a;border-radius:14px;padding:10px 16px;min-height:48px;cursor:pointer}.ds-button:hover{background:#ffddb2}.ds-button:active,.ds-button[aria-pressed=true]{background:#b7dfc4}.ds-button:focus-visible{outline:4px solid #e3ae24;outline-offset:-4px}.ds-button:disabled{background:#fff5df;color:#18394a;cursor:default}"
+    },
+    {
+      "name": "Workshop card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat cream container with a navy outline.",
+      "html": "<section class=\"ds-card\"><strong class=\"ds-title\">Make it yours</strong><p>Your hideout, your style.</p></section>",
+      "css": ".ds-card{background:#fff5df;color:#18394a;border:2px solid #18394a;border-radius:22px;padding:16px 22px;font:550 22px Fredoka,sans-serif}.ds-title{font-size:31px;font-weight:550}"
+    },
+    {
+      "name": "Pip speech",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Native dialogue card translated only for design-panel reference.",
+      "html": "<section class=\"ds-speech\"><div class=\"ds-speaker\">PIP</div><div class=\"ds-dialogue\">Hello, builder! Let’s make this treehouse feel like home.</div></section>",
+      "css": ".ds-speech{background:#fff5df;color:#18394a;border:2px solid #18394a;border-radius:22px;padding:16px 22px;font-family:Fredoka,sans-serif;font-weight:550}.ds-speaker{font-size:18px}.ds-dialogue{font-size:23px}"
+    },
+    {
+      "name": "Teaching progress",
+      "kind": "custom",
+      "description": "Three teaching rules completed; not a password-strength evaluator.",
+      "html": "<div class=\"ds-meter\" role=\"progressbar\" aria-label=\"Teaching rules completed\" aria-valuemin=\"0\" aria-valuemax=\"3\" aria-valuenow=\"2\"><div class=\"ds-fill\"></div></div>",
+      "css": ".ds-meter{height:12px;border-radius:6px;background:#dfd7bd;overflow:hidden}.ds-fill{height:100%;width:66.6667%;background:#368b77;border-radius:6px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "My Treehouse Workshop",
+    "overview": "This document covers only the replacement Protect Your Base lesson: its native Godot desktop interface, treehouse, Pip integration, Glitch, and lesson feedback. The player's own hideout is the teaching surface. A friendly faceted neighborhood provides the setting; chunky Fredoka lettering, cream paper panels, navy outlines, and orange actions make the workshop legible and inviting.\n\nVisual authority comes from the supplied brief and the preserved opening's authored assets. This lesson is a new implementation. The preserved neighborhood opening, bedroom arrival, and typing animation remain outside this document's scope. Their existing metadata, including root .impeccable/design.json, is retained separately. This lesson's extensions live in .impeccable/protect-your-base/design.json.",
+    "keyCharacteristics": [
+      "A living low-poly treehouse with immediately visible personal choices.",
+      "Flat cream panels with confident navy outlines and rounded controls.",
+      "A friendly sculpted Pip whose fur colour belongs to the player.",
+      "Physical plastic, wood, and metal upgrades that mirror learning progress.",
+      "Repairable visual jokes and a gentle-motion setting."
+    ],
+    "rules": [
+      {
+        "name": "The Personal Paint Rule",
+        "body": "Pip's colour changes fur. Preserve his cream markings and clothes; house paint and flag colour remain separate choices.",
+        "section": "colors"
+      },
+      {
+        "name": "The World Depth Rule",
+        "body": "Let the 3D scene carry depth; keep the lesson controls flat and clearly outlined.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the brief's cream, navy, orange, chunky Fredoka, and faceted neighborhood character.",
+      "Do use the real treehouse and Pip to display personal choices immediately.",
+      "Do retain text labels alongside colour and material changes.",
+      "Do keep keyboard focus visible and respect the saved motion setting.",
+      "Do reuse the authored Pip sculpt and neighborhood models with their local source provenance."
+    ],
+    "donts": [
+      "Don't treat Pip's colour as a clothing or accessory choice; it recolours fur.",
+      "Don't substitute web or iOS component conventions for the native Godot implementation.",
+      "Don't present the teaching meter as a real password-strength evaluator.",
+      "Don't apply this lesson's layout or metadata to the preserved opening and bedroom."
+    ]
+  }
+}

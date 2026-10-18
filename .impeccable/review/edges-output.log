@@ -1,0 +1,10 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.62 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 SUPER
+
+tour-1: 84683 interior pixels, 0 interior changes; 4205 outlined boundary pixels
+tour-2: 257211 interior pixels, 0 interior changes; 4616 outlined boundary pixels
+tour-3: 2283 interior pixels, 0 interior changes; 557 outlined boundary pixels
+tour-4: 35641 interior pixels, 0 interior changes; 4099 outlined boundary pixels
+first-person: 190464 interior pixels, 0 interior changes; 6526 outlined boundary pixels
+first-person-turned: 8422 interior pixels, 0 interior changes; 1899 outlined boundary pixels
+OUTLINE PASS: tour selection, unchanged surfaces, outer edges, all four lessons during first person, and camera synchronization.

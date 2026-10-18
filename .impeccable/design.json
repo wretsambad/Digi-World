@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-14T00:00:00Z",
+  "title": "Design System: DigiWorld Welcome UI and Sunset Treehouse",
+  "extensions": {
+    "colorMeta": {
+      "cream-text": {
+        "role": "neutral",
+        "displayName": "Warm Cream"
+      },
+      "deep-slate": {
+        "role": "neutral",
+        "displayName": "Deep Slate"
+      },
+      "ocean-blue": {
+        "role": "secondary",
+        "displayName": "Globe Ocean"
+      },
+      "globe-green": {
+        "role": "secondary",
+        "displayName": "Globe Land"
+      },
+      "play-orange": {
+        "role": "primary",
+        "displayName": "Play Orange"
+      },
+      "play-orange-hover": {
+        "role": "primary",
+        "displayName": "Play Hover"
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Tip Paper and Play White"
+      },
+      "tip-ink": {
+        "role": "neutral",
+        "displayName": "Tip Ink"
+      },
+      "blur-tint": {
+        "role": "neutral",
+        "displayName": "Background Blur Tint"
+      },
+      "sunset-tangerine": {
+        "role": "primary",
+        "displayName": "Tangerine",
+        "canonical": "oklch(75.0% 0.167 50.5)",
+        "tonalRamp": [
+          "#170600",
+          "#3c1801",
+          "#6a2f01",
+          "#9b4801",
+          "#cf6306",
+          "#fb8739",
+          "#ffbd98",
+          "#feeadf"
+        ]
+      },
+      "sunset-tangerine-hover": {
+        "role": "primary",
+        "displayName": "Tangerine Glow",
+        "canonical": "oklch(79.1% 0.140 55.3)",
+        "tonalRamp": [
+          "#160700",
+          "#3a1a01",
+          "#663202",
+          "#964d03",
+          "#c56c20",
+          "#ed914b",
+          "#febe92",
+          "#feeadd"
+        ]
+      },
+      "sunset-tangerine-lip": {
+        "role": "primary",
+        "displayName": "Ember Lip",
+        "canonical": "oklch(59.8% 0.158 45.1)",
+        "tonalRamp": [
+          "#190500",
+          "#3f1500",
+          "#6f2a01",
+          "#a24202",
+          "#d06125",
+          "#fa874f",
+          "#ffbc9e",
+          "#feeae1"
+        ]
+      },
+      "sunset-butter": {
+        "role": "secondary",
+        "displayName": "Butter",
+        "canonical": "oklch(88.0% 0.135 86.1)",
+        "tonalRamp": [
+          "#110a00",
+          "#2f2200",
+          "#543f02",
+          "#7d5e04",
+          "#a87f01",
+          "#d0a433",
+          "#f5c75c",
+          "#ffedc5"
+        ]
+      },
+      "sunset-plum": {
+        "role": "neutral",
+        "displayName": "Plum Board",
+        "canonical": "oklch(30.0% 0.073 314.3)",
+        "tonalRamp": [
+          "#160020",
+          "#31173c",
+          "#51365d",
+          "#735681",
+          "#9779a5",
+          "#bc9dcc",
+          "#e0c0f0",
+          "#f7e8ff"
+        ]
+      },
+      "sunset-plum-deep": {
+        "role": "neutral",
+        "displayName": "Plum Deep",
+        "canonical": "oklch(22.6% 0.058 309.6)",
+        "tonalRamp": [
+          "#12031d",
+          "#2c1b39",
+          "#4c3a5a",
+          "#6d5a7c",
+          "#917da1",
+          "#b6a1c7",
+          "#d9c4eb",
+          "#f5e9fe"
+        ]
+      },
+      "sunset-plum-soft": {
+        "role": "neutral",
+        "displayName": "Plum Soft",
+        "canonical": "oklch(38.0% 0.092 315.9)",
+        "tonalRamp": [
+          "#16001f",
+          "#351141",
+          "#553163",
+          "#785287",
+          "#9c75ac",
+          "#c299d2",
+          "#e6bcf7",
+          "#f8e8fe"
+        ]
+      },
+      "sunset-cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "oklch(97.7% 0.019 75.3)",
+        "tonalRamp": [
+          "#100a04",
+          "#29231a",
+          "#484138",
+          "#6a6258",
+          "#8d857a",
+          "#b2a99e",
+          "#d5ccc1",
+          "#f6ede1"
+        ]
+      },
+      "sunset-cream-muted": {
+        "role": "neutral",
+        "displayName": "Cream Muted",
+        "canonical": "oklch(89.0% 0.035 330.3)",
+        "tonalRamp": [
+          "#130612",
+          "#2e1e2c",
+          "#4d3c4b",
+          "#6f5c6d",
+          "#937f90",
+          "#b8a3b5",
+          "#dcc6d9",
+          "#fde7fa"
+        ]
+      },
+      "sunset-shadow": {
+        "role": "neutral",
+        "displayName": "Warm Shadow",
+        "canonical": "Color(0.14, 0.04, 0.16, 0.42) in ui/sunset_ui.gd"
+      }
+    },
+    "typographyMeta": {
+      "wordmark": {
+        "displayName": "World Wordmark",
+        "purpose": "Cream Digi World identity beneath the globe."
+      },
+      "slogan": {
+        "displayName": "Cyber Hero Promise",
+        "purpose": "Exact safety slogan below the wordmark."
+      },
+      "button": {
+        "displayName": "Play Label",
+        "purpose": "Single opening action."
+      },
+      "tip": {
+        "displayName": "Safety Tip",
+        "purpose": "Rotating message in the lower-left popup."
+      },
+      "sunset-wordmark": {
+        "displayName": "Sunset Wordmark",
+        "purpose": "Butter DIGI WORLD on the opening, scaled with the window, plum-deep outline 15 x scale."
+      },
+      "sunset-hero": {
+        "displayName": "Sunset Hero",
+        "purpose": "Bedroom welcome title over the 3D room; plum-deep outline and warm text shadow."
+      },
+      "sunset-headline": {
+        "displayName": "Sunset Headline",
+        "purpose": "Pause panel title."
+      },
+      "sunset-title": {
+        "displayName": "Sunset Title",
+        "purpose": "Tour card title (32); the inspect popup heading uses 28."
+      },
+      "sunset-button": {
+        "displayName": "Sunset Button",
+        "purpose": "Menu buttons at 26; Play at 32, tour buttons at 24, tour Pause at 18."
+      },
+      "sunset-body": {
+        "displayName": "Sunset Body",
+        "purpose": "Cream reading copy: tips and pause note at 21; tour body 22, popup description 20, welcome intro 24."
+      },
+      "sunset-chip": {
+        "displayName": "Sunset Chip",
+        "purpose": "Inspect popup action chip label."
+      },
+      "sunset-caption": {
+        "displayName": "Sunset Caption",
+        "purpose": "Tour step counter in Cream Muted."
+      }
+    },
+    "shadows": [
+      {
+        "name": "identity-shadow",
+        "value": "0 10px rgba(13, 43, 56, 0.35)",
+        "purpose": "Separates outlined cream identity from the moving neighborhood."
+      },
+      {
+        "name": "play-shadow",
+        "value": "0 7px 12px rgba(0, 0, 0, 0.25)",
+        "purpose": "Lifts the rectangular Play action above the street."
+      },
+      {
+        "name": "tip-shadow",
+        "value": "0 8px 14px rgba(0, 0, 0, 0.25)",
+        "purpose": "Lifts the white tip card from the street."
+      },
+      {
+        "name": "sunset-board",
+        "value": "0 9px 18px rgba(36, 10, 41, 0.42)",
+        "purpose": "Godot StyleBoxFlat shadow size 18, offset (0, 9) under every plum board: popup, tour card, pause panel, tip bubble."
+      },
+      {
+        "name": "sunset-button",
+        "value": "0 7px 12px rgba(36, 10, 41, 0.42)",
+        "purpose": "Lifts Sunset buttons (shadow size 12, offset (0, 7))."
+      },
+      {
+        "name": "sunset-button-pressed",
+        "value": "0 2px 4px rgba(36, 10, 41, 0.42)",
+        "purpose": "The pressed button sinks (shadow size 4, offset (0, 2))."
+      },
+      {
+        "name": "sunset-pill",
+        "value": "0 6px 12px rgba(36, 10, 41, 0.42)",
+        "purpose": "Tour progress pill (shadow size 12, offset (0, 6))."
+      },
+      {
+        "name": "sunset-hero-text",
+        "value": "0 6px rgba(36, 10, 41, 0.42)",
+        "purpose": "Welcome hero title; the wordmark and corner mark use the same colour 10px below."
+      }
+    ],
+    "motion": [
+      {
+        "name": "welcome-reveal",
+        "value": "5.5s welcoming sequence: globe and blur enter in 0.7s; greeting at 0.9–2.9s; two globe and horizontal ring turns; settle at 2.4–3.7s; title at 3.15s, slogan at 3.7s, Play at 4.4s, tips at 4.7s",
+        "purpose": "Welcomes the player personally, then reveals Digi World and the action in a deliberate sequence."
+      },
+      {
+        "name": "identity-bob",
+        "value": "8s sine cycle; y 0 to -4 scaled px",
+        "purpose": "Keeps the globe and wordmark gently moving."
+      },
+      {
+        "name": "street-preview",
+        "value": "camera animation at 70% playback speed",
+        "purpose": "Gives the opening neighborhood more time to breathe."
+      },
+      {
+        "name": "tip-rotation",
+        "value": "5s interval; 0.2s fade out and 0.25s fade in",
+        "purpose": "Cycles through five online-safety tips."
+      },
+      {
+        "name": "identity-flight",
+        "value": "0.55s cubic ease-out fade and background blur release; identity y -28 scaled px; corner mark follows after 0.18s",
+        "purpose": "Clears the welcome identity and sharpens the neighborhood as the flight starts."
+      },
+      {
+        "name": "sunset-button-hover",
+        "value": "scale 1.05 in 0.18s, back ease-out; back to 1.0 in 0.2s",
+        "purpose": "Buttons lift toward the cursor."
+      },
+      {
+        "name": "sunset-button-press",
+        "value": "squash to scale (1.04, 0.93) in 0.06s; release springs back in 0.28s, back ease-out; lip 7px to 2px, label drops 5px",
+        "purpose": "Tactile press with the click sound."
+      },
+      {
+        "name": "sunset-popup-enter",
+        "value": "slide from -30px to 0 in 0.32s, expo ease-out; fade in 0.22s; description types in at 70 characters per second",
+        "purpose": "Inspect popup arrives from the left when the aim lands on a lesson object."
+      },
+      {
+        "name": "sunset-popup-exit",
+        "value": "fade out 0.14s while sliding to -16px, quad ease-in",
+        "purpose": "Popup steps aside when the aim leaves an object."
+      },
+      {
+        "name": "sunset-crosshair-bloom",
+        "value": "exponential approach, rate 14/s; ring radius 5.5 to 17, stroke 2.5 to 4, plum-deep to tangerine; breathes +/-4%; ticks appear above 0.3 bloom",
+        "purpose": "Signals that the aimed object can be inspected."
+      },
+      {
+        "name": "sunset-card-pop",
+        "value": "0.35s scale 0.92 to 1 about the bottom edge with back overshoot; opacity reaches 1 at ~62%",
+        "purpose": "Tour card arrives at each stop."
+      },
+      {
+        "name": "sunset-pause-open",
+        "value": "slide in from beyond the left edge in 0.38s, expo ease-out; dim fades in 0.25s; whoosh sound",
+        "purpose": "Pause panel opens while the room stays visible."
+      },
+      {
+        "name": "sunset-pause-close",
+        "value": "slide out left in 0.22s, quart ease-in; dim fades 0.22s",
+        "purpose": "Pause panel leaves on Resume or Esc."
+      },
+      {
+        "name": "sunset-slide-in",
+        "value": "SunsetUI.slide_in: from (-28, 0) in 0.32s, expo ease-out; fade over 70% of the duration",
+        "purpose": "Kit helper for the same left-edge entrance."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Play Button",
+      "kind": "button",
+      "refersTo": "play-button",
+      "description": "Solid coral rectangle with white Play label, soft shadow, and clear keyboard focus; portable preview of the native Godot control.",
+      "html": "<button class=\"ds-play\">Play</button>",
+      "css": ".ds-play { display:inline-flex; align-items:center; justify-content:center; width:220px; height:62px; border:0; border-radius:9px; background:#FF7F42; color:#FFFFFF; font-family:Fredoka,'Trebuchet MS',sans-serif; font-size:32px; font-weight:700; box-shadow:0 7px 12px rgba(0,0,0,.25); cursor:pointer; } .ds-play:hover { background:#FF965E; box-shadow:0 8px 14px rgba(0,0,0,.29); } .ds-play:active { background:#DB522E; box-shadow:none; } .ds-play:focus-visible { outline:3px solid #F9F1DA; outline-offset:2px; }"
+    },
+    {
+      "name": "Welcome Identity",
+      "kind": "custom",
+      "description": "Globe-and-orbit logo with cream Digi World wordmark and the exact cyber-safety slogan over the live street.",
+      "html": "<div class=\"ds-identity\"><svg class=\"ds-globe\" viewBox=\"60 0 520 280\" role=\"img\" aria-label=\"Globe with orange orbit\"><g transform=\"rotate(-18 320 150)\"><ellipse cx=\"320\" cy=\"150\" rx=\"215\" ry=\"52\" fill=\"none\" stroke=\"#0D2B38\" stroke-width=\"26\"/><ellipse cx=\"320\" cy=\"150\" rx=\"215\" ry=\"52\" fill=\"none\" stroke=\"#FF7F42\" stroke-width=\"13\"/></g><circle cx=\"320\" cy=\"150\" r=\"100\" fill=\"#1B7F9C\" stroke=\"#0D2B38\" stroke-width=\"9\"/><path d=\"M242 95h30v30h22v30h-35v-25h-17zm90-21h40v28h20v39h-35v-28h-25zm-65 114h42v24h-42zm111-17h35v31h-35z\" fill=\"#58D79D\"/><g transform=\"rotate(-18 320 150)\"><path d=\"M105 150A215 52 0 0 0 535 150\" fill=\"none\" stroke=\"#0D2B38\" stroke-width=\"26\" stroke-linecap=\"round\"/><path d=\"M105 150A215 52 0 0 0 535 150\" fill=\"none\" stroke=\"#FF7F42\" stroke-width=\"13\" stroke-linecap=\"round\"/></g></svg><div class=\"ds-wordmark\">DIGI WORLD</div><div class=\"ds-slogan\">Become a Cyber Hero. Keep your world safe!</div></div>",
+      "css": ".ds-identity { text-align:center; color:#FAEFDC; font-family:Fredoka,'Trebuchet MS',sans-serif; } .ds-globe { display:block; width:340px; max-width:100%; height:183px; margin:auto; } .ds-wordmark { margin-top:-8px; font-size:68px; font-weight:700; line-height:1; -webkit-text-stroke:15px #0D2B38; paint-order:stroke fill; text-shadow:0 10px rgba(13,43,56,.35); } .ds-slogan { margin-top:10px; font-size:23px; font-weight:600; -webkit-text-stroke:8px #0D2B38; paint-order:stroke fill; }"
+    },
+    {
+      "name": "Safety Tip Popup",
+      "kind": "card",
+      "refersTo": "tip-popup",
+      "description": "Lower-left white card; Godot cycles five safety tips every five seconds.",
+      "html": "<div class=\"ds-tip\"><strong>Tip:</strong> Long passwords are stronger than short ones!</div>",
+      "css": ".ds-tip { width:270px; min-height:98px; padding:10px 14px; border-radius:18px 18px 18px 4px; background:#FFFFFF; color:#12394A; font-family:Fredoka,'Trebuchet MS',sans-serif; font-size:21px; font-weight:600; box-shadow:0 8px 14px rgba(0,0,0,.25); } .ds-tip strong { color:#E4622A; }"
+    },
+    {
+      "name": "Sunset Primary Button",
+      "kind": "button",
+      "refersTo": "sunset-button-primary",
+      "description": "Tangerine forward action on an ember lip, with a drawn chevron for Play and Next; squishes on press.",
+      "html": "<button class=\"ds-sun-btn\">Next <svg viewBox=\"0 0 18 22\" aria-hidden=\"true\"><polyline points=\"3,3 14,11 3,19\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+      "css": ".ds-sun-btn { display:inline-flex; align-items:center; gap:18px; min-height:52px; padding:12px 30px; border:0; border-bottom:7px solid #c95a1c; border-radius:16px; background:#ff8a3d; color:#241330; font-family:Fredoka,'Trebuchet MS',sans-serif; font-size:26px; font-weight:700; box-shadow:0 7px 12px rgba(36,10,41,.42); cursor:pointer; transition:transform .18s cubic-bezier(.34,1.56,.64,1), background .18s; } .ds-sun-btn:hover { background:#ffa15c; transform:scale(1.05); } .ds-sun-btn:active { background:#f08239; border-bottom-width:2px; padding-top:17px; box-shadow:0 2px 4px rgba(36,10,41,.42); transform:scale(1.04,.93); transition-duration:.06s; } .ds-sun-btn:focus-visible { outline:4px solid #ffd166; outline-offset:5px; } .ds-sun-btn svg { width:18px; height:22px; }"
+    },
+    {
+      "name": "Sunset Secondary Button",
+      "kind": "button",
+      "refersTo": "sunset-button-secondary",
+      "description": "Plum Soft button for pause, sound and quit; same lip, squash and butter focus ring.",
+      "html": "<button class=\"ds-sun-btn2\">Sound: on</button>",
+      "css": ".ds-sun-btn2 { display:inline-flex; align-items:center; min-height:52px; padding:12px 30px; border:0; border-bottom:7px solid #241330; border-radius:16px; background:#553163; color:#fff6ea; font-family:Fredoka,'Trebuchet MS',sans-serif; font-size:26px; font-weight:700; box-shadow:0 7px 12px rgba(36,10,41,.42); cursor:pointer; transition:transform .18s cubic-bezier(.34,1.56,.64,1), background .18s; } .ds-sun-btn2:hover { background:#694a76; transform:scale(1.05); } .ds-sun-btn2:active { background:#502e5d; border-bottom-width:2px; padding-top:17px; box-shadow:0 2px 4px rgba(36,10,41,.42); transform:scale(1.04,.93); transition-duration:.06s; } .ds-sun-btn2:focus-visible { outline:4px solid #ffd166; outline-offset:5px; }"
+    },
+    {
+      "name": "Inspect Popup",
+      "kind": "card",
+      "refersTo": "sunset-panel",
+      "description": "Plum board docked at the lower left in first person; butter title, cream description, and a tangerine Click to play chip with a drawn mouse.",
+      "html": "<div class=\"ds-sun-pop\"><div class=\"ds-sun-pop-t\">Protect Your Base</div><div class=\"ds-sun-pop-b\">Join Pip inside the computer. Build your base and discover how to keep its account safe.</div><span class=\"ds-sun-chip\"><svg viewBox=\"0 0 16 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"6\" height=\"8\" rx=\"3\" fill=\"#ff8a3d\"/><rect x=\"2\" y=\"1\" width=\"12\" height=\"22\" rx=\"6\" fill=\"none\" stroke=\"#241330\" stroke-width=\"2\"/><line x1=\"2\" y1=\"10\" x2=\"14\" y2=\"10\" stroke=\"#241330\" stroke-width=\"2\"/><line x1=\"8\" y1=\"3\" x2=\"8\" y2=\"10\" stroke=\"#241330\" stroke-width=\"2\"/></svg>Click to play</span></div>",
+      "css": ".ds-sun-pop { width:400px; max-width:100%; padding:18px 24px 20px; background:#3b2147; border:2px solid #241330; border-radius:20px; box-shadow:0 9px 18px rgba(36,10,41,.42); font-family:Fredoka,'Trebuchet MS',sans-serif; } .ds-sun-pop-t { color:#ffd166; font-size:28px; font-weight:700; } .ds-sun-pop-b { margin-top:8px; color:#fff6ea; font-size:20px; font-weight:600; } .ds-sun-chip { display:inline-flex; align-items:center; gap:8px; margin-top:14px; padding:5px 14px 5px 12px; border-radius:12px; background:#ff8a3d; color:#241330; font-size:18px; font-weight:700; } .ds-sun-chip svg { width:16px; height:24px; }"
+    },
+    {
+      "name": "Inspect Crosshair",
+      "kind": "custom",
+      "description": "Bloomed state: tangerine ring with four butter ticks and the eye badge. At rest it is a cream dot in a small plum-deep ring.",
+      "html": "<svg class=\"ds-sun-xhair\" viewBox=\"0 0 90 90\" role=\"img\" aria-label=\"Crosshair, bloomed\"><circle cx=\"45\" cy=\"46.5\" r=\"20\" fill=\"rgba(36,10,41,.1)\"/><circle cx=\"45\" cy=\"45\" r=\"17\" fill=\"none\" stroke=\"#ff8a3d\" stroke-width=\"4\"/><circle cx=\"45\" cy=\"45\" r=\"3.6\" fill=\"#fff6ea\"/><g stroke=\"#ffd166\" stroke-width=\"3\" stroke-linecap=\"round\"><line x1=\"67\" y1=\"45\" x2=\"74\" y2=\"45\"/><line x1=\"23\" y1=\"45\" x2=\"16\" y2=\"45\"/><line x1=\"45\" y1=\"67\" x2=\"45\" y2=\"74\"/><line x1=\"45\" y1=\"23\" x2=\"45\" y2=\"16\"/></g><circle cx=\"72\" cy=\"74\" r=\"15\" fill=\"rgba(36,10,41,.4)\"/><circle cx=\"72\" cy=\"72\" r=\"13\" fill=\"#3b2147\" stroke=\"#ffd166\" stroke-width=\"2\"/><path d=\"M64 72 Q72 63.3 80 72 Q72 80.7 64 72Z\" fill=\"#fff6ea\"/><circle cx=\"72\" cy=\"72\" r=\"2.6\" fill=\"#241330\"/></svg>",
+      "css": ".ds-sun-xhair { display:block; width:90px; height:90px; animation:ds-sun-breathe 1.57s ease-in-out infinite; } @keyframes ds-sun-breathe { 50% { transform:scale(1.04); } } @media (prefers-reduced-motion: reduce) { .ds-sun-xhair { animation:none; } }"
+    },
+    {
+      "name": "Pause Panel",
+      "kind": "card",
+      "refersTo": "sunset-pause-panel",
+      "description": "Esc panel that slides in from the left edge over a plum dim; Resume is primary and focused.",
+      "html": "<div class=\"ds-sun-pause\"><div class=\"ds-sun-pause-t\">Paused</div><div class=\"ds-sun-pause-n\">Take a breather. Your room will wait for you.</div><div class=\"ds-sun-pause-r ds-sun-pause-p\">Resume</div><div class=\"ds-sun-pause-r\">Sound: on</div><div class=\"ds-sun-pause-r\">Quit game</div></div>",
+      "css": ".ds-sun-pause { width:380px; max-width:100%; box-sizing:border-box; padding:34px; display:flex; flex-direction:column; gap:14px; background:#3b2147; border:2px solid #241330; border-radius:20px; box-shadow:0 9px 18px rgba(36,10,41,.42); font-family:Fredoka,'Trebuchet MS',sans-serif; animation:ds-sun-slide .38s cubic-bezier(.16,1,.3,1); } .ds-sun-pause-t { color:#ffd166; font-size:52px; font-weight:700; line-height:1.1; } .ds-sun-pause-n { color:#e9d3e6; font-size:21px; font-weight:600; margin-bottom:12px; } .ds-sun-pause-r { min-height:62px; box-sizing:border-box; display:flex; align-items:center; padding:12px 30px; border-radius:16px; border-bottom:7px solid #241330; background:#553163; color:#fff6ea; font-size:26px; font-weight:700; box-shadow:0 7px 12px rgba(36,10,41,.42); } .ds-sun-pause-p { background:#ff8a3d; border-bottom-color:#c95a1c; color:#241330; outline:4px solid #ffd166; outline-offset:5px; } @keyframes ds-sun-slide { from { transform:translateX(-110%); } } @media (prefers-reduced-motion: reduce) { .ds-sun-pause { animation:none; } }"
+    },
+    {
+      "name": "Tour Progress Pill",
+      "kind": "nav",
+      "refersTo": "sunset-progress-pill",
+      "description": "Top-centre capsule during the bedroom tour: current stop butter, completed tangerine, upcoming lilac rings.",
+      "html": "<div class=\"ds-sun-pill\"><span>Room discoveries</span><i class=\"ds-sun-done\"></i><i class=\"ds-sun-now\"></i><i></i><i></i></div>",
+      "css": ".ds-sun-pill { display:inline-flex; align-items:center; width:300px; height:46px; box-sizing:border-box; padding:0 14px 0 22px; background:#3b2147; border:2px solid #241330; border-radius:23px; box-shadow:0 6px 12px rgba(36,10,41,.42); color:#fff6ea; font-family:Fredoka,'Trebuchet MS',sans-serif; font-size:18px; font-weight:600; } .ds-sun-pill span { flex:1; } .ds-sun-pill i { width:10px; height:10px; margin:0 6px; box-sizing:border-box; border:2px solid #e9d3e6; border-radius:50%; } .ds-sun-pill i.ds-sun-done { width:11px; height:11px; border:0; background:#ff8a3d; } .ds-sun-pill i.ds-sun-now { width:16px; height:16px; margin:0 3px; border:0; background:#ffd166; }"
+    },
+    {
+      "name": "Sunset Tip Bubble",
+      "kind": "card",
+      "refersTo": "sunset-tip-bubble",
+      "description": "Plum speech bubble in the opening's lower left with one tight corner toward the street; tips rotate every 5s.",
+      "html": "<div class=\"ds-sun-tip\"><b>Tip:</b> Long passwords are stronger than short ones!</div>",
+      "css": ".ds-sun-tip { width:270px; height:104px; box-sizing:border-box; padding:12px 18px; background:#3b2147; border:2px solid #241330; border-radius:20px 20px 20px 4px; box-shadow:0 9px 18px rgba(36,10,41,.42); color:#fff6ea; font-family:Fredoka,'Trebuchet MS',sans-serif; font-size:21px; font-weight:600; line-height:1.25; } .ds-sun-tip b { color:#ffd166; font-weight:600; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "A World Above the Street",
+    "overview": "The imported globe-and-orbit mark and native Fredoka wordmark greet players over the moving neighborhood. The exact cyber-safety slogan sits beneath. A screen-space blur softens the neighborhood behind the sharp welcome UI, arriving with the words and clearing when Play starts the established camera flight. A small white popup rotates online-safety tips. The neighborhood environment system remains the authority for 3D geometry and materials.",
+    "keyCharacteristics": [
+      "live street backdrop",
+      "compact globe-and-orbit logo",
+      "exact cyber-safety slogan",
+      "solid coral rectangular Play button",
+      "white rotating safety-tip popup",
+      "Sunset Treehouse: deep plum boards with warm plum-tinted shadows",
+      "Sunset Treehouse: tangerine forward buttons on a squishy lip, butter focus ring",
+      "Sunset Treehouse: drawn crosshair that blooms on lesson objects, docked inspect popup"
+    ],
+    "rules": [
+      {
+        "name": "The Live Street Rule",
+        "body": "Keep the neighborhood visible behind the opening interface; its changing scenery is part of the composition.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tangerine Means Go Rule",
+        "body": "Tangerine marks only the action that moves the player forward, and progress already made. Pausing, sound, and quitting stay plum.",
+        "section": "colors"
+      },
+      {
+        "name": "The Warm Board Rule",
+        "body": "Copy sits on a plum board, or carries a plum-deep outline when it floats over the 3D world (wordmark, slogan, welcome hero and intro).",
+        "section": "colors"
+      },
+      {
+        "name": "The Warm Shadow Rule",
+        "body": "Every shadow uses Warm Shadow; never neutral black or grey.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Clear Centre Rule",
+        "body": "During first-person play, only the crosshair occupies the screen centre. The popup docks lower left; the leader line starts at least 64 px from the centre; the pause panel enters from the left edge so the room stays visible.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Do keep the compact logo, exact slogan, rectangular Play action, and tip popup readable over the moving neighborhood.",
+      "Do retain the centered Play action, lower-left tip card, and transition to the small corner mark during flight.",
+      "Do build new opening, bedroom, and pause UI from `SunsetUI` (`panel_style`, `style_label` roles, `style_button`) instead of restyling controls by hand.",
+      "Do keep a visible butter focus ring and focus the forward action when a screen appears.",
+      "Do draw small glyphs in GDScript, as the chevron, mouse icon, and crosshair are."
+    ],
+    "donts": [
+      "Don't cover the live neighborhood with a full-screen card on this welcome surface.",
+      "Don't apply this interface palette or typography as a replacement for the separate 3D environment system.",
+      "Don't place UI in the centre clear zone during first-person play.",
+      "Don't use tangerine for secondary actions such as pause, sound, or quit."
+    ]
+  }
+}

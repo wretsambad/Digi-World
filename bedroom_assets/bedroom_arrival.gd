@@ -1,5 +1,5 @@
 extends Node3D
-## Only the scene-transition camera moves; all four lesson objects remain visual placeholders.
+## Preserve the window-flight handoff before enabling the playable bedroom.
 const HANDOFF_KEY=&"digi_world_bedroom_camera"
 var arrival_tween:Tween
 func _ready():
@@ -10,8 +10,15 @@ func _ready():
 	cam.global_transform=handoff.transform
 	cam.fov=handoff.fov;cam.near=handoff.near;cam.far=handoff.far;cam.keep_aspect=handoff.keep_aspect
 	cam.make_current()
+	# The main Play flight already finished inside the room. Retain its last
+	# view for the welcome screen; Next starts the lesson tour before the boy reveal.
+	if handoff.get("flight_complete", false):
+		$BedroomGameplay.begin_entry(cam.global_transform, cam.fov)
+		return
 	# Preserve the first rendered pose across the cut, then gently settle into the room.
 	await RenderingServer.frame_post_draw
 	if not is_inside_tree():return
 	arrival_tween=create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	arrival_tween.tween_method(func(t:float):cam.global_transform=handoff.transform.interpolate_with(destination,t),0.0,1.0,4.0)
+	await arrival_tween.finished
+	$BedroomGameplay.begin_entry(cam.global_transform, cam.fov)

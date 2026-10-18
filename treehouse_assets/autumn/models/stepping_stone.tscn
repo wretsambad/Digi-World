@@ -1,0 +1,54 @@
+[gd_scene format=4]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhm7f"]
+resource_name = "concrete"
+cull_mode = 2
+albedo_color = Color(0.82352936, 0.82352936, 0.8039216, 1)
+roughness = 0.8
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3e5fw"]
+_surfaces = [{
+"aabb": AABB(-0.083843805, -0.010000001, -0.086, 0.16768761, 0.020000001, 0.16348332),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIABQADAAAABQACAAYAAwAHAAQACAAFAAYACAADAAUAAgAJAAYACAAGAAkACgACAAQABwAKAAQAAgAKAAkAAwALAAcAAwAIAAsABwALAAoADAAIAAkACwAIAAwADAAJAA0ACwAMAA0ACQAKAA0ACwANAAoA"),
+"name": "concrete",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("/38AAAAAAACk5v//tDIAAP9///8AAAAApOYAALQyAAD/////oaQAAFoZAAC0MgAAWhn//7QyAAD//wAAoaQAAAAAAAChpAAAAAD//6GkAAD2uP////8AAPa4AAD//wAACEcAAP//AAAIR/////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rn0ue"]
+resource_name = "stepping_stone_Cone_024"
+_surfaces = [{
+"aabb": AABB(-0.083843805, -0.010000001, -0.086, 0.16768761, 0.020000001, 0.16348332),
+"attribute_data": PackedByteArray("////f2zbAAD//wAAbNv/f2zb/3/atgAAbNsAANq2/3/atv9/SJIAANq2AABIkv9/SJL/f7ZtAABIkgAAtm3/f7Zt/38kSQAAtm0AACRJ/3/le6vN/z+OgghwsJmoWlr3GQSrzVclWvf2D7CZJEn/f5IkAAAkSQAAkiT/f5Ik/38AAAAAkiQAAAAA/3/2j7CZCPCwmf+/joIZhKvNp9pa91alWvfl+6vN"),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFwAVABQAFQAXABgAGAAXABkAFQAYABoAGwAcAB0AGwAeABwAHwAgACEAHwAiACAAIwAkACUAJgAkACMAJAAmACcAJwAmACgAJAAnACkA"),
+"material": SubResource("StandardMaterial3D_mhm7f"),
+"name": "concrete",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 42,
+"vertex_data": PackedByteArray("/38AAAAAte2k5v//tDK17f9///8AALXtpOYAALQyte2k5gAAtDIjyf////+hpCPJpOb//7QyI8n//wAAoaQjyf//AAChpJGk9rj/////kaT/////oaSRpPa4AAD//5Gk9rgAAP//AIAIR/////8AgPa4/////wCACEcAAP//AIAIRwAA//+RpAAA//+hpJGkCEf/////kaQAAAAAoaSRpP////+hpP+//3///wAA/7+k5v//tDL/v/a4//////+/AAD//6Gk/78IR///////v1oZ//+0Mv+/AAAAAKGkI8laGf//tDIjyQAA//+hpCPJWhkAALQyI8laGQAAtDK17f9///8AALXtWhn//7Qyte3/fwAAAAC17VoZAAC0Mv8/pOYAALQy/z//fwAAAAD/PwAAAAChpP8/9rgAAP///z8IRwAA////P///AAChpP8//38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3////9/////f////3////9/////f////3////9///////9/////f/7//3////9/////f////3////9//3////9/////f////3////9/////f////3////9///8AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3e5fw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qodex"]
+resource_name = "Autumn_cfc4b2fffalse"
+albedo_color = Color(0.81058824, 0.76960784, 0.6960784, 1)
+roughness = 0.94
+
+[node name="stepping_stone2" type="Node3D" unique_id=133542520]
+
+[node name="stepping_stone" type="Node3D" parent="." unique_id=433143465]
+
+[node name="stepping_stone__Stepping stone" type="MeshInstance3D" parent="stepping_stone" unique_id=1374600567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.010000001, 0)
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_rn0ue")
+surface_material_override/0 = SubResource("StandardMaterial3D_qodex")

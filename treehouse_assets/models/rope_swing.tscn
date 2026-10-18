@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3b8rc"]
+resource_name = "Rope"
+albedo_color = Color(0.7176471, 0.6313726, 0.47843137, 1)
+roughness = 0.88
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pjw42"]
+top_radius = 0.026
+bottom_radius = 0.026
+height = 3.35
+radial_segments = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yrqba"]
+top_radius = 0.026
+bottom_radius = 0.026
+height = 3.35
+radial_segments = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kuvy"]
+resource_name = "HoneyCedar"
+albedo_color = Color(0.70980394, 0.5058824, 0.3137255, 1)
+roughness = 0.88
+
+[sub_resource type="BoxMesh" id="BoxMesh_w36rq"]
+size = Vector3(1.35, 0.15, 0.48)
+
+[node name="RopeSwing" type="Node3D" unique_id=169640725]
+
+[node name="Rope" type="MeshInstance3D" parent="." unique_id=1348534055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53, 2.3, 0)
+material_override = SubResource("StandardMaterial3D_3b8rc")
+mesh = SubResource("CylinderMesh_pjw42")
+
+[node name="@MeshInstance3D@182" type="MeshInstance3D" parent="." unique_id=1410693814]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 2.3, 0)
+material_override = SubResource("StandardMaterial3D_3b8rc")
+mesh = SubResource("CylinderMesh_yrqba")
+
+[node name="Seat" type="MeshInstance3D" parent="." unique_id=1740583103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64, 0)
+material_override = SubResource("StandardMaterial3D_7kuvy")
+mesh = SubResource("BoxMesh_w36rq")

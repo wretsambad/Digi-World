@@ -1,0 +1,45 @@
+[gd_scene format=4]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipyaj"]
+resource_name = "sidewalk"
+cull_mode = 2
+albedo_color = Color(0.85098034, 0.84313726, 0.7921569, 1)
+roughness = 0.8
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mruds"]
+_surfaces = [{
+"aabb": AABB(-1.7, 0, -0.9, 3.4, 0.15, 1.8),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAAAEAAEAAgADAAUAAgAFAAAAAAAGAAQAAAAFAAYABAAHAAEAAQAHAAMABAAGAAcABQADAAcABQAHAAYA"),
+"name": "sidewalk",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAAAAD//wAAAAD//wAA//8AAAAAMjP//wAA//8yM///AAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_okyq4"]
+resource_name = "driveway_apron_large_Curb cut_001"
+_surfaces = [{
+"aabb": AABB(-1.7, 0, -0.9, 3.4, 0.15, 1.8),
+"format": 34896613383,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_ipyaj"),
+"name": "sidewalk",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP///////wAAAAD//wAAAAAAAP////8AAP////8AAAAA////v///MjP///+///8AAP///78AADIz////v///AAD//////////wAA/////wAAAAD/////MjP///////8AAAAA//8AAP//AAD//wAAAAAAAP///////wAA//8AAAAAAAD/vwAAMjP///+/AAAAAP///78AAP//AAD/vwAAMjP//wP+/////wAAA/7//zIz//8D/gAA//8AAAP+/3//P/9//z//f/8//3//P/9//3//f/9//3//f/9//3//v/9//7//f/+//3//v/9//z//v/8//7//P/+//z//v/9/////f////3////9///8HguK8B4LivAeC4rwHguK8")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mruds")
+
+[node name="driveway_apron_large" type="Node3D" unique_id=38228971]
+
+[node name="driveway_apron_large_Mesh" type="MeshInstance3D" parent="." unique_id=1936934304]
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_okyq4")
+surface_material_override/0 = SubResource("StandardMaterial3D_ipyaj")
