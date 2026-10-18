@@ -27,6 +27,9 @@ var _intro_pose: Transform3D
 var _seated_eye_pose: Transform3D
 var _zoom_elapsed := 0.0
 const ZOOM_SECONDS := 1.6
+const SHARING_BOARD_SCENE := "res://lessons/sharing_board/round1.tscn"
+## Set by the Sharing Board lesson when the player comes back to the room.
+const SHARING_BOARD_RETURN := &"digi_world_lesson_return"
 const STAND_SECONDS := .75
 
 func _ready() -> void:
@@ -82,7 +85,10 @@ func _ready() -> void:
 	set_active(false)
 	camera.global_transform = _intro_pose
 	camera.fov = 62.0
-	if get_tree().has_meta(&"digi_world_bedroom_camera"):
+	if get_tree().has_meta(SHARING_BOARD_RETURN):
+		get_tree().remove_meta(SHARING_BOARD_RETURN)
+		resume_first_person()
+	elif get_tree().has_meta(&"digi_world_bedroom_camera"):
 		phase = Phase.ARRIVING
 		play_button.hide()
 	else:
@@ -142,6 +148,22 @@ func start_first_person() -> void:
 	play_button.hide()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+## The Sharing Board lesson is its own winter scene, so the bedroom hands over to it.
+func start_sharing_board() -> void:
+	GameState.start_lesson("sharing_board")
+	set_active(false)
+	get_tree().change_scene_to_file(SHARING_BOARD_SCENE)
+
+## Back from a lesson: skip the welcome tour and stand the player behind the chair.
+func resume_first_person() -> void:
+	seated_character.hide()
+	play_button.hide()
+	phase = Phase.PLAYING
+	player.reset_camera_interpolation()
+	camera.global_transform = first_person_pose()
+	camera.fov = 72.0
+	set_active(true)
+
 func begin_entry(from_pose: Transform3D, from_fov: float) -> void:
 	_entry_pose = from_pose
 	_entry_fov = from_fov
@@ -189,6 +211,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		if look_captured and phase == Phase.PLAYING and lesson_focus.pick_lesson() == 0:
 			computer_lesson.start()
 			get_viewport().set_input_as_handled()
+			return
+		if look_captured and phase == Phase.PLAYING and lesson_focus.pick_lesson() == 1:
+			get_viewport().set_input_as_handled()
+			start_sharing_board()
 			return
 		look_captured = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

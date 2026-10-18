@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://lessons/sharing_board/round1.gd" id="1_round"]
+[ext_resource type="PackedScene" path="res://lessons/sharing_board/winter_neighborhood.tscn" id="2_winter"]
+[ext_resource type="PackedScene" path="res://lessons/sharing_board/park_board.tscn" id="3_board"]
+[ext_resource type="Script" path="res://lessons/sharing_board/round1_board_ui.gd" id="4_ui"]
+
+[node name="SharingBoardRound1" type="Node3D"]
+script = ExtResource("1_round")
+
+[node name="WinterNeighborhood" parent="." instance=ExtResource("2_winter")]
+
+[node name="ParkBoard" parent="." instance=ExtResource("3_board")]
+position = Vector3(-9, 0, 66.6)
+rotation_degrees = Vector3(0, 90, 0)
+
+[node name="CameraViews" type="Node3D" parent="."]
+
+[node name="Intro" type="Marker3D" parent="CameraViews"]
+position = Vector3(2, 8, 40)
+rotation_degrees = Vector3(-13, 157, 0)
+
+[node name="Sort" type="Marker3D" parent="CameraViews"]
+position = Vector3(-1, 2.2, 65.5)
+rotation_degrees = Vector3(-6, 98, 0)
+
+[node name="Board" type="Marker3D" parent="CameraViews"]
+position = Vector3(-6.6, 1.35, 66.6)
+rotation_degrees = Vector3(2, 90, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="BoardUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_ui")
