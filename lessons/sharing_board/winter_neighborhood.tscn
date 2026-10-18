@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://lessons/sharing_board/winter_neighborhood.gd" id="1_winter"]
+[ext_resource type="PackedScene" path="res://lessons/sharing_board/snowman.tscn" id="3_snowman"]
+
+[sub_resource type="ProceduralSkyMaterial" id="winter_sky_material"]
+sky_top_color = Color(0.56, 0.68, 0.8, 1)
+sky_horizon_color = Color(0.87, 0.9, 0.94, 1)
+ground_bottom_color = Color(0.8, 0.84, 0.9, 1)
+ground_horizon_color = Color(0.87, 0.9, 0.94, 1)
+
+[sub_resource type="Sky" id="winter_sky"]
+sky_material = SubResource("winter_sky_material")
+
+[sub_resource type="Environment" id="winter_environment"]
+background_mode = 2
+sky = SubResource("winter_sky")
+ambient_light_source = 2
+ambient_light_color = Color(0.62, 0.7, 0.82, 1)
+ambient_light_energy = 0.6
+reflected_light_source = 1
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.86, 0.89, 0.94, 1)
+fog_density = 0.004
+adjustment_enabled = true
+adjustment_brightness = 0.95
+adjustment_saturation = 0.9
+
+[sub_resource type="ParticleProcessMaterial" id="snowfall_process"]
+emission_shape = 3
+emission_box_extents = Vector3(40, 1, 40)
+direction = Vector3(0, -1, 0)
+spread = 15.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.8
+gravity = Vector3(0, -0.15, 0)
+scale_min = 0.6
+scale_max = 1.4
+turbulence_enabled = true
+turbulence_noise_strength = 1.2
+turbulence_noise_scale = 5.0
+turbulence_influence_min = 0.04
+turbulence_influence_max = 0.12
+
+[sub_resource type="StandardMaterial3D" id="snowflake_material"]
+shading_mode = 0
+billboard_mode = 3
+albedo_color = Color(1, 1, 1, 1)
+
+[sub_resource type="QuadMesh" id="snowflake"]
+material = SubResource("snowflake_material")
+size = Vector2(0.09, 0.09)
+
+[node name="WinterNeighborhood" type="Node3D"]
+script = ExtResource("1_winter")
+winter_environment = SubResource("winter_environment")
+
+[node name="Snowfall" type="GPUParticles3D" parent="."]
+amount = 8000
+lifetime = 12.0
+preprocess = 12.0
+visibility_aabb = AABB(-45, -30, -45, 90, 35, 90)
+process_material = SubResource("snowfall_process")
+draw_pass_1 = SubResource("snowflake")
+
+[node name="Snowmen" type="Node3D" parent="."]
+
+[node name="ParkSnowman" parent="Snowmen" instance=ExtResource("3_snowman")]
+position = Vector3(-21, 0, 58.5)
+rotation_degrees = Vector3(0, 60, 0)
+
+[node name="BoardSnowman" parent="Snowmen" instance=ExtResource("3_snowman")]
+position = Vector3(-7.6, 0, 69.2)
+rotation_degrees = Vector3(0, 110, 0)
+
+[node name="YardSnowman" parent="Snowmen" instance=ExtResource("3_snowman")]
+position = Vector3(-9, 0, 48)
+rotation_degrees = Vector3(0, 80, 0)
