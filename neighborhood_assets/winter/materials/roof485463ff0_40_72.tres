@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://neighborhood_assets/winter/snow_surface.gdshader" id="1_pyq4j"]
+
+[resource]
+resource_name = "Winter_roof"
+render_priority = 0
+shader = ExtResource("1_pyq4j")
+shader_parameter/base_color = Color(0.28274512, 0.33039218, 0.38980392, 1)
+shader_parameter/snow_color = Color(0.6862745, 0.75686276, 0.8039216, 1)
+shader_parameter/snow_line = 0.4
+shader_parameter/snow_softness = null
+shader_parameter/snow_amount = 0.72
+shader_parameter/surface_roughness = null
+shader_parameter/patchiness = 0.45
+shader_parameter/ground_surface = 0.0

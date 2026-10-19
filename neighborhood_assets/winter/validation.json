@@ -1,0 +1,11 @@
+{
+	"checks": "Whole objects selectable as units; branches and snow stay with their objects; adjacent trees move independently; no runtime batches or intro behavior; sunset lighting; weather; hill collision",
+	"failures": 0,
+	"map_scripts": [
+		"res://neighborhood_assets/winter/winter_ambience.gd"
+	],
+	"mesh_parts": 11175,
+	"passed": true,
+	"whole_objects": 1876,
+	"winter_destinations": 3
+}

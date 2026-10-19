@@ -140,7 +140,7 @@ ELEMENTARY"
 font_size = 36
 
 [node name="window_pennant" type="Node3D" parent="Clues"]
-position = Vector3(12.15, 5.15, -29.2)
+position = Vector3(13.49, 3.98, -26.85)
 rotation_degrees = Vector3(0, -90, 0)
 
 [node name="Flag" type="MeshInstance3D" parent="Clues/window_pennant"]

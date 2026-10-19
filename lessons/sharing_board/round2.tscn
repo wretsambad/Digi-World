@@ -1,35 +1,10 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://lessons/sharing_board/round2.gd" id="1_round"]
 [ext_resource type="PackedScene" path="res://lessons/sharing_board/winter_neighborhood.tscn" id="2_winter"]
 [ext_resource type="PackedScene" path="res://lessons/sharing_board/park_board.tscn" id="3_board"]
 [ext_resource type="PackedScene" path="res://lessons/sharing_board/round2_photo_set.tscn" id="4_set"]
 [ext_resource type="Script" path="res://lessons/sharing_board/round2_ui.gd" id="5_ui"]
-
-[sub_resource type="ProceduralSkyMaterial" id="photo_sky_material"]
-sky_top_color = Color(0.5, 0.65, 0.8, 1)
-sky_horizon_color = Color(0.86, 0.9, 0.94, 1)
-ground_bottom_color = Color(0.8, 0.84, 0.9, 1)
-ground_horizon_color = Color(0.86, 0.9, 0.94, 1)
-
-[sub_resource type="Sky" id="photo_sky"]
-sky_material = SubResource("photo_sky_material")
-
-[sub_resource type="Environment" id="photo_environment"]
-background_mode = 2
-sky = SubResource("photo_sky")
-ambient_light_source = 2
-ambient_light_color = Color(0.62, 0.7, 0.82, 1)
-ambient_light_energy = 0.55
-reflected_light_source = 1
-tonemap_mode = 2
-fog_enabled = true
-fog_light_color = Color(0.86, 0.89, 0.94, 1)
-fog_density = 0.0015
-adjustment_enabled = true
-adjustment_brightness = 0.96
-adjustment_contrast = 1.2
-adjustment_saturation = 1.2
 
 [node name="SharingBoardRound2" type="Node3D"]
 script = ExtResource("1_round")
@@ -66,7 +41,6 @@ render_target_update_mode = 4
 [node name="PhotoCamera" type="Camera3D" parent="PhotoViewport"]
 position = Vector3(5.8, 1.5, -27.2)
 rotation_degrees = Vector3(7, -91, 0)
-environment = SubResource("photo_environment")
 current = true
 fov = 62.0
 
