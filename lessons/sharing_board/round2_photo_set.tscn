@@ -1,182 +1,41 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="PackedScene" path="res://lessons/sharing_board/snowman.tscn" id="1_snowman"]
-
-[sub_resource type="StandardMaterial3D" id="plaque"]
-albedo_color = Color(0.251, 0.494, 0.502, 1)
-
-[sub_resource type="StandardMaterial3D" id="paper"]
-albedo_color = Color(1, 0.97, 0.88, 1)
-roughness = 1.0
-
-[sub_resource type="StandardMaterial3D" id="wood"]
-albedo_color = Color(0.62, 0.42, 0.28, 1)
-roughness = 0.9
-
-[sub_resource type="StandardMaterial3D" id="backpack"]
-albedo_color = Color(0.2, 0.42, 0.72, 1)
-roughness = 0.8
-
-[sub_resource type="StandardMaterial3D" id="pennant"]
-albedo_color = Color(0.62, 0.17, 0.23, 1)
-
-[sub_resource type="StandardMaterial3D" id="sled"]
-albedo_color = Color(0.89, 0.33, 0.2, 1)
-
-[sub_resource type="StandardMaterial3D" id="snow"]
-albedo_color = Color(0.95, 0.97, 1, 1)
-roughness = 0.85
-
-[sub_resource type="BoxMesh" id="plaque_box"]
-material = SubResource("plaque")
-size = Vector3(0.52, 0.36, 0.04)
-
-[sub_resource type="BoxMesh" id="note_box"]
-material = SubResource("paper")
-size = Vector3(0.42, 0.34, 0.01)
-
-[sub_resource type="BoxMesh" id="sign_board"]
-material = SubResource("wood")
-size = Vector3(1.1, 0.42, 0.05)
-
-[sub_resource type="BoxMesh" id="sign_stake"]
-material = SubResource("wood")
-size = Vector3(0.07, 0.8, 0.07)
-
-[sub_resource type="BoxMesh" id="backpack_box"]
-material = SubResource("backpack")
-size = Vector3(0.46, 0.56, 0.26)
-
-[sub_resource type="BoxMesh" id="pennant_box"]
-material = SubResource("pennant")
-size = Vector3(1.05, 0.34, 0.02)
-
-[sub_resource type="BoxMesh" id="sled_box"]
-material = SubResource("sled")
-size = Vector3(0.55, 0.08, 1.2)
-
-[sub_resource type="SphereMesh" id="snowball"]
-material = SubResource("snow")
-radius = 0.16
-height = 0.32
-radial_segments = 10
-rings = 5
+[ext_resource type="Script" path="res://lessons/sharing_board/round2_photo_set.gd" id="1_set"]
+[ext_resource type="PackedScene" path="res://lessons/sharing_board/snowman.tscn" id="2_snowman"]
+[ext_resource type="PackedScene" path="res://neighborhood_assets/winter/objects/parked_sled_f25f4dce4c.tscn" id="3_sled"]
 
 [node name="PhotoSet" type="Node3D"]
+script = ExtResource("1_set")
 
 [node name="Clues" type="Node3D" parent="."]
 
 [node name="house_number" type="Node3D" parent="Clues"]
-position = Vector3(11.8, 2.05, -25.95)
+position = Vector3(11.8, 2.75, -25.95)
 rotation_degrees = Vector3(0, -90, 0)
-
-[node name="Plaque" type="MeshInstance3D" parent="Clues/house_number"]
-mesh = SubResource("plaque_box")
-
-[node name="Text" type="Label3D" parent="Clues/house_number"]
-position = Vector3(0, 0, 0.025)
-pixel_size = 0.004
-modulate = Color(1, 0.97, 0.88, 1)
-outline_size = 0
-shaded = true
-text = "42"
-font_size = 64
-
-[node name="away_note" type="Node3D" parent="Clues"]
-position = Vector3(11.84, 1.45, -26.9)
-rotation_degrees = Vector3(0, -90, 0)
-
-[node name="Paper" type="MeshInstance3D" parent="Clues/away_note"]
-rotation_degrees = Vector3(0, 0, 2)
-mesh = SubResource("note_box")
-
-[node name="Text" type="Label3D" parent="Clues/away_note"]
-position = Vector3(0, 0, 0.012)
-pixel_size = 0.0018
-modulate = Color(0.16, 0.17, 0.25, 1)
-outline_size = 0
-shaded = true
-text = "Gone skiing!
-Back Sunday"
-font_size = 40
+scale = Vector3(0.48, 0.48, 0.48)
 
 [node name="family_sign" type="Node3D" parent="Clues"]
-position = Vector3(10.3, 0, -29.7)
+position = Vector3(10.3, 0.82, -31.1)
 rotation_degrees = Vector3(0, -75, 0)
+scale = Vector3(0.62, 0.62, 0.62)
 
-[node name="Stake" type="MeshInstance3D" parent="Clues/family_sign"]
-position = Vector3(0, 0.4, -0.04)
-mesh = SubResource("sign_stake")
+[node name="delivery_label" type="Node3D" parent="Clues"]
+position = Vector3(10.45, 0.48, -24.15)
+rotation_degrees = Vector3(0, -98, 0)
+scale = Vector3(0.62, 0.62, 1)
 
-[node name="Board" type="MeshInstance3D" parent="Clues/family_sign"]
-position = Vector3(0, 0.82, 0)
-mesh = SubResource("sign_board")
-
-[node name="Text" type="Label3D" parent="Clues/family_sign"]
-position = Vector3(0, 0.82, 0.03)
-pixel_size = 0.0025
-modulate = Color(1, 0.97, 0.88, 1)
-outline_size = 0
-shaded = true
-text = "The Lee Family"
-font_size = 48
-
-[node name="school_backpack" type="Node3D" parent="Clues"]
-position = Vector3(10.1, 0.33, -25.35)
-rotation_degrees = Vector3(0, -105, 0)
-
-[node name="Bag" type="MeshInstance3D" parent="Clues/school_backpack"]
-position = Vector3(0, 0.28, 0)
-mesh = SubResource("backpack_box")
-
-[node name="Text" type="Label3D" parent="Clues/school_backpack"]
-position = Vector3(0, 0.3, 0.135)
-pixel_size = 0.0015
-modulate = Color(1, 0.86, 0.35, 1)
-outline_size = 0
-shaded = true
-text = "WILLOW
-ELEMENTARY"
-font_size = 36
-
-[node name="window_pennant" type="Node3D" parent="Clues"]
-position = Vector3(13.49, 3.98, -26.85)
-rotation_degrees = Vector3(0, -90, 0)
-
-[node name="Flag" type="MeshInstance3D" parent="Clues/window_pennant"]
-mesh = SubResource("pennant_box")
-
-[node name="Text" type="Label3D" parent="Clues/window_pennant"]
-position = Vector3(0, 0, 0.015)
-pixel_size = 0.0028
-modulate = Color(1, 0.97, 0.88, 1)
-outline_size = 0
-shaded = true
-text = "SAM'S ROOM"
-font_size = 48
+[node name="Decor" type="Node3D" parent="."]
 
 [node name="Decoys" type="Node3D" parent="."]
 
-[node name="snowman" parent="Decoys" instance=ExtResource("1_snowman")]
+[node name="snowman" parent="Decoys" instance=ExtResource("2_snowman")]
 position = Vector3(9.2, 0, -28.2)
-rotation_degrees = Vector3(0, -70, 0)
+rotation_degrees = Vector3(0, -78, 0)
 
-[node name="sled" type="MeshInstance3D" parent="Decoys"]
+[node name="sled" parent="Decoys" instance=ExtResource("3_sled")]
 position = Vector3(9.7, 0.06, -24.5)
-rotation_degrees = Vector3(0, 25, 0)
-mesh = SubResource("sled_box")
+scale = Vector3(0.72, 0.72, 0.72)
+rotation_degrees = Vector3(0, 18, 0)
 
 [node name="snowballs" type="Node3D" parent="Decoys"]
 position = Vector3(10.1, 0, -30.8)
-
-[node name="Ball1" type="MeshInstance3D" parent="Decoys/snowballs"]
-position = Vector3(0, 0.14, 0)
-mesh = SubResource("snowball")
-
-[node name="Ball2" type="MeshInstance3D" parent="Decoys/snowballs"]
-position = Vector3(0.3, 0.14, 0.1)
-mesh = SubResource("snowball")
-
-[node name="Ball3" type="MeshInstance3D" parent="Decoys/snowballs"]
-position = Vector3(0.15, 0.4, 0.05)
-mesh = SubResource("snowball")

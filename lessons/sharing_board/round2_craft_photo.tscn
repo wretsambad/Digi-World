@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Script" path="res://lessons/sharing_board/round2_extra_photo_set.gd" id="1"]
+[node name="PhotoSet" type="Node3D"]
+position = Vector3(-8,0,55)
+script = ExtResource("1")
+example = "craft"
+[node name="Clues" type="Node3D" parent="."]
+[node name="Decor" type="Node3D" parent="."]
+[node name="Decoys" type="Node3D" parent="."]

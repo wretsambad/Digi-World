@@ -1,9 +1,0 @@
-Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
-
-ERROR: Condition "!is_inside_tree()" is true. Returning: Rect2()
-   at: get_viewport_rect (scene/main/canvas_item.cpp:1231)
-   GDScript backtrace (most recent call first):
-       [0] resize (res://ui/LessonUI.gd:96)
-       [1] enter_game (res://scripts/ComputerSession.gd:135)
-       [2] _process (res://scripts/ComputerSession.gd:116)
-BEDROOM FLOW: PASS (0 failures; original entry, typing, viewport, finale, next lesson)
