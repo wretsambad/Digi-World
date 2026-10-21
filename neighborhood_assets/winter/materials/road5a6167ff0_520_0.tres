@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "Winter_road"
+cull_mode = 2
+albedo_color = Color(0.35215688, 0.38164705, 0.40415686, 1)
+roughness = 0.8

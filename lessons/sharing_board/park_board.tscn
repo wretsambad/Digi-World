@@ -1,0 +1,137 @@
+[gd_scene load_steps=20 format=3]
+
+[ext_resource type="Script" path="res://lessons/sharing_board/park_board.gd" id="1_board"]
+
+[sub_resource type="StandardMaterial3D" id="wood"]
+albedo_color = Color(0.43, 0.27, 0.15, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="dark"]
+albedo_color = Color(0.25, 0.15, 0.08, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="cork"]
+albedo_color = Color(0.69, 0.49, 0.29, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="trim"]
+albedo_color = Color(0.57, 0.38, 0.21, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="mesh_PostLeft"]
+material = SubResource("wood")
+size = Vector3(0.22, 3.54, 0.26)
+
+[sub_resource type="BoxMesh" id="mesh_PostRight"]
+material = SubResource("wood")
+size = Vector3(0.22, 3.54, 0.26)
+
+[sub_resource type="BoxMesh" id="mesh_Backing"]
+material = SubResource("dark")
+size = Vector3(4.34, 2.53, 0.14)
+
+[sub_resource type="BoxMesh" id="mesh_Cork"]
+material = SubResource("cork")
+size = Vector3(4.08, 2.3, 0.09)
+
+[sub_resource type="BoxMesh" id="mesh_RailTop"]
+material = SubResource("wood")
+size = Vector3(4.48, 0.18, 0.28)
+
+[sub_resource type="BoxMesh" id="mesh_RailBottom"]
+material = SubResource("wood")
+size = Vector3(4.48, 0.19, 0.28)
+
+[sub_resource type="BoxMesh" id="mesh_RailLeft"]
+material = SubResource("wood")
+size = Vector3(0.18, 2.43, 0.28)
+
+[sub_resource type="BoxMesh" id="mesh_RailRight"]
+material = SubResource("wood")
+size = Vector3(0.18, 2.43, 0.28)
+
+[sub_resource type="BoxMesh" id="mesh_TrimTop"]
+material = SubResource("trim")
+size = Vector3(4.12, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="mesh_TrimBottom"]
+material = SubResource("trim")
+size = Vector3(4.12, 0.045, 0.045)
+
+[sub_resource type="BoxMesh" id="mesh_TrimLeft"]
+material = SubResource("trim")
+size = Vector3(0.045, 2.3, 0.045)
+
+[sub_resource type="BoxMesh" id="mesh_TrimRight"]
+material = SubResource("trim")
+size = Vector3(0.045, 2.3, 0.045)
+
+[sub_resource type="BoxMesh" id="mesh_PostCapLeft"]
+material = SubResource("trim")
+size = Vector3(0.29, 0.12, 0.33)
+
+[sub_resource type="BoxMesh" id="mesh_PostCapRight"]
+material = SubResource("trim")
+size = Vector3(0.29, 0.12, 0.33)
+
+[node name="ParkBoard" type="Node3D"]
+script = ExtResource("1_board")
+
+[node name="PostLeft" type="MeshInstance3D" parent="."]
+position = Vector3(-2.06, 1.77, -0.1)
+mesh = SubResource("mesh_PostLeft")
+
+[node name="PostRight" type="MeshInstance3D" parent="."]
+position = Vector3(2.06, 1.77, -0.1)
+mesh = SubResource("mesh_PostRight")
+
+[node name="Backing" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.15, -0.12)
+mesh = SubResource("mesh_Backing")
+
+[node name="Cork" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.15, -0.018)
+mesh = SubResource("mesh_Cork")
+
+[node name="RailTop" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.4, 0.035)
+mesh = SubResource("mesh_RailTop")
+
+[node name="RailBottom" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.9, 0.035)
+mesh = SubResource("mesh_RailBottom")
+
+[node name="RailLeft" type="MeshInstance3D" parent="."]
+position = Vector3(-2.14, 2.15, 0.035)
+mesh = SubResource("mesh_RailLeft")
+
+[node name="RailRight" type="MeshInstance3D" parent="."]
+position = Vector3(2.14, 2.15, 0.035)
+mesh = SubResource("mesh_RailRight")
+
+[node name="TrimTop" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.29, 0.17)
+mesh = SubResource("mesh_TrimTop")
+
+[node name="TrimBottom" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.01, 0.17)
+mesh = SubResource("mesh_TrimBottom")
+
+[node name="TrimLeft" type="MeshInstance3D" parent="."]
+position = Vector3(-2.035, 2.15, 0.17)
+mesh = SubResource("mesh_TrimLeft")
+
+[node name="TrimRight" type="MeshInstance3D" parent="."]
+position = Vector3(2.035, 2.15, 0.17)
+mesh = SubResource("mesh_TrimRight")
+
+[node name="PostCapLeft" type="MeshInstance3D" parent="."]
+position = Vector3(-2.06, 3.57, -0.1)
+mesh = SubResource("mesh_PostCapLeft")
+
+[node name="PostCapRight" type="MeshInstance3D" parent="."]
+position = Vector3(2.06, 3.57, -0.1)
+mesh = SubResource("mesh_PostCapRight")
+
+[node name="Notes" type="Node3D" parent="."]
+position = Vector3(0, 0, 0.04)

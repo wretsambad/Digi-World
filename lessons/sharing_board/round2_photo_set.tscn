@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://lessons/sharing_board/round2_photo_set.gd" id="1_set"]
+[ext_resource type="PackedScene" path="res://lessons/sharing_board/snowman.tscn" id="2_snowman"]
+[ext_resource type="PackedScene" path="res://neighborhood_assets/winter/objects/parked_sled_f25f4dce4c.tscn" id="3_sled"]
+
+[node name="PhotoSet" type="Node3D"]
+script = ExtResource("1_set")
+
+[node name="Clues" type="Node3D" parent="."]
+
+[node name="house_number" type="Node3D" parent="Clues"]
+position = Vector3(11.8, 2.75, -25.95)
+rotation_degrees = Vector3(0, -90, 0)
+scale = Vector3(0.48, 0.48, 0.48)
+
+[node name="family_sign" type="Node3D" parent="Clues"]
+position = Vector3(10.3, 0.82, -31.1)
+rotation_degrees = Vector3(0, -75, 0)
+scale = Vector3(0.62, 0.62, 0.62)
+
+[node name="delivery_label" type="Node3D" parent="Clues"]
+position = Vector3(10.45, 0.48, -24.15)
+rotation_degrees = Vector3(0, -98, 0)
+scale = Vector3(0.62, 0.62, 1)
+
+[node name="Decor" type="Node3D" parent="."]
+
+[node name="Decoys" type="Node3D" parent="."]
+
+[node name="snowman" parent="Decoys" instance=ExtResource("2_snowman")]
+position = Vector3(9.2, 0, -28.2)
+rotation_degrees = Vector3(0, -78, 0)
+
+[node name="sled" parent="Decoys" instance=ExtResource("3_sled")]
+position = Vector3(9.7, 0.06, -24.5)
+scale = Vector3(0.72, 0.72, 0.72)
+rotation_degrees = Vector3(0, 18, 0)
+
+[node name="snowballs" type="Node3D" parent="Decoys"]
+position = Vector3(10.1, 0, -30.8)

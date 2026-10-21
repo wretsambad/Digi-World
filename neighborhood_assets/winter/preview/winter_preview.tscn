@@ -1,0 +1,18 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://neighborhood_assets/preview/neighborhood_filled_winter.tscn" id="1_jyq5t"]
+[ext_resource type="Script" path="res://neighborhood_assets/winter/preview/preview_camera.gd" id="2_5wuol"]
+
+[node name="WinterPreview" type="Node3D" unique_id=220064850]
+
+[node name="WinterNeighborhood" type="Node3D" parent="." unique_id=2075057916 instance=ExtResource("1_jyq5t")]
+metadata/scale_convention = "1 Godot unit is approximately 1 meter"
+metadata/purpose = "Standalone winter game environment"
+
+[node name="PreviewCamera" type="Camera3D" parent="." unique_id=693232414]
+transform = Transform3D(0.7911055, 0.3865975, -0.4740195, 0, 0.77494717, 0.632026, 0.61167973, -0.49999925, 0.613065, 16, 10, 74)
+current = true
+fov = 62.0
+near = 0.2
+far = 800.0
+script = ExtResource("2_5wuol")

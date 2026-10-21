@@ -49,11 +49,10 @@ func run():
 		check(ui.card.get_global_rect().position.y >= 36 and ui.card.get_global_rect().end.y <= ui.size.y, "Object card stays within the viewport")
 		check(not ui.card.get_global_rect().has_point(ui.size*.5), "Card does not cover aiming dot")
 		var card_start: Vector2 = ui.card.position
-		var anchor_start: Vector2 = ui.connector_from
 		game.camera.rotate_y(.025)
 		ui._process(.1)
 		if ui.focused_index == index:
-			check(ui.card.position.distance_to(card_start) > .2 or ui.connector_from.distance_to(anchor_start) > .2, "Card or its clamped connector follows projected object")
+			check(ui.card.position.is_equal_approx(card_start), "Card stays docked when the camera moves")
 		game.camera.look_at(target)
 		if index == 0:
 			var blocker := StaticBody3D.new()
@@ -80,6 +79,6 @@ func run():
 	ui._process(.1)
 	check(not ui.visible, "Releasing mouse hides aiming UI")
 	for failure in failures: push_error(failure)
-	if failures.is_empty(): print("FOCUS PASS: four exact ray targets, occlusion, steady typing, object anchoring, clear reticle, compact layout, and look-away dismissal.")
+	if failures.is_empty(): print("FOCUS PASS: four exact ray targets, occlusion, steady typing, docked cards, clear reticle, compact layout, and look-away dismissal.")
 	scene.free()
 	quit(0 if failures.is_empty() else 1)

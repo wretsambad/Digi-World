@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://lessons/sharing_board/winter_neighborhood.gd" id="1_winter"]
+[ext_resource type="PackedScene" path="res://neighborhood_assets/preview/neighborhood_filled_winter.tscn" id="2_map"]
+[ext_resource type="PackedScene" path="res://lessons/sharing_board/snowman.tscn" id="3_snowman"]
+
+[node name="WinterNeighborhood" type="Node3D"]
+script = ExtResource("1_winter")
+
+[node name="Neighborhood" parent="." instance=ExtResource("2_map")]
+
+[node name="Snowmen" type="Node3D" parent="."]
+
+[node name="ParkSnowman" parent="Snowmen" instance=ExtResource("3_snowman")]
+position = Vector3(-21, 0, 58.5)
+rotation_degrees = Vector3(0, 60, 0)
+
+[node name="BoardSnowman" parent="Snowmen" instance=ExtResource("3_snowman")]
+position = Vector3(-7.6, 0, 69.2)
+rotation_degrees = Vector3(0, 110, 0)
+
+[node name="YardSnowman" parent="Snowmen" instance=ExtResource("3_snowman")]
+position = Vector3(-9, 0, 48)
+rotation_degrees = Vector3(0, 80, 0)

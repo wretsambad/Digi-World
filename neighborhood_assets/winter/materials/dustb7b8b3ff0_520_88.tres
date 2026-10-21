@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://neighborhood_assets/winter/snow_surface.gdshader" id="1_6n0jy"]
+
+[resource]
+resource_name = "Winter_dust"
+render_priority = 0
+shader = ExtResource("1_6n0jy")
+shader_parameter/base_color = Color(0.717647, 0.7215686, 0.70196074, 1)
+shader_parameter/snow_color = Color(0.6862745, 0.75686276, 0.8039216, 1)
+shader_parameter/snow_line = 0.52
+shader_parameter/snow_softness = null
+shader_parameter/snow_amount = 0.88
+shader_parameter/surface_roughness = null
+shader_parameter/patchiness = 0.45
+shader_parameter/ground_surface = 0.0
