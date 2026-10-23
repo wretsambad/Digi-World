@@ -1,12 +1,10 @@
 extends Control
 ## First-person inspect UI. The crosshair ray selects real object geometry. When it
 ## lands on a lesson object the crosshair blooms and a plum card slides in, docked
-## at the lower left so the centre of the screen stays clear. A slim leader line
-## ties the card to the object.
+## at the lower left so the centre of the screen stays clear.
 const TOUR = preload("res://bedroom_assets/bedroom_tour.gd")
 const NAMES := ["Computer", "Sharing board", "Phone", "Backup robot"]
 const PICK_LAYER := 4
-const CLEAR_RADIUS := 64.0
 var game: Node3D
 var card: PanelContainer
 var heading: Label
@@ -16,8 +14,6 @@ var action_chip: PanelContainer
 var mouse_icon: Control
 var focused_index := -1
 var targets: Array[Dictionary] = []
-var connector_from := Vector2.ZERO
-var connector_to := Vector2.ZERO
 ## 0 = resting dot, 1 = fully bloomed inspect ring.
 var bloom := 0.0
 var _clock := 0.0
@@ -89,7 +85,7 @@ func build_picking_geometry() -> void:
 	for index in range(TOUR.STOPS.size()):
 		groups[index] = PackedVector3Array()
 		var node: Node3D = game.room.get_node(TOUR.STOPS[index].node)
-		targets.append({"node":node, "anchor":node.get_node("FocusAnchor"), "bounds":AABB(), "has_bounds":false})
+		targets.append({"node":node, "bounds":AABB(), "has_bounds":false})
 	var face_cache: Dictionary = {}
 	for mesh: MeshInstance3D in game.room.find_children("*", "MeshInstance3D", true, false):
 		if mesh.mesh == null or not mesh.is_visible_in_tree() or "SeatedCharacter" in str(mesh.get_path()): continue
@@ -169,7 +165,7 @@ func set_focus(index: int) -> void:
 	object_label.visible_characters = -1
 	game.text_writer.reveal(description, .1, 70.0)
 
-## Docks the card at the lower left and aims the leader line at the object.
+## Docks the card at the lower left.
 func position_card() -> void:
 	if focused_index < 0: return
 	var s := clampf(minf(size.x/1280.0, size.y/720.0), .62, 1.5)
@@ -180,15 +176,6 @@ func position_card() -> void:
 	card.size.x = width
 	var rest := Vector2(28*s, size.y-card.size.y-32*s)
 	card.position = rest+Vector2(slide, 0)
-	var center := size*.5
-	var anchor: Vector3 = targets[focused_index].anchor.global_position
-	var nearest: Vector2 = center if game.camera.is_position_behind(anchor) else game.camera.unproject_position(anchor)
-	# Never let the leader reach into the clear zone around the crosshair.
-	var away := nearest-center
-	if away.length() < CLEAR_RADIUS:
-		away = (rest-center).normalized()*CLEAR_RADIUS if away.length() < 1.0 else away.normalized()*CLEAR_RADIUS
-	connector_from = (center+away).clamp(Vector2.ZERO, size)
-	connector_to = rest+Vector2(width-36, 0)
 
 func _process(delta: float) -> void:
 	_clock += delta
@@ -210,10 +197,8 @@ func _process(delta: float) -> void:
 
 func _draw() -> void:
 	var center := size*.5
-	if focused_index >= 0 and card.visible:
-		_draw_leader(connector_from, connector_to, card.modulate.a)
 	# Resting: a small cream dot in a plum ring. Aiming at something: the ring
-	# blooms tangerine with four ticks and an inspect badge.
+	# blooms tangerine with four ticks.
 	var ring := lerpf(5.5, 17.0, bloom)
 	var breathe := 1.0+sin(_clock*4.0)*.04*bloom
 	draw_circle(center+Vector2(0,1.5), ring*breathe+3.0, Color(SunsetUI.SHADOW, .25), true, -1, true)
@@ -225,31 +210,3 @@ func _draw() -> void:
 			var a := spin+i*TAU/4.0
 			var dir := Vector2(cos(a), sin(a))
 			draw_line(center+dir*(ring*breathe+5.0), center+dir*(ring*breathe+5.0+7.0*bloom), Color(SunsetUI.BUTTER, bloom), 3.0, true)
-		_draw_eye_badge(center+Vector2(27, 27)*bloom, bloom)
-
-func _draw_leader(from: Vector2, to: Vector2, alpha: float) -> void:
-	var length := from.distance_to(to)
-	if length < 8.0: return
-	var dir := (to-from)/length
-	var t := 0.0
-	while t < length:
-		draw_line(from+dir*t, from+dir*minf(t+9.0, length), Color(SunsetUI.BUTTER, .85*alpha), 3.0, true)
-		t += 16.0
-	draw_circle(from, 5.0, Color(SunsetUI.BUTTER, alpha), true, -1, true)
-	draw_circle(from, 2.2, Color(SunsetUI.PLUM_DEEP, alpha), true, -1, true)
-
-func _draw_eye_badge(at: Vector2, amount: float) -> void:
-	var r := 13.0*amount
-	draw_circle(at+Vector2(0,2), r+2.0, Color(SunsetUI.SHADOW, .4*amount), true, -1, true)
-	draw_circle(at, r, SunsetUI.PLUM, true, -1, true)
-	draw_arc(at, r, 0, TAU, 28, SunsetUI.BUTTER, 2.0, true)
-	var w := r*.62
-	var lid := PackedVector2Array()
-	for i in 13:
-		var x := lerpf(-w, w, i/12.0)
-		lid.append(at+Vector2(x, -sqrt(maxf(0.0, 1.0-pow(x/w,2)))*r*.36))
-	for i in 13:
-		var x := lerpf(w, -w, i/12.0)
-		lid.append(at+Vector2(x, sqrt(maxf(0.0, 1.0-pow(x/w,2)))*r*.36))
-	draw_colored_polygon(lid, SunsetUI.CREAM)
-	draw_circle(at, r*.2, SunsetUI.PLUM_DEEP, true, -1, true)

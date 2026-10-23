@@ -1,4 +1,59 @@
-# Godot 4+ specific ignores
+# Godot local cache and generated Android build files
 .godot/
 /android/
-/work/runtime/
+export_credentials.cfg
+
+# Local scratch work, recovery backups, recordings, and AI review artifacts
+/work/
+.impeccable/
+
+# Generated scene captures and concept artwork
+/bedroom_assets/preview/*.png
+/bedroom_assets/preview/*.png.import
+/treehouse_assets/preview/*.png
+/treehouse_assets/preview/*.png.import
+/protect_base_assets/preview/*.png
+/protect_base_assets/preview/*.png.import
+/neighborhood_assets/winter/preview/*.png
+/neighborhood_assets/winter/preview/*.png.import
+/treehouse_assets/concepts/
+/character_assets/preview/character-animations.gif
+
+# Generated game exports
+/build/
+/dist/
+/export/
+/exports/
+
+# Logs, temporary files, and editor/Blender backups
+*.log
+*.tmp
+*.temp
+*.bak
+*~
+*.blend[0-9]*
+
+# Local tool dependencies and Python caches
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local environment settings and signing credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.key
+*.pem
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini

@@ -1,108 +1,107 @@
 [gd_scene format=3 uid="uid://dcu8hg38b3qpq"]
 
-[ext_resource type="Script" path="res://scripts/StaticSceneryBatch.gd" id="static_scenery_batch"]
-
-[ext_resource type="Script" path="res://bedroom_assets/bedroom_arrival.gd" id="1_c5ypq"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/house_learning_home.glb" id="2_p22fm"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/bedroom_window_sash.glb" id="3_4dokm"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/floor_plank.glb" id="4_0pyg1"]
-[ext_resource type="Environment" path="res://bedroom_assets/neighborhood_environment.tres" id="4_tfi6f"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/door_leaf.glb" id="5_vvmsw"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/curtain.glb" id="6_pvshh"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/desk.glb" id="7_juyit"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/office_chair.glb" id="8_pjc5o"]
+[ext_resource type="Script" uid="uid://clcpd8c57xkgc" path="res://bedroom_assets/bedroom_arrival.gd" id="1_c5ypq"]
+[ext_resource type="PackedScene" uid="uid://bd2nkl368rlns" path="res://neighborhood_assets/expanded_models/house_learning_home.glb" id="2_p22fm"]
+[ext_resource type="PackedScene" uid="uid://sr6ot7g7hlwk" path="res://neighborhood_assets/expanded_models/bedroom_window_sash.glb" id="3_4dokm"]
+[ext_resource type="PackedScene" uid="uid://dxkui0f87ucye" path="res://bedroom_assets/models/floor_plank.glb" id="4_0pyg1"]
+[ext_resource type="Environment" uid="uid://ywbnkjvqaakm" path="res://bedroom_assets/neighborhood_environment.tres" id="4_tfi6f"]
+[ext_resource type="PackedScene" uid="uid://bwh7gkf2wddtb" path="res://bedroom_assets/models/door_leaf.glb" id="5_vvmsw"]
+[ext_resource type="PackedScene" uid="uid://du5ya2uvbp4it" path="res://bedroom_assets/models/curtain.glb" id="6_pvshh"]
+[ext_resource type="PackedScene" uid="uid://c3thfbae2qm1j" path="res://bedroom_assets/models/desk.glb" id="7_juyit"]
+[ext_resource type="PackedScene" uid="uid://c1lpui6sw2txm" path="res://bedroom_assets/models/office_chair.glb" id="8_pjc5o"]
 [ext_resource type="PackedScene" path="res://character_assets/digi_character.tscn" id="9_37y5r"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/hoodie.glb" id="10_o5ju1"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/keyboard.glb" id="11_f62ka"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/mouse.glb" id="12_r3gr7"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/computer_tower.glb" id="13_hu0ab"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/speaker.glb" id="14_kwmvh"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/desk_lamp.glb" id="15_yfde3"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/headphones.glb" id="16_ymx1t"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/open_notebook.glb" id="17_1tskr"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/pencil_cup.glb" id="18_g28ej"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/mug.glb" id="19_7cq10"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/water_bottle.glb" id="20_wgbuv"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/cable_loop.glb" id="21_73gvt"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/power_strip.glb" id="22_7ce5k"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/backpack.glb" id="23_201fe"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/wall_shelf.glb" id="24_cc20h"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/book.glb" id="25_gn2x4"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/book_sage.glb" id="26_kmcil"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/book_navy.glb" id="27_7qanb"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/plant.glb" id="28_lhshe"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/game_controller.glb" id="29_6r085"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/computer_monitor.glb" id="30_7pgc6"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/cubby_shelf.glb" id="31_6xsm6"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/storage_bin.glb" id="32_hjlun"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/notebook.glb" id="33_70ych"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/corkboard.glb" id="34_t3qex"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/photo_card.glb" id="35_3o88f"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/sticky_note.glb" id="36_8w4xn"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/guitar.glb" id="37_xqxck"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/skateboard.glb" id="38_bnnl5"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/toy_robot.glb" id="39_bs2h7"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/backup_drive.glb" id="40_mm0ag"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/bed_frame.glb" id="41_f873a"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/mattress.glb" id="42_66qvi"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/duvet.glb" id="43_xrm1i"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/pillow.glb" id="44_2uqvq"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/accent_pillow.glb" id="45_yowxi"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/throw_blanket.glb" id="46_s0082"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/bedside_table.glb" id="47_qjx3l"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/wardrobe.glb" id="48_db81y"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/laundry_basket.glb" id="49_a1vih"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/sneaker.glb" id="50_1dqhu"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/basketball.glb" id="51_4iqlt"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/phone.glb" id="52_tc84g"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/rug.glb" id="53_egw28"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/poster_orbit.glb" id="54_keywl"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/poster_sound.glb" id="55_c0pp3"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/fairy_lights.glb" id="56_qvvc0"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/poster_make.glb" id="57_1g8bi"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/wall_clock.glb" id="58_bha26"]
-[ext_resource type="PackedScene" path="res://bedroom_assets/models/pendant.glb" id="59_l66ok"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/road_straight_large.glb" id="60_ji7rs"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/house_buttercup.glb" id="61_gl6tr"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/house_peach.glb" id="62_vrn8r"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/house_lavender.glb" id="63_4c7mm"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/house_willow.glb" id="64_5x876"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb" id="65_ros7n"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/curb_large.glb" id="66_c1x3y"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/driveway_apron_large.glb" id="67_dnfe5"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/driveway_large.glb" id="68_o4ly7"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/car_sunshine.glb" id="69_8f756"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/garden_path_large.glb" id="70_iqyxg"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/mailbox.glb" id="71_wy7y5"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/flowerbed.glb" id="72_g5jbu"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/flowerpot.glb" id="73_lydeh"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/fence_picket.glb" id="74_r80dk"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/hedge_straight.glb" id="75_bao3c"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/garden_gate.glb" id="76_vv4rr"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/tree_oak_large.glb" id="77_5hr7x"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/tree_poplar_large.glb" id="78_el1ed"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/shrub_round.glb" id="79_run24"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/bench.glb" id="80_u13or"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/birdbath.glb" id="81_xojta"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/recycling_bin.glb" id="82_hg6r4"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/litter_bin.glb" id="83_xqd5b"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/car_lilac.glb" id="84_ebs5m"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/tree_maple_large.glb" id="85_br8o4"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/bicycle_rack.glb" id="86_7xuqn"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/bicycle.glb" id="87_yi0e3"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/car_cream.glb" id="88_xwdte"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/car_ocean.glb" id="89_2wshp"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/car_sage.glb" id="90_ovd4x"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/streetlamp.glb" id="91_a0pbl"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/hydrant.glb" id="92_sphar"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/street_name_sign.glb" id="93_7rwrb"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/manhole_cover.glb" id="94_vtx0e"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/storm_drain.glb" id="95_py4kj"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/landscape_mound.glb" id="96_jux0f"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/expanded_models/house_cedar.glb" id="97_lxi8r"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/stepping_stone.glb" id="98_jbr5t"]
-[ext_resource type="PackedScene" path="res://neighborhood_assets/models/lawn_tile.glb" id="99_t4p66"]
+[ext_resource type="PackedScene" uid="uid://ogqvyfco7ukk" path="res://bedroom_assets/models/hoodie.glb" id="10_o5ju1"]
+[ext_resource type="PackedScene" uid="uid://c41euyyk7w0sj" path="res://bedroom_assets/models/keyboard.glb" id="11_f62ka"]
+[ext_resource type="PackedScene" uid="uid://cih5it2q4bmqn" path="res://bedroom_assets/models/mouse.glb" id="12_r3gr7"]
+[ext_resource type="PackedScene" uid="uid://c6356sdhhum1c" path="res://bedroom_assets/models/computer_tower.glb" id="13_hu0ab"]
+[ext_resource type="PackedScene" uid="uid://bnkh66ms3av4v" path="res://bedroom_assets/models/speaker.glb" id="14_kwmvh"]
+[ext_resource type="PackedScene" uid="uid://cj5kff4jqidd0" path="res://bedroom_assets/models/desk_lamp.glb" id="15_yfde3"]
+[ext_resource type="PackedScene" uid="uid://cv5cml4kvo2ne" path="res://bedroom_assets/models/headphones.glb" id="16_ymx1t"]
+[ext_resource type="PackedScene" uid="uid://cdgb5xkm7321x" path="res://bedroom_assets/models/open_notebook.glb" id="17_1tskr"]
+[ext_resource type="PackedScene" uid="uid://bq72hm1juoxb5" path="res://bedroom_assets/models/pencil_cup.glb" id="18_g28ej"]
+[ext_resource type="PackedScene" uid="uid://bcoiqd274vlqu" path="res://bedroom_assets/models/mug.glb" id="19_7cq10"]
+[ext_resource type="PackedScene" uid="uid://b7ixhgfel3rr5" path="res://bedroom_assets/models/water_bottle.glb" id="20_wgbuv"]
+[ext_resource type="PackedScene" uid="uid://xmvulss2j26g" path="res://bedroom_assets/models/cable_loop.glb" id="21_73gvt"]
+[ext_resource type="PackedScene" uid="uid://dqqcrxsnf5wbr" path="res://bedroom_assets/models/power_strip.glb" id="22_7ce5k"]
+[ext_resource type="PackedScene" uid="uid://dmhd21e8j23f8" path="res://bedroom_assets/models/backpack.glb" id="23_201fe"]
+[ext_resource type="PackedScene" uid="uid://boadeaoem6p6u" path="res://bedroom_assets/models/wall_shelf.glb" id="24_cc20h"]
+[ext_resource type="PackedScene" uid="uid://dg7ut1sjcq08" path="res://bedroom_assets/models/book.glb" id="25_gn2x4"]
+[ext_resource type="PackedScene" uid="uid://consg4f3lisa0" path="res://bedroom_assets/models/book_sage.glb" id="26_kmcil"]
+[ext_resource type="PackedScene" uid="uid://bkdgmasxdnlb7" path="res://bedroom_assets/models/book_navy.glb" id="27_7qanb"]
+[ext_resource type="PackedScene" uid="uid://bffwaib8p5l63" path="res://bedroom_assets/models/plant.glb" id="28_lhshe"]
+[ext_resource type="PackedScene" uid="uid://cwq5pqj7t3oja" path="res://bedroom_assets/models/game_controller.glb" id="29_6r085"]
+[ext_resource type="PackedScene" uid="uid://rypa7fsocrhs" path="res://bedroom_assets/models/computer_monitor.glb" id="30_7pgc6"]
+[ext_resource type="PackedScene" uid="uid://de4ddkly4q1sc" path="res://bedroom_assets/models/cubby_shelf.glb" id="31_6xsm6"]
+[ext_resource type="PackedScene" uid="uid://d5p1b726bviy" path="res://bedroom_assets/models/storage_bin.glb" id="32_hjlun"]
+[ext_resource type="PackedScene" uid="uid://bpe5fc558httj" path="res://bedroom_assets/models/notebook.glb" id="33_70ych"]
+[ext_resource type="PackedScene" uid="uid://5r80v28teccy" path="res://bedroom_assets/models/corkboard.glb" id="34_t3qex"]
+[ext_resource type="PackedScene" uid="uid://cmcdv7i76cvlm" path="res://bedroom_assets/models/photo_card.glb" id="35_3o88f"]
+[ext_resource type="PackedScene" uid="uid://dnvd0muehttmi" path="res://bedroom_assets/models/sticky_note.glb" id="36_8w4xn"]
+[ext_resource type="PackedScene" uid="uid://bwx61nik6ti5a" path="res://bedroom_assets/models/guitar.glb" id="37_xqxck"]
+[ext_resource type="PackedScene" uid="uid://mfn2jj0w85a5" path="res://bedroom_assets/models/skateboard.glb" id="38_bnnl5"]
+[ext_resource type="PackedScene" uid="uid://48etf2rwv4r8" path="res://bedroom_assets/models/toy_robot.glb" id="39_bs2h7"]
+[ext_resource type="PackedScene" uid="uid://b5gow6t0sivc5" path="res://bedroom_assets/models/backup_drive.glb" id="40_mm0ag"]
+[ext_resource type="PackedScene" uid="uid://blvo1kltisdg" path="res://bedroom_assets/models/bed_frame.glb" id="41_f873a"]
+[ext_resource type="PackedScene" uid="uid://plungwsqkgl8" path="res://bedroom_assets/models/mattress.glb" id="42_66qvi"]
+[ext_resource type="PackedScene" uid="uid://ctbtr84thkqcp" path="res://bedroom_assets/models/duvet.glb" id="43_xrm1i"]
+[ext_resource type="PackedScene" uid="uid://4ddiyxwj0315" path="res://bedroom_assets/models/pillow.glb" id="44_2uqvq"]
+[ext_resource type="PackedScene" uid="uid://brfjspi0ll1xr" path="res://bedroom_assets/models/accent_pillow.glb" id="45_yowxi"]
+[ext_resource type="PackedScene" uid="uid://nuirlwx13bgy" path="res://bedroom_assets/models/throw_blanket.glb" id="46_s0082"]
+[ext_resource type="PackedScene" uid="uid://dhj7fywq8nxw" path="res://bedroom_assets/models/bedside_table.glb" id="47_qjx3l"]
+[ext_resource type="PackedScene" uid="uid://dju1g3y8su24k" path="res://bedroom_assets/models/wardrobe.glb" id="48_db81y"]
+[ext_resource type="PackedScene" uid="uid://bkf084fwxwruq" path="res://bedroom_assets/models/laundry_basket.glb" id="49_a1vih"]
+[ext_resource type="PackedScene" uid="uid://brmc1rmsql0og" path="res://bedroom_assets/models/sneaker.glb" id="50_1dqhu"]
+[ext_resource type="PackedScene" uid="uid://jiawn5lu5o4t" path="res://bedroom_assets/models/basketball.glb" id="51_4iqlt"]
+[ext_resource type="PackedScene" uid="uid://c8ini1wsyuf06" path="res://bedroom_assets/models/phone.glb" id="52_tc84g"]
+[ext_resource type="PackedScene" uid="uid://bosv4o8vkbuip" path="res://bedroom_assets/models/rug.glb" id="53_egw28"]
+[ext_resource type="PackedScene" uid="uid://bax7asywqlkfm" path="res://bedroom_assets/models/poster_orbit.glb" id="54_keywl"]
+[ext_resource type="PackedScene" uid="uid://c4bj8eifhet0k" path="res://bedroom_assets/models/poster_sound.glb" id="55_c0pp3"]
+[ext_resource type="PackedScene" uid="uid://bkvx55bvspdkq" path="res://bedroom_assets/models/fairy_lights.glb" id="56_qvvc0"]
+[ext_resource type="PackedScene" uid="uid://bclcweuycnqtk" path="res://bedroom_assets/models/poster_make.glb" id="57_1g8bi"]
+[ext_resource type="PackedScene" uid="uid://bdk7a60qeilv2" path="res://bedroom_assets/models/wall_clock.glb" id="58_bha26"]
+[ext_resource type="PackedScene" uid="uid://c4xfroclyvdm6" path="res://bedroom_assets/models/pendant.glb" id="59_l66ok"]
+[ext_resource type="PackedScene" uid="uid://ynchy3ii2art" path="res://neighborhood_assets/expanded_models/road_straight_large.glb" id="60_ji7rs"]
+[ext_resource type="PackedScene" uid="uid://diho2e1eifytr" path="res://neighborhood_assets/expanded_models/house_buttercup.glb" id="61_gl6tr"]
+[ext_resource type="PackedScene" uid="uid://b2likh56gv6ex" path="res://neighborhood_assets/expanded_models/house_peach.glb" id="62_vrn8r"]
+[ext_resource type="PackedScene" uid="uid://gr3j2ncoa8tn" path="res://neighborhood_assets/expanded_models/house_lavender.glb" id="63_4c7mm"]
+[ext_resource type="PackedScene" uid="uid://c3mto3qfmoiuj" path="res://neighborhood_assets/expanded_models/house_willow.glb" id="64_5x876"]
+[ext_resource type="PackedScene" uid="uid://biwyxfkf4uraa" path="res://neighborhood_assets/expanded_models/sidewalk_slab_large.glb" id="65_ros7n"]
+[ext_resource type="PackedScene" uid="uid://fbon8tnevnyv" path="res://neighborhood_assets/expanded_models/curb_large.glb" id="66_c1x3y"]
+[ext_resource type="PackedScene" uid="uid://bo3qsxnnq3jbf" path="res://neighborhood_assets/expanded_models/driveway_apron_large.glb" id="67_dnfe5"]
+[ext_resource type="PackedScene" uid="uid://dbm7cw4mf600" path="res://neighborhood_assets/expanded_models/driveway_large.glb" id="68_o4ly7"]
+[ext_resource type="PackedScene" uid="uid://jepbivns5jhv" path="res://neighborhood_assets/expanded_models/car_sunshine.glb" id="69_8f756"]
+[ext_resource type="PackedScene" uid="uid://cbjuwfra4ggnp" path="res://neighborhood_assets/expanded_models/garden_path_large.glb" id="70_iqyxg"]
+[ext_resource type="PackedScene" uid="uid://8glwu22bdf04" path="res://neighborhood_assets/models/mailbox.glb" id="71_wy7y5"]
+[ext_resource type="PackedScene" uid="uid://s6wx2ysrd3kd" path="res://neighborhood_assets/models/flowerbed.glb" id="72_g5jbu"]
+[ext_resource type="PackedScene" uid="uid://vfbgij0md6nl" path="res://neighborhood_assets/models/flowerpot.glb" id="73_lydeh"]
+[ext_resource type="PackedScene" uid="uid://civt7s444mtnk" path="res://neighborhood_assets/models/fence_picket.glb" id="74_r80dk"]
+[ext_resource type="PackedScene" uid="uid://bpmrb1qxuossb" path="res://neighborhood_assets/models/hedge_straight.glb" id="75_bao3c"]
+[ext_resource type="PackedScene" uid="uid://dswnoe40fx5x2" path="res://neighborhood_assets/models/garden_gate.glb" id="76_vv4rr"]
+[ext_resource type="PackedScene" uid="uid://c1slli8vfg7af" path="res://neighborhood_assets/expanded_models/tree_oak_large.glb" id="77_5hr7x"]
+[ext_resource type="PackedScene" uid="uid://bttm5r6cwkl0l" path="res://neighborhood_assets/expanded_models/tree_poplar_large.glb" id="78_el1ed"]
+[ext_resource type="PackedScene" uid="uid://qg38d64w62vh" path="res://neighborhood_assets/models/shrub_round.glb" id="79_run24"]
+[ext_resource type="PackedScene" uid="uid://cuhfl8ptgd3g" path="res://neighborhood_assets/models/bench.glb" id="80_u13or"]
+[ext_resource type="PackedScene" uid="uid://c2oe1mhve64v7" path="res://neighborhood_assets/models/birdbath.glb" id="81_xojta"]
+[ext_resource type="PackedScene" uid="uid://dp3740u1pfkgq" path="res://neighborhood_assets/models/recycling_bin.glb" id="82_hg6r4"]
+[ext_resource type="PackedScene" uid="uid://fue5ymoj0j4j" path="res://neighborhood_assets/models/litter_bin.glb" id="83_xqd5b"]
+[ext_resource type="PackedScene" uid="uid://by786j5w721kf" path="res://neighborhood_assets/expanded_models/car_lilac.glb" id="84_ebs5m"]
+[ext_resource type="PackedScene" uid="uid://l4s5d0vux367" path="res://neighborhood_assets/expanded_models/tree_maple_large.glb" id="85_br8o4"]
+[ext_resource type="PackedScene" uid="uid://cqjgvxvi2ghiy" path="res://neighborhood_assets/models/bicycle_rack.glb" id="86_7xuqn"]
+[ext_resource type="PackedScene" uid="uid://crv26mf0puv53" path="res://neighborhood_assets/models/bicycle.glb" id="87_yi0e3"]
+[ext_resource type="PackedScene" uid="uid://c8te5su3wv5df" path="res://neighborhood_assets/expanded_models/car_cream.glb" id="88_xwdte"]
+[ext_resource type="PackedScene" uid="uid://d1rih2ty8uuhr" path="res://neighborhood_assets/expanded_models/car_ocean.glb" id="89_2wshp"]
+[ext_resource type="PackedScene" uid="uid://bobh6revac8qu" path="res://neighborhood_assets/expanded_models/car_sage.glb" id="90_ovd4x"]
+[ext_resource type="PackedScene" uid="uid://lo867w64v344" path="res://neighborhood_assets/models/streetlamp.glb" id="91_a0pbl"]
+[ext_resource type="PackedScene" uid="uid://davtieb4635x0" path="res://neighborhood_assets/models/hydrant.glb" id="92_sphar"]
+[ext_resource type="PackedScene" uid="uid://b01ljmg6ymnvo" path="res://neighborhood_assets/models/street_name_sign.glb" id="93_7rwrb"]
+[ext_resource type="PackedScene" uid="uid://eehckl8f0trh" path="res://neighborhood_assets/models/manhole_cover.glb" id="94_vtx0e"]
+[ext_resource type="PackedScene" uid="uid://cu0ylq8gh0oam" path="res://neighborhood_assets/models/storm_drain.glb" id="95_py4kj"]
+[ext_resource type="PackedScene" uid="uid://csfmt2bn2yo0q" path="res://neighborhood_assets/expanded_models/landscape_mound.glb" id="96_jux0f"]
+[ext_resource type="PackedScene" uid="uid://d248y677601lo" path="res://neighborhood_assets/expanded_models/house_cedar.glb" id="97_lxi8r"]
+[ext_resource type="PackedScene" uid="uid://drslow14q6p6c" path="res://neighborhood_assets/models/stepping_stone.glb" id="98_jbr5t"]
+[ext_resource type="PackedScene" uid="uid://dywbx8meken3e" path="res://neighborhood_assets/models/lawn_tile.glb" id="99_t4p66"]
 [ext_resource type="PackedScene" path="res://bedroom_assets/bedroom_gameplay.tscn" id="bedroom_gameplay"]
+[ext_resource type="Script" uid="uid://do036cr28eu3" path="res://scripts/StaticSceneryBatch.gd" id="static_scenery_batch"]
 
 [sub_resource type="StandardMaterial3D" id="rod_mat"]
 albedo_color = Color(0.19, 0.24, 0.27, 1)
@@ -934,6 +933,9 @@ metadata/category = "Roads"
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -16.7, 0, -3)
 metadata/category = "Houses"
 
+[node name="house_buttercup_Mesh" parent="NearbyNeighborhood/House_West_03" index="0" unique_id=1991024624]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.45056129, 0, 0)
+
 [node name="House_West_04" parent="NearbyNeighborhood" unique_id=1316354278 instance=ExtResource("62_vrn8r")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -17.6, 0, -27)
 metadata/category = "Houses"
@@ -941,6 +943,9 @@ metadata/category = "Houses"
 [node name="House_West_05" parent="NearbyNeighborhood" unique_id=767555949 instance=ExtResource("63_4c7mm")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -17, 0, -51)
 metadata/category = "Houses"
+
+[node name="house_lavender_Mesh" parent="NearbyNeighborhood/House_West_05" index="0" unique_id=28772117]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.4710045, 0, 0)
 
 [node name="House_East_03" parent="NearbyNeighborhood" unique_id=1938080351 instance=ExtResource("63_4c7mm")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.7, 0, -3)
@@ -1202,9 +1207,15 @@ metadata/category = "Driveways"
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.65, 0, -19)
 metadata/category = "Driveways"
 
+[node name="driveway_apron_large_Mesh" parent="NearbyNeighborhood/Driveways_driveway_apron_large_166" index="0" unique_id=884697379]
+transform = Transform3D(1.4687998, 0, 0, 0, 1, 0, 0, 0, 1.1105775, -0.93232346, 0, 0.10119009)
+
 [node name="Driveways_driveway_apron_large_167" parent="NearbyNeighborhood" unique_id=1800612395 instance=ExtResource("67_dnfe5")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -4.65, 0, -43)
 metadata/category = "Driveways"
+
+[node name="driveway_apron_large_Mesh" parent="NearbyNeighborhood/Driveways_driveway_apron_large_167" index="0" unique_id=884697379]
+transform = Transform3D(1.5190732, 0, 0, 0, 1, 0, 0, 0, 1.0598689, 0, 0, 0.09760523)
 
 [node name="Sidewalks_sidewalk_slab_large_280" parent="NearbyNeighborhood" unique_id=1026002432 instance=ExtResource("65_ros7n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, -63.4)
@@ -1370,9 +1381,15 @@ metadata/category = "Sidewalks"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, -15.4)
 metadata/category = "Sidewalks"
 
+[node name="sidewalk_slab_large_Mesh" parent="NearbyNeighborhood/Sidewalks_sidewalk_slab_large_320" index="0" unique_id=111696519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.857343, 0, 0, 0)
+
 [node name="Sidewalks_curb_large_321" parent="NearbyNeighborhood" unique_id=1707722580 instance=ExtResource("66_c1x3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, -15.4)
 metadata/category = "Sidewalks"
+
+[node name="curb_large_Mesh" parent="NearbyNeighborhood/Sidewalks_curb_large_321" index="0" unique_id=1035461855]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8469937, 0, 0, 0)
 
 [node name="Sidewalks_sidewalk_slab_large_322" parent="NearbyNeighborhood" unique_id=950009748 instance=ExtResource("65_ros7n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, -13.4)
@@ -1782,9 +1799,15 @@ metadata/category = "StreetFurniture"
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -10.3, 0.04, -5.35)
 metadata/category = "Gardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_flowerbed_561" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.16807365)
+
 [node name="Gardens_flowerpot_562" parent="NearbyNeighborhood" unique_id=1349617709 instance=ExtResource("73_lydeh")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -11.3, 0.12, -1.1)
 metadata/category = "Gardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_flowerpot_562" index="1" unique_id=335135868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5435066)
 
 [node name="Fences_fence_picket_563" parent="NearbyNeighborhood" unique_id=1425071860 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.75, 0.02, -9.4)
@@ -1797,6 +1820,9 @@ metadata/category = "Fences"
 [node name="Fences_fence_picket_565" parent="NearbyNeighborhood" unique_id=1868724374 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.75, 0.02, -4.6)
 metadata/category = "Fences"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fences_fence_picket_565" index="1" unique_id=272750654]
+transform = Transform3D(0.712371, 0, 0, 0, 1, 0, 0, 0, 1, 0.029692173, 0, 0)
 
 [node name="Fences_fence_picket_566" parent="NearbyNeighborhood" unique_id=682176713 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.75, 0.02, -1.3)
@@ -1842,13 +1868,22 @@ metadata/category = "GardenTrees"
 transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, -12, 0.03, -7.8)
 metadata/category = "Gardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_shrub_round_576" index="1" unique_id=841141673]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, -0.770486, 0, 0.21556628)
+
 [node name="Gardens_shrub_round_577" parent="NearbyNeighborhood" unique_id=1366540636 instance=ExtResource("79_run24")]
 transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, -12, 0.03, 0.6)
 metadata/category = "Gardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_shrub_round_577" index="1" unique_id=841141673]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.7600492, 0, 0)
+
 [node name="Patios_bench_578" parent="NearbyNeighborhood" unique_id=593790798 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -21, 0.04, 0.4)
 metadata/category = "Patios"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Patios_bench_578" index="1" unique_id=862072169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19234942, 0, 0.19305849)
 
 [node name="Patios_birdbath_579" parent="NearbyNeighborhood" unique_id=1798465676 instance=ExtResource("81_xojta")]
 transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -21, 0.04, -4.8)
@@ -1861,6 +1896,9 @@ metadata/category = "StreetFurniture"
 [node name="StreetFurniture_litter_bin_581" parent="NearbyNeighborhood" unique_id=2136409318 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -17, 0.04, 5.4)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_litter_bin_581" index="1" unique_id=1133861211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7331307)
 
 [node name="Driveways_driveway_large_582" parent="NearbyNeighborhood" unique_id=906085193 instance=ExtResource("68_o4ly7")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -9.6, 0.07, -19)
@@ -1897,6 +1935,9 @@ metadata/category = "Fences"
 [node name="Fences_fence_picket_590" parent="NearbyNeighborhood" unique_id=1142138884 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.75, 0.02, -28.6)
 metadata/category = "Fences"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fences_fence_picket_590" index="1" unique_id=272750654]
+transform = Transform3D(0.7364607, 0, 0, 0, 1, 0, 0, 0, 1, 0.02309513, 0, 0)
 
 [node name="Fences_fence_picket_591" parent="NearbyNeighborhood" unique_id=2111163539 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.75, 0.02, -25.3)
@@ -1950,25 +1991,43 @@ metadata/category = "Gardens"
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -12.6, 0.1, -21.3)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_bicycle_rack_603" index="1" unique_id=1503101911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3050506, 0, -1.0013735)
+
 [node name="StreetFurniture_bicycle_604" parent="NearbyNeighborhood" unique_id=1279509966 instance=ExtResource("87_yi0e3")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -12.8, 0.1, -21.3)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_bicycle_604" index="1" unique_id=2017854257]
+transform = Transform3D(-4.3711392e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711392e-08, -1.86042, 0.017128525, -0.87073684)
 
 [node name="StreetFurniture_recycling_bin_605" parent="NearbyNeighborhood" unique_id=1197292351 instance=ExtResource("82_hg6r4")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -17, 0.04, -19.4)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_recycling_bin_605" index="1" unique_id=1290526077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4644904, 0, 2.1002622)
+
 [node name="StreetFurniture_litter_bin_606" parent="NearbyNeighborhood" unique_id=1985081219 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -17, 0.04, -18.6)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_litter_bin_606" index="1" unique_id=1133861211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48689842, 0, 2.104018)
 
 [node name="Driveways_driveway_large_607" parent="NearbyNeighborhood" unique_id=1225080621 instance=ExtResource("68_o4ly7")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -9.6, 0.07, -43)
 metadata/category = "Driveways"
 
+[node name="driveway_large_Mesh" parent="NearbyNeighborhood/Driveways_driveway_large_607" index="0" unique_id=1890149261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.0349347, -4.5545845, 0.008265018, -10.750921)
+
 [node name="Cars_car_cream_608" parent="NearbyNeighborhood" unique_id=47684353 instance=ExtResource("88_xwdte")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -8.912287, 0.15, -43)
 metadata/category = "Cars"
+
+[node name="car_cream_Mesh" parent="NearbyNeighborhood/Cars_car_cream_608" index="0" unique_id=2133364474]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.17919368, 5.0768776, 0, 11.378862)
 
 [node name="Paths_garden_path_large_609" parent="NearbyNeighborhood" unique_id=1714959112 instance=ExtResource("70_iqyxg")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -8.55, 0.06, -51)
@@ -1978,6 +2037,9 @@ metadata/category = "Paths"
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -6.35, 0.04, -49.2)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_mailbox_610" index="1" unique_id=1806567224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.087509274)
+
 [node name="Gardens_flowerbed_611" parent="NearbyNeighborhood" unique_id=1059403202 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -10.3, 0.04, -53.35)
 metadata/category = "Gardens"
@@ -1985,6 +2047,9 @@ metadata/category = "Gardens"
 [node name="Gardens_flowerpot_612" parent="NearbyNeighborhood" unique_id=106593199 instance=ExtResource("73_lydeh")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -11.3, 0.12, -49.1)
 metadata/category = "Gardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_flowerpot_612" index="1" unique_id=335135868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1115584, 0, 0)
 
 [node name="Hedges_hedge_straight_613" parent="NearbyNeighborhood" unique_id=627834196 instance=ExtResource("75_bao3c")]
 transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, -6.75, 0.02, -57.4)
@@ -1998,9 +2063,15 @@ metadata/category = "Hedges"
 transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, -6.75, 0.02, -52.6)
 metadata/category = "Hedges"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Hedges_hedge_straight_615" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09528351, 0, 0)
+
 [node name="Hedges_hedge_straight_616" parent="NearbyNeighborhood" unique_id=1255027610 instance=ExtResource("75_bao3c")]
 transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, -6.75, 0.02, -49.3)
 metadata/category = "Hedges"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Hedges_hedge_straight_616" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.094306946, 0, 0)
 
 [node name="Hedges_hedge_straight_617" parent="NearbyNeighborhood" unique_id=1849995838 instance=ExtResource("75_bao3c")]
 transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, -6.75, 0.02, -46.9)
@@ -2042,9 +2113,15 @@ metadata/category = "GardenTrees"
 transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, -12, 0.03, -55.8)
 metadata/category = "Gardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_shrub_round_626" index="1" unique_id=841141673]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.38708842, 0, 1.0206499)
+
 [node name="Gardens_shrub_round_627" parent="NearbyNeighborhood" unique_id=341192700 instance=ExtResource("79_run24")]
 transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, -12, 0.03, -47.4)
 metadata/category = "Gardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_shrub_round_627" index="1" unique_id=841141673]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.50802124, 0, 0)
 
 [node name="Patios_bench_628" parent="NearbyNeighborhood" unique_id=2115242325 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -21, 0.04, -47.6)
@@ -2058,9 +2135,15 @@ metadata/category = "Patios"
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -17, 0.04, -43.4)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_recycling_bin_630" index="1" unique_id=1290526077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48213387, 0, 2.0104485)
+
 [node name="StreetFurniture_litter_bin_631" parent="NearbyNeighborhood" unique_id=1664020976 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -17, 0.04, -42.6)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_litter_bin_631" index="1" unique_id=1133861211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47477436, 0, 2.0148635)
 
 [node name="Driveways_driveway_large_682" parent="NearbyNeighborhood" unique_id=1156685760 instance=ExtResource("68_o4ly7")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.6, 0.07, 5)
@@ -2081,6 +2164,9 @@ metadata/category = "StreetFurniture"
 [node name="Gardens_flowerbed_686" parent="NearbyNeighborhood" unique_id=709297133 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 10.3, 0.04, -5.35)
 metadata/category = "Gardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_flowerbed_686" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112849474, 0, 0.020269394)
 
 [node name="Gardens_flowerpot_687" parent="NearbyNeighborhood" unique_id=1900207174 instance=ExtResource("73_lydeh")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.143014, 0.12, -1.1)
@@ -2146,6 +2232,9 @@ metadata/category = "Gardens"
 transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, 0.6)
 metadata/category = "Gardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_shrub_round_702" index="1" unique_id=841141673]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.42466807, 0, 0)
+
 [node name="Patios_bench_703" parent="NearbyNeighborhood" unique_id=577166872 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 21, 0.04, 0.4)
 metadata/category = "Patios"
@@ -2158,17 +2247,29 @@ metadata/category = "Patios"
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 4.6)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_recycling_bin_705" index="1" unique_id=1290526077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33770013, 0, 2.0472224)
+
 [node name="StreetFurniture_litter_bin_706" parent="NearbyNeighborhood" unique_id=996046900 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 5.4)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_litter_bin_706" index="1" unique_id=1133861211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29847467, 0, 2.0885756)
 
 [node name="Driveways_driveway_large_707" parent="NearbyNeighborhood" unique_id=167647698 instance=ExtResource("68_o4ly7")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.6, 0.07, -19)
 metadata/category = "Driveways"
 
+[node name="driveway_large_Mesh" parent="NearbyNeighborhood/Driveways_driveway_large_707" index="0" unique_id=1890149261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.5859416, 0.15793991, 0, -0.27160454)
+
 [node name="Cars_car_ocean_708" parent="NearbyNeighborhood" unique_id=998648796 instance=ExtResource("89_2wshp")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.5268345, 0.15, -19)
 metadata/category = "Cars"
+
+[node name="car_ocean_Mesh" parent="NearbyNeighborhood/Cars_car_ocean_708" index="0" unique_id=1662330261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299572, 0, 0)
 
 [node name="Paths_garden_path_large_709" parent="NearbyNeighborhood" unique_id=488373319 instance=ExtResource("70_iqyxg")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 8.55, 0.06, -27)
@@ -2182,9 +2283,15 @@ metadata/category = "StreetFurniture"
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 10.972941, 0.04, -29.966085)
 metadata/category = "Gardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_flowerbed_711" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104456425, 0, 0)
+
 [node name="Gardens_flowerpot_712" parent="NearbyNeighborhood" unique_id=1260104305 instance=ExtResource("73_lydeh")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 11.3, 0.12, -24.468695)
 metadata/category = "Gardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_flowerpot_712" index="1" unique_id=335135868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07139671, 0, 0)
 
 [node name="Fences_fence_picket_713" parent="NearbyNeighborhood" unique_id=1809319039 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.75, 0.02, -33.4)
@@ -2198,9 +2305,15 @@ metadata/category = "Fences"
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.75, 0.02, -28.6)
 metadata/category = "Fences"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fences_fence_picket_715" index="1" unique_id=272750654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06663275, 0, 0)
+
 [node name="Fences_fence_picket_716" parent="NearbyNeighborhood" unique_id=1564665436 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.75, 0.02, -25.3)
 metadata/category = "Fences"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fences_fence_picket_716" index="1" unique_id=272750654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08365917, 0, 0)
 
 [node name="Fences_fence_picket_717" parent="NearbyNeighborhood" unique_id=1136186678 instance=ExtResource("74_r80dk")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.75, 0.02, -22.9)
@@ -2242,33 +2355,57 @@ metadata/category = "GardenTrees"
 transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, -31.8)
 metadata/category = "Gardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_shrub_round_726" index="1" unique_id=841141673]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.19013536, 0, 0)
+
 [node name="Gardens_shrub_round_727" parent="NearbyNeighborhood" unique_id=1820711638 instance=ExtResource("79_run24")]
 transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, -23.4)
 metadata/category = "Gardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Gardens_shrub_round_727" index="1" unique_id=841141673]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.17585337, 0, 0)
 
 [node name="StreetFurniture_bicycle_rack_728" parent="NearbyNeighborhood" unique_id=1577689843 instance=ExtResource("86_7xuqn")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 12.6, 0.1, -21.3)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_bicycle_rack_728" index="1" unique_id=1503101911]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26066208, 0, 0)
+
 [node name="StreetFurniture_bicycle_729" parent="NearbyNeighborhood" unique_id=1617001663 instance=ExtResource("87_yi0e3")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 12.8, 0.1, -21.3)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_bicycle_729" index="1" unique_id=2017854257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15744305, 0, 0)
 
 [node name="StreetFurniture_recycling_bin_730" parent="NearbyNeighborhood" unique_id=475995625 instance=ExtResource("82_hg6r4")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -19.4)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_recycling_bin_730" index="1" unique_id=1290526077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38613963, 0, 2.1450377)
+
 [node name="StreetFurniture_litter_bin_731" parent="NearbyNeighborhood" unique_id=1291313738 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -18.6)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_litter_bin_731" index="1" unique_id=1133861211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42738366, 0, 2.1264858)
 
 [node name="Driveways_driveway_large_732" parent="NearbyNeighborhood" unique_id=43693102 instance=ExtResource("68_o4ly7")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.6, 0.07, -43)
 metadata/category = "Driveways"
 
+[node name="driveway_large_Mesh" parent="NearbyNeighborhood/Driveways_driveway_large_732" index="0" unique_id=1890149261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8413043, 1.5942192, 0, 0.64414597)
+
 [node name="Cars_car_sage_733" parent="NearbyNeighborhood" unique_id=1510792509 instance=ExtResource("90_ovd4x")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 9.170871, 0.15, -43)
 metadata/category = "Cars"
+
+[node name="car_sage_Mesh" parent="NearbyNeighborhood/Cars_car_sage_733" index="0" unique_id=411605186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6211243, 0, 0)
 
 [node name="Paths_garden_path_large_734" parent="NearbyNeighborhood" unique_id=1835224925 instance=ExtResource("70_iqyxg")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 8.55, 0.06, -51)
@@ -2277,6 +2414,9 @@ metadata/category = "Paths"
 [node name="StreetFurniture_mailbox_735" parent="NearbyNeighborhood" unique_id=238748519 instance=ExtResource("71_wy7y5")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 6.35, 0.04, -49.2)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_mailbox_735" index="1" unique_id=1806567224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.09387934)
 
 [node name="Gardens_flowerbed_736" parent="NearbyNeighborhood" unique_id=1074740591 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 11.748908, 0.04, -53.6708)
@@ -2298,9 +2438,15 @@ metadata/category = "Hedges"
 transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, 6.75, 0.02, -52.6)
 metadata/category = "Hedges"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Hedges_hedge_straight_740" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11824322, 0, 0)
+
 [node name="Hedges_hedge_straight_741" parent="NearbyNeighborhood" unique_id=703329276 instance=ExtResource("75_bao3c")]
 transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, 6.75, 0.02, -49.3)
 metadata/category = "Hedges"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Hedges_hedge_straight_741" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12145138, 0, 0)
 
 [node name="Hedges_hedge_straight_742" parent="NearbyNeighborhood" unique_id=964641696 instance=ExtResource("75_bao3c")]
 transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, 6.75, 0.02, -46.9)
@@ -2358,9 +2504,15 @@ metadata/category = "Patios"
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -43.4)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_recycling_bin_755" index="1" unique_id=1290526077]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15072536, 0, 2.0606556)
+
 [node name="StreetFurniture_litter_bin_756" parent="NearbyNeighborhood" unique_id=1282982139 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -42.6)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_litter_bin_756" index="1" unique_id=1133861211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5145607, 0, 2.064974)
 
 [node name="GardenTrees_tree_maple_large_762" parent="NearbyNeighborhood" unique_id=2117495169 instance=ExtResource("85_br8o4")]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, -57, 0, -79)
@@ -2382,6 +2534,9 @@ metadata/category = "StreetFurniture"
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -5.8, 0.04, -39)
 metadata/category = "StreetFurniture"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_hydrant_793" index="1" unique_id=546228387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2471292, 0, 0.5757556)
+
 [node name="StreetFurniture_streetlamp_796" parent="NearbyNeighborhood" unique_id=917604849 instance=ExtResource("91_a0pbl")]
 transform = Transform3D(-6.8, 0, 0, 0, 6.8, 0, 0, 0, -6.8, 5.1, 0.16, -57)
 metadata/category = "StreetFurniture"
@@ -2397,6 +2552,9 @@ metadata/category = "StreetFurniture"
 [node name="StreetFurniture_hydrant_802" parent="NearbyNeighborhood" unique_id=1066088077 instance=ExtResource("92_sphar")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.8, 0.04, -39)
 metadata/category = "StreetFurniture"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/StreetFurniture_hydrant_802" index="1" unique_id=546228387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2472201, 0, 0)
 
 [node name="StreetFurniture_street_name_sign_811" parent="NearbyNeighborhood" unique_id=1788675377 instance=ExtResource("93_7rwrb")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -5.8, 0.04, -62)
@@ -2562,13 +2720,22 @@ metadata/category = "GardenTrees"
 transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, 6.1)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_005" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2057251, 0, 0.2616806)
+
 [node name="Fill_shrub_round_006" parent="NearbyNeighborhood" unique_id=1776750089 instance=ExtResource("79_run24")]
 transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, 6.1)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_shrub_round_006" index="1" unique_id=841141673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.79591095)
+
 [node name="Fill_bench_011" parent="NearbyNeighborhood" unique_id=627988674 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -14.16798, 0.025, 6.2)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_bench_011" index="1" unique_id=862072169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9463131, 0, -0.32919312)
 
 [node name="Fill_tree_poplar_large_012" parent="NearbyNeighborhood" unique_id=2034853482 instance=ExtResource("78_el1ed")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -27.8, 0, 7)
@@ -2581,6 +2748,9 @@ metadata/category = "SightlineGardens"
 [node name="Fill_house_cedar_016" parent="NearbyNeighborhood" unique_id=696938308 instance=ExtResource("97_lxi8r")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -21.1, 0, -15)
 metadata/category = "SightlineInfillHouses"
+
+[node name="house_cedar_Mesh" parent="NearbyNeighborhood/Fill_house_cedar_016" index="0" unique_id=906179336]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2452049, 2.3841858e-07, 1.0658379)
 
 [node name="Fill_garden_path_large_017" parent="NearbyNeighborhood" unique_id=1724129875 instance=ExtResource("70_iqyxg")]
 transform = Transform3D(0, 0, 1.65, 0, 1, 0, -1, 0, 0, -10.8, 0.065, -15)
@@ -2602,13 +2772,22 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -17.9)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_021" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15216517, 0, -0.35173154)
+
 [node name="Fill_flowerbed_023" parent="NearbyNeighborhood" unique_id=899440686 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -12.1)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_023" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12306929, 0, -0.367707)
+
 [node name="Fill_shrub_round_024" parent="NearbyNeighborhood" unique_id=103284469 instance=ExtResource("79_run24")]
 transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, -12.1)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_shrub_round_024" index="1" unique_id=841141673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45904517, 0, -0.45307052)
 
 [node name="Fill_mailbox_025" parent="NearbyNeighborhood" unique_id=2076966721 instance=ExtResource("71_wy7y5")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -7.5, 0.025, -14.05)
@@ -2618,9 +2797,15 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, -15.1, 0.08, -13.6)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerpot_026" index="1" unique_id=335135868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6177001, 0, -0.09562373)
+
 [node name="Fill_bench_027" parent="NearbyNeighborhood" unique_id=2061359229 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -14.367761, 0.025, -17.8)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_bench_027" index="1" unique_id=862072169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52909255, 0, -1.081166)
 
 [node name="Fill_tree_poplar_large_028" parent="NearbyNeighborhood" unique_id=332085662 instance=ExtResource("78_el1ed")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -27.8, 0, -17)
@@ -2642,6 +2827,9 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -20.5, 0, -39)
 metadata/category = "SightlineInfillHouses"
 
+[node name="house_peach_Mesh" parent="NearbyNeighborhood/Fill_house_peach_032" index="0" unique_id=1083975212]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.5522652, 0, 0)
+
 [node name="Fill_garden_path_large_033" parent="NearbyNeighborhood" unique_id=1302933587 instance=ExtResource("70_iqyxg")]
 transform = Transform3D(0, 0, 1.65, 0, 1, 0, -1, 0, 0, -10.8, 0.065, -39)
 metadata/category = "SightlineGardens"
@@ -2662,13 +2850,22 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -41.9)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_037" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51581526, 0, -1.1987302)
+
 [node name="Fill_flowerbed_039" parent="NearbyNeighborhood" unique_id=1418266256 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(0, 0, 5.7, 0, 5.7, 0, -5.7, 0, 0, -12.7, 0.025, -36.1)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_039" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11028767, 0, -0.37243795)
+
 [node name="Fill_shrub_round_040" parent="NearbyNeighborhood" unique_id=467104647 instance=ExtResource("79_run24")]
 transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, -16.1, 0.025, -36.1)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_shrub_round_040" index="1" unique_id=841141673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6001551, 0, 0)
 
 [node name="Fill_mailbox_041" parent="NearbyNeighborhood" unique_id=1651625098 instance=ExtResource("71_wy7y5")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -7.5, 0.025, -38.05)
@@ -2678,9 +2875,15 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, -15.1, 0.08, -37.6)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerpot_042" index="1" unique_id=335135868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.032349825, 0, 0.44247007)
+
 [node name="Fill_bench_043" parent="NearbyNeighborhood" unique_id=979446183 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, -14.202847, 0.025, -41.8)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_bench_043" index="1" unique_id=862072169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51700544, 0, -1.5483577)
 
 [node name="Fill_tree_poplar_large_044" parent="NearbyNeighborhood" unique_id=188843772 instance=ExtResource("78_el1ed")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, -27.8, 0, -41)
@@ -2702,9 +2905,15 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, 6.1)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_053" index="1" unique_id=593456469]
+transform = Transform3D(0.09708291, 0, 0, 0, 1, 0, 0, 0, 1, -0.7773613, 0, 0)
+
 [node name="Fill_shrub_round_054" parent="NearbyNeighborhood" unique_id=318857584 instance=ExtResource("79_run24")]
 transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, 6.1)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_shrub_round_054" index="1" unique_id=841141673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.16489005, 0, 0, -0.6239253)
 
 [node name="Fill_tree_poplar_large_060" parent="NearbyNeighborhood" unique_id=286359883 instance=ExtResource("78_el1ed")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 27.8, 0, 7)
@@ -2718,9 +2927,15 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 21.1, 0, -15)
 metadata/category = "SightlineInfillHouses"
 
+[node name="house_peach_Mesh" parent="NearbyNeighborhood/Fill_house_peach_064" index="0" unique_id=1083975212]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.1815414, 0, 0)
+
 [node name="Fill_garden_path_large_065" parent="NearbyNeighborhood" unique_id=1679178472 instance=ExtResource("70_iqyxg")]
 transform = Transform3D(0, 0, -1.65, 0, 1, 0, 1, 0, 0, 10.8, 0.065, -15)
 metadata/category = "SightlineGardens"
+
+[node name="garden_path_large_Mesh" parent="NearbyNeighborhood/Fill_garden_path_large_065" index="0" unique_id=2095652717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2170117, 0, 0, 0)
 
 [node name="Fill_garden_gate_066" parent="NearbyNeighborhood" unique_id=1755698018 instance=ExtResource("76_vv4rr")]
 transform = Transform3D(0, 0, 5, 0, 5, 0, -5, 0, 0, 6.8, 0.025, -15)
@@ -2730,6 +2945,9 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -13.2)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_hedge_straight_067" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.02591443, 0, 0)
+
 [node name="Fill_hedge_straight_068" parent="NearbyNeighborhood" unique_id=627036651 instance=ExtResource("75_bao3c")]
 transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -11.2)
 metadata/category = "SightlineGardens"
@@ -2738,13 +2956,22 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -17.9)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_069" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.97075367, 0, 0)
+
 [node name="Fill_shrub_round_070" parent="NearbyNeighborhood" unique_id=1448389929 instance=ExtResource("79_run24")]
 transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, -17.9)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_shrub_round_070" index="1" unique_id=841141673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84623647, 0, 0.119972944)
+
 [node name="Fill_flowerbed_071" parent="NearbyNeighborhood" unique_id=1562770276 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -12.1)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_071" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.36768365)
 
 [node name="Fill_mailbox_073" parent="NearbyNeighborhood" unique_id=813794363 instance=ExtResource("71_wy7y5")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 7.5, 0.025, -14.05)
@@ -2754,9 +2981,15 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.1, 0.08, -16.666523)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerpot_074" index="1" unique_id=335135868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1712817, 0, 0)
+
 [node name="Fill_bench_075" parent="NearbyNeighborhood" unique_id=504755325 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 15.700761, 0.025, -12.463311)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_bench_075" index="1" unique_id=862072169]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18076205, 0, -1.3969543)
 
 [node name="Fill_tree_poplar_large_076" parent="NearbyNeighborhood" unique_id=763278229 instance=ExtResource("78_el1ed")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 27.8, 0, -17)
@@ -2778,6 +3011,9 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 20.5, 0, -39)
 metadata/category = "SightlineInfillHouses"
 
+[node name="house_cedar_Mesh" parent="NearbyNeighborhood/Fill_house_cedar_080" index="0" unique_id=906179336]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.72878647, 0, 0)
+
 [node name="Fill_garden_path_large_081" parent="NearbyNeighborhood" unique_id=652432727 instance=ExtResource("70_iqyxg")]
 transform = Transform3D(0, 0, -1.65, 0, 1, 0, 1, 0, 0, 10.8, 0.065, -39)
 metadata/category = "SightlineGardens"
@@ -2790,6 +3026,9 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -37.2)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_hedge_straight_083" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.058164597, 0, 0)
+
 [node name="Fill_hedge_straight_084" parent="NearbyNeighborhood" unique_id=111719099 instance=ExtResource("75_bao3c")]
 transform = Transform3D(0, 0, 5, 0, 6.3, 0, -4.1, 0, 0, 6.85, 0.025, -35.2)
 metadata/category = "SightlineGardens"
@@ -2798,9 +3037,15 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 13.773017, 0.025, -41.9)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_085" index="1" unique_id=593456469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7581043, 0, -0.8397043)
+
 [node name="Fill_shrub_round_086" parent="NearbyNeighborhood" unique_id=765731630 instance=ExtResource("79_run24")]
 transform = Transform3D(-3.14722e-07, 0, 7.2, 0, 7.2, 0, -7.2, 0, -3.14722e-07, 16.1, 0.025, -41.9)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_shrub_round_086" index="1" unique_id=841141673]
+transform = Transform3D(0.587674, 0, 0, 0, 1, 0, 0, 0, 0.36372375, -0.4983449, 0, 0.3024757)
 
 [node name="Fill_flowerbed_087" parent="NearbyNeighborhood" unique_id=1434087688 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 13.830587, 0.025, -36.1)
@@ -2810,13 +3055,22 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 7.5, 0.025, -38.05)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_mailbox_089" index="1" unique_id=1806567224]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0261722, 0, 0.17465174)
+
 [node name="Fill_flowerpot_090" parent="NearbyNeighborhood" unique_id=1337842054 instance=ExtResource("73_lydeh")]
 transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.431576, 0.08, -36.623066)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerpot_090" index="1" unique_id=335135868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79794943, 0, 0)
+
 [node name="Fill_bench_091" parent="NearbyNeighborhood" unique_id=74891878 instance=ExtResource("80_u13or")]
 transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 11.6, 0.025, -36.685696)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_bench_091" index="1" unique_id=862072169]
+transform = Transform3D(0.018301725, 0, 0, 0, 1, 0, 0, 0, 1, -0.13557148, 0, -1.3832049)
 
 [node name="Fill_tree_poplar_large_092" parent="NearbyNeighborhood" unique_id=2106252776 instance=ExtResource("78_el1ed")]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 27.8, 0, -41)
@@ -2845,6 +3099,9 @@ metadata/category = "SightlineTrees"
 [node name="Fill_hedge_straight_098" parent="NearbyNeighborhood" unique_id=1940081254 instance=ExtResource("75_bao3c")]
 transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -32.6, 0.025, -59.4)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_hedge_straight_098" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.54618716, 0, 0)
 
 [node name="Fill_hedge_straight_099" parent="NearbyNeighborhood" unique_id=1017759638 instance=ExtResource("75_bao3c")]
 transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -29, 0.025, -59.4)
@@ -2898,13 +3155,22 @@ metadata/category = "SightlineTrees"
 transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -43.6, 0.025, -59.4)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_hedge_straight_111" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.43387747, 0, 0)
+
 [node name="Fill_hedge_straight_112" parent="NearbyNeighborhood" unique_id=426831405 instance=ExtResource("75_bao3c")]
 transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -40, 0.025, -59.4)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_hedge_straight_112" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.20342922, 0, 0)
+
 [node name="Fill_hedge_straight_113" parent="NearbyNeighborhood" unique_id=1132358350 instance=ExtResource("75_bao3c")]
 transform = Transform3D(7.6, 0, 0, 0, 7.8, 0, 0, 0, 7, -36.4, 0.025, -59.4)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_hedge_straight_113" index="1" unique_id=516722942]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.20485735, 0, 0)
 
 [node name="Fill_bench_114" parent="NearbyNeighborhood" unique_id=215228671 instance=ExtResource("80_u13or")]
 transform = Transform3D(6, 0, 5.2453663e-07, 0, 6, 0, -5.2453663e-07, 0, 6, -40, 0.025, -56.3)
@@ -2918,9 +3184,15 @@ metadata/category = "SightlineGardens"
 transform = Transform3D(0, 0, 6, 0, 6, 0, -6, 0, 0, -43.6, 0.025, -55.1)
 metadata/category = "SightlineGardens"
 
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_116" index="1" unique_id=593456469]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.045844078, 0, 1.208838)
+
 [node name="Fill_litter_bin_117" parent="NearbyNeighborhood" unique_id=1560899844 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -37.3, 0.025, -56.2)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_litter_bin_117" index="1" unique_id=1133861211]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11915016, 0, 0)
 
 [node name="Fill_stepping_stone_118" parent="NearbyNeighborhood" unique_id=399157001 instance=ExtResource("98_jbr5t")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -43, 0.03, -61.6)
@@ -2961,6 +3233,9 @@ metadata/category = "SightlineGardens"
 [node name="Fill_flowerbed_128" parent="NearbyNeighborhood" unique_id=1234709807 instance=ExtResource("72_g5jbu")]
 transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, -53, 0.025, -60.6)
 metadata/category = "SightlineGardens"
+
+[node name="OptimizedStaticGeometry" parent="NearbyNeighborhood/Fill_flowerbed_128" index="1" unique_id=593456469]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 0.74750996, 0, 0.7579231)
 
 [node name="Fill_litter_bin_130" parent="NearbyNeighborhood" unique_id=575488803 instance=ExtResource("83_xqd5b")]
 transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -50.3, 0.025, -56.2)
@@ -3078,6 +3353,9 @@ metadata/category = "SightlineTrees"
 transform = Transform3D(80, 0, 0, 0, 1, 0, 0, 0, 78, -32, -0.025, -29)
 metadata/category = "Ground"
 
+[node name="lawn_tile__Lawn" parent="NearbyNeighborhood/CroppedNeighborhoodGround/lawn_tile" parent_id_path=PackedInt32Array(367898757, 1692641908) index="0" unique_id=200122722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0003670454, 0.012, 0.0002477765)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1648109889]
 environment = ExtResource("4_tfi6f")
 
@@ -3125,6 +3403,10 @@ near = 0.04
 far = 180.0
 
 [node name="BedroomGameplay" parent="." unique_id=1997588627 instance=ExtResource("bedroom_gameplay")]
+
+[node name="StaticSceneryBatches" type="Node" parent="." unique_id=786479503]
+script = ExtResource("static_scenery_batch")
+root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood")])
 
 [editable path="LearningHouseDetailed/HouseShell"]
 [editable path="LearningHouseDetailed/WindowSash_Open72Degrees"]
@@ -3853,7 +4135,3 @@ far = 180.0
 [editable path="NearbyNeighborhood/Fill_tree_oak_large_372"]
 [editable path="NearbyNeighborhood/Fill_tree_maple_large_374"]
 [editable path="NearbyNeighborhood/CroppedNeighborhoodGround"]
-
-[node name="StaticSceneryBatches" type="Node" parent="."]
-script = ExtResource("static_scenery_batch")
-root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood")])
