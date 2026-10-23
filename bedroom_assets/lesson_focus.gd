@@ -148,7 +148,7 @@ func set_focus(index: int) -> void:
 	exiting = false
 	heading.text = TOUR.STOPS[index].title
 	description.text = TOUR.STOPS[index].body
-	var playable := index <= 1
+	var playable := index <= 2
 	object_label.text = "Click to play" if playable else "Coming soon"
 	object_label.add_theme_color_override("font_color", SunsetUI.PLUM_DEEP if playable else SunsetUI.CREAM_MUTED)
 	action_chip.add_theme_stylebox_override("panel", _chip_style(SunsetUI.TANGERINE if playable else SunsetUI.PLUM_SOFT))

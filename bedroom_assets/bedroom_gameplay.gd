@@ -28,6 +28,7 @@ var _seated_eye_pose: Transform3D
 var _zoom_elapsed := 0.0
 const ZOOM_SECONDS := 1.6
 const SHARING_BOARD_SCENE := "res://lessons/sharing_board/round1.tscn"
+const PHONE_LESSON_SCENE := "res://lessons/phone/phone_lesson.tscn"
 ## Set by the Sharing Board lesson when the player comes back to the room.
 const SHARING_BOARD_RETURN := &"digi_world_lesson_return"
 const STAND_SECONDS := .75
@@ -154,6 +155,12 @@ func start_sharing_board() -> void:
 	set_active(false)
 	get_tree().change_scene_to_file(SHARING_BOARD_SCENE)
 
+## The phone lesson, The Glitch's Last Trick, is a party scene in Willow Park.
+func start_phone_lesson() -> void:
+	GameState.start_lesson("phone")
+	set_active(false)
+	get_tree().change_scene_to_file(PHONE_LESSON_SCENE)
+
 ## Back from a lesson: skip the welcome tour and stand the player behind the chair.
 func resume_first_person() -> void:
 	seated_character.hide()
@@ -215,6 +222,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		if look_captured and phase == Phase.PLAYING and lesson_focus.pick_lesson() == 1:
 			get_viewport().set_input_as_handled()
 			start_sharing_board()
+			return
+		if look_captured and phase == Phase.PLAYING and lesson_focus.pick_lesson() == 2:
+			get_viewport().set_input_as_handled()
+			start_phone_lesson()
 			return
 		look_captured = true
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
