@@ -31,8 +31,6 @@ var _first_try := {}  # card id -> was it safe the first time it was checked?
 var _public_slips: Array[String] = []  # unsafe cards that were put on the public board
 var _patches := {}  # card id -> its patch on the board
 var _checking := false
-var _reviewing := false
-var _review_return: Callable
 
 var _pockets := {}  # zone id -> StitchedPanel
 var _pocket_lists := {}  # zone id -> PatchStack
@@ -103,42 +101,13 @@ func show_board_caption() -> void:
 
 func show_complete(can_continue: bool) -> void:
 	_caption.hide()
-	_sorting_view.hide()
 	var buttons := []
 	if can_continue:
+		buttons.append(["My room", Kit.PINE, func(): home_requested.emit()])
 		buttons.append(["Play again", Kit.PINE, func(): get_tree().reload_current_scene()])
-		buttons.append(["Continue", Kit.CRANBERRY, func(): next_round_requested.emit()])
-	_show_sheet("Great Work!",
+		buttons.append(["Round 2", Kit.CRANBERRY, func(): next_round_requested.emit()])
+	_show_sheet("Round 1 complete!",
 		"Before you share something, stop and ask: [b]who will see it?[/b]", buttons)
-
-
-func _review_patches(on_back: Callable) -> void:
-	_reviewing = true
-	_review_return = on_back
-	_flipped.clear()
-	_close_sheet()
-	_caption.hide()
-	_sorting_view.show()
-	_refresh()
-	_mitten.hide()
-	_check_button.text = "Back"
-	_buddy.say("Tap any patch to read its explanation. Press Back when you're done.", "happy")
-	show()
-
-
-func _finish_review() -> void:
-	_reviewing = false
-	_mitten.show()
-	_check_button.text = "Check my board"
-	_sorting_view.hide()
-	_refresh()
-	_review_return.call()
-
-
-func _show_patch_explanation(card_id: String) -> void:
-	var card: Dictionary = _cards[card_id]
-	_show_sheet("Why this patch?", "[b]%s[/b]\n\n%s" % [card.text, card.why],
-		[["Back to patches", Kit.CRANBERRY, _close_sheet]])
 
 
 # --- Building the board -------------------------------------------------------
@@ -183,11 +152,7 @@ func _build_sorting_view() -> void:
 	_count_label = Kit.label("", 19, true, Kit.YARN)
 	_count_label.custom_minimum_size.x = 112
 	_count_label.size_flags_vertical = SIZE_SHRINK_CENTER
-	var count_patch := _fabric(StitchedPanel.Fabric.FELT, Kit.PINE, 10, 0, Color(Kit.YARN, 0.45))
-	count_patch.set_padding(8, 3)
-	count_patch.size_flags_vertical = SIZE_SHRINK_CENTER
-	count_patch.add_child(_count_label)
-	progress_row.add_child(count_patch)
+	progress_row.add_child(_count_label)
 
 	# The knitted board with four felt pockets
 	var board := _fabric(StitchedPanel.Fabric.KNIT, Kit.PINE, 24, 10, Color(Kit.YARN, 0.5))
@@ -221,6 +186,10 @@ func _build_sorting_view() -> void:
 	_check_button = SewnButton.new("Check my board", Kit.CRANBERRY)
 	_check_button.pressed.connect(_on_check_pressed)
 	actions.add_child(_check_button)
+	var keys := _fabric(StitchedPanel.Fabric.FELT, Kit.ICE, 12, 3, Color(Kit.PINE, 0.4))
+	keys.set_padding(14, 6)
+	keys.add_child(Kit.label("Tip: tap a pocket, or press 1 to 4", 14, false, Kit.INK_SOFT, HORIZONTAL_ALIGNMENT_CENTER))
+	actions.add_child(keys)
 
 
 func _build_pocket(zone: Dictionary, number: int) -> Control:
@@ -341,7 +310,7 @@ func _refresh() -> void:
 		_mitten.add_child(done)
 	else:
 		_mitten.add_child(_make_patch(_deck[0], true))
-	_check_button.disabled = not _reviewing and (not _deck.is_empty() or _locked.size() == total or _checking)
+	_check_button.disabled = not _deck.is_empty() or _locked.size() == total or _checking
 
 
 func _make_patch(card_id: String, big: bool) -> StitchedPanel:
@@ -413,9 +382,6 @@ func _on_patch_gui_input(event: InputEvent, card_id: String, source: Control) ->
 		return
 	accept_event()
 	if _checking:
-		return
-	if _reviewing:
-		_show_patch_explanation(card_id)
 		return
 	if _locked.has(card_id):
 		_flip(card_id, source)
@@ -561,9 +527,6 @@ func _sew_on(patch: StitchedPanel) -> void:
 # --- Checking -----------------------------------------------------------------
 
 func _on_check_pressed() -> void:
-	if _reviewing:
-		_finish_review()
-		return
 	_checking = true
 	_check_button.disabled = true
 	_buddy.say("Let's check every stitch...", "think")
@@ -638,15 +601,9 @@ func _show_results() -> void:
 		"public_slips": _public_slips.duplicate(),
 		"placement": _placement.duplicate(),
 	})
-	_show_sorting_summary(first_try_right, stars)
-
-
-func _show_sorting_summary(first_try_right: int, stars: int) -> void:
-	_sorting_view.show()
 	_show_sheet("Board complete!",
-		"You sewed [b]%d of %d[/b] patches in a safe pocket on your first try.\n\nFun facts are fine for everyone. Things that show [b]who you are or where to find you[/b] need a grown-up's OK, and passwords stay secret.\n\nChoose Review patches to click each patch and read its explanation." % [first_try_right, _cards.size()],
-		[["Review patches", Kit.PINE, _review_patches.bind(_show_sorting_summary.bind(first_try_right, stars))],
-		["See the park board", Kit.CRANBERRY, _on_see_board_pressed]], FeltStars.new(stars))
+		"You sewed [b]%d of %d[/b] patches in a safe pocket on your first try.\n\nFun facts are fine for everyone. Things that show [b]who you are or where to find you[/b] need a grown-up's OK, and passwords stay secret.\n\nTap any gold-stitched patch to flip it and read why." % [first_try_right, total],
+		[["See the park board", Kit.CRANBERRY, _on_see_board_pressed]], FeltStars.new(stars))
 
 
 func _on_see_board_pressed() -> void:

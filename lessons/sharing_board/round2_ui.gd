@@ -1,6 +1,6 @@
 extends Control
 ## Sharing Board, Round 2: "Spot it before you post".
-## Each neighborhood photo sits in a felt phone. Players sweep an embroidery
+## The player's snowman photo sits in a felt phone. They sweep an embroidery
 ## hoop over it and tap every clue that shows who they are or where they
 ## live. Found clues get circled in gold thread, then covered with felt
 ## patches before the photo can be posted to the park board.
@@ -18,22 +18,13 @@ const SnowBuddy := preload("res://lessons/sharing_board/ui/snow_buddy.gd")
 const Hoop := preload("res://lessons/sharing_board/ui/hoop.gd")
 
 const FOUND_LINES := ["Good eye!", "Spotted it!", "Nice find!", "You got one!"]
-const MISS_LINE := "Nothing private there. Check small names, labels and screens with the hoop."
+const MISS_LINE := "Nothing private there. Look closely at signs, doors and windows."
 const PATCH_COLORS := [Color("#D6E7F2"), Color("#F8E8B8"), Color("#D5EAD9"), Color("#F5D6CE"), Color("#E5DDF0")]
 
 enum Stage { LOOKING, COVER, READY, POSTED }
 
 var stage := Stage.LOOKING
 var results := {}
-var _clues: Array = Clues.CLUES
-var _decoys: Dictionary = Clues.DECOYS
-var _photo_index := 0
-var _photo_count := 3
-var _progress_label: Label
-var _photo_caption_label: Label
-var _pocket_column: VBoxContainer
-var _caption_words: Label
-var _caption_finish: SewnButton
 
 var _photo_texture: Texture2D
 var _photo_camera: Camera3D
@@ -48,9 +39,6 @@ var _safe_taps := 0
 var _miss_taps := 0
 
 var _view: Control
-var _photo_holder: Control
-var _photo_panel: StitchedPanel
-var _photo_bar: HBoxContainer
 var _photo: TextureRect
 var _overlay: Control
 var _hoop: Hoop
@@ -74,32 +62,20 @@ func _ready() -> void:
 
 
 ## Hands the UI the live photo and finds where each clue sits in it.
-func setup(photo: Texture2D, photo_camera: Camera3D, photo_set: Node3D, photo_index := 0) -> void:
-	_photo_index = photo_index
-	_photo_count = Clues.PHOTOS.size()
-	var info: Dictionary = Clues.PHOTOS[photo_index]
-	_clues = info.clues
-	_decoys = info.decoys
-	_progress_label.text = "Photo %d of %d" % [photo_index+1,_photo_count]
-	_photo_caption_label.text = info.caption
-	_rebuild_clue_slots()
+func setup(photo: Texture2D, photo_camera: Camera3D, photo_set: Node3D) -> void:
 	_photo_texture = photo
 	_photo_camera = photo_camera
 	_photo.texture = photo
 	_hoop.texture = photo
 	_hotspots.clear()
-	for clue in _clues:
+	for clue in Clues.CLUES:
 		_hotspots[clue.id] = _measure(photo_set.get_node("Clues/" + clue.id), 80.0)
-	for id in _decoys:
+	for id in Clues.DECOYS:
 		_hotspots[id] = _measure(photo_set.get_node("Decoys/" + id), 120.0)
 
 
 func begin() -> void:
 	stage = Stage.LOOKING
-	results = {}
-	_hint_spot = ""
-	_hint_glow = 0.0
-	_hoop.hide()
 	_found.clear()
 	_circle_progress.clear()
 	_cover_progress.clear()
@@ -111,15 +87,12 @@ func begin() -> void:
 	_caption.hide()
 	_view.show()
 	show()
-	var info: Dictionary = Clues.PHOTOS[_photo_index]
-	_show_sheet("Say cheese!" if _photo_index == 0 else "Photo %d: %s" % [_photo_index+1,info.title],
-		info.intro, [["Let's look!", Kit.CRANBERRY, _close_sheet]])
+	_show_sheet("Say cheese!",
+		"You built an awesome snowman in front of your house, and you want to post this photo on the park board.\n\nBut photos can show more than you think. Use the [b]hoop[/b] to look closely and tap every clue that shows [b]who you are or where you live[/b].",
+		[["Let's look!", Kit.CRANBERRY, _close_sheet]])
 
 
 func show_board_caption() -> void:
-	var final_photo := _photo_index == _photo_count-1
-	_caption_finish.text = "Finish round" if final_photo else "Next photo"
-	_caption_words.text = "All three photos are on the park board, with their identifying details covered!" if final_photo else "Photo %d of %d is pinned! Your safe photos will stay here. Ready for the next photo?" % [_photo_index+1,_photo_count]
 	_view.hide()
 	_caption.show()
 	show()
@@ -132,7 +105,7 @@ func show_complete(can_continue: bool) -> void:
 		buttons.append(["Play again", Kit.PINE, func(): replay_requested.emit()])
 		buttons.append(["Back to my room", Kit.CRANBERRY, func(): home_requested.emit()])
 	_show_sheet("Round 2 complete!",
-		"You checked all three photos! Keep sharing the fun things, and look closely for small names, labels and screens before posting.\n\n[b]Who can see it? What does it show? Can I take it back?[/b]", buttons)
+		"Before you post a photo, check the background. Signs, notes and names can tell strangers [b]where to find you[/b].", buttons)
 
 
 # --- Building -------------------------------------------------------------------
@@ -154,21 +127,10 @@ func _build_view() -> void:
 	margin.add_child(column)
 
 	var title := _fabric(StitchedPanel.Fabric.FELT, Kit.CRANBERRY, 14, 6, Color(Kit.YARN, 0.85))
-	title.set_padding(30, 12)
+	title.set_padding(22, 6)
 	title.size_flags_horizontal = SIZE_SHRINK_BEGIN
 	title.add_child(Kit.label("Spot it before you post", 30, true, Kit.YARN))
-	var title_row := HBoxContainer.new()
-	column.add_child(title_row)
-	title_row.add_child(title)
-	var title_space := Control.new()
-	title_space.size_flags_horizontal = SIZE_EXPAND_FILL
-	title_space.mouse_filter = MOUSE_FILTER_IGNORE
-	title_row.add_child(title_space)
-	var progress := _fabric(StitchedPanel.Fabric.FELT, Kit.PINE, 12, 3, Color(Kit.YARN,0.45))
-	progress.set_padding(16,6)
-	title_row.add_child(progress)
-	_progress_label = Kit.label("Photo 1 of 3",19,true,Kit.YARN)
-	progress.add_child(_progress_label)
+	column.add_child(title)
 
 	var row := HBoxContainer.new()
 	row.size_flags_vertical = SIZE_EXPAND_FILL
@@ -176,19 +138,13 @@ func _build_view() -> void:
 	row.mouse_filter = MOUSE_FILTER_IGNORE
 	column.add_child(row)
 
-	# Reserve the left column, then fit the knitted frame around the complete
-	# photo and caption. Spare row height stays outside the frame.
-	_photo_holder = Control.new()
-	_photo_holder.size_flags_horizontal = SIZE_EXPAND_FILL
-	_photo_holder.size_flags_stretch_ratio = 2.2
-	_photo_holder.mouse_filter = MOUSE_FILTER_IGNORE
-	_photo_holder.resized.connect(_fit_photo_panel.call_deferred)
-	row.add_child(_photo_holder)
+	# The felt phone holding the photo
 	var phone := _fabric(StitchedPanel.Fabric.KNIT, Kit.CRANBERRY, 30, 12, Color(Kit.YARN, 0.55))
-	_photo_panel = phone
 	phone.stitch_inset = 9.0
 	phone.set_padding(18, 16)
-	_photo_holder.add_child(phone)
+	phone.size_flags_horizontal = SIZE_EXPAND_FILL
+	phone.size_flags_stretch_ratio = 2.2
+	row.add_child(phone)
 	var phone_column := VBoxContainer.new()
 	phone_column.add_theme_constant_override("separation", 12)
 	phone.add_child(phone_column)
@@ -215,34 +171,16 @@ func _build_view() -> void:
 	_overlay.add_child(_hoop)
 
 	var bar := HBoxContainer.new()
-	_photo_bar = bar
-	bar.minimum_size_changed.connect(_fit_photo_panel.call_deferred)
 	bar.add_theme_constant_override("separation", 14)
 	phone_column.add_child(bar)
 	_hint_button = SewnButton.new("Hint", Kit.PINE)
 	_hint_button.custom_minimum_size = Vector2(110, 48)
 	_hint_button.pressed.connect(_on_hint_pressed)
 	bar.add_child(_hint_button)
-	var caption_patch := PanelContainer.new()
-	caption_patch.name = "PhotoCaptionBubble"
-	var bubble := Kit.surface(Color("fffdf9"),18,3)
-	bubble.border_color = Color("d8e0df")
-	bubble.set_border_width_all(1)
-	bubble.content_margin_left = 20
-	bubble.content_margin_right = 20
-	bubble.content_margin_top = 12
-	bubble.content_margin_bottom = 12
-	caption_patch.add_theme_stylebox_override("panel",bubble)
-	caption_patch.draw.connect(func():
-		caption_patch.draw_colored_polygon(PackedVector2Array([Vector2(23,1),Vector2(34,-9),Vector2(46,1)]),Color("d8e0df"))
-		caption_patch.draw_colored_polygon(PackedVector2Array([Vector2(25,1),Vector2(34,-7),Vector2(44,1)]),Color("fffdf9")))
-	caption_patch.size_flags_horizontal = SIZE_EXPAND_FILL
-	caption_patch.size_flags_vertical = SIZE_SHRINK_CENTER
-	_photo_caption_label = Kit.label("My snowman is the best!",17,false,Kit.INK)
-	_photo_caption_label.custom_minimum_size.x = 220
-	_photo_caption_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	caption_patch.add_child(_photo_caption_label)
-	bar.add_child(caption_patch)
+	var caption := Kit.label("My snowman is the best!", 17, false, Kit.YARN)
+	caption.size_flags_horizontal = SIZE_EXPAND_FILL
+	caption.size_flags_vertical = SIZE_SHRINK_CENTER
+	bar.add_child(caption)
 	_action_button = SewnButton.new("Post it!", Kit.PINE)
 	_action_button.custom_minimum_size.x = 214
 	_action_button.pressed.connect(_on_action_pressed)
@@ -258,48 +196,26 @@ func _build_view() -> void:
 	pocket.set_padding(16, 14)
 	pocket.size_flags_vertical = SIZE_EXPAND_FILL
 	side.add_child(pocket)
-	_pocket_column = VBoxContainer.new()
-	_pocket_column.add_theme_constant_override("separation", 6)
-	pocket.add_child(_pocket_column)
-	var heading_patch := _fabric(StitchedPanel.Fabric.FELT, Kit.PINE, 10, 0, Color(Kit.YARN, 0.45))
-	heading_patch.set_padding(20, 12)
-	_pocket_column.add_child(heading_patch)
+	var pocket_column := VBoxContainer.new()
+	pocket_column.add_theme_constant_override("separation", 6)
+	pocket.add_child(pocket_column)
 	var heading := HBoxContainer.new()
-	heading_patch.add_child(heading)
+	pocket_column.add_child(heading)
 	var heading_text := Kit.label("Clues to hide", 22, true, Kit.YARN)
 	heading_text.size_flags_horizontal = SIZE_EXPAND_FILL
 	heading.add_child(heading_text)
 	_found_label = Kit.label("", 19, true, Kit.MUSTARD)
 	heading.add_child(_found_label)
-	_rebuild_clue_slots()
+	for i in Clues.CLUES.size():
+		var slot := _fabric(StitchedPanel.Fabric.FELT, Color(1, 1, 1, 0.14), 10, 0, Color(Kit.YARN, 0.45))
+		slot.set_padding(12, 4)
+		slot.custom_minimum_size.y = 42
+		pocket_column.add_child(slot)
+		_slots.append(slot)
 
 	_buddy = SnowBuddy.new()
 	_buddy.set_bubble_width(246)
 	side.add_child(_buddy)
-
-
-func _fit_photo_panel() -> void:
-	if not is_instance_valid(_photo_bar) or _photo_holder.size.x <= 0.0:
-		return
-	var footer_height := _photo_bar.get_combined_minimum_size().y + 12.0
-	var available := _photo_holder.size - Vector2(36,32)
-	var photo_height := maxf(1.0,minf(available.x / 1.6,available.y - footer_height))
-	var fitted := Vector2(photo_height * 1.6 + 36.0,photo_height + footer_height + 32.0)
-	_photo_panel.size = fitted
-	_photo_panel.position = Vector2((_photo_holder.size.x - fitted.x) * 0.5,0)
-
-
-func _rebuild_clue_slots() -> void:
-	for slot in _slots:
-		_pocket_column.remove_child(slot)
-		slot.queue_free()
-	_slots.clear()
-	for i in _clues.size():
-		var slot := _fabric(StitchedPanel.Fabric.FELT, Kit.PINE.lightened(0.14), 10, 0, Color(Kit.YARN,0.45))
-		slot.set_padding(20,12)
-		slot.custom_minimum_size.y = 56
-		_pocket_column.add_child(slot)
-		_slots.append(slot)
 
 
 func _build_caption() -> void:
@@ -322,10 +238,8 @@ func _build_caption() -> void:
 	text.custom_minimum_size.x = 470
 	text.size_flags_vertical = SIZE_SHRINK_CENTER
 	row.add_child(text)
-	_caption_words = text
 	var finish := SewnButton.new("Finish round", Kit.CRANBERRY)
 	finish.size_flags_vertical = SIZE_SHRINK_CENTER
-	_caption_finish = finish
 	finish.pressed.connect(func(): finish_pressed.emit())
 	row.add_child(finish)
 	holder.hide()
@@ -388,11 +302,11 @@ func _tap(at: Vector2) -> void:
 	if nearest.is_empty():
 		_miss_taps += 1
 		_buddy.say(MISS_LINE, "think")
-	elif _decoys.has(nearest):
+	elif Clues.DECOYS.has(nearest):
 		_safe_taps += 1
-		_buddy.say(_decoys[nearest], "happy")
+		_buddy.say(Clues.DECOYS[nearest], "happy")
 	elif _found.has(nearest):
-		_buddy.say("You already found that one. %d to go!" % (_clues.size() - _found.size()), "happy")
+		_buddy.say("You already found that one. %d to go!" % (Clues.CLUES.size() - _found.size()), "happy")
 	else:
 		_find(nearest)
 
@@ -405,7 +319,7 @@ func _find(id: String) -> void:
 		_overlay.queue_redraw(), 0.0, 1.0, 0.55).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 	_refresh()
 	var clue := _clue(id)
-	if _found.size() == _clues.size():
+	if _found.size() == Clues.CLUES.size():
 		stage = Stage.COVER
 		_hoop.hide()
 		_buddy.say("You found all %d! Now cover them with felt patches before you post." % _found.size(), "wow")
@@ -415,7 +329,7 @@ func _find(id: String) -> void:
 
 
 func _on_hint_pressed() -> void:
-	for clue in _clues:
+	for clue in Clues.CLUES:
 		if not _found.has(clue.id):
 			_hints_used += 1
 			_buddy.say("Hint: " + clue.hint, "think")
@@ -465,7 +379,7 @@ func _cover_clues() -> void:
 # --- Drawing ------------------------------------------------------------------------
 
 func _refresh() -> void:
-	var total := _clues.size()
+	var total := Clues.CLUES.size()
 	_found_label.text = "%d of %d" % [_found.size(), total]
 	for i in total:
 		var slot := _slots[i]
@@ -478,7 +392,7 @@ func _refresh() -> void:
 			slot.thread_color = Kit.GOLD_THREAD
 			slot.thread_width = 2.4
 			var column := VBoxContainer.new()
-			column.add_theme_constant_override("separation", 3)
+			column.add_theme_constant_override("separation", -2)
 			var title := Kit.label(clue.name, 16, false, Kit.INK)
 			title.add_theme_font_override("font", Kit.body_font(true))
 			column.add_child(title)
@@ -487,7 +401,7 @@ func _refresh() -> void:
 			column.add_child(why)
 			slot.add_child(column)
 		else:
-			slot.surface = Kit.surface(Kit.PINE.lightened(0.14), 10, 0)
+			slot.surface = Kit.surface(Color(1, 1, 1, 0.14), 10, 0)
 			slot.thread_color = Color(Kit.YARN, 0.45)
 			slot.thread_width = 2.0
 			slot.add_child(Kit.label("Clue %d: still hiding" % (i + 1), 15, false, Kit.YARN))
@@ -622,8 +536,7 @@ func _measure(node: Node3D, max_radius: float) -> Dictionary:
 				first = false
 			else:
 				bounds = bounds.expand(p)
-	var pixel_scale := _view_size().x / 1280.0
-	var radius := clampf(bounds.size.length() * 0.5 + 10.0 * pixel_scale, 44.0 * pixel_scale, max_radius * pixel_scale)
+	var radius := clampf(bounds.size.length() * 0.5 + 10.0, 44.0, max_radius)
 	return {"center": bounds.get_center(), "radius": radius, "bounds": bounds}
 
 
@@ -636,7 +549,7 @@ func _view_size() -> Vector2:
 
 
 func _clue(id: String) -> Dictionary:
-	for clue in _clues:
+	for clue in Clues.CLUES:
 		if clue.id == id:
 			return clue
 	return {}

@@ -19,7 +19,6 @@ var photo_size := Vector2(720, 450)
 func _init() -> void:
 	size = Vector2(DIAMETER, DIAMETER)
 	mouse_filter = MOUSE_FILTER_IGNORE
-	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	var mask := ShaderMaterial.new()
 	mask.shader = MASK_SHADER
 	mask.set_shader_parameter("center", Vector2(DIAMETER, DIAMETER) * 0.5)

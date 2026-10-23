@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://lessons/phone/phone_lesson.gd" id="1_lesson"]
+[ext_resource type="Script" path="res://lessons/phone/dusk_neighborhood.gd" id="2_dusk"]
+[ext_resource type="Script" path="res://lessons/phone/party_set.gd" id="3_party"]
+[ext_resource type="PackedScene" path="res://scenes/pip/pip.tscn" id="4_pip"]
+[ext_resource type="PackedScene" path="res://scenes/glitch/glitch.tscn" id="5_glitch"]
+[ext_resource type="Script" path="res://lessons/phone/party_ui.gd" id="6_ui"]
+[ext_resource type="Script" path="res://lessons/phone/phone_ui.gd" id="7_phone"]
+
+[node name="PhoneLesson" type="Node3D"]
+script = ExtResource("1_lesson")
+
+[node name="DuskNeighborhood" type="Node3D" parent="."]
+script = ExtResource("2_dusk")
+
+[node name="Party" type="Node3D" parent="."]
+position = Vector3(-49, 0, 62)
+script = ExtResource("3_party")
+
+[node name="Pip" parent="." instance=ExtResource("4_pip")]
+
+[node name="Glitch" parent="." instance=ExtResource("5_glitch")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+current = true
+fov = 55.0
+near = 0.1
+far = 260.0
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PartyUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("6_ui")
+
+[node name="Phone" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("7_phone")

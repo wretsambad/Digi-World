@@ -41,8 +41,8 @@ func _fly_to(view: Marker3D, duration: float) -> Tween:
 
 
 func _on_park_board_requested() -> void:
+	park_board.pin_notes(ui.get_public_cards())
 	await _fly_to(board_view, board_flight_duration).finished
-	await park_board.pin_notes(ui.get_public_cards())
 	ui.show_board_caption()
 
 
