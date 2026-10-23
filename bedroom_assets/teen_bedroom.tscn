@@ -1475,6 +1475,9 @@ metadata/category = "Driveways"
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 4.65, 0, -43)
 metadata/category = "Driveways"
 
+[node name="driveway_apron_large_Mesh" parent="NearbyNeighborhood/Driveways_driveway_apron_large_394" index="0" unique_id=884697379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0689266, 0, 0, 0.07616377)
+
 [node name="Sidewalks_sidewalk_slab_large_401" parent="NearbyNeighborhood" unique_id=1268461988 instance=ExtResource("65_ros7n")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -55, 0, -63.35)
 metadata/category = "Sidewalks"
@@ -2398,7 +2401,7 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.6, 0.07, -43)
 metadata/category = "Driveways"
 
 [node name="driveway_large_Mesh" parent="NearbyNeighborhood/Driveways_driveway_large_732" index="0" unique_id=1890149261]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.8413043, 1.5942192, 0, 0.64414597)
+transform = Transform3D(0.928617, 0, 0, 0, 0.928617, 0, 0, 0, 1.5543287, 1.3923645, 0.2617159, -0.060386658)
 
 [node name="Cars_car_sage_733" parent="NearbyNeighborhood" unique_id=1510792509 instance=ExtResource("90_ovd4x")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 9.170871, 0.15, -43)
