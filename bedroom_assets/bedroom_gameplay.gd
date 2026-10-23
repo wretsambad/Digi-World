@@ -155,7 +155,7 @@ func start_sharing_board() -> void:
 	set_active(false)
 	get_tree().change_scene_to_file(SHARING_BOARD_SCENE)
 
-## The phone lesson, The Glitch's Last Trick, is a party scene in Willow Park.
+## The phone lesson, The Glitch's Last Trick, is a neighborhood house party.
 func start_phone_lesson() -> void:
 	GameState.start_lesson("phone")
 	set_active(false)

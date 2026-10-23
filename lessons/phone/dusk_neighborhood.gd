@@ -21,6 +21,16 @@ var neighborhood: Node3D
 func _ready() -> void:
 	neighborhood = NEIGHBORHOOD.instantiate()
 	neighborhood.name = "Neighborhood"
+	# The phone lesson supplies a furnished house on this lot. Remove only the
+	# exterior-only copy here, before scenery batching; the daytime scene stays intact.
+	var party_house := neighborhood.get_node_or_null("ExistingNeighborhood/House_West_02")
+	if party_house:
+		party_house.free()
+	# This home's former rear garden is now part of the living-room footprint.
+	for prop_name: String in ["Hedges_hedge_straight_543", "Hedges_hedge_straight_544", "Hedges_hedge_straight_545", "Hedges_hedge_straight_546", "GardenTrees_tree_poplar_large_549", "GardenTrees_tree_oak_large_550"]:
+		var prop := neighborhood.get_node_or_null("ExistingNeighborhood/" + prop_name)
+		if prop:
+			prop.free()
 	for path in OPENING_NODES:
 		var node := neighborhood.get_node_or_null(path)
 		if node:

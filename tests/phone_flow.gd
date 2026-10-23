@@ -1,15 +1,13 @@
 extends Node
-## Plays The Glitch's Last Trick from the title to the bedroom: one mistake in
-## round 1 (so the Glitch scores and the player rewinds), every detective tool,
-## the Prize Shop's wrong and right tags, a chat with the wrong and the right
-## person, and the spark ending. Run with the graphical renderer; add
-## `-- --capture` to save screenshots to work/phone_capture/, or `-- --escape`
-## to also fall for the Prize Shop and get the "see you next time" ending.
+## Plays the phone game from the bedroom through the blackout, animated light
+## restoration, staged decorations and silent exit, then returns to the bedroom.
+## `-- --capture` saves screenshots to work/phone_capture/.
+## `-- --extra-mistake` also falls for the Prize Shop and delivery message.
 const LESSON := "res://lessons/phone/phone_lesson.tscn"
 const BEDROOM := "res://bedroom_assets/teen_bedroom.tscn"
 var failures: Array[String] = []
-var capture := false
-var escape := false
+@export var capture := false
+@export var extra_mistake := false
 var lesson: Node3D
 var ui: Control
 var phone: Control
@@ -61,6 +59,7 @@ func read_until(condition: Callable, message: String) -> bool:
 	while not condition.call() and guard < 400:
 		guard += 1
 		if ui._waiting:
+			verify(ui.speaker.text != "THE GLITCH", "Glitch has no dialogue")
 			ui.writer.complete(ui.story_body)
 			ui.story_button.pressed.emit()
 		await get_tree().create_timer(0.1).timeout
@@ -78,6 +77,7 @@ func open_notification() -> void:
 func use_tools(tools: Array) -> void:
 	await press("PauseCheck")
 	verify(phone.is_paused and not phone.timer_running or phone.is_paused, "Pause & Check freezes the countdown")
+	verify(phone.find_children("NewBadge", "", true, false).is_empty(), "Detective kit has no New labels")
 	for tool: String in tools:
 		await press("Tool_" + tool)
 
@@ -94,8 +94,8 @@ func choose_right() -> void:
 
 
 func _ready() -> void:
-	capture = "--capture" in OS.get_cmdline_user_args()
-	escape = "--escape" in OS.get_cmdline_user_args()
+	capture = capture or "--capture" in OS.get_cmdline_user_args()
+	extra_mistake = extra_mistake or "--extra-mistake" in OS.get_cmdline_user_args()
 	# Fix the logical layout independently of the desktop's DPI scale.
 	await get_tree().process_frame
 	get_tree().root.mode = Window.MODE_WINDOWED
@@ -140,7 +140,26 @@ func _ready() -> void:
 	await wait_for(func() -> bool: return ui.title_card.visible, "Title shows")
 	await shot("title")
 	ui.title_play.pressed.emit()
-	verify(not lesson.party.is_on("lights"), "Party starts switched off")
+	verify(lesson.party.is_on("lights"), "Room starts lit before the blackout dialogue")
+	verify(not lesson.has_node("Pip"), "No Pip character is instantiated")
+	verify(lesson.party._speakers.size() == 3, "Three speakers are present before rewards")
+	verify(lesson.party.has_node("Refreshments"), "Refreshments are present before rewards")
+	verify(not lesson.party._decorations.visible, "Reward decorations start hidden")
+	verify(lesson.party._cake.position.y > 1.2, "Cake stands on the taller table")
+	verify(lesson.DATA.ROUNDS.size() == 3, "Phone has three challenges")
+	verify(lesson.party.has_node("PartyHouse/Floor"), "Party has an indoor house floor")
+	verify(lesson.party.has_node("PartyHouse/Ceiling"), "Party has a ceiling")
+	verify(not lesson.get_node("DuskNeighborhood/Neighborhood/ExistingNeighborhood").has_node("House_West_02"), "House party occupies the existing neighborhood lot")
+
+	# The exact blackout dialogue closes the curtains and switches all bulbs off.
+	await read_until(func() -> bool: return ui.story_body.text.begins_with("Uh oh, the lights went off"), "Blackout dialogue appears")
+	verify(not lesson.party.is_on("lights"), "Lights go out at the dialogue cue")
+	verify(lesson.party.house.curtains_closed, "Curtains cover windows at blackout")
+	for light: OmniLight3D in lesson.party.house._room_lights:
+		verify(is_zero_approx(light.light_energy), "Room lights are off")
+	for material: StandardMaterial3D in lesson.party._bulb_materials:
+		verify(not material.emission_enabled, "Party bulbs are off")
+	await shot("blackout")
 
 	# Round 1: fall for the RSVP once, rewind, then catch it.
 	await open_notification()
@@ -155,12 +174,22 @@ func _ready() -> void:
 	await use_tools(["sender", "link"])
 	verify(phone.found.has("sender") and phone.found.has("link"), "Magnifier and Link Peek find their clues")
 	await choose_right()
+	await read_until(func() -> bool: return lesson.party.restoring_lights, "Curtain and light reveal starts")
+	verify(lesson.party.house._curtain_tween.is_running(), "Curtains open with an animation")
+	verify(lesson.party._light_tween.is_running(), "Bulbs turn on with an animation")
+	await shot("curtains_opening")
 	await read_until(func() -> bool: return lesson.party.is_on("lights") and lesson.round_index == 1, "Lights come back on")
+	verify(not lesson.party.house.curtains_closed, "Curtains are open after task")
+	for curtain: Node3D in lesson.party.house._curtains:
+		verify(curtain.position.is_equal_approx(curtain.get_meta("open")), "Curtain has cleared its window")
+	for light: OmniLight3D in lesson.party.house._room_lights:
+		verify(light.light_energy > 0.7, "Room lights brighten after task")
+	verify(not lesson.party._decorations.visible, "Decoration rewards remain hidden after lights")
 	await shot("lights_on")
 
 	# Round 2: the Prize Shop. One wrong tag is a nudge, not a point.
 	await open_notification()
-	if escape:
+	if extra_mistake:
 		await press("Claim")
 		await wait_for(func() -> bool: return lesson.party.state.music == "glitched", "Claiming a prize glitches the music")
 		await read_until(func() -> bool: return not phone._gotcha_up, "Rewind after the prize trick")
@@ -180,10 +209,34 @@ func _ready() -> void:
 	verify(phone.tagged.size() == 3, "All three prizes unmasked")
 	await shot("shop")
 	await choose_right()
-	await read_until(func() -> bool: return lesson.party.is_on("music") and lesson.round_index == 2, "Music comes back on")
+	await read_until(func() -> bool: return lesson.party.is_on("music") and find("Notification") != null and find("Notification").is_visible_in_tree(), "Music returns and another message arrives")
 
-	# Round 3: ask the wrong person first, then Family.
+	# One real Family message: no deadline, no bait, and either song is safe.
 	await open_notification()
+	verify(phone.is_genuine(), "Family message is genuine")
+	verify(not phone.timer_running and phone._bait_buttons.is_empty(), "Real message has no countdown or bait")
+	var points_before: int = lesson.glitch_points
+	var score_before: int = lesson.score()
+	await use_tools(["sender", "wants"])
+	await wait_for(func() -> bool: return find("Choice2") != null, "Genuine message decision appears")
+	await shot("real_message")
+	await press("Choice2")
+	verify(not phone.finished and not phone._gotcha_up, "Reporting a real message gives guidance without a trick penalty")
+	await press("Choice1" if extra_mistake else "Choice0")
+	await wait_for(func() -> bool: return lesson.real_message_answered, "Safe song reply is sent")
+	verify(lesson.glitch_points == points_before and lesson.score() == score_before, "Real message does not affect the scam score")
+	verify(lesson.party.chosen_song == ("snowman" if extra_mistake else "treehouse"), "Song reply changes the party soundtrack")
+	await shot("real_reply")
+
+	# Round 3: failed attempts must not reveal the locked decorations.
+	await open_notification()
+	if extra_mistake:
+		await press("Bait")
+		await wait_for(func() -> bool: return lesson.party.state.decorations == "glitched", "Delivery trick glitches decorations")
+		verify(not lesson.party._decorations.visible, "Failed task does not reveal reward props")
+		await read_until(func() -> bool: return not phone._gotcha_up, "Rewind after delivery trick")
+		verify(not lesson.party._decorations.visible, "Rewards remain hidden after rewind")
+	# Ask the wrong person first, then Family.
 	await use_tools(["sender", "link", "wants", "ask"])
 	verify(not phone.found.has("link"), "Link Peek finds nothing in a link-free message")
 	await press("Contact_pip")
@@ -194,26 +247,35 @@ func _ready() -> void:
 	await shot("family_chat")
 	await press("BackToCase")
 	await choose_right()
-	await read_until(func() -> bool: return lesson.party.is_on("decorations") and lesson.round_index == 3, "Decorations come back")
-
-	# Round 4: check with Pip in the usual chat; Pip walks in.
-	await open_notification()
-	await shot("rescue")
-	await use_tools(["sender", "wants", "ask"])
-	await press("Contact_pip")
-	await press("QuickReply")
-	await wait_for(func() -> bool: return lesson.pip.visible, "Messaging Pip brings Pip to the party")
-	await wait_for(func() -> bool: return phone.found.has("ask"), "Pip's reply is a clue")
-	await press("BackToCase")
-	await choose_right()
-	await read_until(func() -> bool: return lesson.finished, "Finale plays out")
-	if escape:
-		verify(lesson.score() == 2, "Two of four tricks caught first try")
-		verify(not lesson.glitch.visible, "Escape ending: the Glitch zips away")
+	await read_until(func() -> bool: return lesson.exit_started, "Silent exit starts after decorations")
+	verify(lesson.party._decorations.visible, "Reward decorations appear after the decorations task")
+	verify(lesson.party._reward_props.size() > 0, "Gifts and paper mobiles join the party")
+	verify(lesson.party._balloon_weights.size() == 2, "Each balloon cluster has a floor weight")
+	for balloon: Node3D in lesson.party._balloons:
+		var cord: MeshInstance3D = balloon.get_meta("tether")
+		var tie: Vector3 = balloon.get_meta("tie")
+		verify((cord.position - cord.basis.y * 0.5).distance_to(tie) < 0.015, "String stays tied to the weight while balloon bobs")
+		var neck: Vector3 = balloon.position + balloon.basis * Vector3(0, -0.23, 0)
+		verify((cord.position + cord.basis.y * 0.5).distance_to(neck) < 0.015, "String reaches the balloon neck")
+	for i in lesson.party._balloons.size():
+		for j in range(i + 1, lesson.party._balloons.size()):
+			verify(lesson.party._balloons[i].position.distance_to(lesson.party._balloons[j].position) > 0.43, "Balloon bodies have breathing room")
+	await shot("decorations")
+	await wait_for(func() -> bool: return lesson.exit_walking, "Glitch walks toward doorway")
+	verify(lesson.glitch.visible and not ui.story.visible, "Cutscene shows Glitch without dialogue")
+	verify(phone.modulate.a < 0.01, "Phone moves out of the cutscene view")
+	await shot("exit_walk")
+	await read_until(func() -> bool: return lesson.finished, "Silent finale plays out")
+	if extra_mistake:
+		verify(lesson.score() == 0, "Extra mistakes affect score without changing the cutscene")
 	else:
-		verify(lesson.score() == 3, "Three of four tricks caught first try")
-		verify(lesson.glitch.scale.x < 0.6, "Spark ending shrinks the Glitch")
+		verify(lesson.score() == 2, "Two of three tricks caught first try")
+	verify(lesson.party.is_on("decorations"), "Decorations come back")
 	verify(lesson.party.is_on("celebration"), "Celebration is on")
+	verify(not lesson.has_node("Pip"), "No Pip appears in the finale")
+	verify(lesson.exit_finished and not lesson.glitch.visible, "Glitch disappears after walking out")
+	verify(lesson.glitch.global_position.distance_to(lesson.party.exit_position()) < 0.05, "Glitch reaches the doorway before disappearing")
+	verify(lesson.round_index == 2, "Finale follows the third round directly")
 	await wait_for(func() -> bool: return ui.summary != null and ui.summary.visible, "Summary shows")
 	await shot("summary")
 	(ui.summary.find_child("BackToRoom", true, false) as Button).pressed.emit()

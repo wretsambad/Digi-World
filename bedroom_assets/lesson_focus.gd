@@ -2,8 +2,13 @@ extends Control
 ## First-person inspect UI. The crosshair ray selects real object geometry. When it
 ## lands on a lesson object the crosshair blooms and a plum card slides in, docked
 ## at the lower left so the centre of the screen stays clear.
-const TOUR = preload("res://bedroom_assets/bedroom_tour.gd")
-const NAMES := ["Computer", "Sharing board", "Phone", "Backup robot"]
+# Hover targets are independent of which objects appear in the guided tour.
+const LESSONS := [
+	{"node":"Lesson_Computer", "title":"Protect Your Base", "body":"Build your base and discover how to keep its account safe.", "playable":true},
+	{"node":"Lesson_SharingBoard", "title":"Think before you share", "body":"Choose what is safe to post and which personal details to keep private.", "playable":true},
+	{"node":"Lesson_Phone", "title":"Glitch's Last Trick", "body":"Look for warning signs in messages before trusting a link or replying.", "playable":true},
+	{"node":"Lesson_BackupRobot", "title":"Give your files a backup", "body":"Discover how a backup can help you restore a project when something goes wrong.", "playable":false},
+]
 const PICK_LAYER := 4
 var game: Node3D
 var card: PanelContainer
@@ -82,9 +87,9 @@ func _chip_style(fill: Color) -> StyleBoxFlat:
 
 func build_picking_geometry() -> void:
 	var groups: Dictionary = {-1: PackedVector3Array()}
-	for index in range(TOUR.STOPS.size()):
+	for index in range(LESSONS.size()):
 		groups[index] = PackedVector3Array()
-		var node: Node3D = game.room.get_node(TOUR.STOPS[index].node)
+		var node: Node3D = game.room.get_node(LESSONS[index].node)
 		targets.append({"node":node, "bounds":AABB(), "has_bounds":false})
 	var face_cache: Dictionary = {}
 	for mesh: MeshInstance3D in game.room.find_children("*", "MeshInstance3D", true, false):
@@ -146,9 +151,9 @@ func set_focus(index: int) -> void:
 				exiting = false)
 		return
 	exiting = false
-	heading.text = TOUR.STOPS[index].title
-	description.text = TOUR.STOPS[index].body
-	var playable := index <= 2
+	heading.text = LESSONS[index].title
+	description.text = LESSONS[index].body
+	var playable: bool = LESSONS[index].playable
 	object_label.text = "Click to play" if playable else "Coming soon"
 	object_label.add_theme_color_override("font_color", SunsetUI.PLUM_DEEP if playable else SunsetUI.CREAM_MUTED)
 	action_chip.add_theme_stylebox_override("panel", _chip_style(SunsetUI.TANGERINE if playable else SunsetUI.PLUM_SOFT))

@@ -20,6 +20,9 @@ func run():
 	ui.set_process(false)
 	check(not ui.visible, "No reticle during welcome")
 	game.lesson_tour.hide()
+	check(game.lesson_tour.STOPS.size() == 3, "Tour contains only the three available lessons")
+	for stop in game.lesson_tour.STOPS:
+		check(stop.node != "Lesson_BackupRobot", "Backup robot is excluded from the guided tour")
 	game.play_button.hide()
 	game.text_writer.clear()
 	game.seated_character.hide()
@@ -29,17 +32,21 @@ func run():
 	game.player.set_physics_process(false)
 	await physics_frame
 	await physics_frame
+	check(ui.targets.size() == 4, "Hover selection includes all four objects independently of the tour")
+	var viewpoints := [Vector3(-.25,1.95,-1.7), Vector3(.35,1.95,-1.6), Vector3(.6,1.65,.05), Vector3(-.6,1.85,1.5)]
 	for index in range(4):
-		var data: Dictionary = ui.TOUR.STOPS[index]
+		var data: Dictionary = ui.LESSONS[index]
 		var target: Vector3 = game.room.get_node(data.node+"/FocusAnchor").global_position
 		# The phone's tour marker floats above it; aim at its physical surface.
 		if index == 2: target = ui.targets[index].bounds.get_center()
-		game.camera.global_position = game.room.to_global(data.position)
+		game.camera.global_position = game.room.to_global(viewpoints[index])
 		game.camera.look_at(target)
 		game.camera.fov = 72
 		ui._process(.1)
 		check(ui.focused_index == index, "Reticle selects visible lesson %d (got %d)" % [index, ui.focused_index])
 		check(ui.card.visible and ui.visible, "Reticle and matching card appear")
+		if index == 3:
+			check(ui.object_label.text == "Coming soon" and not ui.mouse_icon.visible, "Robot hover shows Coming soon without a playable action")
 		game.text_writer.advance(.3)
 		var before: int = ui.heading.visible_characters
 		ui._process(.1)
