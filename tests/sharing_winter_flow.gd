@@ -143,33 +143,69 @@ func _ready() -> void:
 	var round2: Node3D = get_tree().current_scene
 	check_environment(round2)
 	var finished_images: Array[Image] = []
+	var expected_hint_count := 0
 	for photo_index in CLUES.PHOTOS.size():
 		var info: Dictionary = CLUES.PHOTOS[photo_index]
 		if not await wait_for(func(): return round2.photo_index == photo_index and round2.ui.visible and round2.ui.stage == round2.ui.Stage.LOOKING and round2.ui._photo_texture != null, "Photo %d opens with fresh state" % (photo_index+1)):
 			finish(); return
+		var active_clues: Array = round2.ui._clues.duplicate()
+		expected_hint_count += active_clues.size()
+		# An editor move beyond the photo must not leave an impossible clue.
+		var edited_detail := round2.photo_set.find_child(active_clues[0].id, true, false) as Node3D
+		var original_transform := edited_detail.transform
+		edited_detail.global_position += round2.photo_camera.global_basis.x * 1000.0
+		round2.ui.setup(round2.ui._photo_texture, round2.photo_camera, round2.photo_set, photo_index)
+		verify(not round2.ui._hotspots.has(active_clues[0].id), "Moving an identifying detail outside the photo removes it from required clues")
+		edited_detail.transform = original_transform
+		round2.ui.setup(round2.ui._photo_texture, round2.photo_camera, round2.photo_set, photo_index)
+		verify(round2.ui._hotspots.has(active_clues[0].id), "Moving a detail back into the photo restores its selectable clue")
+		verify(round2.photo_set == round2.get_node(info.node), "Gameplay uses the arrangement authored in round2.tscn")
+		for i in CLUES.PHOTOS.size():
+			var authored: Node3D = round2.get_node(CLUES.PHOTOS[i].node)
+			verify(authored.scene_file_path.is_empty() and authored.owner == round2, "Every photo arrangement is local and editable")
+			verify(authored.visible == (i == photo_index), "Only the current photo arrangement is visible during play")
 		verify(round2.photo_camera.environment == null, "Photo inherits authored winter lighting")
 		verify(get_viewport().get_visible_rect().size == (Vector2(2511,1308) if wide else Vector2(1440,900)), "Requested window layout is active")
 		verify(round2.ui._photo_texture.get_size() == Vector2(3840,2400), "Every photo retains high resolution for magnification")
-		verify(round2.ui._found.is_empty() and round2.ui._slots.size() == photo_index+3, "Difficulty increases from three to four to five clues")
+		verify(round2.ui._found.is_empty() and round2.ui._slots.size() == active_clues.size(), "Clue slots match the objects still present in the authored photo")
 		verify(round2.ui._progress_label.text == "Photo %d of 3" % (photo_index+1), "Correct photo progress")
-		var clue_spread := Rect2(round2.ui._hotspots[info.clues[0].id].center / round2.ui._view_size(),Vector2.ZERO)
-		for clue in info.clues:
-			clue_spread = clue_spread.expand(round2.ui._hotspots[clue.id].center / round2.ui._view_size())
-		verify(clue_spread.size.x > 0.60 and clue_spread.size.y > 0.30, "Identifying details span the photo horizontally and vertically")
+		verify(not active_clues.is_empty(), "Edited photo still has identifying details to find")
 		round2.ui._close_sheet()
+		var ui: Control = round2.ui
+		ui._change_zoom(100.0)
+		verify(ui._hoop.zoom == ui.Hoop.MAX_ZOOM and ui._zoom_in.disabled, "Magnifier zoom is capped and its plus button disables")
+		var close_region: Rect2 = ui._hoop.sample_region()
+		ui._change_zoom(-100.0)
+		verify(ui._hoop.zoom == ui.Hoop.MIN_ZOOM and ui._zoom_out.disabled, "Magnifier can zoom back out safely")
+		verify(ui._hoop.sample_region().size.x > close_region.size.x, "Increasing magnification samples a smaller part of the original high-resolution photo")
+		var wheel := InputEventMouseButton.new()
+		wheel.button_index = MOUSE_BUTTON_WHEEL_UP
+		wheel.pressed = true
+		wheel.position = ui._overlay.size * 0.5
+		ui._overlay.gui_input.emit(wheel)
+		verify(ui._hoop.zoom == ui.Hoop.MIN_ZOOM + 1.0 and ui._found.is_empty(), "Scrolling over the photo zooms without accidentally selecting a clue")
+		ui._zoom_in.pressed.emit()
+		verify(ui._hoop.zoom == ui.Hoop.MIN_ZOOM + 2.0, "Magnifier plus button works")
+		var zoom_key := InputEventKey.new()
+		zoom_key.keycode = KEY_PLUS
+		zoom_key.pressed = true
+		ui._unhandled_key_input(zoom_key)
+		verify(ui._hoop.zoom == ui.Hoop.MIN_ZOOM + 3.0, "Keyboard magnifier zoom works")
+		ui._change_zoom(1.0) # Review distant labels at 6x.
 		await shot("photo_%d_source" % (photo_index+1))
 		round2.ui._overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		for clue in info.clues:
+		for clue in active_clues:
 			var spot: Dictionary = round2.ui._hotspots[clue.id]
 			verify(Rect2(Vector2.ZERO,round2.ui._view_size()).encloses(spot.bounds), "Whole clue visible: " + clue.id)
 			round2.ui._move_hoop(spot.center / round2.ui._view_size() * round2.ui._overlay.size)
+			verify(round2.ui._hoop.sample_region().get_center().is_equal_approx(spot.center), "Magnifier stays centered on the edited object's real location: " + clue.id)
 			await shot("photo_%d_zoom_%s" % [photo_index+1,clue.id])
 			round2.ui._on_hint_pressed()
 			verify(round2.ui._hint_spot == clue.id and clue.hint in round2.ui._buddy._words.text, "Hint matches physical clue: " + clue.id)
 			round2.ui._tap(spot.center)
 			round2.ui._hoop.hide()
 		round2.ui._overlay.mouse_filter = Control.MOUSE_FILTER_STOP
-		verify(round2.ui._found.size() == info.clues.size(), "All current clues selectable")
+		verify(round2.ui._found.size() == active_clues.size(), "All current clues selectable")
 		await get_tree().process_frame
 		await get_tree().process_frame
 		verify(get_viewport().get_visible_rect().encloses(round2.ui._action_button.get_global_rect()), "Action button remains visible with all explanations")
@@ -181,7 +217,7 @@ func _ready() -> void:
 		await shot("photo_%d_protected" % (photo_index+1))
 		var expected_finished: Image = round2.ui._bake_photo().get_image()
 		var original_photo: Image = round2.ui._photo_texture.get_image()
-		for clue in info.clues:
+		for clue in active_clues:
 			var center := Vector2i(round2.ui._hotspots[clue.id].center)
 			verify(expected_finished.get_pixelv(center) != original_photo.get_pixelv(center), "Private detail covered: " + clue.id)
 		finished_images.append(expected_finished)
@@ -203,7 +239,7 @@ func _ready() -> void:
 		else:
 			await get_tree().process_frame
 			await get_tree().process_frame
-	verify(round2.results.photos.size() == 3 and round2.results.hints_used == 12, "Round completion aggregates all three photos")
+	verify(round2.results.photos.size() == 3 and round2.results.hints_used == expected_hint_count, "Round completion aggregates all three edited photos")
 	await shot("photo_3_complete")
 	round2.ui.home_requested.emit()
 	if not await wait_for(func(): return current_path() == "res://bedroom_assets/teen_bedroom.tscn", "Completed GitHub lesson returns to bedroom"):

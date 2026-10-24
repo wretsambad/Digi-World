@@ -7,9 +7,14 @@ extends Control
 const Kit := preload("res://lessons/sharing_board/ui/felt_kit.gd")
 const MASK_SHADER := preload("res://lessons/sharing_board/ui/hoop_mask.gdshader")
 const DIAMETER := 196.0
+const MIN_ZOOM := 2.0
+const MAX_ZOOM := 12.0
 
 var texture: Texture2D
-var zoom := 2.6
+var zoom := 4.0:
+	set(value):
+		zoom = clampf(value, MIN_ZOOM, MAX_ZOOM)
+		queue_redraw()
 ## Center of the hoop as a 0..1 position across the photo.
 var focus := Vector2(0.5, 0.5)
 ## How many screen pixels the whole photo covers, to size the zoomed piece.
@@ -19,6 +24,7 @@ var photo_size := Vector2(720, 450)
 func _init() -> void:
 	size = Vector2(DIAMETER, DIAMETER)
 	mouse_filter = MOUSE_FILTER_IGNORE
+	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 	var mask := ShaderMaterial.new()
 	mask.shader = MASK_SHADER
 	mask.set_shader_parameter("center", Vector2(DIAMETER, DIAMETER) * 0.5)
@@ -35,12 +41,17 @@ func _init() -> void:
 func _draw() -> void:
 	if texture == null:
 		return
-	var texture_size := Vector2(texture.get_size())
-	var piece := size / photo_size * texture_size / zoom
-	var region := Rect2(focus * texture_size - piece * 0.5, piece)
-	draw_texture_rect_region(texture, Rect2(Vector2.ZERO, size), region)
+	draw_texture_rect_region(texture, Rect2(Vector2.ZERO, size), sample_region())
 	# A little shine across the fabric so it reads as glass-smooth, taut cloth.
 	draw_arc(size * 0.5, size.x * 0.5 - 24.0, PI * 1.1, PI * 1.45, 16, Color(1, 1, 1, 0.25), 6.0, true)
+
+
+func sample_region() -> Rect2:
+	if texture == null or photo_size.x <= 0.0 or photo_size.y <= 0.0:
+		return Rect2()
+	var texture_size := Vector2(texture.get_size())
+	var piece := size / photo_size * texture_size / zoom
+	return Rect2(focus * texture_size - piece * 0.5, piece)
 
 
 func _draw_rings(rings: Control) -> void:

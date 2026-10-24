@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var walk_speed := 2.6
-@export var jog_speed := 4.0
+@export var walk_speed := 2.9
+@export var jog_speed := 4.4
 var controls_enabled := true
 var room_origin := Vector3.ZERO
 var room_half_size := Vector2(3.24, 3.69)

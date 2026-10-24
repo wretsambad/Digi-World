@@ -1,122 +1,111 @@
 extends Node3D
-## The neighborhood board by Willow Park. Anything pinned here is public:
-## everyone who walks by can read it.
-
-const Kit := preload("res://lessons/sharing_board/ui/felt_kit.gd")
-const StitchedPanel := preload("res://lessons/sharing_board/ui/stitched_panel.gd")
-const NOTE_SIZE := Vector2(0.7, 0.36)
-const COLUMNS := 3
-const ROWS := 3
-
+## Larger winter park noticeboard. Only its physical appearance changes.
+const Patch := preload("res://lessons/sharing_board/felt_patch_3d.gd")
+const Paper := preload("res://lessons/sharing_board/paper_post.gd")
+const SURFACE := preload("res://lessons/sharing_board/materials/board_surface.gdshader")
 @onready var notes: Node3D = $Notes
+var pinning := false
 
+func _ready() -> void:
+	for part in get_children():
+		if not part is MeshInstance3D: continue
+		var material := ShaderMaterial.new()
+		material.shader = SURFACE
+		material.set_shader_parameter("wood", part.name != "Cork")
+		material.set_shader_parameter("horizontal_grain", "Top" in str(part.name) or "Bottom" in str(part.name) or "Cap" in str(part.name))
+		material.set_shader_parameter("base_color", Color("b58a54") if part.name == "Cork" else Color("825933"))
+		part.material_override = material
+	_add_snow()
+	_add_fasteners()
+
+func _add_snow() -> void:
+	var snow := StandardMaterial3D.new()
+	snow.albedo_color = Color("e2e9ed")
+	snow.roughness = 0.94
+	# Continuous uneven snow along the timber, without a roof or title sign.
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	const SLICES := 56
+	const RINGS := 14
+	for x in SLICES:
+		for r in RINGS:
+			for corner in [Vector2i(0,0),Vector2i(0,1),Vector2i(1,0),Vector2i(1,0),Vector2i(0,1),Vector2i(1,1)]:
+				var u := float(x+corner.x)/SLICES
+				var angle := float(r+corner.y)/RINGS * TAU
+				var depth := 0.15 + 0.018*sin(u*31.0)
+				var height := 0.055 + 0.012*sin(u*23.0) + 0.006*cos(u*49.0)
+				st.add_vertex(Vector3(lerpf(-2.23,2.23,u),3.51+cos(angle)*height,0.04+sin(angle)*depth))
+	st.generate_normals()
+	var cap := MeshInstance3D.new()
+	cap.name = "SoftSnowAlongTopRail"
+	cap.mesh = st.commit()
+	cap.material_override = snow
+	add_child(cap)
+	for x in [-2.06,2.06]:
+		var post_snow := MeshInstance3D.new()
+		post_snow.name = "SnowOnPostCap"
+		var dome := SphereMesh.new()
+		dome.radius = 0.18
+		dome.height = 0.11
+		post_snow.mesh = dome
+		post_snow.material_override = snow
+		post_snow.position = Vector3(x,3.65,-0.10)
+		add_child(post_snow)
+
+func _add_fasteners() -> void:
+	var brass := StandardMaterial3D.new()
+	brass.albedo_color = Color("aa9572")
+	brass.metallic = 0.65
+	brass.roughness = 0.45
+	for x in [-2.14,2.14]:
+		for y in [1.03,3.27]:
+			var bolt := MeshInstance3D.new()
+			bolt.name = "FrameBolt"
+			var head := CylinderMesh.new()
+			head.top_radius = 0.026
+			head.bottom_radius = 0.026
+			head.height = 0.012
+			bolt.mesh = head
+			bolt.rotation.x = PI*0.5
+			bolt.position = Vector3(x,y,0.182)
+			bolt.material_override = brass
+			add_child(bolt)
 
 func clear_notes() -> void:
 	for note in notes.get_children():
+		notes.remove_child(note)
 		note.queue_free()
 
-
-## Pins one felt patch per card onto the cork, in a loose grid. Each card is
-## {"id": ..., "text": ...}; the id picks the same felt color the patch had
-## in its pocket.
 func pin_notes(cards: Array) -> void:
 	clear_notes()
-	var rng := RandomNumberGenerator.new()
-	rng.seed = 7
-	var cell := Vector2(2.4 / COLUMNS, 1.15 / ROWS)
-	for i in mini(cards.size(), COLUMNS * ROWS):
-		var column := i % COLUMNS
-		var row := i / COLUMNS
-		var note := _make_note(cards[i].text, Kit.patch_color(cards[i].id))
-		note.position = Vector3(-1.2 + cell.x * (column + 0.5), 1.9 - cell.y * (row + 0.5), 0.0)
-		note.rotation.z = deg_to_rad(rng.randf_range(-6.0, 6.0))
-		notes.add_child(note)
+	pinning = true
+	var count := mini(cards.size(),9)
+	for i in count:
+		var patch := Patch.new()
+		patch.card = cards[i]
+		var target: Vector3
+		if count <= 3:
+			patch.patch_size = Vector2(1.67,0.85 if i != 1 else 1.04)
+			target = [Vector3(-1.01,2.64,0),Vector3(0.93,2.57,0),Vector3(-0.40,1.48,0)][i]
+		else:
+			patch.patch_size = Vector2(1.18,0.61)
+			target = Vector3(-1.29+(i%3)*1.29,2.94-(i/3)*0.76,0)
+		notes.add_child(patch)
+		patch.attach_to(target,deg_to_rad([-2.0,1.5,-1.0][i%3]),i*0.20)
+	await get_tree().create_timer(0.7+count*0.20).timeout
+	pinning = false
 
-
-## Pins one photo in the middle of the cork, like a printed snapshot.
-func pin_photo(texture: Texture2D) -> void:
-	clear_notes()
-	var photo := Node3D.new()
-	photo.position = Vector3(0.0, 1.36, 0.0)
-	photo.rotation.z = deg_to_rad(-2.0)
-
-	var border := MeshInstance3D.new()
-	var border_quad := QuadMesh.new()
-	border_quad.size = Vector2(1.38, 0.92)
-	var border_material := StandardMaterial3D.new()
-	border_material.albedo_color = Color("#F8F5EF")
-	border_material.roughness = 0.9
-	border_quad.material = border_material
-	border.mesh = border_quad
-	photo.add_child(border)
-
-	var picture := MeshInstance3D.new()
-	var picture_quad := QuadMesh.new()
-	picture_quad.size = Vector2(1.26, 0.7875)
-	var picture_material := StandardMaterial3D.new()
-	picture_material.albedo_texture = texture
-	picture_material.roughness = 0.7
-	picture_quad.material = picture_material
-	picture.mesh = picture_quad
-	picture.position = Vector3(0.0, 0.0, 0.003)
-	photo.add_child(picture)
-
-	for x in [-0.6, 0.6]:
-		var pin := _make_pin()
-		pin.position = Vector3(x, 0.4, 0.02)
-		photo.add_child(pin)
-	notes.add_child(photo)
-
-
-## A felt patch like the ones sewn in Round 1, drawn by the same kit into a
-## small viewport and shown on a quad, so the board matches the lesson.
-func _make_note(text: String, color: Color) -> Node3D:
-	var note := Node3D.new()
-
-	var viewport := SubViewport.new()
-	viewport.size = Vector2i(448, 230)
-	viewport.transparent_bg = true
-	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
-	var patch := StitchedPanel.new()
-	patch.surface = Kit.surface(color, 26, 0)
-	patch.thread_color = Kit.GOLD_THREAD
-	patch.thread_width = 3.6
-	patch.stitch_inset = 10.0
-	patch.set_padding(22, 12)
-	patch.position = Vector2.ZERO
-	patch.size = Vector2(viewport.size)
-	var label := Kit.label(text, 46, false, Kit.INK, HORIZONTAL_ALIGNMENT_CENTER)
-	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	patch.add_child(label)
-	viewport.add_child(patch)
-	note.add_child(viewport)
-
-	var felt := MeshInstance3D.new()
-	var quad := QuadMesh.new()
-	quad.size = NOTE_SIZE
-	var felt_material := StandardMaterial3D.new()
-	felt_material.albedo_texture = viewport.get_texture()
-	felt_material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
-	# Unshaded, so the felt keeps the exact color it had on the board.
-	felt_material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
-	quad.material = felt_material
-	felt.mesh = quad
-	note.add_child(felt)
-
-	var pin := _make_pin()
-	pin.position = Vector3(0.0, NOTE_SIZE.y * 0.5 - 0.035, 0.015)
-	note.add_child(pin)
-	return note
-
-
-func _make_pin() -> MeshInstance3D:
-	var pin := MeshInstance3D.new()
-	var pin_mesh := SphereMesh.new()
-	pin_mesh.radius = 0.025
-	pin_mesh.height = 0.05
-	var pin_material := StandardMaterial3D.new()
-	pin_material.albedo_color = Color("#FF7E44")
-	pin_mesh.material = pin_material
-	pin.mesh = pin_mesh
-	return pin
+func pin_photo(texture: Texture2D, caption := "My snowman is the best!") -> void:
+	pinning = true
+	var index := mini(notes.get_child_count(),2)
+	var print := Paper.new()
+	print.card = {"id":"finished_photo_%d" % index,"text":caption}
+	print.photo = texture
+	print.full_photo = true
+	print.paper_size = Vector2(1.40,1.05)
+	notes.add_child(print)
+	print.pin.scale = Vector3.ONE * 1.6
+	var locations := [Vector3(-0.90,2.68,0.012),Vector3(0.90,2.68,0.016),Vector3(0,1.54,0.020)]
+	print.attach_to(locations[index],[-0.025,0.02,-0.012][index])
+	await print.pinned
+	pinning = false

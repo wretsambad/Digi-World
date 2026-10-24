@@ -1,7 +1,7 @@
 extends Control
 ## A welcome pause, guided lesson previews, then the seated-player reveal.
 const FONT = preload("res://neighborhood_assets/preview/fonts/Fredoka.ttf")
-const TRAVEL_SECONDS := 2.6
+const TRAVEL_SECONDS := 1.6
 const READ_SECONDS := 8.0
 const STOPS := [
 	{"node":"Lesson_Computer", "title":"Protect Your Base", "body":"Build your base and discover how to keep its account safe.", "position":Vector3(-.25, 1.95, -1.7)},
@@ -152,8 +152,8 @@ func _draw() -> void:
 	panel.shadow_offset = Vector2(0, 6)
 	var origin := Vector2((size.x-300)/2, 24)
 	draw_style_box(panel, Rect2(origin, Vector2(300,46)))
-	for i in range(4):
-		var center := origin+Vector2(212+i*22,23)
+	for i in range(STOPS.size()):
+		var center := origin+Vector2(278-(STOPS.size()-1-i)*22,23)
 		if i == index:
 			draw_circle(center, 8.0, SunsetUI.BUTTER, true, -1, true)
 		elif i < index:

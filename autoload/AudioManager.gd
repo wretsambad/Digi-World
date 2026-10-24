@@ -5,16 +5,25 @@ extends Node
 var muted: bool = false
 var _cache: Dictionary = {}
 const RATE := 22050
+const CUE_GAIN_DB := {"snap": -6.0, "build": -3.0}
+var _last_snap_msec := -1000
 
 
 func play(cue: String) -> void:
 	if muted:
 		return
+	# Many fence pieces land together. Keep the placement cue from piling
+	# up into a louder burst than the other lesson sounds.
+	if cue == "snap":
+		var now := Time.get_ticks_msec()
+		if now - _last_snap_msec < 70:
+			return
+		_last_snap_msec = now
 	if not _cache.has(cue):
 		_cache[cue] = _build(cue)
 	var player := AudioStreamPlayer.new()
 	player.stream = _cache[cue]
-	player.volume_db = -12.0
+	player.volume_db = -12.0 + float(CUE_GAIN_DB.get(cue, 0.0))
 	add_child(player)
 	player.finished.connect(player.queue_free)
 	player.play()

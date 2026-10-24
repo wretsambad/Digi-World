@@ -1,5 +1,5 @@
 extends Node
-## Preserved verbatim from the original computer opening.
+## Operator pose driven by the same desktop timeline as the cursor.
 var game: Node3D
 var elapsed: float = 0.0
 var mouse_node: Node3D
@@ -25,16 +25,20 @@ func pose_hand(label: String, target: Vector3) -> void:
 
 func animate_operator(delta: float) -> void:
 	game.seated_character.animate(delta,0)
+	var desktop: DesktopScreen = game.computer_lesson.lesson.ui.desktop
+	var movement := desktop.cursor - DesktopScreen.CURSOR_START
+	# The monitor faces +Z; left/up cursor travel maps to left/forward
+	# motion across the desk. Update the mouse before solving the hand pose.
+	mouse_node.position = mouse_origin + Vector3(movement.x * 0.00008, 0, movement.y * 0.00008)
 	var keyboard: Node3D = game.room.get_node("StudyCorner/keyboard_125")
 	var tap := sin(elapsed*22)*.007
 	pose_hand("Right",keyboard.global_position+Vector3(-.13,.065+tap,.05))
 	var keyboard_target := keyboard.global_position+Vector3(.12,.065-tap,.05)
 	var mouse_target := mouse_node.global_position+Vector3(0,.071,.015)
+	mouse_target.y -= desktop.click_amount(elapsed) * 0.004
 	var reach := smooth((elapsed-3.2)/.65)
 	pose_hand("Left",keyboard_target.lerp(mouse_target,reach))
-	if elapsed > 3.85 and elapsed < 4.65:
-		mouse_node.position = mouse_origin+Vector3(sin((elapsed-3.85)*4)*.018,0,0)
-		var hand: Node3D = game.seated_character.get_node("Body/LeftArm/Elbow/Hand")
-		hand.rotation.x = sin(elapsed*18)*.045
+	var hand: Node3D = game.seated_character.get_node("Body/LeftArm/Elbow/Hand")
+	hand.rotation.x = -desktop.click_amount(elapsed) * 0.045
 
 
