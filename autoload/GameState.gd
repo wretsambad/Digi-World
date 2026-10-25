@@ -11,6 +11,8 @@ const SHARING_BOARD := "sharing_board"
 const PHONE := "phone"
 ## The lessons that unlock the finishing cutscene.
 const LESSONS: Array[String] = [PROTECT_YOUR_BASE, SHARING_BOARD, PHONE]
+## Shared ordering for the bedroom's three progress icons.
+const BEDROOM_LESSONS := LESSONS
 
 var completed: Dictionary = {}
 var current_lesson: String = ""
@@ -44,6 +46,14 @@ func all_complete() -> bool:
 		if not is_complete(lesson_id):
 			return false
 	return true
+
+
+func bedroom_completed_count() -> int:
+	var count := 0
+	for lesson_id in BEDROOM_LESSONS:
+		if is_complete(lesson_id):
+			count += 1
+	return count
 
 
 ## A fresh start for "Play again".

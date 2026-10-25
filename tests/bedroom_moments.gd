@@ -30,13 +30,27 @@ func bedroom() -> void:
 	game.bedroom_moments.set_process(false)
 	await process_frame
 
+func finish_finale_and_return() -> void:
+	for i in range(3): await process_frame
+	verify(game.phase == game.Phase.FINALE and game.finale != null, "The teammate's finale must still start after the third game")
+	if game.finale == null: return
+	verify(not game.active and not game.progress_hud.panel.visible, "The finale must lock room controls and hide progress")
+	var ending: Node3D = game.finale
+	await ending.skip()
+	verify(ending.ui.end_card.visible, "The existing finale must retain its end card")
+	await ending._leave(false)
+	await process_frame
+	await process_frame
+	verify(game.phase == game.Phase.PLAYING and game.active, "Leaving the finale must restore bedroom exploration")
+	verify(game.progress_hud.panel.visible, "Progress must return after the finale")
+
 func run() -> void:
 	capture = "--capture" in OS.get_cmdline_user_args()
 	root.size = Vector2i(1600, 900)
 	DirAccess.make_dir_recursive_absolute("res://work/review")
 	progress = root.get_node("GameState")
 	root.get_node("AudioManager").muted = true
-	progress.completed.clear()
+	progress.reset()
 	await bedroom()
 	verify(game.progress_hud.bar.value == 0, "Initial progress must be empty")
 	verify(game.progress_hud.icons.size() == 3, "The HUD must show one icon for each game")
@@ -101,8 +115,8 @@ func run() -> void:
 	session.lesson.lesson_completed.emit()
 	session.state = "return"
 	session.release_player()
-	verify(game.phase == game.Phase.PLAYING and game.active, "Finishing all three games must return to bedroom exploration")
-	verify(game.bedroom_moments.state == "idle", "Finishing all three games must not start an ending")
+	await finish_finale_and_return()
+	verify(game.bedroom_moments.state == "idle", "Game-entry animation must remain idle during the finale")
 	verify(progress.bedroom_completed_count() == 3, "All three completions must remain recorded")
 	for icon in game.progress_hud.icons:
 		verify(icon.completed and icon.status_color() == Color("ff8a3d"), "All three completion dots must stay orange")
@@ -112,7 +126,7 @@ func run() -> void:
 	var panel_rect: Rect2 = game.progress_hud.panel.get_global_rect()
 	verify(panel_rect.end.x <= game.get_viewport().get_visible_rect().size.x, "Progress must fit compact windows")
 	await shot("compact_hud")
-	# Either external lesson can finish last without locking exploration.
+	# Either external lesson can finish last and hand over to the existing finale.
 	for last in ["phone", "sharing_board"]:
 		progress.completed.erase(last)
 		load("res://lessons/" + last + "/lesson_exit.gd").back_to_room(self, true)
@@ -121,8 +135,8 @@ func run() -> void:
 		await process_frame
 		game = current_scene.get_node("BedroomGameplay")
 		game.bedroom_moments.set_process(false)
-		verify(game.phase == game.Phase.PLAYING and game.active, last + " finished last must restore bedroom exploration")
-		verify(game.bedroom_moments.state == "idle", "No ending may start on room re-entry")
+		await finish_finale_and_return()
+		verify(game.bedroom_moments.state == "idle", "Scene return must not restart an entry animation")
 		verify(progress.bedroom_completed_count() == 3, "Completion must survive re-entry")
 	print("BEDROOM MOMENTS ", "PASS" if failures.is_empty() else "FAIL ", failures)
 	quit(0 if failures.is_empty() else 1)

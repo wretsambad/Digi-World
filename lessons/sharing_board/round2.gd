@@ -11,8 +11,8 @@ var photo_results: Array[Dictionary] = []
 var results: Dictionary = {}
 var _transitioning := false
 
-@export var intro_duration := 3.5
-@export var board_flight_duration := 4.5
+@export var intro_duration := 2.3
+@export var board_flight_duration := 3.0
 ## How high the camera rises when it flies across the neighborhood.
 @export var flight_height := 22.0
 
@@ -29,6 +29,7 @@ var _transitioning := false
 
 func _ready() -> void:
 	park_board.clear_notes()
+	_show_photo_set(0)
 	_clear_photo_foreground()
 	camera.global_transform = intro_view.global_transform
 	ui.post_requested.connect(_on_post_requested)
@@ -38,6 +39,17 @@ func _ready() -> void:
 
 	await _fly_to(yard_view, intro_duration).finished
 	await _capture_photo()
+
+
+## All three photo arrangements are authored locally in this scene. Keep them
+## visible in the editor; gameplay shows only the current arrangement.
+func _show_photo_set(index: int) -> void:
+	for i in Photos.PHOTOS.size():
+		var arrangement := get_node(Photos.PHOTOS[i].node) as Node3D
+		arrangement.visible = i == index
+		if arrangement.has_method("set_active"):
+			arrangement.set_active(i == index)
+	photo_set = get_node(Photos.PHOTOS[index].node)
 
 
 func _capture_photo() -> void:
@@ -101,10 +113,8 @@ func _next_photo() -> void:
 	_transitioning = true
 	ui.hide()
 	photo_index += 1
-	photo_set.queue_free()
+	_show_photo_set(photo_index)
 	await get_tree().process_frame
-	photo_set = load(Photos.PHOTOS[photo_index].scene).instantiate()
-	add_child(photo_set)
 	photo_camera.global_transform = photo_set.get_node("PhotoView").global_transform
 	photo_camera.fov = Photos.PHOTOS[photo_index].fov
 	yard_view.global_transform = photo_camera.global_transform

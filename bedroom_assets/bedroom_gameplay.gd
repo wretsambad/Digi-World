@@ -13,12 +13,14 @@ var look_captured := false
 var _entry_elapsed := 0.0
 var _entry_pose: Transform3D
 var _entry_fov := 72.0
-enum Phase { WAITING, ARRIVING, ZOOMING, PLAYING, WELCOME, TOUR, COMPUTER, FINALE }
+enum Phase { WAITING, ARRIVING, ZOOMING, PLAYING, WELCOME, TOUR, COMPUTER, FINALE, MOMENT }
 var phase := Phase.WAITING
 var lesson_tour: Control
 var lesson_outline: Node
 var lesson_focus: Control
 var computer_lesson: Node
+var bedroom_moments: Node
+var progress_hud: Control
 var text_writer = preload("res://bedroom_assets/text_writer.gd").new()
 var seated_character: Node3D
 var play_button: Button
@@ -92,6 +94,12 @@ func _ready() -> void:
 	computer_lesson = preload("res://scripts/ComputerSession.gd").new()
 	add_child(computer_lesson)
 	computer_lesson.setup(self)
+	bedroom_moments = preload("res://bedroom_assets/bedroom_moments.gd").new()
+	add_child(bedroom_moments)
+	bedroom_moments.setup(self)
+	progress_hud = preload("res://bedroom_assets/bedroom_progress.gd").new()
+	$Controls.add_child(progress_hud)
+	progress_hud.setup(self)
 	set_active(false)
 	camera.global_transform = _intro_pose
 	camera.fov = 62.0
@@ -160,15 +168,11 @@ func start_first_person() -> void:
 
 ## The Sharing Board lesson is its own winter scene, so the bedroom hands over to it.
 func start_sharing_board() -> void:
-	GameState.start_lesson("sharing_board")
-	set_active(false)
-	get_tree().change_scene_to_file(SHARING_BOARD_SCENE)
+	bedroom_moments.start("sharing_board")
 
 ## The phone lesson, The Glitch's Last Trick, is a party scene in Willow Park.
 func start_phone_lesson() -> void:
-	GameState.start_lesson("phone")
-	set_active(false)
-	get_tree().change_scene_to_file(PHONE_LESSON_SCENE)
+	bedroom_moments.start("phone")
 
 func _queue_finale() -> void:
 	_finale_queued = true

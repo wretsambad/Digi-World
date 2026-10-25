@@ -54,6 +54,9 @@ var _photo_bar: HBoxContainer
 var _photo: TextureRect
 var _overlay: Control
 var _hoop: Hoop
+var _zoom_label: Label
+var _zoom_in: SewnButton
+var _zoom_out: SewnButton
 var _slots: Array[StitchedPanel] = []
 var _found_label: Label
 var _action_button: SewnButton
@@ -78,20 +81,43 @@ func setup(photo: Texture2D, photo_camera: Camera3D, photo_set: Node3D, photo_in
 	_photo_index = photo_index
 	_photo_count = Clues.PHOTOS.size()
 	var info: Dictionary = Clues.PHOTOS[photo_index]
-	_clues = info.clues
-	_decoys = info.decoys
+	# Only require details actually present in this photograph. Authored props
+	# may have been removed or moved completely outside the camera frame.
+	_clues = []
+	_decoys = {}
 	_progress_label.text = "Photo %d of %d" % [photo_index+1,_photo_count]
 	_photo_caption_label.text = info.caption
-	_rebuild_clue_slots()
 	_photo_texture = photo
 	_photo_camera = photo_camera
 	_photo.texture = photo
 	_hoop.texture = photo
 	_hotspots.clear()
-	for clue in _clues:
-		_hotspots[clue.id] = _measure(photo_set.get_node("Clues/" + clue.id), 80.0)
-	for id in _decoys:
-		_hotspots[id] = _measure(photo_set.get_node("Decoys/" + id), 120.0)
+	var photo_bounds := Rect2(Vector2.ZERO, _view_size())
+	for clue in info.clues:
+		# Details live under their physical prop so moving the object moves its
+		# label too. Find the named detail regardless of its parent in the scene.
+		var detail := photo_set.find_child(clue.id, true, false) as Node3D
+		if detail == null or not detail.is_visible_in_tree() or _photo_camera.is_position_behind(detail.global_position):
+			continue
+		var spot := _measure(detail, 80.0)
+		var visible_bounds: Rect2 = spot.bounds.intersection(photo_bounds)
+		if not visible_bounds.has_area():
+			continue
+		spot.bounds = visible_bounds
+		spot.center = visible_bounds.get_center()
+		_clues.append(clue)
+		_hotspots[clue.id] = spot
+	for id in info.decoys:
+		var safe_object := photo_set.get_node_or_null("Decoys/" + id) as Node3D
+		if safe_object and safe_object.is_visible_in_tree() and not _photo_camera.is_position_behind(safe_object.global_position):
+			var spot := _measure(safe_object, 120.0)
+			var visible_bounds: Rect2 = spot.bounds.intersection(photo_bounds)
+			if visible_bounds.has_area():
+				spot.bounds = visible_bounds
+				spot.center = visible_bounds.get_center()
+				_decoys[id] = info.decoys[id]
+				_hotspots[id] = spot
+	_rebuild_clue_slots()
 
 
 func begin() -> void:
@@ -106,6 +132,8 @@ func begin() -> void:
 	_hints_used = 0
 	_safe_taps = 0
 	_miss_taps = 0
+	if _clues.is_empty():
+		stage = Stage.READY
 	_refresh()
 	_buddy.say("Move the hoop over the photo. Tap anything that shows who you are or where you live.", "happy")
 	_caption.hide()
@@ -113,7 +141,7 @@ func begin() -> void:
 	show()
 	var info: Dictionary = Clues.PHOTOS[_photo_index]
 	_show_sheet("Say cheese!" if _photo_index == 0 else "Photo %d: %s" % [_photo_index+1,info.title],
-		info.intro, [["Let's look!", Kit.CRANBERRY, _close_sheet]])
+		info.intro.format({"clue_count":_clues.size()}), [["Let's look!", Kit.CRANBERRY, _close_sheet]])
 
 
 func show_board_caption() -> void:
@@ -158,12 +186,36 @@ func _build_view() -> void:
 	title.size_flags_horizontal = SIZE_SHRINK_BEGIN
 	title.add_child(Kit.label("Spot it before you post", 30, true, Kit.YARN))
 	var title_row := HBoxContainer.new()
+	title_row.add_theme_constant_override("separation", 12)
 	column.add_child(title_row)
 	title_row.add_child(title)
 	var title_space := Control.new()
 	title_space.size_flags_horizontal = SIZE_EXPAND_FILL
 	title_space.mouse_filter = MOUSE_FILTER_IGNORE
 	title_row.add_child(title_space)
+	var zoom_controls := HBoxContainer.new()
+	zoom_controls.add_theme_constant_override("separation", 8)
+	zoom_controls.size_flags_vertical = SIZE_SHRINK_CENTER
+	zoom_controls.tooltip_text = "Magnifier zoom: use these buttons, + and -, or scroll over the photo."
+	var zoom_patch := _fabric(StitchedPanel.Fabric.FELT, Kit.PINE, 12, 4, Color(Kit.YARN, 0.45))
+	zoom_patch.set_padding(12, 6)
+	zoom_patch.size_flags_vertical = SIZE_SHRINK_CENTER
+	title_row.add_child(zoom_patch)
+	zoom_patch.add_child(zoom_controls)
+	zoom_controls.add_child(Kit.label("Magnifier", 18, true, Kit.YARN))
+	_zoom_out = SewnButton.new("-", Kit.PINE)
+	_zoom_out.custom_minimum_size = Vector2(64, 48)
+	_zoom_out.tooltip_text = "Zoom out (-)"
+	_zoom_out.pressed.connect(func(): _change_zoom(-1.0))
+	zoom_controls.add_child(_zoom_out)
+	_zoom_label = Kit.label("4x", 20, true, Kit.YARN, HORIZONTAL_ALIGNMENT_CENTER)
+	_zoom_label.custom_minimum_size.x = 48
+	zoom_controls.add_child(_zoom_label)
+	_zoom_in = SewnButton.new("+", Kit.PINE)
+	_zoom_in.custom_minimum_size = Vector2(64, 48)
+	_zoom_in.tooltip_text = "Zoom in (+)"
+	_zoom_in.pressed.connect(func(): _change_zoom(1.0))
+	zoom_controls.add_child(_zoom_in)
 	var progress := _fabric(StitchedPanel.Fabric.FELT, Kit.PINE, 12, 3, Color(Kit.YARN,0.45))
 	progress.set_padding(16,6)
 	title_row.add_child(progress)
@@ -206,6 +258,7 @@ func _build_view() -> void:
 	_overlay = Control.new()
 	_overlay.mouse_filter = MOUSE_FILTER_STOP
 	_overlay.mouse_default_cursor_shape = CURSOR_CROSS
+	_overlay.tooltip_text = "Move to inspect. Scroll to change magnifier zoom."
 	_overlay.draw.connect(_draw_overlay)
 	_overlay.gui_input.connect(_on_photo_input)
 	_overlay.mouse_exited.connect(func(): _hoop.hide())
@@ -359,9 +412,39 @@ func _on_photo_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion or (event is InputEventMouseButton and event.pressed):
 		_move_hoop(event.position)
 	var press := event as InputEventMouseButton
+	if press and press.pressed and stage == Stage.LOOKING and not _sheet_layer.visible:
+		if press.button_index == MOUSE_BUTTON_WHEEL_UP or press.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			_change_zoom(1.0 if press.button_index == MOUSE_BUTTON_WHEEL_UP else -1.0)
+			accept_event()
+			return
 	if press and press.pressed and press.button_index == MOUSE_BUTTON_LEFT and stage == Stage.LOOKING:
 		_tap(_to_photo(press.position))
 		accept_event()
+
+
+func _unhandled_key_input(event: InputEvent) -> void:
+	if not (event is InputEventKey) or not event.pressed or not _view.visible or _sheet_layer.visible or stage != Stage.LOOKING:
+		return
+	if event.keycode in [KEY_PLUS, KEY_EQUAL, KEY_KP_ADD]:
+		_change_zoom(1.0)
+		get_viewport().set_input_as_handled()
+	elif event.keycode in [KEY_MINUS, KEY_KP_SUBTRACT]:
+		_change_zoom(-1.0)
+		get_viewport().set_input_as_handled()
+
+
+func _change_zoom(amount: float) -> void:
+	if stage != Stage.LOOKING or _sheet_layer.visible:
+		return
+	_hoop.zoom += amount
+	_refresh_zoom()
+
+
+func _refresh_zoom() -> void:
+	_zoom_label.text = "%dx" % roundi(_hoop.zoom)
+	_zoom_out.disabled = stage != Stage.LOOKING or _hoop.zoom <= Hoop.MIN_ZOOM
+	_zoom_in.disabled = stage != Stage.LOOKING or _hoop.zoom >= Hoop.MAX_ZOOM
+	_hoop.queue_redraw()
 
 
 func _move_hoop(at: Vector2) -> void:
@@ -370,7 +453,7 @@ func _move_hoop(at: Vector2) -> void:
 		return
 	_hoop.show()
 	_hoop.photo_size = _overlay.size
-	_hoop.focus = at / _overlay.size
+	_hoop.focus = (at / _overlay.size).clamp(Vector2.ZERO, Vector2.ONE)
 	_hoop.position = at - _hoop.size * 0.5
 	_hoop.queue_redraw()
 
@@ -465,6 +548,7 @@ func _cover_clues() -> void:
 # --- Drawing ------------------------------------------------------------------------
 
 func _refresh() -> void:
+	_refresh_zoom()
 	var total := _clues.size()
 	_found_label.text = "%d of %d" % [_found.size(), total]
 	for i in total:
