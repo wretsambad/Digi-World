@@ -1,15 +1,18 @@
 class_name PauseMenu
 extends Control
 ## Esc pause panel. It slides in from the left edge so the room stays visible,
-## pauses the game, and offers Resume, a sound toggle and Quit.
+## pauses the game, and offers Resume, a sound toggle, the ending replay (once
+## every lesson is done) and Quit.
 
 signal resumed
 signal quit_requested
+signal ending_requested
 
 var panel: PanelContainer
 var dim: ColorRect
 var resume_button: Button
 var sound_button: Button
+var ending_button: Button
 var quit_button: Button
 var is_open := false
 var content: VBoxContainer
@@ -50,6 +53,12 @@ func _ready() -> void:
 	sound_button = _menu_button("", false)
 	sound_button.pressed.connect(_toggle_sound)
 	content.add_child(sound_button)
+	ending_button = _menu_button("Watch the ending", false)
+	ending_button.name = "WatchEndingButton"
+	ending_button.pressed.connect(func() -> void:
+		close()
+		ending_requested.emit())
+	content.add_child(ending_button)
 	quit_button = _menu_button("Quit game", false)
 	quit_button.pressed.connect(func() -> void: quit_requested.emit())
 	content.add_child(quit_button)
@@ -87,6 +96,7 @@ func open() -> void:
 	get_tree().paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_refresh_sound()
+	ending_button.visible = GameState.all_complete()
 	show()
 	_layout()
 	if _tween and _tween.is_valid():

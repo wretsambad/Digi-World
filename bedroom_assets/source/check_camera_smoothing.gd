@@ -10,7 +10,7 @@ func run() -> void:
 	var game = scene.get_node("BedroomGameplay")
 	var player = game.player
 	game.lesson_tour.start()
-	for stop in range(4):
+	for stop in range(game.lesson_tour.STOPS.size()):
 		game._process(2.61)
 		game.lesson_tour.next_stop()
 	game._process(2.41)

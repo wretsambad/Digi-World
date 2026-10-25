@@ -13,12 +13,14 @@ var look_captured := false
 var _entry_elapsed := 0.0
 var _entry_pose: Transform3D
 var _entry_fov := 72.0
-enum Phase { WAITING, ARRIVING, ZOOMING, PLAYING, WELCOME, TOUR, COMPUTER }
+enum Phase { WAITING, ARRIVING, ZOOMING, PLAYING, WELCOME, TOUR, COMPUTER, FINALE, MOMENT }
 var phase := Phase.WAITING
 var lesson_tour: Control
 var lesson_outline: Node
 var lesson_focus: Control
 var computer_lesson: Node
+var bedroom_moments: Node
+var progress_hud: Control
 var text_writer = preload("res://bedroom_assets/text_writer.gd").new()
 var seated_character: Node3D
 var play_button: Button
@@ -32,6 +34,10 @@ const PHONE_LESSON_SCENE := "res://lessons/phone/phone_lesson.tscn"
 ## Set by the Sharing Board lesson when the player comes back to the room.
 const SHARING_BOARD_RETURN := &"digi_world_lesson_return"
 const STAND_SECONDS := .75
+const FINALE_SCRIPT := preload("res://finale/finale_cutscene.gd")
+var finale: Node3D
+## Set when the last lesson is finished; the finale starts once the player is back in the room.
+var _finale_queued := false
 
 func _ready() -> void:
 	room = get_parent().get_node_or_null("LearningHouseDetailed/BedroomInterior")
@@ -80,9 +86,20 @@ func _ready() -> void:
 	$Controls.add_child(pause_menu)
 	pause_menu.resumed.connect(_on_pause_resumed)
 	pause_menu.quit_requested.connect(func() -> void: get_tree().quit())
+	pause_menu.ending_requested.connect(play_finale)
+	# The computer lesson finishes in this room; the others finish in their own
+	# scenes and leave GameState.finale_pending set for when the room reloads.
+	GameState.all_lessons_completed.connect(_queue_finale)
+	_finale_queued = GameState.finale_pending
 	computer_lesson = preload("res://scripts/ComputerSession.gd").new()
 	add_child(computer_lesson)
 	computer_lesson.setup(self)
+	bedroom_moments = preload("res://bedroom_assets/bedroom_moments.gd").new()
+	add_child(bedroom_moments)
+	bedroom_moments.setup(self)
+	progress_hud = preload("res://bedroom_assets/bedroom_progress.gd").new()
+	$Controls.add_child(progress_hud)
+	progress_hud.setup(self)
 	set_active(false)
 	camera.global_transform = _intro_pose
 	camera.fov = 62.0
@@ -151,15 +168,37 @@ func start_first_person() -> void:
 
 ## The Sharing Board lesson is its own winter scene, so the bedroom hands over to it.
 func start_sharing_board() -> void:
-	GameState.start_lesson("sharing_board")
-	set_active(false)
-	get_tree().change_scene_to_file(SHARING_BOARD_SCENE)
+	bedroom_moments.start("sharing_board")
 
 ## The phone lesson, The Glitch's Last Trick, is a party scene in Willow Park.
 func start_phone_lesson() -> void:
-	GameState.start_lesson("phone")
+	bedroom_moments.start("phone")
+
+func _queue_finale() -> void:
+	_finale_queued = true
+
+## The finishing cutscene: a paper plane out of the window and up into the sky.
+func play_finale() -> void:
+	if phase == Phase.FINALE:
+		return
+	_finale_queued = false
+	GameState.finale_pending = false
+	phase = Phase.FINALE
 	set_active(false)
-	get_tree().change_scene_to_file(PHONE_LESSON_SCENE)
+	lesson_outline.set_lessons([])
+	finale = FINALE_SCRIPT.new()
+	add_child(finale)
+	finale.finished.connect(_on_finale_finished)
+	finale.play(self)
+
+func _on_finale_finished(play_again: bool) -> void:
+	finale.queue_free()
+	finale = null
+	if play_again:
+		GameState.reset()
+		get_tree().change_scene_to_file(ProjectSettings.get_setting("application/run/main_scene"))
+		return
+	resume_first_person()
 
 ## Back from a lesson: skip the welcome tour and stand the player behind the chair.
 func resume_first_person() -> void:
@@ -321,6 +360,9 @@ func _process(delta: float) -> void:
 				set_active(true)
 		return
 	if not active:
+		return
+	if _finale_queued and phase == Phase.PLAYING:
+		play_finale()
 		return
 	camera.global_transform = first_person_pose()
 	camera.fov = 72.0

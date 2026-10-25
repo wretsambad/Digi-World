@@ -38,8 +38,10 @@ func run():
 	await shot("welcome-compact")
 	root.size = Vector2i(1280,900)
 	tour.welcome_next.pressed.emit()
-	for index in range(4):
-		check(tour.index == index, "All four lessons appear in order")
+	check(tour.STOPS.size() == 3, "Only the three available lessons appear in the tour")
+	for index in range(tour.STOPS.size()):
+		check(tour.index == index, "Available lessons appear in order")
+		check(tour.STOPS[index].node != "Lesson_BackupRobot", "Backup robot stays out of the guided tour")
 		check(game.lesson_outline.selected == [StringName(tour.STOPS[index].node)], "Only the current lesson is outlined")
 		var meshes: Array = tour.game.room.get_node(tour.STOPS[index].node).find_children("*", "MeshInstance3D", true, false)
 		tour.next_stop()
@@ -74,6 +76,6 @@ func run():
 	check(game.phase == game.Phase.WAITING and game.play_button.visible, "Play appears beside the boy after the tour")
 	await shot("ready-to-play")
 	for message in failures: push_error(message)
-	if failures.is_empty(): print("LESSON TOUR PASS: welcome hold, four highlighted lessons, duplicate-click guard, pause/auto/Next, ",rays," clear camera path samples, Play reveal.")
+	if failures.is_empty(): print("LESSON TOUR PASS: welcome hold, three highlighted lessons, duplicate-click guard, pause/auto/Next, ",rays," clear camera path samples, Play reveal.")
 	scene.free()
 	quit(0 if failures.is_empty() else 1)

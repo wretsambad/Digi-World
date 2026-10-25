@@ -1,0 +1,207 @@
+extends CanvasLayer
+## Overlay for the finale: letterbox bars, subtitles, the Skip button, speed
+## lines for the climb, the white flash through the clouds and the end card.
+
+signal skip_pressed
+signal play_again_pressed
+signal back_pressed
+
+var fade: ColorRect
+var flash: ColorRect
+var speed_lines: SpeedLines
+var bars: Array[ColorRect] = []
+var caption_panel: PanelContainer
+var caption_label: Label
+var skip_button: Button
+var end_card: VBoxContainer
+var thanks: Label
+var play_again_button: Button
+var back_button: Button
+var _caption_tween: Tween
+var _caption_serial := 0
+
+
+func _ready() -> void:
+	layer = 20
+	speed_lines = SpeedLines.new()
+	add_child(speed_lines)
+	for top in [true, false]:
+		var bar := ColorRect.new()
+		bar.color = SunsetUI.PLUM_DEEP
+		bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		bar.set_anchors_and_offsets_preset(Control.PRESET_TOP_WIDE if top else Control.PRESET_BOTTOM_WIDE)
+		bar.offset_bottom = 0.0
+		bar.offset_top = 0.0
+		add_child(bar)
+		bars.append(bar)
+	_build_caption()
+	_build_end_card()
+	skip_button = Button.new()
+	skip_button.name = "SkipButton"
+	skip_button.text = "Skip"
+	skip_button.tooltip_text = "Skip the ending (Esc)"
+	SunsetUI.style_button(skip_button, false, 22)
+	SunsetUI.add_arrow(skip_button)
+	skip_button.set_anchors_preset(Control.PRESET_TOP_RIGHT)
+	skip_button.offset_left = -176
+	skip_button.offset_right = -28
+	skip_button.offset_top = 26
+	skip_button.offset_bottom = 82
+	skip_button.pressed.connect(func() -> void: skip_pressed.emit())
+	add_child(skip_button)
+	flash = _full_rect(Color(SunsetUI.CREAM, 0.0))
+	fade = _full_rect(SunsetUI.PLUM_DEEP)
+
+
+func _full_rect(color: Color) -> ColorRect:
+	var rect := ColorRect.new()
+	rect.color = color
+	rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	rect.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	add_child(rect)
+	return rect
+
+
+func _build_caption() -> void:
+	var strip := CenterContainer.new()
+	strip.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	strip.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+	strip.offset_top = -170
+	strip.offset_bottom = -96
+	add_child(strip)
+	caption_panel = PanelContainer.new()
+	var style := SunsetUI.panel_style(Color(SunsetUI.PLUM_DEEP, 0.84), 16)
+	style.content_margin_top = 10
+	style.content_margin_bottom = 12
+	caption_panel.add_theme_stylebox_override("panel", style)
+	caption_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	caption_panel.modulate.a = 0.0
+	strip.add_child(caption_panel)
+	caption_label = SunsetUI.label("", 24, "body")
+	caption_label.autowrap_mode = TextServer.AUTOWRAP_OFF
+	caption_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	caption_panel.add_child(caption_label)
+
+
+func _build_end_card() -> void:
+	end_card = VBoxContainer.new()
+	end_card.name = "EndCard"
+	end_card.alignment = BoxContainer.ALIGNMENT_CENTER
+	end_card.add_theme_constant_override("separation", 22)
+	end_card.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
+	end_card.offset_top = -230
+	end_card.offset_bottom = -54
+	add_child(end_card)
+	thanks = SunsetUI.label("Thank you for playing", 40, "hero")
+	thanks.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	end_card.add_child(thanks)
+	var row := HBoxContainer.new()
+	row.alignment = BoxContainer.ALIGNMENT_CENTER
+	row.add_theme_constant_override("separation", 20)
+	end_card.add_child(row)
+	play_again_button = Button.new()
+	play_again_button.name = "PlayAgainButton"
+	play_again_button.text = "Play again"
+	play_again_button.custom_minimum_size = Vector2(250, 66)
+	SunsetUI.style_button(play_again_button, true, 30)
+	SunsetUI.add_arrow(play_again_button)
+	play_again_button.pressed.connect(func() -> void: play_again_pressed.emit())
+	row.add_child(play_again_button)
+	back_button = Button.new()
+	back_button.name = "BackToRoomButton"
+	back_button.text = "Back to my room"
+	back_button.custom_minimum_size = Vector2(0, 66)
+	SunsetUI.style_button(back_button, false, 26)
+	back_button.pressed.connect(func() -> void: back_pressed.emit())
+	row.add_child(back_button)
+	end_card.hide()
+
+
+## Thin cinema bars that slide in for the flight and out for the end card.
+func set_letterbox(on: bool, seconds: float) -> void:
+	var height := 64.0 if on else 0.0
+	var tween := create_tween().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(bars[0], "offset_bottom", height, seconds)
+	tween.tween_property(bars[1], "offset_top", -height, seconds)
+
+
+func fade_to(alpha: float, seconds: float) -> Tween:
+	var tween := create_tween()
+	tween.tween_property(fade, "color:a", alpha, seconds).set_trans(Tween.TRANS_SINE)
+	return tween
+
+
+func white_flash() -> void:
+	var tween := create_tween()
+	tween.tween_property(flash, "color:a", 0.92, 0.07)
+	tween.tween_property(flash, "color:a", 0.0, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+
+## Shows a subtitle for `seconds`, replacing any line already on screen.
+func caption(text: String, seconds: float = 3.0) -> void:
+	_caption_serial += 1
+	var serial := _caption_serial
+	caption_label.text = text
+	if _caption_tween and _caption_tween.is_valid():
+		_caption_tween.kill()
+	_caption_tween = create_tween()
+	_caption_tween.tween_property(caption_panel, "modulate:a", 1.0, 0.18)
+	_caption_tween.tween_interval(seconds)
+	_caption_tween.tween_callback(func() -> void:
+		if serial == _caption_serial:
+			hide_caption())
+
+
+func hide_caption() -> void:
+	if _caption_tween and _caption_tween.is_valid():
+		_caption_tween.kill()
+	_caption_tween = create_tween()
+	_caption_tween.tween_property(caption_panel, "modulate:a", 0.0, 0.3)
+
+
+func show_end_card(writer: RefCounted) -> void:
+	skip_button.hide()
+	hide_caption()
+	set_letterbox(false, 0.6)
+	end_card.show()
+	end_card.modulate.a = 0.0
+	create_tween().tween_property(end_card, "modulate:a", 1.0, 0.5)
+	writer.reveal(thanks, 0.1, 30.0, false)
+	writer.reveal_button(play_again_button, 0.6)
+	writer.reveal_button(back_button, 0.8)
+	play_again_button.grab_focus()
+
+
+## Streaks that rush out from the middle of the screen during the climb.
+class SpeedLines extends Control:
+	var intensity := 0.0:
+		set(value):
+			intensity = value
+			visible = value > 0.01
+	var _clock := 0.0
+	var _streaks: Array[Vector3] = []
+
+	func _ready() -> void:
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		var rng := RandomNumberGenerator.new()
+		rng.seed = 11
+		for i in 44:
+			# Angle, speed and starting point along the streak's run.
+			_streaks.append(Vector3(rng.randf() * TAU, rng.randf_range(1.4, 2.6), rng.randf()))
+		visible = false
+
+	func _process(delta: float) -> void:
+		if visible:
+			_clock += delta
+			queue_redraw()
+
+	func _draw() -> void:
+		var center := size * 0.5
+		var reach := center.length()
+		for streak in _streaks:
+			var run := fposmod(_clock * streak.y + streak.z, 1.0)
+			var direction := Vector2.from_angle(streak.x)
+			var inner := reach * lerpf(0.42, 1.0, run)
+			var color := Color(SunsetUI.CREAM, 0.55 * intensity * (1.0 - run * 0.6))
+			draw_line(center + direction * inner, center + direction * (inner + reach * 0.3), color, 3.0, true)

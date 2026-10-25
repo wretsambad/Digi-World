@@ -23,9 +23,10 @@ const CONTACTS := {
 const TITLE := "The Glitch's Last Trick"
 const SUBTITLE := "Catch the tricks. Save the party."
 
+const LIGHTS_OUT_LINE := 1
 const OPENING := [
-	["PIP", "Tonight is the big Digi-World party in Willow Park! I'm on my way."],
-	["PIP", "Uh oh. Someone switched the whole party off. And your phone keeps buzzing..."],
+	["PIP", "Tonight is the big Digi-World house party in our neighborhood! Let's get ready."],
+	["PIP", "Uh oh, the lights went off! The curtains have closed, too. And your phone keeps buzzing..."],
 	["PIP", "I bet it's the Glitch. Catch each trick, and we can turn the party back on!"],
 ]
 
@@ -46,7 +47,7 @@ const ROUNDS := [
 		"timer_text": "RSVP closes in",
 		"timer": 30,
 		"tools": ["sender", "link"],
-		"new_tools": ["sender", "link"],
+		"focus_tools": ["sender", "link"],
 		"clues": {
 			"sender": {"title": "Look at the name", "body": "\"D1gi\" has the number 1, not the letter i. And it came from prize-zone.biz, not from Pip."},
 			"link": {"title": "Where does it go?", "body": "The link says digi-world-party.com, but it really goes to prize-zone.biz/grab. That's not the party!"},
@@ -79,7 +80,7 @@ const ROUNDS := [
 		"timer_text": "Offers end in",
 		"timer": 25,
 		"tools": ["wants"],
-		"new_tools": ["wants"],
+		"focus_tools": ["wants"],
 		"offers": [
 			{"icon": "treehouse", "title": "Golden Treehouse", "small_print": "To claim, type your Digi-World password.", "trap": "password"},
 			{"icon": "balloon", "title": "Unlimited Decorations", "small_print": "To claim, tell us your full name, home address and school.", "trap": "private"},
@@ -124,7 +125,7 @@ const ROUNDS := [
 		"timer_text": "Truck leaves in",
 		"timer": 30,
 		"tools": ["sender", "link", "wants", "ask"],
-		"new_tools": ["ask"],
+		"focus_tools": ["ask"],
 		"clues": {
 			"sender": {"title": "Who is it from?", "body": "A number that isn't in your contacts. And you never ordered any decorations."},
 			"wants": {"title": "What does it want?", "body": "Your home address and phone number. Those are private details. Keep them safe!"},
@@ -144,66 +145,34 @@ const ROUNDS := [
 		"bait_why": "Gotcha! Your address is private. When in doubt, ask a grown-up you trust first.",
 		"solved": [
 			["PIP", "Decorations! Asking a grown-up you trust was the perfect move."],
-			["PIP", "Look! A shadow behind the balloons... It has pointy ears!"],
+			["PIP", "Look! A shadow behind the balloons... It's the Glitch!"],
 		],
 		"lesson": "Ask a grown-up you trust before sending private details.",
 	},
-	{
-		"piece": "celebration",
-		"name": "The Celebration",
-		"intro": [
-			["PIP", "Everything is ready! I'm just grabbing the party hats from my treehouse..."],
-			["", "Pip has gone quiet. Then your phone buzzes, really loudly."],
-		],
-		"kind": "message",
-		"sender": "Treehouse Rescue Team",
-		"handle": "@treehouse_rescue_team  (made today)",
-		"avatar": "siren",
-		"avatar_color": Color("ff5a5a"),
-		"lines": ["HELP!! Pip's treehouse is LOCKED and Pip is stuck inside!", "Send YOUR password right now so we can rescue Pip!"],
-		"link": "",
-		"bait": "Send my password",
-		"timer_text": "Rescue ends in",
-		"timer": 20,
-		"tools": ["sender", "link", "wants", "ask"],
-		"new_tools": [],
-		"clues": {
-			"sender": {"title": "Who is it from?", "body": "A brand new account made today. Real rescue teams don't text kids."},
-			"wants": {"title": "What does it want?", "body": "Your password! Nobody needs your password to rescue anyone. Not even Pip."},
-			"ask": {"title": "Pip says", "body": "Pip is safe and walking to the party. The message was a trick!"},
-		},
-		"plain": {"link": "No links this time. It just wants your password."},
-		"chat": {
-			"contact": "pip",
-			"ask": "Pip, are you locked in your treehouse??",
-			"reply": "Locked in? Nope! I'm walking to the park right now. That message isn't from me!",
-		},
-		"choices": [
-			{"text": "Send my password to save Pip", "right": false, "why": "Pip was never locked in. Your password is just for you. Never send it."},
-			{"text": "Reply \"Who is this?\"", "right": false, "why": "Replying tells the trickster you're listening. Report it instead."},
-			{"text": "Report it and tell a grown-up", "right": true},
-		],
-		"bait_why": "Gotcha! Scary, rushed messages are a trick. Check with the real person in your usual chat.",
-		"solved": [
-			["PIP", "I'm here! And look who was behind every trick..."],
-		],
-		"lesson": "Check with the real person, in the chat you already use.",
+]
+
+
+## A normal message between the music and decoration challenges. This does not
+## restore a party piece or count toward the first-try scam score.
+const REAL_MESSAGE := {
+	"genuine": true,
+	"kind": "message",
+	"sender": "Family",
+	"handle": "Family - your usual chat",
+	"avatar": "home",
+	"avatar_color": Color("3f8a86"),
+	"lines": ["The speakers sound great! Which song should we play at the party: the Treehouse Tune or the Snowman Song?"],
+	"link": "",
+	"tools": ["sender", "wants"],
+	"focus_tools": [],
+	"clues": {
+		"sender": {"title": "Your usual Family chat", "body": "This is the same Family conversation you already use, with its earlier messages."},
+		"wants": {"title": "Just a song choice", "body": "They are asking which song you like. No passwords, private details, links or rushing."},
 	},
-]
-
-const GLITCH_CAUGHT := [
-	["THE GLITCH", "Bzzt! You caught ALL my tricks? My fake invite, my prize shop, my delivery truck... even my best one!"],
-]
-
-## Score is the number of rounds caught without being tricked even once.
-const ENDING_SPARK := [
-	["THE GLITCH", "Without anyone falling for my tricks, I'm just... a tiny spark."],
-	["THE GLITCH", "Um. Can I come to the party too?"],
-	["PIP", "Only if you play fair! Party time, everyone!"],
-]
-const ENDING_ESCAPE := [
-	["THE GLITCH", "Hee hee! I still got a few of you. See you next time..."],
-	["PIP", "It zipped away! Next time, Pause & Check from the very start."],
-	["PIP", "But the party is saved. Party time, everyone!"],
-]
-const SPARK_SCORE := 3
+	"plain": {},
+	"choices": [
+		{"text": "Play the Treehouse Tune", "right": true, "reply": "treehouse"},
+		{"text": "Play the Snowman Song", "right": true, "reply": "snowman"},
+		{"text": "Report the message", "right": false, "why": "It is okay to check first. This is your usual Family chat, and it only asks for a song choice. You can reply."},
+	],
+}
