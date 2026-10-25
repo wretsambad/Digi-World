@@ -932,7 +932,11 @@ func _check_ready() -> void:
 		return
 	deciding = true
 	await get_tree().create_timer(0.7).timeout
-	if finished or page != "case":
+	if finished:
+		return
+	# Still in a chat: try again when they come back to the message.
+	if page != "case":
+		deciding = false
 		return
 	_show_dock("decide")
 	hint.emit(HINTS.decide)
@@ -1239,6 +1243,7 @@ func _chat_back_button(dock: VBoxContainer) -> void:
 func _back_to_case() -> void:
 	show_page("case")
 	_scroll_to_end()
+	_check_ready()
 
 
 # ------------------------------------------------------------------ overlays
