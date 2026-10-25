@@ -3,7 +3,8 @@ extends RefCounted
 ## the paper plane, faceted cloud puffs and firework bursts.
 
 ## Saturated enough to read against the bright daytime sky.
-const FIREWORK_COLORS: Array[Color] = [SunsetUI.TANGERINE, Color("ff5d8f"), Color("8f5bd6"), Color("1fb5a8"), SunsetUI.BUTTER]
+const FIREWORK_COLORS: Array[Color] = [Color("ff8147"), Color("29d1e8"), Color("e95bb9"), Color("92de55"), Color("b08aff"), Color("ffd35c"), Color("ff4d64"), Color("4e9dff"), Color("52e3a4")]
+const Burst := preload("res://finale/firework_burst.gd")
 
 
 ## A folded paper plane about 45 cm long, so it reads in the chase shot.
@@ -156,47 +157,11 @@ static func _spark_mesh(radius: float, stretch: float = 1.0) -> SphereMesh:
 	return mesh
 
 
-## One firework burst. `crackle` adds a second wave of twinkling sparks.
-static func firework(color: Color, crackle: bool) -> Node3D:
-	var root := Node3D.new()
-	root.name = "Firework"
-	root.add_child(_sparks(color, 110, 8.0, 1.9, 0.24))
-	if crackle:
-		var glitter := _sparks(SunsetUI.BUTTER.lerp(SunsetUI.TANGERINE, 0.25), 70, 5.0, 1.5, 0.16)
-		glitter.emitting = false
-		root.add_child(glitter)
-	return root
-
-
-static func _sparks(color: Color, amount: int, speed: float, life: float, radius: float) -> CPUParticles3D:
-	var sparks := CPUParticles3D.new()
-	sparks.one_shot = true
-	sparks.emitting = false
-	sparks.amount = amount
-	sparks.lifetime = life
-	sparks.explosiveness = 1.0
-	sparks.mesh = _spark_mesh(radius, 3.5)
-	sparks.particle_flag_align_y = true
-	sparks.emission_shape = CPUParticles3D.EMISSION_SHAPE_SPHERE
-	sparks.emission_sphere_radius = 0.3
-	sparks.direction = Vector3.UP
-	sparks.spread = 180.0
-	sparks.initial_velocity_min = speed * 0.85
-	sparks.initial_velocity_max = speed
-	sparks.gravity = Vector3(0, -2.4, 0)
-	sparks.damping_min = 2.4
-	sparks.damping_max = 3.2
-	var fade := Gradient.new()
-	fade.set_color(0, color.lightened(0.4))
-	fade.set_color(1, Color(color, 0.0))
-	fade.add_point(0.15, color)
-	fade.add_point(0.7, Color(color, 0.85))
-	sparks.color_ramp = fade
-	var shrink := Curve.new()
-	shrink.add_point(Vector2(0, 1))
-	shrink.add_point(Vector2(1, 0.25))
-	sparks.scale_amount_curve = shrink
-	return sparks
+## Patterned bursts carry their own trails, lifetime, and optional twinkle phase.
+static func firework(color: Color, crackle: bool, pattern: int = 0, seed_value: int = 1) -> Node3D:
+	var burst := Burst.new()
+	burst.setup(color, pattern, crackle, seed_value)
+	return burst
 
 
 ## The glowing rocket that climbs to each burst, with a short trail.

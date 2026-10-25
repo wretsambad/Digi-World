@@ -2,7 +2,7 @@ extends Node3D
 ## The finishing cutscene, played in the bedroom once all three lessons are done.
 ## The boy throws a paper plane out of the open window, the camera chases it
 ## down the street, rockets up with it through the clouds, and a thank-you
-## message types itself into the sky while fireworks burst around it.
+## message types itself into the sky while varied fireworks burst around it.
 ## Started by BedroomGameplay.play_finale(); Skip or Esc jumps to the end card.
 
 signal finished(play_again: bool)
@@ -61,20 +61,23 @@ const THROW_KEYS := [
 	[4.6, -0.2, -0.15, 0.0, 0.0, -0.1],
 ]
 
-## Firework show, timed from the end of the title: seconds, offset from the
-## message, and whether a crackle of glitter follows the burst.
+## Time, sky position, pattern (chrysanthemum/rings/willow/peony/star/palm/spiral), crackle.
 const SHOW := [
-	[0.0, Vector3(-24, 9, -6), false],
-	[0.55, Vector3(23, 11, -6), true],
-	[1.2, Vector3(-5, 15, -7), false],
-	[1.7, Vector3(30, -1, -5), true],
-	[2.3, Vector3(-30, 1, -5), false],
-	[2.8, Vector3(10, 15, -7), true],
-	[3.5, Vector3(-17, 14, -6), false],
-	[3.9, Vector3(18, 3, -6), false],
-	[4.6, Vector3(0, 16, -8), true],
-	[4.8, Vector3(-27, 12, -6), true],
-	[5.0, Vector3(27, 12, -6), true],
+	[0.0, Vector3(-27, 10, -7), 0, false],
+	[0.65, Vector3(27, 11, -7), 1, true],
+	[1.5, Vector3(-8, 17, -9), 4, false],
+	[2.3, Vector3(29, -1, -7), 5, false],
+	[3.1, Vector3(-29, 1, -7), 2, true],
+	[4.1, Vector3(10, 16, -9), 6, false],
+	[4.9, Vector3(-25, 12, -8), 3, true],
+	[5.6, Vector3(26, 13, -8), 4, false],
+	[6.5, Vector3(0, 17, -10), 1, true],
+	[7.3, Vector3(-28, 2, -8), 5, false],
+	[7.9, Vector3(29, 3, -8), 2, true],
+	[8.8, Vector3(0, 18, -10), 6, true],
+	[9.6, Vector3(-26, 11, -8), 0, true],
+	[9.8, Vector3(26, 12, -8), 3, true],
+	[10.0, Vector3(0, 17, -10), 4, true],
 ]
 
 enum Phase { SETUP, GLIDE, CLIMB, SKY, HOLD, END }
@@ -128,7 +131,6 @@ func play(owner_game: Node3D) -> void:
 	add_child(ui)
 	ui.skip_pressed.connect(skip)
 	ui.play_again_pressed.connect(_leave.bind(true))
-	ui.back_pressed.connect(_leave.bind(false))
 	camera = Camera3D.new()
 	camera.near = 0.03
 	camera.far = 420.0
@@ -156,7 +158,6 @@ func play(owner_game: Node3D) -> void:
 	ui.fade_to(0.0, 1.0)
 	audio.start_loop("music_base", -26.0)
 	audio.start_loop("music_lift", -60.0)
-	_at(0.9, ui.caption.bind("[Soft, hopeful music]", 2.4))
 	_at(RELEASE_AT, _release)
 
 
@@ -251,8 +252,6 @@ func _release() -> void:
 	audio.start_loop("wind", -30.0)
 	audio.fade_loop("wind", -19.0, 2.5)
 	audio.fade_loop("music_base", -17.0, 5.0)
-	ui.caption("[A paper plane swooshes out of the window]", 2.4)
-	_at(3.0, ui.caption.bind("[Soft wind]", 2.6))
 
 
 static func _smooth_curve(points: Array[Vector3]) -> Curve3D:
@@ -310,7 +309,6 @@ func _start_climb() -> void:
 	audio.play("whoosh", -2.0)
 	audio.fade_loop("music_base", -11.0, 1.5)
 	audio.fade_loop("music_lift", -14.0, 1.2)
-	ui.caption("[WHOOSH!]", 1.6)
 	_climb_from = camera.global_position
 	_climb_to = CLOUD_TOP + Vector3(0, -3.5, 5.5)
 	_camera_tweening = true
@@ -495,7 +493,6 @@ func _build_bank() -> void:
 
 func _form_bank() -> void:
 	audio.play("swell", -4.0)
-	ui.caption("[Cheerful music swells]", 2.8)
 	for i in _bank.size():
 		_bank[i].show()
 		var gather := _track(create_tween())
@@ -529,44 +526,37 @@ func _type_ticks() -> void:
 
 func _start_fireworks() -> void:
 	for shot: Array in SHOW:
-		_at(shot[0], _launch.bind(MESSAGE_AT + shot[1], shot[2]))
-	_at(0.75, ui.caption.bind("[Fireworks pop and crackle. A crowd cheers!]", 3.2))
+		_at(shot[0], _launch.bind(MESSAGE_AT + shot[1], shot[3], shot[2]))
 	_at(1.0, audio.play.bind("cheer", -6.0))
-	_at(SHOW.back()[0] + 1.6, _show_end)
+	_at(SHOW.back()[0] + 3.6, _show_end)
 
 
-func _launch(at: Vector3, crackle: bool) -> void:
+func _launch(at: Vector3, crackle: bool, pattern: int = -1) -> void:
 	var color: Color = Props.FIREWORK_COLORS[_color_index % Props.FIREWORK_COLORS.size()]
+	var kind := _color_index % 7 if pattern < 0 else pattern
 	_color_index += 1
 	var rocket := Props.rocket(color)
 	add_child(rocket)
 	rocket.global_position = at + Vector3(randf_range(-2.0, 2.0), -15.0, 0.0)
 	var rise := rocket.create_tween()
 	rise.tween_property(rocket, "global_position", at, 0.75).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
-	rise.tween_callback(_burst.bind(at, color, crackle))
+	rise.tween_callback(_burst.bind(at, color, crackle, kind, _color_index))
 	rise.tween_callback(rocket.queue_free)
 
 
-func _burst(at: Vector3, color: Color, crackle: bool) -> void:
-	var firework := Props.firework(color, crackle)
+func _burst(at: Vector3, color: Color, crackle: bool, pattern: int, serial: int) -> void:
+	var firework := Props.firework(color, crackle, pattern, serial * 71)
 	add_child(firework)
 	firework.global_position = at
-	(firework.get_child(0) as CPUParticles3D).emitting = true
-	audio.play("firework_pop", randf_range(-8.0, -4.0), randf_range(0.85, 1.15))
-	var life := firework.create_tween()
+	audio.play("firework_pop", randf_range(-8.0, -4.0), randf_range(0.8, 1.2))
 	if crackle:
-		life.tween_interval(0.3)
-		life.tween_callback(func() -> void:
-			(firework.get_child(1) as CPUParticles3D).emitting = true
-			audio.play("firework_crackle", -10.0, randf_range(0.9, 1.1)))
-	life.tween_interval(2.6)
-	life.tween_callback(firework.queue_free)
+		_at(0.45, audio.play.bind("firework_crackle", -10.0, randf_range(0.85, 1.15)))
 
 
 ## Gentle bursts keep going behind the end card.
 func _ambient_fireworks() -> void:
 	var offset := Vector3(randf_range(-30.0, 30.0), randf_range(7.0, 15.0), -7.0)
-	_launch(MESSAGE_AT + offset, randf() < 0.4)
+	_launch(MESSAGE_AT + offset, randf() < 0.4, randi_range(0, 6))
 	_at(randf_range(1.6, 2.6), _ambient_fireworks)
 
 

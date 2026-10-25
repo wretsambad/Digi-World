@@ -1,24 +1,18 @@
 extends CanvasLayer
-## Overlay for the finale: letterbox bars, subtitles, the Skip button, speed
+## Overlay for the finale: letterbox bars, the Skip button, speed
 ## lines for the climb, the white flash through the clouds and the end card.
 
 signal skip_pressed
 signal play_again_pressed
-signal back_pressed
 
 var fade: ColorRect
 var flash: ColorRect
 var speed_lines: SpeedLines
 var bars: Array[ColorRect] = []
-var caption_panel: PanelContainer
-var caption_label: Label
 var skip_button: Button
 var end_card: VBoxContainer
 var thanks: Label
 var play_again_button: Button
-var back_button: Button
-var _caption_tween: Tween
-var _caption_serial := 0
 
 
 func _ready() -> void:
@@ -34,7 +28,6 @@ func _ready() -> void:
 		bar.offset_top = 0.0
 		add_child(bar)
 		bars.append(bar)
-	_build_caption()
 	_build_end_card()
 	skip_button = Button.new()
 	skip_button.name = "SkipButton"
@@ -62,27 +55,6 @@ func _full_rect(color: Color) -> ColorRect:
 	return rect
 
 
-func _build_caption() -> void:
-	var strip := CenterContainer.new()
-	strip.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	strip.set_anchors_preset(Control.PRESET_BOTTOM_WIDE)
-	strip.offset_top = -170
-	strip.offset_bottom = -96
-	add_child(strip)
-	caption_panel = PanelContainer.new()
-	var style := SunsetUI.panel_style(Color(SunsetUI.PLUM_DEEP, 0.84), 16)
-	style.content_margin_top = 10
-	style.content_margin_bottom = 12
-	caption_panel.add_theme_stylebox_override("panel", style)
-	caption_panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	caption_panel.modulate.a = 0.0
-	strip.add_child(caption_panel)
-	caption_label = SunsetUI.label("", 24, "body")
-	caption_label.autowrap_mode = TextServer.AUTOWRAP_OFF
-	caption_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	caption_panel.add_child(caption_label)
-
-
 func _build_end_card() -> void:
 	end_card = VBoxContainer.new()
 	end_card.name = "EndCard"
@@ -92,7 +64,7 @@ func _build_end_card() -> void:
 	end_card.offset_top = -230
 	end_card.offset_bottom = -54
 	add_child(end_card)
-	thanks = SunsetUI.label("Thank you for playing", 40, "hero")
+	thanks = SunsetUI.label("Thank you for playing!", 40, "hero")
 	thanks.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	end_card.add_child(thanks)
 	var row := HBoxContainer.new()
@@ -107,13 +79,6 @@ func _build_end_card() -> void:
 	SunsetUI.add_arrow(play_again_button)
 	play_again_button.pressed.connect(func() -> void: play_again_pressed.emit())
 	row.add_child(play_again_button)
-	back_button = Button.new()
-	back_button.name = "BackToRoomButton"
-	back_button.text = "Back to my room"
-	back_button.custom_minimum_size = Vector2(0, 66)
-	SunsetUI.style_button(back_button, false, 26)
-	back_button.pressed.connect(func() -> void: back_pressed.emit())
-	row.add_child(back_button)
 	end_card.hide()
 
 
@@ -137,38 +102,14 @@ func white_flash() -> void:
 	tween.tween_property(flash, "color:a", 0.0, 0.8).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 
-## Shows a subtitle for `seconds`, replacing any line already on screen.
-func caption(text: String, seconds: float = 3.0) -> void:
-	_caption_serial += 1
-	var serial := _caption_serial
-	caption_label.text = text
-	if _caption_tween and _caption_tween.is_valid():
-		_caption_tween.kill()
-	_caption_tween = create_tween()
-	_caption_tween.tween_property(caption_panel, "modulate:a", 1.0, 0.18)
-	_caption_tween.tween_interval(seconds)
-	_caption_tween.tween_callback(func() -> void:
-		if serial == _caption_serial:
-			hide_caption())
-
-
-func hide_caption() -> void:
-	if _caption_tween and _caption_tween.is_valid():
-		_caption_tween.kill()
-	_caption_tween = create_tween()
-	_caption_tween.tween_property(caption_panel, "modulate:a", 0.0, 0.3)
-
-
 func show_end_card(writer: RefCounted) -> void:
 	skip_button.hide()
-	hide_caption()
 	set_letterbox(false, 0.6)
 	end_card.show()
 	end_card.modulate.a = 0.0
 	create_tween().tween_property(end_card, "modulate:a", 1.0, 0.5)
 	writer.reveal(thanks, 0.1, 30.0, false)
 	writer.reveal_button(play_again_button, 0.6)
-	writer.reveal_button(back_button, 0.8)
 	play_again_button.grab_focus()
 
 

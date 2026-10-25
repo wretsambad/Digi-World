@@ -1,12 +1,13 @@
 extends Node
-## All three lessons done -> the finale plays from the bedroom -> back to the
-## room -> replay it from the pause menu and skip straight to the end card.
+## Three completed lessons -> sky-message finale and varied fireworks ->
+## pause-menu replay/skip -> Play again resets progress.
 ## Headless: godot --headless --path . res://tests/finale_flow.tscn
 ## With screenshots: godot --path . res://tests/finale_flow.tscn -- --capture
 
 var failures: Array[String] = []
 var capture := false
 var shots := 0
+var burst_patterns: Dictionary = {}
 
 
 func verify(condition: bool, message: String) -> void:
@@ -69,6 +70,8 @@ func _ready() -> void:
 	verify(game.phase == game.Phase.FINALE and game.finale != null, "Finale did not start after the third lesson")
 	verify(not GameState.finale_pending, "Finale stays pending after it started")
 	var finale: Node3D = game.finale
+	finale.child_entered_tree.connect(func(node: Node) -> void:
+		if node.has_meta("pattern"): burst_patterns[node.get_meta("pattern")] = true)
 	verify(finale.camera.current, "Finale camera is not the current camera")
 
 	await get_tree().create_timer(1.3).timeout
@@ -100,12 +103,18 @@ func _ready() -> void:
 	await wait_for(func() -> bool: return finale.ui.end_card.visible, "End card never appeared")
 	await get_tree().create_timer(1.4).timeout
 	await snapshot("end_card")
-	verify(finale.title_label.visible_characters == -1 or finale.title_label.visible_characters == finale.title_label.get_total_character_count(), "Message not fully typed at the end")
+	for label: Label in [finale.title_label, finale.line_label]:
+		verify(label.visible_characters == -1 or label.visible_characters == label.get_total_character_count(), "Sky message not fully typed at the end")
+	verify(burst_patterns.size() == 7, "The firework show must include all seven distinct patterns")
+	verify(finale.ui.thanks.text == "Thank you for playing!", "Thank-you line must include its exclamation mark")
+	verify(finale.ui.find_children("BackToRoomButton", "Button", true, false).is_empty(), "End card must not offer Back to my room")
+	verify(finale.ui.find_children("Caption*", "Control", true, false).is_empty(), "Finale must not contain subtitle UI")
 	for cue: String in ["music_base", "music_lift", "wind", "whoosh", "swell", "firework_pop", "firework_crackle", "cheer"]:
 		verify(finale.audio._streams.has(cue), "Sound never got ready: " + cue)
 
-	finale.ui.back_button.pressed.emit()
-	await wait_for(func() -> bool: return game.phase == game.Phase.PLAYING and game.active, "Back to my room did not return to first person")
+	# Fixture cleanup retains the internal return path; it is no longer an end-card option.
+	await finale._leave(false)
+	await wait_for(func() -> bool: return game.phase == game.Phase.PLAYING and game.active, "Fixture cleanup did not restore the room")
 	await get_tree().process_frame
 	verify(not is_instance_valid(finale), "Finale not freed after leaving")
 	verify(game.camera.current, "Room camera not current after the finale")
@@ -122,10 +131,11 @@ func _ready() -> void:
 	await wait_for(func() -> bool: return finale.ui.end_card.visible, "Skip did not reach the end card", 3.0)
 	verify(finale.camera.global_position.distance_to(finale.HOLD_EYE) < 0.5, "Skip did not move the camera to the sky")
 	verify(not finale.plane.visible and not finale.boy.visible, "Skip left the flight running")
+	verify(finale.title_label.visible_characters == -1 and finale.line_label.visible_characters == -1, "Skip must finish both sky messages")
 	await get_tree().create_timer(0.9).timeout
 	await snapshot("skipped")
-	finale.ui.back_button.pressed.emit()
-	await wait_for(func() -> bool: return game.phase == game.Phase.PLAYING, "Back after skipping failed")
+	finale.ui.play_again_button.pressed.emit()
+	await wait_for(func() -> bool: return GameState.bedroom_completed_count() == 0, "Play again did not reset progress")
 
 	Engine.time_scale = 1.0
 	print("FINALE FLOW ", "PASS" if failures.is_empty() else "FAIL ", failures)
