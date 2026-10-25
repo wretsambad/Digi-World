@@ -7,8 +7,10 @@ signal opened
 
 const INK := Color("16364a")
 const ICON_CENTER := Vector2(640, 330)
+const CURSOR_START := Vector2(1010, 600)
+const CURSOR_TARGET := ICON_CENTER + Vector2(18, 26)
 
-var cursor := Vector2(1010, 600):
+var cursor := CURSOR_START:
 	set(value):
 		cursor = value
 		queue_redraw()
@@ -22,10 +24,14 @@ var window_open: float = 0.0:
 		queue_redraw()
 var font: Font
 var _clock: float = 0.0
+var _click_time: float = 0.0
+var _clicks_played := 0
+var _opening := false
 
 
 func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	clip_contents = true
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 
@@ -37,19 +43,41 @@ func _process(delta: float) -> void:
 
 ## Plays the cursor-and-open animation. The double-click lands at click_time.
 func play_open(click_time: float) -> void:
-	var tween := create_tween()
-	tween.tween_interval(maxf(0.0, click_time - 0.8))
-	tween.tween_property(self, "cursor", ICON_CENTER + Vector2(18, 26), 0.7).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_interval(0.1)
+	_click_time = click_time
+	_clicks_played = 0
+	_opening = true
+	cursor = CURSOR_START
+	icon_squash = 0.0
+	window_open = 0.0
+	modulate.a = 1.0
+
+
+## The operator and desktop share the session clock, including both clicks.
+func advance_open(time: float) -> void:
+	if not _opening:
+		return
+	var travel := clampf((time - (_click_time - 0.8)) / 0.7, 0.0, 1.0)
+	cursor = CURSOR_START.lerp(CURSOR_TARGET, (1.0 - cos(travel * PI)) * 0.5)
 	for i in 2:
-		tween.tween_callback(AudioManager.play.bind("click"))
-		tween.tween_property(self, "icon_squash", 1.0, 0.06)
-		tween.tween_property(self, "icon_squash", 0.0, 0.08)
-	tween.tween_property(self, "window_open", 1.0, 0.55).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "modulate:a", 0.0, 0.3)
-	tween.tween_callback(func() -> void:
+		if time >= _click_time + i * 0.14 and _clicks_played <= i:
+			AudioManager.play("click")
+			_clicks_played = i + 1
+	icon_squash = click_amount(time)
+	var opening := clampf((time - _click_time - 0.28) / 0.55, 0.0, 1.0)
+	window_open = 1.0 - pow(1.0 - opening, 3.0)
+	modulate.a = 1.0 - clampf((time - _click_time - 0.83) / 0.3, 0.0, 1.0)
+	if time >= _click_time + 1.13:
+		_opening = false
 		hide()
-		opened.emit())
+		opened.emit()
+
+
+func click_amount(time: float) -> float:
+	var since_click := time - _click_time
+	if since_click < 0.0 or since_click >= 0.28:
+		return 0.0
+	var phase := fmod(since_click, 0.14)
+	return phase / 0.06 if phase < 0.06 else 1.0 - (phase - 0.06) / 0.08
 
 
 func _draw() -> void:

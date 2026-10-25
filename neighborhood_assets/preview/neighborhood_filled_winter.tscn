@@ -138,6 +138,7 @@ transform = Transform3D(105, 0, 0, 0, 1, 0, 0, 0, 120, 0, -0.025, -8)
 metadata/category = "Ground"
 
 [node name="lawn_tile" parent="Village/NeighborhoodGround_210mBy240m" unique_id=1020966581 instance=ExtResource("1_r60il")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -6.766546e-06, 0, 3.913045e-05)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -302,17 +303,17 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_East_01" parent="Village" unique_id=609695243 instance=ExtResource("6_g4tkl")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 17, 0, 45)
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -1, 0, -8.742278e-08, 16.402863, 0, 44.517113)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_East_02" parent="Village" unique_id=1372780710 instance=ExtResource("7_ni2as")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 18.3, 0, 21)
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -1, 0, -8.742278e-08, 15.590956, 0, 19.637077)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_East_03" parent="Village" unique_id=47907918 instance=ExtResource("8_30o2h")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 16.7, 0, -3)
+transform = Transform3D(-0.032245617, 0, 0.99947995, 0, 1, 0, -0.99947995, 0, -0.032245617, 16.7, 0, -3.4394019)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -367,7 +368,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_Outer_1_0" parent="Village" unique_id=3038873 instance=ExtResource("6_g4tkl")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 46, 0, 42)
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -1, 0, -8.742278e-08, 46, 0, 42)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -392,12 +393,12 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_South_2" parent="Village" unique_id=1930131829 instance=ExtResource("6_g4tkl")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 23, 0, 83)
+transform = Transform3D(-0.019361882, 0, 0, 0, 0.04814048, 0, 0, 0, -0.021568542, 22.554976, 0, 90.94891)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_South_3" parent="Village" unique_id=60086130 instance=ExtResource("7_ni2as")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 48, 0, 83)
+transform = Transform3D(-0.056126095, 0, 0, 0, 0.04595018, 0, 0, 0, -0.057146657, 42.6823, 0, 93.30962)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -1726,8 +1727,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, -15.4)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
+[node name="Sidewalks_sidewalk_slab_large_321" parent="Village" unique_id=1473361322 instance=ExtResource("10_yc3u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65, 0, -16.309418)
+metadata/_edit_group_ = true
+metadata/whole_object = true
+
 [node name="Sidewalks_curb_large_321" parent="Village" unique_id=2126382354 instance=ExtResource("11_48dj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, -15.4)
+metadata/_edit_group_ = true
+metadata/whole_object = true
+
+[node name="Sidewalks_curb_large_322" parent="Village" unique_id=1669542143 instance=ExtResource("11_48dj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.675, 0, -16.329952)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3571,6 +3582,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 11.790701, 0.04, 42.363754)
 metadata/category = "Gardens"
 
 [node name="flowerbed" parent="Village/Gardens_flowerbed_636" unique_id=1210092384 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20003414, 0, -0.62928605)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3579,6 +3591,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.3, 0.12, 46.9)
 metadata/category = "Gardens"
 
 [node name="flowerpot" parent="Village/Gardens_flowerpot_637" unique_id=2084604200 instance=ExtResource("18_cefui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7333746, 0, -0.113126755)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3669,6 +3682,7 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, 40.2)
 metadata/category = "Gardens"
 
 [node name="shrub_round" parent="Village/Gardens_shrub_round_651" unique_id=511660400 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.55426514, 0, 0.5269728)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3677,6 +3691,7 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, 48.6)
 metadata/category = "Gardens"
 
 [node name="shrub_round" parent="Village/Gardens_shrub_round_652" unique_id=1540750220 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.5932816, 0, -0.61743355)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3701,6 +3716,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 52.6)
 metadata/category = "StreetFurniture"
 
 [node name="recycling_bin" parent="Village/StreetFurniture_recycling_bin_655" unique_id=523254475 instance=ExtResource("26_13e18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31344032, 0, 2.2140245)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3709,6 +3725,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 53.4)
 metadata/category = "StreetFurniture"
 
 [node name="litter_bin" parent="Village/StreetFurniture_litter_bin_656" unique_id=1438215321 instance=ExtResource("27_hgjdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3705368, 9.49949e-08, 2.2132316)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3843,6 +3860,7 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, 16.2)
 metadata/category = "Gardens"
 
 [node name="shrub_round" parent="Village/Gardens_shrub_round_676" unique_id=1860133005 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.29749215, 0, 0.5072837)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3851,6 +3869,7 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, 24.6)
 metadata/category = "Gardens"
 
 [node name="shrub_round" parent="Village/Gardens_shrub_round_677" unique_id=1150092095 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.48921072, 0, -0.53984)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3859,6 +3878,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 12.6, 0.1, 26.7)
 metadata/category = "StreetFurniture"
 
 [node name="bicycle_rack" parent="Village/StreetFurniture_bicycle_rack_678" unique_id=952251435 instance=ExtResource("31_dm2jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9824672, 0, -0.56043243)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3867,6 +3887,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 12.8, 0.1, 26.7)
 metadata/category = "StreetFurniture"
 
 [node name="bicycle" parent="Village/StreetFurniture_bicycle_679" unique_id=82114079 instance=ExtResource("32_m8ve1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0981946, 0, -0.72930574)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3875,6 +3896,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 28.6)
 metadata/category = "StreetFurniture"
 
 [node name="recycling_bin" parent="Village/StreetFurniture_recycling_bin_680" unique_id=1130856368 instance=ExtResource("26_13e18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8513913, 0, 2.2087245)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3883,16 +3905,17 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 29.4)
 metadata/category = "StreetFurniture"
 
 [node name="litter_bin" parent="Village/StreetFurniture_litter_bin_681" unique_id=1429706714 instance=ExtResource("27_hgjdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1323009, 0, 2.2027502)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Driveways_driveway_large_682" parent="Village" unique_id=1780757519 instance=ExtResource("13_j8kc2")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.6, 0.07, 5)
+transform = Transform3D(0, 0, -1.5191746, 0, 1, 0, 1, 0, 0, 10.365301, 0.07, 5.392898)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Cars_car_cream_683" parent="Village" unique_id=6961668 instance=ExtResource("37_gyci3")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.47393, 0.15, 5)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.47393, 0.15, 5.41353)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3914,6 +3937,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 10.3, 0.04, -5.35)
 metadata/category = "Gardens"
 
 [node name="flowerbed" parent="Village/Gardens_flowerbed_686" unique_id=1512170293 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26527816, -0.91988754)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3922,6 +3946,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.143014, 0.12, -1.1)
 metadata/category = "Gardens"
 
 [node name="flowerpot" parent="Village/Gardens_flowerpot_687" unique_id=1032160340 instance=ExtResource("18_cefui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5698848, 0, 0)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4006,7 +4031,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="StreetTrees_tree_oak_large_698" parent="Village" unique_id=499709156 instance=ExtResource("29_d7uhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.1, 0, -12.4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.446467, 0, -12.4)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4057,6 +4082,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 4.6)
 metadata/category = "StreetFurniture"
 
 [node name="recycling_bin" parent="Village/StreetFurniture_recycling_bin_705" unique_id=2002873036 instance=ExtResource("26_13e18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33056414, 0, 2.0226603)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4065,6 +4091,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, 5.4)
 metadata/category = "StreetFurniture"
 
 [node name="litter_bin" parent="Village/StreetFurniture_litter_bin_706" unique_id=701718660 instance=ExtResource("27_hgjdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40461254, 0, 1.9906338)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4096,6 +4123,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 10.972941, 0.04, -29.966085)
 metadata/category = "Gardens"
 
 [node name="flowerbed" parent="Village/Gardens_flowerbed_711" unique_id=777094351 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.086977005, -9.5926225e-08, -0.545861)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4104,6 +4132,7 @@ transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 11.3, 0.12, -24.468695)
 metadata/category = "Gardens"
 
 [node name="flowerpot" parent="Village/Gardens_flowerpot_712" unique_id=6017663 instance=ExtResource("18_cefui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.453583, 0, -0.18938255)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4207,6 +4236,7 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, -31.8)
 metadata/category = "Gardens"
 
 [node name="shrub_round" parent="Village/Gardens_shrub_round_726" unique_id=1253573150 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.17371702, 0, 0.23052645)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4215,6 +4245,7 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, -23.4)
 metadata/category = "Gardens"
 
 [node name="shrub_round" parent="Village/Gardens_shrub_round_727" unique_id=1032455445 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.15354729, 0, -0.059098244)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4223,6 +4254,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 12.6, 0.1, -21.3)
 metadata/category = "StreetFurniture"
 
 [node name="bicycle_rack" parent="Village/StreetFurniture_bicycle_rack_728" unique_id=441820182 instance=ExtResource("31_dm2jn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.252104, 0, -1.3976493)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4231,6 +4263,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 12.8, 0.1, -21.3)
 metadata/category = "StreetFurniture"
 
 [node name="bicycle" parent="Village/StreetFurniture_bicycle_729" unique_id=1013996163 instance=ExtResource("32_m8ve1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0593066, 0, -1.48017)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4239,6 +4272,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -19.4)
 metadata/category = "StreetFurniture"
 
 [node name="recycling_bin" parent="Village/StreetFurniture_recycling_bin_730" unique_id=325419406 instance=ExtResource("26_13e18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3375709, -9.5926225e-08, 2.0027318)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4247,6 +4281,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -18.6)
 metadata/category = "StreetFurniture"
 
 [node name="litter_bin" parent="Village/StreetFurniture_litter_bin_731" unique_id=699264360 instance=ExtResource("27_hgjdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3654518, 0, 1.9576689)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4270,6 +4305,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 6.35, 0.04, -49.2)
 metadata/category = "StreetFurniture"
 
 [node name="mailbox" parent="Village/StreetFurniture_mailbox_735" unique_id=2043388037 instance=ExtResource("16_8xuvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08664811)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4286,6 +4322,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 11.3, 0.12, -49.1)
 metadata/category = "Gardens"
 
 [node name="flowerpot" parent="Village/Gardens_flowerpot_737" unique_id=1447418949 instance=ExtResource("18_cefui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48237276, 0, 0)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4310,6 +4347,7 @@ transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, 6.75, 0.02, -52.6)
 metadata/category = "Hedges"
 
 [node name="hedge_straight" parent="Village/Hedges_hedge_straight_740" unique_id=1443524693 instance=ExtResource("20_7ckiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10452938, 0, 0)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4318,6 +4356,7 @@ transform = Transform3D(0, 0, 5, 0, 5.5, 0, -5, 0, 0, 6.75, 0.02, -49.3)
 metadata/category = "Hedges"
 
 [node name="hedge_straight" parent="Village/Hedges_hedge_straight_741" unique_id=573235104 instance=ExtResource("20_7ckiu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07947922, 0, 0)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4421,6 +4460,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -43.4)
 metadata/category = "StreetFurniture"
 
 [node name="recycling_bin" parent="Village/StreetFurniture_recycling_bin_755" unique_id=1410496222 instance=ExtResource("26_13e18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36467648, 0, 2.0404038)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4429,6 +4469,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 17, 0.04, -42.6)
 metadata/category = "StreetFurniture"
 
 [node name="litter_bin" parent="Village/StreetFurniture_litter_bin_756" unique_id=552228527 instance=ExtResource("27_hgjdc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39067936, 0, 2.0771217)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4753,6 +4794,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.8, 0.04, 55)
 metadata/category = "StreetFurniture"
 
 [node name="hydrant" parent="Village/StreetFurniture_hydrant_804" unique_id=1952235015 instance=ExtResource("39_5h2iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25192475, 0, 0.6006594)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6131,7 +6173,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Fill_house_cedar_048" parent="Village" unique_id=760107815 instance=ExtResource("9_06bq1")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 20.5, 0, 9)
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -1, 0, -8.742278e-08, 20.5, 0, 8.007432)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6169,6 +6211,7 @@ transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, 6.1)
 metadata/category = "SightlineGardens"
 
 [node name="flowerbed" parent="Village/Fill_flowerbed_053" unique_id=1828539144 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54400074, 0, -0.89691806)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6177,6 +6220,7 @@ transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, 6.1)
 metadata/category = "SightlineGardens"
 
 [node name="shrub_round" parent="Village/Fill_shrub_round_054" unique_id=1099638109 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31367016, 6.61239e-08, 0.42881626)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6185,6 +6229,7 @@ transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, 11.9)
 metadata/category = "SightlineGardens"
 
 [node name="flowerbed" parent="Village/Fill_flowerbed_055" unique_id=1406255845 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50166523, 0, -1.1959496)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6201,6 +6246,7 @@ transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.1, 0.08, 7.283592)
 metadata/category = "SightlineGardens"
 
 [node name="flowerpot" parent="Village/Fill_flowerpot_058" unique_id=1344869591 instance=ExtResource("18_cefui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39408183, 0, 0.22140288)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6209,6 +6255,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 15.088305, 0.025, 11.611771)
 metadata/category = "SightlineGardens"
 
 [node name="bench" parent="Village/Fill_bench_059" unique_id=989307468 instance=ExtResource("24_vnuwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53119886, 0, -0.51674986)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6242,7 +6289,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Fill_house_peach_064" parent="Village" unique_id=730933351 instance=ExtResource("7_ni2as")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 21.1, 0, -15)
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 21.1, 0, -15)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6280,6 +6327,7 @@ transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -17.9)
 metadata/category = "SightlineGardens"
 
 [node name="flowerbed" parent="Village/Fill_flowerbed_069" unique_id=1056157525 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33463264, 0, -1.2738209)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6288,6 +6336,7 @@ transform = Transform3D(7.2, 0, 0, 0, 7.2, 0, 0, 0, 7.2, 16.1, 0.025, -17.9)
 metadata/category = "SightlineGardens"
 
 [node name="shrub_round" parent="Village/Fill_shrub_round_070" unique_id=99445927 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50176716, 0, 0.22394943)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6296,6 +6345,7 @@ transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 12.7, 0.025, -12.1)
 metadata/category = "SightlineGardens"
 
 [node name="flowerbed" parent="Village/Fill_flowerbed_071" unique_id=1413373941 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3564024, 0, -1.1473622)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6304,6 +6354,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 7.5, 0.025, -14.05)
 metadata/category = "SightlineGardens"
 
 [node name="mailbox" parent="Village/Fill_mailbox_073" unique_id=280492198 instance=ExtResource("16_8xuvf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.30529714)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6312,6 +6363,7 @@ transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.1, 0.08, -16.666523)
 metadata/category = "SightlineGardens"
 
 [node name="flowerpot" parent="Village/Fill_flowerpot_074" unique_id=1174545429 instance=ExtResource("18_cefui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6638794, 0, 0.30830646)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6320,6 +6372,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 15.700761, 0.025, -12.463311
 metadata/category = "SightlineGardens"
 
 [node name="bench" parent="Village/Fill_bench_075" unique_id=1012371341 instance=ExtResource("24_vnuwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.35474253, 0, -0.7573798)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6353,7 +6406,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Fill_house_cedar_080" parent="Village" unique_id=1257754723 instance=ExtResource("9_06bq1")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 20.5, 0, -39)
+transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -1, 0, -8.742278e-08, 19.83759, 0, -40.03288)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6391,6 +6444,7 @@ transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 13.773017, 0.025, -41.
 metadata/category = "SightlineGardens"
 
 [node name="flowerbed" parent="Village/Fill_flowerbed_085" unique_id=494549910 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47315168, 0, -0.6784463)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6399,6 +6453,7 @@ transform = Transform3D(-3.14722e-07, 0, 7.2, 0, 7.2, 0, -7.2, 0, -3.14722e-07, 
 metadata/category = "SightlineGardens"
 
 [node name="shrub_round" parent="Village/Fill_shrub_round_086" unique_id=818623498 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40079784, 0, 0.15366316)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6407,6 +6462,7 @@ transform = Transform3D(0, 0, -5.7, 0, 5.7, 0, 5.7, 0, 0, 13.830587, 0.025, -36.
 metadata/category = "SightlineGardens"
 
 [node name="flowerbed" parent="Village/Fill_flowerbed_087" unique_id=2003248373 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45304012, 0, -0.6431949)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6423,6 +6479,7 @@ transform = Transform3D(6.4, 0, 0, 0, 6.4, 0, 0, 0, 6.4, 15.431576, 0.08, -36.62
 metadata/category = "SightlineGardens"
 
 [node name="flowerpot" parent="Village/Fill_flowerpot_090" unique_id=1115881306 instance=ExtResource("18_cefui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2816918, 3.7252903e-08, -0.39021397)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6431,6 +6488,7 @@ transform = Transform3D(0, 0, -5, 0, 5, 0, 5, 0, 0, 11.6, 0.025, -36.685696)
 metadata/category = "SightlineGardens"
 
 [node name="bench" parent="Village/Fill_bench_091" unique_id=65432774 instance=ExtResource("24_vnuwo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45608282, 0, -1.1452003)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -11533,7 +11591,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="PlowedDrift20" parent="WinterRoadside" unique_id=1794482507 instance=ExtResource("69_w3vas")]
-transform = Transform3D(0.79, 0, 0, 0, 0.37, 0, 0, 0, 2.5, 6.4, 0.08, -26)
+transform = Transform3D(0.79, 0, 0, 0, 0.37, 0, 0, 0, 2.5, 6.4, 0.08, -23.888681)
 material_override = SubResource("StandardMaterial3D_m6unm")
 mesh = SubResource("ArrayMesh_wxspq")
 metadata/_edit_group_ = true
@@ -11589,21 +11647,24 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="PlowedDrift28" parent="WinterRoadside" unique_id=725035332 instance=ExtResource("69_w3vas")]
-transform = Transform3D(0.55, 0, 0, 0, 0.37, 0, 0, 0, 1.8, 6.4, 0.08, 54)
+transform = Transform3D(0.55, 0, 0, 0, 0.37, 0, 0, 0, 1.8, 6.4, 0.08, 57.967297)
 material_override = SubResource("StandardMaterial3D_m6unm")
 mesh = SubResource("ArrayMesh_wxspq")
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="FootprintTrail5" parent="WinterRoadside" unique_id=972518704 instance=ExtResource("74_x0382")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18264914, -0.18681145, 0.18721771)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="FootprintTrail6" parent="WinterRoadside" unique_id=520584619 instance=ExtResource("75_hp86t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.048070908, -0.078476906, 0.15983772)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="FootprintTrail7" parent="WinterRoadside" unique_id=1138303985 instance=ExtResource("76_2m6br")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15194225, -0.035209656, -0.88376725)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 

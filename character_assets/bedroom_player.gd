@@ -1,8 +1,7 @@
 extends CharacterBody3D
 
-@export var walk_speed := 2.2
-@export var jog_speed := 3.5
-@export var acceleration := 12.0
+@export var walk_speed := 2.9
+@export var jog_speed := 4.4
 var controls_enabled := true
 var room_origin := Vector3.ZERO
 var room_half_size := Vector2(3.24, 3.69)
@@ -32,21 +31,25 @@ func _physics_process(delta: float) -> void:
 		input = Input.get_vector("bedroom_left", "bedroom_right", "bedroom_forward", "bedroom_back")
 	simulate_movement(delta, input, controls_enabled and Input.is_action_pressed("bedroom_jog"))
 
-func simulate_movement(delta: float, input: Vector2, jog: bool = false) -> void:
+func simulate_movement(_delta: float, input: Vector2, jog: bool = false) -> void:
 	_previous_physics_position = global_position
+	if global_position.y < room_origin.y - 0.5:
+		global_position = spawn_position
+		velocity = Vector3.ZERO
+		movement_input = Vector2.ZERO
+		reset_camera_interpolation()
+		return
 	movement_input = input.limit_length()
-	var right := Vector3.RIGHT
 	var forward := Vector3.FORWARD
 	if is_instance_valid(view_camera):
-		right = view_camera.global_basis.x
 		forward = -view_camera.global_basis.z
-	right.y = 0.0
 	forward.y = 0.0
-	var direction := (right.normalized() * movement_input.x - forward.normalized() * movement_input.y).limit_length()
-	var target := direction * (jog_speed if jog else walk_speed)
-	velocity.x = move_toward(velocity.x, target.x, acceleration * delta)
-	velocity.z = move_toward(velocity.z, target.z, acceleration * delta)
-	velocity.y = -0.5 if is_on_floor() else velocity.y - 18.0 * delta
+	forward = forward.normalized() if forward.length_squared() > 0.0001 else Vector3.FORWARD
+	var right := forward.cross(Vector3.UP)
+	var direction := (right * movement_input.x - forward * movement_input.y).limit_length()
+	# This room has a flat floor and no jumping: input starts and stops directly,
+	# and neither camera pitch nor collision sliding may lift the player.
+	velocity = direction * (jog_speed if jog else walk_speed)
 	move_and_slide()
 	# Physical walls are the first boundary; this clamp also prevents escape
 	# through the open window/door during a long frame or external teleport.
@@ -54,9 +57,7 @@ func simulate_movement(delta: float, input: Vector2, jog: bool = false) -> void:
 	var radius := 0.27
 	p.x = clampf(p.x, -room_half_size.x + radius, room_half_size.x - radius)
 	p.z = clampf(p.z, -room_half_size.y + radius, room_half_size.y - radius)
+	p.y = spawn_position.y - room_origin.y
 	global_position = room_origin + p
+	velocity.y = 0.0
 	_current_physics_position = global_position
-	if p.y < -0.5:
-		global_position = spawn_position
-		velocity = Vector3.ZERO
-		reset_camera_interpolation()

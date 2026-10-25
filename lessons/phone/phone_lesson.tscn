@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://lessons/phone/phone_lesson.gd" id="1_lesson"]
 [ext_resource type="Script" path="res://lessons/phone/dusk_neighborhood.gd" id="2_dusk"]
 [ext_resource type="Script" path="res://lessons/phone/party_set.gd" id="3_party"]
-[ext_resource type="PackedScene" path="res://scenes/pip/pip.tscn" id="4_pip"]
 [ext_resource type="PackedScene" path="res://scenes/glitch/glitch.tscn" id="5_glitch"]
 [ext_resource type="Script" path="res://lessons/phone/party_ui.gd" id="6_ui"]
 [ext_resource type="Script" path="res://lessons/phone/phone_ui.gd" id="7_phone"]
@@ -15,10 +14,9 @@ script = ExtResource("1_lesson")
 script = ExtResource("2_dusk")
 
 [node name="Party" type="Node3D" parent="."]
-position = Vector3(-49, 0, 62)
+position = Vector3(-18.3, 0.2, 21)
+rotation = Vector3(0, -1.5707963, 0)
 script = ExtResource("3_party")
-
-[node name="Pip" parent="." instance=ExtResource("4_pip")]
 
 [node name="Glitch" parent="." instance=ExtResource("5_glitch")]
 

@@ -362,7 +362,7 @@ func _event_runs_away() -> void:
 		var tip: Vector3 = branch[1]
 		var start: Vector3 = branch[0]
 		var direction := (tip - start).normalized()
-		var contact := base.branch_barrier_point(index) + direction * 0.65
+		var contact := base.branch_barrier_point(index) + direction * (0.65 * TreehouseBase.BRANCH_SHIELD_SCALE)
 		await glitch.hop_to(tip + Vector3.UP * 0.12, 0.35, 0.4)
 		await glitch.hop_to(contact, 0.3, 0.12)
 		await glitch.bonk(-direction)

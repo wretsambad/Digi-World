@@ -43,7 +43,7 @@ func run():
 	game.seated_character.set_process(false)
 	var tour = game.lesson_tour
 	tour.start()
-	for index in range(4):
+	for index in range(tour.STOPS.size()):
 		game._process(2.61)
 		tour.card.hide()
 		check(game.lesson_outline.selected.size()==1, "Tour outlines one lesson at a time")

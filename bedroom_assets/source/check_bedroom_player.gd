@@ -11,6 +11,7 @@ func bounded() -> void:
 	var local: Vector3 = player.global_position - gameplay.room.global_position
 	assert(absf(local.x) <= 2.971 and absf(local.z) <= 3.421, "Player escaped the bedroom")
 	assert(local.y > -0.1 and local.y < 0.25, "Player fell or climbed out of the bedroom")
+	assert(is_equal_approx(player.global_position.y, player.spawn_position.y), "Horizontal movement changed the player's standing height")
 	checks += 1
 
 func drive(input: Vector2, frames: int, jog: bool = false) -> void:
@@ -29,7 +30,7 @@ func run() -> void:
 	gameplay = scene.get_node("BedroomGameplay")
 	player = gameplay.player
 	gameplay.lesson_tour.start()
-	for stop in range(4):
+	for stop in range(gameplay.lesson_tour.STOPS.size()):
 		gameplay._process(2.61)
 		gameplay.lesson_tour.next_stop()
 	gameplay._process(2.41)
@@ -47,6 +48,27 @@ func run() -> void:
 	Input.action_release("bedroom_back")
 	assert(player.global_position.distance_to(start) > 0.5, "Input did not move the character")
 	player.set_physics_process(false)
+	# Looking up/down or tilting the view must not affect flat forward/strafe input.
+	var look_camera := Camera3D.new()
+	scene.add_child(look_camera)
+	player.view_camera = look_camera
+	for angle in [0.0, PI*.5, -PI*.7]:
+		look_camera.global_basis = Basis.from_euler(Vector3(-1.1, angle, .3))
+		var forward := Vector3(-sin(angle), 0.0, -cos(angle))
+		var right := forward.cross(Vector3.UP)
+		for input in [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN, Vector2(1,-1)]:
+			reset_at(Vector3(-.4,.04,.4))
+			var before := player.global_position
+			await drive(input, 1)
+			var expected: Vector3 = (right*input.x-forward*input.y).normalized()
+			var moved: Vector3 = player.global_position-before
+			assert(moved.normalized().dot(expected) > .999, "Movement did not follow the view's horizontal heading")
+			assert(absf(moved.y) < .00001, "Forward/strafe movement lifted the player")
+			assert(Vector2(player.velocity.x,player.velocity.z).length() >= player.walk_speed-.01, "Walking input should respond immediately")
+			var released := player.global_position
+			await drive(Vector2.ZERO, 1)
+			assert(player.global_position.is_equal_approx(released), "Player drifted after releasing movement")
+	look_camera.free()
 	player.view_camera = null # World-aligned controls for deterministic boundary probes.
 	# Room sides, corners, open window, and the ajar doorway.
 	for direction in [Vector2.LEFT, Vector2.RIGHT, Vector2.UP, Vector2.DOWN, Vector2(-1,-1), Vector2(1,-1), Vector2(-1,1), Vector2(1,1)]:
@@ -61,7 +83,7 @@ func run() -> void:
 	reset_at(Vector3(0,.04,-1.7))
 	await drive(Vector2.RIGHT, 120)
 	assert(player.global_position.x - gameplay.room.global_position.x < 1.2, "Walked through the bed")
-	# No diagonal speed boost, smooth release, and a functioning jog.
+	# No diagonal speed boost, immediate release, and a functioning jog.
 	reset_at(Vector3(-.4,.04,.4))
 	await drive(Vector2(1,-1), 20)
 	assert(Vector2(player.velocity.x, player.velocity.z).length() <= player.walk_speed + .01)
@@ -82,6 +104,8 @@ func run() -> void:
 	var neighborhood = load("res://neighborhood_assets/preview/neighborhood_filled.tscn").instantiate()
 	root.add_child(neighborhood)
 	current_scene = neighborhood
+	# Let deferred scenery setup finish before fast-forwarding the entire flight.
+	await process_frame
 	var neighborhood_ref: WeakRef = weakref(neighborhood)
 	var opening = neighborhood.get_node("OpeningSequence")
 	var arrival_pose: Transform3D = opening.bedroom_view.global_transform
@@ -111,7 +135,7 @@ func run() -> void:
 	for i in range(90): live._process(1.0/60.0)
 	assert(live.phase == live.Phase.WELCOME and not live.play_button.visible)
 	live.lesson_tour.start()
-	for stop in range(4):
+	for stop in range(live.lesson_tour.STOPS.size()):
 		live._process(2.61)
 		live.lesson_tour.next_stop()
 	live._process(2.41)

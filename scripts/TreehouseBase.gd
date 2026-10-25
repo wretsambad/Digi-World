@@ -7,6 +7,7 @@ extends Node3D
 const WORLD := preload("res://treehouse_animated.tscn")
 const FLAG_SHADER := preload("res://scripts/flag_wave.gdshader")
 const PAINT_MATERIAL := "Autumn_6f8a5ffftrue"
+const BRANCH_SHIELD_SCALE := 1.5
 
 # Positions in the treehouse's space (1 unit = 1 metre).
 const LADDER_FOOT := Vector3(-0.9, 0.0, 8.05)
@@ -196,6 +197,10 @@ func ladder_climb_points(steps: int = 12) -> Array[Vector3]:
 func deck_approach_points() -> Array[Vector3]:
 	var points := ladder_climb_points(6)
 	points.append(Vector3(0.4, 3.33, 5.3))
+	# Walk through the lower deck opening, along the outside aisle, then
+	# turn onto the inclined upper flight from its clear bottom landing.
+	points.append(Vector3(0.85, 3.33, 5.3))
+	points.append(Vector3(0.85, 3.33, 8.35))
 	var stairs := oak.get_node("BranchPlatforms/LandingToTopDeck")
 	var foot: Vector3 = stairs.get_meta("foot")
 	points.append(Vector3(foot.x, foot.y + 0.04, foot.z))
@@ -205,6 +210,10 @@ func deck_approach_points() -> Array[Vector3]:
 			var point: Vector3 = to_local(child.global_position) + Vector3.UP * (child.mesh.get_aabb().size.y * 0.5 + 0.04)
 			if point.y < DECK_WALK_HEIGHT - 0.001:
 				point.z = maxf(point.z, 6.42)
+			else:
+				# Clear the fascia at deck height before stepping inward.
+				# This also keeps the reversed descent outside the floor.
+				points.append(Vector3(point.x, point.y, 6.55))
 			points.append(point)
 	points.append(GATE_FRONT)
 	return points
@@ -515,7 +524,7 @@ func _metal_upgrade() -> void:
 		guard.add_child(lip)
 		guard.scale = Vector3.ONE * 0.01
 		var tween := create_tween()
-		tween.tween_property(guard, "scale", Vector3.ONE, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		tween.tween_property(guard, "scale", Vector3.ONE * BRANCH_SHIELD_SCALE, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		AudioManager.play("snap")
 		await tween.finished
 		sparkle_at(center)

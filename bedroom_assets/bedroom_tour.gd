@@ -1,13 +1,12 @@
 extends Control
-## A welcome pause, four guided lesson previews, then the seated-player reveal.
+## A welcome pause, guided lesson previews, then the seated-player reveal.
 const FONT = preload("res://neighborhood_assets/preview/fonts/Fredoka.ttf")
-const TRAVEL_SECONDS := 2.6
+const TRAVEL_SECONDS := 1.6
 const READ_SECONDS := 8.0
 const STOPS := [
-	{"node":"Lesson_Computer", "title":"Protect Your Base", "body":"Join Pip inside the computer. Build your base and discover how to keep its account safe.", "position":Vector3(-.25, 1.95, -1.7)},
+	{"node":"Lesson_Computer", "title":"Protect Your Base", "body":"Build your base and discover how to keep its account safe.", "position":Vector3(-.25, 1.95, -1.7)},
 	{"node":"Lesson_SharingBoard", "title":"Think before you share", "body":"Choose what is safe to post and which personal details to keep private.", "position":Vector3(.35, 1.95, -1.6)},
-	{"node":"Lesson_Phone", "title":"Spot a suspicious message", "body":"Look for warning signs in messages before trusting a link or replying.", "position":Vector3(.6, 1.65, .05)},
-	{"node":"Lesson_BackupRobot", "title":"Give your files a backup", "body":"Discover how a backup can help you restore a project when something goes wrong.", "position":Vector3(-.6, 1.85, 1.5)},
+	{"node":"Lesson_Phone", "title":"Glitch's Last Trick", "body":"Look for warning signs in messages before trusting a link or replying.", "position":Vector3(.6, 1.65, .05)},
 ]
 var game: Node3D
 var welcome: VBoxContainer
@@ -45,13 +44,13 @@ func setup(owner_game: Node3D) -> void:
 	welcome = VBoxContainer.new()
 	welcome.add_theme_constant_override("separation", 18)
 	add_child(welcome)
-	var heading := label("Welcome to\nDigi-World", 60)
+	var heading := label("Welcome to\nDigi-World!", 60)
 	welcome_heading = heading
 	SunsetUI.style_label(heading, 60, "hero")
 	heading.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	heading.add_theme_constant_override("line_spacing", -10)
 	welcome.add_child(heading)
-	var intro := label("A familiar room. A few digital discoveries.\nLet’s take a look around.", 24)
+	var intro := label("Let’s take a look around.", 24)
 	welcome_intro = intro
 	intro.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	intro.add_theme_color_override("font_outline_color", SunsetUI.PLUM_DEEP)
@@ -153,8 +152,8 @@ func _draw() -> void:
 	panel.shadow_offset = Vector2(0, 6)
 	var origin := Vector2((size.x-300)/2, 24)
 	draw_style_box(panel, Rect2(origin, Vector2(300,46)))
-	for i in range(4):
-		var center := origin+Vector2(212+i*22,23)
+	for i in range(STOPS.size()):
+		var center := origin+Vector2(278-(STOPS.size()-1-i)*22,23)
 		if i == index:
 			draw_circle(center, 8.0, SunsetUI.BUTTER, true, -1, true)
 		elif i < index:

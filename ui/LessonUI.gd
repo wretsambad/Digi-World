@@ -631,7 +631,6 @@ func _build_customize() -> void:
 	content.add_theme_constant_override("separation", 6)
 	customize.add_child(content)
 	content.add_child(label("Make it yours!", 34, true, BUTTER))
-	content.add_child(label("Pick your colours and flag. Everything updates live.", 18, false, MUTED))
 	_swatch_row(content, "Treehouse colour", "house_color", PlayerProfile.HOUSE_COLORS, PlayerProfile.HOUSE_COLOR_NAMES)
 	content.add_child(label("Flag", 21, true, CREAM))
 	var flags := GridContainer.new()

@@ -8,7 +8,7 @@ extends "res://scripts/typing_animation.gd"
 const GAME_PATH := "res://scenes/monitor_game/monitor_game.tscn"
 const RENDER_SIZE := Vector2i(1600, 900)
 const UI_SIZE := Vector2i(1280, 720)
-const CLICK_TIME := 4.0
+const CLICK_TIME := 4.65
 
 var viewport: SubViewport
 var lesson: ProtectYourBase
@@ -46,6 +46,7 @@ func _build_screen_and_overlay() -> void:
 	viewport.size = Vector2i(2, 2)
 	viewport.size_2d_override = UI_SIZE
 	viewport.size_2d_override_stretch = true
+	viewport.msaa_3d = Viewport.MSAA_4X
 	viewport.own_world_3d = true
 	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	add_child(viewport)
@@ -55,7 +56,9 @@ func _build_screen_and_overlay() -> void:
 	var quad := QuadMesh.new()
 	quad.size = Vector2(0.965, 0.54)
 	screen.mesh = quad
-	screen.position = Vector3(0, 0.5, 0.019)
+	# The model's display face is at z = -0.007. Keep the image flush
+	# inside its bezel, with only enough clearance to avoid z-fighting.
+	screen.position = Vector3(0, 0.5, -0.006)
 	var material := StandardMaterial3D.new()
 	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 	material.albedo_texture = viewport.get_texture()
@@ -70,6 +73,8 @@ func _build_screen_and_overlay() -> void:
 	backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.add_child(backdrop)
 	container = SubViewportContainer.new()
+	# Size the render target explicitly: container stretch uses logical UI
+	# pixels, which are lower resolution when the window scales its canvas.
 	container.stretch = false
 	container.size = RENDER_SIZE
 	overlay.add_child(container)
@@ -132,9 +137,15 @@ func start() -> void:
 	game.seated_character.animate(0, 0)
 	_compute_poses()
 	lesson.show_desktop()
+	# Replace the model's raised desktop artwork only once the live display
+	# is ready, preserving the original monitor while exploring the room.
+	var monitor_mesh := screen.get_parent().find_child("computer_monitor_Mesh", true, false) as MeshInstance3D
+	var hidden_art := StandardMaterial3D.new()
+	hidden_art.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	hidden_art.albedo_color = Color(0, 0, 0, 0)
+	for surface in range(3, monitor_mesh.mesh.get_surface_count()):
+		monitor_mesh.set_surface_override_material(surface, hidden_art)
 	screen.show()
-	screen.scale = Vector3(0.01, 0.01, 1)
-	create_tween().tween_property(screen, "scale", Vector3.ONE, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	lesson.open_from_desktop(CLICK_TIME)
 	elapsed = 0.0
 	state = "intro"
@@ -168,6 +179,7 @@ func _process(delta: float) -> void:
 	match state:
 		"intro":
 			elapsed += delta
+			lesson.ui.desktop.advance_open(elapsed)
 			animate_operator(delta)
 			if elapsed < 1.6:
 				_camera_between(saved_pose, side_pose, elapsed / 1.6, saved_fov, 58.0)
@@ -220,17 +232,25 @@ func _celebrate(t: float) -> void:
 
 
 func _fit_container() -> void:
+	if viewport.get_parent() != container:
+		return
 	var view := get_viewport().get_visible_rect().size
-	var scale_factor := minf(view.x / RENDER_SIZE.x, view.y / RENDER_SIZE.y)
-	container.scale = Vector2.ONE * scale_factor
-	container.position = (view - Vector2(RENDER_SIZE) * scale_factor) * 0.5
+	# Expand the lesson's logical canvas to the window's aspect ratio. The
+	# world fills every edge while UI keeps its proportions and safe area.
+	var ui_scale := minf(view.x / UI_SIZE.x, view.y / UI_SIZE.y)
+	viewport.size_2d_override = Vector2i((view / ui_scale).round())
+	var display_scale := get_viewport().get_stretch_transform().get_scale()
+	var render_size := Vector2i((view * display_scale).round())
+	viewport.size = render_size
+	container.position = Vector2.ZERO
+	container.size = render_size
+	container.scale = view / Vector2(render_size)
 
 
 func enter_game() -> void:
 	state = "game"
 	mouse_node.position = mouse_origin
 	viewport.reparent(container)
-	viewport.size = RENDER_SIZE
 	_fit_container()
 	backdrop.show()
 	backdrop.modulate.a = 0.0
@@ -261,6 +281,7 @@ func return_to_room() -> void:
 	backdrop.hide()
 	viewport.reparent(self)
 	viewport.size = RENDER_SIZE
+	viewport.size_2d_override = UI_SIZE
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	AudioManager.play("success")
 	elapsed = 0.0

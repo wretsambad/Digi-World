@@ -9,7 +9,7 @@ func run() -> void:
 	game.set_process(false)
 	assert(game.phase == game.Phase.WELCOME and not player.controls_enabled)
 	game.lesson_tour.start()
-	for stop in range(4):
+	for stop in range(game.lesson_tour.STOPS.size()):
 		game._process(2.61)
 		game.lesson_tour.next_stop()
 	game._process(2.41)

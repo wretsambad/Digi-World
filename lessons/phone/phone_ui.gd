@@ -42,11 +42,11 @@ const HINTS := {
 	"decide": "You found every clue! What will you do?",
 	"wrong_tag": "Read the small print again. What does it want from you?",
 }
-const NEW_TOOL_TIPS := {
-	"sender": "New tool: the Magnifier shows who really sent a message.",
-	"link": "New tool: Link Peek shows where a link really goes.",
-	"wants": "New tool: What does it want? Flip a prize to read its small print.",
-	"ask": "New tool: Ask someone. Check with a person you trust, in a chat you already use.",
+const TOOL_TIPS := {
+	"sender": "The Magnifier shows who really sent a message.",
+	"link": "Link Peek shows where a link really goes.",
+	"wants": "What does it want? Flip a prize to read its small print.",
+	"ask": "Ask someone. Check with a person you trust, in a chat you already use.",
 }
 
 var device: Control
@@ -466,10 +466,22 @@ func go_lock() -> void:
 
 ## Opens this round's trick and starts its fake countdown.
 func open_case(index: int) -> void:
+	_open_message(DATA.ROUNDS[index], index)
+
+
+func open_real_message() -> void:
+	_open_message(DATA.REAL_MESSAGE, -1)
+
+
+func is_genuine() -> bool:
+	return bool(data.get("genuine", false))
+
+
+func _open_message(message: Dictionary, index: int) -> void:
 	round_index = index
-	data = DATA.ROUNDS[index]
-	timer_left = float(data.timer)
-	timer_running = true
+	data = message
+	timer_left = float(data.get("timer", 0))
+	timer_running = not is_genuine()
 	is_paused = false
 	deciding = false
 	finished = false
@@ -487,6 +499,10 @@ func open_case(index: int) -> void:
 	_clear(_lock_notes)
 	_build_case_page()
 	show_page("case")
+	if is_genuine():
+		(_timer_strip.get_theme_stylebox("panel") as StyleBoxFlat).bg_color = PAPER
+		_timer_label.add_theme_color_override("font_color", PLUM)
+		_timer_icon.call("set_icon", "ask", PLUM, PLUM)
 	_render_timer()
 	_show_dock("pause")
 
@@ -592,6 +608,11 @@ func _outgoing(text: String) -> PanelContainer:
 
 
 func _build_message() -> void:
+	if is_genuine():
+		_thread.add_child(_incoming(String(DATA.CONTACTS.family.last)))
+		var now := _label("Now", 12, 600, MUTED_INK)
+		now.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		_thread.add_child(now)
 	var lines: Array = data.lines
 	for i in lines.size():
 		var bubble := _incoming(String(lines[i]))
@@ -607,6 +628,8 @@ func _build_message() -> void:
 			_link_chip = _label(String(data.link), 15, 700, LINK_BLUE)
 			_link_chip.custom_minimum_size.x = 236
 			stack.add_child(_link_chip)
+	if is_genuine():
+		return
 	var bait := _button(String(data.bait), true, 18)
 	bait.name = "Bait"
 	bait.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
@@ -700,6 +723,9 @@ func _offer_card(index: int, offer: Dictionary) -> PanelContainer:
 
 func _render_timer() -> void:
 	if not _timer_label:
+		return
+	if is_genuine():
+		_timer_label.text = "No rush. Let's check it." if is_paused else "Take your time."
 		return
 	if is_paused:
 		_timer_label.text = "Paused. Real friends can wait."
@@ -803,17 +829,6 @@ func _tool_button(tool: String) -> Button:
 	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	caption.add_theme_constant_override("line_spacing", -4)
 	stack.add_child(caption)
-	if tool in data.new_tools:
-		var badge := _panel(TANGERINE, 8)
-		var badge_style := badge.get_theme_stylebox("panel") as StyleBoxFlat
-		badge_style.content_margin_left = 5
-		badge_style.content_margin_right = 5
-		badge_style.content_margin_top = 0
-		badge_style.content_margin_bottom = 1
-		badge.name = "NewBadge"
-		badge.add_child(_label("NEW", 10, 700, PLUM_DEEP))
-		badge.position = Vector2(4, 3)
-		button.add_child(badge)
 	return button
 
 
@@ -821,9 +836,6 @@ func _mark_tool(tool: String, clue: bool) -> void:
 	var button: Button = _tool_buttons.get(tool)
 	if button == null:
 		return
-	var badge := button.get_node_or_null("NewBadge")
-	if badge:
-		badge.queue_free()
 	if button.get_node_or_null("Done"):
 		return
 	var mark := _avatar("check", Color("5ed6c0") if clue else LINE, 20)
@@ -851,11 +863,11 @@ func _pause_and_check() -> void:
 		for card: Dictionary in _offer_cards:
 			(card.flip as Button).disabled = false
 		_show_dock("shop")
-		hint.emit(NEW_TOOL_TIPS.wants + " " + HINTS.shop)
+		hint.emit(TOOL_TIPS.wants + " " + HINTS.shop)
 	else:
 		_show_dock("kit")
-		var new_tools: Array = data.new_tools
-		hint.emit(String(NEW_TOOL_TIPS[new_tools[0]]) if new_tools.size() == 1 else String(HINTS.kit))
+		var focus_tools: Array = data.get("focus_tools", [])
+		hint.emit("Check who sent it and what they are asking for." if is_genuine() else (String(TOOL_TIPS[focus_tools[0]]) if focus_tools.size() == 1 else String(HINTS.kit)))
 
 
 func _use_tool(tool: String) -> void:
@@ -873,7 +885,7 @@ func _use_tool(tool: String) -> void:
 		_add_clue_card(tool, String(clue.title), String(clue.body))
 		if tool == "sender":
 			_header_handle.text = "Really from: " + String(data.handle)
-			_header_handle.add_theme_color_override("font_color", ALERT)
+			_header_handle.add_theme_color_override("font_color", CALM_INK if is_genuine() else ALERT)
 			_header_handle.add_theme_font_override("font", SunsetUI.font(700))
 		if tool == "link" and _link_chip:
 			_link_chip.text = String(data.link) + "\nreally goes to: " + String(data.link_real)
@@ -999,7 +1011,10 @@ func _choose(index: int) -> void:
 		return
 	var choice: Dictionary = (data.choices as Array)[index]
 	if bool(choice.right):
-		_solve()
+		_solve(String(choice.get("reply", "")))
+	elif is_genuine():
+		# A cautious choice earns an explanation, never a Glitch point.
+		hint.emit(String(choice.why))
 	else:
 		_trick(String(choice.why))
 
@@ -1013,11 +1028,11 @@ func _trick(why: String) -> void:
 	case_ended.emit(true, why)
 
 
-func _solve() -> void:
+func _solve(reply: String = "") -> void:
 	finished = true
 	timer_running = false
 	_show_solved_overlay()
-	case_ended.emit(false, "")
+	case_ended.emit(false, reply)
 
 
 ## After a trick: back to where the player was, clues kept. The countdown
@@ -1297,10 +1312,10 @@ func _show_solved_overlay() -> void:
 	center.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	center.add_child(_icon("shield", 110, CALM_INK, Color("5ed6c0")))
 	column.add_child(center)
-	var title := _label("Trick caught!", 34, 700, CALM_INK)
+	var title := _label("Reply sent!" if is_genuine() else "Trick caught!", 34, 700, CALM_INK)
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	column.add_child(title)
-	var sub := _label("Reported and blocked.", 17, 600, CALM_INK)
+	var sub := _label("A regular message from your usual chat." if is_genuine() else "Reported and blocked.", 17, 600, CALM_INK)
 	sub.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	column.add_child(sub)
 	_pop(column)

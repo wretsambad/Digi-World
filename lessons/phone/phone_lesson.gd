@@ -1,10 +1,10 @@
 extends Node3D
-## The Glitch's Last Trick: the phone lesson. The Digi-World party in Willow
-## Park has been switched off, and each round the Glitch sends one trick to the
+## The Glitch's Last Trick: the phone lesson. The neighborhood house party
+## has been switched off, and each round the Glitch sends one trick to the
 ## player's phone. Catching a trick brings back a piece of the party (lights,
 ## music, decorations, then the celebration) and unmasks more of the Glitch.
 ## Falling for one glitches that piece and gives the Glitch a point; the player
-## rewinds and tries again. Rounds caught first try decide the ending.
+## rewinds and tries again. The finale is a silent walk-out cutscene.
 
 signal lesson_completed(score: int)
 
@@ -14,26 +14,31 @@ const LessonExit := preload("res://lessons/phone/lesson_exit.gd")
 ## node moves every shot with it. Targets sit right of centre to leave the
 ## party clear of the phone on the right of the screen.
 const VIEWS := {
-	"arrive": [Vector3(8.0, 6.5, 18.0), Vector3(3.5, 1.0, -1.5)],
+	"arrive": [Vector3(2.8, 2.1, 13.0), Vector3(0.0, 1.7, 3.0)],
 	"party": [Vector3(3.3, 2.4, 7.8), Vector3(2.0, 1.15, -2.0)],
 	"speaker": [Vector3(0.2, 1.6, 3.4), Vector3(-1.7, 0.85, -1.9)],
 	"balloons": [Vector3(5.2, 1.6, 6.4), Vector3(4.4, 1.55, 0.6)],
+	"windows": [Vector3(2.3, 2.1, 6.5), Vector3(1.6, 2.5, -2.2)],
+	"exit": [Vector3(-3.4, 1.8, -0.8), Vector3(1.2, 0.9, 5.5)],
 	"finale": [Vector3(2.6, 1.7, 5.8), Vector3(1.9, 0.95, -0.6)],
 }
 ## How many rows of the Glitch's pixel art each caught trick reveals.
-const REVEAL_ROWS := [3, 6, 9, 11]
-const REVEAL_CAPTIONS := ["Pointy ears...?", "Big googly eyes...", "A toothy grin...", "THE GLITCH!"]
+const REVEAL_ROWS := [3, 6, 11]
+const REVEAL_CAPTIONS := ["Pointy ears...?", "Big googly eyes...", "THE GLITCH!"]
 
 @export var title_screen := true
 
-var first_try: Array[bool] = [true, true, true, true]
+var first_try: Array[bool] = []
 var round_index := -1
 var glitch_points := 0
 var finished := false
+var exit_started := false
+var exit_finished := false
+var exit_walking := false
+var real_message_answered := false
 
 @onready var party: Node3D = $Party
 @onready var camera: Camera3D = $Camera3D
-@onready var pip: Node3D = $Pip
 @onready var glitch: Node3D = $Glitch
 @onready var ui: Control = $UI/PartyUI
 @onready var phone: Control = $UI/Phone
@@ -41,18 +46,18 @@ var pause_menu: PauseMenu
 
 
 func _ready() -> void:
+	first_try.resize(DATA.ROUNDS.size())
+	first_try.fill(true)
 	if GameState.current_lesson != LessonExit.LESSON_ID:
 		GameState.start_lesson(LessonExit.LESSON_ID)
 	ui.phone = phone
 	phone.hint.connect(ui.tip)
-	phone.chat_sent.connect(_on_chat_sent)
 	ui.leave_pressed.connect(leave)
 	ui.replay_pressed.connect(func() -> void: get_tree().reload_current_scene())
 	pause_menu = PauseMenu.new()
 	$UI.add_child(pause_menu)
 	pause_menu.quit_button.text = "Back to my room"
 	pause_menu.quit_requested.connect(leave)
-	pip.hide()
 	glitch.hide()
 	camera.global_transform = _view("arrive")
 	phone.modulate.a = 0.0
@@ -72,10 +77,18 @@ func run() -> void:
 		ui.title_card.hide()
 	_slide_phone_in()
 	await _glide("party", 2.6)
-	for line: Array in DATA.OPENING:
+	ui.set_piece("lights", "on")
+	for i in DATA.OPENING.size():
+		if i == DATA.LIGHTS_OUT_LINE:
+			party.blackout()
+			ui.set_piece("lights", "off")
+			AudioManager.play("glitch")
+		var line: Array = DATA.OPENING[i]
 		await ui.say(line[0], line[1])
 	for i in DATA.ROUNDS.size():
 		await play_round(i)
+		if DATA.ROUNDS[i].piece == "music":
+			await _play_real_message()
 	await _finale()
 
 
@@ -102,6 +115,21 @@ func play_round(index: int) -> void:
 		await ui.say(line[0], line[1])
 
 
+func _play_real_message() -> void:
+	await ui.say("PIP", "Another message has arrived. Take a look and decide what to do.")
+	phone.show_notification(DATA.REAL_MESSAGE)
+	ui.tip("Tap the notification to read the message.")
+	await phone.opened
+	phone.open_real_message()
+	ui.tip("Check who sent it and what they want. Not every message is a trick.")
+	var outcome: Array = await phone.case_ended
+	party.choose_song(String(outcome[1]))
+	real_message_answered = true
+	await get_tree().create_timer(1.0).timeout
+	phone.go_lock()
+	await ui.say("PIP", "That was a real message! A song choice is fine to share. Enjoy your pick!")
+
+
 func score() -> int:
 	return first_try.count(true)
 
@@ -111,12 +139,11 @@ func score() -> int:
 func _tricked(index: int, why: String) -> void:
 	glitch_points += 1
 	var piece: String = DATA.ROUNDS[index].piece
-	var glitched: Array[String] = _pieces_hit(piece)
+	var glitched: Array[String] = [piece]
 	for target in glitched:
 		party.set_piece(target, "glitched")
 		ui.set_piece(target, "glitched")
 	await _glitch_laughs(index)
-	await ui.say("THE GLITCH", "Hee hee! Gotcha! That's %d point%s for me!" % [glitch_points, "" if glitch_points == 1 else "s"])
 	await ui.say("PIP", why, "Rewind")
 	for target in glitched:
 		# Pieces caught in earlier rounds come back; this round's piece stays off.
@@ -127,17 +154,9 @@ func _tricked(index: int, why: String) -> void:
 	ui.tip("Let's try that again. Take your time: real friends can wait.")
 
 
-## A trick glitches this round's piece. The celebration has nothing to show
-## yet, so a trick in the last round glitches the lights and music instead.
-func _pieces_hit(piece: String) -> Array[String]:
-	if piece == "celebration":
-		return ["lights", "music"]
-	return [piece]
-
-
 ## The Glitch pops out, a little bigger with every point, giggles and hides.
 func _glitch_laughs(index: int) -> void:
-	var spot: Vector3 = party.hideout(["speaker_peek", "speaker_peek", "balloons", "table"][index])
+	var spot: Vector3 = party.hideout(["speaker_peek", "speaker_peek", "balloons"][index])
 	glitch.scale = Vector3.ONE * (1.0 + 0.15 * glitch_points)
 	glitch.global_position = spot
 	glitch.show()
@@ -157,9 +176,11 @@ func _restore(index: int) -> void:
 	ui.hide_story()
 	match index:
 		0:
-			party.set_piece("lights", "on")
+			await _fade_phone(0.0)
+			await _glide("windows", 1.2)
 			AudioManager.play("repair")
-			await _glide("speaker", 1.6)
+			await party.restore_lights()
+			await _fade_phone(1.0)
 			await _flicker_glitch()
 		1:
 			party.set_piece("music", "on")
@@ -169,15 +190,11 @@ func _restore(index: int) -> void:
 		2:
 			party.set_piece("decorations", "on")
 			AudioManager.play("build")
-			await _glide("balloons", 1.6)
-			await _glitch_shadow()
-		3:
-			party.set_piece("celebration", "on")
-			pip.set_mood("Cheer")
-			AudioManager.play("success")
+			await _glide("party", 1.6)
+			await get_tree().create_timer(1.0).timeout
 	ui.set_piece(piece, "on")
 	ui.reveal_glitch(REVEAL_ROWS[index], REVEAL_CAPTIONS[index])
-	if index < 3:
+	if index < DATA.ROUNDS.size() - 1:
 		_glide("party", 1.8)
 
 
@@ -209,65 +226,48 @@ func _glitch_peeks() -> void:
 	glitch.jitter_amount = 1.0
 
 
-## Round 3: a shape bobbing among the balloons, then a poof.
-func _glitch_shadow() -> void:
-	glitch.scale = Vector3.ONE
-	glitch.global_position = party.hideout("balloons")
-	glitch.show()
-	glitch.face(camera.global_position)
-	await glitch.dance(0.8)
-	await glitch.vanish()
+# ------------------------------------------------------------------ silent finale
 
-
-# ------------------------------------------------------------------ Pip and the finale
-
-## Checking with the real Pip in round 4 brings Pip strolling into the party.
-func _on_chat_sent(contact: String) -> void:
-	if contact != "pip" or pip.visible:
-		return
-	var start: Vector3 = party.pip_entry()
-	var spot: Vector3 = party.pip_spot()
-	pip.global_position = start
-	pip.rotation.y = atan2(spot.x - start.x, spot.z - start.z)
-	pip.show()
-	pip.set_mood("Walk")
+func _walk_glitch_to(target: Vector3, seconds: float) -> void:
+	glitch.face(target)
+	var start: Vector3 = glitch.global_position
 	var tween := create_tween()
-	tween.tween_property(pip, "global_position", spot, 3.2)
+	tween.tween_method(func(t: float) -> void:
+		glitch.global_position = start.lerp(target, t)
+		# Small alternating steps rather than the actor's running hops.
+		glitch.pixels.rotation.z = sin(t * seconds * 12.0) * 0.07,
+		0.0, 1.0, seconds)
 	await tween.finished
-	pip.rotation.y = atan2(camera.global_position.x - spot.x, camera.global_position.z - spot.z)
-	pip.set_mood("Wave")
+	glitch.pixels.rotation.z = 0.0
 
 
 func _finale() -> void:
-	if not pip.visible:
-		_on_chat_sent("pip")
-	await _glide("finale", 1.8)
-	glitch.scale = Vector3.ONE * (1.0 + 0.15 * glitch_points)
+	exit_started = true
+	ui.hide_story()
+	ui.portrait.hide()
+	ui.hud.hide()
+	await _fade_phone(0.0)
+	await _glide("finale", 1.2)
+	glitch.scale = Vector3.ONE
 	glitch.global_position = party.hideout("table")
+	glitch.jitter_amount = 0.3
 	glitch.show()
-	await glitch.blink_to(party.hideout("centre"))
 	glitch.face(camera.global_position)
-	for line: Array in DATA.GLITCH_CAUGHT:
-		await ui.say(line[0], line[1])
-	var spark := score() >= DATA.SPARK_SCORE
-	var ending: Array = DATA.ENDING_SPARK if spark else DATA.ENDING_ESCAPE
-	if spark:
-		# With nobody falling for its tricks, the Glitch shrinks to a spark.
-		var tween := create_tween()
-		tween.tween_property(glitch, "scale", Vector3.ONE * 0.4, 1.2).set_trans(Tween.TRANS_BACK)
-		glitch.jitter_amount = 0.2
-		AudioManager.play("poof")
-	for i in ending.size():
-		await ui.say(ending[i][0], ending[i][1])
-		if i == 0 and not spark:
-			await glitch.run_to(party.pip_entry() + Vector3(4, 0, 4), 6.0)
-			await glitch.vanish()
-	pip.set_mood("Celebrate")
+	await get_tree().create_timer(0.6).timeout
+	await _walk_glitch_to(party.hideout("centre"), 1.5)
+	await _glide("exit", 1.2)
+	exit_walking = true
+	await _walk_glitch_to(party.exit_position(), 4.2)
+	await glitch.vanish()
+	exit_walking = false
+	await get_tree().create_timer(0.5).timeout
+	exit_finished = true
 	party.set_piece("celebration", "on")
+	ui.set_piece("celebration", "on")
 	AudioManager.play("success")
-	if spark:
-		glitch.hop_to(party.hideout("centre") + Vector3(-0.6, 0, 0.3), 0.5, 0.3)
-	await _glide("party", 2.0)
+	await _glide("party", 1.8)
+	await _fade_phone(1.0)
+	ui.hud.show()
 	finished = true
 	lesson_completed.emit(score())
 	var lessons: Array = []
@@ -275,6 +275,12 @@ func _finale() -> void:
 		lessons.append(round_.lesson)
 	phone.go_lock()
 	ui.show_summary(score(), lessons)
+
+
+func _fade_phone(alpha: float) -> void:
+	var tween := create_tween()
+	tween.tween_property(phone, "modulate:a", alpha, 0.3)
+	await tween.finished
 
 
 func leave() -> void:

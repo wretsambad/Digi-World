@@ -421,7 +421,7 @@ func show_summary(score: int, lessons: Array) -> void:
 	column.add_theme_constant_override("separation", 12)
 	summary.add_child(column)
 	column.add_child(_label("Party saved!", 44, "title"))
-	column.add_child(_label("Tricks caught on the first try: %d of 4" % score, 22, "muted"))
+	column.add_child(_label("Tricks caught on the first try: %d of %d" % [score, lessons.size()], 22, "muted"))
 	for line: String in lessons:
 		var row := HBoxContainer.new()
 		row.add_theme_constant_override("separation", 12)

@@ -40,8 +40,10 @@ func _ready() -> void:
 	var stairs := game.base.oak.get_node("BranchPlatforms/LandingToTopDeck")
 	var upper := game.base.oak.get_node("BranchPlatforms/UpperWraparound")
 	verify(is_equal_approx(float(upper.get_meta("front_extension")), 0.9), "Upper deck was not widened")
-	verify(is_equal_approx(float(stairs.get_meta("foot").z), 6.63), "Upper ladder foot does not match extended landing")
-	var stair_mouth := AABB(Vector3(1.55, 3.3, 6.3), Vector3(1.5, 1.3, 0.8))
+	var foot: Vector3 = stairs.get_meta("foot")
+	var landing: Vector3 = stairs.get_meta("landing")
+	verify(foot.z - landing.z >= 2.0, "Upper ladder must have a usable incline")
+	var stair_mouth := AABB(Vector3(1.55, 3.3, 7.9), Vector3(1.5, 1.3, 0.6))
 	for railing in game.base.oak.get_node("BranchPlatforms/LowerLookout").get_children():
 		if railing is MeshInstance3D and (railing.name.begins_with("PerimeterRail") or railing.name.begins_with("RailingPost")):
 			verify(not stair_mouth.intersects(railing.global_transform * railing.get_aabb()), "Lower railing blocks upper ladder: " + str(railing.name))
@@ -179,6 +181,7 @@ func finish() -> void:
 	for guard in game.base.branch_guards:
 		var blocker: MeshInstance3D = guard.get_node("ClimbBlocker")
 		verify((blocker.mesh as CylinderMesh).top_radius > 1.0, "Branch barrier is only a thin sleeve")
+		verify(is_equal_approx(guard.scale.x * (blocker.mesh as CylinderMesh).top_radius * 2.0, 4.35), "Branch shield must be 1.5 times its original diameter")
 		verify(guard.has_node("OverhangingLip"), "Branch barrier needs an overhanging lip")
 	verify(dialogue_checked and customize_checked and clear_scene_checked, "Clear scene and compact dialogue checks were not exercised")
 	verify(GameState.is_complete(GameState.PROTECT_YOUR_BASE), "Lesson not marked complete")
