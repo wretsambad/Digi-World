@@ -141,7 +141,7 @@ transform = Transform3D(105, 0, 0, 0, 1, 0, 0, 0, 120, 0, -0.025, -8)
 metadata/category = "Ground"
 
 [node name="lawn_tile" parent="Village/NeighborhoodGround_210mBy240m" unique_id=1020966581 instance=ExtResource("1_r60il")]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0.00056725, 0, -0.0030961856)
+transform = Transform3D(0.9999998, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.00069200876, -0.0072793923, -0.0031668618)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -316,7 +316,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_East_03" parent="Village" unique_id=47907918 instance=ExtResource("8_30o2h")]
-transform = Transform3D(-0.032245617, 0, 0.99947995, 0, 1, 0, -0.99947995, 0, -0.032245617, 16.7, 0, -3.4394019)
+transform = Transform3D(-0.032245617, 0, 0.99947995, 0, 1, 0, -0.99947995, 0, -0.032245617, 16.7, 0, -2.998238)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -361,32 +361,17 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_Outer_-1_1" parent="Village" unique_id=1317095744 instance=ExtResource("6_g4tkl")]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -46, 0, 10)
+transform = Transform3D(0, 0, 0.044047773, 0, 0.0998662, 0, -0.028190434, 0, 0, -28.26216, -1.1920929e-06, 8.5105295)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_Outer_-1_2" parent="Village" unique_id=614693979 instance=ExtResource("7_ni2as")]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -46, 0, -24)
+transform = Transform3D(0, 0, 0.07794084, 0, 0.048746444, 0, -0.09775621, 0, 0, -26.028559, 0, -24.916645)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="House_Outer_1_0" parent="Village" unique_id=3038873 instance=ExtResource("6_g4tkl")]
 transform = Transform3D(-8.742278e-08, 0, 1, 0, 1, 0, -1, 0, -8.742278e-08, 46, 0, 42)
-metadata/_edit_group_ = true
-metadata/whole_object = true
-
-[node name="House_Outer_1_1" parent="Village" unique_id=896833742 instance=ExtResource("7_ni2as")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 46, 0, 10)
-metadata/_edit_group_ = true
-metadata/whole_object = true
-
-[node name="House_Outer_1_2" parent="Village" unique_id=851301665 instance=ExtResource("8_30o2h")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 46, 0, -24)
-metadata/_edit_group_ = true
-metadata/whole_object = true
-
-[node name="House_South_0" parent="Village" unique_id=292295816 instance=ExtResource("4_ukdax")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -48, 0, 83)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3961,12 +3946,12 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Driveways_driveway_large_682" parent="Village" unique_id=1780757519 instance=ExtResource("13_j8kc2")]
-transform = Transform3D(0, 0, -1.5191746, 0, 1, 0, 1, 0, 0, 10.365301, 0.07, 5.392898)
+transform = Transform3D(0, 0, -1.5191746, 0, 1, 0, 1, 0, 0, 10.365301, 0.07, 5.9468303)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Cars_car_cream_683" parent="Village" unique_id=6961668 instance=ExtResource("37_gyci3")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.47393, 0.15, 5.41353)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.47393, 0.15, 5.831024)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -3997,7 +3982,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 10.143014, 0.12, -1.1)
 metadata/category = "Gardens"
 
 [node name="flowerpot" parent="Village/Gardens_flowerpot_687" unique_id=1032160340 instance=ExtResource("18_cefui")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5698848, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.80670905, 0, -0.50007206)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4082,7 +4067,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="StreetTrees_tree_oak_large_698" parent="Village" unique_id=499709156 instance=ExtResource("29_d7uhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.446467, 0, -12.4)
+transform = Transform3D(0.14005476, 0, 0, 0, 0.10517341, 0, 0, 0, 0.15263468, 19.158224, 0, -15.52095)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4101,6 +4086,7 @@ transform = Transform3D(6.2, 0, 0, 0, 6.2, 0, 0, 0, 6.2, 12, 0.03, -7.8)
 metadata/category = "Gardens"
 
 [node name="shrub_round" parent="Village/Gardens_shrub_round_701" unique_id=1136366024 instance=ExtResource("23_wfg4w")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.37477624, 0, 0.54287606)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4147,7 +4133,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Driveways_driveway_large_707" parent="Village" unique_id=447885918 instance=ExtResource("13_j8kc2")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 9.6, 0.07, -19)
+transform = Transform3D(0, 0, -1.2909648, 0, 1, 0, 1, 0, 0, 10.684906, 0.07, -19)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -4840,6 +4826,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.8, 0.04, 10)
 metadata/category = "StreetFurniture"
 
 [node name="hydrant" parent="Village/StreetFurniture_hydrant_803" unique_id=784408288 instance=ExtResource("39_5h2iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26511174, 9.49949e-08, 0.35425067)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -6359,7 +6346,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="Fill_house_peach_064" parent="Village" unique_id=730933351 instance=ExtResource("7_ni2as")]
-transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 21.1, 0, -15)
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, 19.666195, 0, -16.412106)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -9949,7 +9936,7 @@ metadata/whole_object = true
 [node name="EastGardenHome" type="Node3D" parent="Village/GardenQuarter" unique_id=1825542953]
 
 [node name="House" parent="Village/GardenQuarter/EastGardenHome" unique_id=810458804 instance=ExtResource("7_ni2as")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 38, 0, -44)
+transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, 1, 39.34933, 0, -45.11959)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -9962,6 +9949,7 @@ metadata/whole_object = true
 transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, 35.7, 0, -49.4)
 
 [node name="flowerbed" parent="Village/GardenQuarter/EastGardenHome/PorchFlowers0" unique_id=1194289025 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.040033817, 0, 0.17092896)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -9983,6 +9971,7 @@ metadata/whole_object = true
 transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, 40.3, 0, -49.4)
 
 [node name="flowerbed" parent="Village/GardenQuarter/EastGardenHome/PorchFlowers1" unique_id=1196914396 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06605053, 0, 0.11402416)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -9996,10 +9985,6 @@ metadata/whole_object = true
 [node name="GardenEdge1" type="Node3D" parent="Village/GardenQuarter/EastGardenHome" unique_id=589526078]
 transform = Transform3D(0, 0, -25.351013, 0, 4, 0, 4, 0, 0, 42.6, 0, -55.9)
 
-[node name="hedge_straight" parent="Village/GardenQuarter/EastGardenHome/GardenEdge1" unique_id=1736621914 instance=ExtResource("20_7ckiu")]
-metadata/_edit_group_ = true
-metadata/whole_object = true
-
 [node name="Mailbox" type="Node3D" parent="Village/GardenQuarter/EastGardenHome" unique_id=984281304]
 transform = Transform3D(-4, 0, 0, 0, 4, 0, 0, 0, -4, 39.2, 0, -63)
 
@@ -10010,7 +9995,7 @@ metadata/whole_object = true
 [node name="WestGardenHome" type="Node3D" parent="Village/GardenQuarter" unique_id=1595004459]
 
 [node name="House" parent="Village/GardenQuarter/WestGardenHome" unique_id=1180913377 instance=ExtResource("9_06bq1")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -39, 0, -44)
+transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, 1, -37.871635, 0, -45.319313)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -10023,6 +10008,7 @@ metadata/whole_object = true
 transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, -41.3, 0, -49.4)
 
 [node name="flowerbed" parent="Village/GardenQuarter/WestGardenHome/PorchFlowers0" unique_id=1740241123 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.067233086, 0, 0.2028017)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -10044,6 +10030,7 @@ metadata/whole_object = true
 transform = Transform3D(-5, 0, 0, 0, 4, 0, 0, 0, -4, -36.7, 0, -49.4)
 
 [node name="flowerbed" parent="Village/GardenQuarter/WestGardenHome/PorchFlowers1" unique_id=658128453 instance=ExtResource("17_246wl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030146122, 0, 0.20994091)
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
@@ -11696,7 +11683,7 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="PlowedDrift21" parent="WinterRoadside" unique_id=1635766582 instance=ExtResource("69_w3vas")]
-transform = Transform3D(0.55, 0, 0, 0, 0.24, 0, 0, 0, 1.8, 6.4, 0.08, -18)
+transform = Transform3D(0.55, 0, 0, 0, 0.24, 0, 0, 0, 1.8, 6.4, 0.08, -22.56496)
 material_override = SubResource("StandardMaterial3D_m6unm")
 mesh = SubResource("ArrayMesh_wxspq")
 metadata/_edit_group_ = true
@@ -11710,14 +11697,14 @@ metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="PlowedDrift23" parent="WinterRoadside" unique_id=1951967674 instance=ExtResource("69_w3vas")]
-transform = Transform3D(0.79, 0, 0, 0, 0.24, 0, 0, 0, 2.5, 6.4, 0.08, -2)
+transform = Transform3D(0.79, 0, 0, 0, 0.24, 0, 0, 0, 2.5, 6.4, 0.08, -7.77108)
 material_override = SubResource("StandardMaterial3D_m6unm")
 mesh = SubResource("ArrayMesh_wxspq")
 metadata/_edit_group_ = true
 metadata/whole_object = true
 
 [node name="PlowedDrift24" parent="WinterRoadside" unique_id=1754005776 instance=ExtResource("69_w3vas")]
-transform = Transform3D(0.55, 0, 0, 0, 0.37, 0, 0, 0, 1.8, 6.4, 0.08, 6)
+transform = Transform3D(0.55, 0, 0, 0, 0.37, 0, 0, 0, 1.8, 6.4, 0.08, 12.133183)
 material_override = SubResource("StandardMaterial3D_m6unm")
 mesh = SubResource("ArrayMesh_wxspq")
 metadata/_edit_group_ = true
