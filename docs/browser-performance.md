@@ -11,7 +11,8 @@ to also copy the custom HTML shell's logo and font beside the exported page.
 
 `web/loading.html` replaces the default browser/Godot startup screen. It uses
 the existing logo, Fredoka font and SunsetUI palette. Download progress is
-shown when available; preparation uses an indeterminate bar. `SceneLoading`
+shown when available; scene preparation has a determinate bar with percentages
+and stage labels. `SceneLoading`
 keeps the surface visible until the first real game frame is ready. It also
 provides a native fallback and loading surfaces for lesson transitions.
 
@@ -30,12 +31,24 @@ room setup. The full 3D lesson is instantiated after the animation completes,
 under the loading surface. Replay uses the same sequence. Sharing-board and
 phone loading surfaces appear after their existing entrance animations.
 The scene remains covered while scenery and quality changes finish. Material
-uploads and WebGL shader compilation then warm in groups of at most 16 geometry
-instances per frame. Collecting those instances also yields, without reading
-back MultiMesh bounds from the renderer. This avoids compiling
-all visible materials in a single first frame. The browser loading bar animates
-through CSS rather than game code. Individual resources, scene instantiation,
+uploads and WebGL shader compilation warm at most four representative mesh and
+material combinations per frame. Repeated instances share a representative,
+preferring one inside the camera's frustum. Each group is hidden after warming;
+earlier groups no longer accumulate into repeated full-world draws. Collecting
+those instances also yields, without reading back MultiMesh bounds from the
+renderer. The complete scene is restored for the final frame. Browser game
+canvases, including the welcome blur, stop drawing beneath the DOM loading
+screen and regain their exact canvas masks before reveal.
+Individual resources, scene instantiation,
 driver compilation and engine startup remain indivisible operations.
+
+The first bar reserves 0–35% for the measured download, waits at 35% during
+engine startup, then uses 40–100% for the first scene. Later transitions start
+at zero. Scene progress combines loaded asset counts, scenery preparation,
+queued quality changes, and completed warmup groups; it represents work rather
+than an estimate of seconds remaining. Progress never moves backward within a
+transition and reaches 100% only after the first complete frame. Native loading
+uses the same stages and a matching progress bar.
 
 ## Rendering
 
@@ -80,9 +93,13 @@ detail, local lights, sun splits, AA and particle startup work. Disabling
 shadows changes the lighting, including how light reaches lamp shades.
 Gameplay, collisions, lesson timing and camera framing remain unchanged.
 
-Scenery preparation yields on every platform (a 2 ms target, checked between
-meshes, batches and individual instance transforms). Geometry quality changes
-use a separate 2 ms queue rather than scanning an entire scene in one frame.
+Scenery preparation yields on every platform (a 4 ms target, checked in groups
+of 32 cheap operations). Geometry quality changes use a separate 2 ms queue
+during play and 4 ms under the loading cover. Time queries are grouped to avoid
+thousands of WASM-to-JavaScript calls. Under the loading cover, batching finishes
+before geometry quality changes run; hidden source meshes need no quality work.
+Batch centers and footprints are retained on the CPU, avoiding renderer
+readbacks during warmup and quality setup.
 Adding a light no longer revisits every mesh and every existing light. Startup
 and lesson loading wait for preparation before revealing the scene.
 Covered viewports suspend 3D drawing during preparation, avoiding repeated
@@ -109,7 +126,11 @@ node provide independent opt-outs.
 
 The enabled `scenery_export` editor plugin runs the palette conversion for the
 reviewed static branches during export. Runtime preparation still handles
-development scenes and any dynamically changed materials. Bedroom scenery now
+development scenes and any dynamically changed materials. Export also records
+reviewed mesh paths, avoiding another full traversal of passive model nodes on
+the player's device. Runtime still checks live mesh eligibility and tolerates
+props removed by the phone scene or materials/layers changed for winter photos.
+Bedroom scenery now
 also batches static floorboards, furnishings and decorations. The seated actor,
 animated mouse and lesson objects remain independent, preserving their motion,
 interaction and outline masks. The authored scene resources are not rewritten
@@ -144,6 +165,22 @@ batching reduced High draw calls from 3,049 to 1,815, with the other High budget
 held constant. The final Balanced and Low presets each used 626 calls in that
 view. These are not measurements on low-end hardware.
 
+Loading optimization comparison in fresh desktop Chrome contexts at 1280×720,
+with 4× CPU throttling, using the same local server and opening/bedroom route:
+
+| Preset | Opening before → after | Bedroom before → after |
+| --- | ---: | ---: |
+| Low | 22.4 s → 16.4 s | 13.0 s → 8.9 s |
+| Balanced | 13.7 s → 7.0 s | 13.4 s → 8.8 s |
+| High | 17.9 s → 10.3 s | 19.8 s → 10.5 s |
+
+These cover scene loading after engine startup, excluding network download.
+Initial cold shader compilation still dominates the first Low run; subsequent
+contexts can benefit from the browser/driver shader cache. The paired runs use
+the same preset order. These synthetic results do not predict a specific
+Chromebook's loading time. Raw phase timings and progress samples are retained
+under `work/loading-before-results.json` and `work/loading-final/`.
+
 The original release payload was 65.11 MiB uncompressed, or 25.88 MiB with
 equivalent gzip. The release with custom loading assets is about 59.27 MiB
 uncompressed and 21.55 MiB with gzip. Those historical payloads predate the
@@ -164,6 +201,7 @@ godot --headless --path . --script res://tests/pause_flow.gd
 godot --headless --path . --script res://tests/static_scenery.gd
 godot --headless --path . --script res://tests/graphics_quality.gd
 godot --headless --path . --script res://tests/scene_loading.gd
+godot --path . --rendering-method gl_compatibility --script res://tests/exported_scenery.gd
 ```
 
 The browser release was also opened in Chrome and checked through the opening
@@ -196,7 +234,9 @@ browser context for each preset, applies 4× CPU throttling, and traverses the
 opening flight into the bedroom. It checks JavaScript/game errors and rejects
 scene/gameplay tasks of five seconds or more after engine boot. Engine startup
 tasks are recorded separately. Screenshots, phase marks and
-task durations go to `work/performance-browser/`. CPU throttling is a synthetic
+task durations go to `work/performance-browser/`. The test also checks monotonic
+progress, stage labels, exact completion, and desktop/mobile loading layouts.
+CPU throttling is a synthetic
 stress test, not a substitute for testing physical low-end devices:
 
 ```powershell

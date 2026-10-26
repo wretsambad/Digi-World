@@ -138,19 +138,31 @@ func is_preparing() -> bool:
 func settle() -> void:
 	while is_preparing(): await get_tree().process_frame
 
+func preparation_progress() -> float:
+	return float(_pending_index) / _pending_geometry.size() if is_preparing() else 1.0
+
 func track_static(geometry: GeometryInstance3D) -> void:
 	if geometry.is_in_group("graphics_quality_static"): return
 	geometry.add_to_group("graphics_quality_static")
 	_pending_geometry.append(geometry)
 
 func _drain_geometry() -> void:
+	var loading := get_node_or_null("/root/SceneLoading")
+	var covered: bool = loading != null and loading.active
+	if covered:
+		# Batch first, then budget only the renderable output. Applying presets
+		# to thousands of source meshes that will shortly be hidden is wasted work.
+		for batch in get_tree().get_nodes_in_group("scenery_preparing"):
+			if batch.enabled and not batch.finished: return
 	var started := Time.get_ticks_usec()
+	var processed := 0
 	while is_preparing():
 		var geometry := _pending_geometry[_pending_index]
 		_pending_index += 1
 		if is_instance_valid(geometry) and geometry.is_inside_tree():
 			_apply_geometry(geometry)
-		if Time.get_ticks_usec() - started >= GEOMETRY_BUDGET_USEC: break
+		processed += 1
+		if processed % 32 == 0 and Time.get_ticks_usec() - started >= (4000 if covered else GEOMETRY_BUDGET_USEC): break
 	if not is_preparing():
 		_pending_geometry.clear()
 		_pending_index = 0
@@ -239,6 +251,7 @@ func _apply_viewport(view: Viewport) -> void:
 	view.positional_shadow_atlas_size = mini(int(view.get_meta("quality_original_atlas")), [0, 0, 4096][level])
 
 func _apply_geometry(geometry: GeometryInstance3D) -> void:
+	if geometry.layers == 0 and geometry.has_meta("static_batch_source_layers"): return
 	if geometry is MeshInstance3D:
 		if geometry.mesh is PrimitiveMesh or geometry.has_meta("quality_original_mesh"):
 			var original_mesh: Mesh = _authored(geometry, &"mesh")

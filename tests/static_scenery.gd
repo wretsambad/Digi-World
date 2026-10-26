@@ -81,8 +81,31 @@ func run() -> void:
 	verify(batch.source_count == 2 and batch.batch_count == 1, "Static instances were not batched")
 	verify(excluded.layers == 1, "An excluded mesh was changed")
 	verify(scenery.get_node("Piece0").get_child(0) == collider, "Collision or authored node paths changed")
+	var output := scenery.get_node("StaticBatch_0") as MultiMeshInstance3D
+	verify(output.has_meta("scenery_center") and output.has_meta("quality_footprint"), "Batches must retain CPU-side bounds for loading and quality")
 	batch._build()
 	verify(batch.batch_count == 1, "A second build duplicated geometry")
+	world.free()
+	# Exported path lists must tolerate deleted props and retain live checks for
+	# authored layers/materials. Development discovery remains a fallback.
+	world = Node3D.new()
+	root.add_child(world)
+	scenery = Node3D.new()
+	scenery.name = "Scenery"
+	world.add_child(scenery)
+	for i in 2:
+		var piece := MeshInstance3D.new()
+		piece.name = "Piece%d" % i
+		piece.mesh = shared
+		scenery.add_child(piece)
+	batch = load("res://scripts/StaticSceneryBatch.gd").new()
+	batch.root_paths.append(NodePath("../Scenery"))
+	batch.prepared_paths["../Scenery"] = [NodePath("Piece0"), NodePath("DeletedProp"), NodePath("Piece1")]
+	world.add_child(batch)
+	for frame in 100:
+		await process_frame
+		if batch.finished: break
+	verify(batch.finished and batch.source_count == 2 and batch.batch_count == 1, "Prepared mesh paths must batch existing props and tolerate removed ones")
 	world.free()
 	print("STATIC SCENERY ", "PASS" if failures.is_empty() else str(failures))
 	quit(0 if failures.is_empty() else 1)

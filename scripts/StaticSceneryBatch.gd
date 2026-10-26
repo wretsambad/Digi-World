@@ -15,12 +15,16 @@ signal slice_ready
 @export var static_shaders: Array[Shader] = []
 ## Return control to the browser regularly instead of one long scenery build.
 @export var cooperative_build := true
-@export var frame_budget_usec := 2000
+@export var frame_budget_usec := 4000
+## Export records reviewed mesh paths so the browser need not walk thousands
+## of passive model/transform nodes again. Unexported scenes use discovery.
+@export var prepared_paths: Dictionary = {}
 
 var source_count := 0
 var batch_count := 0
 var finished := false
 var yield_count := 0
+var preparation_progress := 0.0
 var _slice_started := 0
 var _excluded: Array[Node] = []
 var _mesh_cache: Dictionary = {}
@@ -28,6 +32,7 @@ var _lod_cache: Dictionary = {}
 var _built := false
 var _cancelled := false
 var _quality: Node
+var _budget_checks := 0
 var _palette = preload("res://scripts/StaticMeshPalette.gd").new()
 
 func _enter_tree() -> void:
@@ -45,6 +50,7 @@ func _ready() -> void:
 		call_deferred("_build")
 	else:
 		finished = true
+		preparation_progress = 1.0
 
 func _build() -> void:
 	if _built: return
@@ -53,13 +59,19 @@ func _build() -> void:
 	for path in excluded_paths:
 		var node := get_node_or_null(path)
 		if node != null: _excluded.append(node)
-	for path in root_paths:
+	for root_index in root_paths.size():
+		var path := root_paths[root_index]
 		var root_node := get_node_or_null(path) as Node3D
 		if root_node == null: continue
 		var sources: Array[MeshInstance3D] = []
-		await _collect(root_node, sources)
+		if prepared_paths.has(str(path)):
+			await _collect_prepared(root_node, prepared_paths[str(path)], sources)
+		else:
+			await _collect(root_node, sources)
 		if _cancelled: return
+		preparation_progress = float(root_index + 0.3) / root_paths.size()
 		var groups: Dictionary = {}
+		var grouped := 0
 		for source in sources:
 			if _budget_exhausted() and not await _next_slice(): return
 			var cell := Vector3i((source.global_position / cell_size).floor())
@@ -69,7 +81,12 @@ func _build() -> void:
 			var key: Array = [source.mesh, materials, cell, source.layers, _authored(source, &"cast_shadow"), source.gi_mode, source.extra_cull_margin, source.lod_bias, source.transparency, source.ignore_occlusion_culling, source.sorting_offset, source.sorting_use_aabb_center]
 			if not groups.has(key): groups[key] = []
 			groups[key].append(source)
+			grouped += 1
+			preparation_progress = (root_index + 0.3 + 0.25 * grouped / maxi(1, sources.size())) / root_paths.size()
+		var prepared := 0
 		for key: Array in groups:
+			preparation_progress = (root_index + 0.55 + 0.45 * prepared / maxi(1, groups.size())) / root_paths.size()
+			prepared += 1
 			if _budget_exhausted() and not await _next_slice(): return
 			var group: Array = groups[key]
 			if group.size() < 2: continue
@@ -79,9 +96,11 @@ func _build() -> void:
 			multimesh.mesh = _effective_mesh(first, key[1])
 			multimesh.instance_count = group.size()
 			var inverse := root_node.global_transform.affine_inverse()
+			var center := Vector3.ZERO
 			for index in range(group.size()):
 				if _budget_exhausted() and not await _next_slice(): return
 				multimesh.set_instance_transform(index, inverse * group[index].global_transform)
+				center += group[index].global_position
 			var batch := MultiMeshInstance3D.new()
 			batch.name = "StaticBatch_%d" % batch_count
 			batch.multimesh = multimesh
@@ -95,6 +114,11 @@ func _build() -> void:
 			batch.sorting_offset = first.sorting_offset
 			batch.sorting_use_aabb_center = first.sorting_use_aabb_center
 			batch.add_to_group("graphics_quality_static")
+			# CPU-side center for loading's camera test. Reading a MultiMesh's
+			# combined AABB back from the renderer can force a costly GPU sync.
+			batch.set_meta("scenery_center", center / group.size())
+			var bounds := Transform3D(first.global_basis) * first.mesh.get_aabb()
+			batch.set_meta("quality_footprint", bounds.get_longest_axis_size() if bounds.size != Vector3.ZERO else INF)
 			root_node.add_child(batch)
 			for source: MeshInstance3D in group:
 				if _budget_exhausted() and not await _next_slice(): return
@@ -105,8 +129,13 @@ func _build() -> void:
 			source_count += group.size()
 			batch_count += 1
 	finished = true
+	preparation_progress = 1.0
 
 func _budget_exhausted() -> bool:
+	_budget_checks += 1
+	# Time queries cross WASM into JavaScript on Web. Check small groups of
+	# cheap operations instead of paying that bridge cost for every node.
+	if frame_budget_usec >= 100 and _budget_checks % 32 != 0: return false
 	return cooperative_build and Time.get_ticks_usec() - _slice_started >= frame_budget_usec
 
 func _next_slice() -> bool:
@@ -122,21 +151,42 @@ func _resume_slice() -> void:
 	slice_ready.emit()
 
 func _collect(node: Node, sources: Array[MeshInstance3D]) -> void:
-	if _cancelled: return
-	if _budget_exhausted() and not await _next_slice(): return
-	if node in _excluded or node.get_script() != null: return
-	if node is Node3D and (not node.visible or node.top_level): return
-	# Animation tracks can affect siblings as well as the player's own children.
-	for child in node.get_children():
-		if child is AnimationPlayer or child is AnimationTree: return
-	if node is MeshInstance3D:
-		if optimize_palettes: _palette.optimize(node)
-		if _eligible(node):
-			sources.append(node)
-			if _quality != null: _quality.track_static(node)
-	for child in node.get_children():
-		await _collect(child, sources)
+	# An explicit stack avoids thousands of nested coroutine calls for imported
+	# model nodes. Keep the same depth-first order and the same exclusions.
+	var pending: Array[Node] = [node]
+	while not pending.is_empty():
 		if _cancelled: return
+		if _budget_exhausted() and not await _next_slice(): return
+		var current: Node = pending.pop_back()
+		if current in _excluded or current.get_script() != null: continue
+		if current is Node3D and (not current.visible or current.top_level): continue
+		var children := current.get_children()
+		var animated := false
+		for child in children:
+			if child is AnimationPlayer or child is AnimationTree:
+				animated = true
+				break
+		if animated: continue
+		if current is MeshInstance3D:
+			if optimize_palettes: _palette.optimize(current)
+			if _eligible(current):
+				sources.append(current)
+				if _quality != null: _quality.track_static(current)
+		children.reverse()
+		pending.append_array(children)
+
+func _collect_prepared(root_node: Node3D, paths: Array, sources: Array[MeshInstance3D]) -> void:
+	for path: NodePath in paths:
+		if _cancelled: return
+		if _budget_exhausted() and not await _next_slice(): return
+		var source := root_node.get_node_or_null(path) as MeshInstance3D
+		# The phone scene removes several properties before entering the tree,
+		# and winter can replace materials. Recheck the live mesh's eligibility.
+		if source == null or not source.is_visible_in_tree() or source.get_script() != null: continue
+		if optimize_palettes: _palette.optimize(source)
+		if _eligible(source):
+			sources.append(source)
+			if _quality != null: _quality.track_static(source)
 
 func _eligible(mesh: MeshInstance3D) -> bool:
 	if mesh.mesh == null or mesh.skin != null or mesh.material_overlay != null or mesh.layers == 0: return false
