@@ -26,10 +26,11 @@ explicit. The browser loading bar animates through CSS rather than game code.
 
 ## Rendering
 
-`GraphicsQuality` defaults to Auto. Browsers with at most four logical CPU
-cores or 4 GB of reported memory start at Low; other browsers start Balanced.
-Unavailable hints select Balanced. Auto steps down after two four-second
-gameplay windows below 30 FPS, with a warmup after scene changes. Loading,
+`GraphicsQuality` defaults to Auto. Browsers with at most two logical CPU
+cores or 2 GB of reported memory start at Low; at most four cores or less than
+4 GB select Balanced. Other browsers and unavailable hints start High.
+Software renderers start Low. Auto steps down after three four-second
+gameplay windows below 24 FPS, with a warmup after scene changes. Loading,
 pausing and unfocused windows are excluded. It never oscillates back up.
 Settings → Graphics cycles Auto, Low, Balanced and High and saves the choice.
 For a direct test or a lighter shared link, append `?quality=low` to the URL;
@@ -37,20 +38,26 @@ this overrides the saved preference for that visit without saving it.
 
 | Budget | Low | Balanced | High |
 | --- | --- | --- | --- |
-| 3D scale | 70%, longest edge ≤1280 px | 85%, longest edge ≤1920 px | Native |
-| Embedded monitor target | Longest edge ≤1280 px | Longest edge ≤1600 px | Native |
-| Outline mask | Longest edge ≤960 px | Longest edge ≤1440 px | Native |
-| Decorative particles | 25% | 55% | Authored density |
+| 3D scale | Native | Native | Native |
+| Full-screen monitor target / outline mask | Native | Native | Native |
+| Ambient leaves, snow, motes and fire particles | 20% | 50% | Authored density |
+| Other feedback particles | 35% | 60% | Authored density |
 | Web particle prewarming | ≤0.25 s | ≤1 s | ≤2 s |
-| Multisample AA | Off | At most 2× | Authored setting |
-| Sun shadow map | At most 1024² | At most 2048² | Project setting |
+| Multisample AA | At most 2× | At most 2× | Authored setting |
+| Sun shadow map | At most 2048² | At most 2048² | Project setting |
+| Sun shadow splits / reach | At most 2 / 60 m | At most 2 / 120 m | Authored setting |
+| Small-object shadow cutoff | Below 0.75 m | Below 0.35 m | Authored setting |
+| Ambient particle shadows | Off | Off | Authored setting |
+| Canopy sway | Off | 15 updates/s | Every frame |
+| Campfire light animation | 6 updates/s | 15 updates/s | Every frame |
 
-The root canvas/UI keeps its full resolution; Godot's bilinear
-[3D resolution scaling](https://docs.godotengine.org/en/stable/tutorials/3d/resolution_scaling.html)
-reduces only the world buffers. Monitor UI shares its capped target. Low also
-uses earlier mesh LODs, smaller local shadow atlases and disables local-light
-shadows while retaining directional shadows. Gameplay, collisions, lesson
-timing and camera framing are unchanged. High restores the authored settings.
+Every preset keeps the world, UI, photo clues and full-screen computer lesson
+at their full target resolution. Lower presets save work through fewer shadow
+passes and ambient particles, earlier mesh LODs, smaller local shadow atlases
+and shorter size-based draw distances for small props. Small objects near
+shadowed lamps keep casting so the bedroom lighting stays intact. Local lights
+retain their authored shadows. Gameplay, collisions, lesson timing and camera
+framing are unchanged. High restores the authored settings.
 
 Scenery preparation yields between chunks on Web (a 4 ms target, checked
 between meshes and batches). Startup and lesson loading wait for that work

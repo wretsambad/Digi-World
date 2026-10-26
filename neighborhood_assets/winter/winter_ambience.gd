@@ -15,6 +15,7 @@ func _ready() -> void:
 		return
 	_snow = CPUParticles3D.new()
 	_snow.name = "CameraSnowfall"
+	_snow.add_to_group("graphics_quality_ambient")
 	_snow.amount = snowflake_count
 	_snow.lifetime = 11.0
 	_snow.preprocess = 8.0

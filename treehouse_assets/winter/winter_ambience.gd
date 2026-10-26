@@ -22,6 +22,7 @@ func _ready() -> void:
 		light.omni_range = 7.0
 	add_child(glow)
 	add_child(campfire())
+	_configure_quality()
 
 
 ## Binds the canopy sway once the treehouse has been added next to this node.
@@ -73,6 +74,7 @@ func snow(label: String, center: Vector3, extents: Vector3, amount: int, size: f
 	quad.material = material
 	var particles := GPUParticles3D.new()
 	particles.name = label
+	particles.add_to_group("graphics_quality_ambient")
 	particles.position = center
 	particles.amount = amount
 	particles.lifetime = lifetime

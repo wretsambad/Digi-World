@@ -20,6 +20,8 @@ const LAMP_SHADE_REACH := 1.0
 ## shrink to a few pixels. Larger meshes always draw.
 const DRAW_DISTANCE_PER_METRE := [120.0, 240.0, 0.0]
 const DRAW_DISTANCE_MAX_SIZE := 6.0
+## Weather can be thinned more aggressively than gameplay feedback particles.
+const AMBIENT_DENSITY := [0.2, 0.5, 1.0]
 var mode := "auto"
 var level: int = Level.HIGH
 var _automatic_level: int = Level.HIGH
@@ -161,12 +163,19 @@ func _apply(node: Node) -> void:
 			node.set_meta("quality_original_amount", node.amount)
 			node.set_meta("quality_original_preprocess", node.preprocess)
 		var density: float = [0.35, 0.6, 1.0][level]
+		if node.is_in_group("graphics_quality_ambient"):
+			density = AMBIENT_DENSITY[level]
+			var shadow: int = _authored(node, &"cast_shadow")
+			_set_quality(node, &"cast_shadow", shadow if level == Level.HIGH else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF)
 		node.amount = maxi(1, roundi(int(node.get_meta("quality_original_amount")) * density))
 		# Long synchronous prewarming is especially expensive for CPU snowfall.
 		var prewarm_limit: float = [0.25, 1.0, 2.0][level] if OS.has_feature("web") else [0.25, 1.0, 60.0][level]
 		node.preprocess = minf(float(node.get_meta("quality_original_preprocess")), prewarm_limit)
 
 func _apply_viewport(view: Viewport) -> void:
+	# Quality changes must also clear a scale left by an older preset or a
+	# newly created subviewport. Text, photo clues and gameplay stay sharp.
+	view.scaling_3d_scale = 1.0
 	if not view.has_meta("quality_original_msaa"):
 		view.set_meta("quality_original_msaa", view.msaa_3d)
 		view.set_meta("quality_original_lod", view.mesh_lod_threshold)

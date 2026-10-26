@@ -13,6 +13,8 @@ var clock := 0.0
 var fire_light: OmniLight3D
 var clusters: Array[Node3D] = []
 var rest: Array[Transform3D] = []
+var _quality_level := 2
+var _detail_elapsed := 0.0
 
 func _ready() -> void:
 	for child in get_children():
@@ -30,11 +32,32 @@ func _ready() -> void:
 				if node is Node3D:
 					clusters.append(node)
 					rest.append(node.transform)
+	_configure_quality()
+
+func _configure_quality() -> void:
+	if Engine.is_editor_hint(): return
+	var quality := get_node_or_null("/root/GraphicsQuality")
+	if quality != null:
+		quality.changed.connect(_refresh_quality)
+		_refresh_quality()
+
+func _refresh_quality() -> void:
+	_quality_level = get_node("/root/GraphicsQuality").level
+	_detail_elapsed = 0.0
+	if _quality_level == 0:
+		# Freeze only decorative canopy sway; platforms and branches stay put.
+		for i in clusters.size():
+			clusters[i].transform = rest[i]
 
 func _process(delta: float) -> void:
 	clock += delta
+	_detail_elapsed += delta
+	var interval: float = [1.0 / 6.0, 1.0 / 15.0, 0.0][_quality_level]
+	if _detail_elapsed < interval: return
+	_detail_elapsed = fmod(_detail_elapsed, interval) if interval > 0.0 else 0.0
 	if fire_light:
 		fire_light.light_energy = 2.4 + sin(clock * 13.0) * .35 + sin(clock * 7.3 + 1.2) * .25 + sin(clock * 23.0) * .15
+	if _quality_level == 0: return
 	for i in clusters.size():
 		var phase := float(i) * 1.7
 		var wobble := Vector3(sin(clock * .9 + phase) * .012, 0, sin(clock * 1.3 + phase * .6) * .016) * sway_strength
@@ -124,6 +147,7 @@ func leaves(label: String, center: Vector3, extents: Vector3, amount: int, mater
 	quad.material = material
 	var particles := GPUParticles3D.new()
 	particles.name = label
+	particles.add_to_group("graphics_quality_ambient")
 	particles.position = center
 	particles.amount = amount
 	particles.lifetime = 14.0
@@ -161,6 +185,7 @@ func motes() -> GPUParticles3D:
 	dot.material = material
 	var particles := GPUParticles3D.new()
 	particles.name = "GlowMotes"
+	particles.add_to_group("graphics_quality_ambient")
 	particles.position = Vector3(-1, 2.5, 4)
 	particles.amount = 60
 	particles.lifetime = 7.0
@@ -243,6 +268,7 @@ func campfire() -> Node3D:
 	process.angle_max = 20.0
 	var flames := GPUParticles3D.new()
 	flames.name = "Flames"
+	flames.add_to_group("graphics_quality_ambient")
 	flames.position = Vector3(0, .25, 0)
 	flames.amount = 26
 	flames.lifetime = .9
@@ -275,6 +301,7 @@ func campfire() -> Node3D:
 	spark_mesh.material = spark_material
 	var sparks := GPUParticles3D.new()
 	sparks.name = "Sparks"
+	sparks.add_to_group("graphics_quality_ambient")
 	sparks.position = Vector3(0, .4, 0)
 	sparks.amount = 14
 	sparks.lifetime = 2.2

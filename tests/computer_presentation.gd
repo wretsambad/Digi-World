@@ -82,14 +82,15 @@ func _ready() -> void:
 			var logical := Vector2(session.viewport.size_2d_override)
 			verify(absf(logical.aspect() - view.aspect()) < 0.002, "UI and world aspect ratios must match at " + str(dimensions))
 			await snapshot("fullscreen_%dx%d_scaled_%s" % [dimensions.x, dimensions.y, scaled_canvas])
-	GraphicsQuality.set_mode("low", false)
 	get_window().size = Vector2i(1920, 1080)
 	await get_tree().process_frame
 	session._fit_container()
-	verify(session.viewport.size == Vector2i(1920, 1080), "Low mode must keep the lesson's UI at display pixels")
-	verify(session.viewport.scaling_3d_scale == 1.0, "Low mode must not blur the lesson")
-	verify(session.viewport.msaa_3d == Viewport.MSAA_2X, "Low mode should keep light antialiasing")
-	await snapshot("fullscreen_low")
+	for preset: String in ["low", "balanced"]:
+		GraphicsQuality.set_mode(preset, false)
+		verify(session.viewport.size == Vector2i(1920, 1080), preset + " must keep the lesson's UI at display pixels")
+		verify(session.viewport.scaling_3d_scale == 1.0, preset + " must not blur the lesson")
+		verify(session.viewport.msaa_3d == Viewport.MSAA_2X, preset + " should keep light antialiasing")
+		await snapshot("fullscreen_" + preset)
 	# Check that pointer coordinates still reach the UI after scaling the
 	# high-resolution texture back into the window's logical canvas.
 	var play_rect: Rect2 = session.lesson.ui.play_button.get_global_rect()

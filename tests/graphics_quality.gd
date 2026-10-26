@@ -23,9 +23,11 @@ func run() -> void:
 	quality.set_mode("high", false)
 	var view := SubViewport.new()
 	view.size = Vector2i(2560, 1440)
+	view.scaling_3d_scale = 0.7
 	view.msaa_3d = Viewport.MSAA_4X
 	view.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	root.add_child(view)
+	verify(view.scaling_3d_scale == 1.0, "New viewports must clear reduced resolution from older presets")
 	var winter: Node3D = load("res://neighborhood_assets/winter/winter_ambience.gd").new()
 	view.add_child(winter)
 	var original_amount: int = winter._snow.amount
@@ -36,11 +38,41 @@ func run() -> void:
 	verify(view.scaling_3d_scale == 1.0, "Low mode must keep 3D at display resolution")
 	verify(view.size == Vector2i(2560, 1440), "UI target resolution must remain unchanged")
 	verify(view.msaa_3d == Viewport.MSAA_2X, "Low mode should keep light antialiasing")
-	verify(winter._snow.amount < original_amount and winter._snow.preprocess <= 0.25, "CPU snow must reduce density and prewarming")
-	verify(winter_tree.snowfall.amount == 1400 and winter_tree.snowfall.preprocess <= 0.25, "GPU snow must reduce density and prewarming")
+	verify(winter._snow.amount == roundi(original_amount * 0.2) and winter._snow.preprocess <= 0.25, "Low CPU snow must use 20 percent density and short prewarming")
+	verify(winter_tree.snowfall.amount == 800 and winter_tree.snowfall.preprocess <= 0.25, "Low GPU snow must use 20 percent density and short prewarming")
+	# Decorations created while Low is already selected must start cheap, too.
+	var canopy := Node3D.new()
+	canopy.name = "TestCanopy"
+	view.add_child(canopy)
+	var cluster := Node3D.new()
+	canopy.add_child(cluster)
+	var autumn: Node3D = load("res://treehouse_assets/autumn/autumn_ambience.gd").new()
+	autumn.canopy_path = ^"../TestCanopy"
+	view.add_child(autumn)
+	autumn.set_process(false)
+	var leaves: GPUParticles3D = autumn.get_node("CanopyLeaves")
+	verify(leaves.amount == 22 and leaves.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF, "Low must thin new falling leaves and drop decorative shadows")
+	var resting := cluster.transform
+	autumn._process(0.5)
+	verify(cluster.transform == resting, "Low must freeze decorative canopy motion")
+	view.scaling_3d_scale = 0.85
+	quality.set_mode("balanced", false)
+	verify(view.scaling_3d_scale == 1.0 and view.size == Vector2i(2560, 1440), "Balanced must clear legacy scaling without shrinking UI targets")
+	verify(view.msaa_3d == Viewport.MSAA_2X, "Balanced should retain light antialiasing")
+	verify(winter._snow.amount == roundi(original_amount * 0.5) and winter_tree.snowfall.amount == 2000, "Balanced must halve CPU and GPU snowfall")
+	verify(leaves.amount == 55 and leaves.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF, "Balanced must halve falling leaves and drop decorative shadows")
+	autumn._process(0.01)
+	verify(cluster.transform == resting, "Balanced should avoid updating canopy transforms every frame")
+	autumn._process(0.1)
+	verify(cluster.transform != resting, "Balanced must retain occasional canopy sway")
+	quality.set_mode("low", false)
+	verify(cluster.transform == resting, "Switching to Low must restore the canopy's rest pose")
 	quality.set_mode("high", false)
 	verify(view.scaling_3d_scale == 1.0 and view.msaa_3d == Viewport.MSAA_4X, "Quality must restore authored antialiasing")
 	verify(winter._snow.amount == original_amount and winter_tree.snowfall.amount == 4000, "High mode must restore weather density")
+	verify(leaves.amount == 110 and leaves.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON, "High must restore authored falling leaves and their shadows")
+	autumn._process(0.001)
+	verify(cluster.transform != resting, "High must restore canopy animation on every frame")
 	view.free()
 	# Lower presets trim shadow casters, small-prop draw distance and the sun's
 	# shadow passes, and High restores whatever was authored.
@@ -80,6 +112,9 @@ func run() -> void:
 	verify(house.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON and house.visibility_range_end == 0.0, "Large meshes always draw and cast")
 	verify(sign.visibility_range_end == 5.0, "Authored draw distances are kept")
 	verify(sun.directional_shadow_mode == DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS and sun.directional_shadow_max_distance == 60.0, "Low mode halves sun shadow passes")
+	quality.set_mode("balanced", false)
+	verify(cup.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF and house.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON, "Balanced must cut small shadow casters while retaining large ones")
+	verify(sun.directional_shadow_mode == DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS and sun.directional_shadow_max_distance == 120.0, "Balanced must reduce sun shadow passes and reach")
 	# A script re-authoring a value mid-preset must win when High restores.
 	cup.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
 	quality.set_mode("high", false)
