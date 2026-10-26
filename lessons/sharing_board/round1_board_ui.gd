@@ -433,6 +433,7 @@ func _on_pocket_gui_input(event: InputEvent, zone_id: String) -> void:
 
 
 func _flip(card_id: String, patch: Control) -> void:
+	AudioManager.play("whoosh")
 	patch.pivot_offset = patch.size * 0.5
 	var tween := create_tween()
 	tween.tween_property(patch, "scale:x", 0.0, 0.1).set_ease(Tween.EASE_IN)
@@ -534,6 +535,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 
 
 func _place(card_id: String, zone_id: String) -> void:
+	AudioManager.play("stitch")
 	_deck.erase(card_id)
 	_placement.erase(card_id)
 	_placement[card_id] = zone_id
@@ -578,6 +580,7 @@ func _on_check_pressed() -> void:
 		var patch: StitchedPanel = _patches[card_id]
 		var tween := create_tween()
 		if safe:
+			AudioManager.play("correct")
 			_locked[card_id] = true
 			patch.thread_color = Kit.GOLD_THREAD
 			patch.thread_width = 2.6
@@ -585,6 +588,7 @@ func _on_check_pressed() -> void:
 			tween.tween_property(patch, "stitch_progress", 1.0, 0.2).set_ease(Tween.EASE_OUT)
 		else:
 			loose.append(card_id)
+			AudioManager.play("mistake")
 			if zone_id == "everyone" and not _public_slips.has(card_id):
 				_public_slips.append(card_id)
 			patch.thread_color = Kit.LOOSE
@@ -596,7 +600,7 @@ func _on_check_pressed() -> void:
 			tween.chain().tween_property(patch, "rotation_degrees", 0.0, 0.1)
 		await tween.finished
 
-	await get_tree().create_timer(0.35).timeout
+	await get_tree().create_timer(0.35, false).timeout
 	_checking = false
 	if loose.is_empty():
 		_refresh()
@@ -624,6 +628,7 @@ func _say_loose_reason(card_id: String, count := 0) -> void:
 
 
 func _show_results() -> void:
+	AudioManager.play("complete")
 	var total := _cards.size()
 	var first_try_right := 0
 	for card_id in _first_try:

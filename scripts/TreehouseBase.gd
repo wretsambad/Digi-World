@@ -411,7 +411,7 @@ func _build_fence_and_gate() -> void:
 		_cabin_part("DoorBrace", Vector3(0, height, 2.31), Vector3(1.55, 0.18, 0.16), wood)
 	_cabin_part("DoorLatch", Vector3(0.5, 7.4, 2.43), Vector3(0.4, 0.22, 0.15), iron)
 	AudioManager.play("build")
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(0.9, false).timeout
 	sparkle_at(GATE_CENTER + Vector3.UP)
 
 
@@ -489,7 +489,7 @@ func _raise_fence() -> void:
 	_cabin_part("DoorCrossbar", Vector3(0, 7.4, 2.36), Vector3(1.65, 0.24, 0.2), iron)
 	AudioManager.play("build")
 	await tween.finished
-	await get_tree().create_timer(0.35).timeout
+	await get_tree().create_timer(0.35, false).timeout
 	sparkle_at(Vector3(0, 8, 2.5))
 
 
@@ -542,7 +542,7 @@ func _metal_upgrade() -> void:
 		_cabin_part("ShutterStrap", center, Vector3(1.35, 0.13, 0.07), iron)
 	_cabin_part("DoorLock", Vector3(0.5, 7.4, 2.57), Vector3(0.32, 0.42, 0.2), iron)
 	AudioManager.play("build")
-	await get_tree().create_timer(0.65).timeout
+	await get_tree().create_timer(0.65, false).timeout
 	sparkle_at(Vector3(0, 7.5, 2.6))
 
 
@@ -651,7 +651,7 @@ func repair() -> void:
 	sparkle_at(FLAG_TOP + Vector3(0.6, -0.4, 0))
 	if not had_damage:
 		sparkle_at(PAINT_SPOT + Vector3.UP)
-	await get_tree().create_timer(0.55).timeout
+	await get_tree().create_timer(0.55, false).timeout
 
 
 func is_damaged() -> bool:

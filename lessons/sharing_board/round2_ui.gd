@@ -18,7 +18,7 @@ const SnowBuddy := preload("res://lessons/sharing_board/ui/snow_buddy.gd")
 const Hoop := preload("res://lessons/sharing_board/ui/hoop.gd")
 
 const FOUND_LINES := ["Good eye!", "Spotted it!", "Nice find!", "You got one!"]
-const MISS_LINE := "Nothing private there. Check small names, labels and screens with the hoop."
+const MISS_LINE := "Nothing private there. Check small names, labels and screens with the magnifying glass."
 const PATCH_COLORS := [Color("#D6E7F2"), Color("#F8E8B8"), Color("#D5EAD9"), Color("#F5D6CE"), Color("#E5DDF0")]
 
 enum Stage { LOOKING, COVER, READY, POSTED }
@@ -108,7 +108,7 @@ func setup(photo: Texture2D, photo_camera: Camera3D, photo_set: Node3D, photo_in
 		_clues.append(clue)
 		_hotspots[clue.id] = spot
 	for id in info.decoys:
-		var safe_object := photo_set.get_node_or_null("Decoys/" + id) as Node3D
+		var safe_object := photo_set.find_child(id, true, false) as Node3D
 		if safe_object and safe_object.is_visible_in_tree() and not _photo_camera.is_position_behind(safe_object.global_position):
 			var spot := _measure(safe_object, 120.0)
 			var visible_bounds: Rect2 = spot.bounds.intersection(photo_bounds)
@@ -135,7 +135,7 @@ func begin() -> void:
 	if _clues.is_empty():
 		stage = Stage.READY
 	_refresh()
-	_buddy.say("Move the hoop over the photo. Tap anything that shows who you are or where you live.", "happy")
+	_buddy.say("Move the magnifying glass over the photo. Tap anything that shows who you are or where you live.", "happy")
 	_caption.hide()
 	_view.show()
 	show()
@@ -469,9 +469,11 @@ func _tap(at: Vector2) -> void:
 			nearest_distance = distance
 
 	if nearest.is_empty():
+		AudioManager.play("click")
 		_miss_taps += 1
 		_buddy.say(MISS_LINE, "think")
 	elif _decoys.has(nearest):
+		AudioManager.play("select")
 		_safe_taps += 1
 		_buddy.say(_decoys[nearest], "happy")
 	elif _found.has(nearest):
@@ -481,6 +483,7 @@ func _tap(at: Vector2) -> void:
 
 
 func _find(id: String) -> void:
+	AudioManager.play("found")
 	_found.append(id)
 	_circle_progress[id] = 0.0
 	create_tween().tween_method(func(t: float):
@@ -524,6 +527,7 @@ func _on_action_pressed() -> void:
 		Stage.COVER:
 			_cover_clues()
 		Stage.READY:
+			AudioManager.play("whoosh")
 			stage = Stage.POSTED
 			results = {"hints_used": _hints_used, "safe_taps": _safe_taps, "miss_taps": _miss_taps}
 			hide()
@@ -534,6 +538,7 @@ func _cover_clues() -> void:
 	_action_button.disabled = true
 	_hint_button.disabled = true
 	for id in _found:
+		AudioManager.play("stitch")
 		_cover_progress[id] = 0.0
 		var tween := create_tween()
 		tween.tween_method(func(t: float):
@@ -541,6 +546,7 @@ func _cover_clues() -> void:
 			_overlay.queue_redraw(), 0.0, 1.0, 0.4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 		await tween.finished
 	stage = Stage.READY
+	AudioManager.play("repair")
 	_buddy.say("Much better! Now nobody can tell where you live. Post it!", "happy")
 	_refresh()
 

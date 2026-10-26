@@ -2,7 +2,7 @@ extends RefCounted
 ## Content for Sharing Board, Round 2: "Spot it before you post".
 ## Each clue id matches a named detail node inside its photo's physical prop.
 ## Move the prop to move the object and its identifying details together.
-## Safe objects keep their ids under Decoys.
+## Safe objects are also found by name, wherever they sit in the photo scene.
 
 ## Things in the photo that give away who you are or where you live.
 const CLUES := [
@@ -35,7 +35,7 @@ const DECOYS := {
 
 const SLED_CLUES := [
 	{"id":"sled_name","name":"Sled owner's tag","why":"A full name can identify you.","hint":"Check the little tag tied to the sled rope."},
-	{"id":"bottle_phone","name":"Bottle return label","why":"That phone number is private.","hint":"Look at the return label on the water bottle."},
+	{"id":"phone_number","name":"Phone screen","why":"The number on this screen lets people call or text you. Keep it private before sharing the photo.","hint":"Read the contact number on the phone screen."},
 	{"id":"hat_school","name":"School badge","why":"It shows which school you attend.","hint":"Read the badge on the winter hat."},
 	{"id":"street_sign","name":"Street name","why":"The street name gives away the location.","hint":"Read the street name on the roadside sign."},
 ]
@@ -50,12 +50,12 @@ const CRAFT_CLUES := [
 
 const PHOTOS := [
 	{"id":"snowman","title":"Snow day","caption":"My snowman is the best!", "node":"PhotoSet", "fov":66.0,
-		"intro":"You built an awesome snowman in front of your house, and you want to post this photo on the park board.\n\nUse the [b]hoop[/b] to look closely. Find and cover the [b]{clue_count} identifying details[/b] before you post.",
+		"intro":"You built an awesome snowman in front of your house, and you want to post this photo on the park board.\n\nUse the [b]magnifying glass[/b] to look closely. Find and cover the [b]{clue_count} identifying details[/b] before you post.",
 		"clues":CLUES,"decoys":DECOYS},
 	{"id":"sled_break","title":"Sled break","caption":"A cozy sled break!", "node":"SledPhotoSet", "fov":55.0,
 		"intro":"Time for cocoa after sledding! This photo has [b]{clue_count} identifying details[/b] in the winter gear and the scenery.\n\nThe print is a little finer this time. Check the foreground and background before sharing.",
-		"clues":SLED_CLUES,"decoys":{"sled":"The wooden sled is fine to share. Check any labels attached to it, though!","mug":"Just a warm drink. There's nothing private on this mug.","boots":"Plain winter boots are safe to share."}},
-	{"id":"park_crafts","title":"Park Day crafts","caption":"Made for Park Day!", "node":"CraftPhotoSet", "fov":53.0,
+		"clues":SLED_CLUES,"decoys":{"sled":"The wooden sled is fine to share. Check any labels attached to it, though!","mug":"Just a warm drink. There's nothing private on this mug.","boots":"Plain winter boots are safe to share.","InsulatedWaterBottle":"This plain water bottle has no name or number on it. Safe to share!"}},
+	{"id":"park_crafts","title":"Park Day crafts","caption":"Made for Park Day!", "node":"CraftPhotoSet", "fov":60.0,
 		"intro":"Your birdhouse is ready for Park Day! There are [b]{clue_count} identifying details[/b] across this photo.\n\nCheck the table, the bench and the street behind them. Share the fun things while keeping personal details covered.",
 		"clues":CRAFT_CLUES,"decoys":{"birdhouse":"Your handmade birdhouse is a great thing to share!","paints":"Paints and brushes don't identify anyone. Safe to share!","mug":"This plain mug doesn't show anything private."}},
 ]

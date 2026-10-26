@@ -39,6 +39,7 @@ var _clock := 0.0
 
 
 func _ready() -> void:
+	writer.audible = true
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_build_hud()
@@ -336,6 +337,7 @@ func tip(text: String) -> void:
 
 func hide_story() -> void:
 	_waiting = false
+	writer.cancel(story_body)
 	story.hide()
 
 

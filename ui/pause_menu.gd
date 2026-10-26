@@ -1,22 +1,33 @@
 class_name PauseMenu
 extends Control
-## Esc pause panel. It slides in from the left edge so the room stays visible,
-## pauses the game, and offers Resume, a sound toggle, the ending replay (once
-## every lesson is done) and Quit.
+## Shared, centered pause dialog. GlobalPause owns its overlay and navigation.
 
+signal opened
 signal resumed
-signal quit_requested
+signal bedroom_requested
 signal ending_requested
 
 var panel: PanelContainer
 var dim: ColorRect
-var resume_button: Button
-var sound_button: Button
-var ending_button: Button
-var quit_button: Button
-var is_open := false
 var content: VBoxContainer
+var main_content: VBoxContainer
+var settings_content: VBoxContainer
+var title: Label
+var resume_button: Button
+var settings_button: Button
+var bedroom_button: Button
+var sound_button: Button
+var fullscreen_button: Button
+var settings_back: Button
+var volume_slider: HSlider
+var volume_label: Label
+var ending_button: Button
+var is_open := false
+var showing_settings := false
 var _tween: Tween
+var _previous_mouse_mode := Input.MOUSE_MODE_VISIBLE
+var _previous_focus: WeakRef
+var _previous_pause := false
 
 
 func _ready() -> void:
@@ -25,90 +36,135 @@ func _ready() -> void:
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	dim = ColorRect.new()
-	dim.color = Color(SunsetUI.PLUM_DEEP, 0.38)
+	dim.color = Color(SunsetUI.PLUM_DEEP, 0.68)
 	dim.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	dim.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(dim)
 	panel = PanelContainer.new()
 	var style := SunsetUI.panel_style()
-	style.content_margin_left = 34
-	style.content_margin_right = 34
-	style.content_margin_top = 34
-	style.content_margin_bottom = 34
+	style.content_margin_left = 32
+	style.content_margin_right = 32
+	style.content_margin_top = 24
+	style.content_margin_bottom = 30
 	panel.add_theme_stylebox_override("panel", style)
 	add_child(panel)
 	content = VBoxContainer.new()
-	content.add_theme_constant_override("separation", 14)
+	content.add_theme_constant_override("separation", 22)
 	panel.add_child(content)
-	var title := SunsetUI.label("Paused", 52, "title")
+	title = SunsetUI.label("Paused", 48, "title")
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	content.add_child(title)
-	var note := SunsetUI.label("Take a breather. Your room will wait for you.", 21, "muted")
-	content.add_child(note)
-	var gap := Control.new()
-	gap.custom_minimum_size = Vector2(0, 12)
-	content.add_child(gap)
+	main_content = _column()
+	content.add_child(main_content)
 	resume_button = _menu_button("Resume", true)
 	resume_button.pressed.connect(close)
-	content.add_child(resume_button)
-	sound_button = _menu_button("", false)
-	sound_button.pressed.connect(_toggle_sound)
-	content.add_child(sound_button)
-	ending_button = _menu_button("Watch the ending", false)
+	main_content.add_child(resume_button)
+	settings_button = _menu_button("Settings")
+	settings_button.pressed.connect(show_settings)
+	main_content.add_child(settings_button)
+	ending_button = _menu_button("Watch the ending")
 	ending_button.name = "WatchEndingButton"
 	ending_button.pressed.connect(func() -> void:
 		close()
 		ending_requested.emit())
-	content.add_child(ending_button)
-	quit_button = _menu_button("Quit game", false)
-	quit_button.pressed.connect(func() -> void: quit_requested.emit())
-	content.add_child(quit_button)
-	_refresh_sound()
+	main_content.add_child(ending_button)
+	bedroom_button = _menu_button("Back to bedroom")
+	bedroom_button.name = "BackToBedroomButton"
+	bedroom_button.pressed.connect(func() -> void: bedroom_requested.emit())
+	main_content.add_child(bedroom_button)
+	_build_settings()
 	resized.connect(_layout)
-	_layout()
+	panel.minimum_size_changed.connect(_layout)
+	show_main()
 	hide()
 
 
-func _menu_button(text: String, primary: bool) -> Button:
+func _column() -> VBoxContainer:
+	var column := VBoxContainer.new()
+	column.add_theme_constant_override("separation", 14)
+	return column
+
+
+func _menu_button(text: String, primary := false) -> Button:
 	var button := Button.new()
 	button.text = text
-	button.custom_minimum_size = Vector2(0, 62)
-	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+	button.custom_minimum_size = Vector2(0, 60)
 	SunsetUI.style_button(button, primary, 26)
 	return button
 
 
+func _build_settings() -> void:
+	settings_content = _column()
+	content.add_child(settings_content)
+	sound_button = _menu_button("")
+	sound_button.name = "SoundButton"
+	sound_button.pressed.connect(_toggle_sound)
+	settings_content.add_child(sound_button)
+	volume_label = SunsetUI.label("Volume", 22)
+	settings_content.add_child(volume_label)
+	volume_slider = HSlider.new()
+	volume_slider.name = "VolumeSlider"
+	volume_slider.max_value = 100
+	volume_slider.step = 1
+	volume_slider.custom_minimum_size.y = 32
+	volume_slider.accessibility_name = "Master volume"
+	volume_slider.value_changed.connect(_set_volume)
+	var track := StyleBoxFlat.new()
+	track.bg_color = SunsetUI.PLUM_DEEP
+	track.set_corner_radius_all(5)
+	track.content_margin_top = 5
+	track.content_margin_bottom = 5
+	volume_slider.add_theme_stylebox_override("slider", track)
+	var fill: StyleBoxFlat = track.duplicate()
+	fill.bg_color = SunsetUI.BUTTER
+	volume_slider.add_theme_stylebox_override("grabber_area", fill)
+	volume_slider.add_theme_stylebox_override("grabber_area_highlight", fill)
+	settings_content.add_child(volume_slider)
+	fullscreen_button = _menu_button("")
+	fullscreen_button.name = "FullscreenButton"
+	fullscreen_button.pressed.connect(_toggle_fullscreen)
+	settings_content.add_child(fullscreen_button)
+	settings_back = _menu_button("Back", true)
+	settings_back.pressed.connect(show_main)
+	settings_content.add_child(settings_back)
+
+
 func _layout() -> void:
-	var width := clampf(size.x * 0.3, 320.0, 420.0)
-	# Give the wrapping copy its real width first, so the panel measures its true height.
-	content.custom_minimum_size.x = width - 68.0
-	for child in content.get_children():
-		if child is Label:
-			child.custom_minimum_size.x = width - 68.0
-	panel.custom_minimum_size = Vector2(width, 0)
+	if not is_instance_valid(settings_content):
+		return
+	content.custom_minimum_size.x = 344.0
 	panel.size = panel.get_combined_minimum_size()
-	panel.position = Vector2(clampf(size.x * 0.03, 20.0, 40.0), (size.y - panel.size.y) * 0.5)
+	var fit := minf(1.0, minf(maxf(size.x - 40.0, 1.0) / panel.size.x, maxf(size.y - 40.0, 1.0) / panel.size.y))
+	panel.scale = Vector2.ONE * fit
+	panel.position = (size - panel.size * fit) * 0.5
 
 
 func open() -> void:
 	if is_open:
 		return
+	_previous_pause = get_tree().paused
+	_previous_mouse_mode = Input.mouse_mode
+	var focused := get_viewport().gui_get_focus_owner()
+	_previous_focus = weakref(focused) if focused else null
 	is_open = true
+	var game := get_tree().get_first_node_in_group("bedroom_gameplay")
+	# The monitor game and ending still need a way back to the playable room.
+	bedroom_button.visible = game == null or game.phase in [game.Phase.COMPUTER, game.Phase.FINALE]
+	ending_button.visible = GameState.all_complete() and (game == null or game.finale == null)
+	show_main()
+	show()
 	get_tree().paused = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	_refresh_sound()
-	ending_button.visible = GameState.all_complete()
-	show()
 	_layout()
 	if _tween and _tween.is_valid():
 		_tween.kill()
-	var rest := panel.position
-	panel.position.x = -panel.size.x - 20.0
+	panel.modulate.a = 0.0
 	dim.modulate.a = 0.0
-	_tween = create_tween().set_parallel(true)
-	_tween.tween_property(panel, "position", rest, 0.38).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
-	_tween.tween_property(dim, "modulate:a", 1.0, 0.25)
-	AudioManager.play("whoosh")
+	_tween = create_tween().set_parallel(true).set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	_tween.tween_property(panel, "modulate:a", 1.0, 0.16)
+	_tween.tween_property(dim, "modulate:a", 1.0, 0.16)
 	resume_button.grab_focus()
+	opened.emit()
 
 
 func close() -> void:
@@ -117,25 +173,83 @@ func close() -> void:
 	is_open = false
 	if _tween and _tween.is_valid():
 		_tween.kill()
-	_tween = create_tween().set_parallel(true)
-	_tween.tween_property(panel, "position:x", -panel.size.x - 20.0, 0.22).set_trans(Tween.TRANS_QUART).set_ease(Tween.EASE_IN)
-	_tween.tween_property(dim, "modulate:a", 0.0, 0.22)
-	_tween.chain().tween_callback(hide)
-	get_tree().paused = false
+	hide()
+	get_tree().paused = _previous_pause
+	Input.mouse_mode = _previous_mouse_mode
+	if _previous_focus:
+		var focused := _previous_focus.get_ref() as Control
+		if is_instance_valid(focused) and focused.is_visible_in_tree():
+			focused.grab_focus()
 	resumed.emit()
+
+
+func show_main() -> void:
+	showing_settings = false
+	title.text = "Paused"
+	settings_content.hide()
+	main_content.show()
+	var controls: Array[Control] = [resume_button, settings_button]
+	if ending_button.visible:
+		controls.append(ending_button)
+	if bedroom_button.visible:
+		controls.append(bedroom_button)
+	_focus_cycle(controls)
+	_layout()
+	if is_open:
+		resume_button.grab_focus()
+
+
+func show_settings() -> void:
+	showing_settings = true
+	title.text = "Settings"
+	main_content.hide()
+	settings_content.show()
+	_refresh_settings()
+	_focus_cycle([sound_button, volume_slider, fullscreen_button, settings_back])
+	_layout()
+	sound_button.grab_focus()
+
+
+func back_or_close() -> void:
+	if showing_settings:
+		show_main()
+	else:
+		close()
+
+
+func _focus_cycle(controls: Array[Control]) -> void:
+	for i in controls.size():
+		var control := controls[i]
+		var previous := control.get_path_to(controls[posmod(i - 1, controls.size())])
+		var next := control.get_path_to(controls[(i + 1) % controls.size()])
+		control.focus_previous = previous
+		control.focus_next = next
+		control.focus_neighbor_top = previous
+		control.focus_neighbor_bottom = next
+		control.focus_neighbor_left = control.get_path()
+		control.focus_neighbor_right = control.get_path()
 
 
 func _toggle_sound() -> void:
 	AudioManager.muted = not AudioManager.muted
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), AudioManager.muted)
-	_refresh_sound()
+	_refresh_settings()
 
 
-func _refresh_sound() -> void:
+func _set_volume(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(maxf(value / 100.0, 0.0001)))
+	volume_label.text = "Volume: %d%%" % roundi(value)
+
+
+func _toggle_fullscreen() -> void:
+	var window := get_tree().root
+	window.mode = Window.MODE_WINDOWED if window.mode in [Window.MODE_FULLSCREEN, Window.MODE_EXCLUSIVE_FULLSCREEN] else Window.MODE_FULLSCREEN
+	_refresh_settings()
+
+
+func _refresh_settings() -> void:
 	sound_button.text = "Sound: off" if AudioManager.muted else "Sound: on"
-
-
-func _input(event: InputEvent) -> void:
-	if is_open and event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
-		close()
-		get_viewport().set_input_as_handled()
+	var value := roundi(db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))) * 100.0)
+	volume_slider.set_value_no_signal(value)
+	volume_label.text = "Volume: %d%%" % value
+	fullscreen_button.text = "Fullscreen: on" if get_tree().root.mode in [Window.MODE_FULLSCREEN, Window.MODE_EXCLUSIVE_FULLSCREEN] else "Fullscreen: off"

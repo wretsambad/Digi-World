@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241330">
+  <title>DigiWorld</title>
+  $GODOT_HEAD_INCLUDE
+  <style>
+    @font-face {
+      font-family: Fredoka;
+      src: url("Fredoka.ttf") format("truetype");
+      font-weight: 300 700;
+      font-display: swap;
+    }
+    :root {
+      color-scheme: dark;
+      --plum-deep: #241330;
+      --plum: #3b2147;
+      --plum-soft: #553163;
+      --butter: #ffd166;
+      --cream: #fff6ea;
+      --muted: #e9d3e6;
+      --tangerine: #ff8a3d;
+    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+    body { background: var(--plum-deep); color: var(--cream); font-family: Fredoka, sans-serif; }
+    ::selection { background: var(--butter); color: var(--plum-deep); }
+    #canvas { display: block; width: 100%; height: 100%; outline: none; }
+    #loading {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      display: grid;
+      place-items: center;
+      padding: max(24px, env(safe-area-inset-top)) 24px max(24px, env(safe-area-inset-bottom));
+      background: var(--plum-deep);
+      text-align: center;
+      opacity: 1;
+      transition: opacity 180ms ease-out;
+    }
+    #loading[hidden] { display: none; }
+    #loading.is-ready { opacity: 0; pointer-events: none; }
+    .loading-content { width: min(100%, 520px); }
+    .loading-logo { display: block; width: min(82%, 320px); height: auto; margin: 0 auto 12px; }
+    h1 {
+      margin: 0;
+      color: var(--butter);
+      font-size: clamp(36px, 8vw, 58px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-shadow: 0 5px 0 var(--plum);
+    }
+    #loading-status { margin: 36px 0 12px; font-size: clamp(20px, 4vw, 25px); font-weight: 600; line-height: 1.4; }
+    #loading-detail { min-height: 1.5em; margin: 14px 0 0; color: var(--muted); font-size: 17px; line-height: 1.5; }
+    #loading-track { width: min(100%, 320px); height: 8px; margin: 0 auto; overflow: hidden; border-radius: 8px; background: var(--plum-soft); }
+    #loading-fill { display: block; width: 100%; height: 100%; border-radius: inherit; background: var(--tangerine); transform: scaleX(0); transform-origin: left; }
+    #loading-track.is-pending #loading-fill { width: 40%; animation: loading-travel 1.25s ease-in-out infinite; }
+    @keyframes loading-travel { from { transform: translateX(-110%); } to { transform: translateX(360%); } }
+    #retry {
+      margin-top: 24px;
+      min-width: 160px;
+      min-height: 48px;
+      padding: 12px 24px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--tangerine);
+      color: var(--plum-deep);
+      font: 600 21px/1.2 Fredoka, sans-serif;
+      cursor: pointer;
+    }
+    #retry:hover { background: #ffa15c; }
+    #retry:focus-visible { outline: 3px solid var(--butter); outline-offset: 5px; }
+    noscript { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 32px; background: var(--plum-deep); text-align: center; }
+    @media (prefers-reduced-motion: reduce) {
+      #loading { transition: none; }
+      #loading-track.is-pending #loading-fill { animation: none; transform: translateX(75%); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" tabindex="0" aria-label="DigiWorld game" aria-busy="true">Your browser does not support the game canvas.</canvas>
+  <section id="loading" aria-label="Loading DigiWorld">
+    <div class="loading-content">
+      <img class="loading-logo" src="loading-brand.svg" width="520" height="280" alt="">
+      <h1>DIGI WORLD</h1>
+      <p id="loading-status" role="status" aria-live="polite">Loading your world…</p>
+      <div id="loading-track" class="is-pending" role="progressbar" aria-label="Loading DigiWorld" aria-valuemin="0" aria-valuemax="100"><span id="loading-fill"></span></div>
+      <p id="loading-detail">Your adventure is on its way.</p>
+      <button id="retry" type="button" hidden>Try again</button>
+    </div>
+  </section>
+  <noscript>DigiWorld needs JavaScript to play. Enable it, then reload this page.</noscript>
+  <script>
+    (() => {
+      const overlay = document.getElementById('loading');
+      const status = document.getElementById('loading-status');
+      const detail = document.getElementById('loading-detail');
+      const track = document.getElementById('loading-track');
+      const fill = document.getElementById('loading-fill');
+      const retry = document.getElementById('retry');
+      const canvas = document.getElementById('canvas');
+      let hideTimer;
+      let started = false;
+      const pending = () => {
+        track.classList.add('is-pending');
+        track.removeAttribute('aria-valuenow');
+        fill.style.transform = '';
+      };
+      window.digiLoading = {
+        show(title) {
+          clearTimeout(hideTimer);
+          overlay.hidden = false;
+          overlay.classList.remove('is-ready');
+          canvas.setAttribute('aria-busy', 'true');
+          status.textContent = `Loading ${title}…`;
+          detail.textContent = 'Getting things ready…';
+          retry.hidden = true;
+          track.hidden = false;
+          pending();
+        },
+        ready() {
+          started = true;
+          canvas.setAttribute('aria-busy', 'false');
+          overlay.classList.add('is-ready');
+          hideTimer = setTimeout(() => { overlay.hidden = true; }, 200);
+        },
+        failed(error) {
+          console.error(error);
+          clearTimeout(hideTimer);
+          overlay.hidden = false;
+          overlay.classList.remove('is-ready');
+          status.textContent = 'Your adventure couldn’t load.';
+          detail.textContent = 'Please try again. Chrome or Firefox works best.';
+          track.hidden = true;
+          retry.hidden = false;
+        },
+        progress(current, total) {
+          if (current > 0 && total > 0 && current < total) {
+            const percent = Math.min(100, Math.floor(current / total * 100));
+            track.classList.remove('is-pending');
+            track.setAttribute('aria-valuenow', String(percent));
+            fill.style.transform = `scaleX(${percent / 100})`;
+            detail.textContent = `${percent}%`;
+          } else if (current > 0 && current >= total) {
+            status.textContent = 'Getting your world ready…';
+            detail.textContent = 'Almost time to explore.';
+            pending();
+          }
+        },
+        engineError(message) {
+          console.error(message);
+          if (!started && /^(SCRIPT ERROR:|ERROR:)/.test(message)) this.failed(message);
+        }
+      };
+      retry.addEventListener('click', () => location.reload());
+    })();
+  </script>
+  <script src="$GODOT_URL" onerror="digiLoading.failed('Game download failed')"></script>
+  <script>
+    if (typeof Engine !== 'undefined') {
+      const config = $GODOT_CONFIG;
+      const missing = Engine.getMissingFeatures({threads: $GODOT_THREADS_ENABLED});
+      if (missing.length) {
+        digiLoading.failed('Missing browser features: ' + missing.join(', '));
+      } else {
+        const engine = new Engine(config);
+        engine.startGame({
+          onProgress: (current, total) => digiLoading.progress(current, total),
+          onPrintError: (...args) => digiLoading.engineError(args.join(' '))
+        }).catch(error => digiLoading.failed(error));
+        // SceneLoading signals ready after the first real game frame. Engine
+        // startup alone is too early: initial scene setup can still be busy.
+      }
+    }
+  </script>
+</body>
+</html>

@@ -398,6 +398,7 @@ func _build_lock() -> void:
 
 ## The round's trick arrives as a lock-screen notification; tapping it opens it.
 func show_notification(round_: Dictionary) -> void:
+	AudioManager.play("notification")
 	go_lock()
 	_clear(_lock_notes)
 	var note := Button.new()
@@ -943,7 +944,7 @@ func _check_ready() -> void:
 	if not ready or deciding:
 		return
 	deciding = true
-	await get_tree().create_timer(0.7).timeout
+	await get_tree().create_timer(0.7, false).timeout
 	if finished:
 		return
 	# Still in a chat: try again when they come back to the message.
@@ -1014,6 +1015,7 @@ func _choose(index: int) -> void:
 		_solve(String(choice.get("reply", "")))
 	elif is_genuine():
 		# A cautious choice earns an explanation, never a Glitch point.
+		AudioManager.play("select")
 		hint.emit(String(choice.why))
 	else:
 		_trick(String(choice.why))
@@ -1029,6 +1031,7 @@ func _trick(why: String) -> void:
 
 
 func _solve(reply: String = "") -> void:
+	AudioManager.play("correct")
 	finished = true
 	timer_running = false
 	_show_solved_overlay()
@@ -1038,6 +1041,7 @@ func _solve(reply: String = "") -> void:
 ## After a trick: back to where the player was, clues kept. The countdown
 ## restarts only if they never paused.
 func rewind() -> void:
+	AudioManager.play("rewind")
 	_clear(overlay)
 	_glitch_face = null
 	_gotcha_up = false
@@ -1230,7 +1234,7 @@ func _send_ask(key: String, thread: VBoxContainer, dock: VBoxContainer, scroll: 
 	var typing := _incoming("...")
 	thread.add_child(typing)
 	_pop(typing)
-	await get_tree().create_timer(1.4).timeout
+	await get_tree().create_timer(1.4, false).timeout
 	if not is_instance_valid(typing):
 		return
 	typing.queue_free()

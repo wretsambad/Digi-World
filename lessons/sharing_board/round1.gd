@@ -21,6 +21,7 @@ var results := {}
 
 
 func _ready() -> void:
+	AudioManager.claim_music(self, "winter")
 	park_board.clear_notes()
 	camera.global_transform = intro_view.global_transform
 	ui.sorting_finished.connect(func(round_results: Dictionary): results = round_results)

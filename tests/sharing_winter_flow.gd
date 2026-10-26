@@ -149,6 +149,8 @@ func _ready() -> void:
 		if not await wait_for(func(): return round2.photo_index == photo_index and round2.ui.visible and round2.ui.stage == round2.ui.Stage.LOOKING and round2.ui._photo_texture != null, "Photo %d opens with fresh state" % (photo_index+1)):
 			finish(); return
 		var active_clues: Array = round2.ui._clues.duplicate()
+		if info.id == "park_crafts":
+			verify(round2.ui._hotspots.has("street_sign") and round2.ui._hotspots.has("car_plate"), "Craft photo camera includes the relocated street sign and background license plate")
 		expected_hint_count += active_clues.size()
 		# An editor move beyond the photo must not leave an impossible clue.
 		var edited_detail := round2.photo_set.find_child(active_clues[0].id, true, false) as Node3D
@@ -172,6 +174,13 @@ func _ready() -> void:
 		verify(not active_clues.is_empty(), "Edited photo still has identifying details to find")
 		round2.ui._close_sheet()
 		var ui: Control = round2.ui
+		if info.id == "sled_break":
+			verify(ui._hotspots.has("phone_number") and not ui._hotspots.has("bottle_phone"), "Second photo finds the phone screen instead of the bottle")
+			var bottle: Node3D = round2.photo_set.get_node("Decor/InsulatedWaterBottle")
+			verify(bottle.find_children("*", "Label3D", true, false).is_empty(), "Water bottle has no identifying numbers")
+			var safe_taps: int = ui._safe_taps
+			ui._tap(ui._hotspots["InsulatedWaterBottle"].center)
+			verify(ui._safe_taps == safe_taps + 1 and ui._found.is_empty(), "Plain bottle is a safe object rather than a privacy clue")
 		ui._change_zoom(100.0)
 		verify(ui._hoop.zoom == ui.Hoop.MAX_ZOOM and ui._zoom_in.disabled, "Magnifier zoom is capped and its plus button disables")
 		var close_region: Rect2 = ui._hoop.sample_region()

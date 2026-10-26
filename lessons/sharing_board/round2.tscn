@@ -3248,6 +3248,9 @@ rings = 20
 radial_segments = 40
 rings = 20
 
+[sub_resource type="BoxMesh" id="sled_BoxMesh_phone_number_panel"]
+size = Vector3(0.355, 0.20, 0.002)
+
 [node name="SharingBoardRound2" type="Node3D" unique_id=130216513]
 script = ExtResource("1_round")
 
@@ -4567,24 +4570,6 @@ transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 0.56, 0)
 material_override = SubResource("sled_StandardMaterial3D_dj10a")
 mesh = SubResource("sled_CylinderMesh_3jndb")
 
-[node name="bottle_phone" type="Node3D" parent="SledPhotoSet/Decor/InsulatedWaterBottle" unique_id=475921004]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5497208e-06, 0.22999999, 0.114996314)
-
-[node name="PrivateLabel" type="MeshInstance3D" parent="SledPhotoSet/Decor/InsulatedWaterBottle/bottle_phone" unique_id=1074704874]
-material_override = SubResource("sled_ShaderMaterial_htvye")
-mesh = SubResource("sled_BoxMesh_celut")
-
-[node name="ReadableText" type="Label3D" parent="SledPhotoSet/Decor/InsulatedWaterBottle/bottle_phone" unique_id=1918848782]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005)
-pixel_size = 0.000265625
-modulate = Color(0.14901961, 0.20784314, 0.23137255, 1)
-text = "555-0142"
-font = ExtResource("craft_3_vppqx")
-font_size = 128
-outline_size = 0
-autowrap_mode = 3
-width = 703.99994
-
 [node name="FoldedSchoolBeanie" type="Node3D" parent="SledPhotoSet/Decor" unique_id=1040221112]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1199989, 0.58024037, -0.43280792)
 metadata/_edit_group_ = true
@@ -4655,48 +4640,30 @@ mesh = SubResource("sled_BoxMesh_hbfs2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.04)
 pixel_size = 0.000328125
 modulate = Color(0.14901961, 0.20784314, 0.23137255, 1)
-text = "MAP"
+text = "MY NUMBER"
 font = ExtResource("craft_3_vppqx")
 font_size = 128
 outline_size = 0
 autowrap_mode = 3
 width = 914.2857
 
-[node name="MapStreet" type="MeshInstance3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase" unique_id=250056663]
-transform = Transform3D(0.9838437, 0.17902958, 0, -0.17902958, 0.9838437, 0, 0, 0, 1, 0, 0.13, 0.037)
-material_override = SubResource("sled_StandardMaterial3D_tmc3a")
-mesh = SubResource("sled_BoxMesh_bjmmt")
+[node name="phone_number" type="Node3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase"]
+position = Vector3(0, -0.045, 0.045)
 
-[node name="MapStreet2" type="MeshInstance3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase" unique_id=1151561031]
-transform = Transform3D(0.9689124, -0.24740396, 0, 0.24740396, 0.9689124, 0, 0, 0, 1, 0, 0.062, 0.037)
-material_override = SubResource("sled_StandardMaterial3D_khid2")
-mesh = SubResource("sled_BoxMesh_s6e35")
+[node name="PhoneNumberPanel" type="MeshInstance3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase/phone_number"]
+material_override = SubResource("sled_ShaderMaterial_htvye")
+mesh = SubResource("sled_BoxMesh_phone_number_panel")
 
-[node name="MapStreet3" type="MeshInstance3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase" unique_id=454441791]
-transform = Transform3D(0.9838437, 0.17902958, 0, -0.17902958, 0.9838437, 0, 0, 0, 1, 0, -0.006, 0.037)
-material_override = SubResource("sled_StandardMaterial3D_gcgsr")
-mesh = SubResource("sled_BoxMesh_5ew5f")
-
-[node name="MapStreet4" type="MeshInstance3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase" unique_id=541099320]
-transform = Transform3D(0.9689124, -0.24740396, 0, 0.24740396, 0.9689124, 0, 0, 0, 1, 0, -0.074, 0.037)
-material_override = SubResource("sled_StandardMaterial3D_r666n")
-mesh = SubResource("sled_BoxMesh_k6c0t")
-
-[node name="MapPin" type="MeshInstance3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase" unique_id=1301403426]
-transform = Transform3D(0.025, 0, 0, 0, 0.035, 0, 0, 0, 0.004, 0, -0.025, 0.041)
-material_override = SubResource("sled_StandardMaterial3D_whfn5")
-mesh = SubResource("sled_SphereMesh_b17xg")
-
-[node name="ReadableText2" type="Label3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase" unique_id=331263333]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.205, 0.045)
-pixel_size = 0.0002890625
+[node name="ReadableText" type="Label3D" parent="SledPhotoSet/Decor/PhoneInFoldingCase/phone_number"]
+position = Vector3(0, 0, 0.004)
+pixel_size = 0.0004296875
 modulate = Color(0.14901961, 0.20784314, 0.23137255, 1)
-text = "PARK MAP"
+text = "555-0142"
 font = ExtResource("craft_3_vppqx")
 font_size = 128
 outline_size = 0
 autowrap_mode = 3
-width = 1228.108
+width = 779.63635
 
 [node name="RoadsideSignpost" type="Node3D" parent="SledPhotoSet/Decor" unique_id=545038770]
 transform = Transform3D(0.81915206, 0, 0.57357645, 0, 1, 0, -0.57357645, 0, 0.81915206, -26.2, 0.04, -20)
@@ -5835,7 +5802,7 @@ material_override = SubResource("craft_ShaderMaterial_5vtx3")
 mesh = SubResource("craft_SphereMesh_fm1pw")
 
 [node name="PhotoView" type="Marker3D" parent="CraftPhotoSet" unique_id=610535590]
-transform = Transform3D(0.9664377, -0.11828784, 0.22804868, 0, 0.8876903, 0.46044102, -0.25690117, -0.44498757, 0.8578974, 1.0500002, 3.2, 3.9500008)
+transform = Transform3D(0.999958, -0.00395, 0.00828, 0, 0.902561, 0.430562, -0.009174, -0.430543, 0.902523, 1.0500002, 3.8, 4.9500008)
 
 [editable path="WinterNeighborhood"]
 [editable path="WinterNeighborhood/Neighborhood"]

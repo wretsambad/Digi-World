@@ -125,6 +125,7 @@ func open_from_desktop(click_time: float) -> void:
 func begin() -> void:
 	if running:
 		return
+	AudioManager.claim_music(self, "treehouse", 10)
 	running = true
 	await ui.wait_for_play()
 	GameState.start_lesson(GameState.PROTECT_YOUR_BASE)
@@ -173,7 +174,7 @@ func _glitch_arrives() -> void:
 	await glide_pip(0.9)
 	await ui.caption(String(data.lines.glitch_spotted), 0.8)
 	await glide_glitch(0.8, 2.2)
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.6, false).timeout
 	await ui.say(String(data.lines.alert), "PIP", "Let's go!", "", true)
 	# The Glitch scurries back to its hiding spot to plan its next move.
 	await glitch.hop_to(TreehouseBase.LADDER_FOOT + Vector3(0.6, 0, 1.0), 0.5, 0.6)
@@ -198,6 +199,7 @@ func _run_step(index: int) -> void:
 			push_warning("Lesson data and PasswordRules disagree about '%s'" % option.text)
 		machine.report_choice(choice, correct, String(result.failed_rule))
 		if correct:
+			AudioManager.play("correct")
 			break
 		crossed.append(choice)
 		await _mistake(option)
@@ -212,7 +214,7 @@ func _run_step(index: int) -> void:
 	pip.set_mood("Cheer")
 	await glide_pip(0.9, -1.0)
 	ui.caption(String(step.cheer), 1.2)
-	await get_tree().create_timer(2.2).timeout
+	await get_tree().create_timer(2.2, false).timeout
 	pip.set_mood("Idle")
 	await _glitch_event(index)
 
@@ -224,7 +226,7 @@ func _build_defense(index: int) -> void:
 		2: await glide("branches", 1.2)
 	await base.build_level(index + 1)
 	camera.shake(0.08)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 
 
 # ---------------------------------------------------------------- mistakes
@@ -239,7 +241,7 @@ func _mistake(option: Dictionary) -> void:
 		_: await _prank_paint()
 	pip.set_mood("Sad")
 	await glide_pip(0.9)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	await ui.say(String(option.explanation), "OOPS!", "Fix it!", String(option.get("tip", "")), true)
 
 
@@ -267,7 +269,7 @@ func _prank_paint() -> void:
 func _prank_wall() -> void:
 	glide("cabin", 1.0)
 	base.make_plastic_wall()
-	await get_tree().create_timer(0.4).timeout
+	await get_tree().create_timer(0.4, false).timeout
 	var wall_z := base.plastic_wall.position.z
 	await glitch.blink_to(Vector3(0, TreehouseBase.DECK_WALK_HEIGHT, wall_z + 1.4))
 	glitch.face(Vector3(0, TreehouseBase.DECK_WALK_HEIGHT, wall_z))
@@ -299,7 +301,7 @@ func _repair() -> void:
 	await base.repair()
 	pip.apply_profile()
 	pip.set_mood("Happy")
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.2, false).timeout
 
 
 # ---------------------------------------------------------------- glitch events

@@ -102,6 +102,7 @@
 [ext_resource type="PackedScene" uid="uid://dywbx8meken3e" path="res://neighborhood_assets/models/lawn_tile.glb" id="99_t4p66"]
 [ext_resource type="PackedScene" path="res://bedroom_assets/bedroom_gameplay.tscn" id="bedroom_gameplay"]
 [ext_resource type="Script" uid="uid://do036cr28eu3" path="res://scripts/StaticSceneryBatch.gd" id="static_scenery_batch"]
+[ext_resource type="PackedScene" path="res://bedroom_assets/extended_neighborhood.tscn" id="extended_neighborhood"]
 
 [sub_resource type="StandardMaterial3D" id="rod_mat"]
 albedo_color = Color(0.19, 0.24, 0.27, 1)
@@ -197,7 +198,7 @@ size = Vector3(1.36, 0.95, 0.025)
 [node name="TeenBedroom" type="Node3D" unique_id=218072624]
 script = ExtResource("1_c5ypq")
 metadata/separate_scene = true
-metadata/exterior_instance_count = 544
+metadata/exterior_instance_count = 1930
 
 [node name="LearningHouseDetailed" type="Node3D" parent="." unique_id=1768198947]
 metadata/source_house_path = "ExistingNeighborhood/LearningHouse"
@@ -971,7 +972,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.340567, 5.5518985, -29.289
 [node name="NearbyNeighborhood" type="Node3D" parent="." unique_id=1062087736]
 metadata/source_scene = "res://neighborhood_assets/preview/neighborhood_filled.tscn"
 metadata/retained_model_instances = 543
-metadata/purpose = "Nearby block and existing window-visible tree backdrop; no full neighborhood dependency"
+metadata/purpose = "Preserved nearby block and window-visible backdrop, complemented by ExtendedNeighborhood"
 
 [node name="Roads_road_straight_large_001" parent="NearbyNeighborhood" unique_id=2144277908 instance=ExtResource("60_ji7rs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -59.4)
@@ -3424,12 +3425,7 @@ metadata/category = "SightlineTrees"
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -72.26445, 0, -90.95768)
 metadata/category = "SightlineTrees"
 
-[node name="CroppedNeighborhoodGround" parent="NearbyNeighborhood" unique_id=367898757 instance=ExtResource("99_t4p66")]
-transform = Transform3D(80, 0, 0, 0, 1, 0, 0, 0, 78, -32, -0.025, -29)
-metadata/category = "Ground"
-
-[node name="lawn_tile__Lawn" parent="NearbyNeighborhood/CroppedNeighborhoodGround/lawn_tile" parent_id_path=PackedInt32Array(367898757, 301679854) index="0" unique_id=649345067]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0003670454, 0.012, 0.0002477765)
+[node name="ExtendedNeighborhood" parent="." instance=ExtResource("extended_neighborhood")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1648109889]
 environment = ExtResource("4_tfi6f")
@@ -3445,43 +3441,43 @@ transform = Transform3D(0.89327663, -0.07378933, 0.44340953, 0, 0.9864344, 0.164
 current = true
 fov = 76.0
 near = 0.04
-far = 180.0
+far = 650.0
 
 [node name="StudyCamera" type="Camera3D" parent="." unique_id=651314469]
 transform = Transform3D(0.90811247, -0.07021977, 0.41279653, 0, 0.98583835, 0.16769846, -0.41872638, -0.15228906, 0.8952521, 15.700566, 5.3218985, -28.739725)
 fov = 68.0
 near = 0.04
-far = 180.0
+far = 650.0
 
 [node name="CreativeCamera" type="Camera3D" parent="." unique_id=1154272302]
 transform = Transform3D(-0.9225189, -0.043322142, 0.38351277, 0, 0.9936803, 0.11224752, -0.38595188, 0.10355046, -0.91668886, 15.950566, 5.2718983, -30.589725)
 fov = 72.0
 near = 0.04
-far = 180.0
+far = 650.0
 
 [node name="BedsideCamera" type="Camera3D" parent="." unique_id=105875878]
 transform = Transform3D(0.81538296, 0.15466127, -0.5578804, 0, 0.96365386, 0.26715392, 0.578922, -0.21783276, 0.78574693, 16.200565, 5.0918984, -27.989725)
 fov = 70.0
 near = 0.04
-far = 180.0
+far = 650.0
 
 [node name="WindowViewCamera" type="Camera3D" parent="." unique_id=286492161]
 transform = Transform3D(-0.0033474343, -0.0598312, 0.99820286, 0, 0.99820846, 0.059831534, -0.9999944, 0.00020028213, -0.0033414373, 14.740566, 5.5018983, -29.139725)
 fov = 72.0
 near = 0.04
-far = 180.0
+far = 650.0
 
 [node name="ExteriorCamera" type="Camera3D" parent="." unique_id=69502817]
 transform = Transform3D(0.652133, 0.08595942, -0.75321543, 0, 0.99355084, 0.11338729, 0.75810456, -0.07394359, 0.6479273, 4.3405666, 6.9518986, -21.789724)
 fov = 68.0
 near = 0.04
-far = 180.0
+far = 650.0
 
 [node name="BedroomGameplay" parent="." unique_id=1997588627 instance=ExtResource("bedroom_gameplay")]
 
 [node name="StaticSceneryBatches" type="Node" parent="." unique_id=786479503]
 script = ExtResource("static_scenery_batch")
-root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood")])
+root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood"), NodePath("../ExtendedNeighborhood")])
 
 [editable path="LearningHouseDetailed/HouseShell"]
 [editable path="LearningHouseDetailed/WindowSash_Open72Degrees"]
@@ -4209,4 +4205,3 @@ root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood")])
 [editable path="NearbyNeighborhood/Fill_tree_maple_large_363"]
 [editable path="NearbyNeighborhood/Fill_tree_oak_large_372"]
 [editable path="NearbyNeighborhood/Fill_tree_maple_large_374"]
-[editable path="NearbyNeighborhood/CroppedNeighborhoodGround"]

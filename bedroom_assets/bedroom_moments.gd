@@ -152,7 +152,8 @@ func _open_lesson() -> void:
 	_restore_actor()
 	GameState.start_lesson(lesson_id)
 	var path: String = game.PHONE_LESSON_SCENE if lesson_id == "phone" else game.SHARING_BOARD_SCENE
-	var error := get_tree().change_scene_to_file(path)
+	var title := "Glitch's Last Trick" if lesson_id == "phone" else "Think before you share"
+	var error: Error = await SceneLoading.change_scene(path, title)
 	if error != OK:
 		push_error("Could not open lesson: " + path)
 		GameState.current_lesson = ""

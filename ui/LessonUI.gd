@@ -64,6 +64,7 @@ var _caption_serial: int = 0
 
 
 func _ready() -> void:
+	writer.audible = true
 	layer = 10
 	body_font = SunsetUI.font(600)
 	display_font = SunsetUI.font(700)
@@ -388,7 +389,7 @@ func caption(text: String, seconds: float = 2.8) -> void:
 	await _fit_content(caption_panel, width)
 	_pop_in(caption_panel, 0.9)
 	var duration: float = writer.reveal(caption_label)
-	await get_tree().create_timer(duration + seconds).timeout
+	await get_tree().create_timer(duration + seconds, false).timeout
 	if serial == _caption_serial:
 		_fade_out(caption_panel)
 
@@ -492,7 +493,7 @@ func set_password(value: String, animate: bool = true) -> void:
 			shown_password = shown_password.substr(0, i) + value[i] + shown_password.substr(i + 1)
 			_render_password()
 			AudioManager.play("type")
-			await get_tree().create_timer(0.07).timeout
+			await get_tree().create_timer(0.07, false).timeout
 	if value.length() < shown_password.length():
 		shown_password = value
 		_render_password()
@@ -500,7 +501,7 @@ func set_password(value: String, animate: bool = true) -> void:
 		shown_password += value[i]
 		_render_password()
 		AudioManager.play("type")
-		await get_tree().create_timer(0.09).timeout
+		await get_tree().create_timer(0.09, false).timeout
 	shown_password = value
 	_render_password()
 	hud.pivot_offset = hud.size * 0.5

@@ -4,6 +4,8 @@ extends HBoxContainer
 
 const Kit := preload("res://lessons/sharing_board/ui/felt_kit.gd")
 const StitchedPanel := preload("res://lessons/sharing_board/ui/stitched_panel.gd")
+const TextWriter := preload("res://bedroom_assets/text_writer.gd")
+var writer := TextWriter.new()
 
 var mood := "happy"
 var _face: Control
@@ -12,6 +14,7 @@ var _words: Label
 
 
 func _init() -> void:
+	writer.audible = true
 	add_theme_constant_override("separation", 6)
 	mouse_filter = MOUSE_FILTER_IGNORE
 
@@ -38,11 +41,16 @@ func _init() -> void:
 
 func say(text: String, new_mood := "happy") -> void:
 	_words.text = text
+	writer.reveal(_words, 0.04)
 	mood = new_mood
 	_face.queue_redraw()
 	var hop := create_tween()
 	hop.tween_property(_face, "scale", Vector2(1.06, 0.94), 0.08)
 	hop.tween_property(_face, "scale", Vector2.ONE, 0.22).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+
+func _process(delta: float) -> void:
+	writer.advance(delta)
 
 
 func set_bubble_width(width: float) -> void:

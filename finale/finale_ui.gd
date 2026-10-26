@@ -32,12 +32,12 @@ func _ready() -> void:
 	skip_button = Button.new()
 	skip_button.name = "SkipButton"
 	skip_button.text = "Skip"
-	skip_button.tooltip_text = "Skip the ending (Esc)"
+	skip_button.tooltip_text = "Skip the ending"
 	SunsetUI.style_button(skip_button, false, 22)
 	SunsetUI.add_arrow(skip_button)
 	skip_button.set_anchors_preset(Control.PRESET_TOP_RIGHT)
-	skip_button.offset_left = -176
-	skip_button.offset_right = -28
+	skip_button.offset_left = -352
+	skip_button.offset_right = -204
 	skip_button.offset_top = 26
 	skip_button.offset_bottom = 82
 	skip_button.pressed.connect(func() -> void: skip_pressed.emit())

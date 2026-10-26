@@ -25,7 +25,7 @@ func pose_hand(label: String, target: Vector3) -> void:
 
 func animate_operator(delta: float) -> void:
 	game.seated_character.animate(delta,0)
-	var desktop: DesktopScreen = game.computer_lesson.lesson.ui.desktop
+	var desktop: DesktopScreen = game.computer_lesson.desktop
 	var movement := desktop.cursor - DesktopScreen.CURSOR_START
 	# The monitor faces +Z; left/up cursor travel maps to left/forward
 	# motion across the desk. Update the mouse before solving the hand pose.

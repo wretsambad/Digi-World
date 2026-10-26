@@ -4,20 +4,29 @@ extends Node
 
 @export var root_paths: Array[NodePath] = []
 @export var excluded_paths: Array[NodePath] = []
-@export_range(8.0, 64.0) var cell_size := 32.0
+@export_range(8.0, 64.0) var cell_size := 12.0
 @export var enabled := true
+## Small spatial cells retain useful culling and keep shared LOD selection local.
+@export var batch_lod_meshes := true
+@export var optimize_palettes := true
+## Only explicitly reviewed, opaque shaders with no per-node animation.
+@export var static_shaders: Array[Shader] = []
 
 var source_count := 0
 var batch_count := 0
 var _excluded: Array[Node] = []
 var _mesh_cache: Dictionary = {}
 var _lod_cache: Dictionary = {}
+var _built := false
+var _palette = preload("res://scripts/StaticMeshPalette.gd").new()
 
 func _ready() -> void:
 	if enabled:
 		call_deferred("_build")
 
 func _build() -> void:
+	if _built: return
+	_built = true
 	for path in excluded_paths:
 		var node := get_node_or_null(path)
 		if node != null: _excluded.append(node)
@@ -73,18 +82,22 @@ func _collect(node: Node, sources: Array[MeshInstance3D]) -> void:
 	# Animation tracks can affect siblings as well as the player's own children.
 	for child in node.get_children():
 		if child is AnimationPlayer or child is AnimationTree: return
-	if node is MeshInstance3D and _eligible(node): sources.append(node)
+	if node is MeshInstance3D:
+		if optimize_palettes: _palette.optimize(node)
+		if _eligible(node): sources.append(node)
 	for child in node.get_children(): _collect(child, sources)
 
 func _eligible(mesh: MeshInstance3D) -> bool:
 	if mesh.mesh == null or mesh.skin != null or mesh.material_overlay != null or mesh.layers == 0: return false
-	if mesh.mesh.get_blend_shape_count() > 0: return false
-	# A MultiMesh chooses one LOD for its whole bounding box. Leave LOD assets
-	# independent so distant model detail matches the original render exactly.
-	if _has_lods(mesh.mesh): return false
+	if mesh.mesh is ArrayMesh and mesh.mesh.get_blend_shape_count() > 0: return false
+	# Nearby instances can share LOD selection; keep an opt-out for exact
+	# per-object LOD and use small cells to avoid grouping across the world.
+	if not batch_lod_meshes and _has_lods(mesh.mesh): return false
 	if mesh.visibility_range_begin != 0.0 or mesh.visibility_range_end != 0.0 or not mesh.visibility_parent.is_empty(): return false
 	for surface in range(mesh.mesh.get_surface_count()):
 		var material := mesh.get_active_material(surface)
+		if material is ShaderMaterial and material.shader in static_shaders:
+			continue
 		# Sorting transparent instances as a group can alter their appearance.
 		if not material is BaseMaterial3D or material.transparency != BaseMaterial3D.TRANSPARENCY_DISABLED: return false
 		if material.billboard_mode != BaseMaterial3D.BILLBOARD_DISABLED or material.grow: return false

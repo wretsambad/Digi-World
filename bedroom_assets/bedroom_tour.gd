@@ -1,8 +1,7 @@
 extends Control
-## A welcome pause, guided lesson previews, then the seated-player reveal.
+## Player-paced welcome and lesson previews, then the seated-player reveal.
 const FONT = preload("res://neighborhood_assets/preview/fonts/Fredoka.ttf")
 const TRAVEL_SECONDS := 1.6
-const READ_SECONDS := 8.0
 const STOPS := [
 	{"node":"Lesson_Computer", "title":"Protect Your Base", "body":"Build your base and discover how to keep its account safe.", "position":Vector3(-.25, 1.95, -1.7)},
 	{"node":"Lesson_SharingBoard", "title":"Think before you share", "body":"Choose what is safe to post and which personal details to keep private.", "position":Vector3(.35, 1.95, -1.6)},
@@ -24,10 +23,8 @@ var start_pose: Transform3D
 var end_pose: Transform3D
 var start_fov := 76.0
 var reveal := 0.0
-var reading_paused := false
 ## 0 when the tour card appears, 1 once it has popped up into place.
 var card_pop := 1.0
-var pause_button: Button
 var welcome_heading: Label
 var welcome_intro: Label
 var chapter_label: Label
@@ -87,13 +84,6 @@ func setup(owner_game: Node3D) -> void:
 	step_label.autowrap_mode = TextServer.AUTOWRAP_OFF
 	step_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	footer.add_child(step_label)
-	pause_button = button("Pause", false)
-	pause_button.add_theme_font_size_override("font_size", 18)
-	footer.add_child(pause_button)
-	pause_button.pressed.connect(func():
-		reading_paused = not reading_paused
-		pause_button.text = "Resume" if reading_paused else "Pause"
-		game.text_writer.reveal_button(pause_button))
 	next_button = button("Next")
 	SunsetUI.add_arrow(next_button)
 	next_button.custom_minimum_size = Vector2(190, 58)
@@ -190,7 +180,7 @@ func start() -> void:
 func next_stop() -> void:
 	if game.phase != game.Phase.TOUR or travelling: return
 	clear_highlight()
-	for target in [title_label, body_label, step_label, next_button, next_button.get_node_or_null("TypedCaption"), pause_button.get_node_or_null("TypedCaption")]:
+	for target in [title_label, body_label, step_label, next_button, next_button.get_node_or_null("TypedCaption")]:
 		if is_instance_valid(target): game.text_writer.cancel(target)
 	card.hide()
 	index += 1
@@ -217,7 +207,7 @@ func next_stop() -> void:
 	step_label.text = "%d / %d · %s" % [index+1, STOPS.size(), object_names[index]]
 	next_button.text = "Meet your player" if index == STOPS.size()-1 else "Next"
 
-func advance(delta: float, was_writing_body := false) -> void:
+func advance(delta: float) -> void:
 	reveal = minf(1.0, reveal + delta/.65)
 	modulate.a = reveal
 	if game.phase != game.Phase.TOUR: return
@@ -236,7 +226,6 @@ func advance(delta: float, was_writing_body := false) -> void:
 			game.text_writer.reveal(body_label, heading_duration+.12)
 			game.text_writer.reveal(step_label, .1, 55.0)
 			game.text_writer.reveal_button(next_button, .1)
-			game.text_writer.reveal_button(pause_button, .1)
 			layout()
 			next_button.grab_focus()
 	else:
@@ -246,10 +235,7 @@ func advance(delta: float, was_writing_body := false) -> void:
 		card.pivot_offset = Vector2(card.size.x*.5, card.size.y)
 		card.scale = Vector2.ONE*lerpf(.92, 1.0, back)
 		card.modulate.a = minf(1.0, card_pop*1.6)
-		# Give players the full reading interval after the last letter lands.
-		if not reading_paused and not was_writing_body and not game.text_writer.is_writing(body_label): elapsed += delta
 		layout()
-		if elapsed >= READ_SECONDS: next_stop()
 
 func clear_highlight() -> void:
 	game.lesson_outline.set_lessons([])

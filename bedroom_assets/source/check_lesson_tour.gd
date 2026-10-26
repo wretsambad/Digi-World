@@ -60,15 +60,13 @@ func run():
 		await shot(str(index+1)+"-compact")
 		check(tour.card.get_global_rect().end.y <= tour.size.y, "Compact card stays on screen")
 		root.size = Vector2i(1280,900)
-		if index == 0:
-			tour.pause_button.pressed.emit()
-			game._process(20)
-			check(tour.index == 0, "Pause stops automatic advance")
-			tour.pause_button.pressed.emit()
-			game._process(8.1)
-			game._process(8.1)
-		else:
-			tour.next_button.pressed.emit()
+		var held_pose: Transform3D = game.camera.global_transform
+		game._process(60.0)
+		check(tour.index == index and not tour.travelling, "Each lesson waits indefinitely for Next")
+		check(game.camera.global_transform.is_equal_approx(held_pose), "Reading does not move the tour camera")
+		for control in tour.card.find_children("*", "Button", true, false):
+			check(control.text not in ["Pause", "Resume"], "Tour has no Pause/Resume control")
+		tour.next_button.pressed.emit()
 		for mesh in meshes: check(mesh.material_overlay == null, "Highlight restored after each stop")
 	check(game.phase == game.Phase.ARRIVING, "Last lesson starts the seated-player arrival")
 	check(not game.play_button.visible and not tour.visible, "No Play before final camera arrival")
@@ -76,6 +74,6 @@ func run():
 	check(game.phase == game.Phase.WAITING and game.play_button.visible, "Play appears beside the boy after the tour")
 	await shot("ready-to-play")
 	for message in failures: push_error(message)
-	if failures.is_empty(): print("LESSON TOUR PASS: welcome hold, three highlighted lessons, duplicate-click guard, pause/auto/Next, ",rays," clear camera path samples, Play reveal.")
+	if failures.is_empty(): print("LESSON TOUR PASS: welcome hold, three manual lesson stops, duplicate-click guard, ",rays," clear camera path samples, Play reveal.")
 	scene.free()
 	quit(0 if failures.is_empty() else 1)

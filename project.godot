@@ -12,7 +12,9 @@ config_version=5
 
 config/name="digiworld"
 run/main_scene="res://neighborhood_assets/preview/neighborhood_filled.tscn"
-config/features=PackedStringArray("4.7", "Forward Plus")
+config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/bg_color=Color(0.14117648, 0.07450981, 0.1882353, 1)
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 
 [autoload]
@@ -21,6 +23,8 @@ PlayerProfile="*res://autoload/PlayerProfile.gd"
 GameState="*res://autoload/GameState.gd"
 AudioManager="*res://autoload/AudioManager.gd"
 _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
+GlobalPause="*res://autoload/GlobalPause.gd"
+SceneLoading="*res://autoload/SceneLoading.gd"
 
 [display]
 

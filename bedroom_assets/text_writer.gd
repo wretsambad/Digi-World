@@ -2,13 +2,15 @@ extends RefCounted
 ## Reveal already-shaped text, keeping wrapping, button sizes, and hit areas stable.
 const LETTERS_PER_SECOND := 42.0
 var jobs: Array[Dictionary] = []
+## Game UIs opt in. Bedroom prompts, menus and button captions stay quiet.
+var audible := false
 
-func reveal(label: Label, delay := 0.0, rate := LETTERS_PER_SECOND, pausable := true) -> float:
+func reveal(label: Label, delay := 0.0, rate := LETTERS_PER_SECOND, pausable := true, sound := true) -> float:
 	cancel(label)
 	label.visible_characters_behavior = TextServer.VC_CHARS_AFTER_SHAPING
 	label.visible_characters = 0
 	var count := label.get_total_character_count()
-	jobs.append({"target":label, "property":"visible_characters", "count":count, "clock":-delay, "rate":rate, "pausable":pausable})
+	jobs.append({"target":label, "property":"visible_characters", "count":count, "clock":-delay, "rate":rate, "pausable":pausable, "shown":0, "sound":sound})
 	return delay + count/rate
 
 func reveal_property(target: Object, property: String, count: int, rate := 55.0) -> void:
@@ -41,7 +43,7 @@ func button_caption(button: Button) -> Label:
 	return caption
 
 func reveal_button(button: Button, delay := 0.0) -> void:
-	reveal(button_caption(button), delay, 55.0, false)
+	reveal(button_caption(button), delay, 55.0, false, false)
 
 func cancel(target: Object) -> void:
 	jobs = jobs.filter(func(job: Dictionary): return is_instance_valid(job.target) and job.target != target)
@@ -69,4 +71,12 @@ func advance(delta: float, paused := false) -> void:
 		job.clock += delta
 		var visible := clampi(int(maxf(0.0, job.clock)*job.rate), 0, job.count)
 		job.target.set(job.property, visible)
+		var previous: int = job.get("shown", 0)
+		if audible and job.get("sound", false) and visible > previous and job.target is Label:
+			var label: Label = job.target
+			if label.is_visible_in_tree() and not label.text.substr(previous, visible - previous).strip_edges().is_empty():
+				var audio := label.get_node_or_null("/root/AudioManager")
+				if audio:
+					audio.play("type")
+		job.shown = visible
 		if visible == job.count: jobs.remove_at(i)

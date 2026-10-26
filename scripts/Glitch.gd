@@ -230,7 +230,7 @@ func blink_to(target: Vector3) -> void:
 	await tween.finished
 	visible = false
 	global_position = target
-	await get_tree().create_timer(0.12).timeout
+	await get_tree().create_timer(0.12, false).timeout
 	visible = true
 	burst.restart()
 	pixels.scale = Vector3(0.05, 1.6, 1.0)

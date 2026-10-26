@@ -3,7 +3,7 @@ extends Node3D
 ## The boy throws a paper plane out of the open window, the camera chases it
 ## down the street, rockets up with it through the clouds, and a thank-you
 ## message types itself into the sky while varied fireworks burst around it.
-## Started by BedroomGameplay.play_finale(); Skip or Esc jumps to the end card.
+## Started by BedroomGameplay.play_finale(); Skip jumps to the end card.
 
 signal finished(play_again: bool)
 
@@ -122,6 +122,7 @@ var _tweens: Array[Tween] = []
 
 
 func play(owner_game: Node3D) -> void:
+	AudioManager.claim_music(self, "", 30)
 	game = owner_game
 	room = game.room
 	name = "Finale"
@@ -187,12 +188,6 @@ func _process(delta: float) -> void:
 	if path and plane.visible:
 		_fly_plane(delta)
 	_move_camera(delta)
-
-
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
-		get_viewport().set_input_as_handled()
-		skip()
 
 
 # --- The bedroom ---

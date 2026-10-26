@@ -91,7 +91,7 @@ func blackout() -> void:
 func restore_lights() -> void:
 	restoring_lights = true
 	set_piece("lights", "on")
-	await get_tree().create_timer(2.6).timeout
+	await get_tree().create_timer(2.6, false).timeout
 	restoring_lights = false
 
 
@@ -317,7 +317,7 @@ func _build_speaker() -> void:
 	_make_speaker(Vector3(-4.5, 0, 1.0), 0.65)
 	_music = AudioStreamPlayer.new()
 	_music.stream = _party_tune()
-	_music.volume_db = -20.0
+	_music.volume_db = -14.0
 	add_child(_music)
 
 
@@ -382,45 +382,33 @@ func _apply_music(value: String) -> void:
 		cone.scale = Vector3.ONE
 	if value == "off":
 		_music.stop()
+		AudioManager.release_music(self)
 		return
+	AudioManager.claim_music(self, "", 25)
 	_music.pitch_scale = 1.0
-	if not _music.playing and not AudioManager.muted:
+	if not _music.playing:
 		_music.play()
 
 
 func choose_song(song: String) -> void:
 	chosen_song = song
 	_music.stream = _party_tune(song == "snowman")
-	if state.music == "on" and not AudioManager.muted:
+	_music.volume_db = -14.0
+	if state.music == "on":
 		_music.play()
 
 
-## A bouncy four-bar loop, synthesized like the AudioManager cues: no files.
-func _party_tune(snowman: bool = false) -> AudioStreamWAV:
-	var rate := 22050
-	var beat := 0.25
-	var melody := [523, 659, 784, 659, 587, 698, 880, 698, 523, 659, 784, 1047, 988, 784, 659, 587]
-	if snowman:
-		melody = [659, 659, 659, 523, 659, 784, 392, 523, 587, 494, 523, 659, 784, 880, 784, 659]
-	var bass := [131, 131, 175, 175, 131, 131, 196, 196]
-	var total := int(melody.size() * beat * rate)
-	var data := PackedByteArray()
-	data.resize(total * 2)
-	for i in total:
-		var t := float(i) / rate
-		var step := int(t / beat)
-		var local := fmod(t, beat) / beat
-		var envelope := pow(1.0 - local, 1.8) * minf(local * 40.0, 1.0)
-		var lead := (0.5 if sin(TAU * melody[step] * t) > 0.0 else -0.5) * envelope * 0.5
-		var low := asin(sin(TAU * bass[int(step / 2)] * t)) * 0.4 * minf(local * 30.0, 1.0)
-		data.encode_s16(i * 2, int(clampf(lead + low, -1.0, 1.0) * 9000.0))
-	var stream := AudioStreamWAV.new()
-	stream.format = AudioStreamWAV.FORMAT_16_BITS
-	stream.mix_rate = rate
-	stream.data = data
-	stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
-	stream.loop_end = total
-	return stream
+## Both choices are fully arranged tracks; the party owns music only while its
+## speakers are active. The phone's background score covers the other rounds.
+func _party_tune(snowman: bool = false) -> AudioStream:
+	var path := "res://audio/music/snowman_party.ogg" if snowman else "res://audio/music/party.ogg"
+	var track := load(path) as AudioStreamOggVorbis
+	if track == null:
+		push_error("Party music is missing: " + path)
+		return null
+	track = track.duplicate() as AudioStreamOggVorbis
+	track.loop = true
+	return track
 
 
 # ------------------------------------------------------------------ decorations

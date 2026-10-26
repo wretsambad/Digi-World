@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://df8d1rjvv8ry5"]
-
-[ext_resource type="PackedScene" uid="uid://ynchy3ii2art" path="res://neighborhood_assets/expanded_models/road_straight_large.glb" id="1_c675x"]
-
-[node name="road_straight_large" unique_id=250808519 instance=ExtResource("1_c675x")]

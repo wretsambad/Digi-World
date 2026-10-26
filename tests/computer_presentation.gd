@@ -30,8 +30,9 @@ func _ready() -> void:
 	await get_tree().create_timer(2.8).timeout
 	var session = game.computer_lesson
 	session.start()
+	verify(session.lesson == null, "Clicking must start the animation before creating the 3D lesson")
 	session.set_process(false)
-	var desktop: DesktopScreen = session.lesson.ui.desktop
+	var desktop: DesktopScreen = session.desktop
 	verify(session.screen.scale.is_equal_approx(Vector3.ONE), "Monitor display must stay inside its bezel")
 	verify(is_equal_approx(session.screen.position.z, -0.006), "Display must sit flush with the model's screen face")
 	for time: float in [3.2, 3.85, 4.2, 4.6, 4.65, 4.71, 4.79, 4.85, 5.2, 5.9, 6.5]:
@@ -50,9 +51,17 @@ func _ready() -> void:
 		await get_tree().process_frame
 		if time in [3.85, 4.2, 5.2, 6.5]:
 			await snapshot(str(time).replace(".", "_"))
-	verify(not desktop.visible and session.lesson.ui.title_card.visible, "Desktop must open the title screen")
+	verify(desktop.visible and is_equal_approx(desktop.window_open, 1.0), "Monitor must hold the opened window until loading starts")
+	verify(session.lesson == null, "The full lesson must stay unloaded throughout the camera animation")
 	session.enter_game()
-	await get_tree().create_timer(0.7).timeout
+	verify(session.state == "loading" and SceneLoading.active, "Loading must be visible before creating the lesson")
+	await snapshot("loading_after_animation")
+	var waited := 0.0
+	while session.state != "game" and waited < 30.0:
+		await get_tree().create_timer(.1).timeout
+		waited += .1
+	verify(session.state == "game" and not SceneLoading.active, "Lesson must finish loading before the loading surface closes")
+	verify(session.lesson.ui.title_card.visible, "Loading must reveal the real lesson title screen")
 	verify(session.viewport.msaa_3d != Viewport.MSAA_DISABLED, "Lesson geometry must have anti-aliasing")
 	# Reproduce the scaled canvas used by the editor's embedded game, as
 	# well as an unscaled standalone window. Logical pixels are not a

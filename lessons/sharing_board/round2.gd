@@ -28,6 +28,7 @@ var _transitioning := false
 
 
 func _ready() -> void:
+	AudioManager.claim_music(self, "winter")
 	park_board.clear_notes()
 	_show_photo_set(0)
 	_clear_photo_foreground()
@@ -105,6 +106,7 @@ func _on_finish_pressed() -> void:
 	for photo in photo_results:
 		for key in ["hints_used","safe_taps","miss_taps"]: results[key] += photo.get(key,0)
 	ui.results = results
+	AudioManager.play("complete")
 	round_completed.emit(results)
 	ui.show_complete(get_tree().current_scene == self)
 

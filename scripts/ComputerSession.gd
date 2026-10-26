@@ -25,6 +25,22 @@ var shoulder_pose: Transform3D
 var screen_pose: Transform3D
 var cheer_pose: Transform3D
 var _requested := false
+var desktop: DesktopScreen
+var _covered_viewport: Viewport
+var _covered_viewport_was_disabled := false
+
+
+func _exit_tree() -> void:
+	# Pause-menu navigation can destroy this session without playing the normal
+	# return animation. The root viewport survives scene changes, so release
+	# the rendering state owned by this session on every exit path.
+	_restore_room_rendering()
+
+
+func _restore_room_rendering() -> void:
+	if is_instance_valid(_covered_viewport):
+		_covered_viewport.disable_3d = _covered_viewport_was_disabled
+	_covered_viewport = null
 
 
 func setup(owner_game: Node3D) -> void:
@@ -41,15 +57,28 @@ func setup(owner_game: Node3D) -> void:
 func _build_screen_and_overlay() -> void:
 	viewport = SubViewport.new()
 	viewport.name = "MonitorViewport"
-	# Allocate the full-resolution target only when the monitor is first used.
-	# It is disabled and its screen is hidden until then.
-	viewport.size = Vector2i(2, 2)
+	# Warm the lightweight monitor target before exploration begins, so its
+	# allocation doesn't interrupt the first camera-animation frame.
+	viewport.size = RENDER_SIZE
 	viewport.size_2d_override = UI_SIZE
 	viewport.size_2d_override_stretch = true
 	viewport.msaa_3d = Viewport.MSAA_4X
 	viewport.own_world_3d = true
 	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	add_child(viewport)
+	# Build only the 2D desktop now. The 3D lesson must never be instantiated
+	# by the object-click handler, or its _ready work freezes the first pose.
+	desktop = DesktopScreen.new()
+	desktop.font = SunsetUI.font(700)
+	viewport.add_child(desktop)
+	desktop.set_process(false)
+	desktop.opened.connect(func() -> void:
+		# Hold the opened app window while the camera finishes its dive.
+		desktop.show()
+		desktop.modulate.a = 1.0)
+	viewport.disable_3d = true
+	# Allocate and warm the monitor target during room setup, before a click.
+	viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 	var monitor: Node3D = game.room.get_node("Lesson_Computer/Computer")
 	screen = MeshInstance3D.new()
 	screen.name = "LessonScreen"
@@ -96,33 +125,41 @@ func _build_screen_and_overlay() -> void:
 	get_viewport().size_changed.connect(_fit_container)
 
 
-func _ensure_lesson() -> void:
+func _ensure_lesson() -> bool:
 	# A finished lesson is replaced with a fresh one so it can be replayed.
 	if is_instance_valid(lesson) and lesson.running:
 		viewport.remove_child(lesson)
 		lesson.queue_free()
 		lesson = null
 	if is_instance_valid(lesson):
-		return
+		return true
 	var packed: PackedScene
 	if _requested:
 		packed = ResourceLoader.load_threaded_get(GAME_PATH)
 		_requested = false
 	else:
 		packed = load(GAME_PATH)
+	if packed == null:
+		return false
 	lesson = packed.instantiate()
 	viewport.add_child(lesson)
 	lesson.leave_requested.connect(return_to_room)
 	lesson.lesson_completed.connect(func() -> void:
 		game.room.get_node("Lesson_Computer").set_meta("lesson_status", "complete"))
+	return true
 
 
 func start() -> void:
 	if state != "idle" or game.phase != game.Phase.PLAYING:
 		return
-	viewport.size = RENDER_SIZE
-	_ensure_lesson()
-	lesson.process_mode = Node.PROCESS_MODE_INHERIT
+	if is_instance_valid(lesson):
+		lesson.process_mode = Node.PROCESS_MODE_DISABLED
+		lesson.hide()
+		lesson.ui.hide()
+	viewport.disable_3d = true
+	desktop.show()
+	desktop.set_process(true)
+	desktop.play_open(CLICK_TIME)
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	saved_pose = game.camera.global_transform
 	saved_fov = game.camera.fov
@@ -136,7 +173,6 @@ func start() -> void:
 	game.seated_character.seated = true
 	game.seated_character.animate(0, 0)
 	_compute_poses()
-	lesson.show_desktop()
 	# Replace the model's raised desktop artwork only once the live display
 	# is ready, preserving the original monitor while exploring the room.
 	var monitor_mesh := screen.get_parent().find_child("computer_monitor_Mesh", true, false) as MeshInstance3D
@@ -146,7 +182,6 @@ func start() -> void:
 	for surface in range(3, monitor_mesh.mesh.get_surface_count()):
 		monitor_mesh.set_surface_override_material(surface, hidden_art)
 	screen.show()
-	lesson.open_from_desktop(CLICK_TIME)
 	elapsed = 0.0
 	state = "intro"
 
@@ -179,7 +214,7 @@ func _process(delta: float) -> void:
 	match state:
 		"intro":
 			elapsed += delta
-			lesson.ui.desktop.advance_open(elapsed)
+			desktop.advance_open(elapsed)
 			animate_operator(delta)
 			if elapsed < 1.6:
 				_camera_between(saved_pose, side_pose, elapsed / 1.6, saved_fov, 58.0)
@@ -248,20 +283,48 @@ func _fit_container() -> void:
 
 
 func enter_game() -> void:
-	state = "game"
+	if state != "intro":
+		return
+	state = "loading"
+	# The entire existing operator/camera animation has finished. Paint the
+	# loading surface first, then do the expensive load and scene creation.
+	await SceneLoading.present("Protect Your Base")
+	if _requested:
+		while ResourceLoader.load_threaded_get_status(GAME_PATH) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+			await get_tree().process_frame
+		if ResourceLoader.load_threaded_get_status(GAME_PATH) != ResourceLoader.THREAD_LOAD_LOADED:
+			_requested = false
+	if not _ensure_lesson():
+		SceneLoading.dismiss()
+		state = "idle"
+		game.camera.global_transform = saved_pose
+		game.camera.fov = saved_fov
+		game.phase = game.Phase.PLAYING
+		game.set_active(true)
+		push_error("Could not load the computer lesson")
+		return
+	desktop.hide()
+	desktop.set_process(false)
+	lesson.show()
+	lesson.ui.show()
+	lesson.process_mode = Node.PROCESS_MODE_INHERIT
+	lesson.ui.show_title()
+	viewport.disable_3d = false
 	mouse_node.position = mouse_origin
 	viewport.reparent(container)
 	_fit_container()
 	backdrop.show()
-	backdrop.modulate.a = 0.0
+	backdrop.modulate.a = 1.0
 	container.show()
-	container.modulate.a = 0.0
-	var fade := create_tween().set_parallel(true)
-	fade.tween_property(container, "modulate:a", 1.0, 0.35)
-	fade.tween_property(backdrop, "modulate:a", 1.0, 0.35)
-	await fade.finished
+	container.modulate.a = 1.0
 	# Nothing in the bedroom is visible behind the full-screen game.
-	game.get_viewport().disable_3d = true
+	_covered_viewport = game.get_viewport()
+	_covered_viewport_was_disabled = _covered_viewport.disable_3d
+	_covered_viewport.disable_3d = true
+	# Let initial rendering, deferred scenery batches and shaders settle under
+	# the loading surface before presenting the lesson's real title screen.
+	await SceneLoading.finish()
+	state = "game"
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	lesson.begin()
 
@@ -269,8 +332,9 @@ func enter_game() -> void:
 func return_to_room() -> void:
 	if state != "game":
 		return
+	AudioManager.release_music(lesson)
 	state = "fading"
-	game.get_viewport().disable_3d = false
+	_restore_room_rendering()
 	game.camera.global_transform = screen_pose
 	game.camera.fov = 40.0
 	var fade := create_tween().set_parallel(true)

@@ -1,5 +1,8 @@
 [gd_scene format=4 uid="uid://dnnq0ykvv0dfk"]
 
+[ext_resource type="Script" path="res://scripts/StaticSceneryBatch.gd" id="web_static_batch"]
+[ext_resource type="Shader" path="res://neighborhood_assets/winter/snow_surface.gdshader" id="web_static_snow"]
+
 [ext_resource type="PackedScene" path="res://neighborhood_assets/winter/objects/lawn_tile_52d097e6ce.tscn" id="1_r60il"]
 [ext_resource type="PackedScene" path="res://neighborhood_assets/winter/objects/roads_road_straight_large_001_e506d71233.tscn" id="2_qc4kd"]
 [ext_resource type="PackedScene" path="res://neighborhood_assets/winter/objects/roads_road_junction_large_014_c304159123.tscn" id="3_q0iq1"]
@@ -11779,3 +11782,8 @@ metadata/whole_object = true
 
 [node name="WinterAmbience" type="Node3D" parent="." unique_id=937990366]
 script = ExtResource("winter_ambience")
+
+[node name="StaticSceneryBatches" type="Node" parent="."]
+script = ExtResource("web_static_batch")
+root_paths = Array[NodePath]([NodePath("..")])
+static_shaders = Array[Shader]([ExtResource("web_static_snow")])

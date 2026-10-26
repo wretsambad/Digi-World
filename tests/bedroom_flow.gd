@@ -55,6 +55,7 @@ func _ready() -> void:
 	game._unhandled_input(click)
 	var session: Node = game.computer_lesson
 	verify(session.state == "intro", "Clicking the computer did not start the lesson")
+	verify(session.lesson == null, "Computer click must animate before creating the heavy lesson")
 	verify(session.viewport.size == session.RENDER_SIZE, "Monitor must retain its full render resolution")
 	await get_tree().create_timer(2.2).timeout
 	await snapshot("typing")
@@ -97,7 +98,13 @@ func _ready() -> void:
 	await snapshot("back_in_room")
 	var previous_lesson: Node = session.lesson
 	session.start()
-	verify(session.state == "intro" and session.lesson != previous_lesson, "Completed lesson must replay with a fresh instance")
-	verify(session.lesson.process_mode == Node.PROCESS_MODE_INHERIT, "Replay must resume lesson processing")
+	verify(session.state == "intro" and session.lesson == previous_lesson, "Replay must start animating before replacing the old lesson")
+	verify(session.lesson.process_mode == Node.PROCESS_MODE_DISABLED, "The previous lesson must stay stopped during the intro")
+	session.enter_game()
+	var replay_wait := 0.0
+	while session.state != "game" and replay_wait < 30.0:
+		await get_tree().create_timer(.1).timeout
+		replay_wait += .1
+	verify(session.lesson != previous_lesson and session.state == "game", "Completed lesson must replay with a fresh instance after loading")
 	print("BEDROOM FLOW ", "PASS" if failures.is_empty() else "FAIL ", failures)
 	get_tree().quit(0 if failures.is_empty() else 1)

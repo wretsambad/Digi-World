@@ -40,6 +40,8 @@ var finale: Node3D
 var _finale_queued := false
 
 func _ready() -> void:
+	AudioManager.claim_music(self, "bedroom")
+	add_to_group("bedroom_gameplay")
 	room = get_parent().get_node_or_null("LearningHouseDetailed/BedroomInterior")
 	if room == null:
 		room = get_parent().get_node("ExistingNeighborhood/LearningHouse/BedroomInterior")
@@ -63,7 +65,7 @@ func _ready() -> void:
 	# Position is interpolated explicitly; mouse rotation stays current each frame.
 	camera.physics_interpolation_mode = Node.PHYSICS_INTERPOLATION_MODE_OFF
 	camera.near = 0.05
-	camera.far = 180.0
+	camera.far = 650.0
 	add_child(camera)
 	player.view_camera = camera
 	var direction := desk_chair.global_basis.z
@@ -82,11 +84,7 @@ func _ready() -> void:
 	lesson_focus = preload("res://bedroom_assets/lesson_focus.gd").new()
 	$Controls.add_child(lesson_focus)
 	lesson_focus.setup(self)
-	pause_menu = PauseMenu.new()
-	$Controls.add_child(pause_menu)
-	pause_menu.resumed.connect(_on_pause_resumed)
-	pause_menu.quit_requested.connect(func() -> void: get_tree().quit())
-	pause_menu.ending_requested.connect(play_finale)
+	pause_menu = GlobalPause.menu
 	# The computer lesson finishes in this room; the others finish in their own
 	# scenes and leave GameState.finale_pending set for when the room reloads.
 	GameState.all_lessons_completed.connect(_queue_finale)
@@ -243,17 +241,7 @@ func first_person_pose() -> Transform3D:
 func _unhandled_input(event: InputEvent) -> void:
 	if not active or _entry_elapsed > 0.0:
 		return
-	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		look_captured = false
-		player.controls_enabled = false
-		if phase == Phase.PLAYING:
-			# The crosshair and inspect card step aside while paused.
-			lesson_focus.hide()
-			pause_menu.open()
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_viewport().set_input_as_handled()
-	elif event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if look_captured and phase == Phase.PLAYING and lesson_focus.pick_lesson() == 0:
 			computer_lesson.start()
 			get_viewport().set_input_as_handled()
@@ -272,13 +260,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventMouseMotion and look_captured:
 		yaw -= event.relative.x * mouse_sensitivity
 		pitch = clampf(pitch - event.relative.y * mouse_sensitivity, -1.25, 1.25)
-
-func _on_pause_resumed() -> void:
-	if not active:
-		return
-	look_captured = true
-	player.controls_enabled = true
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _install_input() -> void:
 	var bindings := {"bedroom_left":[KEY_A, KEY_LEFT], "bedroom_right":[KEY_D, KEY_RIGHT], "bedroom_forward":[KEY_W, KEY_UP], "bedroom_back":[KEY_S, KEY_DOWN], "bedroom_jog":[KEY_SHIFT]}
@@ -328,11 +309,9 @@ func _build_collisions() -> void:
 		_box("Furniture_" + str(item.name), bounds.get_center(), bounds.size)
 
 func _process(delta: float) -> void:
-	# Only dialogue pauses; control captions can still announce Resume immediately.
-	var was_writing_body: bool = text_writer.is_writing(lesson_tour.body_label)
-	text_writer.advance(delta, phase == Phase.TOUR and lesson_tour.reading_paused)
+	text_writer.advance(delta)
 	if phase == Phase.WELCOME or phase == Phase.TOUR:
-		lesson_tour.advance(delta, was_writing_body)
+		lesson_tour.advance(delta)
 		return
 	if phase == Phase.ARRIVING and _entry_elapsed > 0.0:
 		_entry_elapsed = maxf(0.0, _entry_elapsed - delta)

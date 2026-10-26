@@ -1,0 +1,338 @@
+[
+  {
+    "file": "neighborhood.ogg",
+    "title": "Hello, DigiWorld",
+    "scene": "Sunny major-key guitar, electric keys and a full pop chorus.",
+    "bpm": 112,
+    "meter": "4/4",
+    "bars": 32,
+    "seconds": 68.571,
+    "decoded_peak_dbfs": -3.03,
+    "decoded_seam_step": 0.003146,
+    "sections": [
+      {
+        "name": "intro",
+        "start_bar": 0,
+        "bars": 4,
+        "start_seconds": 0.0,
+        "rms_dbfs": -24.07
+      },
+      {
+        "name": "theme",
+        "start_bar": 4,
+        "bars": 12,
+        "start_seconds": 8.571,
+        "rms_dbfs": -21.63
+      },
+      {
+        "name": "lift",
+        "start_bar": 16,
+        "bars": 8,
+        "start_seconds": 34.286,
+        "rms_dbfs": -17.59
+      },
+      {
+        "name": "break",
+        "start_bar": 24,
+        "bars": 4,
+        "start_seconds": 51.429,
+        "rms_dbfs": -28.01
+      },
+      {
+        "name": "return",
+        "start_bar": 28,
+        "bars": 4,
+        "start_seconds": 60.0,
+        "rms_dbfs": -17.65
+      }
+    ]
+  },
+  {
+    "file": "bedroom.ogg",
+    "title": "After School",
+    "scene": "Cheerful guitar and wooden keys, a gentle beat and an energetic middle section.",
+    "bpm": 104,
+    "meter": "4/4",
+    "bars": 32,
+    "seconds": 73.846,
+    "decoded_peak_dbfs": -2.78,
+    "decoded_seam_step": 0.00203,
+    "sections": [
+      {
+        "name": "intro",
+        "start_bar": 0,
+        "bars": 4,
+        "start_seconds": 0.0,
+        "rms_dbfs": -22.93
+      },
+      {
+        "name": "theme",
+        "start_bar": 4,
+        "bars": 12,
+        "start_seconds": 9.231,
+        "rms_dbfs": -20.43
+      },
+      {
+        "name": "lift",
+        "start_bar": 16,
+        "bars": 8,
+        "start_seconds": 36.923,
+        "rms_dbfs": -16.62
+      },
+      {
+        "name": "break",
+        "start_bar": 24,
+        "bars": 4,
+        "start_seconds": 55.385,
+        "rms_dbfs": -27.26
+      },
+      {
+        "name": "return",
+        "start_bar": 28,
+        "bars": 4,
+        "start_seconds": 64.615,
+        "rms_dbfs": -16.64
+      }
+    ]
+  },
+  {
+    "file": "treehouse.ogg",
+    "title": "Branch by Branch",
+    "scene": "The familiar wooden theme, expanding into a guitar and percussion chorus.",
+    "bpm": 106,
+    "meter": "4/4",
+    "bars": 32,
+    "seconds": 72.453,
+    "decoded_peak_dbfs": -2.84,
+    "decoded_seam_step": 0.002065,
+    "sections": [
+      {
+        "name": "intro",
+        "start_bar": 0,
+        "bars": 4,
+        "start_seconds": 0.0,
+        "rms_dbfs": -22.31
+      },
+      {
+        "name": "theme",
+        "start_bar": 4,
+        "bars": 12,
+        "start_seconds": 9.057,
+        "rms_dbfs": -22.65
+      },
+      {
+        "name": "lift",
+        "start_bar": 16,
+        "bars": 8,
+        "start_seconds": 36.226,
+        "rms_dbfs": -18.61
+      },
+      {
+        "name": "break",
+        "start_bar": 24,
+        "bars": 4,
+        "start_seconds": 54.34,
+        "rms_dbfs": -29.27
+      },
+      {
+        "name": "return",
+        "start_bar": 28,
+        "bars": 4,
+        "start_seconds": 63.396,
+        "rms_dbfs": -18.62
+      }
+    ]
+  },
+  {
+    "file": "winter.ogg",
+    "title": "Snowflakes and Secrets",
+    "scene": "Playful major-key winter music with bell accents and a lively string-backed chorus.",
+    "bpm": 112,
+    "meter": "4/4",
+    "bars": 32,
+    "seconds": 68.571,
+    "decoded_peak_dbfs": -2.89,
+    "decoded_seam_step": 0.003878,
+    "sections": [
+      {
+        "name": "intro",
+        "start_bar": 0,
+        "bars": 4,
+        "start_seconds": 0.0,
+        "rms_dbfs": -24.21
+      },
+      {
+        "name": "theme",
+        "start_bar": 4,
+        "bars": 12,
+        "start_seconds": 8.571,
+        "rms_dbfs": -21.94
+      },
+      {
+        "name": "lift",
+        "start_bar": 16,
+        "bars": 8,
+        "start_seconds": 34.286,
+        "rms_dbfs": -17.05
+      },
+      {
+        "name": "break",
+        "start_bar": 24,
+        "bars": 4,
+        "start_seconds": 51.429,
+        "rms_dbfs": -28.5
+      },
+      {
+        "name": "return",
+        "start_bar": 28,
+        "bars": 4,
+        "start_seconds": 60.0,
+        "rms_dbfs": -17.09
+      }
+    ]
+  },
+  {
+    "file": "phone.ogg",
+    "title": "Think Before You Tap",
+    "scene": "Curious, upbeat plucks and keys throughout the phone investigation.",
+    "bpm": 114,
+    "meter": "4/4",
+    "bars": 32,
+    "seconds": 67.368,
+    "decoded_peak_dbfs": -2.79,
+    "decoded_seam_step": 0.000775,
+    "sections": [
+      {
+        "name": "intro",
+        "start_bar": 0,
+        "bars": 4,
+        "start_seconds": 0.0,
+        "rms_dbfs": -23.35
+      },
+      {
+        "name": "theme",
+        "start_bar": 4,
+        "bars": 12,
+        "start_seconds": 8.421,
+        "rms_dbfs": -20.96
+      },
+      {
+        "name": "lift",
+        "start_bar": 16,
+        "bars": 8,
+        "start_seconds": 33.684,
+        "rms_dbfs": -15.48
+      },
+      {
+        "name": "break",
+        "start_bar": 24,
+        "bars": 4,
+        "start_seconds": 50.526,
+        "rms_dbfs": -27.8
+      },
+      {
+        "name": "return",
+        "start_bar": 28,
+        "bars": 4,
+        "start_seconds": 58.947,
+        "rms_dbfs": -15.52
+      }
+    ]
+  },
+  {
+    "file": "party.ogg",
+    "title": "Park Party",
+    "scene": "Bright party groove with bass fills, synth brass, claps and a bigger chorus.",
+    "bpm": 124,
+    "meter": "4/4",
+    "bars": 32,
+    "seconds": 61.935,
+    "decoded_peak_dbfs": -2.8,
+    "decoded_seam_step": 0.011585,
+    "sections": [
+      {
+        "name": "intro",
+        "start_bar": 0,
+        "bars": 4,
+        "start_seconds": 0.0,
+        "rms_dbfs": -22.95
+      },
+      {
+        "name": "theme",
+        "start_bar": 4,
+        "bars": 12,
+        "start_seconds": 7.742,
+        "rms_dbfs": -19.34
+      },
+      {
+        "name": "lift",
+        "start_bar": 16,
+        "bars": 8,
+        "start_seconds": 30.968,
+        "rms_dbfs": -16.84
+      },
+      {
+        "name": "break",
+        "start_bar": 24,
+        "bars": 4,
+        "start_seconds": 46.452,
+        "rms_dbfs": -27.34
+      },
+      {
+        "name": "return",
+        "start_bar": 28,
+        "bars": 4,
+        "start_seconds": 54.194,
+        "rms_dbfs": -16.67
+      }
+    ]
+  },
+  {
+    "file": "snowman_party.ogg",
+    "title": "Snowman Shuffle",
+    "scene": "A second full party arrangement with wooden melody, bells and a bouncing beat.",
+    "bpm": 120,
+    "meter": "4/4",
+    "bars": 32,
+    "seconds": 64.0,
+    "decoded_peak_dbfs": -2.94,
+    "decoded_seam_step": 0.003721,
+    "sections": [
+      {
+        "name": "intro",
+        "start_bar": 0,
+        "bars": 4,
+        "start_seconds": 0.0,
+        "rms_dbfs": -22.54
+      },
+      {
+        "name": "theme",
+        "start_bar": 4,
+        "bars": 12,
+        "start_seconds": 8.0,
+        "rms_dbfs": -19.06
+      },
+      {
+        "name": "lift",
+        "start_bar": 16,
+        "bars": 8,
+        "start_seconds": 32.0,
+        "rms_dbfs": -16.02
+      },
+      {
+        "name": "break",
+        "start_bar": 24,
+        "bars": 4,
+        "start_seconds": 48.0,
+        "rms_dbfs": -26.82
+      },
+      {
+        "name": "return",
+        "start_bar": 28,
+        "bars": 4,
+        "start_seconds": 56.0,
+        "rms_dbfs": -16.1
+      }
+    ]
+  }
+]

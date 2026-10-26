@@ -92,7 +92,7 @@ func pin_notes(cards: Array) -> void:
 			target = Vector3(-1.29+(i%3)*1.29,2.94-(i/3)*0.76,0)
 		notes.add_child(patch)
 		patch.attach_to(target,deg_to_rad([-2.0,1.5,-1.0][i%3]),i*0.20)
-	await get_tree().create_timer(0.7+count*0.20).timeout
+	await get_tree().create_timer(0.7+count*0.20, false).timeout
 	pinning = false
 
 func pin_photo(texture: Texture2D, caption := "My snowman is the best!") -> void:

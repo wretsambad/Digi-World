@@ -48,6 +48,7 @@ var _preview_loop_tween: Tween
 @onready var bedroom_view: Marker3D = scene.get_node("BedroomView")
 
 func _ready() -> void:
+	AudioManager.claim_music(self, "neighborhood")
 	play_button.pressed.connect(start_game)
 	animation.animation_finished.connect(_on_preview_finished)
 	animation.speed_scale = preview_speed

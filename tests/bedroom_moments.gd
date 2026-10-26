@@ -52,7 +52,7 @@ func run() -> void:
 	root.get_node("AudioManager").muted = true
 	progress.reset()
 	await bedroom()
-	verify(game.progress_hud.bar.value == 0, "Initial progress must be empty")
+	verify(game.progress_hud.counter.text == "0 / 3 games complete", "Initial progress must be empty")
 	verify(game.progress_hud.icons.size() == 3, "The HUD must show one icon for each game")
 	for icon in game.progress_hud.icons:
 		verify(not icon.completed and icon.status_color() != Color("ff8a3d"), "Unfinished games must have inactive dots")
@@ -77,6 +77,7 @@ func run() -> void:
 		if id == "phone": verify(not prop.global_transform.is_equal_approx(home), "Phone must lift off the table")
 		else: verify(prop.global_transform.is_equal_approx(home), "Photo must finish pinned in its original place")
 		moment._open_lesson()
+		verify(root.get_node("SceneLoading").active, "Object entrances must show loading before changing scenes")
 		await scene_changed
 		await process_frame
 		await process_frame
@@ -111,6 +112,9 @@ func run() -> void:
 	var session: Node = game.computer_lesson
 	session.start()
 	session.set_process(false)
+	session.enter_game()
+	while session.state != "game":
+		await process_frame
 	progress.finish_lesson(progress.PROTECT_YOUR_BASE)
 	session.lesson.lesson_completed.emit()
 	session.state = "return"

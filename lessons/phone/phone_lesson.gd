@@ -46,6 +46,7 @@ var pause_menu: PauseMenu
 
 
 func _ready() -> void:
+	AudioManager.claim_music(self, "phone", 20)
 	first_try.resize(DATA.ROUNDS.size())
 	first_try.fill(true)
 	if GameState.current_lesson != LessonExit.LESSON_ID:
@@ -54,20 +55,11 @@ func _ready() -> void:
 	phone.hint.connect(ui.tip)
 	ui.leave_pressed.connect(leave)
 	ui.replay_pressed.connect(func() -> void: get_tree().reload_current_scene())
-	pause_menu = PauseMenu.new()
-	$UI.add_child(pause_menu)
-	pause_menu.quit_button.text = "Back to my room"
-	pause_menu.quit_requested.connect(leave)
+	pause_menu = GlobalPause.menu
 	glitch.hide()
 	camera.global_transform = _view("arrive")
 	phone.modulate.a = 0.0
 	run()
-
-
-func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
-		pause_menu.open()
-		get_viewport().set_input_as_handled()
 
 
 func run() -> void:
@@ -108,7 +100,7 @@ func play_round(index: int) -> void:
 		first_try[index] = false
 		await _tricked(index, String(outcome[1]))
 	ui.tip("Trick caught!")
-	await get_tree().create_timer(1.1).timeout
+	await get_tree().create_timer(1.1, false).timeout
 	phone.go_lock()
 	await _restore(index)
 	for line: Array in round_.solved:
@@ -125,7 +117,7 @@ func _play_real_message() -> void:
 	var outcome: Array = await phone.case_ended
 	party.choose_song(String(outcome[1]))
 	real_message_answered = true
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1.0, false).timeout
 	phone.go_lock()
 	await ui.say("PIP", "That was a real message! A song choice is fine to share. Enjoy your pick!")
 
@@ -191,7 +183,7 @@ func _restore(index: int) -> void:
 			party.set_piece("decorations", "on")
 			AudioManager.play("build")
 			await _glide("party", 1.6)
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.0, false).timeout
 	ui.set_piece(piece, "on")
 	ui.reveal_glitch(REVEAL_ROWS[index], REVEAL_CAPTIONS[index])
 	if index < DATA.ROUNDS.size() - 1:
@@ -206,9 +198,9 @@ func _flicker_glitch() -> void:
 	for i in 3:
 		glitch.show()
 		AudioManager.play("glitch")
-		await get_tree().create_timer(0.09).timeout
+		await get_tree().create_timer(0.09, false).timeout
 		glitch.hide()
-		await get_tree().create_timer(0.22).timeout
+		await get_tree().create_timer(0.22, false).timeout
 
 
 ## Round 2: static, then two eyes peek round the speaker.
@@ -220,7 +212,7 @@ func _glitch_peeks() -> void:
 	glitch.show()
 	glitch.face(camera.global_position)
 	await glitch.hop_to(party.hideout("speaker_peek"), 0.3, 0.12)
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	await glitch.blink_to(hide_spot)
 	glitch.hide()
 	glitch.jitter_amount = 1.0
@@ -253,18 +245,18 @@ func _finale() -> void:
 	glitch.jitter_amount = 0.3
 	glitch.show()
 	glitch.face(camera.global_position)
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.6, false).timeout
 	await _walk_glitch_to(party.hideout("centre"), 1.5)
 	await _glide("exit", 1.2)
 	exit_walking = true
 	await _walk_glitch_to(party.exit_position(), 4.2)
 	await glitch.vanish()
 	exit_walking = false
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.5, false).timeout
 	exit_finished = true
 	party.set_piece("celebration", "on")
 	ui.set_piece("celebration", "on")
-	AudioManager.play("success")
+	AudioManager.play("complete")
 	await _glide("party", 1.8)
 	await _fade_phone(1.0)
 	ui.hud.show()

@@ -31,7 +31,7 @@ var _loops: Dictionary = {}
 
 
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = Node.PROCESS_MODE_PAUSABLE
 	var groups := {"music": ["music_base", "music_lift"], "wind": ["wind"], "sfx": ["whoosh", "swell", "firework_pop", "firework_crackle", "cheer"]}
 	for group: String in groups:
 		var to_build: Array = []
@@ -47,6 +47,13 @@ func _ready() -> void:
 			# A real base track never gets the synthesized layer on top.
 			to_build.clear()
 		if to_build.is_empty():
+			continue
+		# Release Web builds ship the exact synthesized WAVs. Keep the optional
+		# missing-file fallback usable on single-threaded Web exports as well.
+		if OS.has_feature("web"):
+			for cue: String in to_build:
+				_streams[cue] = _to_stream(_synth(cue), cue in LOOPS)
+				_synthesized[cue] = _streams[cue]
 			continue
 		var results := {}
 		var id := WorkerThreadPool.add_task(func() -> void:

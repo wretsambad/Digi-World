@@ -3,9 +3,7 @@ extends Control
 var game: Node3D
 var panel: PanelContainer
 var counter: Label
-var bar: ProgressBar
 var icons: Array[GameIcon] = []
-var fill_tween: Tween
 
 func setup(owner_game: Node3D) -> void:
 	game = owner_game
@@ -16,58 +14,43 @@ func setup(owner_game: Node3D) -> void:
 	panel.position = Vector2(24, 24)
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var paper := SunsetUI.panel_style()
-	paper.content_margin_left = 18
-	paper.content_margin_right = 18
-	paper.content_margin_top = 12
-	paper.content_margin_bottom = 12
+	paper.content_margin_left = 12
+	paper.content_margin_right = 12
+	paper.content_margin_top = 10
+	paper.content_margin_bottom = 10
+	paper.shadow_size = 8
+	paper.shadow_offset = Vector2(0, 4)
 	panel.add_theme_stylebox_override("panel", paper)
 	add_child(panel)
 	var column := VBoxContainer.new()
-	column.add_theme_constant_override("separation", 10)
+	column.add_theme_constant_override("separation", 6)
 	panel.add_child(column)
-	counter = SunsetUI.label("", 19, "title")
+	counter = SunsetUI.label("", 15, "title")
 	counter.autowrap_mode = TextServer.AUTOWRAP_OFF
 	column.add_child(counter)
 	var row := HBoxContainer.new()
-	row.add_theme_constant_override("separation", 16)
+	row.add_theme_constant_override("separation", 8)
 	column.add_child(row)
 	for i in range(3):
 		var icon := GameIcon.new()
 		icon.kind = i
-		icon.custom_minimum_size = Vector2(68, 68)
+		icon.custom_minimum_size = Vector2(44, 44)
 		icon.mouse_filter = Control.MOUSE_FILTER_PASS
 		row.add_child(icon)
 		icons.append(icon)
-	bar = ProgressBar.new()
-	bar.custom_minimum_size = Vector2(236, 6)
-	bar.max_value = 3
-	bar.show_percentage = false
-	bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	for key in ["background", "fill"]:
-		var style := StyleBoxFlat.new()
-		style.bg_color = SunsetUI.TANGERINE if key == "fill" else SunsetUI.PLUM_DEEP
-		style.set_corner_radius_all(3)
-		bar.add_theme_stylebox_override(key, style)
-	column.add_child(bar)
 	GameState.lesson_finished.connect(_on_finished)
-	refresh(false)
+	refresh()
 
 func _on_finished(_lesson_id: String) -> void:
-	refresh(true)
+	refresh()
 
-func refresh(animated: bool = true) -> void:
+func refresh() -> void:
 	var count := GameState.bedroom_completed_count()
 	counter.text = "%d / 3 games complete" % count
 	for i in range(icons.size()):
 		icons[i].completed = GameState.is_complete(GameState.BEDROOM_LESSONS[i])
 		icons[i].tooltip_text = ["Computer", "Sharing board", "Phone"][i] + (" — Complete" if icons[i].completed else " — Not completed")
 		icons[i].queue_redraw()
-	if fill_tween: fill_tween.kill()
-	if animated:
-		fill_tween = create_tween()
-		fill_tween.tween_property(bar, "value", float(count), .45).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	else:
-		bar.value = count
 
 func _process(_delta: float) -> void:
 	panel.visible = game.phase in [game.Phase.PLAYING, game.Phase.WAITING, game.Phase.MOMENT]
@@ -80,6 +63,7 @@ class GameIcon extends Control:
 		return SunsetUI.TANGERINE if completed else SunsetUI.CREAM_MUTED.darkened(.45)
 
 	func _draw() -> void:
+		draw_set_transform(Vector2.ZERO, 0.0, size / Vector2(68, 68))
 		var ink := SunsetUI.CREAM
 		var accent := SunsetUI.BUTTER
 		var stroke := 2.5
