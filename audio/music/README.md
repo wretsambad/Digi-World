@@ -39,6 +39,13 @@ captions. They stop on completion, skip, cancel, hiding and pause; delayed text,
 whitespace, bedroom prompts and button captions stay quiet. Existing sound,
 volume and pause controls apply to all audio.
 
+Settings also has a separate Music switch. It mutes the shared Music bus,
+including party speakers and finale music, while leaving effects and typing
+audible. It preserves playback positions and the independent master Sound
+setting. In browsers, autoplay is attempted as soon as the engine initializes;
+if browser policy blocks it, the home screen offers Turn sound on and any
+click, tap or key can unlock audio without starting the game.
+
 To regenerate, install NumPy and put FFmpeg on PATH, then run:
 
 ```powershell

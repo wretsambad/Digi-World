@@ -316,6 +316,7 @@ func _build_speaker() -> void:
 	_make_speaker(Vector3(2.8, 0, -2.0), -0.25)
 	_make_speaker(Vector3(-4.5, 0, 1.0), 0.65)
 	_music = AudioStreamPlayer.new()
+	_music.bus = &"Music"
 	_music.stream = _party_tune()
 	_music.volume_db = -14.0
 	add_child(_music)

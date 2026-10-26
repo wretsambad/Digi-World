@@ -27,6 +27,7 @@ func owner() -> Node:
 
 func run() -> void:
 	audio = root.get_node("AudioManager")
+	verify(AudioServer.get_bus_index(&"Music") > 0, "Music has no separate audio bus")
 	for key: String in audio.MUSIC:
 		var stream := load(audio.MUSIC[key]) as AudioStreamOggVorbis
 		verify(stream != null and stream.get_length() > 30.0, key + ": music missing or too short")
@@ -72,6 +73,7 @@ func run() -> void:
 	await settle(.1)
 	verify(audio.current_music.is_empty() and speakers._music.playing,
 		"Party speakers did not take over, or failed to start while muted")
+	verify(speakers._music.bus == &"Music", "Party speakers bypass the music setting")
 	audio.muted = false
 	verify(speakers._music.playing, "Unmuting left the party silent")
 	speakers.choose_song("snowman")
@@ -107,6 +109,24 @@ func run() -> void:
 	verify(AudioServer.is_bus_mute(0), "Sound toggle left background music audible")
 	audio.muted = false
 	verify(not AudioServer.is_bus_mute(0), "Sound toggle did not restore audio")
+	var menu: Control = root.get_node("GlobalPause").menu
+	menu.show_settings()
+	menu.music_button.pressed.emit()
+	verify(audio.music_muted and AudioServer.is_bus_mute(AudioServer.get_bus_index(&"Music")),
+		"Music setting did not mute the music bus")
+	verify(not audio.muted and not AudioServer.is_bus_mute(0) and player.playing,
+		"Music setting muted everything or stopped the loop")
+	audio.play("correct")
+	var effect: AudioStreamPlayer = audio.get_child(audio.get_child_count() - 1)
+	verify(effect.playing and effect.bus != &"Music", "Music setting silenced sound effects")
+	verify(menu.music_button.text == "Music: off", "Music setting label did not update")
+	menu.music_button.pressed.emit()
+	verify(not audio.music_muted and not AudioServer.is_bus_mute(AudioServer.get_bus_index(&"Music")),
+		"Music setting did not restore music")
+	var finale_audio: Node = load("res://finale/finale_audio.gd").new()
+	verify(finale_audio._bus("music_base") == &"Music" and finale_audio._bus("firework_pop") != &"Music",
+		"Finale music and sound effects are not separate")
+	finale_audio.free()
 
 	# Interrupt a fade several times. An obsolete completion callback must never
 	# stop the player that was reused for the newest request.

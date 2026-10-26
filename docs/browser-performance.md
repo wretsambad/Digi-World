@@ -85,5 +85,25 @@ godot --headless --path . --script res://tests/static_scenery.gd
 
 The browser release was also opened in Chrome and checked through the opening
 flight into the bedroom. Single-threaded Web audio uses Godot's default Sample
-playback, and audio starts after user interaction. See the official
+playback. The shell attempts autoplay immediately; browsers that block it show
+"Turn sound on" on the home screen. Any click, tap or key can unlock the same
+engine audio context without pressing Play. Focus and visibility changes retry
+an interrupted context across all scenes. Browser autoplay restrictions still
+require a user gesture where the browser enforces one. See the official
 [Web export documentation](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_web.html).
+
+Settings has independent Sound (master) and Music switches. Background tracks,
+phone party speakers and finale music use the Music bus; effects and typing
+remain audible when only Music is off. Volume and pause still apply globally.
+
+Audio startup checks load the opening, bedroom, treehouse, both Sharing Board
+rounds and phone scene without sending input. Chrome tests cover allowed and
+blocked autoplay, touch, keyboard and interruption recovery using fresh browser
+contexts and the built assets. They require Playwright and a Chrome executable
+(`CHROME_BIN` overrides the Windows default):
+
+```powershell
+godot --headless --path . --script res://tests/music_startup.gd
+godot --headless --path . --script res://tests/music_flow.gd
+node tests/web_audio.cjs
+```

@@ -17,6 +17,7 @@ var resume_button: Button
 var settings_button: Button
 var bedroom_button: Button
 var sound_button: Button
+var music_button: Button
 var fullscreen_button: Button
 var settings_back: Button
 var volume_slider: HSlider
@@ -100,6 +101,10 @@ func _build_settings() -> void:
 	sound_button.name = "SoundButton"
 	sound_button.pressed.connect(_toggle_sound)
 	settings_content.add_child(sound_button)
+	music_button = _menu_button("")
+	music_button.name = "MusicButton"
+	music_button.pressed.connect(_toggle_music)
+	settings_content.add_child(music_button)
 	volume_label = SunsetUI.label("Volume", 22)
 	settings_content.add_child(volume_label)
 	volume_slider = HSlider.new()
@@ -205,7 +210,7 @@ func show_settings() -> void:
 	main_content.hide()
 	settings_content.show()
 	_refresh_settings()
-	_focus_cycle([sound_button, volume_slider, fullscreen_button, settings_back])
+	_focus_cycle([sound_button, music_button, volume_slider, fullscreen_button, settings_back])
 	_layout()
 	sound_button.grab_focus()
 
@@ -236,6 +241,11 @@ func _toggle_sound() -> void:
 	_refresh_settings()
 
 
+func _toggle_music() -> void:
+	AudioManager.music_muted = not AudioManager.music_muted
+	_refresh_settings()
+
+
 func _set_volume(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(maxf(value / 100.0, 0.0001)))
 	volume_label.text = "Volume: %d%%" % roundi(value)
@@ -249,6 +259,7 @@ func _toggle_fullscreen() -> void:
 
 func _refresh_settings() -> void:
 	sound_button.text = "Sound: off" if AudioManager.muted else "Sound: on"
+	music_button.text = "Music: off" if AudioManager.music_muted else "Music: on"
 	var value := roundi(db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))) * 100.0)
 	volume_slider.set_value_no_signal(value)
 	volume_label.text = "Volume: %d%%" % value

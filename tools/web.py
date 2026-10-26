@@ -54,6 +54,7 @@ def build(args):
     OUTPUT.mkdir(parents=True, exist_ok=True)
     shutil.copy2(ROOT / "neighborhood_assets/preview/logo_globe.svg", OUTPUT / "loading-brand.svg")
     shutil.copy2(ROOT / "neighborhood_assets/preview/fonts/Fredoka.ttf", OUTPUT / "Fredoka.ttf")
+    shutil.copy2(ROOT / "web/audio-start.js", OUTPUT / "audio-start.js")
     # Exported scripts can load other scripts by name, including global classes.
     # Include the runtime code explicitly; editor dependency caches are incomplete
     # for these references when only selected scenes are exported.

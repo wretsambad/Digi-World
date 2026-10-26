@@ -75,6 +75,24 @@
     }
     #retry:hover { background: #ffa15c; }
     #retry:focus-visible { outline: 3px solid var(--butter); outline-offset: 5px; }
+    #enable-audio {
+      position: fixed;
+      z-index: 5;
+      left: max(24px, env(safe-area-inset-left));
+      bottom: max(24px, env(safe-area-inset-bottom));
+      max-width: calc(100% - 48px);
+      min-height: 48px;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--plum);
+      color: var(--butter);
+      box-shadow: 0 4px 14px rgb(0 0 0 / 24%);
+      font: 600 18px/1.3 Fredoka, sans-serif;
+      cursor: pointer;
+    }
+    #enable-audio:hover { background: var(--plum-soft); }
+    #enable-audio:focus-visible { outline: 3px solid var(--butter); outline-offset: 4px; }
     noscript { position: fixed; inset: 0; z-index: 20; display: grid; place-items: center; padding: 32px; background: var(--plum-deep); text-align: center; }
     @media (prefers-reduced-motion: reduce) {
       #loading { transition: none; }
@@ -84,6 +102,7 @@
 </head>
 <body>
   <canvas id="canvas" tabindex="0" aria-label="DigiWorld game" aria-busy="true">Your browser does not support the game canvas.</canvas>
+  <button id="enable-audio" type="button" hidden>Turn sound on</button>
   <section id="loading" aria-label="Loading DigiWorld">
     <div class="loading-content">
       <img class="loading-logo" src="loading-brand.svg" width="520" height="280" alt="">
@@ -95,6 +114,7 @@
     </div>
   </section>
   <noscript>DigiWorld needs JavaScript to play. Enable it, then reload this page.</noscript>
+  <script src="audio-start.js"></script>
   <script>
     (() => {
       const overlay = document.getElementById('loading');
@@ -125,6 +145,7 @@
         },
         ready() {
           started = true;
+          window.digiAudio?.ready();
           canvas.setAttribute('aria-busy', 'false');
           overlay.classList.add('is-ready');
           hideTimer = setTimeout(() => { overlay.hidden = true; }, 200);
@@ -163,7 +184,7 @@
   <script src="index.js" onerror="digiLoading.failed('Game download failed')"></script>
   <script>
     if (typeof Engine !== 'undefined') {
-      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":29905216,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+      const config = {"args":[],"canvasResizePolicy":2,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":29905960,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
       const missing = Engine.getMissingFeatures({threads: false});
       if (missing.length) {
         digiLoading.failed('Missing browser features: ' + missing.join(', '));

@@ -8,8 +8,15 @@ var muted: bool = false:
 	set(value):
 		muted = value
 		AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), value)
+var music_muted: bool = false:
+	set(value):
+		music_muted = value
+		var index := AudioServer.get_bus_index(&"Music")
+		if index >= 0:
+			AudioServer.set_bus_mute(index, value)
 var _cache: Dictionary = {}
 const RATE := 22050
+const MUSIC_LAYOUT := preload("res://default_bus_layout.tres")
 const CUE_GAIN_DB := {"snap": -6.0, "build": -3.0, "type": -5.0, "stitch": -4.0}
 var _last_snap_msec := -1000
 var _last_type_msec := -1000
@@ -33,6 +40,11 @@ var _music_fade: Tween
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_PAUSABLE
+	var music_bus := AudioServer.get_bus_index(&"Music")
+	if music_bus < 0:
+		AudioServer.set_bus_layout(MUSIC_LAYOUT)
+		music_bus = AudioServer.get_bus_index(&"Music")
+	AudioServer.set_bus_mute(music_bus, music_muted)
 	for i in 2:
 		var player := AudioStreamPlayer.new()
 		player.name = "BackgroundMusic%d" % i
