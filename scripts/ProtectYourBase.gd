@@ -8,6 +8,7 @@ signal leave_requested
 signal lesson_completed
 
 const DATA_PATH := "res://data/protect_your_base.json"
+const FENCE_JUMP_HEIGHT := 1.6
 const TREEHOUSE := preload("res://scenes/treehouse/treehouse.tscn")
 const PIP := preload("res://scenes/pip/pip.tscn")
 const GLITCH := preload("res://scenes/glitch/glitch.tscn")
@@ -325,7 +326,7 @@ func _event_jumps_fence() -> void:
 	await _approach_deck_gate()
 	await glitch.bonk(Vector3(0, 0, -1))
 	# Jump over the short deck gate, then reach an unprotected cabin window.
-	await glitch.hop_to(Vector3(2.3, TreehouseBase.DECK_WALK_HEIGHT, 5.3), 0.5, 1.6)
+	await glitch.hop_to(Vector3(2.3, TreehouseBase.DECK_WALK_HEIGHT, 5.3), 0.5, FENCE_JUMP_HEIGHT)
 	await glitch.run_to(Vector3(2.3, TreehouseBase.DECK_WALK_HEIGHT, 3.1), 5.0)
 	await glitch.run_to(Vector3(-1.75, TreehouseBase.DECK_WALK_HEIGHT, 2.8), 5.0)
 	await glitch.hop_to(Vector3(-1.75, 7.45, 2.65), 0.35, 0.4)
@@ -364,8 +365,8 @@ func _event_runs_away() -> void:
 		var tip: Vector3 = branch[1]
 		var start: Vector3 = branch[0]
 		var direction := (tip - start).normalized()
-		var contact := base.branch_barrier_point(index) + direction * (0.65 * TreehouseBase.BRANCH_SHIELD_SCALE)
-		await glitch.hop_to(tip + Vector3.UP * 0.12, 0.35, 0.4)
+		var contact := base.branch_barrier_point(index) + direction * 0.65
+		await glitch.hop_to(tip + direction * 0.95 + Vector3.UP * 0.12, 0.35, 0.4)
 		await glitch.hop_to(contact, 0.3, 0.12)
 		await glitch.bonk(-direction)
 		camera.shake(0.07)

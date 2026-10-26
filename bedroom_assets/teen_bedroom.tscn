@@ -195,6 +195,45 @@ roughness = 0.9
 material = SubResource("StandardMaterial3D_b0uqw")
 size = Vector3(1.36, 0.95, 0.025)
 
+[sub_resource type="StandardMaterial3D" id="fixture_bulb"]
+albedo_color = Color(1, 0.91, 0.7, 1)
+roughness = 0.8
+cull_mode = 2
+emission_enabled = true
+emission = Color(1, 0.78, 0.42, 1)
+emission_energy_multiplier = 2.2
+
+[sub_resource type="StandardMaterial3D" id="strip_bulbs"]
+albedo_color = Color(1, 0.84, 0.46, 1)
+roughness = 0.65
+cull_mode = 2
+emission_enabled = true
+emission = Color(1, 0.66, 0.24, 1)
+emission_energy_multiplier = 2.6
+
+[sub_resource type="StandardMaterial3D" id="door_handle_metal"]
+albedo_color = Color(0.64, 0.69, 0.73, 1)
+metallic = 0.65
+roughness = 0.32
+
+[sub_resource type="CylinderMesh" id="door_handle_rosette"]
+material = SubResource("door_handle_metal")
+top_radius = 0.043
+bottom_radius = 0.043
+height = 0.018
+radial_segments = 20
+
+[sub_resource type="CylinderMesh" id="door_handle_stem"]
+material = SubResource("door_handle_metal")
+top_radius = 0.015
+bottom_radius = 0.015
+height = 0.065
+radial_segments = 12
+
+[sub_resource type="BoxMesh" id="door_handle_lever"]
+material = SubResource("door_handle_metal")
+size = Vector3(0.16, 0.032, 0.032)
+
 [node name="TeenBedroom" type="Node3D" unique_id=218072624]
 script = ExtResource("1_c5ypq")
 metadata/separate_scene = true
@@ -466,6 +505,22 @@ transform = Transform3D(1.3294904, 0, -0.17364818, 0, 1.2, 0, 0.23442504, 0, 0.9
 
 [node name="door_leaf_Mesh" parent="LearningHouseDetailed/BedroomInterior/Architecture/Door_Ajar" index="0" unique_id=1062055059]
 transform = Transform3D(0.9391078, 0, 0.3436231, 0, 0.99999976, 0, -0.3436232, 0, 0.9391076, 0.014261246, 0, -0.0033893585)
+
+[node name="InteriorHandle" type="Node3D" parent="LearningHouseDetailed/BedroomInterior/Architecture/Door_Ajar/door_leaf_Mesh"]
+position = Vector3(0.82, 1, -0.032)
+
+[node name="Rosette" type="MeshInstance3D" parent="LearningHouseDetailed/BedroomInterior/Architecture/Door_Ajar/door_leaf_Mesh/InteriorHandle"]
+rotation = Vector3(1.5707963, 0, 0)
+mesh = SubResource("door_handle_rosette")
+
+[node name="Stem" type="MeshInstance3D" parent="LearningHouseDetailed/BedroomInterior/Architecture/Door_Ajar/door_leaf_Mesh/InteriorHandle"]
+position = Vector3(0, 0, -0.035)
+rotation = Vector3(1.5707963, 0, 0)
+mesh = SubResource("door_handle_stem")
+
+[node name="Lever" type="MeshInstance3D" parent="LearningHouseDetailed/BedroomInterior/Architecture/Door_Ajar/door_leaf_Mesh/InteriorHandle"]
+position = Vector3(-0.06, 0, -0.068)
+mesh = SubResource("door_handle_lever")
 
 [node name="WestWindow" type="Node3D" parent="LearningHouseDetailed/BedroomInterior/Architecture" unique_id=1668807703]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -3.2099996, 0, -0.29999924)
@@ -918,7 +973,28 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 3.235, 2.07, -1.99)
 transform = Transform3D(0, 0, -0.78, 0, 0.78, 0, 0.78, 0, 0, 3.235, 2.12, -0.95)
 
 [node name="fairy_lights_191" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails" unique_id=1886521269 instance=ExtResource("56_qvvc0")]
-transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 3.235, 2.72, -1.64)
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 3.19, 2.72, -1.64)
+
+[node name="fairy_lights_Mesh" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191" index="0"]
+surface_material_override/1 = SubResource("strip_bulbs")
+
+[node name="StripGlowLeft" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191"]
+position = Vector3(-0.95, 0.04, -0.1)
+light_color = Color(1, 0.72, 0.38, 1)
+light_energy = 0.16
+omni_range = 1.2
+
+[node name="StripGlowCenter" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191"]
+position = Vector3(0, 0.05, -0.1)
+light_color = Color(1, 0.72, 0.38, 1)
+light_energy = 0.16
+omni_range = 1.2
+
+[node name="StripGlowRight" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191"]
+position = Vector3(0.95, 0.18, -0.1)
+light_color = Color(1, 0.72, 0.38, 1)
+light_energy = 0.16
+omni_range = 1.2
 
 [node name="poster_make_192" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails" unique_id=1389829358 instance=ExtResource("57_1g8bi")]
 transform = Transform3D(-0.82, 0, 0, 0, 0.82, 0, 0, 0, -0.82, -1.1, 1.67, 3.6750002)
@@ -938,18 +1014,22 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -3.12, 1.07, 0.66)
 [node name="pendant_197" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails" unique_id=1793595908 instance=ExtResource("59_l66ok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.53, 0)
 
+[node name="pendant_Mesh" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/pendant_197" index="0"]
+surface_material_override/2 = SubResource("fixture_bulb")
+
+[node name="PendantLight" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/pendant_197"]
+position = Vector3(0, -0.65, 0)
+light_color = Color(1, 0.88, 0.73, 1)
+light_energy = 0.85
+shadow_enabled = true
+omni_range = 10.0
+
 [node name="WindowFill" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior" unique_id=429341417]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8599997, 2, -0.3)
 light_color = Color(1, 0.94, 0.84, 1)
 light_energy = 0.3
 shadow_enabled = true
 omni_range = 8.0
-
-[node name="CeilingFill" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior" unique_id=1125713594]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13, 0)
-light_color = Color(1, 0.88, 0.73, 1)
-light_energy = 0.68
-omni_range = 12.0
 
 [node name="DeskGlow" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior" unique_id=1346662925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.55, 1.17, -3.18)

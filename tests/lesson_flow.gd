@@ -181,7 +181,15 @@ func finish() -> void:
 	for guard in game.base.branch_guards:
 		var blocker: MeshInstance3D = guard.get_node("ClimbBlocker")
 		verify((blocker.mesh as CylinderMesh).top_radius > 1.0, "Branch barrier is only a thin sleeve")
-		verify(is_equal_approx(guard.scale.x * (blocker.mesh as CylinderMesh).top_radius * 2.0, 4.35), "Branch shield must be 1.5 times its original diameter")
+		var bounds: AABB = blocker.global_transform * blocker.get_aabb()
+		verify(bounds.size.z > 4.35, "Branch shield must be broader than the old shield")
+		var jump_top: float = guard.global_position.y + ProtectYourBase.FENCE_JUMP_HEIGHT + GlitchActor.PIXEL * GlitchActor.ART.size()
+		verify(bounds.end.y > jump_top + 0.5, "The fence jump should not clear the branch shield")
+		for part: MeshInstance3D in guard.get_children():
+			var part_bounds: AABB = part.global_transform * part.get_aabb()
+			verify(part_bounds.position.y > 0.1, "Branch shield penetrates the ground")
+			for floor_box in floor_boxes:
+				verify(not part_bounds.intersects(floor_box), "Branch shield penetrates a deck floor")
 		verify(guard.has_node("OverhangingLip"), "Branch barrier needs an overhanging lip")
 	verify(dialogue_checked and customize_checked and clear_scene_checked, "Clear scene and compact dialogue checks were not exercised")
 	verify(GameState.is_complete(GameState.PROTECT_YOUR_BASE), "Lesson not marked complete")

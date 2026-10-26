@@ -59,7 +59,7 @@ func _build_screen_and_overlay() -> void:
 	viewport.name = "MonitorViewport"
 	# Warm the lightweight monitor target before exploration begins, so its
 	# allocation doesn't interrupt the first camera-animation frame.
-	viewport.size = RENDER_SIZE
+	viewport.size = GraphicsQuality.monitor_size(RENDER_SIZE)
 	viewport.size_2d_override = UI_SIZE
 	viewport.size_2d_override_stretch = true
 	viewport.msaa_3d = Viewport.MSAA_4X
@@ -123,6 +123,7 @@ func _build_screen_and_overlay() -> void:
 	overlay.add_child(continue_button)
 	continue_button.hide()
 	get_viewport().size_changed.connect(_fit_container)
+	GraphicsQuality.changed.connect(_fit_container)
 
 
 func _ensure_lesson() -> bool:
@@ -268,6 +269,10 @@ func _celebrate(t: float) -> void:
 
 func _fit_container() -> void:
 	if viewport.get_parent() != container:
+		var target := GraphicsQuality.monitor_size(RENDER_SIZE)
+		if viewport.size != target:
+			viewport.size = target
+			if state == "idle": viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 		return
 	var view := get_viewport().get_visible_rect().size
 	# Expand the lesson's logical canvas to the window's aspect ratio. The
@@ -275,7 +280,7 @@ func _fit_container() -> void:
 	var ui_scale := minf(view.x / UI_SIZE.x, view.y / UI_SIZE.y)
 	viewport.size_2d_override = Vector2i((view / ui_scale).round())
 	var display_scale := get_viewport().get_stretch_transform().get_scale()
-	var render_size := Vector2i((view * display_scale).round())
+	var render_size := GraphicsQuality.monitor_size(Vector2i((view * display_scale).round()))
 	viewport.size = render_size
 	container.position = Vector2.ZERO
 	container.size = render_size
@@ -344,7 +349,7 @@ func return_to_room() -> void:
 	container.hide()
 	backdrop.hide()
 	viewport.reparent(self)
-	viewport.size = RENDER_SIZE
+	viewport.size = GraphicsQuality.monitor_size(RENDER_SIZE)
 	viewport.size_2d_override = UI_SIZE
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	AudioManager.play("success")

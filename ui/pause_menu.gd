@@ -19,6 +19,7 @@ var bedroom_button: Button
 var sound_button: Button
 var music_button: Button
 var fullscreen_button: Button
+var graphics_button: Button
 var settings_back: Button
 var volume_slider: HSlider
 var volume_label: Label
@@ -129,6 +130,13 @@ func _build_settings() -> void:
 	fullscreen_button.name = "FullscreenButton"
 	fullscreen_button.pressed.connect(_toggle_fullscreen)
 	settings_content.add_child(fullscreen_button)
+	graphics_button = _menu_button("")
+	graphics_button.name = "GraphicsButton"
+	graphics_button.pressed.connect(func() -> void:
+		var modes := GraphicsQuality.MODES
+		GraphicsQuality.set_mode(modes[(modes.find(GraphicsQuality.mode) + 1) % modes.size()]))
+	settings_content.add_child(graphics_button)
+	GraphicsQuality.changed.connect(_refresh_settings)
 	settings_back = _menu_button("Back", true)
 	settings_back.pressed.connect(show_main)
 	settings_content.add_child(settings_back)
@@ -210,7 +218,7 @@ func show_settings() -> void:
 	main_content.hide()
 	settings_content.show()
 	_refresh_settings()
-	_focus_cycle([sound_button, music_button, volume_slider, fullscreen_button, settings_back])
+	_focus_cycle([sound_button, music_button, volume_slider, fullscreen_button, graphics_button, settings_back])
 	_layout()
 	sound_button.grab_focus()
 
@@ -264,3 +272,4 @@ func _refresh_settings() -> void:
 	volume_slider.set_value_no_signal(value)
 	volume_label.text = "Volume: %d%%" % value
 	fullscreen_button.text = "Fullscreen: on" if get_tree().root.mode in [Window.MODE_FULLSCREEN, Window.MODE_EXCLUSIVE_FULLSCREEN] else "Fullscreen: off"
+	graphics_button.text = "Graphics: " + GraphicsQuality.description()

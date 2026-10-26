@@ -73,6 +73,7 @@ func setup(room: Node3D, camera: Camera3D) -> void:
 	overlay.material = material
 	canvas.add_child(overlay)
 	get_viewport().size_changed.connect(resize_mask)
+	GraphicsQuality.changed.connect(resize_mask)
 	resize_mask()
 	set_lessons([])
 
@@ -105,7 +106,10 @@ func resize_mask() -> void:
 	# under canvas-item stretch, which would soften and mis-size the edge mask.
 	var dimensions := get_window().size
 	if dimensions.x <= 0 or dimensions.y <= 0: dimensions = Vector2i(get_viewport().get_visible_rect().size)
-	mask_view.size = dimensions.max(Vector2i(2,2))
+	mask_view.size = GraphicsQuality.mask_size(dimensions)
+	# The mask already has its own pixel budget; a second scaling pass would
+	# soften silhouettes again without saving useful work.
+	mask_view.scaling_3d_scale = 1.0
 	overlay.material.set_shader_parameter("mask_pixel", Vector2.ONE/Vector2(mask_view.size))
 
 func _process(_delta: float) -> void:

@@ -7,11 +7,14 @@ var _generation := 0
 var _web: JavaScriptObject
 var _surface: ColorRect
 var _title: Label
+var _scenery_waiters := 0
+var _scenery_views: Dictionary = {}
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	layer = 2048
 	if OS.has_feature("web"):
+		active = true
 		_web = JavaScriptBridge.get_interface("digiLoading")
 	if _web == null:
 		_surface = ColorRect.new()
@@ -45,8 +48,12 @@ func _ready() -> void:
 	_finish_boot.call_deferred()
 
 func _finish_boot() -> void:
+	# Main-scene nodes have entered the tree by this first process tick.
+	await get_tree().process_frame
+	await _wait_for_scenery()
 	await _draw_frame()
 	if _generation == 0 and _web != null:
+		active = false
 		_web.ready()
 
 func present(title: String) -> void:
@@ -69,9 +76,31 @@ func _draw_frame() -> void:
 
 func finish() -> void:
 	var ticket := _generation
+	await _wait_for_scenery()
 	await _draw_frame()
 	if ticket == _generation:
 		dismiss()
+
+func _wait_for_scenery() -> void:
+	_scenery_waiters += 1
+	while true:
+		var pending := false
+		for batch in get_tree().get_nodes_in_group("scenery_preparing"):
+			if batch.enabled and not batch.finished:
+				pending = true
+				# The loading surface covers this scene. Avoid thousands of
+				# unbatched draw calls on every cooperative preparation frame.
+				var view: Viewport = batch.get_viewport()
+				if not _scenery_views.has(view):
+					_scenery_views[view] = view.disable_3d
+					view.disable_3d = true
+		if not pending: break
+		await get_tree().process_frame
+	_scenery_waiters -= 1
+	if _scenery_waiters == 0:
+		for view: Viewport in _scenery_views:
+			if is_instance_valid(view): view.disable_3d = _scenery_views[view]
+		_scenery_views.clear()
 
 func dismiss() -> void:
 	active = false

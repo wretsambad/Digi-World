@@ -26,6 +26,43 @@ explicit. The browser loading bar animates through CSS rather than game code.
 
 ## Rendering
 
+`GraphicsQuality` defaults to Auto. Browsers with at most four logical CPU
+cores or 4 GB of reported memory start at Low; other browsers start Balanced.
+Unavailable hints select Balanced. Auto steps down after two four-second
+gameplay windows below 30 FPS, with a warmup after scene changes. Loading,
+pausing and unfocused windows are excluded. It never oscillates back up.
+Settings → Graphics cycles Auto, Low, Balanced and High and saves the choice.
+For a direct test or a lighter shared link, append `?quality=low` to the URL;
+this overrides the saved preference for that visit without saving it.
+
+| Budget | Low | Balanced | High |
+| --- | --- | --- | --- |
+| 3D scale | 70%, longest edge ≤1280 px | 85%, longest edge ≤1920 px | Native |
+| Embedded monitor target | Longest edge ≤1280 px | Longest edge ≤1600 px | Native |
+| Outline mask | Longest edge ≤960 px | Longest edge ≤1440 px | Native |
+| Decorative particles | 25% | 55% | Authored density |
+| Web particle prewarming | ≤0.25 s | ≤1 s | ≤2 s |
+| Multisample AA | Off | At most 2× | Authored setting |
+| Sun shadow map | At most 1024² | At most 2048² | Project setting |
+
+The root canvas/UI keeps its full resolution; Godot's bilinear
+[3D resolution scaling](https://docs.godotengine.org/en/stable/tutorials/3d/resolution_scaling.html)
+reduces only the world buffers. Monitor UI shares its capped target. Low also
+uses earlier mesh LODs, smaller local shadow atlases and disables local-light
+shadows while retaining directional shadows. Gameplay, collisions, lesson
+timing and camera framing are unchanged. High restores the authored settings.
+
+Scenery preparation yields between chunks on Web (a 4 ms target, checked
+between meshes and batches). Startup and lesson loading wait for that work
+before revealing the scene.
+Covered viewports suspend 3D drawing during preparation, avoiding repeated
+unbatched renders; their previous rendering state is restored before reveal.
+Individual resource parsing, mesh conversion, scene instantiation and driver
+shader compilation can still take longer;
+these changes reduce stalls but cannot guarantee every browser stays responsive
+on every machine. Native measurements on a dedicated GPU do not establish
+low-end browser frame rates.
+
 Static scenery uses spatial MultiMeshes in 12-meter cells. Nearby repeated
 meshes share draw calls; animated, scripted, interactive and transparent
 branches stay separate. The winter neighborhood now uses the same batching
@@ -81,6 +118,7 @@ godot --path . --rendering-method gl_compatibility res://tests/sharing_winter_fl
 godot --headless --path . res://tests/finale_flow.tscn
 godot --headless --path . --script res://tests/pause_flow.gd
 godot --headless --path . --script res://tests/static_scenery.gd
+godot --headless --path . --script res://tests/graphics_quality.gd
 ```
 
 The browser release was also opened in Chrome and checked through the opening

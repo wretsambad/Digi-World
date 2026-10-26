@@ -17,6 +17,8 @@ func snapshot(label: String) -> void:
 		get_viewport().get_texture().get_image().save_png("res://work/review/computer_" + label + ".png")
 
 func _ready() -> void:
+	var original_graphics := GraphicsQuality.mode
+	GraphicsQuality.set_mode("high", false)
 	capture = "--capture" in OS.get_cmdline_user_args()
 	DirAccess.make_dir_recursive_absolute("res://work/review")
 	AudioManager.muted = true
@@ -80,6 +82,13 @@ func _ready() -> void:
 			var logical := Vector2(session.viewport.size_2d_override)
 			verify(absf(logical.aspect() - view.aspect()) < 0.002, "UI and world aspect ratios must match at " + str(dimensions))
 			await snapshot("fullscreen_%dx%d_scaled_%s" % [dimensions.x, dimensions.y, scaled_canvas])
+	GraphicsQuality.set_mode("low", false)
+	get_window().size = Vector2i(1920, 1080)
+	await get_tree().process_frame
+	session._fit_container()
+	verify(session.viewport.size == Vector2i(1280, 720), "Low mode should cap the embedded game at 720p")
+	verify(session.viewport.msaa_3d == Viewport.MSAA_DISABLED, "Low mode should remove the expensive multisample target")
+	await snapshot("fullscreen_low")
 	# Check that pointer coordinates still reach the UI after scaling the
 	# high-resolution texture back into the window's logical canvas.
 	var play_rect: Rect2 = session.lesson.ui.play_button.get_global_rect()
@@ -99,6 +108,7 @@ func _ready() -> void:
 		await snapshot("native_resolution_gameplay")
 	session.return_to_room()
 	await get_tree().create_timer(0.6).timeout
-	verify(session.viewport.size == session.RENDER_SIZE and session.viewport.size_2d_override == session.UI_SIZE, "Returning must restore the monitor's aspect ratio")
+	verify(session.viewport.size == GraphicsQuality.monitor_size(session.RENDER_SIZE) and session.viewport.size_2d_override == session.UI_SIZE, "Returning must restore the monitor's aspect ratio")
+	GraphicsQuality.set_mode(original_graphics, false)
 	print("COMPUTER PRESENTATION ", "PASS" if failures.is_empty() else "FAIL ", failures)
 	get_tree().quit(0 if failures.is_empty() else 1)

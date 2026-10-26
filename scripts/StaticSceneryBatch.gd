@@ -11,22 +11,34 @@ extends Node
 @export var optimize_palettes := true
 ## Only explicitly reviewed, opaque shaders with no per-node animation.
 @export var static_shaders: Array[Shader] = []
+## Return control to the browser regularly instead of one long scenery build.
+@export var cooperative_build := OS.has_feature("web")
+@export var frame_budget_usec := 4000
 
 var source_count := 0
 var batch_count := 0
+var finished := false
+var yield_count := 0
+var _slice_started := 0
 var _excluded: Array[Node] = []
 var _mesh_cache: Dictionary = {}
 var _lod_cache: Dictionary = {}
 var _built := false
 var _palette = preload("res://scripts/StaticMeshPalette.gd").new()
 
+func _enter_tree() -> void:
+	add_to_group("scenery_preparing")
+
 func _ready() -> void:
 	if enabled:
 		call_deferred("_build")
+	else:
+		finished = true
 
 func _build() -> void:
 	if _built: return
 	_built = true
+	_slice_started = Time.get_ticks_usec()
 	for path in excluded_paths:
 		var node := get_node_or_null(path)
 		if node != null: _excluded.append(node)
@@ -34,9 +46,10 @@ func _build() -> void:
 		var root_node := get_node_or_null(path) as Node3D
 		if root_node == null: continue
 		var sources: Array[MeshInstance3D] = []
-		_collect(root_node, sources)
+		await _collect(root_node, sources)
 		var groups: Dictionary = {}
 		for source in sources:
+			if _budget_exhausted(): await _next_slice()
 			var cell := Vector3i((source.global_position / cell_size).floor())
 			var materials: Array = []
 			for surface in range(source.mesh.get_surface_count()):
@@ -45,6 +58,7 @@ func _build() -> void:
 			if not groups.has(key): groups[key] = []
 			groups[key].append(source)
 		for key: Array in groups:
+			if _budget_exhausted(): await _next_slice()
 			var group: Array = groups[key]
 			if group.size() < 2: continue
 			var first: MeshInstance3D = group[0]
@@ -75,8 +89,18 @@ func _build() -> void:
 				source.layers = 0
 			source_count += group.size()
 			batch_count += 1
+	finished = true
+
+func _budget_exhausted() -> bool:
+	return cooperative_build and Time.get_ticks_usec() - _slice_started >= frame_budget_usec
+
+func _next_slice() -> void:
+	yield_count += 1
+	await get_tree().process_frame
+	_slice_started = Time.get_ticks_usec()
 
 func _collect(node: Node, sources: Array[MeshInstance3D]) -> void:
+	if _budget_exhausted(): await _next_slice()
 	if node in _excluded or node.get_script() != null: return
 	if node is Node3D and (not node.visible or node.top_level): return
 	# Animation tracks can affect siblings as well as the player's own children.
@@ -85,7 +109,7 @@ func _collect(node: Node, sources: Array[MeshInstance3D]) -> void:
 	if node is MeshInstance3D:
 		if optimize_palettes: _palette.optimize(node)
 		if _eligible(node): sources.append(node)
-	for child in node.get_children(): _collect(child, sources)
+	for child in node.get_children(): await _collect(child, sources)
 
 func _eligible(mesh: MeshInstance3D) -> bool:
 	if mesh.mesh == null or mesh.skin != null or mesh.material_overlay != null or mesh.layers == 0: return false

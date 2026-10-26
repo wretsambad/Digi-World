@@ -7,7 +7,9 @@ extends Node3D
 const WORLD := preload("res://treehouse_animated.tscn")
 const FLAG_SHADER := preload("res://scripts/flag_wave.gdshader")
 const PAINT_MATERIAL := "Autumn_6f8a5ffftrue"
-const BRANCH_SHIELD_SCALE := 1.5
+const BRANCH_SHIELD_RADIUS := 2.5
+const BRANCH_SHIELD_HEIGHT := 4.2
+const BRANCH_SHIELD_LIFT := 1.65
 
 # Positions in the treehouse's space (1 unit = 1 metre).
 const LADDER_FOOT := Vector3(-0.9, 0.0, 8.05)
@@ -496,8 +498,8 @@ func _raise_fence() -> void:
 ## Approach from the tip; a flared barrier is perpendicular to each branch.
 func branch_barrier_point(index: int) -> Vector3:
 	var branch: Array = BRANCHES[index]
-	var start: Vector3 = branch[0]
-	return start.lerp(branch[1], 0.6)
+	# The large shield sits at the original branch tip, clear of the deck.
+	return branch[1]
 
 
 func _metal_upgrade() -> void:
@@ -506,6 +508,7 @@ func _metal_upgrade() -> void:
 		var start: Vector3 = branch[0]
 		var tip: Vector3 = branch[1]
 		var direction := (tip - start).normalized()
+		var horizontal := Vector3(direction.x, 0, direction.z).normalized()
 		var center := branch_barrier_point(index)
 		var guard := Node3D.new()
 		guard.name = "BranchBarrier%d" % index
@@ -516,15 +519,20 @@ func _metal_upgrade() -> void:
 		# route. This is an obstacle, not a metal skin on a climbable branch.
 		var sleeve := _cylinder_between(-direction * 0.35, direction * 0.35, 0.4, 0.4, metal)
 		guard.add_child(sleeve)
-		var shield := _cylinder_between(-direction * 0.16, direction * 0.16, 1.45, 1.45, metal)
+		# Offset the broad face upward: the branch passes near its bottom,
+		# leaving over 3.7 m above it, versus Glitch's 1.6 m fence jump.
+		var lift := Vector3.UP * BRANCH_SHIELD_LIFT
+		var shield := _cylinder_between(-horizontal * 0.16 + lift, horizontal * 0.16 + lift, BRANCH_SHIELD_RADIUS, BRANCH_SHIELD_RADIUS, metal)
+		shield.scale.x = BRANCH_SHIELD_HEIGHT / (BRANCH_SHIELD_RADIUS * 2.0)
 		shield.name = "ClimbBlocker"
 		guard.add_child(shield)
-		var lip := _cylinder_between(direction * 0.16, direction * 0.42, 1.45, 1.2, metal)
+		var lip := _cylinder_between(horizontal * 0.16 + lift, horizontal * 0.42 + lift, BRANCH_SHIELD_RADIUS, BRANCH_SHIELD_RADIUS - 0.25, metal)
+		lip.scale.x = BRANCH_SHIELD_HEIGHT / (BRANCH_SHIELD_RADIUS * 2.0)
 		lip.name = "OverhangingLip"
 		guard.add_child(lip)
 		guard.scale = Vector3.ONE * 0.01
 		var tween := create_tween()
-		tween.tween_property(guard, "scale", Vector3.ONE * BRANCH_SHIELD_SCALE, 0.4).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+		tween.tween_property(guard, "scale", Vector3.ONE, 0.4).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 		AudioManager.play("snap")
 		await tween.finished
 		sparkle_at(center)

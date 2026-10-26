@@ -18,8 +18,8 @@ const ZONES := [
 	},
 	{
 		"id": "grownup",
-		"title": "Parents or carers",
-		"subtitle": "Trusted adults who look after me",
+		"title": "Trusted adults",
+		"subtitle": "People who look after me:",
 		"color": Color("#E58A6E"),
 	},
 	{

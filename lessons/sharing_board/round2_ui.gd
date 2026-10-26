@@ -258,7 +258,6 @@ func _build_view() -> void:
 	_overlay = Control.new()
 	_overlay.mouse_filter = MOUSE_FILTER_STOP
 	_overlay.mouse_default_cursor_shape = CURSOR_CROSS
-	_overlay.tooltip_text = "Move to inspect. Scroll to change magnifier zoom."
 	_overlay.draw.connect(_draw_overlay)
 	_overlay.gui_input.connect(_on_photo_input)
 	_overlay.mouse_exited.connect(func(): _hoop.hide())

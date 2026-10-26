@@ -72,7 +72,7 @@ func start(id: String) -> void:
 		prop = game.room.get_node("Lesson_SharingBoard/PinnedPhoto_158")
 		prop_home = prop.global_transform
 		var p := prop_home.origin
-		boy.global_position = Vector3(p.x + .29, game.room.global_position.y + .03, p.z + .26)
+		boy.global_position = Vector3(p.x + .29, game.room.global_position.y + .03, p.z + .46)
 		boy.rotation = Vector3(0, PI, 0)
 		boy.animate(0, 0)
 		var hand: Node3D = boy.get_node("Body/RightArm/Elbow/Hand")

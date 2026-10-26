@@ -71,9 +71,13 @@ func run() -> void:
 	var batch = load("res://scripts/StaticSceneryBatch.gd").new()
 	batch.root_paths.append(NodePath("../Scenery"))
 	batch.excluded_paths.append(NodePath("../Scenery/Piece2"))
+	batch.cooperative_build = true
+	batch.frame_budget_usec = 1
 	world.add_child(batch)
-	await process_frame
-	await process_frame
+	for frame in 100:
+		await process_frame
+		if batch.finished: break
+	verify(batch.finished and batch.yield_count > 0, "Cooperative scenery preparation must yield and finish")
 	verify(batch.source_count == 2 and batch.batch_count == 1, "Static instances were not batched")
 	verify(excluded.layers == 1, "An excluded mesh was changed")
 	verify(scenery.get_node("Piece0").get_child(0) == collider, "Collision or authored node paths changed")

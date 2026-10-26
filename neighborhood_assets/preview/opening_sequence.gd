@@ -6,6 +6,7 @@ signal bedroom_entered
 
 const BEDROOM_SCENE = preload("res://bedroom_assets/teen_bedroom.tscn")
 const HANDOFF_KEY = &"digi_world_bedroom_camera"
+const FLIGHT_WHOOSH = preload("res://audio/finale/wind.wav")
 
 @export_range(1.0, 8.0, 0.1) var flight_speed_multiplier: float = 4.0
 @export var acceleration_seconds: float = 2.8
@@ -34,6 +35,7 @@ var _motion: Array[Dictionary] = []
 var _flight_duration: float = 0.0
 var _room_distance: float = 0.0
 var _preview_loop_tween: Tween
+var _flight_whoosh: AudioStreamPlayer
 
 @onready var scene: Node3D = get_parent()
 @onready var animation: AnimationPlayer = scene.get_node("AnimationPlayer")
@@ -49,6 +51,16 @@ var _preview_loop_tween: Tween
 
 func _ready() -> void:
 	AudioManager.claim_music(self, "neighborhood")
+	# A continuous rush of air follows the flight instead of repeating a short hit.
+	var whoosh := FLIGHT_WHOOSH.duplicate() as AudioStreamWAV
+	whoosh.loop_mode = AudioStreamWAV.LOOP_FORWARD
+	whoosh.loop_begin = 0
+	whoosh.loop_end = int(whoosh.get_length() * whoosh.mix_rate)
+	_flight_whoosh = AudioStreamPlayer.new()
+	_flight_whoosh.name = "FlightWhoosh"
+	_flight_whoosh.stream = whoosh
+	_flight_whoosh.volume_db = -60.0
+	add_child(_flight_whoosh)
 	play_button.pressed.connect(start_game)
 	animation.animation_finished.connect(_on_preview_finished)
 	animation.speed_scale = preview_speed
@@ -68,6 +80,9 @@ func _ready() -> void:
 func start_game() -> void:
 	if state != State.PREVIEW:
 		return
+	AudioManager.claim_music(self, "")
+	_flight_whoosh.volume_db = -60.0
+	_flight_whoosh.play()
 	if _preview_loop_tween != null:
 		_preview_loop_tween.kill()
 	preview_fade.color.a = 0.0
@@ -259,7 +274,12 @@ func advance_flight(delta: float) -> void:
 		var facing := camera.global_basis.get_rotation_quaternion().slerp(desired, 1.0-exp(-delta/0.22))
 		camera.global_transform = Transform3D(Basis(facing),flight_curve.sample_baked(distance,true))
 		camera.fov = lerpf(_opening_fov, 76.0, room_blend)
+		# Build with acceleration, then soften as the camera settles in the room.
+		var rush := clampf(speed / maxf(cruise_speed, 0.01), 0.0, 1.0)
+		_flight_whoosh.volume_db = maxf(-60.0, linear_to_db(maxf(rush, 0.001)) - 10.0)
+		_flight_whoosh.pitch_scale = lerpf(0.85, 1.25, rush)
 		if _elapsed >= _flight_duration:
+			_flight_whoosh.stop()
 			camera.global_transform = bedroom_view.global_transform
 			camera.fov = 76.0
 			speed = 0.0
