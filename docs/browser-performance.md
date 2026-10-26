@@ -15,14 +15,27 @@ shown when available; preparation uses an indeterminate bar. `SceneLoading`
 keeps the surface visible until the first real game frame is ready. It also
 provides a native fallback and loading surfaces for lesson transitions.
 
+Startup uses a tiny boot scene rather than parsing the neighborhood before
+the engine can paint. `SceneLoading` loads resource dependencies before their
+parents, keeping strong references until the destination owns them. The
+single-threaded browser returns to its event loop between 3 ms resource
+slices; native builds poll a background resource request before retrieving it.
+Opening/bedroom navigation, lesson exits, replay and round changes all use this
+loader. Duplicate transitions are rejected, and failed loads restore the
+previous pause and rendering state.
+
 The computer click handler only starts the lightweight 2D monitor animation
 and the operator/camera sequence. The monitor render target is warmed during
 room setup. The full 3D lesson is instantiated after the animation completes,
 under the loading surface. Replay uses the same sequence. Sharing-board and
 phone loading surfaces appear after their existing entrance animations.
-Loading can still take time on the browser's main thread; this change keeps
-that work from freezing the first click-animation frame and makes the wait
-explicit. The browser loading bar animates through CSS rather than game code.
+The scene remains covered while scenery and quality changes finish. Material
+uploads and WebGL shader compilation then warm in groups of at most 16 geometry
+instances per frame. Collecting those instances also yields, without reading
+back MultiMesh bounds from the renderer. This avoids compiling
+all visible materials in a single first frame. The browser loading bar animates
+through CSS rather than game code. Individual resources, scene instantiation,
+driver compilation and engine startup remain indivisible operations.
 
 ## Rendering
 
@@ -42,30 +55,40 @@ this overrides the saved preference for that visit without saving it.
 | Full-screen monitor target / outline mask | Native | Native | Native |
 | Ambient leaves, snow, motes and fire particles | 20% | 50% | Authored density |
 | Other feedback particles | 35% | 60% | Authored density |
-| Web particle prewarming | ≤0.25 s | ≤1 s | ≤2 s |
-| Multisample AA | At most 2× | At most 2× | Authored setting |
-| Sun shadow map | At most 2048² | At most 2048² | Project setting |
-| Sun shadow splits / reach | At most 2 / 60 m | At most 2 / 120 m | Authored setting |
-| Small-object shadow cutoff | Below 0.75 m | Below 0.35 m | Authored setting |
-| Ambient particle shadows | Off | Off | Authored setting |
+| Particle prewarming | Off | ≤0.1 s | ≤0.25 s |
+| Multisample AA | At most 2× | At most 2× | At most 4× |
+| Sun and local shadows | Off | Off | Authored enabled state |
+| Sun shadow splits / reach | Off | Off | At most 2 / 160 m |
+| Local shadow atlas | Disabled | Disabled | At most 4096² |
+| Local light fade start / length | 20 / 10 m | 35 / 10 m | 60 / 10 m |
+| Local shadow fade | Off | Off | 30 m (or shorter authored fade) |
+| Mesh LOD pixel threshold | At least 4 | At least 2 | At least 1.5 |
+| Round primitive radial segments | At most 12 | At most 20 | Authored topology |
+| Sphere rings | At most 6 | At most 10 | Authored topology |
+| Ambient particle shadows | Off | Off | Off |
+| Ambient particle turbulence | Off | Off | Authored setting |
 | Canopy sway | Off | 15 updates/s | Every frame |
 | Campfire light animation | 6 updates/s | 15 updates/s | Every frame |
 
 Every preset keeps the world, UI, photo clues and full-screen computer lesson
-at their full target resolution. Lower presets save work through fewer shadow
-passes and ambient particles, earlier mesh LODs, smaller local shadow atlases
-and shorter size-based draw distances for small props. Small objects near
-shadowed lamps keep casting so the bedroom lighting stays intact. Local lights
-retain their authored shadows. Gameplay, collisions, lesson timing and camera
-framing are unchanged. High restores the authored settings.
+at their full target resolution. Low and Balanced remove shadow passes and
+reduce geometry, ambient particles and small-prop draw distance. Shared copies
+of round primitive meshes reduce tessellation without changing authored assets
+or collision shapes; High restores their original topology, including batched
+primitives. Imported meshes use their existing LODs. High also budgets distant
+detail, local lights, sun splits, AA and particle startup work. Disabling
+shadows changes the lighting, including how light reaches lamp shades.
+Gameplay, collisions, lesson timing and camera framing remain unchanged.
 
-Scenery preparation yields between chunks on Web (a 4 ms target, checked
-between meshes and batches). Startup and lesson loading wait for that work
-before revealing the scene.
+Scenery preparation yields on every platform (a 2 ms target, checked between
+meshes, batches and individual instance transforms). Geometry quality changes
+use a separate 2 ms queue rather than scanning an entire scene in one frame.
+Adding a light no longer revisits every mesh and every existing light. Startup
+and lesson loading wait for preparation before revealing the scene.
 Covered viewports suspend 3D drawing during preparation, avoiding repeated
 unbatched renders; their previous rendering state is restored before reveal.
 Individual resource parsing, mesh conversion, scene instantiation and driver
-shader compilation can still take longer;
+shader compilation can still take longer than the cooperative budgets;
 these changes reduce stalls but cannot guarantee every browser stays responsive
 on every machine. Native measurements on a dedicated GPU do not establish
 low-end browser frame rates.
@@ -83,6 +106,14 @@ material combination and does not alter authored resources. Combined meshes
 keep up to four conservative LOD transitions; batching can slightly change
 distant LOD selection. `batch_lod_meshes` and `optimize_palettes` on the batching
 node provide independent opt-outs.
+
+The enabled `scenery_export` editor plugin runs the palette conversion for the
+reviewed static branches during export. Runtime preparation still handles
+development scenes and any dynamically changed materials. Bedroom scenery now
+also batches static floorboards, furnishings and decorations. The seated actor,
+animated mouse and lesson objects remain independent, preserving their motion,
+interaction and outline masks. The authored scene resources are not rewritten
+by export preparation.
 
 The finale ships WAV files generated from the existing deterministic synthesis
 functions. This preserves the sounds while removing synthesis and worker-thread
@@ -108,9 +139,15 @@ fixed-view RGB image comparison averaged 0.27/255 absolute difference per
 channel, mostly at distant LOD edges. The original game assets, lighting,
 lesson rules, controls, timings and UI are retained.
 
+In one fixed 1280×720 Compatibility bedroom view on the same GPU, adding room
+batching reduced High draw calls from 3,049 to 1,815, with the other High budgets
+held constant. The final Balanced and Low presets each used 626 calls in that
+view. These are not measurements on low-end hardware.
+
 The original release payload was 65.11 MiB uncompressed, or 25.88 MiB with
 equivalent gzip. The release with custom loading assets is about 59.27 MiB
-uncompressed and 21.55 MiB with gzip. `build/web/sizes.json` records current sizes.
+uncompressed and 21.55 MiB with gzip. Those historical payloads predate the
+current music and prepared meshes; `build/web/sizes.json` records current sizes.
 
 ## Verification
 
@@ -126,6 +163,7 @@ godot --headless --path . res://tests/finale_flow.tscn
 godot --headless --path . --script res://tests/pause_flow.gd
 godot --headless --path . --script res://tests/static_scenery.gd
 godot --headless --path . --script res://tests/graphics_quality.gd
+godot --headless --path . --script res://tests/scene_loading.gd
 ```
 
 The browser release was also opened in Chrome and checked through the opening
@@ -152,3 +190,18 @@ godot --headless --path . --script res://tests/music_startup.gd
 godot --headless --path . --script res://tests/music_flow.gd
 node tests/web_audio.cjs
 ```
+
+The browser performance test starts a temporary loopback server, uses a fresh
+browser context for each preset, applies 4× CPU throttling, and traverses the
+opening flight into the bedroom. It checks JavaScript/game errors and rejects
+scene/gameplay tasks of five seconds or more after engine boot. Engine startup
+tasks are recorded separately. Screenshots, phase marks and
+task durations go to `work/performance-browser/`. CPU throttling is a synthetic
+stress test, not a substitute for testing physical low-end devices:
+
+```powershell
+node tests/web_performance.cjs
+```
+
+Add `&profile_loading=1` to a quality test URL to record loading phase marks in
+the browser Performance timeline. No profiling marks are emitted by default.

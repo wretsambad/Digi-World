@@ -28,6 +28,7 @@ func scene(path: String) -> Node:
 	current_scene = node
 	await process_frame
 	await process_frame
+	await root.get_node("SceneLoading").finish()
 	return node
 
 
@@ -81,6 +82,7 @@ func check_pause(label: String, click := false) -> void:
 func return_to_bedroom(label: String) -> void:
 	pause.menu.bedroom_button.pressed.emit()
 	await scene_changed
+	while root.get_node("SceneLoading").active: await process_frame
 	await process_frame
 	var game: Node = current_scene.get_node("BedroomGameplay")
 	verify(current_scene.scene_file_path == BEDROOM, label + ": did not return to bedroom")

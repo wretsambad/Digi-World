@@ -4,7 +4,7 @@ extends Node
 
 signal bedroom_entered
 
-const BEDROOM_SCENE = preload("res://bedroom_assets/teen_bedroom.tscn")
+const BEDROOM_SCENE := "res://bedroom_assets/teen_bedroom.tscn"
 const HANDOFF_KEY = &"digi_world_bedroom_camera"
 const FLIGHT_WHOOSH = preload("res://audio/finale/wind.wav")
 
@@ -300,7 +300,7 @@ func _enter_bedroom_scene() -> void:
 		"flight_complete": true,
 		"seated_clock": seated_character.clock,
 	})
-	var result := get_tree().change_scene_to_packed(BEDROOM_SCENE)
+	var result: Error = await SceneLoading.change_scene(BEDROOM_SCENE, "Your bedroom")
 	if result != OK:
 		get_tree().remove_meta(HANDOFF_KEY)
 		push_error("Could not open the bedroom: " + error_string(result))

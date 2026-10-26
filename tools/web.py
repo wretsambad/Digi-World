@@ -14,6 +14,7 @@ from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "build" / "web"
 ENTRY_SCENES = [
+    "scenes/boot.tscn",
     "neighborhood_assets/preview/neighborhood_filled.tscn",
     "bedroom_assets/teen_bedroom.tscn",
     "scenes/monitor_game/monitor_game.tscn",

@@ -10,15 +10,9 @@ enum Level { LOW, BALANCED, HIGH }
 const SETTINGS_PATH := "user://graphics.cfg"
 const MODES := ["auto", "low", "balanced", "high"]
 const LABELS := ["Low", "Balanced", "High"]
-## Meshes shorter than this (metres) stop casting shadows; each one otherwise
-## draws again in every sun split and every face of a shadowed lamp, which
-## stay cube maps: Compatibility has no cheaper dual-paraboloid mode.
-const SHADOW_CASTER_MIN := [0.75, 0.35, 0.0]
-## Small meshes this close (metres) to a shadowed lamp keep casting.
-const LAMP_SHADE_REACH := 1.0
 ## Small meshes stop drawing beyond their size times this, about where they
 ## shrink to a few pixels. Larger meshes always draw.
-const DRAW_DISTANCE_PER_METRE := [120.0, 240.0, 0.0]
+const DRAW_DISTANCE_PER_METRE := [100.0, 180.0, 360.0]
 const DRAW_DISTANCE_MAX_SIZE := 6.0
 ## Weather can be thinned more aggressively than gameplay feedback particles.
 const AMBIENT_DENSITY := [0.2, 0.5, 1.0]
@@ -34,6 +28,11 @@ var _shadow_size := 4096
 var _shadow_16_bits := false
 var _directional_filter := RenderingServer.SHADOW_QUALITY_SOFT_LOW
 var _positional_filter := RenderingServer.SHADOW_QUALITY_SOFT_LOW
+var _primitive_cache: Dictionary = {}
+var _pending_geometry: Array[GeometryInstance3D] = []
+var _pending_index := 0
+const GEOMETRY_BUDGET_USEC := 2000
+const PRIMITIVE_CACHE_LIMIT := 256
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -58,6 +57,7 @@ func _ready() -> void:
 	_apply_sun_shadows()
 	get_tree().node_added.connect(_node_added)
 	get_tree().scene_changed.connect(reset_sampling)
+	get_tree().scene_changed.connect(func() -> void: _primitive_cache.clear())
 	_node_added(get_tree().root)
 	reset_sampling()
 
@@ -93,6 +93,7 @@ func reset_sampling() -> void:
 	_last_tick = Time.get_ticks_usec()
 
 func _process(_delta: float) -> void:
+	_drain_geometry()
 	var now := Time.get_ticks_usec()
 	var elapsed := float(now - _last_tick) / 1000000.0
 	_last_tick = now
@@ -122,9 +123,37 @@ func _process(_delta: float) -> void:
 func _set_level(value: int) -> void:
 	level = value
 	_apply_sun_shadows()
+	_pending_geometry.clear()
+	_pending_index = 0
 	for node in get_tree().get_nodes_in_group("graphics_quality_nodes"):
-		_apply(node)
+		if node is MeshInstance3D or node is MultiMeshInstance3D:
+			_pending_geometry.append(node)
+		else:
+			_apply(node)
 	changed.emit()
+
+func is_preparing() -> bool:
+	return _pending_index < _pending_geometry.size()
+
+func settle() -> void:
+	while is_preparing(): await get_tree().process_frame
+
+func track_static(geometry: GeometryInstance3D) -> void:
+	if geometry.is_in_group("graphics_quality_static"): return
+	geometry.add_to_group("graphics_quality_static")
+	_pending_geometry.append(geometry)
+
+func _drain_geometry() -> void:
+	var started := Time.get_ticks_usec()
+	while is_preparing():
+		var geometry := _pending_geometry[_pending_index]
+		_pending_index += 1
+		if is_instance_valid(geometry) and geometry.is_inside_tree():
+			_apply_geometry(geometry)
+		if Time.get_ticks_usec() - started >= GEOMETRY_BUDGET_USEC: break
+	if not is_preparing():
+		_pending_geometry.clear()
+		_pending_index = 0
 
 func _apply_sun_shadows() -> void:
 	# Below 2048 the sun's shadows turn into visible blocks on the decks.
@@ -134,17 +163,17 @@ func _apply_sun_shadows() -> void:
 	RenderingServer.positional_soft_shadow_filter_set_quality(mini(_positional_filter, very_low) if level == Level.LOW else _positional_filter)
 
 func _node_added(node: Node) -> void:
-	# Lights keep their authored shadows: in Compatibility an omni light without
-	# shadows takes a different lighting path and visibly darkens the bedroom.
-	if node is Viewport or node is GPUParticles3D or node is CPUParticles3D or node is MeshInstance3D or node is MultiMeshInstance3D or node is DirectionalLight3D:
+	if node is Viewport:
+		node.add_to_group("graphics_quality_views")
+	if node is GeometryInstance3D:
+		node.add_to_group("graphics_warmup")
+	if node is Viewport or node is GPUParticles3D or node is CPUParticles3D or node is MeshInstance3D or node is MultiMeshInstance3D or node is Light3D:
 		node.add_to_group("graphics_quality_nodes")
 		# Apply immediately so particle prewarming cannot stall its first frame.
-		_apply(node)
-	elif (node is OmniLight3D or node is SpotLight3D) and node.shadow_enabled:
-		node.add_to_group("graphics_quality_lamps")
-		# Lamps usually load after their shades, so revisit what is near them.
-		for geometry in get_tree().get_nodes_in_group("graphics_quality_nodes"):
-			if (geometry is MeshInstance3D or geometry is MultiMeshInstance3D) and _near_lamp(geometry): _apply_geometry(geometry)
+		if node is MeshInstance3D or node is MultiMeshInstance3D:
+			_pending_geometry.append(node)
+		else:
+			_apply(node)
 
 func _apply(node: Node) -> void:
 	if node is Viewport:
@@ -152,12 +181,15 @@ func _apply(node: Node) -> void:
 	elif node is MeshInstance3D or node is MultiMeshInstance3D:
 		_apply_geometry(node)
 	elif node is DirectionalLight3D:
+		_apply_light(node)
 		var original_distance: float = _authored(node, &"directional_shadow_max_distance")
 		var original_mode: int = _authored(node, &"directional_shadow_mode")
 		# Two splits halve the sun's shadow passes; a shorter reach keeps the
 		# nearer split as sharp as the four-split version.
-		_set_quality(node, &"directional_shadow_mode", mini(original_mode, DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS) if level != Level.HIGH else original_mode)
-		_set_quality(node, &"directional_shadow_max_distance", minf(original_distance, [60.0, 120.0, original_distance][level]))
+		_set_quality(node, &"directional_shadow_mode", mini(original_mode, DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS))
+		_set_quality(node, &"directional_shadow_max_distance", minf(original_distance, 160.0))
+	elif node is Light3D:
+		_apply_light(node)
 	elif node is GPUParticles3D or node is CPUParticles3D:
 		if not node.has_meta("quality_original_amount"):
 			node.set_meta("quality_original_amount", node.amount)
@@ -165,12 +197,34 @@ func _apply(node: Node) -> void:
 		var density: float = [0.35, 0.6, 1.0][level]
 		if node.is_in_group("graphics_quality_ambient"):
 			density = AMBIENT_DENSITY[level]
-			var shadow: int = _authored(node, &"cast_shadow")
-			_set_quality(node, &"cast_shadow", shadow if level == Level.HIGH else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF)
+			_set_quality(node, &"cast_shadow", GeometryInstance3D.SHADOW_CASTING_SETTING_OFF)
 		node.amount = maxi(1, roundi(int(node.get_meta("quality_original_amount")) * density))
 		# Long synchronous prewarming is especially expensive for CPU snowfall.
-		var prewarm_limit: float = [0.25, 1.0, 2.0][level] if OS.has_feature("web") else [0.25, 1.0, 60.0][level]
+		var prewarm_limit: float = [0.0, 0.1, 0.25][level]
 		node.preprocess = minf(float(node.get_meta("quality_original_preprocess")), prewarm_limit)
+		if node is GPUParticles3D and node.is_in_group("graphics_quality_ambient"):
+			var process: ParticleProcessMaterial = node.process_material as ParticleProcessMaterial
+			if process != null:
+				if not node.has_meta("quality_particle_material"):
+					node.set_meta("quality_particle_material", process)
+					node.process_material = process.duplicate()
+				var original: ParticleProcessMaterial = node.get_meta("quality_particle_material")
+				node.process_material.turbulence_enabled = original.turbulence_enabled and level == Level.HIGH
+
+func _apply_light(light: Light3D) -> void:
+	var shadows: bool = _authored(light, &"shadow_enabled")
+	_set_quality(light, &"shadow_enabled", shadows and level == Level.HIGH)
+	if light is DirectionalLight3D: return
+	# Cull distant local lights as well as their six-face shadow maps, even on
+	# High. Respect authored shorter fades and leave light energy/colour alone.
+	var fade: bool = _authored(light, &"distance_fade_enabled")
+	var begin: float = _authored(light, &"distance_fade_begin")
+	var length: float = _authored(light, &"distance_fade_length")
+	var shadow_distance: float = _authored(light, &"distance_fade_shadow")
+	_set_quality(light, &"distance_fade_enabled", true)
+	_set_quality(light, &"distance_fade_begin", minf(begin, [20.0, 35.0, 60.0][level]) if fade else [20.0, 35.0, 60.0][level])
+	_set_quality(light, &"distance_fade_length", minf(length, 10.0) if fade else 10.0)
+	_set_quality(light, &"distance_fade_shadow", minf(shadow_distance, 30.0) if fade else 30.0)
 
 func _apply_viewport(view: Viewport) -> void:
 	# Quality changes must also clear a scale left by an older preset or a
@@ -180,29 +234,62 @@ func _apply_viewport(view: Viewport) -> void:
 		view.set_meta("quality_original_msaa", view.msaa_3d)
 		view.set_meta("quality_original_lod", view.mesh_lod_threshold)
 		view.set_meta("quality_original_atlas", view.positional_shadow_atlas_size)
-	view.msaa_3d = mini(int(view.get_meta("quality_original_msaa")), [Viewport.MSAA_2X, Viewport.MSAA_2X, Viewport.MSAA_8X][level]) as Viewport.MSAA
-	view.mesh_lod_threshold = maxf(float(view.get_meta("quality_original_lod")), [2.0, 1.0, 0.0][level])
-	view.positional_shadow_atlas_size = mini(int(view.get_meta("quality_original_atlas")), [2048, 4096, 16384][level])
+	view.msaa_3d = mini(int(view.get_meta("quality_original_msaa")), [Viewport.MSAA_2X, Viewport.MSAA_2X, Viewport.MSAA_4X][level]) as Viewport.MSAA
+	view.mesh_lod_threshold = maxf(float(view.get_meta("quality_original_lod")), [4.0, 2.0, 1.5][level])
+	view.positional_shadow_atlas_size = mini(int(view.get_meta("quality_original_atlas")), [0, 0, 4096][level])
 
 func _apply_geometry(geometry: GeometryInstance3D) -> void:
-	var size := _footprint(geometry)
+	if geometry is MeshInstance3D:
+		if geometry.mesh is PrimitiveMesh or geometry.has_meta("quality_original_mesh"):
+			var original_mesh: Mesh = _authored(geometry, &"mesh")
+			_set_quality(geometry, &"mesh", _simplified_primitive(original_mesh))
+	elif geometry is MultiMeshInstance3D and geometry.multimesh != null:
+		var multimesh: MultiMesh = geometry.multimesh
+		if multimesh.mesh is PrimitiveMesh or multimesh.has_meta("quality_original_mesh"):
+			var original_mesh: Mesh = _authored(multimesh, &"mesh")
+			_set_quality(multimesh, &"mesh", _simplified_primitive(original_mesh))
 	var shadow: int = _authored(geometry, &"cast_shadow")
-	if shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON and size < SHADOW_CASTER_MIN[level] and not _near_lamp(geometry):
+	if level != Level.HIGH and shadow != GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY:
 		shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	_set_quality(geometry, &"cast_shadow", shadow)
+	# Only reviewed static scenery gets an automatic draw distance. Small
+	# character features, held objects, clues and animated lesson props retain
+	# their authored reach, even when their mesh node has no script of its own.
+	if not geometry.is_in_group("graphics_quality_static"): return
+	var size := _footprint(geometry)
 	var range_end: float = _authored(geometry, &"visibility_range_end")
-	if range_end == 0.0 and geometry.visibility_range_begin == 0.0 and size <= DRAW_DISTANCE_MAX_SIZE and level != Level.HIGH:
+	var margin: float = _authored(geometry, &"visibility_range_end_margin")
+	# Scripted/interactive meshes keep their full reach. Batched sources have no
+	# render layers; their MultiMesh owns the rendering budget instead.
+	if geometry.get_script() == null and geometry.layers != 0 and range_end == 0.0 and geometry.visibility_range_begin == 0.0 and size <= DRAW_DISTANCE_MAX_SIZE:
 		range_end = maxf(size, 0.05) * DRAW_DISTANCE_PER_METRE[level]
 		# A margin stops props flickering when the camera rests on the boundary.
-		geometry.visibility_range_end_margin = range_end * 0.1
+		margin = range_end * 0.1
+	_set_quality(geometry, &"visibility_range_end_margin", margin)
 	_set_quality(geometry, &"visibility_range_end", range_end)
 
-func _near_lamp(geometry: GeometryInstance3D) -> bool:
-	# Beside a bulb even a small shade throws a room-sized shadow.
-	var centre := (geometry.global_transform * geometry.get_aabb()).get_center()
-	for lamp: Node3D in get_tree().get_nodes_in_group("graphics_quality_lamps"):
-		if lamp.global_position.distance_to(centre) < LAMP_SHADE_REACH: return true
-	return false
+func _simplified_primitive(mesh: Mesh) -> Mesh:
+	if mesh == null or level == Level.HIGH: return mesh
+	var limits := {}
+	if mesh is SphereMesh:
+		limits = {"radial_segments": [12, 20][level], "rings": [6, 10][level]}
+	elif mesh is CylinderMesh:
+		limits = {"radial_segments": [12, 20][level], "rings": 1}
+	elif mesh is CapsuleMesh:
+		limits = {"radial_segments": [12, 20][level], "rings": [4, 6][level]}
+	elif mesh is TorusMesh:
+		limits = {"ring_segments": [12, 20][level], "rings": [8, 12][level]}
+	if limits.is_empty(): return mesh
+	var key := [mesh, level]
+	if _primitive_cache.has(key): return _primitive_cache[key]
+	# Embedded lesson replays do not change the main scene. Bound the cache so
+	# their temporary procedural meshes cannot accumulate for the whole visit.
+	if _primitive_cache.size() >= PRIMITIVE_CACHE_LIMIT: _primitive_cache.clear()
+	var simplified: Mesh = mesh.duplicate()
+	for property: String in limits:
+		simplified.set(property, mini(int(mesh.get(property)), int(limits[property])))
+	_primitive_cache[key] = simplified
+	return simplified
 
 func _footprint(geometry: GeometryInstance3D) -> float:
 	# Measured once: the longest world-space side of one object. Scenery
@@ -222,14 +309,14 @@ func _footprint(geometry: GeometryInstance3D) -> float:
 	geometry.set_meta(&"quality_footprint", size)
 	return size
 
-func _authored(node: Node, property: StringName) -> Variant:
+func _authored(node: Object, property: StringName) -> Variant:
 	# A script that changes the value after spawning has re-authored it.
 	var applied := StringName("quality_set_" + property)
 	if not node.has_meta(applied) or node.get_meta(applied) != node.get(property):
 		node.set_meta(StringName("quality_original_" + property), node.get(property))
 	return node.get_meta(StringName("quality_original_" + property))
 
-func _set_quality(node: Node, property: StringName, value: Variant) -> void:
+func _set_quality(node: Object, property: StringName, value: Variant) -> void:
 	if node.get(property) != value: node.set(property, value)
 	# Record what the engine stored; floats come back at 32-bit precision.
 	node.set_meta(StringName("quality_set_" + property), node.get(property))

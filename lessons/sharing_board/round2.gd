@@ -35,7 +35,7 @@ func _ready() -> void:
 	camera.global_transform = intro_view.global_transform
 	ui.post_requested.connect(_on_post_requested)
 	ui.finish_pressed.connect(_on_finish_pressed)
-	ui.replay_requested.connect(func(): get_tree().reload_current_scene())
+	ui.replay_requested.connect(func(): SceneLoading.change_scene(scene_file_path, "Neighborhood photos"))
 	ui.home_requested.connect(func(): LessonExit.back_to_room(get_tree(), true))
 
 	await _fly_to(yard_view, intro_duration).finished

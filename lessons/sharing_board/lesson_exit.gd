@@ -14,6 +14,6 @@ static func back_to_room(tree: SceneTree, finished: bool) -> void:
 		state.finish_lesson(LESSON_ID)
 	if ResourceLoader.exists(BEDROOM_SCENE):
 		tree.set_meta(RETURN_KEY, true)
-		tree.change_scene_to_file(BEDROOM_SCENE)
+		tree.root.get_node("SceneLoading").change_scene(BEDROOM_SCENE, "Your bedroom")
 	else:
-		tree.change_scene_to_file(ProjectSettings.get_setting("application/run/main_scene"))
+		tree.root.get_node("SceneLoading").change_scene(tree.root.get_node("SceneLoading").OPENING, "Digi World")

@@ -50,7 +50,7 @@ func setup(owner_game: Node3D) -> void:
 	mouse_origin = mouse_node.position
 	_build_screen_and_overlay()
 	# Load the lesson in the background while the player explores the room.
-	if ResourceLoader.load_threaded_request(GAME_PATH) == OK:
+	if not OS.has_feature("web") and ResourceLoader.load_threaded_request(GAME_PATH) == OK:
 		_requested = true
 
 
@@ -135,10 +135,15 @@ func _ensure_lesson() -> bool:
 		return true
 	var packed: PackedScene
 	if _requested:
+		while ResourceLoader.load_threaded_get_status(GAME_PATH) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+			await get_tree().process_frame
+		if ResourceLoader.load_threaded_get_status(GAME_PATH) != ResourceLoader.THREAD_LOAD_LOADED:
+			_requested = false
+	if _requested:
 		packed = ResourceLoader.load_threaded_get(GAME_PATH)
 		_requested = false
 	else:
-		packed = load(GAME_PATH)
+		packed = await SceneLoading.load_packed(GAME_PATH)
 	if packed == null:
 		return false
 	lesson = packed.instantiate()
@@ -298,7 +303,7 @@ func enter_game() -> void:
 			await get_tree().process_frame
 		if ResourceLoader.load_threaded_get_status(GAME_PATH) != ResourceLoader.THREAD_LOAD_LOADED:
 			_requested = false
-	if not _ensure_lesson():
+	if not await _ensure_lesson():
 		SceneLoading.dismiss()
 		state = "idle"
 		game.camera.global_transform = saved_pose

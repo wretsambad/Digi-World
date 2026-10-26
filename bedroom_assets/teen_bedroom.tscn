@@ -3551,7 +3551,8 @@ far = 650.0
 
 [node name="StaticSceneryBatches" type="Node" parent="." unique_id=786479503]
 script = ExtResource("static_scenery_batch")
-root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood"), NodePath("../ExtendedNeighborhood")])
+root_paths = Array[NodePath]([NodePath("../NearbyNeighborhood"), NodePath("../ExtendedNeighborhood"), NodePath("../LearningHouseDetailed/BedroomInterior")])
+excluded_paths = Array[NodePath]([NodePath("../LearningHouseDetailed/BedroomInterior/StudyCorner/SeatedCharacter"), NodePath("../LearningHouseDetailed/BedroomInterior/StudyCorner/mouse_126"), NodePath("../LearningHouseDetailed/BedroomInterior/Lesson_Computer"), NodePath("../LearningHouseDetailed/BedroomInterior/Lesson_SharingBoard"), NodePath("../LearningHouseDetailed/BedroomInterior/Lesson_BackupRobot"), NodePath("../LearningHouseDetailed/BedroomInterior/Lesson_Phone")])
 
 [editable path="LearningHouseDetailed/HouseShell"]
 [editable path="LearningHouseDetailed/WindowSash_Open72Degrees"]

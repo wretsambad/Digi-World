@@ -2,6 +2,8 @@ extends Node
 ## Runtime-only instancing of explicitly static scenery. Authoring models remain
 ## separate in the editor; interactive/animated branches must be excluded.
 
+signal slice_ready
+
 @export var root_paths: Array[NodePath] = []
 @export var excluded_paths: Array[NodePath] = []
 @export_range(8.0, 64.0) var cell_size := 12.0
@@ -12,8 +14,8 @@ extends Node
 ## Only explicitly reviewed, opaque shaders with no per-node animation.
 @export var static_shaders: Array[Shader] = []
 ## Return control to the browser regularly instead of one long scenery build.
-@export var cooperative_build := OS.has_feature("web")
-@export var frame_budget_usec := 4000
+@export var cooperative_build := true
+@export var frame_budget_usec := 2000
 
 var source_count := 0
 var batch_count := 0
@@ -24,12 +26,21 @@ var _excluded: Array[Node] = []
 var _mesh_cache: Dictionary = {}
 var _lod_cache: Dictionary = {}
 var _built := false
+var _cancelled := false
+var _quality: Node
 var _palette = preload("res://scripts/StaticMeshPalette.gd").new()
 
 func _enter_tree() -> void:
+	_cancelled = false
 	add_to_group("scenery_preparing")
 
+func _exit_tree() -> void:
+	_cancelled = true
+	# Unwind an outstanding cooperative build before the node is destroyed.
+	slice_ready.emit()
+
 func _ready() -> void:
+	_quality = get_node_or_null("/root/GraphicsQuality")
 	if enabled:
 		call_deferred("_build")
 	else:
@@ -47,9 +58,10 @@ func _build() -> void:
 		if root_node == null: continue
 		var sources: Array[MeshInstance3D] = []
 		await _collect(root_node, sources)
+		if _cancelled: return
 		var groups: Dictionary = {}
 		for source in sources:
-			if _budget_exhausted(): await _next_slice()
+			if _budget_exhausted() and not await _next_slice(): return
 			var cell := Vector3i((source.global_position / cell_size).floor())
 			var materials: Array = []
 			for surface in range(source.mesh.get_surface_count()):
@@ -58,7 +70,7 @@ func _build() -> void:
 			if not groups.has(key): groups[key] = []
 			groups[key].append(source)
 		for key: Array in groups:
-			if _budget_exhausted(): await _next_slice()
+			if _budget_exhausted() and not await _next_slice(): return
 			var group: Array = groups[key]
 			if group.size() < 2: continue
 			var first: MeshInstance3D = group[0]
@@ -68,6 +80,7 @@ func _build() -> void:
 			multimesh.instance_count = group.size()
 			var inverse := root_node.global_transform.affine_inverse()
 			for index in range(group.size()):
+				if _budget_exhausted() and not await _next_slice(): return
 				multimesh.set_instance_transform(index, inverse * group[index].global_transform)
 			var batch := MultiMeshInstance3D.new()
 			batch.name = "StaticBatch_%d" % batch_count
@@ -81,8 +94,10 @@ func _build() -> void:
 			batch.ignore_occlusion_culling = first.ignore_occlusion_culling
 			batch.sorting_offset = first.sorting_offset
 			batch.sorting_use_aabb_center = first.sorting_use_aabb_center
+			batch.add_to_group("graphics_quality_static")
 			root_node.add_child(batch)
 			for source: MeshInstance3D in group:
+				if _budget_exhausted() and not await _next_slice(): return
 				# Render layers affect only this mesh; children, lights, collisions,
 				# node visibility and authored attachment paths remain intact.
 				source.set_meta("static_batch_source_layers", source.layers)
@@ -94,13 +109,21 @@ func _build() -> void:
 func _budget_exhausted() -> bool:
 	return cooperative_build and Time.get_ticks_usec() - _slice_started >= frame_budget_usec
 
-func _next_slice() -> void:
+func _next_slice() -> bool:
 	yield_count += 1
-	await get_tree().process_frame
+	# A bound one-shot disconnects when this node is freed. Awaiting our own
+	# signal prevents a scene switch from resuming work on a destroyed batch.
+	get_tree().process_frame.connect(_resume_slice, CONNECT_ONE_SHOT)
+	await slice_ready
 	_slice_started = Time.get_ticks_usec()
+	return not _cancelled
+
+func _resume_slice() -> void:
+	slice_ready.emit()
 
 func _collect(node: Node, sources: Array[MeshInstance3D]) -> void:
-	if _budget_exhausted(): await _next_slice()
+	if _cancelled: return
+	if _budget_exhausted() and not await _next_slice(): return
 	if node in _excluded or node.get_script() != null: return
 	if node is Node3D and (not node.visible or node.top_level): return
 	# Animation tracks can affect siblings as well as the player's own children.
@@ -108,8 +131,12 @@ func _collect(node: Node, sources: Array[MeshInstance3D]) -> void:
 		if child is AnimationPlayer or child is AnimationTree: return
 	if node is MeshInstance3D:
 		if optimize_palettes: _palette.optimize(node)
-		if _eligible(node): sources.append(node)
-	for child in node.get_children(): await _collect(child, sources)
+		if _eligible(node):
+			sources.append(node)
+			if _quality != null: _quality.track_static(node)
+	for child in node.get_children():
+		await _collect(child, sources)
+		if _cancelled: return
 
 func _eligible(mesh: MeshInstance3D) -> bool:
 	if mesh.mesh == null or mesh.skin != null or mesh.material_overlay != null or mesh.layers == 0: return false
@@ -144,12 +171,20 @@ func _has_lods(mesh: Mesh) -> bool:
 	return found
 
 func _effective_mesh(source: MeshInstance3D, materials: Array) -> Mesh:
-	var key: Array = [source.mesh, materials]
+	var original: Mesh = _authored(source, &"mesh")
+	var key: Array = [original, materials]
 	if _mesh_cache.has(key): return _mesh_cache[key]
+	# Keep parametric primitives so preset changes can restore their topology
+	# after batching, without rebuilding the world or modifying shared assets.
+	if original is PrimitiveMesh:
+		var primitive: PrimitiveMesh = original.duplicate()
+		primitive.material = materials[0]
+		_mesh_cache[key] = primitive
+		return primitive
 	var mesh: ArrayMesh
-	if source.mesh is ArrayMesh:
+	if original is ArrayMesh:
 		# Shallow duplication preserves the source LODs/shadow mesh and textures.
-		mesh = source.mesh.duplicate() as ArrayMesh
+		mesh = original.duplicate() as ArrayMesh
 	else:
 		mesh = ArrayMesh.new()
 		for surface in range(source.mesh.get_surface_count()):

@@ -54,7 +54,7 @@ func _ready() -> void:
 	ui.phone = phone
 	phone.hint.connect(ui.tip)
 	ui.leave_pressed.connect(leave)
-	ui.replay_pressed.connect(func() -> void: get_tree().reload_current_scene())
+	ui.replay_pressed.connect(func() -> void: SceneLoading.change_scene(scene_file_path, "Glitch's Last Trick"))
 	pause_menu = GlobalPause.menu
 	glitch.hide()
 	camera.global_transform = _view("arrive")

@@ -49,6 +49,7 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if SceneLoading.active: return
 	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_ESCAPE:
 		if menu.is_open:
 			menu.back_or_close()
@@ -64,7 +65,7 @@ func back_to_bedroom(watch_ending := false) -> void:
 	GameState.finale_pending = watch_ending
 	get_tree().remove_meta(HANDOFF_KEY)
 	get_tree().set_meta(RETURN_KEY, true)
-	var result := get_tree().change_scene_to_file(BEDROOM_SCENE)
+	var result: Error = await SceneLoading.change_scene(BEDROOM_SCENE, "Your bedroom")
 	if result != OK:
 		get_tree().remove_meta(RETURN_KEY)
 		push_error("Could not return to the bedroom: " + error_string(result))

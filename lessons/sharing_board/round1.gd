@@ -27,7 +27,7 @@ func _ready() -> void:
 	ui.sorting_finished.connect(func(round_results: Dictionary): results = round_results)
 	ui.park_board_requested.connect(_on_park_board_requested)
 	ui.finish_pressed.connect(_on_finish_pressed)
-	ui.next_round_requested.connect(func(): get_tree().change_scene_to_file("res://lessons/sharing_board/round2.tscn"))
+	ui.next_round_requested.connect(func(): SceneLoading.change_scene("res://lessons/sharing_board/round2.tscn", "Neighborhood photos"))
 	ui.home_requested.connect(func(): LessonExit.back_to_room(get_tree(), false))
 
 	await _fly_to(sort_view, intro_duration).finished
