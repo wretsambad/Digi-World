@@ -177,20 +177,43 @@ func finish() -> void:
 	verify(game.base.rails[0].get_active_material(0).resource_name == "Autumn_cf9f63fftrue", "Upgraded rails lost their authored timber material")
 	verify(game.base.gate.position.is_equal_approx(TreehouseBase.GATE_CENTER), "Gate is not attached to the upper deck")
 	verify(game.base.cabin_upgrades.size() >= 13, "Cabin door and window defenses are missing")
-	verify(game.base.branch_guards.size() == 3, "Every climbing branch needs a barrier")
-	for guard in game.base.branch_guards:
+	verify(game.base.branch_guards.size() == TreehouseBase.BRANCHES.size(), "Every climbing branch needs a barrier")
+	for index in game.base.branch_guards.size():
+		var guard: Node3D = game.base.branch_guards[index]
 		var blocker: MeshInstance3D = guard.get_node("ClimbBlocker")
-		verify((blocker.mesh as CylinderMesh).top_radius > 1.0, "Branch barrier is only a thin sleeve")
-		var bounds: AABB = blocker.global_transform * blocker.get_aabb()
-		verify(bounds.size.z > 4.35, "Branch shield must be broader than the old shield")
-		var jump_top: float = guard.global_position.y + ProtectYourBase.FENCE_JUMP_HEIGHT + GlitchActor.PIXEL * GlitchActor.ART.size()
-		verify(bounds.end.y > jump_top + 0.5, "The fence jump should not clear the branch shield")
+		var cone := blocker.mesh as CylinderMesh
+		verify(cone.top_radius > 0.6, "Branch barrier is only a thin sleeve")
+		# The funnel clamps around its own branch rather than being pierced by it.
+		var hug: float = cone.bottom_radius - game.base.branch_radius(index, TreehouseBase.BRANCHES[index][3])
+		verify(hug > 0.0 and hug < 0.08, "Branch shield collar must fit its branch")
+		var to_guard: Transform3D = guard.global_transform.affine_inverse()
+		for other in game.base.branch_guards.size():
+			if other == index:
+				continue
+			var other_guard: Node3D = game.base.branch_guards[other]
+			verify(guard.global_position.distance_to(other_guard.global_position) > TreehouseBase.SHIELD_RIM * 2.0, "Branch shields overlap each other")
+			# No other limb may cut through this shield's funnel.
+			for step in 41:
+				var t := step / 40.0
+				var radius: float = game.base.branch_radius(other, t)
+				var local: Vector3 = to_guard * game.base.to_global(game.base.branch_point(other, t))
+				if local.y > -radius and local.y < cone.height + radius:
+					var funnel := lerpf(cone.bottom_radius, cone.top_radius, clampf(local.y / cone.height, 0.0, 1.0))
+					verify(Vector2(local.x, local.z).length() > funnel + radius, "Branch %d passes through shield %d" % [other, index])
 		for part: MeshInstance3D in guard.get_children():
 			var part_bounds: AABB = part.global_transform * part.get_aabb()
 			verify(part_bounds.position.y > 0.1, "Branch shield penetrates the ground")
 			for floor_box in floor_boxes:
 				verify(not part_bounds.intersects(floor_box), "Branch shield penetrates a deck floor")
-		verify(guard.has_node("OverhangingLip"), "Branch barrier needs an overhanging lip")
+		verify(guard.has_node("RolledRim"), "Branch barrier needs a rolled rim")
+	# Climbing limbs pass beside the decks, not through them.
+	for index in TreehouseBase.BRANCHES.size():
+		for step in 31:
+			var t := step / 30.0
+			var radius: float = game.base.branch_radius(index, t)
+			var limb := AABB(game.base.to_global(game.base.branch_point(index, t)) - Vector3.ONE * radius, Vector3.ONE * radius * 2.0)
+			for floor_box in floor_boxes:
+				verify(not limb.intersects(floor_box), "Climbing branch %d runs through a deck floor" % index)
 	verify(dialogue_checked and customize_checked and clear_scene_checked, "Clear scene and compact dialogue checks were not exercised")
 	verify(GameState.is_complete(GameState.PROTECT_YOUR_BASE), "Lesson not marked complete")
 	verify(game.password == "TreeTopCastle#47", "Unexpected final password " + game.password)

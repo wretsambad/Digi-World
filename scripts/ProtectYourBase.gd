@@ -345,9 +345,14 @@ func _event_climbs_branches() -> void:
 	# The higher gate and shutters work. It must retreat and try the tree.
 	await glitch.blink_to(TreehouseBase.BRANCH_FOOT)
 	await glide("branches", 0.65)
-	await glitch.climb(base.branch_climb_points(), 0.24)
+	camera.follow(glitch, Vector3(-5.5, 1.2, 7.0), Vector3(0, 0.4, 0), 46.0, 1.2)
+	# Jump from branch to branch, each one higher up the tree.
+	for point in base.branch_climb_points():
+		await glitch.hop_to(point, 0.36, 0.55, false)
+		await get_tree().create_timer(0.08, false).timeout
+	await glitch.squash()
 	camera.follow(glitch, Vector3(-3.0, 2.0, 5.0), Vector3(0, 0.4, 0), 46.0)
-	await glitch.climb(base.roof_climb_points(), 0.25)
+	await glitch.climb(base.roof_climb_points(), 0.3)
 	pip.set_mood("Worried")
 	await glide_pip(0.8)
 	await ui.say(String(data.steps[1].glitch_line), "PIP", "Next", "", false)
@@ -358,17 +363,13 @@ func _event_climbs_branches() -> void:
 func _event_runs_away() -> void:
 	await glide("branches", 0.8)
 	await glitch.run_to(TreehouseBase.BRANCH_FOOT, 5.5)
-	# Test two routes. Each shield spans the entire branch; the Glitch
-	# hits its face on the tip side and falls away, never passes through it.
+	# Test two routes. Glitch lands near each tip, scurries inward and runs
+	# into the shield's mouth, then falls away.
 	for index in range(2):
-		var branch: Array = TreehouseBase.BRANCHES[index]
-		var tip: Vector3 = branch[1]
-		var start: Vector3 = branch[0]
-		var direction := (tip - start).normalized()
-		var contact := base.branch_barrier_point(index) + direction * 0.65
-		await glitch.hop_to(base.branch_point(index, 1.7) + Vector3.UP * 0.08, 0.35, 0.4)
-		await glitch.hop_to(contact, 0.3, 0.12)
-		await glitch.bonk(-direction)
+		var out := base.branch_out(index)
+		await glitch.hop_to(base.branch_stand_point(index, 0.95), 0.35, 0.5)
+		await glitch.hop_to(base.branch_barrier_contact(index), 0.3, 0.12)
+		await glitch.bonk(-out)
 		camera.shake(0.07)
 		await glitch.hop_to(TreehouseBase.BRANCH_FOOT + Vector3(0, 0, 0.5), 0.4, 0.2)
 	await _approach_deck_gate()

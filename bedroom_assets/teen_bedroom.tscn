@@ -978,24 +978,6 @@ transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 3.19, 2.72, -1.64)
 [node name="fairy_lights_Mesh" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191" index="0"]
 surface_material_override/1 = SubResource("strip_bulbs")
 
-[node name="StripGlowLeft" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191"]
-position = Vector3(-0.95, 0.04, -0.1)
-light_color = Color(1, 0.72, 0.38, 1)
-light_energy = 0.16
-omni_range = 1.2
-
-[node name="StripGlowCenter" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191"]
-position = Vector3(0, 0.05, -0.1)
-light_color = Color(1, 0.72, 0.38, 1)
-light_energy = 0.16
-omni_range = 1.2
-
-[node name="StripGlowRight" type="OmniLight3D" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails/fairy_lights_191"]
-position = Vector3(0.95, 0.18, -0.1)
-light_color = Color(1, 0.72, 0.38, 1)
-light_energy = 0.16
-omni_range = 1.2
-
 [node name="poster_make_192" parent="LearningHouseDetailed/BedroomInterior/PersonalDetails" unique_id=1389829358 instance=ExtResource("57_1g8bi")]
 transform = Transform3D(-0.82, 0, 0, 0, 0.82, 0, 0, 0, -0.82, -1.1, 1.67, 3.6750002)
 

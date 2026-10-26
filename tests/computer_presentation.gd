@@ -87,7 +87,7 @@ func _ready() -> void:
 	await get_tree().process_frame
 	session._fit_container()
 	verify(session.viewport.size == Vector2i(1920, 1080), "Low mode must keep the lesson's UI at display pixels")
-	verify(is_equal_approx(session.viewport.scaling_3d_scale, 0.75), "Low mode should budget 3D pixels only once")
+	verify(session.viewport.scaling_3d_scale == 1.0, "Low mode must not blur the lesson")
 	verify(session.viewport.msaa_3d == Viewport.MSAA_2X, "Low mode should keep light antialiasing")
 	await snapshot("fullscreen_low")
 	# Check that pointer coordinates still reach the UI after scaling the
@@ -109,7 +109,7 @@ func _ready() -> void:
 		await snapshot("native_resolution_gameplay")
 	session.return_to_room()
 	await get_tree().create_timer(0.6).timeout
-	verify(session.viewport.size == GraphicsQuality.monitor_size(session.RENDER_SIZE) and session.viewport.size_2d_override == session.UI_SIZE, "Returning must restore the monitor's aspect ratio")
+	verify(session.viewport.size == session.RENDER_SIZE and session.viewport.size_2d_override == session.UI_SIZE, "Returning must restore the monitor's aspect ratio")
 	GraphicsQuality.set_mode(original_graphics, false)
 	print("COMPUTER PRESENTATION ", "PASS" if failures.is_empty() else "FAIL ", failures)
 	get_tree().quit(0 if failures.is_empty() else 1)

@@ -7,9 +7,8 @@ extends Node3D
 const WORLD := preload("res://treehouse_animated.tscn")
 const FLAG_SHADER := preload("res://scripts/flag_wave.gdshader")
 const PAINT_MATERIAL := "Autumn_6f8a5ffftrue"
-const BRANCH_SHIELD_RADIUS := 2.5
-const BRANCH_SHIELD_HEIGHT := 4.2
-const BRANCH_SHIELD_LIFT := 1.65
+const SHIELD_RIM := 0.72
+const SHIELD_LENGTH := 0.8
 
 # Positions in the treehouse's space (1 unit = 1 metre).
 const LADDER_FOOT := Vector3(-0.9, 0.0, 8.05)
@@ -28,19 +27,21 @@ const GATE_HALF := 0.8
 const BRANCH_FOOT := Vector3(-7.9, 0.0, 3.9)
 const FLAG_TOP := Vector3(0.1, 14.0, -0.5)
 const PAINT_SPOT := Vector3(-1.9, DECK_WALK_HEIGHT, 3.6)
-## Each branch: [start inside the trunk, tip].
+## Each climbing branch: [start inside its parent limb, tip, base radius,
+## where along it the shield clamps on]. Three fan out from the trunk at
+## staggered heights, one forks up from the lowest limb outside the lower
+## deck, one droops from the long west bough and one reaches from the
+## cabin-side trunk out over the fence, so Glitch can hop up them.
 const BRANCHES: Array = [
-	[Vector3(-2.0, 0.9, 1.7), Vector3(-6.9, 1.35, 2.5)],
-	[Vector3(-2.2, 1.8, 1.0), Vector3(-7.3, 2.25, 0.8)],
-	[Vector3(-2.0, 2.7, 1.9), Vector3(-7.2, 3.1, 2.9)],
+	[Vector3(-1.8, 1.0, 1.3), Vector3(-6.7, 1.55, 2.7), 0.34, 0.75],
+	[Vector3(-1.9, 2.2, 0.0), Vector3(-7.0, 2.85, 0.2), 0.32, 0.6],
+	[Vector3(-4.4, 1.4, 2.05), Vector3(-7.5, 4.7, 3.3), 0.2, 0.5],
+	[Vector3(-1.8, 4.25, 0.2), Vector3(-8.4, 5.9, 0.6), 0.28, 0.74],
+	[Vector3(-7.2, 8.3, -1.1), Vector3(-8.9, 7.55, 2.1), 0.2, 0.45],
+	[Vector3(-3.5, 9.5, 0.3), Vector3(-8.3, 9.25, 2.0), 0.24, 0.6],
 ]
-## An exterior bough leans out past both deck edges, then arches back
-## over the roof.
-const OUTER_BOUGH: Array[Vector3] = [
-	Vector3(-7.2, 3.55, 2.9), Vector3(-7.55, 4.7, 2.6),
-	Vector3(-7.8, 6.7, 2.2), Vector3(-7.2, 8.75, 1.8),
-	Vector3(-4.1, 10.0, 1.4), Vector3(-3.0, 10.4, 1.0),
-]
+## From the top branch Glitch steps onto the west slope of the roof.
+const ROOF_STEPS: Array[Vector3] = [Vector3(-2.5, 10.1, 1.3), Vector3(-1.5, 11.1, 1.3)]
 
 var world: Node3D
 var oak: Node3D
@@ -124,6 +125,8 @@ func _make_materials() -> void:
 	metal.roughness = 0.35
 	metal.rim_enabled = true
 	metal.rim = 0.4
+	# The shield funnels are open, so their insides must render too.
+	metal.cull_mode = BaseMaterial3D.CULL_DISABLED
 	# Climbing limbs share the living tree's own sculpted bark.
 	bark = oak.get_node("LivingTree/TrunkAndBoughs/LongWestBough").material_override as StandardMaterial3D
 
@@ -223,46 +226,63 @@ func deck_approach_points() -> Array[Vector3]:
 func branch_climb_points() -> Array[Vector3]:
 	var points: Array[Vector3] = []
 	for index in BRANCHES.size():
-		points.append(branch_point(index, 0.82) + Vector3.UP * 0.16)
-	points.append_array(OUTER_BOUGH.slice(0, 3))
+		points.append(branch_stand_point(index, branch_landing(index)))
 	return points
 
 
+## Walk in along the top branch, then hop onto the roof.
 func roof_climb_points() -> Array[Vector3]:
-	return OUTER_BOUGH.slice(3)
+	var top := BRANCHES.size() - 1
+	var points: Array[Vector3] = [branch_stand_point(top, 0.55), branch_stand_point(top, 0.25)]
+	points.append_array(ROOF_STEPS)
+	return points
 
 
-## The centre of a climbing limb: 0 in the trunk, 1 at the branch tip and
-## up to 2 along the upturned twig past it. The top limb bends up into the
-## outer bough instead of ending in a twig.
+## The centre of a climbing limb: 0 in its parent, 1 at the branch tip and
+## up to 2 along the twig past it.
 func branch_point(index: int, t: float) -> Vector3:
 	var curve := _branch_curve(index)
 	return curve.sample(0, t) if t <= 1.0 else curve.sample(1, minf(t, 2.0) - 1.0)
 
 
+## Where Glitch's feet go on top of a branch.
+func branch_stand_point(index: int, t: float) -> Vector3:
+	return branch_point(index, t) + Vector3.UP * (branch_radius(index, t) + 0.03)
+
+
+func branch_radius(index: int, t: float) -> float:
+	var radius: float = BRANCHES[index][2]
+	return lerpf(radius, radius * 0.42, clampf(t, 0.0, 1.0))
+
+
+## Level direction from a branch's root toward its tip.
+func branch_out(index: int) -> Vector3:
+	var along: Vector3 = BRANCHES[index][1] - BRANCHES[index][0]
+	return Vector3(along.x, 0, along.z).normalized()
+
+
+## How far along the branch the shield's mouth reaches.
+func branch_rim(index: int) -> float:
+	var reach := (BRANCHES[index][1] as Vector3).distance_to(BRANCHES[index][0])
+	return float(BRANCHES[index][3]) + SHIELD_LENGTH / reach
+
+
+## Glitch lands on the outer part of each branch, past where a shield goes.
+func branch_landing(index: int) -> float:
+	return clampf(branch_rim(index) + 0.08, 0.85, 0.95)
+
+
 func _branch_curve(index: int) -> Curve3D:
 	var start: Vector3 = BRANCHES[index][0]
 	var tip: Vector3 = BRANCHES[index][1]
-	var out := Vector3(tip.x - start.x, 0, tip.z - start.z).normalized()
-	var reach := start.distance_to(tip)
+	var along := tip - start
+	var out := branch_out(index)
 	var curve := Curve3D.new()
-	# Limbs leave the trunk rising, then level off toward the tip.
-	curve.add_point(start, Vector3.ZERO, out * reach * 0.3 + Vector3.UP * 0.55)
-	if index < BRANCHES.size() - 1:
-		curve.add_point(tip, -out * reach * 0.3 + Vector3.UP * 0.05, out * 0.5 + Vector3.UP * 0.1)
-		curve.add_point(tip + out * 1.3 + Vector3.UP * 0.45, -out * 0.45 - Vector3.UP * 0.1)
-		return curve
-	# The top limb elbows upward and carries the climb along the bough.
-	curve.add_point(tip, -out * reach * 0.3, Vector3.UP * 0.55 + out * 0.15)
-	var bough: Array[Vector3] = []
-	for point in OUTER_BOUGH.slice(1):
-		bough.append(point - Vector3.UP * 0.24)
-	bough.append(bough[-1] + (bough[-1] - bough[-2]).normalized() * 0.9 + Vector3.UP * 0.1)
-	for i in bough.size():
-		var before: Vector3 = tip if i == 0 else bough[i - 1]
-		var after: Vector3 = bough[mini(i + 1, bough.size() - 1)]
-		var handle := (after - before) * 0.22
-		curve.add_point(bough[i], -handle, handle)
+	# Limbs leave their parent with a slight lift, settle toward the tip and
+	# end in a short twig that keeps growing outward.
+	curve.add_point(start, Vector3.ZERO, along * 0.35 + Vector3.UP * 0.2)
+	curve.add_point(tip, -along * 0.3 + Vector3.UP * 0.08, out * 0.4 + Vector3.UP * 0.08)
+	curve.add_point(tip + out * 1.0 + Vector3.UP * 0.25, -out * 0.35 - Vector3.UP * 0.05)
 	return curve
 
 
@@ -274,27 +294,18 @@ func _build_branch_route() -> void:
 	rng.seed = 7
 	for index in BRANCHES.size():
 		var curve := _branch_curve(index)
-		var start: Vector3 = BRANCHES[index][0]
-		var tip: Vector3 = BRANCHES[index][1]
-		var out := Vector3(tip.x - start.x, 0, tip.z - start.z).normalized()
+		var radius: float = BRANCHES[index][2]
+		route.add_child(_limb(curve, [radius, radius * 0.42, 0.035], rng))
+		_leaves(route, curve.get_point_position(2) + Vector3.UP * 0.1, 0.3, rng)
+		# A side shoot near the parent, well inside where the shield goes,
+		# breaks up the rung-like silhouette of parallel limbs.
+		var out := branch_out(index)
 		var side := out.cross(Vector3.UP) * (1.0 if index % 2 else -1.0)
-		if index < BRANCHES.size() - 1:
-			route.add_child(_limb(curve, [0.36, 0.15, 0.035], rng))
-			_leaves(route, curve.get_point_position(2) + Vector3.UP * 0.1, 0.3, rng)
-		else:
-			route.add_child(_limb(curve, [0.46, 0.34, 0.32, 0.28, 0.23, 0.17, 0.12, 0.04], rng))
-			# A short spur keeps growing outward past the elbow.
-			var spur := Curve3D.new()
-			spur.add_point(tip - out * 0.3, Vector3.ZERO, out * 0.5)
-			spur.add_point(tip + out * 1.2 + side * 0.4 + Vector3.UP * 0.5, -out * 0.4 - Vector3.UP * 0.15)
-			route.add_child(_limb(spur, [0.13, 0.03], rng))
-			_leaves(route, spur.get_point_position(1) + Vector3.UP * 0.1, 0.27, rng)
-		# A side shoot breaks up the rung-like silhouette of parallel limbs.
-		var base := branch_point(index, 0.5)
+		var base := branch_point(index, 0.3)
 		var shoot := Curve3D.new()
-		shoot.add_point(base, Vector3.ZERO, side * 0.4 + Vector3.UP * 0.2)
-		shoot.add_point(base + side * 1.0 + out * 0.6 + Vector3.UP * 0.7, -side * 0.3 - out * 0.2 - Vector3.UP * 0.1)
-		route.add_child(_limb(shoot, [0.09, 0.025], rng))
+		shoot.add_point(base, Vector3.ZERO, side * 0.3 + Vector3.UP * 0.25)
+		shoot.add_point(base + side * 0.8 + out * 0.35 + Vector3.UP * 0.6, -side * 0.25 - Vector3.UP * 0.1)
+		route.add_child(_limb(shoot, [radius * 0.3, 0.025], rng))
 		_leaves(route, shoot.get_point_position(1) + Vector3.UP * 0.05, 0.2, rng)
 
 
@@ -355,21 +366,6 @@ func _leaves(parent: Node3D, at: Vector3, size: float, rng: RandomNumberGenerato
 	tuft.basis = Basis(Vector3.UP, rng.randf() * TAU).scaled(Vector3.ONE * size)
 	tuft.position = at
 	parent.add_child(tuft)
-
-
-func _cylinder_between(a: Vector3, b: Vector3, radius_a: float, radius_b: float, material: Material) -> MeshInstance3D:
-	var mesh := CylinderMesh.new()
-	mesh.bottom_radius = radius_a
-	mesh.top_radius = radius_b
-	mesh.height = a.distance_to(b)
-	mesh.radial_segments = 8
-	mesh.material = material
-	var node := MeshInstance3D.new()
-	node.mesh = mesh
-	var up := (b - a).normalized()
-	var side := up.cross(Vector3.FORWARD if absf(up.dot(Vector3.FORWARD)) < 0.9 else Vector3.RIGHT).normalized()
-	node.transform = Transform3D(Basis(side, up, side.cross(up)).orthonormalized(), (a + b) * 0.5)
-	return node
 
 
 func _build_effects() -> void:
@@ -587,44 +583,70 @@ func _raise_fence() -> void:
 	sparkle_at(Vector3(0, 8, 2.5))
 
 
-## Approach from the tip; a flared barrier is perpendicular to each branch.
+## Where a branch's shield clamps on.
 func branch_barrier_point(index: int) -> Vector3:
-	var branch: Array = BRANCHES[index]
-	# The large shield sits at the original branch tip, clear of the deck.
-	return branch[1]
+	return branch_point(index, BRANCHES[index][3])
+
+
+## Just outside a shield's mouth, on top of the branch.
+func branch_barrier_contact(index: int) -> Vector3:
+	return branch_stand_point(index, branch_rim(index)) + branch_out(index) * 0.2
 
 
 func _metal_upgrade() -> void:
 	for index in BRANCHES.size():
-		var branch: Array = BRANCHES[index]
-		var start: Vector3 = branch[0]
-		var tip: Vector3 = branch[1]
-		var direction := (tip - start).normalized()
-		var horizontal := Vector3(direction.x, 0, direction.z).normalized()
+		var t: float = BRANCHES[index][3]
 		var center := branch_barrier_point(index)
+		var axis := (branch_point(index, t + 0.02) - branch_point(index, t - 0.02)).normalized()
+		var across := axis.cross(Vector3.UP).normalized()
 		var guard := Node3D.new()
 		guard.name = "BranchBarrier%d" % index
-		guard.position = center
+		guard.transform = Transform3D(Basis(across, axis, across.cross(axis)).orthonormalized(), center)
 		defenses.add_child(guard)
 		branch_guards.append(guard)
-		# A short collar anchors a broad, overhanging shield across the
-		# route. This is an obstacle, not a metal skin on a climbable branch.
-		var sleeve := _cylinder_between(-direction * 0.35, direction * 0.35, 0.4, 0.4, metal)
-		guard.add_child(sleeve)
-		# Offset the broad face upward: the branch passes near its bottom,
-		# leaving over 3.7 m above it, versus Glitch's 1.6 m fence jump.
-		var lift := Vector3.UP * BRANCH_SHIELD_LIFT
-		var shield := _cylinder_between(-horizontal * 0.16 + lift, horizontal * 0.16 + lift, BRANCH_SHIELD_RADIUS, BRANCH_SHIELD_RADIUS, metal)
-		shield.scale.x = BRANCH_SHIELD_HEIGHT / (BRANCH_SHIELD_RADIUS * 2.0)
-		shield.name = "ClimbBlocker"
-		guard.add_child(shield)
-		var lip := _cylinder_between(horizontal * 0.16 + lift, horizontal * 0.42 + lift, BRANCH_SHIELD_RADIUS, BRANCH_SHIELD_RADIUS - 0.25, metal)
-		lip.scale.x = BRANCH_SHIELD_HEIGHT / (BRANCH_SHIELD_RADIUS * 2.0)
-		lip.name = "OverhangingLip"
-		guard.add_child(lip)
+		# Like a squirrel baffle: a funnel clamped around the branch that
+		# flares toward the tip, so anything climbing in from the end meets
+		# its mouth. The branch runs on through its middle.
+		var collar := branch_radius(index, t) + 0.04
+		var funnel := MeshInstance3D.new()
+		funnel.name = "ClimbBlocker"
+		var cone := CylinderMesh.new()
+		cone.bottom_radius = collar
+		cone.top_radius = SHIELD_RIM
+		cone.height = SHIELD_LENGTH
+		cone.radial_segments = 16
+		cone.rings = 2
+		cone.cap_top = false
+		cone.cap_bottom = false
+		cone.material = metal
+		funnel.mesh = cone
+		funnel.position = Vector3.UP * SHIELD_LENGTH * 0.5
+		guard.add_child(funnel)
+		var clamp := MeshInstance3D.new()
+		clamp.name = "Clamp"
+		var band := CylinderMesh.new()
+		band.top_radius = collar + 0.035
+		band.bottom_radius = collar + 0.035
+		band.height = 0.16
+		band.radial_segments = 16
+		band.material = iron
+		clamp.mesh = band
+		clamp.position = Vector3.UP * 0.05
+		guard.add_child(clamp)
+		var rim := MeshInstance3D.new()
+		rim.name = "RolledRim"
+		var ring := TorusMesh.new()
+		ring.inner_radius = SHIELD_RIM - 0.045
+		ring.outer_radius = SHIELD_RIM + 0.045
+		ring.rings = 24
+		ring.ring_segments = 8
+		ring.material = metal
+		rim.mesh = ring
+		rim.position = Vector3.UP * SHIELD_LENGTH
+		guard.add_child(rim)
 		guard.scale = Vector3.ONE * 0.01
 		var tween := create_tween()
-		tween.tween_property(guard, "scale", Vector3.ONE, 0.4).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(guard, "scale", Vector3.ONE, 0.3).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 		AudioManager.play("snap")
 		await tween.finished
 		sparkle_at(center)

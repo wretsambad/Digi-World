@@ -54,7 +54,7 @@ func _build() -> void:
 			var materials: Array = []
 			for surface in range(source.mesh.get_surface_count()):
 				materials.append(source.get_active_material(surface))
-			var key: Array = [source.mesh, materials, cell, source.layers, source.cast_shadow, source.gi_mode, source.extra_cull_margin, source.lod_bias, source.transparency, source.ignore_occlusion_culling, source.sorting_offset, source.sorting_use_aabb_center]
+			var key: Array = [source.mesh, materials, cell, source.layers, _authored(source, &"cast_shadow"), source.gi_mode, source.extra_cull_margin, source.lod_bias, source.transparency, source.ignore_occlusion_culling, source.sorting_offset, source.sorting_use_aabb_center]
 			if not groups.has(key): groups[key] = []
 			groups[key].append(source)
 		for key: Array in groups:
@@ -73,7 +73,7 @@ func _build() -> void:
 			batch.name = "StaticBatch_%d" % batch_count
 			batch.multimesh = multimesh
 			batch.layers = first.layers
-			batch.cast_shadow = first.cast_shadow
+			batch.cast_shadow = _authored(first, &"cast_shadow")
 			batch.gi_mode = first.gi_mode
 			batch.extra_cull_margin = first.extra_cull_margin
 			batch.lod_bias = first.lod_bias
@@ -117,7 +117,7 @@ func _eligible(mesh: MeshInstance3D) -> bool:
 	# Nearby instances can share LOD selection; keep an opt-out for exact
 	# per-object LOD and use small cells to avoid grouping across the world.
 	if not batch_lod_meshes and _has_lods(mesh.mesh): return false
-	if mesh.visibility_range_begin != 0.0 or mesh.visibility_range_end != 0.0 or not mesh.visibility_parent.is_empty(): return false
+	if mesh.visibility_range_begin != 0.0 or _authored(mesh, &"visibility_range_end") != 0.0 or not mesh.visibility_parent.is_empty(): return false
 	for surface in range(mesh.mesh.get_surface_count()):
 		var material := mesh.get_active_material(surface)
 		if material is ShaderMaterial and material.shader in static_shaders:
@@ -126,6 +126,11 @@ func _eligible(mesh: MeshInstance3D) -> bool:
 		if not material is BaseMaterial3D or material.transparency != BaseMaterial3D.TRANSPARENCY_DISABLED: return false
 		if material.billboard_mode != BaseMaterial3D.BILLBOARD_DISABLED or material.grow: return false
 	return true
+
+func _authored(mesh: MeshInstance3D, property: StringName) -> Variant:
+	# GraphicsQuality trims shadows and draw distance per preset; batches take
+	# the authored values and are trimmed themselves when they spawn.
+	return mesh.get_meta(StringName("quality_original_" + property), mesh.get(property))
 
 func _has_lods(mesh: Mesh) -> bool:
 	if _lod_cache.has(mesh): return _lod_cache[mesh]

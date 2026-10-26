@@ -33,35 +33,60 @@ func run() -> void:
 	view.add_child(winter_tree)
 	verify(winter_tree.snowfall.amount == 4000, "High mode should preserve authored snow density")
 	quality.set_mode("low", false)
-	verify(is_equal_approx(view.scaling_3d_scale, 0.625), "Low mode must cap a 1440p view at 1600x900 3D pixels")
+	verify(view.scaling_3d_scale == 1.0, "Low mode must keep 3D at display resolution")
 	verify(view.size == Vector2i(2560, 1440), "UI target resolution must remain unchanged")
 	verify(view.msaa_3d == Viewport.MSAA_2X, "Low mode should keep light antialiasing")
 	verify(winter._snow.amount < original_amount and winter._snow.preprocess <= 0.25, "CPU snow must reduce density and prewarming")
 	verify(winter_tree.snowfall.amount == 1400 and winter_tree.snowfall.preprocess <= 0.25, "GPU snow must reduce density and prewarming")
-	verify(quality.monitor_size(Vector2i(2560, 1440)) == Vector2i(1280, 720), "Monitor target should have a bounded pixel budget")
-	verify(quality.mask_size(Vector2i(2560, 1440)) == Vector2i(1280, 720), "Outline target should have a bounded pixel budget")
-	view.size = Vector2i(3840, 2160)
-	verify(is_equal_approx(view.scaling_3d_scale, 1600.0 / 3840.0), "Resizing must preserve the 3D pixel ceiling")
 	quality.set_mode("high", false)
 	verify(view.scaling_3d_scale == 1.0 and view.msaa_3d == Viewport.MSAA_4X, "Quality must restore authored antialiasing")
 	verify(winter._snow.amount == original_amount and winter_tree.snowfall.amount == 4000, "High mode must restore weather density")
 	view.free()
-	# Compatibility's scaled path washes out ACES, so scaled presets use Linear.
-	var environment := Environment.new()
-	environment.tonemap_mode = Environment.TONE_MAPPER_ACES
-	var world_environment := WorldEnvironment.new()
-	world_environment.environment = environment
-	root.add_child(world_environment)
-	var compatibility := RenderingServer.get_current_rendering_method() == "gl_compatibility"
-	quality.set_mode("balanced", false)
-	verify(environment.tonemap_mode == (Environment.TONE_MAPPER_LINEAR if compatibility else Environment.TONE_MAPPER_ACES), "Scaled presets must not wash out ACES scenes")
-	environment.glow_enabled = true
-	quality._apply_environment(environment)
-	verify(environment.tonemap_mode == Environment.TONE_MAPPER_ACES, "Glowing scenes already match when scaled and must keep ACES")
-	environment.glow_enabled = false
+	# Lower presets trim shadow casters, small-prop draw distance and the sun's
+	# shadow passes, and High restores whatever was authored.
+	var props := Node3D.new()
+	root.add_child(props)
+	var cup := MeshInstance3D.new()
+	cup.mesh = BoxMesh.new()
+	cup.mesh.size = Vector3(0.2, 0.2, 0.2)
+	props.add_child(cup)
+	var house := MeshInstance3D.new()
+	house.mesh = BoxMesh.new()
+	house.mesh.size = Vector3(10, 6, 8)
+	props.add_child(house)
+	var sign := MeshInstance3D.new()
+	sign.mesh = cup.mesh
+	sign.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	sign.visibility_range_end = 5.0
+	props.add_child(sign)
+	var sun := DirectionalLight3D.new()
+	sun.shadow_enabled = true
+	sun.directional_shadow_max_distance = 220.0
+	props.add_child(sun)
+	var shade := MeshInstance3D.new()
+	shade.mesh = cup.mesh
+	shade.position = Vector3(20, 3, 0)
+	props.add_child(shade)
+	var lamp := OmniLight3D.new()
+	lamp.shadow_enabled = true
+	lamp.position = Vector3(20, 2.7, 0)
+	props.add_child(lamp)
+	verify(cup.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON and cup.visibility_range_end == 0.0, "High mode keeps small props' shadows and distance")
+	verify(sun.directional_shadow_mode == DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS, "High mode keeps four sun splits")
+	quality.set_mode("low", false)
+	verify(cup.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF, "Low mode drops small shadow casters")
+	verify(shade.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON, "Lamp shades keep their shadows")
+	verify(is_equal_approx(cup.visibility_range_end, 0.2 * quality.DRAW_DISTANCE_PER_METRE[quality.Level.LOW]), "Low mode culls small props by size")
+	verify(house.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_ON and house.visibility_range_end == 0.0, "Large meshes always draw and cast")
+	verify(sign.visibility_range_end == 5.0, "Authored draw distances are kept")
+	verify(sun.directional_shadow_mode == DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS and sun.directional_shadow_max_distance == 60.0, "Low mode halves sun shadow passes")
+	# A script re-authoring a value mid-preset must win when High restores.
+	cup.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
 	quality.set_mode("high", false)
-	verify(environment.tonemap_mode == Environment.TONE_MAPPER_ACES, "High mode must restore the authored tonemapper")
-	world_environment.free()
+	verify(cup.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY and cup.visibility_range_end == 0.0, "High mode restores authored geometry")
+	verify(sign.cast_shadow == GeometryInstance3D.SHADOW_CASTING_SETTING_OFF and sign.visibility_range_end == 5.0, "High mode keeps authored opt-outs")
+	verify(sun.directional_shadow_mode == DirectionalLight3D.SHADOW_PARALLEL_4_SPLITS and sun.directional_shadow_max_distance == 220.0, "High mode restores the sun")
+	props.free()
 	# A loading overlay must not close while a cooperative batch is unfinished.
 	var world := Node3D.new()
 	root.add_child(world)

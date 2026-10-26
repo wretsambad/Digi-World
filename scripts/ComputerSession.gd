@@ -59,7 +59,7 @@ func _build_screen_and_overlay() -> void:
 	viewport.name = "MonitorViewport"
 	# Warm the lightweight monitor target before exploration begins, so its
 	# allocation doesn't interrupt the first camera-animation frame.
-	viewport.size = GraphicsQuality.monitor_size(RENDER_SIZE)
+	viewport.size = RENDER_SIZE
 	viewport.size_2d_override = UI_SIZE
 	viewport.size_2d_override_stretch = true
 	viewport.msaa_3d = Viewport.MSAA_4X
@@ -123,7 +123,6 @@ func _build_screen_and_overlay() -> void:
 	overlay.add_child(continue_button)
 	continue_button.hide()
 	get_viewport().size_changed.connect(_fit_container)
-	GraphicsQuality.changed.connect(_fit_container)
 
 
 func _ensure_lesson() -> bool:
@@ -269,9 +268,8 @@ func _celebrate(t: float) -> void:
 
 func _fit_container() -> void:
 	if viewport.get_parent() != container:
-		var target := GraphicsQuality.monitor_size(RENDER_SIZE)
-		if viewport.size != target:
-			viewport.size = target
+		if viewport.size != RENDER_SIZE:
+			viewport.size = RENDER_SIZE
 			if state == "idle": viewport.render_target_update_mode = SubViewport.UPDATE_ONCE
 		return
 	var view := get_viewport().get_visible_rect().size
@@ -280,8 +278,7 @@ func _fit_container() -> void:
 	var ui_scale := minf(view.x / UI_SIZE.x, view.y / UI_SIZE.y)
 	viewport.size_2d_override = Vector2i((view / ui_scale).round())
 	var display_scale := get_viewport().get_stretch_transform().get_scale()
-	# The lesson's UI lives in this target, so keep it at display pixels;
-	# GraphicsQuality budgets the 3D pixels through scaling_3d_scale instead.
+	# The lesson's UI and world both live in this target at display pixels.
 	var render_size := Vector2i((view * display_scale).round()).max(Vector2i(2, 2))
 	viewport.size = render_size
 	container.position = Vector2.ZERO
@@ -351,7 +348,7 @@ func return_to_room() -> void:
 	container.hide()
 	backdrop.hide()
 	viewport.reparent(self)
-	viewport.size = GraphicsQuality.monitor_size(RENDER_SIZE)
+	viewport.size = RENDER_SIZE
 	viewport.size_2d_override = UI_SIZE
 	viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	AudioManager.play("success")
