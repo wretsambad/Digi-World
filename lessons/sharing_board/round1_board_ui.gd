@@ -76,12 +76,12 @@ func begin() -> void:
 		state.clear()
 	_public_slips.clear()
 	_refresh()
-	_buddy.say("Drag the patch into a pocket, or just tap a pocket. Who should see it?", "happy")
+	_buddy.say("Drag or tap a pocket. Who should see it?", "happy")
 	_caption.hide()
 	_sorting_view.show()
 	show()
 	_show_sheet("Snow day at Willow Park!",
-		"The neighborhood put up a board by the park. Anything pinned there can be seen by [b]everyone[/b] who walks by, even people you don't know.\n\nSew each patch into the pocket for [b]who should see it[/b].",
+		"[b]Everyone[/b] can see the park board, even strangers.\n\nSew each patch into the pocket for [b]who should see it[/b].",
 		[["Let's sew!", Kit.CRANBERRY, _close_sheet]])
 
 
@@ -109,7 +109,7 @@ func show_complete(can_continue: bool) -> void:
 		buttons.append(["Play again", Kit.PINE, func(): get_tree().reload_current_scene()])
 		buttons.append(["Continue", Kit.CRANBERRY, func(): next_round_requested.emit()])
 	_show_sheet("Great Work!",
-		"Before you share something, stop and ask: [b]who will see it?[/b]", buttons)
+		"Before you share, ask: [b]who will see it?[/b]", buttons)
 
 
 func _review_patches(on_back: Callable) -> void:
@@ -122,7 +122,7 @@ func _review_patches(on_back: Callable) -> void:
 	_refresh()
 	_mitten.hide()
 	_check_button.text = "Back"
-	_buddy.say("Tap any patch to read its explanation. Press Back when you're done.", "happy")
+	_buddy.say("Tap a patch to see why. Press Back when done.", "happy")
 	show()
 
 
@@ -283,7 +283,7 @@ func _build_caption() -> void:
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 22)
 	tag.add_child(row)
-	var text := Kit.label("These patches are on the park board now. Anyone who walks by can read them, even people you don't know.", 18)
+	var text := Kit.label("These patches are on the board now. Anyone can read them.", 18)
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	text.custom_minimum_size.x = 470
 	text.size_flags_vertical = SIZE_SHRINK_CENTER
@@ -543,7 +543,7 @@ func _place(card_id: String, zone_id: String) -> void:
 	_refresh()
 	_sew_on(_patches[card_id])
 	if _deck.is_empty():
-		_buddy.say("All sewn! Press Check my board when you're ready.", "think")
+		_buddy.say("All sewn! Press Check my board.", "think")
 	elif _came_loose.has(_deck[0]):
 		_say_loose_reason(_deck[0])
 	else:
@@ -635,7 +635,7 @@ func _show_results() -> void:
 		if _first_try[card_id]:
 			first_try_right += 1
 	var stars := 3 if first_try_right == total else (2 if first_try_right >= total - 2 else 1)
-	_buddy.say("Every patch is sewn in the right pocket!", "wow")
+	_buddy.say("Every patch is in the right pocket!", "wow")
 
 	sorting_finished.emit({
 		"stars": stars,
@@ -649,7 +649,7 @@ func _show_results() -> void:
 func _show_sorting_summary(first_try_right: int, stars: int) -> void:
 	_sorting_view.show()
 	_show_sheet("Board complete!",
-		"You sewed [b]%d of %d[/b] patches in a safe pocket on your first try.\n\nFun facts are fine for everyone. Things that show [b]who you are or where to find you[/b] need a grown-up's OK, and passwords stay secret.\n\nChoose Review patches to click each patch and read its explanation." % [first_try_right, _cards.size()],
+		"[b]%d of %d[/b] right on the first try!\n\nFun facts are fine for everyone. [b]Who you are or where you are[/b] needs a grown-up's OK. Passwords stay secret." % [first_try_right, _cards.size()],
 		[["Review patches", Kit.PINE, _review_patches.bind(_show_sorting_summary.bind(first_try_right, stars))],
 		["See the park board", Kit.CRANBERRY, _on_see_board_pressed]], FeltStars.new(stars))
 

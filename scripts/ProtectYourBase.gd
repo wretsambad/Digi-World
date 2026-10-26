@@ -366,7 +366,7 @@ func _event_runs_away() -> void:
 		var start: Vector3 = branch[0]
 		var direction := (tip - start).normalized()
 		var contact := base.branch_barrier_point(index) + direction * 0.65
-		await glitch.hop_to(tip + direction * 0.95 + Vector3.UP * 0.12, 0.35, 0.4)
+		await glitch.hop_to(base.branch_point(index, 1.7) + Vector3.UP * 0.08, 0.35, 0.4)
 		await glitch.hop_to(contact, 0.3, 0.12)
 		await glitch.bonk(-direction)
 		camera.shake(0.07)

@@ -34,10 +34,11 @@ const BRANCHES: Array = [
 	[Vector3(-2.2, 1.8, 1.0), Vector3(-7.3, 2.25, 0.8)],
 	[Vector3(-2.0, 2.7, 1.9), Vector3(-7.2, 3.1, 2.9)],
 ]
-## An exterior bough clears both deck edges before turning toward the roof.
+## An exterior bough leans out past both deck edges, then arches back
+## over the roof.
 const OUTER_BOUGH: Array[Vector3] = [
-	Vector3(-7.2, 3.55, 2.9), Vector3(-7.15, 4.7, 2.5),
-	Vector3(-7.1, 6.7, 2.1), Vector3(-6.8, 8.75, 1.8),
+	Vector3(-7.2, 3.55, 2.9), Vector3(-7.55, 4.7, 2.6),
+	Vector3(-7.8, 6.7, 2.2), Vector3(-7.2, 8.75, 1.8),
 	Vector3(-4.1, 10.0, 1.4), Vector3(-3.0, 10.4, 1.0),
 ]
 
@@ -123,10 +124,8 @@ func _make_materials() -> void:
 	metal.roughness = 0.35
 	metal.rim_enabled = true
 	metal.rim = 0.4
-	bark = StandardMaterial3D.new()
-	bark.albedo_color = Color("6a452d")
-	bark.albedo_texture = grain
-	bark.roughness = 1.0
+	# Climbing limbs share the living tree's own sculpted bark.
+	bark = oak.get_node("LivingTree/TrunkAndBoughs/LongWestBough").material_override as StandardMaterial3D
 
 
 func _take_over_paint() -> void:
@@ -223,10 +222,8 @@ func deck_approach_points() -> Array[Vector3]:
 
 func branch_climb_points() -> Array[Vector3]:
 	var points: Array[Vector3] = []
-	for branch: Array in BRANCHES:
-		var start: Vector3 = branch[0]
-		var tip: Vector3 = branch[1]
-		points.append(start.lerp(tip, 0.82) + Vector3.UP * 0.12)
+	for index in BRANCHES.size():
+		points.append(branch_point(index, 0.82) + Vector3.UP * 0.16)
 	points.append_array(OUTER_BOUGH.slice(0, 3))
 	return points
 
@@ -235,34 +232,129 @@ func roof_climb_points() -> Array[Vector3]:
 	return OUTER_BOUGH.slice(3)
 
 
+## The centre of a climbing limb: 0 in the trunk, 1 at the branch tip and
+## up to 2 along the upturned twig past it. The top limb bends up into the
+## outer bough instead of ending in a twig.
+func branch_point(index: int, t: float) -> Vector3:
+	var curve := _branch_curve(index)
+	return curve.sample(0, t) if t <= 1.0 else curve.sample(1, minf(t, 2.0) - 1.0)
+
+
+func _branch_curve(index: int) -> Curve3D:
+	var start: Vector3 = BRANCHES[index][0]
+	var tip: Vector3 = BRANCHES[index][1]
+	var out := Vector3(tip.x - start.x, 0, tip.z - start.z).normalized()
+	var reach := start.distance_to(tip)
+	var curve := Curve3D.new()
+	# Limbs leave the trunk rising, then level off toward the tip.
+	curve.add_point(start, Vector3.ZERO, out * reach * 0.3 + Vector3.UP * 0.55)
+	if index < BRANCHES.size() - 1:
+		curve.add_point(tip, -out * reach * 0.3 + Vector3.UP * 0.05, out * 0.5 + Vector3.UP * 0.1)
+		curve.add_point(tip + out * 1.3 + Vector3.UP * 0.45, -out * 0.45 - Vector3.UP * 0.1)
+		return curve
+	# The top limb elbows upward and carries the climb along the bough.
+	curve.add_point(tip, -out * reach * 0.3, Vector3.UP * 0.55 + out * 0.15)
+	var bough: Array[Vector3] = []
+	for point in OUTER_BOUGH.slice(1):
+		bough.append(point - Vector3.UP * 0.24)
+	bough.append(bough[-1] + (bough[-1] - bough[-2]).normalized() * 0.9 + Vector3.UP * 0.1)
+	for i in bough.size():
+		var before: Vector3 = tip if i == 0 else bough[i - 1]
+		var after: Vector3 = bough[mini(i + 1, bough.size() - 1)]
+		var handle := (after - before) * 0.22
+		curve.add_point(bough[i], -handle, handle)
+	return curve
+
+
 func _build_branch_route() -> void:
 	var route := Node3D.new()
 	route.name = "BranchRoute"
 	add_child(route)
-	var leaves := StandardMaterial3D.new()
-	leaves.albedo_color = Color("d95a1c")
-	leaves.roughness = 1.0
-	for branch: Array in BRANCHES:
-		var start: Vector3 = branch[0]
-		var tip: Vector3 = branch[1]
-		var limb := _cylinder_between(start, tip, 0.3, 0.13, bark)
-		route.add_child(limb)
-		var tuft := MeshInstance3D.new()
-		var ball := SphereMesh.new()
-		ball.radius = 0.45
-		ball.height = 0.7
-		ball.radial_segments = 8
-		ball.rings = 4
-		ball.material = leaves
-		tuft.mesh = ball
-		tuft.position = tip + Vector3(-0.2, 0.15, 0)
-		route.add_child(tuft)
-	# Visible supports for the revised exterior climb; feet stay on top.
-	var last: Vector3 = BRANCHES[-1][1]
-	for point in OUTER_BOUGH:
-		var next := point - Vector3.UP * 0.24
-		route.add_child(_cylinder_between(last, next, 0.28, 0.23, bark))
-		last = next
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 7
+	for index in BRANCHES.size():
+		var curve := _branch_curve(index)
+		var start: Vector3 = BRANCHES[index][0]
+		var tip: Vector3 = BRANCHES[index][1]
+		var out := Vector3(tip.x - start.x, 0, tip.z - start.z).normalized()
+		var side := out.cross(Vector3.UP) * (1.0 if index % 2 else -1.0)
+		if index < BRANCHES.size() - 1:
+			route.add_child(_limb(curve, [0.36, 0.15, 0.035], rng))
+			_leaves(route, curve.get_point_position(2) + Vector3.UP * 0.1, 0.3, rng)
+		else:
+			route.add_child(_limb(curve, [0.46, 0.34, 0.32, 0.28, 0.23, 0.17, 0.12, 0.04], rng))
+			# A short spur keeps growing outward past the elbow.
+			var spur := Curve3D.new()
+			spur.add_point(tip - out * 0.3, Vector3.ZERO, out * 0.5)
+			spur.add_point(tip + out * 1.2 + side * 0.4 + Vector3.UP * 0.5, -out * 0.4 - Vector3.UP * 0.15)
+			route.add_child(_limb(spur, [0.13, 0.03], rng))
+			_leaves(route, spur.get_point_position(1) + Vector3.UP * 0.1, 0.27, rng)
+		# A side shoot breaks up the rung-like silhouette of parallel limbs.
+		var base := branch_point(index, 0.5)
+		var shoot := Curve3D.new()
+		shoot.add_point(base, Vector3.ZERO, side * 0.4 + Vector3.UP * 0.2)
+		shoot.add_point(base + side * 1.0 + out * 0.6 + Vector3.UP * 0.7, -side * 0.3 - out * 0.2 - Vector3.UP * 0.1)
+		route.add_child(_limb(shoot, [0.09, 0.025], rng))
+		_leaves(route, shoot.get_point_position(1) + Vector3.UP * 0.05, 0.2, rng)
+
+
+## A tapering tube along the curve, coloured like the authored boughs.
+## Radii are per curve point; the base flares where it meets the trunk.
+func _limb(curve: Curve3D, radii: Array, rng: RandomNumberGenerator) -> MeshInstance3D:
+	const SIDES := 7
+	const TONES: Array[Color] = [Color(0.502, 0.353, 0.243), Color(0.533, 0.392, 0.29), Color(0.467, 0.31, 0.192)]
+	var length := curve.get_baked_length()
+	var marks: Array[float] = []
+	for i in curve.point_count:
+		marks.append(curve.get_closest_offset(curve.get_point_position(i)))
+	var rings := maxi(int(length / 0.3), 4)
+	var tool := SurfaceTool.new()
+	tool.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var normal := Vector3.ZERO
+	var previous := PackedVector3Array()
+	for ring in rings + 1:
+		var offset := length * ring / rings
+		var center := curve.sample_baked(offset, true)
+		var tangent := (curve.sample_baked(minf(offset + 0.05, length), true) - curve.sample_baked(maxf(offset - 0.05, 0.0), true)).normalized()
+		if normal == Vector3.ZERO:
+			normal = tangent.cross(Vector3.UP if absf(tangent.y) < 0.9 else Vector3.RIGHT).normalized()
+		# Carry the frame along the curve so the faces do not twist.
+		normal = (normal - tangent * normal.dot(tangent)).normalized()
+		var binormal := tangent.cross(normal)
+		var segment := 0
+		while segment < marks.size() - 2 and offset > marks[segment + 1]:
+			segment += 1
+		var blend := clampf(inverse_lerp(marks[segment], marks[segment + 1], offset), 0.0, 1.0)
+		var radius: float = lerpf(radii[segment], radii[segment + 1], blend) + 0.16 * radii[0] * maxf(0.0, 1.0 - offset / 0.7)
+		var current := PackedVector3Array()
+		for side in SIDES:
+			var angle := TAU * side / SIDES
+			var bump := 1.0 if ring == rings else rng.randf_range(0.9, 1.1)
+			current.append(center + (normal * cos(angle) + binormal * sin(angle)) * radius * bump)
+		if ring > 0:
+			for side in SIDES:
+				var next := (side + 1) % SIDES
+				# Tones run along the limb like bark ridges, not around it.
+				tool.set_color(TONES[side % TONES.size()])
+				for corner: Vector3 in [previous[side], current[side], current[next], previous[side], current[next], previous[next]]:
+					tool.add_vertex(corner)
+		previous = current
+	tool.generate_normals()
+	var node := MeshInstance3D.new()
+	node.mesh = tool.commit()
+	node.material_override = bark
+	return node
+
+
+## A small copy of one of the canopy's own leaf clusters.
+func _leaves(parent: Node3D, at: Vector3, size: float, rng: RandomNumberGenerator) -> void:
+	var source: MeshInstance3D = oak.get_node("LivingTree/NaturalCanopy/FoliageCluster%02d" % [9, 10, 16, 26][rng.randi() % 4])
+	var tuft := MeshInstance3D.new()
+	tuft.mesh = source.mesh
+	tuft.material_override = source.material_override
+	tuft.basis = Basis(Vector3.UP, rng.randf() * TAU).scaled(Vector3.ONE * size)
+	tuft.position = at
+	parent.add_child(tuft)
 
 
 func _cylinder_between(a: Vector3, b: Vector3, radius_a: float, radius_b: float, material: Material) -> MeshInstance3D:

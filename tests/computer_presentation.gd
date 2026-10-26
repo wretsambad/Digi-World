@@ -86,8 +86,9 @@ func _ready() -> void:
 	get_window().size = Vector2i(1920, 1080)
 	await get_tree().process_frame
 	session._fit_container()
-	verify(session.viewport.size == Vector2i(1280, 720), "Low mode should cap the embedded game at 720p")
-	verify(session.viewport.msaa_3d == Viewport.MSAA_DISABLED, "Low mode should remove the expensive multisample target")
+	verify(session.viewport.size == Vector2i(1920, 1080), "Low mode must keep the lesson's UI at display pixels")
+	verify(is_equal_approx(session.viewport.scaling_3d_scale, 0.75), "Low mode should budget 3D pixels only once")
+	verify(session.viewport.msaa_3d == Viewport.MSAA_2X, "Low mode should keep light antialiasing")
 	await snapshot("fullscreen_low")
 	# Check that pointer coordinates still reach the UI after scaling the
 	# high-resolution texture back into the window's logical canvas.

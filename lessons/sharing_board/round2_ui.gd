@@ -18,7 +18,7 @@ const SnowBuddy := preload("res://lessons/sharing_board/ui/snow_buddy.gd")
 const Hoop := preload("res://lessons/sharing_board/ui/hoop.gd")
 
 const FOUND_LINES := ["Good eye!", "Spotted it!", "Nice find!", "You got one!"]
-const MISS_LINE := "Nothing private there. Check small names, labels and screens with the magnifying glass."
+const MISS_LINE := "That's safe. Look for names, labels and screens."
 const PATCH_COLORS := [Color("#D6E7F2"), Color("#F8E8B8"), Color("#D5EAD9"), Color("#F5D6CE"), Color("#E5DDF0")]
 
 enum Stage { LOOKING, COVER, READY, POSTED }
@@ -135,7 +135,7 @@ func begin() -> void:
 	if _clues.is_empty():
 		stage = Stage.READY
 	_refresh()
-	_buddy.say("Move the magnifying glass over the photo. Tap anything that shows who you are or where you live.", "happy")
+	_buddy.say("Tap anything that shows who you are or where you live.", "happy")
 	_caption.hide()
 	_view.show()
 	show()
@@ -147,7 +147,7 @@ func begin() -> void:
 func show_board_caption() -> void:
 	var final_photo := _photo_index == _photo_count-1
 	_caption_finish.text = "Finish round" if final_photo else "Next photo"
-	_caption_words.text = "All three photos are on the park board, with their identifying details covered!" if final_photo else "Photo %d of %d is pinned! Your safe photos will stay here. Ready for the next photo?" % [_photo_index+1,_photo_count]
+	_caption_words.text = "All three photos are posted safely!" if final_photo else "Photo %d of %d is pinned! Ready for the next?" % [_photo_index+1,_photo_count]
 	_view.hide()
 	_caption.show()
 	show()
@@ -160,7 +160,7 @@ func show_complete(can_continue: bool) -> void:
 		buttons.append(["Play again", Kit.PINE, func(): replay_requested.emit()])
 		buttons.append(["Back to my room", Kit.CRANBERRY, func(): home_requested.emit()])
 	_show_sheet("Round 2 complete!",
-		"You checked all three photos! Keep sharing the fun things, and look closely for small names, labels and screens before posting.\n\n[b]Who can see it? What does it show? Can I take it back?[/b]", buttons)
+		"Share the fun stuff. Hide names, labels and screens.\n\n[b]Who can see it? What does it show? Can I take it back?[/b]", buttons)
 
 
 # --- Building -------------------------------------------------------------------
@@ -369,7 +369,7 @@ func _build_caption() -> void:
 	var row := HBoxContainer.new()
 	row.add_theme_constant_override("separation", 22)
 	tag.add_child(row)
-	var text := Kit.label("Your photo is on the park board. Everyone can see your snowman, but nobody can tell where you live.", 18)
+	var text := Kit.label("Everyone sees your snowman, but not where you live.", 18)
 	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	text.custom_minimum_size.x = 470
 	text.size_flags_vertical = SIZE_SHRINK_CENTER
@@ -493,7 +493,7 @@ func _find(id: String) -> void:
 	if _found.size() == _clues.size():
 		stage = Stage.COVER
 		_hoop.hide()
-		_buddy.say("You found all %d! Now cover them with felt patches before you post." % _found.size(), "wow")
+		_buddy.say("You found all %d! Now cover them up." % _found.size(), "wow")
 		_refresh()
 	else:
 		_buddy.say("%s %s" % [FOUND_LINES.pick_random(), clue.why], "wow")
@@ -546,7 +546,7 @@ func _cover_clues() -> void:
 		await tween.finished
 	stage = Stage.READY
 	AudioManager.play("repair")
-	_buddy.say("Much better! Now nobody can tell where you live. Post it!", "happy")
+	_buddy.say("Much better! Post it!", "happy")
 	_refresh()
 
 

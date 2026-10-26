@@ -280,7 +280,9 @@ func _fit_container() -> void:
 	var ui_scale := minf(view.x / UI_SIZE.x, view.y / UI_SIZE.y)
 	viewport.size_2d_override = Vector2i((view / ui_scale).round())
 	var display_scale := get_viewport().get_stretch_transform().get_scale()
-	var render_size := GraphicsQuality.monitor_size(Vector2i((view * display_scale).round()))
+	# The lesson's UI lives in this target, so keep it at display pixels;
+	# GraphicsQuality budgets the 3D pixels through scaling_3d_scale instead.
+	var render_size := Vector2i((view * display_scale).round()).max(Vector2i(2, 2))
 	viewport.size = render_size
 	container.position = Vector2.ZERO
 	container.size = render_size
